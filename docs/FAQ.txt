@@ -1,0 +1,472 @@
+.. -*- coding: utf-8 -*-
+
+
+.. NOTE TO MAINTAINERS: Please add new questions to the end of their
+   sections, so section/question numbers remain stable.
+
+
+===================================================
+ Polyform Puzzler |---| Frequently Asked Questions
+===================================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2006 by David Goodger <goodger@python.org>
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. sectnum::
+.. contents::
+
+Other documents:
+
+* `To do list <todo.html>`_
+
+
+Polyform Puzzler |---| The Project
+==================================
+
+What is "Polyform Puzzler"?
+---------------------------
+
+Polyform Puzzler is software for exploring & solving polyform puzzles
+(like Pentominoes and Soma Cubes).  It consists of a set of front-end
+applications for specific polyform puzzles and a Python library that
+does the heavy lifting.  New polyforms and new puzzles can easily be
+defined and added to the core.
+
+
+How did Polyform Puzzler begin?
+-------------------------------
+
+I first discovered Pentominoes in Arthur C. Clarke's `Imperial Earth`,
+probably around the time I was 11 or 12 years old.  I picked up a
+"Hexed" puzzle (by Gabriel Toys) at a local hobby store and spent many
+hours solving it.
+
+In university, probably while avoiding legitimate study, I wrote the
+first implementation of a Pentominoes-solving project, in Object
+Pascal.  I developed an algorithm that solved the puzzle using brute
+force with some intelligence applied:
+
+* Place each pentomino in every possible location.
+* Check remaining spaces for areas that are a multiple of 5.
+* Check for the availability of a piece for areas exactly 5 squares
+  large.
+* Check for bottlenecks that force a subset of the remaining space to
+  accept only a single specific piece, and check for its availability.
+
+When I first learned Python_, I reimplemented this as a practical
+learning exercise.  I improved the algorithm a bit and got it to work
+pretty well, if not completely bug-free.  It was a fun and interesting
+exercise, but the code was complicated and ran slow.  (It didn't help
+that I only had a 66MHz computer at the time.)
+
+I even went so far as to register the "puzzler" project on
+SourceForge, but didn't take it any further at that time.  I had
+scratched my itch enough, and another itch became more persistent...
+
+While writing the second implementation and learning Python I
+discovered Python docstrings and started looking around for
+auto-documentation systems to exploit them.  I couldn't find anything
+that worked well for me, so I started scratching *that* itch, and
+eventually reStructuredText_ & Docutils_ were born.  You could say
+that Polyform Puzzler spawned Docutils_.
+
+Recently (2006) I discovered a new approach for solving such puzzles,
+Donald Knuth's "Dancing Links Algorithm X" ("DLX") approach to the
+"exact cover" problem, `described below`__.  This approach was so
+different from what I'd done previously, and so obviously superior,
+that my old itch resurfaced.  Polyform Puzzler is the result.
+
+.. _history: http://docutils.sf.net/docs/ref/rst/introduction.html#history
+__ `How are the polyform puzzles solved?`_
+
+
+Polyforms
+=========
+
+What are "Polyforms"?
+---------------------
+
+The word "polyform" can be defined by its parts:
+
+    poly-
+        more than one; many
+    form
+        shape
+
+According to the `Wikipedia definition`_,
+
+    a polyform is a plane figure constructed by joining together
+    identical basic polygons
+
+`Regular polygons`_ which `tile the plane`_ (fill, without gaps or
+overlap, a tessellation_) are the most satisfying basic polygons for
+polyform puzzles, and there are three: the equilateral triangle, the
+square, and the hexagon.  Other polygons can be used though.  With a
+given polygon, the set of polyforms of order *N* is defined by
+constructing all possible combinations of *N* copies of that polygon,
+joined edge to edge, without overlapping.  Duplicates (from rotation
+or reflection) are typically ignored, although some puzzles explicitly
+treat reflections separately ("one-sided").
+
+For example, 5 squares can be combined in 12 different ways, resulting
+in the "pentominoes":
+
+.. figure:: images/pentominoes.png
+
+   The 12 pentominoes, with their common names.
+
+Many sets of polyforms can be combined to fill certain areas or
+volumes.  These can be called "polyform puzzles" or "combinatoric
+dissection puzzles".  For example, the pentominoes can fill a 6 |x| 10
+rectangle:
+
+.. figure:: images/pentominoes6x10.png
+
+   One 6 |x| 10 pentominoes solution.
+
+There are 2339 distinct ways to fit the pentominoes into a 6 |x| 10
+rectangle.  The Polyform Puzzler `can find them all`_.
+
+The definition of polyforms above can be generalized to include solids
+(polyhedra) joined face to face.  `Regular (Platonic) solids`_ that
+`fill space`_ are the most satisfying, but there is only one Platonic
+solid that fills space: the cube.  Tetrahedra and octahedra together
+can fill space though.  In addition, the `truncated octahedron`_ (a
+`semi-regular, Archimedian solid`_) and the `rhombic dodecahedron`_
+can each individually fill space.
+
+The polyform definition can also be extended to include other forms.
+The sky's the limit!
+
+.. _Wikipedia definition: http://en.wikipedia.org/wiki/Polyform
+.. _regular polygons: http://mathworld.wolfram.com/RegularPolygon.html
+.. _tile the plane: http://mathworld.wolfram.com/Tiling.html
+.. _tessellation: http://mathworld.wolfram.com/Tessellation.html
+.. _can find them all: ../solutions/pentominoes6x10.txt
+.. _regular (Platonic) solids: http://mathworld.wolfram.com/PlatonicSolid.html
+.. _fill space: http://mathworld.wolfram.com/Space-FillingPolyhedron.html
+.. _truncated octahedron: http://mathworld.wolfram.com/TruncatedOctahedron.html
+.. _semi-regular, Archimedian solid:
+   http://mathworld.wolfram.com/ArchimedeanSolid.html
+.. _rhombic dodecahedron: http://mathworld.wolfram.com/RhombicDodecahedron.html
+
+
+What polyforms are there?
+-------------------------
+
+There are many possible families of polyforms, with new ones being
+invented all the time.  Polyform Puzzler only deals with a limited
+number of polyforms; in my opinion the most aesthetically pleasing
+ones.  Polyform families are given descriptive names:
+
+* Square-based polyforms are named "polyominoes_" (from a "domino",
+  which is two squares joined): monomino, domino, triomino, tetromino,
+  pentomino, hexomino, etc.
+
+  The tetrominoes are famous for their role in the videogame "Tetris".
+  The 12 pentominoes are probably the most well-known polyform, due to
+  their versatility and the large variety of non-trivial puzzles they
+  form.  The 21 polyominoes of order 1-5 are used as the playing
+  pieces in the "Blokus_" board game.
+
+* Substituting a 3D cube for each 2D square in polyominoes results in
+  "solid polyominoes" or "planar polycubes" (see "polycubes" below).
+
+  The 12 solid pentominoes fill a 3 |x| 4 |x| 5 solid in 3940 distinct
+  ways.
+
+* Polyforms based on equilateral triangles are named "polyiamonds_"
+  (from the "diamond", which is two triangles joined).  The 22
+  polyiamonds of order 1-6 are used as the playing pieces in the
+  "Blokus Trigon" board game.
+
+* Polyforms based on regular hexagons are named "polyhexes_" (there's
+  no clever etymology here):
+
+* Polyforms based on cubes are called "polycubes_".  The polycubes
+  that are flat (only one cube thick) are known as "planar polycubes"
+  or "solid polyominoes".
+
+* Polyforms based on unit line segments joined end-to-end on a square
+  grid are called "polysticks" [#polysticks]_ (a.k.a. "polyedges" or
+  "polypleura_").  The shapes formed from matchsticks joined together
+  end-to-end at 90° angles are polysticks.  Polysticks are related to
+  polyominoes: polysticks can be thought of as paths joining the
+  centers of the squares of polyominoes.
+
+.. [#polysticks] Brian R. Barwell, "Polysticks," `Journal of
+   Recreational Mathematics` volume 22 issue 3 (1990), p.165-175
+.. _polyominoes:
+   http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyominoes.html
+.. _Blokus: http://en.wikipedia.org/wiki/Blokus
+.. _polyiamonds:
+   http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyiamonds.htm
+.. _polyhexes:
+   http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyhexes.html
+.. _polycubes:
+   http://www.recmath.com/PolyPages/PolyPages/index.htm?Polycubes.html
+.. _polypleura: 
+   http://www.saintanns.k12.ny.us/depart/math/Lawrence/polyfrm.html
+
+
+How many of each type of polyform are there?
+--------------------------------------------
+
+Hyperlinks in parentheses are to the relevant entries in `The On-Line
+Encyclopedia of Integer Sequences
+<http://www.research.att.com/~njas/sequences/>`_.
+
+* Polyominoes (A000105_, A000988_):
+
+  =======  ==========  ===========  =========
+  Squares  Name        Polyominoes  One-Sided
+  =======  ==========  ===========  =========
+  1        monomino    1            1
+  2        domino      1            1
+  3        tromino     2            2
+  4        tetromino   5            7
+  5        pentomino   12           18
+  6        hexomino    35           60
+  7        heptomino   108          196
+  =======  ==========  ===========  =========
+
+  This table also applies to solid polyominoes (planar polycubes).
+
+  .. _A000105: http://www.research.att.com/~njas/sequences/A000105
+  .. _A000988: http://www.research.att.com/~njas/sequences/A000988
+
+* Polyiamonds (A000577_, A006534_):
+
+  =========  ==========  ===========  =========
+  Triangles  Name        Polyiamonds  One-Sided
+  =========  ==========  ===========  =========
+  1          moniamond   1            1
+  2          diamond     1            1
+  3          triamond    1            1
+  4          tetriamond  3            4
+  5          pentiamond  4            6
+  6          hexiamond   12           19
+  7          heptiamond  24           43
+  8          octiamond   66           120
+  =========  ==========  ===========  =========
+
+  .. _A000577: http://www.research.att.com/~njas/sequences/A000577
+  .. _A006534: http://www.research.att.com/~njas/sequences/A006534
+
+* Polyhexes (A000228_, A006535_):
+
+  ========  ==========  =========  =========
+  Hexagons  Name        Polyhexes  One-Sided
+  ========  ==========  =========  =========
+  1         monohex     1          1
+  2         dihex       1          1
+  3         trihex      3          3
+  4         tetrahex    7          10
+  5         pentahex    22         33
+  6         hexahex     82 [*]_    147
+  ========  ==========  =========  =========
+
+  .. [*] One hexahex contains a central hole (1 hexagon).  It is used
+         for one of the "o" letters in this project's logo.
+  .. _A000228: http://www.research.att.com/~njas/sequences/A000228
+  .. _A006535: http://www.research.att.com/~njas/sequences/A006535
+
+* Polycubes (A000162_):
+
+  =====  ==========  =========
+  Cubes  Name        Polycubes
+  =====  ==========  =========
+  1      monocube    1
+  2      dicube      1
+  3      tricube     2
+  4      tetracube   8
+  5      pentacube   29
+  6      hexacube    166
+  =====  ==========  =========
+
+  .. _A000162: http://www.research.att.com/~njas/sequences/A000162
+
+* Polysticks (a.k.a. "polyedges"; A019988_):
+
+  ======  ==========  ==========  =========
+  Sticks  Name        Polysticks  One-Sided
+  ======  ==========  ==========  =========
+  1       monostick   1           1
+  2       distick     2           2
+  3       tristick    5           7
+  4       tetrastick  16          25
+  5       pentastick  55          99
+  ======  ==========  ==========  =========
+
+  .. _A019988: http://www.research.att.com/~njas/sequences/A019988
+
+
+Where can I find more information about polyforms?
+--------------------------------------------------
+
+There are many web sites with polyform information.  If you're looking
+for specific information, a search engine is your best bet.  Here are
+a few good places to start:
+
+* `Wikipedia <http://en.wikipedia.org/wiki/Polyform>`__
+* `MathWorld <http://mathworld.wolfram.com/Polyform.html>`__
+* `The Poly Pages <http://www.recmath.com/PolyPages/>`__
+* `Vicher's Puzzle Pages <http://alpha.ujep.cz/~vicher/puzzle/>`__
+* `MathPuzzle.com <http://www.mathpuzzle.com/polyom.htm>`__
+* `The Geometry Junkyard
+  <http://www.ics.uci.edu/~eppstein/junkyard/polyomino.html>`__
+* `Pentamini pentaminos pentominoes
+  <http://www.geocities.com/liviozuc/>`__
+
+
+Where can I find physical polyform puzzles?
+-------------------------------------------
+
+I recommend researching on the web, then checking out your local toy,
+game, and puzzle specialty stores.  If they don't stock what you want,
+ask them to get it for you!
+
+For a wide variety via mail order, I recommend `Kadon Enterprises
+<http://www.gamepuzzles.com/>`__ (their `Super Deluxe Quintillions
+<http://www.gamepuzzles.com/polycube.htm#SQd>`__ set has been on my
+wish list for some time now).
+
+
+Polyform Puzzles
+================
+
+What polyform puzzles are supported?
+------------------------------------
+
+The following polyforms and puzzles are implemented in Polyform
+Puzzler:
+
+* pentominoes
+
+  + rectangles:
+
+    - 3 |x| 20: 2 solutions
+    - 4 |x| 15: 368 solutions
+    - 5 |x| 12: 1010 solutions
+    - 6 |x| 10: 2339 solutions
+
+   + 3 |x| 20 ring (3 |x| 20 rectangle joined at the ends): 2
+     solutions (same as the 3 |x| 20 rectangle; the V piece forces a
+     partition)
+
+   + 8 |x| 8 square with a central 2 |x| 2 hole: 65 solutions
+
+* solid pentominoes
+
+  + solids:
+
+    - 2 |x| 3 |x| 10: 10 solutions
+    - 2 |x| 5 |x| 6: 264 solutions
+    - 3 |x| 4 |x| 5: 3940 solutions
+
+  + ring walls (rectangular walls, 1 cube thick, with hollow centers):
+
+    - 3 |x| 3 |x| 9: 3 solutions
+    - 3 |x| 5 |x| 7: 1 solution
+    - 5 |x| 3 |x| 5: 186 solutions
+    - 6 |x| 3 |x| 4: 46 solutions
+
+    Three other rings with no solutions were also implemented: 3 |x| 4
+    |x| 8, 3 |x| 6 |x| 6, and 5 |x| 4 |x| 4.
+
+* `Soma cubes`_:
+
+  - 3 |x| 3 |x| 3 cube: 240 solutions
+  - various other shapes
+
+* tetrasticks:
+
+  - 4 |x| 4 square with one-sided welded tetrasticks: 4 solutions
+  - 5 |x| 5 square with 15 of 16 tetrasticks: 1795 solutions
+
+More polyforms are to come:
+
+* other polyominoes
+* other polycubes
+* polyiamonds
+* polyhexes
+* other polysticks
+* others
+
+See the `to do list`__ for details.
+
+__ todo.html#puzzles
+.. _Soma cubes: http://en.wikipedia.org/wiki/Soma_cube
+
+
+Polyform Puzzler |---| The Code & Technical Details
+===================================================
+
+How are the polyform puzzles solved?
+------------------------------------
+
+Polyform Puzzler works by reducing puzzles into "`exact cover`_"
+problems.  Briefly, to solve an exact cover problem, given such a
+matrix of 0s and 1s, we must find a set of rows which, when combined,
+contain exactly one 1 in each column.  To find every solution we must
+find all such sets of rows.
+
+We construct a two-dimensional matrix with named columns.  The column
+names consist of the puzzle piece names, then the coordinates of the
+solution space.  For example, in a puzzle with three pieces to be
+placed in a 3 |x| 3 grid, we'd have 12 columns::
+
+    A  B  C    0,0  1,0  2,0    0,1  1,1  2,1    0,2  1,2  2,2
+
+We determine every possible position of each puzzle piece in the
+puzzle, and construct one row for each position.  Starting with a row
+of 0s, put a 1 in the column for the puzzle piece name and in each
+column corresponding to the position of the puzzle piece.  For
+example, puzzle piece A covering coordinates (0,0), (0,1), and (1,1)
+would create this row in the matrix::
+
+    1  0  0    1  0  0    1  1  0    0  0  0
+
+Once all the rows have been constructed (there may be many), the
+solutions can be found by identifying sets of rows that, combined,
+have exactly one 1 in each column.  For example, this is one such
+solution::
+
+    1  0  0    1  0  0    1  1  0    0  0  0
+    0  1  0    0  1  1    0  0  1    0  0  0
+    0  0  1    0  0  0    0  0  0    1  1  1
+
+The puzzler.exact_cover_ module implements Donald E. Knuth's `Dancing
+Links`_ approach to his `Algorithm X`_ ("DLX").  For a complete
+description of DLX, see Knuth's paper (`compressed PostScript
+original`__ or `PDF version`__).
+
+__ http://www-cs-faculty.stanford.edu/~knuth/papers/dancing-color.ps.gz
+__ http://xxx.lanl.gov/PS_cache/cs/pdf/0011/0011047.pdf
+.. _exact cover: http://en.wikipedia.org/wiki/Exact_cover
+.. _puzzler.exact_cover: ../puzzler/exact_cover.py
+.. _Dancing Links: http://en.wikipedia.org/wiki/Dancing_Links
+.. _Algorithm X: http://en.wikipedia.org/wiki/Algorithm_X
+
+
+.. |---| unicode:: U+2014  .. em dash
+   :trim:
+.. |c| unicode:: U+00A9 .. copyright sign
+.. |x| unicode:: U+00D7 .. multiplication sign
+   :trim:
+
+
+..
+   Local Variables:
+   mode: indented-text
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   End:

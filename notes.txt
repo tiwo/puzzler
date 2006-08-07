@@ -1,0 +1,144 @@
+.. -*- coding: utf-8 -*-
+
+=======
+ Notes
+=======
+
+Puzzle Ideas
+============
+
+Develop experimental dissections of space:
+
+* octahedra & tetrahedra (3D triangular grid)
+
+  Name for polyforms:
+
+  - polytruss (from "space truss", via Buckminster Fuller)
+  - polyoctet (from "octet truss", OCtahedron/TETrahedron, also due to
+    Fuller)
+
+* truncated octahedra (3D alternating square grid; expanded alternating square
+  lattice packing of spheres)
+
+  Name for truncated octahedral polyforms:
+
+  - "polytoe" (t. o.; also a Bowers acronym:
+    http://en.wikipedia.org/wiki/Bowers_style_acronym)
+  - "polytrunc"
+
+  a-Fe, Na, K, b-Ti have this structure.
+
+* rhombic dodecahedra (3D hexagonal grid; expanded cubic close packing of
+  spheres)
+
+  Name for rhombic dodecahedral polyforms:
+
+  - "polygar" (from garnets, whose crystals are rhombic docecahedra)
+  - "polygarn"
+  - "polyrhod" (RHOmbic Dodecahedron)
+  - "polydod"
+
+  Cu, Au, Ag, Al, Pt, Pd have this structure.
+
+
+coordsys.py
+===========
+
+Subclasses for future implementation:
+
+* TriangularGrid: 2 dimensional equilateral-triangle-cell grid
+
+* HexagonalGrid: 2 dimensional regular-hexagon-cell grid
+
+* PackedSphereSpace: 3 dimensional space of regularly packed spheres
+
+  - expanded alternating square lattice packing of spheres (truncated
+    octahedra)
+
+  - expanded cubic close packing of spheres (rhombic dodecahedra)
+
+* OctetSpace: octahedra & tetrahedra
+
+
+Solution Stats
+==============
+
+pentominoes3x20.py
+    * 2 solutions
+    * 6s on 2006-05-15: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+    * 15s on 2006-05-18: 1.5GHz PowerPC G4, Python 2.4, Mac OS X
+
+pentominoes3x20loop.py
+    * 2 solutions
+    * 6s on 2006-05-15: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+    * 15s on 2006-05-18: 1.5GHz PowerPC G4, Python 2.4, Mac OS X
+
+pentominoes3x20tube.py
+    * ? solutions
+
+pentominoes4x15.py
+    * 368 solutions
+    * 2m0s on 2006-05-18: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+pentominoes5x12.py
+    * 1010 solutions
+    * 12m53s on 2006-05-15: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+pentominoes6x10.py
+    * 2339 solutions
+    * 19m26s on 2006-05-15: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+pentominoes8x8.py
+    * 65 solutions
+    * 51s on 2006-05-15: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+solidpentominoes2x3x10.py
+    * 12 solutions
+    * 4m33s on 2006-05-16: 1.5GHz PowerPC G4, Python 2.4, Mac OS X
+    * 1m52s on 2006-05-17: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+solidpentominoes2x5x6.py
+    * 264 solutions
+    * 11m42s on 2006-05-17: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+solidpentominoes3x3x9ring.py
+    * 3 solutions
+    * 17s on 2006-06-02: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+solidpentominoes3x4x5.py
+    * 3940 solutions
+    * 4h29m46s on 2006-05-26: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+solidpentominoes3x4x8ring.py
+    * 0 solutions
+
+solidpentominoes3x5x7ring.py
+    * 1 solution
+    * 6s on 2006-06-02: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+solidpentominoes3x6x6ring.py
+    * 0 solutions
+
+solidpentominoes5x3x5ring.py
+    * 186 solutions
+    * 4m2s on 2006-06-02: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+solidpentominoes5x4x4ring.py
+    * 0 solutions
+
+solidpentominoes6x3x4ring.py
+    * 46 solutions
+    * 2m21s on 2006-06-02: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+soma3x3x3.py
+    * 240 solutions
+    * 9s on 2006-05-17: 1.5GHz PowerPC G4, Python 2.4, Mac OS X
+    * 3s on 2006-05-17: 2.0GHz Intel Pentium M, Python 2.4.1, cygwin
+
+weldedtetrasticks4x4.py
+    * 4 solutions
+    * 8s on 2006-07-19: 2.0GHz Intel Pentium M, Python 2.4.3, cygwin
+
+tetrasticks5x5.py
+    * 1795 solutions
+    * 5h00m22s on 2006-07-11: 2.0GHz Intel Pentium M, Python 2.4.3, cygwin

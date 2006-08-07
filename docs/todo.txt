@@ -1,0 +1,72 @@
+.. -*- coding: utf-8 -*-
+
+===================================
+ Polyform Puzzler |---| To Do List
+===================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2006 by David Goodger <goodger@python.org>
+:License: `GPL 2 <../COPYING.html>`__
+
+
+General
+=======
+
+* Rewrite exact_cover.py in C as an extension module.
+
+
+Puzzles
+=======
+
+To implement:
+
+* pentominoes:
+
+  - ring/tube versions of 3x20, 4x15, 5x12, 6x10 (joined at short or
+    long edges)
+  - toroidal versions of 3x20, 4x15, 5x12, 6x10
+  - Möbius strip versions of 3x20, 4x15, 5x12, 6x10 (joined at short
+    or long edges)
+  - Klein bottle?
+
+* one-sided pentominoes: 9x10?, 6x15, 5x18, 3x30
+
+  10,440,433 solutions (non-isomorphic in reflection, reflections
+  allowed when counting solutions) are reported in "One-sided
+  Pentominoes in a 9 x 10 Rectangle" by `Alfred Wassermann`_,
+  University of Bayreuth, 2000.
+
+* polyiamonds
+
+* polyhexes
+
+* 15/16 tetrasticks: aztec diamond of order 3; unbordered 6x6 grid;
+  3x5 diamond lattice
+
+* one-sided tetrasticks: 5x5 diamond lattice?  All non-isomorphic
+  solutions listed in "Covering the Aztec Diamond with One-sided
+  Tetrasticks, Extended Version", by `Alfred Wassermann`_, University
+  of Bayreuth.
+
+* polysticks of order 1-4: 6x6 grid; 3x7 diamond lattice
+
+.. _Alfred Wassermann:
+   http://did.mat.uni-bayreuth.de/~alfred/home/index.html
+
+.. |---| unicode:: U+2014  .. em dash
+   :trim:
+.. |c| unicode:: U+00A9 .. copyright sign
+.. |x| unicode:: U+00D7 .. multiplication sign
+   :trim:
+
+
+..
+   Local Variables:
+   mode: indented-text
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   End:
