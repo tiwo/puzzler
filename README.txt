@@ -34,7 +34,7 @@ complete details.
 
        http://puzzler.sf.net/puzzler-snapshot.tgz
 
-   See `Releases & Snapshots`_ below for details.
+   See Snapshots_ below for details.
 
 3. Unpack the tarball in a temporary directory (**not** directly in
    Python's ``site-packages``) and run ``install.py`` with admin
