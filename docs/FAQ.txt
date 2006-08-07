@@ -83,8 +83,10 @@ Donald Knuth's "Dancing Links Algorithm X" ("DLX") approach to the
 different from what I'd done previously, and so obviously superior,
 that my old itch resurfaced.  Polyform Puzzler is the result.
 
-.. _history: http://docutils.sf.net/docs/ref/rst/introduction.html#history
 __ `How are the polyform puzzles solved?`_
+.. _Python: http://www.python.org
+.. _Docutils: http://docutils.sf.net
+.. _reStructuredText: http://docutils.sf.net/rst.html
 
 
 Polyforms
