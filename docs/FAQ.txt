@@ -27,8 +27,8 @@ Other documents:
 * `To do list <todo.html>`_
 
 
-Polyform Puzzler |---| The Project
-==================================
+The Project
+===========
 
 What is "Polyform Puzzler"?
 ---------------------------
@@ -108,7 +108,7 @@ According to the `Wikipedia definition`_,
     identical basic polygons
 
 `Regular polygons`_ which `tile the plane`_ (fill, without gaps or
-overlap, a tessellation_) are the most satisfying basic polygons for
+overlap; a tessellation_) are the most satisfying basic polygons for
 polyform puzzles, and there are three: the equilateral triangle, the
 square, and the hexagon.  Other polygons can be used though.  With a
 given polygon, the set of polyforms of order *N* is defined by
@@ -359,11 +359,10 @@ Puzzler:
     - 5 |x| 12: 1010 solutions
     - 6 |x| 10: 2339 solutions
 
-   + 3 |x| 20 ring (3 |x| 20 rectangle joined at the ends): 2
-     solutions (same as the 3 |x| 20 rectangle; the V piece forces a
-     partition)
+  + 3 |x| 20 ring (3 |x| 20 rectangle joined at the ends): 2 solutions
+    (same as the 3 |x| 20 rectangle; the V piece forces a partition)
 
-   + 8 |x| 8 square with a central 2 |x| 2 hole: 65 solutions
+  + 8 |x| 8 square with a central 2 |x| 2 hole: 65 solutions
 
 * solid pentominoes
 
@@ -408,8 +407,8 @@ __ todo.html#puzzles
 .. _Soma cubes: http://en.wikipedia.org/wiki/Soma_cube
 
 
-Polyform Puzzler |---| The Code & Technical Details
-===================================================
+The Code
+========
 
 How are the polyform puzzles solved?
 ------------------------------------
