@@ -28,7 +28,7 @@ To implement:
   - ring/tube versions of 3x20, 4x15, 5x12, 6x10 (joined at short or
     long edges)
   - toroidal versions of 3x20, 4x15, 5x12, 6x10
-  - Möbius strip versions of 3x20, 4x15, 5x12, 6x10 (joined at short
+  - MÃ¶bius strip versions of 3x20, 4x15, 5x12, 6x10 (joined at short
     or long edges)
   - Klein bottle?
 
