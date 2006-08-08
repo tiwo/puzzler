@@ -41,12 +41,12 @@ solving polyform puzzles, like Pentominoes and Soma Cubes.
 It consists of a set of front-end applications for specific
 polyform puzzles and a Python library that does the heavy
 lifting.  New polyforms and new puzzles can easily be
-defined and added.""", # wrap at col 60
+defined and added.  Requires Python 2.4 or higher.""", # wrap at col 60
     'url': 'http://puzzler.sourceforge.net/',
     'version': '1',
     'author': 'David Goodger',
     'author_email': 'goodger@python.org',
-    'license': 'GPL',
+    'license': 'GPL 2',
     'platforms': 'OS-independent',
     'package_dir': {'puzzler': 'puzzler',},
     'packages': ['puzzler',],

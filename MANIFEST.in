@@ -1,0 +1,6 @@
+include *.txt
+include *.py
+recursive-include puzzler *
+recursive-include docs *
+recursive-include bin *
+recursive-exclude * *.pyc *~ .DS_Store .svn
