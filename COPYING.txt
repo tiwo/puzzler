@@ -6,7 +6,8 @@
 :Date: $Date$
 :Web site: http://puzzler.sourceforge.net/
 
-**Polyform Puzzler** is software for exploring & solving polyform puzzles.
+**Polyform Puzzler** is a software toolkit for exploring & solving
+polyform puzzles.
 
 Copyright |c| 1998-2006  David J. Goodger <goodger@python.org>
 
@@ -19,9 +20,13 @@ WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the `GNU
 General Public License <GPL2.txt>`_ for more details.
 
-You should have received a copy of the `GNU General Public License`_
-along with this program; if not, refer to
-http://puzzler.sourceforge.net/GPL2.txt or write to the Free Software
-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+You should have received a copy of the `GNU General Public License
+version 2`_ along with this program; if not, refer to
+http://puzzler.sourceforge.net/GPL2.txt or write to:
+
+    | Free Software Foundation, Inc.
+    | 59 Temple Place, Suite 330
+    | Boston, MA  USA
+    | 02111-1307
 
 .. |c| unicode:: U+00A9 .. copyright sign
