@@ -6,7 +6,7 @@
 :Date: $Date$
 :Web site: http://puzzler.sourceforge.net/
 :Copyright: |c| 1998-2006 by David Goodger <goodger@python.org>
-:License: `GPL 2 <../COPYING.html>`__
+:License: `GPL 2 <COPYING.html>`__
 
 **Polyform Puzzler** is a software toolkit for exploring & solving
 polyform puzzles, like Pentominoes and Soma Cubes.  It consists of a
