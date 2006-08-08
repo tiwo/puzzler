@@ -18,7 +18,7 @@ it under the terms of the `GNU General Public License version 2
 This program is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the `GNU
-General Public License <GPL2.txt>`_ for more details.
+General Public License version 2`_ for more details.
 
 You should have received a copy of the `GNU General Public License
 version 2`_ along with this program; if not, refer to
