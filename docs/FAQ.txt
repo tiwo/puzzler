@@ -169,7 +169,7 @@ number of polyforms; in my opinion the most aesthetically pleasing
 ones.  Polyform families are given descriptive names:
 
 * Square-based polyforms are named "polyominoes_" (from a "domino",
-  which is two squares joined): monomino, domino, triomino, tetromino,
+  which is two squares joined): monomino, domino, tromino, tetromino,
   pentomino, hexomino, etc.
 
   The tetrominoes are famous for their role in the videogame "Tetris".
