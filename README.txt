@@ -70,7 +70,7 @@ To keep up to date on the latest developments, either download fresh
 copies of the snapshots regularly, or use the `Subversion
 repository`_:
 
-    svn co https://svn.sourceforge.net/svnroot/puzzler/trunk puzzler
+    svn co https://svn.sourceforge.net/svnroot/puzzler/trunk/puzzler
 
 .. _Subversion repository: https://sourceforge.net/svn/?group_id=7049
 
@@ -100,7 +100,7 @@ Project Files & Directories
 
 * docs/FAQ.txt: Frequently Asked Questions (with answers!).
 
-* solutions: Directory containing solutions to polyform puzzles.
+* docs/todo.txt: To do list.
 
 .. _reStructuredText: http://docutils.sf.net/rst.html
 .. _Docutils: http://docutils.sf.net
