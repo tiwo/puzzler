@@ -8,11 +8,11 @@
 :Copyright: |c| 1998-2006 by David Goodger <goodger@python.org>
 :License: `GPL 2 <../COPYING.html>`__
 
-**Polyform Puzzler** is software for exploring & solving polyform
-puzzles, like Pentominoes and Soma Cubes.  It consists of a set of
-front-end applications for specific polyform puzzles and a Python
-library that does the heavy lifting.  New polyforms and new puzzles
-can easily be defined and added.
+**Polyform Puzzler** is a software toolkit for exploring & solving
+polyform puzzles, like Pentominoes and Soma Cubes.  It consists of a
+set of front-end applications for specific polyform puzzles and a
+Python library that does the heavy lifting.  New polyforms and new
+puzzles can easily be defined and added.
 
 .. contents::
 

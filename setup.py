@@ -35,11 +35,12 @@ package_data = {
     'name': 'puzzler',
     'description': 'Polyform Puzzler',
     'long_description': """\
-Polyform Puzzler is software for exploring & solving polyform
-puzzles, like Pentominoes and Soma Cubes.  It consists of a set of
-front-end applications for specific polyform puzzles and a Python
-library that does the heavy lifting.  New polyforms and new puzzles
-can easily be defined and added.""", # wrap at col 60
+Polyform Puzzler is a software toolkit for exploring &
+solving polyform puzzles, like Pentominoes and Soma Cubes.
+It consists of a set of front-end applications for specific
+polyform puzzles and a Python library that does the heavy
+lifting.  New polyforms and new puzzles can easily be
+defined and added.""", # wrap at col 60
     'url': 'http://puzzler.sourceforge.net/',
     'version': '1',
     'author': 'David Goodger',
