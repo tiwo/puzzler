@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # $Id$
-# Copyright: This file has been placed in the public domain.
+# Copyright: (C) 1998-2006 by David J. Goodger
+# License: GPL 2 (see GPL2.txt)
 
 import sys
 import os
