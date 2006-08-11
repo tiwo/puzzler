@@ -1,0 +1,46 @@
+.. -*- coding: utf-8 -*-
+
+==========================
+ Polyform Puzzler History
+==========================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2006 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. contents::
+
+
+Changes Since Release 1
+=======================
+
+Added puzzles:
+
+* Polysticks of order 1 through 4 in a 6 |x| 6 grid
+  (bin/polysticks6x6.py).
+
+
+Release 1 (2006-08-08)
+======================
+
+The first release of Polyform Puzzler.  For the pre-history, see
+section 1.2 of the `FAQ <FAQ.html>`_.
+
+
+.. |---| unicode:: U+2014  .. em dash
+   :trim:
+.. |c| unicode:: U+00A9 .. copyright sign
+.. |x| unicode:: U+00D7 .. multiplication sign
+   :trim:
+
+
+..
+   Local Variables:
+   mode: indented-text
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   End:
