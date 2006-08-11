@@ -8,7 +8,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2006 by David Goodger <goodger@python.org>
+:Copyright: |c| 1998-2006 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 
@@ -53,7 +53,7 @@ To implement:
   Tetrasticks, Extended Version", by `Alfred Wassermann`_, University
   of Bayreuth.
 
-* polysticks of order 1-4: 6x6 grid; 3x7 diamond lattice
+* polysticks of order 1-4: 3x7 diamond lattice
 
 .. _Alfred Wassermann:
    http://did.mat.uni-bayreuth.de/~alfred/home/index.html

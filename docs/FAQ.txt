@@ -13,7 +13,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2006 by David Goodger <goodger@python.org>
+:Copyright: |c| 1998-2006 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -391,6 +391,11 @@ Puzzler:
 
   - 4 |x| 4 square with one-sided welded tetrasticks: 4 solutions
   - 5 |x| 5 square with 15 of 16 tetrasticks: 1795 solutions
+
+* polysticks:
+
+  - 6 |x| 6 square covered with polysticks of order 1 through 4:
+    ?unknown solutions
 
 More polyforms are to come:
 

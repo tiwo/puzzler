@@ -5,7 +5,7 @@
 :Author: David Goodger <goodger@python.org>
 :Date: $Date$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2006 by David Goodger <goodger@python.org>
+:Copyright: |c| 1998-2006 by David J. Goodger
 :License: `GPL 2 <COPYING.html>`__
 
 **Polyform Puzzler** is a software toolkit for exploring & solving
@@ -131,9 +131,9 @@ Project Files & Directories
   documentation is in reStructuredText_ format, and can be converted
   to HTML and other formats using Docutils_.
 
-* docs/FAQ.txt: Frequently Asked Questions (with answers!).
-
-* docs/todo.txt: To do list.
+  - FAQ.txt: Frequently Asked Questions (with answers!).
+  - history.txt: Detailed log of changes.
+  - todo.txt: To do list.
 
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
 .. _Docutils: http://docutils.sourceforge.net
