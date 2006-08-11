@@ -280,7 +280,7 @@ class Pentominoes5x12MatrixA(Pentominoes5x12Matrix):
 
 class Pentominoes5x12MatrixB(Pentominoes5x12Matrix):
 
-    """symmetry: X at center; remove flip of P in second matrix"""
+    """symmetry: X at center; remove flip of P"""
 
     def customize_piece_data(self):
         self.piece_data = copy.deepcopy(self.piece_data)
@@ -318,7 +318,7 @@ class Pentominoes4x15MatrixA(Pentominoes4x15Matrix):
 
 class Pentominoes4x15MatrixB(Pentominoes4x15Matrix):
 
-    """symmetry: X at center; remove flip of P in second matrix"""
+    """symmetry: X at center; remove flip of P"""
 
     def customize_piece_data(self):
         self.piece_data = copy.deepcopy(self.piece_data)
@@ -463,7 +463,7 @@ class Pentominoes8x8CenterHoleMatrixA(Pentominoes8x8CenterHoleMatrix):
 
 class Pentominoes8x8CenterHoleMatrixB(Pentominoes8x8CenterHoleMatrix):
 
-    """symmetry: X on diagonal; remove flip of P in second matrix"""
+    """symmetry: X on diagonal; remove flip of P"""
 
     def customize_piece_data(self):
         self.piece_data = copy.deepcopy(self.piece_data)
@@ -612,7 +612,7 @@ class SolidPentominoes2x5x6MatrixA(SolidPentominoes2x5x6Matrix):
 
 class SolidPentominoes2x5x6MatrixB(SolidPentominoes2x5x6Matrix):
 
-    """symmetry: X in center; remove flip of F in second matrix"""
+    """symmetry: X in center; remove flip of F"""
 
     def customize_piece_data(self):
         self.piece_data = copy.deepcopy(self.piece_data)
@@ -1351,6 +1351,19 @@ class TetraSticks(Puzzle):
         return aspects
 
 
+class PolySticks123:
+
+    piece_data = {
+        'I1': ((((0,0),(1,0)),), {}),
+        'I2': ((((0,0),(2,0)),), {}),
+        'V2': ((((0,0),(1,0)), ((0,0),(0,1))), {}),
+        'I3': ((((0,0),(3,0)),), {}),
+        'L3': ((((0,0),(2,0)), ((2,0),(2,1))), {}),
+        'T3': ((((0,0),(2,0)), ((1,0),(1,1))), {}),
+        'Z3': ((((0,1),(1,1)), ((1,1),(1,0)), ((1,0),(2,0))), {}),
+        'U3': ((((0,1),(0,0)), ((0,0),(1,0)), ((1,0),(1,1))), {}),}
+
+
 class TetraSticksMatrix(TetraSticks):
 
     def coordinates(self):
@@ -1540,6 +1553,81 @@ class TetraSticks5x5Matrix(TetraSticksMatrix):
             return TetraSticksMatrix.make_aspects(
                 self, segments, flips=flips, rotations=rotations)
         return set()
+
+
+class PolySticks1234Matrix(TetraSticksMatrix, PolySticks123):
+
+    piece_data = copy.deepcopy(TetraSticks.piece_data)
+    piece_data.update(copy.deepcopy(PolySticks123.piece_data))
+
+
+class PolySticks1234_6x6Matrix(PolySticks1234Matrix):
+
+    """
+     solutions (perfect solutions, i.e. no pieces cross).
+    """
+
+    width = 6
+    height = 6
+
+
+class PolySticks1234_6x6MatrixA(PolySticks1234_6x6Matrix):
+
+    check_for_duplicates = True
+    duplicate_conditions = ({'xy_swapped': True},)
+
+    def build_matrix(self):
+        keys = sorted(self.pieces.keys())
+        x_coords, x_aspect = self.pieces['X'][0]
+        self.build_matrix_row('X', x_aspect)
+        translated = x_aspect.translate((1, 1))
+        self.build_matrix_row('X', translated)
+        keys.remove('X')
+        self.build_regular_matrix(keys)
+
+
+class PolySticks1234_6x6MatrixB(PolySticks1234_6x6Matrix):
+
+    def build_matrix(self):
+        keys = sorted(self.pieces.keys())
+        x_coords, x_aspect = self.pieces['X'][0]
+        translated = x_aspect.translate((0, 1))
+        self.build_matrix_row('X', translated)
+        keys.remove('X')
+        self.build_regular_matrix(keys)
+
+
+class PolySticks1234_6x6MatrixC(PolySticks1234_6x6Matrix):
+
+    check_for_duplicates = True
+    duplicate_conditions = ({'y_reversed': True},)
+
+    def build_matrix(self):
+        keys = sorted(self.pieces.keys())
+        x_coords, x_aspect = self.pieces['X'][0]
+        for x in range(2):
+            translated = x_aspect.translate((x, 2))
+            self.build_matrix_row('X', translated)
+        keys.remove('X')
+        self.build_regular_matrix(keys)
+
+
+class PolySticks1234_6x6MatrixD(PolySticks1234_6x6Matrix):
+
+    """symmetry: X at center; remove flip & rotation of P (fix one aspect)"""
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+    def build_matrix(self):
+        keys = sorted(self.pieces.keys())
+        x_coords, x_aspect = self.pieces['X'][0]
+        translated = x_aspect.translate((2, 2))
+        self.build_matrix_row('X', translated)
+        keys.remove('X')
+        self.build_regular_matrix(keys)
 
 
 if __name__ == '__main__':
