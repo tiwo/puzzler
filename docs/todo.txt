@@ -53,7 +53,14 @@ To implement:
   Tetrasticks, Extended Version", by `Alfred Wassermann`_, University
   of Bayreuth.
 
-* polysticks of order 1-4: 3x7 diamond lattice
+* polysticks of order 1-4: 3x7 diamond lattice (90° angles)::
+
+      /\/\/\/\/\/\/\
+      \/\/\/\/\/\/\/
+      /\/\/\/\/\/\/\
+      \/\/\/\/\/\/\/
+      /\/\/\/\/\/\/\
+      \/\/\/\/\/\/\/
 
 .. _Alfred Wassermann:
    http://did.mat.uni-bayreuth.de/~alfred/home/index.html
