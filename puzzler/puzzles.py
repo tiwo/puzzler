@@ -1564,7 +1564,9 @@ class PolySticks1234Matrix(TetraSticksMatrix, PolySticks123):
 class PolySticks1234_6x6Matrix(PolySticks1234Matrix):
 
     """
-     solutions (perfect solutions, i.e. no pieces cross).
+    ? solutions (very large number; over 35000 unique solutions in first
+    position of X, I, & I1)
+    (perfect solutions, i.e. no pieces cross).
     """
 
     width = 6
