@@ -17,6 +17,8 @@ General
 
 * Rewrite exact_cover.py in C as an extension module.
 
+* Add unit tests.
+
 * Implement a graphical front-end.
 
 
@@ -51,7 +53,7 @@ To implement:
 * one-sided tetrasticks: 5x5 diamond lattice?  All non-isomorphic
   solutions listed in "Covering the Aztec Diamond with One-sided
   Tetrasticks, Extended Version", by `Alfred Wassermann`_, University
-  of Bayreuth.
+  of Bayreuth (mistakenly called an "aztec diamond", it's actually a 
 
 * polysticks of order 1-4: 3x7 diamond lattice (90° angles)::
 
