@@ -394,8 +394,10 @@ Puzzler:
 
 * polysticks:
 
-  - 6 |x| 6 square covered with polysticks of order 1 through 4:
-    ?unknown solutions
+  - 6 |x| 6 square covered with polysticks of order 1 through 4: the
+    number of solutions is unknown to me (I left it running for 3 days
+    and it produced over 35,000 solutions, without moving the first 3
+    pieces [X, I, I1]!).
 
 More polyforms are to come:
 
