@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
@@ -994,7 +995,7 @@ class Soma3x3x3Matrix(SomaCubesMatrix):
         self.build_regular_matrix(keys)
 
 
-class SomaGeneralMatrix(SomaCubesMatrix):
+class SomaGenericMatrix(SomaCubesMatrix):
 
     height = 0
     width = 0
@@ -1060,7 +1061,7 @@ class SomaGeneralMatrix(SomaCubesMatrix):
             self.solutions.add(self.format_solution(solution, **conditions))
 
 
-class SomaCrystalMatrix(SomaGeneralMatrix):
+class SomaCrystalMatrix(SomaGenericMatrix):
 
     """2800 solutions."""
 
@@ -1078,7 +1079,7 @@ class SomaCrystalMatrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaLongWallMatrix(SomaGeneralMatrix):
+class SomaLongWallMatrix(SomaGenericMatrix):
 
     """104 solutions."""
 
@@ -1096,7 +1097,7 @@ class SomaLongWallMatrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaHighWallMatrix(SomaGeneralMatrix):
+class SomaHighWallMatrix(SomaGenericMatrix):
 
     """46 solutions."""
 
@@ -1114,7 +1115,7 @@ class SomaHighWallMatrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaBenchMatrix(SomaGeneralMatrix):
+class SomaBenchMatrix(SomaGenericMatrix):
 
     """0 solutions."""
 
@@ -1130,7 +1131,7 @@ class SomaBenchMatrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaStepsMatrix(SomaGeneralMatrix):
+class SomaStepsMatrix(SomaGenericMatrix):
 
     """164 solutions."""
 
@@ -1148,7 +1149,7 @@ class SomaStepsMatrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaBathtubMatrix(SomaGeneralMatrix):
+class SomaBathtubMatrix(SomaGenericMatrix):
 
     """158 solutions."""
 
@@ -1166,7 +1167,7 @@ class SomaBathtubMatrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaCurvedWallMatrix(SomaGeneralMatrix):
+class SomaCurvedWallMatrix(SomaGenericMatrix):
 
     """66 solutions."""
 
@@ -1186,7 +1187,7 @@ class SomaCurvedWallMatrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSquareWallMatrix(SomaGeneralMatrix):
+class SomaSquareWallMatrix(SomaGenericMatrix):
 
     """0 solutions."""
 
@@ -1202,7 +1203,7 @@ class SomaSquareWallMatrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSofaMatrix(SomaGeneralMatrix):
+class SomaSofaMatrix(SomaGenericMatrix):
 
     """32 solutions."""
 
@@ -1220,7 +1221,7 @@ class SomaSofaMatrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaCornerstoneMatrix(SomaGeneralMatrix):
+class SomaCornerstoneMatrix(SomaGenericMatrix):
 
     """10 solutions."""
 
@@ -1238,7 +1239,7 @@ class SomaCornerstoneMatrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class Soma_W_Matrix(SomaGeneralMatrix):
+class Soma_W_Matrix(SomaGenericMatrix):
 
     """0 solutions."""
 
@@ -1255,7 +1256,7 @@ class Soma_W_Matrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSkew1Matrix(SomaGeneralMatrix):
+class SomaSkew1Matrix(SomaGenericMatrix):
 
     """244 solutions."""
 
@@ -1273,7 +1274,7 @@ class SomaSkew1Matrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSkew2Matrix(SomaGeneralMatrix):
+class SomaSkew2Matrix(SomaGenericMatrix):
 
     """14 solutions."""
 
@@ -1291,7 +1292,7 @@ class SomaSkew2Matrix(SomaGeneralMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSteamerMatrix(SomaGeneralMatrix):
+class SomaSteamerMatrix(SomaGenericMatrix):
 
     """152 solutions."""
 
@@ -1629,6 +1630,149 @@ class PolySticks1234_6x6MatrixD(PolySticks1234_6x6Matrix):
         translated = x_aspect.translate((2, 2))
         self.build_matrix_row('X', translated)
         keys.remove('X')
+        self.build_regular_matrix(keys)
+
+
+class Tetrahexes(Puzzle):
+
+    piece_data = {
+        'I4': ((( 1, 0), ( 2, 0), ( 3, 0)), {}),
+        'L4': ((( 1, 0), ( 2, 0), ( 2, 1)), {}),
+        'P4': ((( 1, 0), ( 2, 0), ( 1, 1)), {}),
+        'S4': ((( 1, 0), ( 1, 1), ( 2, 1)), {}),
+        'U4': (((-1, 1), ( 1, 0), ( 1, 1)), {}),
+        'Y4': ((( 1, 0), ( 2,-1), ( 1, 1)), {}),
+        'O4': ((( 1, 0), ( 0, 1), ( 1, 1)), {}),}
+
+    symmetric_pieces = 'I4 O4 U4 Y4'.split()
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = 'L4 P4 S4'.split()
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+    def make_aspects(self, units, flips=(False, True),
+                     rotations=(0, 1, 2, 3, 4, 5)):
+        aspects = set()
+        coord_list = ((0, 0),) + units
+        for flip in flips or (0,):
+            for rotation in rotations or (0,):
+                aspect = coordsys.HexView2D(coord_list, rotation, flip)
+                aspects.add(aspect)
+        return aspects
+
+
+class Pentahexes(Tetrahexes):
+
+    piece_data = {
+        u'I': ((( 1, 0), ( 2, 0), ( 3, 0), ( 4, 0)), {}),
+        u'J': ((( 1, 0), ( 2, 0), ( 3, 0), ( 3, 1)), {}),
+        u'P': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3, 0)), {}),
+        u'}': ((( 1, 0), ( 1, 1), ( 2, 0), ( 3, 0)), {}),
+        u'N': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3, 1)), {}),
+        u'L': ((( 1, 0), ( 2, 0), ( 2, 1), ( 2, 2)), {}),
+        u'r': ((( 1, 0), ( 2, 0), ( 2, 1), ( 1, 2)), {}),
+        u'p': ((( 1, 0), ( 2, 0), ( 1, 1), ( 2, 1)), {}),
+        u'u': ((( 1, 0), ( 2, 0), ( 0, 1), ( 2, 1)), {}),
+        u'C': ((( 1, 0), ( 2, 0), ( 2, 1), (-1, 1)), {}),
+        u'S': ((( 1, 0), ( 2, 0), ( 2, 1), ( 0,-1)), {}),
+        u'q': ((( 1, 0), ( 2, 0), ( 2, 1), ( 1,-1)), {}),
+        u'T': ((( 1, 0), ( 2, 0), ( 2, 1), ( 2,-1)), {}),
+        u'Y': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3,-1)), {}),
+        u'D': ((( 1, 0), ( 2, 0), ( 0, 1), ( 1, 1)), {}),
+        u'X': ((( 1, 0), ( 2, 0), ( 0, 1), ( 2,-1)), {}),
+        u'î': ((( 1, 0), ( 2, 0), ( 1, 1), ( 2,-1)), {}),
+        u'V': ((( 1, 0), ( 2, 0), ( 0, 1), ( 0, 2)), {}),
+        u'U': ((( 1, 0), ( 1, 1), (-1, 1), (-1, 2)), {}),
+        u'y': ((( 1, 0), ( 1, 1), ( 0, 2), ( 2, 1)), {}),
+        u'ç': ((( 1, 0), ( 1, 1), ( 2, 1), ( 3, 0)), {}),
+        u'W': ((( 1, 0), ( 1, 1), ( 2, 1), ( 2, 2)), {}),}
+
+    symmetric_pieces = 'I O U Y'.split()
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = 'L P S'.split()
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+
+class TetrahexMatrix(Tetrahexes):
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x in range(self.width):
+                yield coordsys.Cartesian2D((x, y))
+
+    # TODO: make this a GenericMatrix
+
+    # TODO: extract the following methods into a common base class
+    def build_matrix_header(self):
+        headers = []
+        for i, key in enumerate(sorted(self.pieces.keys())):
+            self.matrix_columns[key] = i
+            headers.append(key)
+        for (x, y) in self.coordinates():
+            header = '%0*i,%0*i' % (self.x_width, x, self.y_width, y)
+            self.matrix_columns[header] = len(headers)
+            headers.append(header)
+        self.matrix.append(headers)
+
+    def build_matrix_row(self, name, coords):
+        row = [0] * len(self.matrix[0])
+        row[self.matrix_columns[name]] = name
+        for coord in coords:
+            label = '%0*i,%0*i' % (self.x_width, coord[0],
+                                   self.y_width, coord[1])
+            row[self.matrix_columns[label]] = label
+        self.matrix.append(row)
+
+    def build_regular_matrix(self, keys):
+        for key in keys:
+            for coords, aspect in self.pieces[key]:
+                for y in range(self.height - aspect.bounds[1]):
+                    for x in range(self.width - aspect.bounds[0]):
+                        translated = aspect.translate((x, y))
+                        self.build_matrix_row(key, translated)
+
+    # TODO:
+    def format_solution(self, solution,
+                        x_reversed=False, y_reversed=False):
+        order_functions = (lambda x: x, reversed)
+        x_reversed_fn = order_functions[x_reversed]
+        y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
+        s_matrix = [[' '] * self.width for y in range(self.height)]
+        for row in solution:
+            piece = sorted(i.column.name for i in row.row_data())
+            name = piece[-1]
+            for cell_name in piece[:-1]:
+                x, y = [int(d.strip()) for d in cell_name.split(',')]
+                s_matrix[y][x] = name
+        return '\n'.join(' '.join(x_reversed_fn(s_matrix[y]))
+                         for y in y_reversed_fn(range(self.height)))
+
+    # TODO:
+    def store_solutions(self, solution, formatted):
+        self.solutions.add(formatted)
+        self.solutions.add(self.format_solution(solution, x_reversed=True))
+        self.solutions.add(self.format_solution(solution, y_reversed=True))
+        self.solutions.add(self.format_solution(
+            solution, x_reversed=True, y_reversed=True))
+
+
+class Tetrahex4x7Matrix(TetrahexMatrix):
+
+    """ solutions"""
+
+    height = 4
+    width = 7
+
+    # TODO:
+    def build_matrix(self):
+        keys = sorted(self.pieces.keys())
+#         x_coords, x_aspect = self.pieces['X'][0]
+#         for y in range(2):
+#             for x in range(y==0, 4):
+#                 translated = x_aspect.translate((x, y))
+#                 self.build_matrix_row('X', translated)
+#         keys.remove('X')
         self.build_regular_matrix(keys)
 
 

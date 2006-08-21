@@ -225,10 +225,10 @@ class CartesianView2D(CartesianCoordSet2D):
 
     """
     2 dimensional (+,+)-quadrant square-cell coordinate set with offset,
-    bounds, pivot, and uniform value
+    bounds, and pivot
     """
 
-    def __init__(self, coord_list, rotation=0, flip=0, value=1):
+    def __init__(self, coord_list, rotation=0, flip=0):
         CartesianCoordSet2D.__init__(self, coord_list)
         # first coords in coordsList is assumed to be pivot:
         pivot = self.coord_class(coord_list[0])
@@ -243,7 +243,6 @@ class CartesianView2D(CartesianCoordSet2D):
         self.pivot = pivot - self.offset
         # move coordSet to top-left at (0,0)
         self._itranslate(-self.offset)
-        self.value = value
 
     def __hash__(self):
         return hash(tuple(sorted(self)))
@@ -253,10 +252,10 @@ class CartesianView3D(CartesianCoordSet3D):
 
     """
     3 dimensional (+,+,+)-quadrant square-cell coordinate set with offset,
-    bounds, pivot, and uniform value
+    bounds, and pivot
     """
 
-    def __init__(self, coord_list, rotation=0, axis=0, flip=0, value=1):
+    def __init__(self, coord_list, rotation=0, axis=0, flip=0):
         CartesianCoordSet3D.__init__(self, coord_list)
         # first coords in coordsList is assumed to be pivot:
         pivot = self.coord_class(coord_list[0])
@@ -273,7 +272,6 @@ class CartesianView3D(CartesianCoordSet3D):
         self.pivot = pivot - self.offset
         # move coordSet to top-left at (0,0,0)
         self._itranslate(-self.offset)
-        self.value = value
 
     def __hash__(self):
         return hash(tuple(sorted(self)))
@@ -389,6 +387,48 @@ class CartesianPath2D:
     def _segment_generator(self):
         for segment in self.segments:
             yield tuple(sorted(segment))
+
+
+class Hex2D(Cartesian2D):
+
+    """2D hexagonal coordinate system: (x, y)"""
+
+    def flip0(self):
+        """Flip about y-axis"""
+        return self.__class__((-self.coords[0],
+                               self.coords[1] + self.coords[0]))
+
+    rotation_coefficients = {
+        0: (( 1,  0), ( 0,  1)),
+        1: (( 0, -1), ( 1,  1)),
+        2: ((-1, -1), ( 1,  0)),
+        3: ((-1,  0), ( 0, -1)),
+        4: (( 0,  1), (-1, -1)),
+        5: (( 1,  1), (-1,  0))}
+
+    def rotate0(self, steps):
+        """Rotate about (0,0)"""
+        coeffs = self.rotation_coefficients[steps]
+        x = coeffs[0][0] * self.coords[0] + coeffs[0][1] * self.coords[1]
+        y = coeffs[1][0] * self.coords[0] + coeffs[1][1] * self.coords[1]
+        return self.__class__((x, y))
+
+
+class HexCoordSet2D(CartesianCoordSet2D):
+
+    """2 dimensional hex coordinate set"""
+
+    coord_class = Hex2D
+
+
+class HexView2D(CartesianView2D):
+
+    """
+    2 dimensional (+,+)-quadrant hex-cell coordinate set with offset,
+    bounds, and pivot
+    """
+
+    coord_class = Hex2D
 
 
 def sign(num):
