@@ -391,10 +391,37 @@ class CartesianPath2D:
 
 class Hex2D(Cartesian2D):
 
-    """2D hexagonal coordinate system: (x, y)"""
+    """
+    2D hexagonal coordinate system: (x, y).
+    The x and y axes are not perpendicular, but separated by 60 degrees::
+
+                     __
+                  __/  \
+               __/  \__/
+          y __/  \__/  \
+         __/  \__/  \__/
+        / 4\__/  \__/  \
+        \__/  \__/  \__/
+        / 3\__/  \__/  \
+        \__/  \__/  \__/ x
+        / 2\__/  \__/4 \
+        \__/  \__/3 \__/
+        / 1\__/2 \__/
+        \__/1 \__/
+        /00\__/
+        \__/
+
+    The x-axis could also be considered horizontal, with the y-axis slanted up
+    and to the right, but the representation above is easier to draw in ASCII.
+    """
 
     def flip0(self):
-        """Flip about y-axis"""
+        """
+        Flip about y-axis::
+
+            x_new = -x
+            y_new = x + y
+        """
         return self.__class__((-self.coords[0],
                                self.coords[1] + self.coords[0]))
 
@@ -405,9 +432,18 @@ class Hex2D(Cartesian2D):
         3: ((-1,  0), ( 0, -1)),
         4: (( 0,  1), (-1, -1)),
         5: (( 1,  1), (-1,  0))}
+    """Pre-computed matrix for rotation by *n* steps."""
 
     def rotate0(self, steps):
-        """Rotate about (0,0)"""
+        """
+        Rotate about (0,0).  For each 60-degree increment (step)::
+
+            x_new = -y
+            y_new = x + y
+
+        The `self.rotation_coefficients` matrix is used rather than repeated
+        applications of the above rule.
+        """
         coeffs = self.rotation_coefficients[steps]
         x = coeffs[0][0] * self.coords[0] + coeffs[0][1] * self.coords[1]
         y = coeffs[1][0] * self.coords[0] + coeffs[1][1] * self.coords[1]
