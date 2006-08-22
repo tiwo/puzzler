@@ -17,7 +17,9 @@ General
 
 * Rewrite exact_cover.py in C as an extension module.
 
-* Add unit tests.
+* Complete unit tests.
+
+* Refactor common methods out of puzzler.puzzles classes.
 
 * Implement a graphical front-end.
 
@@ -46,6 +48,11 @@ To implement:
 * polyiamonds
 
 * polyhexes
+
+  - Order 1 through 5 (like `Kadon's Hexnut
+    <http://www.gamepuzzles.com/esspoly2.htm#HN>`__)?
+  - Hexahexes (e.g. `Kadon's Hexnut II
+    <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__)?
 
 * 15/16 tetrasticks: aztec diamond of order 3; unbordered 6x6 grid;
   3x5 diamond lattice

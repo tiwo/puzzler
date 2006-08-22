@@ -14,7 +14,7 @@ from pprint import pprint, pformat
 import coordsys
 
 
-class Puzzle:
+class Puzzle(object):
 
     """
     Abstract base class for puzzles.
@@ -25,6 +25,10 @@ class Puzzle:
     depth = 0
 
     check_for_duplicates = False
+
+    duplicate_conditions = ()
+    """A list of dictionaries of default-value keyword arguments to
+    `format_solutions`, to generate all solution permutations."""
 
     secondary_columns = 0
 
@@ -84,7 +88,7 @@ class Puzzle:
         Override in subclasses.
         """
         pass
-    
+
     def make_aspects(self, data, **kwargs):
         """
         Return a set of aspects (rotations & flips) of a puzzle piece
@@ -1003,10 +1007,6 @@ class SomaGenericMatrix(SomaCubesMatrix):
 
     check_for_duplicates = True
 
-    duplicate_conditions = ()
-    """A list of dictionaries of default-value keyword arguments to
-    `format_solutions`, to generate all solution permutations."""
-
     def build_matrix_header(self):
         headers = []
         for i, key in enumerate(sorted(self.pieces.keys())):
@@ -1352,7 +1352,7 @@ class TetraSticks(Puzzle):
         return aspects
 
 
-class PolySticks123:
+class PolySticks123(object):
 
     piece_data = {
         'I1': ((((0,0),(1,0)),), {}),
@@ -1637,7 +1637,7 @@ class Tetrahexes(Puzzle):
 
     piece_data = {
         'I4': ((( 1, 0), ( 2, 0), ( 3, 0)), {}),
-        'L4': ((( 1, 0), ( 2, 0), ( 2, 1)), {}),
+        'J4': ((( 1, 0), ( 2, 0), ( 2, 1)), {}),
         'P4': ((( 1, 0), ( 2, 0), ( 1, 1)), {}),
         'S4': ((( 1, 0), ( 1, 1), ( 2, 1)), {}),
         'U4': (((-1, 1), ( 1, 0), ( 1, 1)), {}),
@@ -1660,6 +1660,67 @@ class Tetrahexes(Puzzle):
                 aspects.add(aspect)
         return aspects
 
+    empty_cell = '  '
+
+    def empty_content(self, cell, x, y):
+        return self.empty_cell
+
+    def cell_content(self, cell, x, y):
+        return cell
+
+    def format_hex_grid(self, s_matrix, content=None):
+        if not content:
+            content = self.empty_content
+        width = len(s_matrix[0])
+        height = len(s_matrix)
+        output = []
+        for x in range(width - 1, -1, -1):
+            # padding for slanted top row:
+            output.append([' ' * (x * 3 + 1)])
+        for y in range(height - 1, -1, -1):
+            output.append([])
+            if s_matrix[y][0] != self.empty_cell:
+                # leftmost edge:
+                output.append(['\\'])
+            else:
+                output.append([' '])
+            for x in range(width):
+                cell = s_matrix[y][x]
+                left_wall = right_wall = ' '
+                ceiling = self.empty_cell
+                if x > 0 and y < (height - 1):
+                    if s_matrix[y + 1][x - 1] != cell:
+                        left_wall = '/'
+                elif cell != self.empty_cell:
+                    left_wall = '/'
+                if x < (width - 1):
+                    if s_matrix[y][x + 1] != cell:
+                        right_wall = '\\'
+                elif cell != self.empty_cell:
+                    right_wall = '\\'
+                output[-2 - x].append(
+                    left_wall + content(cell, x, y) + right_wall)
+                if y < (height - 1):
+                    if s_matrix[y + 1][x] != cell:
+                        ceiling = '__'
+                elif cell != self.empty_cell:
+                    ceiling = '__'
+                output[-3 - x].append(ceiling)
+        for y in range(height - 1, 0, -1):
+            if s_matrix[y][-1] != self.empty_cell:
+                # rightmost bottom right edges:
+                output[-width - 2 * y].append('/')
+        for x in range(width):
+            if s_matrix[0][x] != self.empty_cell:
+                output[-x - 1].append('__/')
+        for i in range(len(output)):
+            output[i] = ''.join(output[i]) + '\n'
+        while not output[0].strip():
+            output.pop(0)
+        while not output[-1].strip():
+            output.pop()
+        return ''.join(output)
+
 
 class Pentahexes(Tetrahexes):
 
@@ -1667,7 +1728,7 @@ class Pentahexes(Tetrahexes):
         u'I': ((( 1, 0), ( 2, 0), ( 3, 0), ( 4, 0)), {}),
         u'J': ((( 1, 0), ( 2, 0), ( 3, 0), ( 3, 1)), {}),
         u'P': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3, 0)), {}),
-        u'}': ((( 1, 0), ( 1, 1), ( 2, 0), ( 3, 0)), {}),
+        u'E': ((( 1, 0), ( 1, 1), ( 2, 0), ( 3, 0)), {}),
         u'N': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3, 1)), {}),
         u'L': ((( 1, 0), ( 2, 0), ( 2, 1), ( 2, 2)), {}),
         u'r': ((( 1, 0), ( 2, 0), ( 2, 1), ( 1, 2)), {}),
@@ -1680,30 +1741,34 @@ class Pentahexes(Tetrahexes):
         u'Y': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3,-1)), {}),
         u'D': ((( 1, 0), ( 2, 0), ( 0, 1), ( 1, 1)), {}),
         u'X': ((( 1, 0), ( 2, 0), ( 0, 1), ( 2,-1)), {}),
-        u'î': ((( 1, 0), ( 2, 0), ( 1, 1), ( 2,-1)), {}),
+        u'A': ((( 1, 0), ( 2, 0), ( 1, 1), ( 2,-1)), {}),
         u'V': ((( 1, 0), ( 2, 0), ( 0, 1), ( 0, 2)), {}),
         u'U': ((( 1, 0), ( 1, 1), (-1, 1), (-1, 2)), {}),
         u'y': ((( 1, 0), ( 1, 1), ( 0, 2), ( 2, 1)), {}),
-        u'ç': ((( 1, 0), ( 1, 1), ( 2, 1), ( 3, 0)), {}),
+        u'G': ((( 1, 0), ( 1, 1), ( 2, 1), ( 3, 0)), {}),
         u'W': ((( 1, 0), ( 1, 1), ( 2, 1), ( 2, 2)), {}),}
 
-    symmetric_pieces = 'I O U Y'.split()
+    symmetric_pieces = 'I E L C Y D X A V U W'.split()
     """Pieces with reflexive symmetry, identical to their mirror images."""
 
-    asymmetric_pieces = 'L P S'.split()
+    asymmetric_pieces = 'J P N r p u S q T y G'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
 
 class TetrahexMatrix(Tetrahexes):
 
+    """
+    The shape of the matrix is defined by the `coordinates` generator method.
+    The `width` and `height` attributes define the maximum bounds only.
+    """
+
+    check_for_duplicates = True
+
     def coordinates(self):
         for y in range(self.height):
             for x in range(self.width):
-                yield coordsys.Cartesian2D((x, y))
+                yield coordsys.Hex2D((x, y))
 
-    # TODO: make this a GenericMatrix
-
-    # TODO: extract the following methods into a common base class
     def build_matrix_header(self):
         headers = []
         for i, key in enumerate(sorted(self.pieces.keys())):
@@ -1724,56 +1789,114 @@ class TetrahexMatrix(Tetrahexes):
             row[self.matrix_columns[label]] = label
         self.matrix.append(row)
 
+    def build_matrix(self):
+        self.build_regular_matrix(sorted(self.pieces.keys()))
+
     def build_regular_matrix(self, keys):
         for key in keys:
             for coords, aspect in self.pieces[key]:
                 for y in range(self.height - aspect.bounds[1]):
                     for x in range(self.width - aspect.bounds[0]):
                         translated = aspect.translate((x, y))
-                        self.build_matrix_row(key, translated)
+                        if translated.issubset(self.solution_coords):
+                            self.build_matrix_row(key, translated)
 
-    # TODO:
     def format_solution(self, solution,
-                        x_reversed=False, y_reversed=False):
-        order_functions = (lambda x: x, reversed)
-        x_reversed_fn = order_functions[x_reversed]
-        y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
-        s_matrix = [[' '] * self.width for y in range(self.height)]
+                        rotate_180=False, row_reversed=False):
+        s_matrix = [[self.empty_cell] * self.width for y in range(self.height)]
         for row in solution:
             piece = sorted(i.column.name for i in row.row_data())
             name = piece[-1]
             for cell_name in piece[:-1]:
                 x, y = [int(d.strip()) for d in cell_name.split(',')]
                 s_matrix[y][x] = name
-        return '\n'.join(' '.join(x_reversed_fn(s_matrix[y]))
-                         for y in y_reversed_fn(range(self.height)))
+        if rotate_180:
+            s_matrix = [list(reversed(s_matrix[y]))
+                        for y in reversed(range(self.height))]
+        if row_reversed:
+            out = []
+            trim = (self.height - 1) // 2
+            for y in range(self.height):
+                index = self.height - 1 - y
+                out.append(([self.empty_cell] * index
+                            + s_matrix[index]
+                            + [self.empty_cell] * y)[trim:-trim])
+            #import pdb ; pdb.set_trace()
+            s_matrix = out
+        return self.format_hex_grid(s_matrix)
 
-    # TODO:
     def store_solutions(self, solution, formatted):
         self.solutions.add(formatted)
-        self.solutions.add(self.format_solution(solution, x_reversed=True))
-        self.solutions.add(self.format_solution(solution, y_reversed=True))
-        self.solutions.add(self.format_solution(
-            solution, x_reversed=True, y_reversed=True))
+        for conditions in self.duplicate_conditions:
+            self.solutions.add(self.format_solution(solution, **conditions))
 
 
 class Tetrahex4x7Matrix(TetrahexMatrix):
 
-    """ solutions"""
+    """9 solutions"""
 
     height = 4
     width = 7
 
-    # TODO:
-    def build_matrix(self):
-        keys = sorted(self.pieces.keys())
-#         x_coords, x_aspect = self.pieces['X'][0]
-#         for y in range(2):
-#             for x in range(y==0, 4):
-#                 translated = x_aspect.translate((x, y))
-#                 self.build_matrix_row('X', translated)
-#         keys.remove('X')
-        self.build_regular_matrix(keys)
+    duplicate_conditions = ({'rotate_180': True},)
+
+
+class Tetrahex7x7TriangleMatrix(TetrahexMatrix):
+
+    """0 solutions"""
+
+    height = 7
+    width = 7
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x in range(self.width):
+                if x + y < self.height:
+                    yield coordsys.Hex2D((x, y))
+
+
+class Tetrahex3x10ClippedMatrix(TetrahexMatrix):
+
+    """2 solutions"""
+
+    height = 3
+    width = 10
+
+    duplicate_conditions = ({'row_reversed': True},
+                            {'rotate_180': True},
+                            {'row_reversed': True, 'rotate_180': True},)
+
+    def coordinates(self):
+        max = self.width + self.height - 2
+        for y in range(self.height):
+            for x in range(self.width):
+                if (x + y != 0) and (x + y != max):
+                    yield coordsys.Hex2D((x, y))
+
+
+class PentahexMatrix(Pentahexes, TetrahexMatrix):
+
+    pass
+
+
+class Pentahex10x11Matrix(PentahexMatrix):
+
+    """ solutions"""
+
+    height = 10
+    width = 11
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+
+class Pentahex5x22Matrix(PentahexMatrix):
+
+    """ solutions"""
+
+    height = 5
+    width = 22
+
+    duplicate_conditions = ({'rotate_180': True},)
 
 
 if __name__ == '__main__':

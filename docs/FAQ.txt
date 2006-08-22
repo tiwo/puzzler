@@ -399,12 +399,21 @@ Puzzler:
     and it produced over 35,000 solutions, without moving the first 3
     pieces [X, I, I1]!).
 
+* tetrahexes:
+
+  - 4 |x| 7: 9 solutions
+  - 3 |x| 10 with corners clipped: 2 solutions
+
+* pentahexes:
+
+  - 10 |x| 11: ?
+  - 5 |x| 22: ?
+
 More polyforms are to come:
 
 * other polyominoes
 * other polycubes
 * polyiamonds
-* polyhexes
 * other polysticks
 * others
 
