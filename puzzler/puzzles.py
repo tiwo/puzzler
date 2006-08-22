@@ -1881,7 +1881,7 @@ class PentahexMatrix(Pentahexes, TetrahexMatrix):
 
 class Pentahex10x11Matrix(PentahexMatrix):
 
-    """ solutions"""
+    """? (many) solutions"""
 
     height = 10
     width = 11
@@ -1891,7 +1891,7 @@ class Pentahex10x11Matrix(PentahexMatrix):
 
 class Pentahex5x22Matrix(PentahexMatrix):
 
-    """ solutions"""
+    """? (many) solutions"""
 
     height = 5
     width = 22
