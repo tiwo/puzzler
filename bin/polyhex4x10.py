@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+# $Id$
+
+"""? (many) solutions"""
+
+from puzzler import puzzles, core
+
+core.solver((puzzles.Polyhex1234_4x10Matrix(),))

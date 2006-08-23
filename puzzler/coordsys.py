@@ -395,21 +395,22 @@ class Hex2D(Cartesian2D):
     2D hexagonal coordinate system: (x, y).
     The x and y axes are not perpendicular, but separated by 60 degrees::
 
-                     __
-                  __/  \
-               __/  \__/
-          y __/  \__/  \
-         __/  \__/  \__/
-        / 4\__/  \__/  \
-        \__/  \__/  \__/
-        / 3\__/  \__/  \
-        \__/  \__/  \__/ x
-        / 2\__/  \__/4 \
-        \__/  \__/3 \__/
-        / 1\__/2 \__/
-        \__/1 \__/
-        /00\__/
-        \__/
+                        __
+                     __/  \
+                  __/  \__/
+               __/  \__/  \
+            __/  \__/  \__/
+           /  \__/  \__/  \
+          4\__/  \__/  \__/
+           /  \__/  \__/  \
+          3\__/  \__/  \__/
+           /  \__/  \__/  \
+          2\__/  \__/  \__/
+           /  \__/  \__/ 4
+          1\__/  \__/ 3
+           /  \__/ 2
+        y=0\__/ 1
+           x=0
 
     The x-axis could also be considered horizontal, with the y-axis slanted up
     and to the right, but the representation above is easier to draw in ASCII.

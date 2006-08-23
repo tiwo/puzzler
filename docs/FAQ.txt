@@ -392,22 +392,28 @@ Puzzler:
   - 4 |x| 4 square with one-sided welded tetrasticks: 4 solutions
   - 5 |x| 5 square with 15 of 16 tetrasticks: 1795 solutions
 
-* polysticks:
+* polysticks of order 1 through 4:
 
-  - 6 |x| 6 square covered with polysticks of order 1 through 4: the
-    number of solutions is unknown to me (I left it running for 3 days
-    and it produced over 35,000 solutions, without moving the first 3
-    pieces [X, I, I1]!).
+  - 6 |x| 6 square covered with polysticks: many solutions, exact
+    number unknown (I left it running for 3 days and it produced over
+    35,000 solutions, without moving the first 3 pieces [X, I, I1]!).
 
 * tetrahexes:
 
-  - 4 |x| 7: 9 solutions
-  - 3 |x| 10 with corners clipped: 2 solutions
+  - 4 |x| 7 parallelogram: 9 solutions
+  - 3 |x| 10 parallelogram with corners clipped (centered rows of
+    length 9, 10, 9): 2 solutions
+  - 5 |x| 7 "coin" (elongated hexagon with central hole): 4 solutions
 
 * pentahexes:
 
-  - 10 |x| 11: ?
-  - 5 |x| 22: ?
+  - 10 |x| 11 parallelogram: many solutions, exact number unknown
+  - 5 |x| 22 parallelogram: many solutions, exact number unknown
+
+* polyhexes of order 1 through 4:
+
+  - 4 |x| 10 parallelogram: many solutions, exact number unknown
+  - 5 |x| 8 parallelogram: many solutions, exact number unknown
 
 More polyforms are to come:
 
