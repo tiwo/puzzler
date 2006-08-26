@@ -389,7 +389,7 @@ class CartesianPath2D:
             yield tuple(sorted(segment))
 
 
-class Hex2D(Cartesian2D):
+class Hexagonal2D(Cartesian2D):
 
     """
     2D hexagonal coordinate system: (x, y).
@@ -433,7 +433,9 @@ class Hex2D(Cartesian2D):
         3: ((-1,  0), ( 0, -1)),
         4: (( 0,  1), (-1, -1)),
         5: (( 1,  1), (-1,  0))}
-    """Pre-computed matrix for rotation by *n* steps."""
+    """Pre-computed matrix for rotation by *n* steps.
+    Mapping of rotation unit (step) to coefficients matrix:
+    ((x, y) for x, (x, y) for y)."""
 
     def rotate0(self, steps):
         """
@@ -451,21 +453,111 @@ class Hex2D(Cartesian2D):
         return self.__class__((x, y))
 
 
-class HexCoordSet2D(CartesianCoordSet2D):
+class HexagonalCoordSet2D(CartesianCoordSet2D):
 
     """2 dimensional hex coordinate set"""
 
-    coord_class = Hex2D
+    coord_class = Hexagonal2D
 
 
-class HexView2D(CartesianView2D):
+class HexagonalView2D(CartesianView2D):
 
     """
     2 dimensional (+,+)-quadrant hex-cell coordinate set with offset,
     bounds, and pivot
     """
 
-    coord_class = Hex2D
+    coord_class = Hexagonal2D
+
+
+class Triangular3D(Cartesian3D):
+
+    """
+    Pseudo-3D (2D + orientation) triangular coordinate system: (x, y, z).
+    The x and y axes are not perpendicular, but separated by 60 degrees::
+
+                     ____________________
+                    /\  /\  /\  /\  /\  /
+                  4/__\/__\/__\/__\/__\/
+                  /\  /\  /\  /\  /\  /
+                3/__\/__\/__\/__\/__\/
+                /\  /\  /\  /\  /\  /
+              2/__\/__\/__\/__\/__\/
+              /\  /\  /\  /\  /\  /
+            1/__\/__\/__\/__\/__\/            ____
+            /\  /\  /\  /\  /\  /      /\     \  /
+        y=0/__\/__\/__\/__\/__\/   z=0/__\  z=1\/
+           x=0  1   2   3   4
+    """
+
+    def flip0(self, axis=None):
+        """
+        Flip about y-axis::
+
+            x_new = -(x + y + z)
+            y_new = y
+            z_new = z
+
+        The `axis` parameter is ignored.
+        """
+        return self.__class__(
+            (-(self.coords[0] + self.coords[1] + self.coords[2]),
+             self.coords[1],
+             self.coords[2]))
+
+    rotation_coefficients = {
+        0: (( 1,  0,  0,  0), ( 0,  1,  0,  0), ( 0,  0,  1,  0)),
+        1: (( 0, -1,  0, -1), ( 1,  1,  1,  0), ( 0,  0, -1,  1)),
+        2: ((-1, -1, -1, -1), ( 1,  0,  0,  0), ( 0,  0,  1,  0)),
+        3: ((-1,  0,  0, -1), ( 0, -1,  0, -1), ( 0,  0, -1,  1)),
+        4: (( 0,  1,  0,  0), (-1, -1, -1, -1), ( 0,  0,  1,  0)),
+        5: (( 1,  1,  1,  0), (-1,  0,  0, -1), ( 0,  0, -1,  1)),}
+    """Pre-computed matrix for rotation by *n* steps.
+    Mapping of rotation unit (step) to coefficients matrix:
+    ((x, y, z, 1) for x, (x, y, z, 1) for y, (x, y, z, 1) for z)."""
+
+    def rotate0(self, steps, axis=None):
+        """
+        Rotate about (0,0).  For each 60-degree increment (step)::
+
+            x_new = -y - 1
+            y_new = x + y + z
+            z_new = 1 - z
+
+        The `self.rotation_coefficients` matrix is used rather than repeated
+        applications of the above rule.  The `axis` parameter is ignored.
+        """
+        coeffs = self.rotation_coefficients[steps]
+        x = (coeffs[0][3]
+             + coeffs[0][0] * self.coords[0]
+             + coeffs[0][1] * self.coords[1]
+             + coeffs[0][2] * self.coords[2])
+        y = (coeffs[1][3]
+             + coeffs[1][0] * self.coords[0]
+             + coeffs[1][1] * self.coords[1]
+             + coeffs[1][2] * self.coords[2])
+        z = (coeffs[2][3]
+             + coeffs[2][0] * self.coords[0]
+             + coeffs[2][1] * self.coords[1]
+             + coeffs[2][2] * self.coords[2])
+        return self.__class__((x, y, z))
+
+
+class TriangularCoordSet3D(CartesianCoordSet3D):
+
+    """Pseudo-3-dimensional triangular coordinate set."""
+
+    coord_class = Triangular3D
+
+
+class TriangularView3D(CartesianView3D):
+
+    """
+    Pseudo-3-dimensional (+x,+y)-quadrant triangle-cell coordinate set with
+    offset, bounds, and pivot.
+    """
+
+    coord_class = Triangular3D
 
 
 def sign(num):

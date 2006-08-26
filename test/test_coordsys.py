@@ -60,13 +60,13 @@ class Cartesian2DTests(unittest.TestCase):
         self.assertEquals(self.p - self.c, (-1, -4))
 
 
-class Hex2DTests(unittest.TestCase):
+class Hexagonal2DTests(unittest.TestCase):
 
-    o = coordsys.Hex2D((0,0))
-    c10 = coordsys.Hex2D((1,0))
-    c01 = coordsys.Hex2D((0,1))
-    c11 = coordsys.Hex2D((1,1))
-    c23 = coordsys.Hex2D((2,3))
+    o = coordsys.Hexagonal2D((0,0))
+    c10 = coordsys.Hexagonal2D((1,0))
+    c01 = coordsys.Hexagonal2D((0,1))
+    c11 = coordsys.Hexagonal2D((1,1))
+    c23 = coordsys.Hexagonal2D((2,3))
     rotated = {'c10/0': [(1,0), (0,1), (-1,1), (-1,0), (0,-1), (1,-1)],
                'c23/c11': [(2, 3), (-1, 4), (-2, 2), (0, -1), (3, -2), (4, 0)]}
 
@@ -75,7 +75,7 @@ class Hex2DTests(unittest.TestCase):
         self.assertEquals(self.c01.flip0(), self.c01)
         self.assertEquals(self.c10.flip0(), (-1,1))
         self.assertEquals(self.c11.flip0(), (-1,2))
-        c = coordsys.Hex2D((2,-1))
+        c = coordsys.Hexagonal2D((2,-1))
         self.assertEquals(c.flip0(), (-2,1))
 
     def test_flip(self):
@@ -102,6 +102,31 @@ class Hex2DTests(unittest.TestCase):
         for r in range(6):
             self.assertEquals(self.c23.rotate(r, self.c11),
                               self.rotated['c23/c11'][r])
+
+
+class Triangular3DTests(unittest.TestCase):
+
+    o = coordsys.Triangular3D((0,0,0))
+    o_rotated = ((0,0,0), (-1,0,1), (-1,0,0), (-1,-1,1), (0,-1,0), (0,-1,1))
+    c100 = coordsys.Triangular3D((1,0,0))
+    rotated = {'c100/0': ((1,0,0), (-1,1,1), (-2,1,0),
+                          (-2,-1,1), (0,-2,0), (1,-2,1)),}
+
+    def test_flip0(self):
+        self.assertEquals(self.o.flip0(), self.o)
+        self.assertEquals(self.c100.flip0(), (-1,0,0))
+
+    def test_rotate0(self):
+        o = self.o
+        for r in range(6):
+            self.assertEquals(self.o.rotate0(r), self.o_rotated[r])
+            o = o.rotate0(1)
+            self.assertEquals(o, self.o_rotated[(r + 1) % 6])
+        c = self.c100
+        for r in range(6):
+            self.assertEquals(self.c100.rotate0(r), self.rotated['c100/0'][r])
+            c = c.rotate0(1)
+            self.assertEquals(c, self.rotated['c100/0'][(r + 1) % 6])
 
 
 if __name__ == '__main__':
