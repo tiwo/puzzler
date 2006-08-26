@@ -28,9 +28,17 @@ class Puzzle(object):
 
     duplicate_conditions = ()
     """A list of dictionaries of default-value keyword arguments to
-    `format_solutions`, to generate all solution permutations."""
+    `format_solution`, to generate all solution permutations."""
 
     secondary_columns = 0
+
+    piece_data = {}
+    """Mapping of piece names to 2-tuples:
+
+    * list of unit coordinates (usually one unit, the origin, is implicit)
+    * dictionary of aspect restrictions, keyword arguments to `make_aspects`;
+      customized in `customize_piece_data` (make a copy.deepcopy first though)
+    """
 
     def __init__(self):
         self.solutions = set()
@@ -49,7 +57,7 @@ class Puzzle(object):
 
         self.pieces = {}
         """Mapping of piece name to a sorted list of 2-tuples: sorted
-        coordinates & aspect objects."""
+        coordinates & aspect objects.  Ensures reproducible results."""
 
         for name, aspects in self.aspects.items():
             self.pieces[name] = tuple(sorted((tuple(sorted(aspect)), aspect)
@@ -112,10 +120,8 @@ class Puzzle(object):
         """
         Create and populate the data rows of `self.matrix`, lists of 0's and
         1's (or other true values).
-
-        Implement in subclasses.
         """
-        raise NotImplementedError
+        self.build_regular_matrix(sorted(self.pieces.keys()))
 
     def record_solution(self, solution, solver, stream=sys.stdout, dated=False):
         """
@@ -149,13 +155,154 @@ class Puzzle(object):
         """
         Store the formatted solution along with puzzle-specific variants
         (reflections, rotations) in `self.solutions`, to check for duplicates.
-
-        Implement in subclasses.
         """
-        raise NotImplementedError
+        self.solutions.add(formatted)
+        for conditions in self.duplicate_conditions:
+            self.solutions.add(self.format_solution(solution, **conditions))
 
 
-class Pentominoes(Puzzle):
+class Puzzle2D(Puzzle):
+
+    duplicate_conditions = ({'x_reversed': True},
+                            {'y_reversed': True},
+                            {'x_reversed': True, 'y_reversed': True})
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x in range(self.width):
+                yield coordsys.Cartesian2D((x, y))
+
+    def make_aspects(self, units, flips=(False, True), rotations=(0, 1, 2, 3)):
+        aspects = set()
+        coord_list = ((0, 0),) + units
+        for flip in flips or (0,):
+            for rotation in rotations or (0,):
+                aspect = coordsys.CartesianView2D(coord_list, rotation, flip)
+                aspects.add(aspect)
+        return aspects
+
+    def build_matrix_header(self):
+        headers = []
+        for i, key in enumerate(sorted(self.pieces.keys())):
+            self.matrix_columns[key] = i
+            headers.append(key)
+        for (x, y) in self.coordinates():
+            header = '%0*i,%0*i' % (self.x_width, x, self.y_width, y)
+            self.matrix_columns[header] = len(headers)
+            headers.append(header)
+        self.matrix.append(headers)
+
+    def build_regular_matrix(self, keys):
+        for key in keys:
+            for coords, aspect in self.pieces[key]:
+                for y in range(self.height - aspect.bounds[1]):
+                    for x in range(self.width - aspect.bounds[0]):
+                        translated = aspect.translate((x, y))
+                        if translated.issubset(self.solution_coords):
+                            self.build_matrix_row(key, translated)
+
+    def build_matrix_row(self, name, coords):
+        row = [0] * len(self.matrix[0])
+        row[self.matrix_columns[name]] = name
+        for coord in coords:
+            label = '%0*i,%0*i' % (self.x_width, coord[0],
+                                   self.y_width, coord[1])
+            row[self.matrix_columns[label]] = label
+        self.matrix.append(row)
+
+    def format_solution(self, solution,
+                        x_reversed=False, y_reversed=False):
+        order_functions = (lambda x: x, reversed)
+        x_reversed_fn = order_functions[x_reversed]
+        y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
+        s_matrix = [[' '] * self.width for y in range(self.height)]
+        for row in solution:
+            piece = sorted(i.column.name for i in row.row_data())
+            name = piece[-1]
+            for cell_name in piece[:-1]:
+                x, y = [int(d.strip()) for d in cell_name.split(',')]
+                s_matrix[y][x] = name
+        return '\n'.join(' '.join(x_reversed_fn(s_matrix[y])).rstrip()
+                         for y in y_reversed_fn(range(self.height)))
+
+
+class Puzzle3D(Puzzle):
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    yield coordsys.Cartesian3D((x, y, z))
+
+    def make_aspects(self, units,
+                     flips=(0, 1), axes=(0, 1, 2), rotations=(0, 1, 2, 3)):
+        aspects = set()
+        coord_list = ((0, 0, 0),) + units
+        for axis in axes or (2,):
+            coord_set = coordsys.CartesianView3D(coord_list)
+            if axis != 2:
+                coord_set = coord_set.rotate0(1, (1 - axis) % 3)
+            coords = tuple(coord_set)
+            for flip in flips or (0,):
+                for rotation in rotations or (0,):
+                    aspect = coordsys.CartesianView3D(
+                        coords, rotation, axis, flip)
+                    aspects.add(aspect)
+        return aspects
+
+    def build_matrix_header(self):
+        headers = []
+        for i, key in enumerate(sorted(self.pieces.keys())):
+            self.matrix_columns[key] = i
+            headers.append(key)
+        for (x, y, z) in self.coordinates():
+            header = '%0*i,%0*i,%0*i' % (
+                self.x_width, x, self.y_width, y, self.z_width, z)
+            self.matrix_columns[header] = len(headers)
+            headers.append(header)
+        self.matrix.append(headers)
+
+    def build_regular_matrix(self, keys):
+        for key in keys:
+            for coords, aspect in self.pieces[key]:
+                for z in range(self.depth - aspect.bounds[2]):
+                    for y in range(self.height - aspect.bounds[1]):
+                        for x in range(self.width - aspect.bounds[0]):
+                            translated = aspect.translate((x, y, z))
+                            if translated.issubset(self.solution_coords):
+                                self.build_matrix_row(key, translated)
+
+    def build_matrix_row(self, name, coords):
+        row = [0] * len(self.matrix[0])
+        row[self.matrix_columns[name]] = name
+        for coord in coords:
+            label = '%0*i,%0*i,%0*i' % (self.x_width, coord[0],
+                                        self.y_width, coord[1],
+                                        self.z_width, coord[2])
+            row[self.matrix_columns[label]] = label
+        self.matrix.append(row)
+
+    def format_solution(self, solution,
+                        x_reversed=False, y_reversed=False, z_reversed=False):
+        order_functions = (lambda x: x, reversed)
+        x_reversed_fn = order_functions[x_reversed]
+        y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
+        z_reversed_fn = order_functions[z_reversed]
+        s_matrix = [[[' '] * self.width for y in range(self.height)]
+                    for z in range(self.depth)]
+        for row in solution:
+            piece = sorted(i.column.name for i in row.row_data())
+            name = piece[-1]
+            for cell_name in piece[:-1]:
+                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
+                s_matrix[z][y][x] = name
+        return '\n'.join(
+            '    '.join(' '.join(x_reversed_fn(s_matrix[z][y]))
+                        for z in z_reversed_fn(range(self.depth))).rstrip()
+            for y in y_reversed_fn(range(self.height)))
+
+
+class Pentominoes(Puzzle2D):
 
     piece_data = {
         'F': (((-1,-1), ( 0,-1), ( 1,0), ( 0,1)), {}),
@@ -170,6 +317,7 @@ class Pentominoes(Puzzle):
         'X': (((-1, 0), ( 0,-1), ( 1,0), ( 0,1)), {}),
         'Y': (((-2, 0), (-1, 0), ( 1,0), ( 0,1)), {}),
         'Z': (((-1,-1), (-1, 0), ( 1,0), ( 1,1)), {}),}
+    """(0,0) is implied."""
 
     symmetric_pieces = 'I T U V W X'.split()
     """Pieces with reflexive symmetry, identical to their mirror images."""
@@ -177,75 +325,8 @@ class Pentominoes(Puzzle):
     asymmetric_pieces = 'F L P N Y Z'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
-    def make_aspects(self, units, flips=(False, True), rotations=(0, 1, 2, 3)):
-        aspects = set()
-        coord_list = ((0, 0),) + units
-        for flip in flips or (0,):
-            for rotation in rotations or (0,):
-                aspect = coordsys.CartesianView2D(coord_list, rotation, flip)
-                aspects.add(aspect)
-        return aspects
 
-
-class PentominoesMatrix(Pentominoes):
-
-    def coordinates(self):
-        for y in range(self.height):
-            for x in range(self.width):
-                yield coordsys.Cartesian2D((x, y))
-
-    def build_matrix_header(self):
-        headers = []
-        for i, key in enumerate(sorted(self.pieces.keys())):
-            self.matrix_columns[key] = i
-            headers.append(key)
-        for (x, y) in self.coordinates():
-            header = '%0*i,%0*i' % (self.x_width, x, self.y_width, y)
-            self.matrix_columns[header] = len(headers)
-            headers.append(header)
-        self.matrix.append(headers)
-
-    def build_matrix_row(self, name, coords):
-        row = [0] * len(self.matrix[0])
-        row[self.matrix_columns[name]] = name
-        for coord in coords:
-            label = '%0*i,%0*i' % (self.x_width, coord[0],
-                                   self.y_width, coord[1])
-            row[self.matrix_columns[label]] = label
-        self.matrix.append(row)
-
-    def build_regular_matrix(self, keys):
-        for key in keys:
-            for coords, aspect in self.pieces[key]:
-                for y in range(self.height - aspect.bounds[1]):
-                    for x in range(self.width - aspect.bounds[0]):
-                        translated = aspect.translate((x, y))
-                        self.build_matrix_row(key, translated)
-
-    def format_solution(self, solution,
-                        x_reversed=False, y_reversed=False):
-        order_functions = (lambda x: x, reversed)
-        x_reversed_fn = order_functions[x_reversed]
-        y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
-        s_matrix = [[' '] * self.width for y in range(self.height)]
-        for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
-                x, y = [int(d.strip()) for d in cell_name.split(',')]
-                s_matrix[y][x] = name
-        return '\n'.join(' '.join(x_reversed_fn(s_matrix[y]))
-                         for y in y_reversed_fn(range(self.height)))
-
-    def store_solutions(self, solution, formatted):
-        self.solutions.add(formatted)
-        self.solutions.add(self.format_solution(solution, x_reversed=True))
-        self.solutions.add(self.format_solution(solution, y_reversed=True))
-        self.solutions.add(self.format_solution(
-            solution, x_reversed=True, y_reversed=True))
-
-
-class Pentominoes6x10Matrix(PentominoesMatrix):
+class Pentominoes6x10Matrix(Pentominoes):
 
     """2339 solutions"""
 
@@ -263,7 +344,7 @@ class Pentominoes6x10Matrix(PentominoesMatrix):
         self.build_regular_matrix(keys)
 
 
-class Pentominoes5x12Matrix(PentominoesMatrix):
+class Pentominoes5x12Matrix(Pentominoes):
 
     """1010 solutions"""
 
@@ -301,7 +382,7 @@ class Pentominoes5x12MatrixB(Pentominoes5x12Matrix):
         self.build_regular_matrix(keys)
 
 
-class Pentominoes4x15Matrix(PentominoesMatrix):
+class Pentominoes4x15Matrix(Pentominoes):
 
     """368 solutions"""
 
@@ -338,7 +419,7 @@ class Pentominoes4x15MatrixB(Pentominoes4x15Matrix):
         self.build_regular_matrix(keys)
 
 
-class Pentominoes3x20Matrix(PentominoesMatrix):
+class Pentominoes3x20Matrix(Pentominoes):
 
     """
     2 solutions.
@@ -364,7 +445,7 @@ class Pentominoes3x20Matrix(PentominoesMatrix):
                         self.build_matrix_row(key, translated)
 
 
-class Pentominoes3x20LoopMatrix(PentominoesMatrix):
+class Pentominoes3x20LoopMatrix(Pentominoes):
 
     """
     2 solutions: same as non-loop `Pentominoes3x20Matrix`.
@@ -392,7 +473,7 @@ class Pentominoes3x20LoopMatrix(PentominoesMatrix):
                         self.build_matrix_row(key, translated)
 
 
-class Pentominoes3x20TubeMatrix(PentominoesMatrix):
+class Pentominoes3x20TubeMatrix(Pentominoes):
 
     """
     Symmetry: restrict X to dx=1 & 6, dy=0; remove flip of F.
@@ -422,7 +503,7 @@ class Pentominoes3x20TubeMatrix(PentominoesMatrix):
                         self.build_matrix_row(key, translated)
 
 
-class Pentominoes8x8CenterHoleMatrix(PentominoesMatrix):
+class Pentominoes8x8CenterHoleMatrix(Pentominoes):
 
     """65 solutions"""
 
@@ -436,17 +517,6 @@ class Pentominoes8x8CenterHoleMatrix(PentominoesMatrix):
                     continue
                 yield coordsys.Cartesian2D((x, y))
 
-    def build_matrix_header(self):
-        headers = []
-        for i, key in enumerate(sorted(self.pieces.keys())):
-            self.matrix_columns[key] = i
-            headers.append(key)
-        for (x, y) in self.coordinates():
-            header = '%0*i,%0*i' % (self.x_width, x, self.y_width, y)
-            self.matrix_columns[header] = len(headers)
-            headers.append(header)
-        self.matrix.append(headers)
-
 
 class Pentominoes8x8CenterHoleMatrixA(Pentominoes8x8CenterHoleMatrix):
 
@@ -457,13 +527,7 @@ class Pentominoes8x8CenterHoleMatrixA(Pentominoes8x8CenterHoleMatrix):
             translated = x_aspect.translate((x, 0))
             self.build_matrix_row('X', translated)
         keys.remove('X')
-        for key in keys:
-            for coords, aspect in self.pieces[key]:
-                for y in range(self.height - aspect.bounds[1]):
-                    for x in range(self.width - aspect.bounds[0]):
-                        translated = aspect.translate((x, y))
-                        if translated.issubset(self.solution_coords):
-                            self.build_matrix_row(key, translated)
+        self.build_regular_matrix(keys)
 
 
 class Pentominoes8x8CenterHoleMatrixB(Pentominoes8x8CenterHoleMatrix):
@@ -480,95 +544,18 @@ class Pentominoes8x8CenterHoleMatrixB(Pentominoes8x8CenterHoleMatrix):
         translated = x_aspect.translate((1, 1))
         self.build_matrix_row('X', translated)
         keys.remove('X')
-        for key in keys:
-            for coords, aspect in self.pieces[key]:
-                for y in range(self.height - aspect.bounds[1]):
-                    for x in range(self.width - aspect.bounds[0]):
-                        translated = aspect.translate((x, y))
-                        if translated.issubset(self.solution_coords):
-                            self.build_matrix_row(key, translated)
+        self.build_regular_matrix(keys)
 
 
-class SolidPentominoes(Pentominoes):
+class SolidPentominoes(Puzzle3D, Pentominoes):
 
     def make_aspects(self, units,
                      flips=(0, 1), axes=(0, 1, 2), rotations=(0, 1, 2, 3)):
         units = tuple((x, y, 0) for (x, y) in units) # convert to 3D
-        aspects = set()
-        coord_list = ((0, 0, 0),) + units
-        for axis in axes or (2,):
-            coord_set = coordsys.CartesianView3D(coord_list)
-            if axis != 2:
-                coord_set = coord_set.rotate0(1, (1 - axis) % 3)
-            coords = tuple(coord_set)
-            for flip in flips or (0,):
-                for rotation in rotations or (0,):
-                    aspect = coordsys.CartesianView3D(
-                        coords, rotation, axis, flip)
-                    aspects.add(aspect)
-        return aspects
+        return Puzzle3D.make_aspects(self, units, flips, axes, rotations)
 
 
-class SolidPentominoesMatrix(SolidPentominoes):
-
-    def coordinates(self):
-        for z in range(self.depth):
-            for y in range(self.height):
-                for x in range(self.width):
-                    yield coordsys.Cartesian3D((x, y, z))
-
-    def build_matrix_header(self):
-        headers = []
-        for i, key in enumerate(sorted(self.pieces.keys())):
-            self.matrix_columns[key] = i
-            headers.append(key)
-        for (x, y, z) in self.coordinates():
-            header = '%0*i,%0*i,%0*i' % (
-                self.x_width, x, self.y_width, y, self.z_width, z)
-            self.matrix_columns[header] = len(headers)
-            headers.append(header)
-        self.matrix.append(headers)
-
-    def build_matrix_row(self, name, coords):
-        row = [0] * len(self.matrix[0])
-        row[self.matrix_columns[name]] = name
-        for coord in coords:
-            label = '%0*i,%0*i,%0*i' % (self.x_width, coord[0],
-                                        self.y_width, coord[1],
-                                        self.z_width, coord[2])
-            row[self.matrix_columns[label]] = label
-        self.matrix.append(row)
-
-    def build_regular_matrix(self, keys):
-        for key in keys:
-            for coords, aspect in self.pieces[key]:
-                for z in range(self.depth - aspect.bounds[2]):
-                    for y in range(self.height - aspect.bounds[1]):
-                        for x in range(self.width - aspect.bounds[0]):
-                            translated = aspect.translate((x, y, z))
-                            self.build_matrix_row(key, translated)
-
-    def format_solution(self, solution,
-                        x_reversed=False, y_reversed=False, z_reversed=False):
-        order_functions = (lambda x: x, reversed)
-        x_reversed_fn = order_functions[x_reversed]
-        y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
-        z_reversed_fn = order_functions[z_reversed]
-        s_matrix = [[[' '] * self.width for y in range(self.height)]
-                    for z in range(self.depth)]
-        for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
-                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
-                s_matrix[z][y][x] = name
-        return '\n'.join(
-            '    '.join(' '.join(x_reversed_fn(s_matrix[z][y]))
-                        for z in z_reversed_fn(range(self.depth)))
-            for y in y_reversed_fn(range(self.height)))
-
-
-class SolidPentominoes2x3x10Matrix(SolidPentominoesMatrix):
+class SolidPentominoes2x3x10Matrix(SolidPentominoes):
 
     """12 solutions"""
 
@@ -592,7 +579,7 @@ class SolidPentominoes2x3x10Matrix(SolidPentominoesMatrix):
         self.build_regular_matrix(keys)
 
 
-class SolidPentominoes2x5x6Matrix(SolidPentominoesMatrix):
+class SolidPentominoes2x5x6Matrix(SolidPentominoes):
 
     """264 solutions"""
 
@@ -635,7 +622,7 @@ class SolidPentominoes2x5x6MatrixB(SolidPentominoes2x5x6Matrix):
         self.build_regular_matrix(keys)
 
 
-class SolidPentominoes3x4x5Matrix(SolidPentominoesMatrix):
+class SolidPentominoes3x4x5Matrix(SolidPentominoes):
 
     """
     3940 solutions
@@ -646,6 +633,10 @@ class SolidPentominoes3x4x5Matrix(SolidPentominoesMatrix):
     depth = 3
 
     check_for_duplicates = True
+
+    duplicate_conditions = ({'x_reversed': True},
+                            {'z_reversed': True},
+                            {'x_reversed': True, 'z_reversed': True})
 
     def build_matrix_i(self, y_range, z_range):
         keys = sorted(self.pieces.keys())
@@ -663,15 +654,20 @@ class SolidPentominoes3x4x5Matrix(SolidPentominoesMatrix):
         keys = self.build_matrix_i((0, 1), (0, 1))
         self.build_regular_matrix(keys)
 
-    def store_solutions(self, solution, formatted):
-        self.solutions.add(formatted)
-        self.solutions.add(self.format_solution(solution, x_reversed=True))
-        self.solutions.add(self.format_solution(solution, z_reversed=True))
-        self.solutions.add(self.format_solution(
-            solution, x_reversed=True, z_reversed=True))
 
+class SolidPentominoesRingMatrix(SolidPentominoes):
 
-class SolidPentominoesRingMatrix(SolidPentominoesMatrix):
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'x_reversed': True},
+                            {'y_reversed': True},
+                            {'z_reversed': True},
+                            {'x_reversed': True, 'y_reversed': True},
+                            {'x_reversed': True, 'z_reversed': True},
+                            {'y_reversed': True, 'z_reversed': True},
+                            {'x_reversed': True,
+                             'y_reversed': True,
+                             'z_reversed': True})
 
     def coordinates(self):
         for z in range(self.depth):
@@ -731,22 +727,9 @@ class SolidPentominoesRingMatrix(SolidPentominoesMatrix):
             right = ' '.join(
                 s_matrix[z][y][right_index]
                 for z in z_unreversed_fn(range(self.depth)))
-            lines.append('%s    %s    %s    %s' % (left, front, right, back))
+            lines.append(('%s    %s    %s    %s'
+                          % (left, front, right, back)).rstrip())
         return '\n'.join(lines)
-
-    def store_solutions(self, solution, formatted):
-        self.solutions.add(formatted)
-        self.solutions.add(self.format_solution(solution, x_reversed=True))
-        self.solutions.add(self.format_solution(solution, y_reversed=True))
-        self.solutions.add(self.format_solution(solution, z_reversed=True))
-        self.solutions.add(self.format_solution(
-            solution, x_reversed=True, y_reversed=True))
-        self.solutions.add(self.format_solution(
-            solution, x_reversed=True, z_reversed=True))
-        self.solutions.add(self.format_solution(
-            solution, y_reversed=True, z_reversed=True))
-        self.solutions.add(self.format_solution(
-            solution, x_reversed=True, y_reversed=True, z_reversed=True))
 
 
 class SolidPentominoes3x3x9RingMatrix(SolidPentominoesRingMatrix):
@@ -756,8 +739,6 @@ class SolidPentominoes3x3x9RingMatrix(SolidPentominoesRingMatrix):
     width = 9
     height = 3
     depth = 3
-
-    check_for_duplicates = True
 
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
@@ -781,11 +762,6 @@ class SolidPentominoes3x4x8RingMatrix(SolidPentominoesRingMatrix):
     height = 3
     depth = 4
 
-    check_for_duplicates = True
-
-    def build_matrix(self):
-        self.build_regular_matrix(sorted(self.pieces.keys()))
-
 
 class SolidPentominoes3x5x7RingMatrix(SolidPentominoesRingMatrix):
 
@@ -794,8 +770,6 @@ class SolidPentominoes3x5x7RingMatrix(SolidPentominoesRingMatrix):
     width = 7
     height = 3
     depth = 5
-
-    check_for_duplicates = True
 
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
@@ -820,11 +794,6 @@ class SolidPentominoes3x6x6RingMatrix(SolidPentominoesRingMatrix):
     height = 3
     depth = 6
 
-    check_for_duplicates = True
-
-    def build_matrix(self):
-        self.build_regular_matrix(sorted(self.pieces.keys()))
-
 
 class SolidPentominoes5x3x5RingMatrix(SolidPentominoesRingMatrix):
 
@@ -833,8 +802,6 @@ class SolidPentominoes5x3x5RingMatrix(SolidPentominoesRingMatrix):
     width = 5
     height = 5
     depth = 3
-
-    check_for_duplicates = True
 
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
@@ -860,11 +827,6 @@ class SolidPentominoes5x4x4RingMatrix(SolidPentominoesRingMatrix):
     height = 5
     depth = 4
 
-    check_for_duplicates = True
-
-    def build_matrix(self):
-        self.build_regular_matrix(sorted(self.pieces.keys()))
-
 
 class SolidPentominoes6x3x4RingMatrix(SolidPentominoesRingMatrix):
 
@@ -873,8 +835,6 @@ class SolidPentominoes6x3x4RingMatrix(SolidPentominoesRingMatrix):
     width = 4
     height = 6
     depth = 3
-
-    check_for_duplicates = True
 
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
@@ -887,7 +847,7 @@ class SolidPentominoes6x3x4RingMatrix(SolidPentominoesRingMatrix):
         self.build_regular_matrix(keys)
 
 
-class SomaCubes(Puzzle):
+class SomaCubes(Puzzle3D):
 
     piece_data = {
         'V': (((0, 1, 0), (1, 0, 0)), {}),
@@ -897,66 +857,17 @@ class SomaCubes(Puzzle):
         'a': (((0, 1, 0), (1, 0, 0), ( 1,  0,  1)), {}),
         'b': (((0, 1, 0), (1, 0, 0), ( 1,  0, -1)), {}),
         'p': (((0, 1, 0), (1, 0, 0), ( 0,  0,  1)), {})}
+    """(0,0,0) is implied."""
 
-    def make_aspects(self, units,
-                     flips=(0, 1), axes=(0, 1, 2), rotations=(0, 1, 2, 3)):
-        aspects = set()
-        coord_list = ((0, 0, 0),) + units
-        for axis in axes or (2,):
-            coord_set = coordsys.CartesianView3D(coord_list)
-            if axis != 2:
-                coord_set = coord_set.rotate0(1, (1 - axis) % 3)
-            coords = tuple(coord_set)
-            for flip in flips or (0,):
-                for rotation in rotations or (0,):
-                    aspect = coordsys.CartesianView3D(
-                        coords, rotation, axis, flip)
-                    aspects.add(aspect)
-        return aspects
+    check_for_duplicates = False
 
-
-class SomaCubesMatrix(SomaCubes):
-
-    def coordinates(self):
-        for z in range(self.depth):
-            for y in range(self.height):
-                for x in range(self.width):
-                    yield coordsys.Cartesian3D((x, y, z))
-
-    def build_matrix_header(self):
-        headers = []
-        for i, key in enumerate(sorted(self.pieces.keys())):
-            self.matrix_columns[key] = i
-            headers.append(key)
-        for z in range(self.depth):
-            for y in range(self.height):
-                for x in range(self.width):
-                    header = '%0*i,%0*i,%0*i' % (
-                        self.x_width, x, self.y_width, y, self.z_width, z)
-                    self.matrix_columns[header] = len(headers)
-                    headers.append(header)
-        self.matrix.append(headers)
-
-    def build_matrix_row(self, name, coords):
-        row = [0] * len(self.matrix[0])
-        row[self.matrix_columns[name]] = name
-        for coord in coords:
-            label = '%0*i,%0*i,%0*i' % (self.x_width, coord[0],
-                                        self.y_width, coord[1],
-                                        self.z_width, coord[2])
-            row[self.matrix_columns[label]] = label
-        self.matrix.append(row)
-
-    def build_regular_matrix(self, keys):
-        for key in keys:
-            for coords, aspect in self.pieces[key]:
-                for z in range(self.depth - aspect.bounds[2]):
-                    for y in range(self.height - aspect.bounds[1]):
-                        for x in range(self.width - aspect.bounds[0]):
-                            translated = aspect.translate((x, y, z))
-                            self.build_matrix_row(key, translated)
-
-    def format_solution(self, solution):
+    def format_solution(self, solution,
+                        x_reversed=False, y_reversed=False, z_reversed=False,
+                        xy_swapped=False, xz_swapped=False, yz_swapped=False):
+        order_functions = (lambda x: x, reversed)
+        x_reversed_fn = order_functions[x_reversed]
+        y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
+        z_reversed_fn = order_functions[z_reversed]
         s_matrix = [[[' '] * self.width for y in range(self.height)]
                     for z in range(self.depth)]
         for row in solution:
@@ -964,13 +875,20 @@ class SomaCubesMatrix(SomaCubes):
             name = piece[-1]
             for cell_name in piece[:-1]:
                 x, y, z = (int(d.strip()) for d in cell_name.split(','))
+                if xy_swapped:
+                    x, y = y, x
+                if xz_swapped:
+                    x, z = z, x
+                if yz_swapped:
+                    y, z = z, y
                 s_matrix[z][y][x] = name
         return '\n'.join(
-            '    '.join(' '.join(s_matrix[z][y]) for z in range(self.depth))
-            for y in reversed(range(self.height)))
+            '    '.join(' '.join(x_reversed_fn(s_matrix[z][y]))
+                        for z in z_reversed_fn(range(self.depth))).rstrip()
+            for y in y_reversed_fn(range(self.height)))
 
 
-class Soma3x3x3Matrix(SomaCubesMatrix):
+class Soma3x3x3Matrix(SomaCubes):
 
     """
     240 solutions
@@ -999,69 +917,7 @@ class Soma3x3x3Matrix(SomaCubesMatrix):
         self.build_regular_matrix(keys)
 
 
-class SomaGenericMatrix(SomaCubesMatrix):
-
-    height = 0
-    width = 0
-    depth = 0
-
-    check_for_duplicates = True
-
-    def build_matrix_header(self):
-        headers = []
-        for i, key in enumerate(sorted(self.pieces.keys())):
-            self.matrix_columns[key] = i
-            headers.append(key)
-        for (x, y, z) in self.coordinates():
-            header = '%0*i,%0*i,%0*i' % (
-                self.x_width, x, self.y_width, y, self.z_width, z)
-            self.matrix_columns[header] = len(headers)
-            headers.append(header)
-        self.matrix.append(headers)
-
-    def build_matrix(self):
-        for key in sorted(self.pieces.keys()):
-            for coords, aspect in self.pieces[key]:
-                for z in range(self.depth - aspect.bounds[2]):
-                    for y in range(self.height - aspect.bounds[1]):
-                        for x in range(self.width - aspect.bounds[0]):
-                            translated = aspect.translate((x, y, z))
-                            if translated.issubset(self.solution_coords):
-                                self.build_matrix_row(key, translated)
-
-    def format_solution(self, solution,
-                        x_reversed=False, y_reversed=False, z_reversed=False,
-                        xy_swapped=False, xz_swapped=False, yz_swapped=False):
-        order_functions = (lambda x: x, reversed)
-        x_reversed_fn = order_functions[x_reversed]
-        y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
-        z_reversed_fn = order_functions[z_reversed]
-        s_matrix = [[[' '] * self.width for y in range(self.height)]
-                    for z in range(self.depth)]
-        for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
-                x, y, z = (int(d.strip()) for d in cell_name.split(','))
-                if xy_swapped:
-                    x, y = y, x
-                if xz_swapped:
-                    x, z = z, x
-                if yz_swapped:
-                    y, z = z, y
-                s_matrix[z][y][x] = name
-        return '\n'.join(
-            '    '.join(' '.join(x_reversed_fn(s_matrix[z][y]))
-                        for z in z_reversed_fn(range(self.depth)))
-            for y in y_reversed_fn(range(self.height)))
-
-    def store_solutions(self, solution, formatted):
-        self.solutions.add(formatted)
-        for conditions in self.duplicate_conditions:
-            self.solutions.add(self.format_solution(solution, **conditions))
-
-
-class SomaCrystalMatrix(SomaGenericMatrix):
+class SomaCrystalMatrix(SomaCubes):
 
     """2800 solutions."""
 
@@ -1079,7 +935,7 @@ class SomaCrystalMatrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaLongWallMatrix(SomaGenericMatrix):
+class SomaLongWallMatrix(SomaCubes):
 
     """104 solutions."""
 
@@ -1097,7 +953,7 @@ class SomaLongWallMatrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaHighWallMatrix(SomaGenericMatrix):
+class SomaHighWallMatrix(SomaCubes):
 
     """46 solutions."""
 
@@ -1105,6 +961,7 @@ class SomaHighWallMatrix(SomaGenericMatrix):
     width = 5
     depth = 3
 
+    check_for_duplicates = True
     duplicate_conditions = ({'z_reversed': True, 'xy_swapped': True},)
 
     def coordinates(self):
@@ -1115,7 +972,7 @@ class SomaHighWallMatrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaBenchMatrix(SomaGenericMatrix):
+class SomaBenchMatrix(SomaCubes):
 
     """0 solutions."""
 
@@ -1131,7 +988,7 @@ class SomaBenchMatrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaStepsMatrix(SomaGenericMatrix):
+class SomaStepsMatrix(SomaCubes):
 
     """164 solutions."""
 
@@ -1139,6 +996,7 @@ class SomaStepsMatrix(SomaGenericMatrix):
     width = 5
     depth = 3
 
+    check_for_duplicates = True
     duplicate_conditions = ({'x_reversed': True, 'y_reversed': True},)
 
     def coordinates(self):
@@ -1149,7 +1007,7 @@ class SomaStepsMatrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaBathtubMatrix(SomaGenericMatrix):
+class SomaBathtubMatrix(SomaCubes):
 
     """158 solutions."""
 
@@ -1157,6 +1015,7 @@ class SomaBathtubMatrix(SomaGenericMatrix):
     width = 5
     depth = 2
 
+    check_for_duplicates = True
     duplicate_conditions = ({'x_reversed': True, 'y_reversed': True},)
 
     def coordinates(self):
@@ -1167,7 +1026,7 @@ class SomaBathtubMatrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaCurvedWallMatrix(SomaGenericMatrix):
+class SomaCurvedWallMatrix(SomaCubes):
 
     """66 solutions."""
 
@@ -1175,6 +1034,7 @@ class SomaCurvedWallMatrix(SomaGenericMatrix):
     width = 5
     depth = 3
 
+    check_for_duplicates = True
     duplicate_conditions = ({'x_reversed': True, 'z_reversed': True},)
 
     def coordinates(self):
@@ -1187,7 +1047,7 @@ class SomaCurvedWallMatrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSquareWallMatrix(SomaGenericMatrix):
+class SomaSquareWallMatrix(SomaCubes):
 
     """0 solutions."""
 
@@ -1203,7 +1063,7 @@ class SomaSquareWallMatrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSofaMatrix(SomaGenericMatrix):
+class SomaSofaMatrix(SomaCubes):
 
     """32 solutions."""
 
@@ -1211,6 +1071,7 @@ class SomaSofaMatrix(SomaGenericMatrix):
     width = 5
     depth = 3
 
+    check_for_duplicates = True
     duplicate_conditions = ({'yz_swapped': True, 'x_reversed': True},)
 
     def coordinates(self):
@@ -1221,7 +1082,7 @@ class SomaSofaMatrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaCornerstoneMatrix(SomaGenericMatrix):
+class SomaCornerstoneMatrix(SomaCubes):
 
     """10 solutions."""
 
@@ -1239,7 +1100,7 @@ class SomaCornerstoneMatrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class Soma_W_Matrix(SomaGenericMatrix):
+class Soma_W_Matrix(SomaCubes):
 
     """0 solutions."""
 
@@ -1256,7 +1117,7 @@ class Soma_W_Matrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSkew1Matrix(SomaGenericMatrix):
+class SomaSkew1Matrix(SomaCubes):
 
     """244 solutions."""
 
@@ -1264,6 +1125,7 @@ class SomaSkew1Matrix(SomaGenericMatrix):
     width = 5
     depth = 3
 
+    check_for_duplicates = True
     duplicate_conditions = ({'x_reversed': True, 'y_reversed': True},)
 
     def coordinates(self):
@@ -1274,7 +1136,7 @@ class SomaSkew1Matrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSkew2Matrix(SomaGenericMatrix):
+class SomaSkew2Matrix(SomaCubes):
 
     """14 solutions."""
 
@@ -1282,6 +1144,7 @@ class SomaSkew2Matrix(SomaGenericMatrix):
     width = 7
     depth = 3
 
+    check_for_duplicates = True
     duplicate_conditions = ({'x_reversed': True, 'y_reversed': True},)
 
     def coordinates(self):
@@ -1292,7 +1155,7 @@ class SomaSkew2Matrix(SomaGenericMatrix):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSteamerMatrix(SomaGenericMatrix):
+class SomaSteamerMatrix(SomaCubes):
 
     """152 solutions."""
 
@@ -1300,6 +1163,7 @@ class SomaSteamerMatrix(SomaGenericMatrix):
     width = 5
     depth = 3
 
+    check_for_duplicates = True
     duplicate_conditions = ({'x_reversed': True, 'y_reversed': True},)
 
     def coordinates(self):
@@ -1397,9 +1261,6 @@ class TetraSticksMatrix(TetraSticks):
         self.secondary_columns = len(headers) - primary
         self.matrix.append(headers)
 
-    def build_matrix(self):
-        self.build_regular_matrix(self.pieces.keys())
-
     def build_regular_matrix(self, keys):
         for key in keys:
             for coords, aspect in self.pieces[key]:
@@ -1444,15 +1305,17 @@ class TetraSticksMatrix(TetraSticks):
                 matrices[direction][y][x] = name
         lines = []
         for y in range(self.height + 1):
-            lines.append(' ' + ' '.join(('-%s--' % name)[:4]
-                                        for name in x_reversed_fn(h_matrix[y])))
+            lines.append(' ' + ' '.join(
+                ('-%s--' % name)[:4]
+                for name in x_reversed_fn(h_matrix[y])).rstrip())
             if y != self.height:
                 lines.append(
                     '%s\n%s'
-                    % ('    '.join(name[0]
-                                   for name in x_reversed_fn(v_matrix[y])),
-                       '    '.join((name + '|')[1]
-                                   for name in x_reversed_fn(v_matrix[y]))))
+                    % ('    '.join(
+                    name[0] for name in x_reversed_fn(v_matrix[y])).rstrip(),
+                       '    '.join(
+                    (name + '|')[1]
+                    for name in x_reversed_fn(v_matrix[y])).rstrip()))
         return title + '\n'.join(y_reversed_fn(lines))
 
     def rotate_segment(self, x, y, direction, rotation):
@@ -1473,17 +1336,12 @@ class TetraSticksMatrix(TetraSticks):
                 direction = 'hv'[direction == 'h']
         return x, y, direction
 
-    def store_solutions(self, solution, formatted):
-        self.solutions.add(formatted)
-        for conditions in self.duplicate_conditions:
-            self.solutions.add(self.format_solution(solution, **conditions))
-
 
 class WeldedTetraSticks4x4Matrix(TetraSticksMatrix):
 
     """
     4 solutions (perfect solutions, i.e. no pieces cross).
-    2 solutions are perfectly symmetrical if we allow reflection.
+    2 solutions are perfectly symmetrical in reflection.
     The other 2 solutions are isomorphic in reflection if we allow reflection.
 
     But we don't allow reflection while solving the puzzle, so we shouldn't
@@ -1633,7 +1491,7 @@ class PolySticks1234_6x6MatrixD(PolySticks1234_6x6Matrix):
         self.build_regular_matrix(keys)
 
 
-class Polyhexes(Puzzle):
+class Polyhexes(Puzzle2D):
 
     """
     The shape of the matrix is defined by the `coordinates` generator method.
@@ -1645,7 +1503,7 @@ class Polyhexes(Puzzle):
     def coordinates(self):
         for y in range(self.height):
             for x in range(self.width):
-                yield coordsys.Hex2D((x, y))
+                yield coordsys.Hexagonal2D((x, y))
 
     def make_aspects(self, units, flips=(False, True),
                      rotations=(0, 1, 2, 3, 4, 5)):
@@ -1653,41 +1511,9 @@ class Polyhexes(Puzzle):
         coord_list = ((0, 0),) + units
         for flip in flips or (0,):
             for rotation in rotations or (0,):
-                aspect = coordsys.HexView2D(coord_list, rotation, flip)
+                aspect = coordsys.HexagonalView2D(coord_list, rotation, flip)
                 aspects.add(aspect)
         return aspects
-
-    def build_matrix_header(self):
-        headers = []
-        for i, key in enumerate(sorted(self.pieces.keys())):
-            self.matrix_columns[key] = i
-            headers.append(key)
-        for (x, y) in self.coordinates():
-            header = '%0*i,%0*i' % (self.x_width, x, self.y_width, y)
-            self.matrix_columns[header] = len(headers)
-            headers.append(header)
-        self.matrix.append(headers)
-
-    def build_matrix_row(self, name, coords):
-        row = [0] * len(self.matrix[0])
-        row[self.matrix_columns[name]] = name
-        for coord in coords:
-            label = '%0*i,%0*i' % (self.x_width, coord[0],
-                                   self.y_width, coord[1])
-            row[self.matrix_columns[label]] = label
-        self.matrix.append(row)
-
-    def build_matrix(self):
-        self.build_regular_matrix(sorted(self.pieces.keys()))
-
-    def build_regular_matrix(self, keys):
-        for key in keys:
-            for coords, aspect in self.pieces[key]:
-                for y in range(self.height - aspect.bounds[1]):
-                    for x in range(self.width - aspect.bounds[0]):
-                        translated = aspect.translate((x, y))
-                        if translated.issubset(self.solution_coords):
-                            self.build_matrix_row(key, translated)
 
     def format_solution(self, solution,
                         rotate_180=False, row_reversed=False):
@@ -1711,11 +1537,6 @@ class Polyhexes(Puzzle):
                             + [self.empty_cell] * y)[trim:-trim])
             s_matrix = out
         return self.format_hex_grid(s_matrix)
-
-    def store_solutions(self, solution, formatted):
-        self.solutions.add(formatted)
-        for conditions in self.duplicate_conditions:
-            self.solutions.add(self.format_solution(solution, **conditions))
 
     empty_cell = '  '
 
@@ -1771,12 +1592,12 @@ class Polyhexes(Puzzle):
             if s_matrix[0][x] != self.empty_cell:
                 output[-x - 1].append('__/')
         for i in range(len(output)):
-            output[i] = ''.join(output[i]) + '\n'
-        while not output[0].strip():
-            output.pop(0)
+            output[i] = ''.join(output[i]).rstrip()
         while not output[-1].strip():
             output.pop()
-        return ''.join(output)
+        while not output[0].strip():
+            output.pop(0)
+        return '\n'.join(output) + '\n'
 
 
 class Polyhexes123(object):
@@ -1787,6 +1608,7 @@ class Polyhexes123(object):
         'I3': ((( 1, 0), ( 2, 0)), {}),
         'V3': ((( 1, 0), ( 1, 1)), {}),
         'A3': ((( 1, 0), ( 0, 1)), {}),}
+    """(0,0) is implied."""
 
     symmetric_pieces = piece_data.keys() # all of them
     """Pieces with reflexive symmetry, identical to their mirror images."""
@@ -1795,7 +1617,7 @@ class Polyhexes123(object):
     """Pieces without reflexive symmetry, different from their mirror images."""
 
 
-class TetrahexMatrix(Polyhexes):
+class Tetrahexes(Polyhexes):
 
     piece_data = {
         'I4': ((( 1, 0), ( 2, 0), ( 3, 0)), {}),
@@ -1805,6 +1627,7 @@ class TetrahexMatrix(Polyhexes):
         'U4': (((-1, 1), ( 1, 0), ( 1, 1)), {}),
         'Y4': ((( 1, 0), ( 2,-1), ( 1, 1)), {}),
         'O4': ((( 1, 0), ( 0, 1), ( 1, 1)), {}),}
+    """(0,0) is implied."""
 
     symmetric_pieces = 'I4 O4 U4 Y4'.split()
     """Pieces with reflexive symmetry, identical to their mirror images."""
@@ -1813,19 +1636,19 @@ class TetrahexMatrix(Polyhexes):
     """Pieces without reflexive symmetry, different from their mirror images."""
 
 
-class Polyhex1234Matrix(Polyhexes123, TetrahexMatrix):
+class Polyhex1234(Polyhexes123, Tetrahexes):
 
-    piece_data = copy.deepcopy(TetrahexMatrix.piece_data)
+    piece_data = copy.deepcopy(Tetrahexes.piece_data)
     piece_data.update(copy.deepcopy(Polyhexes123.piece_data))
 
     symmetric_pieces = (tuple(Polyhexes123.symmetric_pieces)
-                        + tuple(TetrahexMatrix.symmetric_pieces))
+                        + tuple(Tetrahexes.symmetric_pieces))
 
     asymmetric_pieces = (tuple(Polyhexes123.asymmetric_pieces)
-                         + tuple(TetrahexMatrix.asymmetric_pieces))
+                         + tuple(Tetrahexes.asymmetric_pieces))
 
 
-class PentahexMatrix(Polyhexes):
+class Pentahexes(Polyhexes):
 
     piece_data = {
         'I5': ((( 1, 0), ( 2, 0), ( 3, 0), ( 4, 0)), {}),
@@ -1850,6 +1673,7 @@ class PentahexMatrix(Polyhexes):
         'y5': ((( 1, 0), ( 1, 1), ( 0, 2), ( 2, 1)), {}),
         'G5': ((( 1, 0), ( 1, 1), ( 2, 1), ( 3, 0)), {}),
         'W5': ((( 1, 0), ( 1, 1), ( 2, 1), ( 2, 2)), {}),}
+    """(0,0) is implied."""
 
     symmetric_pieces = 'I5 E5 L5 C5 Y5 D5 X5 A5 V5 U5 W5'.split()
     """Pieces with reflexive symmetry, identical to their mirror images."""
@@ -1858,7 +1682,7 @@ class PentahexMatrix(Polyhexes):
     """Pieces without reflexive symmetry, different from their mirror images."""
 
 
-class Tetrahex4x7Matrix(TetrahexMatrix):
+class Tetrahex4x7Matrix(Tetrahexes):
 
     """9 solutions"""
 
@@ -1868,7 +1692,7 @@ class Tetrahex4x7Matrix(TetrahexMatrix):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Tetrahex7x7TriangleMatrix(TetrahexMatrix):
+class Tetrahex7x7TriangleMatrix(Tetrahexes):
 
     """0 solutions"""
 
@@ -1879,10 +1703,10 @@ class Tetrahex7x7TriangleMatrix(TetrahexMatrix):
         for y in range(self.height):
             for x in range(self.width):
                 if x + y < self.height:
-                    yield coordsys.Hex2D((x, y))
+                    yield coordsys.Hexagonal2D((x, y))
 
 
-class Tetrahex3x10ClippedMatrix(TetrahexMatrix):
+class Tetrahex3x10ClippedMatrix(Tetrahexes):
 
     """2 solutions"""
 
@@ -1898,10 +1722,10 @@ class Tetrahex3x10ClippedMatrix(TetrahexMatrix):
         for y in range(self.height):
             for x in range(self.width):
                 if (x + y != 0) and (x + y != max):
-                    yield coordsys.Hex2D((x, y))
+                    yield coordsys.Hexagonal2D((x, y))
 
 
-class TetrahexCoinMatrix(TetrahexMatrix):
+class TetrahexCoinMatrix(Tetrahexes):
 
     """4 solutions"""
 
@@ -1917,10 +1741,10 @@ class TetrahexCoinMatrix(TetrahexMatrix):
         for y in range(self.height):
             for x in range(self.width):
                 if (x + y > 1) and (x + y < max) and not (x == 3 and y == 2):
-                    yield coordsys.Hex2D((x, y))
+                    yield coordsys.Hexagonal2D((x, y))
 
 
-class Pentahex10x11Matrix(PentahexMatrix):
+class Pentahex10x11Matrix(Pentahexes):
 
     """? (many) solutions"""
 
@@ -1930,7 +1754,7 @@ class Pentahex10x11Matrix(PentahexMatrix):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Pentahex5x22Matrix(PentahexMatrix):
+class Pentahex5x22Matrix(Pentahexes):
 
     """? (many) solutions"""
 
@@ -1940,7 +1764,7 @@ class Pentahex5x22Matrix(PentahexMatrix):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Polyhex1234_4x10Matrix(Polyhex1234Matrix):
+class Polyhex1234_4x10Matrix(Polyhex1234):
 
     """? (many) solutions"""
 
@@ -1950,7 +1774,7 @@ class Polyhex1234_4x10Matrix(Polyhex1234Matrix):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Polyhex1234_5x8Matrix(Polyhex1234Matrix):
+class Polyhex1234_5x8Matrix(Polyhex1234):
 
     """? (many) solutions"""
 
@@ -1958,6 +1782,356 @@ class Polyhex1234_5x8Matrix(Polyhex1234Matrix):
     width = 8
 
     duplicate_conditions = ({'rotate_180': True},)
+
+
+class Polyiamonds(Puzzle3D):
+
+    """
+    The shape of the matrix is defined by the `coordinates` generator method.
+    The `width` and `height` attributes define the maximum bounds only.
+    """
+
+    depth = 2                           # triangle orientation: up=0, down=1
+
+    check_for_duplicates = True
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    yield coordsys.Triangular3D((x, y, z))
+
+    def make_aspects(self, units, flips=(False, True),
+                     rotations=(0, 1, 2, 3, 4, 5)):
+        aspects = set()
+        coord_list = ((0, 0, 0),) + units
+        for flip in flips or (0,):
+            for rotation in rotations or (0,):
+                aspect = coordsys.TriangularView3D(
+                    coord_list, rotation, 0, flip) # 0 is axis, ignored
+                aspects.add(aspect)
+        return aspects
+
+    def format_solution(self, solution,
+                        rotate_180=False, row_reversed=False, xy_swapped=False):
+        s_matrix = [[[self.empty_cell] * self.width
+                     for y in range(self.height)]
+                    for z in range(self.depth)]
+        for row in solution:
+            piece = sorted(i.column.name for i in row.row_data())
+            name = piece[-1]
+            for cell_name in piece[:-1]:
+                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
+                s_matrix[z][y][x] = name
+        if rotate_180:
+            s_matrix = [[list(reversed(s_matrix[z][y]))
+                         for y in reversed(range(self.height))]
+                        for z in reversed(range(self.depth))]
+        if row_reversed:
+            out = []
+            trim = (self.height - 1) // 2
+            for y in range(self.height):
+                index = self.height - 1 - y
+                out.append(([self.empty_cell] * index
+                            + s_matrix[index]
+                            + [self.empty_cell] * y)[trim:-trim])
+            s_matrix = out
+        if xy_swapped:
+            assert self.height == self.width, \
+                   'Unable to swap x & y: dimensions not equal!'
+            s_matrix = [[[s_matrix[z][x][y]
+                          for x in range(self.height)]
+                         for y in range(self.width)]
+                        for z in range(self.depth)]
+        return self.format_triangular_grid(s_matrix)
+
+    empty_cell = '  '
+
+    def empty_content(self, cell, x, y, z):
+        return self.empty_cell
+
+    def cell_content(self, cell, x, y, z):
+        return cell
+
+    def format_triangular_grid(self, s_matrix, content=None):
+        if content is None:
+            content = self.empty_content
+        width = len(s_matrix[0][0])
+        height = len(s_matrix[0])
+        top = ['   ' * height]
+        left_margin = len(top[0])
+        for x in range(width):
+            bottom = '_ '[s_matrix[1][-1][x] == self.empty_cell]
+            top.append(bottom * 6)
+        output = [''.join(top).rstrip()]
+        for y in range(height - 1, -1, -1):
+            padding = ' ' * 3 * y
+            line1 = ['  ' + padding]
+            line2 = [' ' + padding]
+            line3 = [padding]
+            for x in range(width):
+                cell = s_matrix[0][y][x]
+                left = bottom = ' '
+                if ( x == 0 and cell != self.empty_cell
+                     or x > 0 and s_matrix[1][y][x - 1] != cell):
+                    left = '/'
+                if ( y == 0 and cell != self.empty_cell
+                     or y > 0 and s_matrix[1][y - 1][x] != cell):
+                    bottom = '_'
+                line1.append(left)
+                line2.append(left + content(cell, x, y, 0))
+                line3.append((bottom, left)[left != ' '] + bottom * 4)
+                cell = s_matrix[1][y][x]
+                left = ' '
+                if s_matrix[0][y][x] != cell:
+                    left = '\\'
+                line1.append(left + '    ')
+                line2.append(left + content(cell, x, y, 1))
+                line3.append((bottom, left)[left != ' '])
+            right = '/ '[cell == self.empty_cell]
+            for line in line1, line2, line3:
+                line = (''.join(line) + right).rstrip()
+                output.append(line)
+                left_margin = min(left_margin, len(line) - len(line.lstrip()))
+        return '\n'.join(line[left_margin:] for line in output) + '\n'
+
+
+class Hexiamonds(Polyiamonds):
+
+    piece_data = {
+        'I6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 2, 0, 1)),
+               {}),                     # Rhomboid or Bar
+        'P6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 1, 1, 0)),
+               {}),                     # Sphinx
+        'J6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 0,-1, 1)),
+               {}),                     # Club or Crook
+        'E6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 1,-1, 1)),
+               {}),                     # Crown
+        'V6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 0, 1, 0), ( 0, 1, 1)),
+               {}),                     # Lobster
+        'H6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 1,-1, 1), ( 2,-1, 0)),
+               {}),                     # Pistol or Signpost
+        'S6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 0,-1, 1), ( 1, 1, 0)),
+               {}),                     # Snake
+        'X6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 0, 1, 0), ( 1,-1, 1)),
+               {}),                     # Butterfly
+        'C6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 1, 1, 0), ( 1, 1, 1)),
+               {}),                     # Bat or Chevron
+        'G6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 1, 1, 0), ( 0, 1, 1)),
+               {}),                     # Shoe or Hook
+        'F6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 0, 1, 0), ( 1, 1, 0)),
+               {}),                     # Yacht
+        'O6': ((( 0, 0, 1), ( 1, 0, 0), ( 0,-1, 1), ( 1,-1, 0), ( 1,-1, 1)),
+               {}),                     # Hexagon
+        }
+    """(0,0,0) is implied."""
+
+    symmetric_pieces = 'E6 V6 X6 L6 O6'.split()
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = 'I6 P6 J6 H6 S6 G6 F6'.split()
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+
+class Hexiamonds4x9Matrix(Hexiamonds):
+
+    """74 solutions"""
+
+    height = 4
+    width = 9
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+
+class Hexiamonds6x6Matrix(Hexiamonds):
+
+    """156 solutions"""
+
+    height = 6
+    width = 6
+
+    duplicate_conditions = ({'rotate_180': True},
+                            {'xy_swapped': True},
+                            {'rotate_180': True, 'xy_swapped': True},)
+
+
+class Hexiamonds4x11TrapeziumMatrix(Hexiamonds):
+
+    """76 solutions"""
+
+    height = 4
+    width = 11
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x + y + z < self.width:
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class Hexiamonds6x9TrapeziumMatrix(Hexiamonds4x11TrapeziumMatrix):
+
+    """0 solutions (impossible due to parity)"""
+
+    height = 6
+    width = 9
+
+
+class Hexiamonds4x10LongHexagonMatrix(Hexiamonds):
+
+    """856 solutions"""
+
+    height = 4
+    width = 10
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 1 < x + y + z <= self.width + 1:
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsSnowflakeMatrix(Hexiamonds):
+
+    """55 solutions"""
+
+    height = 8
+    width = 8
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        exceptions = ((0,3,1), (0,4,0), (0,4,1), (0,5,0), (0,7,0), (0,7,1),
+                      (1,7,0), (1,7,1), (2,1,1), (3,0,1), (3,1,0), (3,7,1),
+                      (4,0,0), (4,6,1), (4,7,0), (5,6,0), (6,0,0), (6,0,1),
+                      (7,0,0), (7,0,1), (7,2,1), (7,3,0), (7,3,1), (7,4,0))
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( 3 < x + y + z < self.width + self.height - 4
+                         and (x, y, z) not in exceptions):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['J6'][-1]['rotations'] = None
+
+
+class HexiamondsRingMatrix(Hexiamonds):
+
+    """
+    0 solutions
+
+    8-unit high hexagon with a central 4-unit hexagonal hole.
+    """
+
+    height = 8
+    width = 8
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( 3 < x + y + z < 12
+                         and not (1 < x < 6 and 1 < y < 6
+                                  and 5 < x + y + z < 10)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HexiamondsRing2Matrix(Hexiamonds):
+
+    """
+    11 solutions
+
+    8-unit high hexagon with a 4-unit hexagonal hole offset one unit from the
+    center.
+    """
+
+    height = 8
+    width = 8
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( 3 < x + y + z < 12
+                         and not (2 < x < 7 and 1 < y < 6
+                                  and 6 < x + y + z < 11)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsCrescentMatrix(Hexiamonds):
+
+    """
+    87 solutions
+
+    8-unit high hexagon with a 4-unit hexagonal bite removed from one corner.
+    """
+
+    height = 8
+    width = 8
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( 3 < x + y + z < 12
+                         and not (x > 3 and 1 < y < 6 and 7 < x + y + z)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsCrescent2Matrix(Hexiamonds):
+
+    """
+    2 solutions
+
+    8-unit high hexagon with a 4-unit hexagonal bite removed from one side.
+    """
+
+    height = 8
+    width = 8
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( 3 < x + y + z < 12
+                         and not (2 < x < 7 and 2 < y < 7 and 7 < x + y + z)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['I6'][-1]['flips'] = None
 
 
 if __name__ == '__main__':
