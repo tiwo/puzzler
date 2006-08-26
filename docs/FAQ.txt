@@ -454,10 +454,10 @@ How are the polyform puzzles solved?
 ------------------------------------
 
 Polyform Puzzler works by reducing puzzles into "`exact cover`_"
-problems.  Briefly, to solve an exact cover problem, given such a
-matrix of 0s and 1s, we must find a set of rows which, when combined,
-contain exactly one 1 in each column.  To find every solution we must
-find all such sets of rows.
+problems.  Briefly, to solve an exact cover problem, given a matrix of
+0s and 1s, we must find a set of rows which, when combined, contain
+exactly one 1 in each column.  To find every solution we must find all
+such sets of rows.
 
 We construct a two-dimensional matrix with named columns.  The column
 names consist of the puzzle piece names, then the coordinates of the
