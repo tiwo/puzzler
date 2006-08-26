@@ -415,13 +415,31 @@ Puzzler:
   - 4 |x| 10 parallelogram: many solutions, exact number unknown
   - 5 |x| 8 parallelogram: many solutions, exact number unknown
 
+* hexiamonds:
+
+  - 4 |x| 9 parallelogram: 74 solutions
+  - 6 |x| 6 parallelogram: 156 solutions
+  - 4 |x| 11 trapezium: 76 solutions
+  - 4 |x| 10 elongated hexagon (clipped parallelogram): 856 solutions
+  - snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
+    "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`__): 55
+    solutions
+  - ring 2 (8-unit hexagon with 4-unit hexagonal hole offset one unit
+    from the center): 11 solutions (no solutions for the ring with a
+    centered hole)
+  - crescent (8-unit hexagon with a 4-unit hexagonal bite removed from
+    one corner): 87 solutions
+  - crescent 2 (8-unit hexagon with a 4-unit hexagonal bite removed from
+    one side): 2 solutions
+
 More polyforms are to come:
 
 * other polyominoes
 * other polycubes
-* polyiamonds
+* other polyiamonds
+* other polyhexes
 * other polysticks
-* others
+* other polyforms!
 
 See the `to do list`__ for details.
 

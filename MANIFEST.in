@@ -1,6 +1,7 @@
 include *.txt
 include *.py
 recursive-include puzzler *
-recursive-include docs *
+recursive-include test *
 recursive-include bin *
+recursive-include docs *
 recursive-exclude * *.pyc *~ .DS_Store .svn

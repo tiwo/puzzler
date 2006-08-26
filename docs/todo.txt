@@ -45,7 +45,10 @@ To implement:
   Pentominoes in a 9 x 10 Rectangle" by `Alfred Wassermann`_,
   University of Bayreuth, 2000.
 
-* polyiamonds
+* polyiamonds:
+
+  - O'Beirne's hexagon one-sided hexiamond problem?  (see Knuth's
+    "Dancing Links" paper)
 
 * polyhexes
 
