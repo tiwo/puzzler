@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-""" solutions"""
+"""304 solutions"""
 
 from puzzler import puzzles, core
 
