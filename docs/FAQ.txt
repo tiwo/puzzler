@@ -126,14 +126,14 @@ in the "pentominoes":
 
 Many sets of polyforms can be combined to fill certain areas or
 volumes.  These can be called "polyform puzzles" or "combinatoric
-dissection puzzles".  For example, the pentominoes can fill a 6 |x| 10
+dissection puzzles".  For example, the pentominoes can fill a 6x10
 rectangle:
 
 .. figure:: images/pentominoes6x10.png
 
-   One 6 |x| 10 pentominoes solution.
+   One 6x10 pentominoes solution.
 
-There are 2339 distinct ways to fit the pentominoes into a 6 |x| 10
+There are 2339 distinct ways to fit the pentominoes into a 6x10
 rectangle.  The Polyform Puzzler `can find them all`_.
 
 The definition of polyforms above can be generalized to include solids
@@ -181,7 +181,7 @@ ones.  Polyform families are given descriptive names:
 * Substituting a 3D cube for each 2D square in polyominoes results in
   "solid polyominoes" or "planar polycubes" (see "polycubes" below).
 
-  The 12 solid pentominoes fill a 3 |x| 4 |x| 5 solid in 3940 distinct
+  The 12 solid pentominoes fill a 3x4x5 solid in 3940 distinct
   ways.
 
 * Polyforms based on equilateral triangles are named "polyiamonds_"
@@ -354,73 +354,73 @@ Puzzler:
 
   + rectangles:
 
-    - 3 |x| 20: 2 solutions
-    - 4 |x| 15: 368 solutions
-    - 5 |x| 12: 1010 solutions
-    - 6 |x| 10: 2339 solutions
+    - 3x20: 2 solutions
+    - 4x15: 368 solutions
+    - 5x12: 1010 solutions
+    - 6x10: 2339 solutions
 
-  + 3 |x| 20 ring (3 |x| 20 rectangle joined at the ends): 2 solutions
-    (same as the 3 |x| 20 rectangle; the V piece forces a partition)
+  + 3x20 ring (3x20 rectangle joined at the ends): 2 solutions
+    (same as the 3x20 rectangle; the V piece forces a partition)
 
-  + 8 |x| 8 square with a central 2 |x| 2 hole: 65 solutions
+  + 8x8 square with a central 2x2 hole: 65 solutions
 
 * solid pentominoes
 
   + solids:
 
-    - 2 |x| 3 |x| 10: 10 solutions
-    - 2 |x| 5 |x| 6: 264 solutions
-    - 3 |x| 4 |x| 5: 3940 solutions
+    - 2x3x10: 10 solutions
+    - 2x5x6: 264 solutions
+    - 3x4x5: 3940 solutions
 
   + ring walls (rectangular walls, 1 cube thick, with hollow centers):
 
-    - 3 |x| 3 |x| 9: 3 solutions
-    - 3 |x| 5 |x| 7: 1 solution
-    - 5 |x| 3 |x| 5: 186 solutions
-    - 6 |x| 3 |x| 4: 46 solutions
+    - 3x3x9: 3 solutions
+    - 3x5x7: 1 solution
+    - 5x3x5: 186 solutions
+    - 6x3x4: 46 solutions
 
-    Three other rings with no solutions were also implemented: 3 |x| 4
-    |x| 8, 3 |x| 6 |x| 6, and 5 |x| 4 |x| 4.
+    Three other rings with no solutions were also implemented: 3x4x8,
+    3x6x6, and 5x4x4.
 
 * `Soma cubes`_:
 
-  - 3 |x| 3 |x| 3 cube: 240 solutions
+  - 3x3x3 cube: 240 solutions
   - various other shapes
 
 * tetrasticks:
 
-  - 4 |x| 4 square with one-sided welded tetrasticks: 4 solutions
-  - 5 |x| 5 square with 15 of 16 tetrasticks: 1795 solutions
+  - 4x4 square with one-sided welded tetrasticks: 4 solutions
+  - 5x5 square with 15 of 16 tetrasticks: 1795 solutions
 
 * polysticks of order 1 through 4:
 
-  - 6 |x| 6 square covered with polysticks: many solutions, exact
+  - 6x6 square covered with polysticks: many solutions, exact
     number unknown (I left it running for 3 days and it produced over
     35,000 solutions, without moving the first 3 pieces [X, I, I1]!).
 
 * tetrahexes:
 
-  - 4 |x| 7 parallelogram: 9 solutions
-  - 3 |x| 10 parallelogram with corners clipped (centered rows of
+  - 4x7 parallelogram: 9 solutions
+  - 3x10 parallelogram with corners clipped (centered rows of
     length 9, 10, 9): 2 solutions
-  - 5 |x| 7 "coin" (elongated hexagon with central hole): 4 solutions
+  - 5x7 "coin" (elongated hexagon with central hole): 4 solutions
 
 * pentahexes:
 
-  - 10 |x| 11 parallelogram: many solutions, exact number unknown
-  - 5 |x| 22 parallelogram: many solutions, exact number unknown
+  - 10x11 parallelogram: many solutions, exact number unknown
+  - 5x22 parallelogram: many solutions, exact number unknown
 
 * polyhexes of order 1 through 4:
 
-  - 4 |x| 10 parallelogram: many solutions, exact number unknown
-  - 5 |x| 8 parallelogram: many solutions, exact number unknown
+  - 4x10 parallelogram: many solutions, exact number unknown
+  - 5x8 parallelogram: many solutions, exact number unknown
 
 * hexiamonds:
 
-  - 4 |x| 9 parallelogram: 74 solutions
-  - 6 |x| 6 parallelogram: 156 solutions
-  - 4 |x| 11 trapezium: 76 solutions
-  - 4 |x| 10 elongated hexagon (clipped parallelogram): 856 solutions
+  - 4x9 parallelogram: 74 solutions
+  - 6x6 parallelogram: 156 solutions
+  - 4x11 trapezium: 76 solutions
+  - 4x10 elongated hexagon (clipped parallelogram): 856 solutions
   - snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
     "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`__): 55
     solutions
@@ -431,6 +431,16 @@ Puzzler:
     one corner): 87 solutions
   - crescent 2 (8-unit hexagon with a 4-unit hexagonal bite removed from
     one side): 2 solutions
+  - 6x8 "coin" (elongated hexagon with central hexagonal hole):
+    304 solutions
+  - trefoil (3 joined hexagons): 640 solutions
+
+* heptiamonds
+
+  - 7x12 parallelogram
+  - 6x14 parallelogram
+  - 4x21 parallelogram
+  - 3x28 parallelogram
 
 More polyforms are to come:
 
@@ -462,7 +472,7 @@ such sets of rows.
 We construct a two-dimensional matrix with named columns.  The column
 names consist of the puzzle piece names, then the coordinates of the
 solution space.  For example, in a puzzle with three pieces to be
-placed in a 3 |x| 3 grid, we'd have 12 columns::
+placed in a 3x3 grid, we'd have 12 columns::
 
     A  B  C    0,0  1,0  2,0    0,1  1,1  2,1    0,2  1,2  2,2
 

@@ -1845,6 +1845,23 @@ class Polyiamonds(Puzzle3D):
                         for z in range(self.depth)]
         return self.format_triangular_grid(s_matrix)
 
+    def format_coords(self):
+        s_matrix = [[[self.empty_cell] * self.width
+                     for y in range(self.height)]
+                    for z in range(self.depth)]
+        for x, y, z in self.solution_coords:
+            s_matrix[z][y][x] = '* '
+        return self.format_triangular_grid(s_matrix)
+
+    def format_piece(self, name):
+        coords, aspect = self.pieces[name][0]
+        s_matrix = [[[self.empty_cell] * (aspect.bounds[0] + 1)
+                     for y in range(aspect.bounds[1] + 1)]
+                    for z in range(aspect.bounds[2] + 1)]
+        for x, y, z in coords:
+            s_matrix[z][y][x] = '* '
+        return self.format_triangular_grid(s_matrix)
+
     empty_cell = '  '
 
     def empty_content(self, cell, x, y, z):
@@ -1853,22 +1870,23 @@ class Polyiamonds(Puzzle3D):
     def cell_content(self, cell, x, y, z):
         return cell
 
-    def format_triangular_grid(self, s_matrix, content=None):
-        if content is None:
+    def format_triangular_grid(self, s_matrix, content=None, large=False):
+        if large and content is None:
             content = self.empty_content
         width = len(s_matrix[0][0])
         height = len(s_matrix[0])
-        top = ['   ' * height]
+        top = [' ' * (2 + large) * height]
         left_margin = len(top[0])
         for x in range(width):
             bottom = '_ '[s_matrix[1][-1][x] == self.empty_cell]
-            top.append(bottom * 6)
+            top.append(bottom * 2 * (2 + large))
         output = [''.join(top).rstrip()]
         for y in range(height - 1, -1, -1):
-            padding = ' ' * 3 * y
-            line1 = ['  ' + padding]
-            line2 = [' ' + padding]
-            line3 = [padding]
+            padding = ' ' * (2 + large) * y
+            lines = [[' ' * (1 + large) + padding],
+                     [padding]]
+            if large:
+                lines.insert(1, [' ' + padding])
             for x in range(width):
                 cell = s_matrix[0][y][x]
                 left = bottom = ' '
@@ -1878,18 +1896,21 @@ class Polyiamonds(Puzzle3D):
                 if ( y == 0 and cell != self.empty_cell
                      or y > 0 and s_matrix[1][y - 1][x] != cell):
                     bottom = '_'
-                line1.append(left)
-                line2.append(left + content(cell, x, y, 0))
-                line3.append((bottom, left)[left != ' '] + bottom * 4)
+                lines[0].append(left)
+                if large:
+                    lines[1].append(left + content(cell, x, y, 0))
+                lines[-1].append((bottom, left)[left != ' ']
+                                 + bottom * 2 * (1 + large))
                 cell = s_matrix[1][y][x]
                 left = ' '
                 if s_matrix[0][y][x] != cell:
                     left = '\\'
-                line1.append(left + '    ')
-                line2.append(left + content(cell, x, y, 1))
-                line3.append((bottom, left)[left != ' '])
+                lines[0].append(left + ' ' * (2 + 2 * large))
+                if large:
+                    lines[1].append(left + content(cell, x, y, 1))
+                lines[-1].append((bottom, left)[left != ' '])
             right = '/ '[cell == self.empty_cell]
-            for line in line1, line2, line3:
+            for line in lines:
                 line = (''.join(line) + right).rstrip()
                 output.append(line)
                 left_margin = min(left_margin, len(line) - len(line.lstrip()))
@@ -1922,8 +1943,7 @@ class Hexiamonds(Polyiamonds):
         'F6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 0, 1, 0), ( 1, 1, 0)),
                {}),                     # Yacht
         'O6': ((( 0, 0, 1), ( 1, 0, 0), ( 0,-1, 1), ( 1,-1, 0), ( 1,-1, 1)),
-               {}),                     # Hexagon
-        }
+               {}),}                    # Hexagon
     """(0,0,0) is implied."""
 
     symmetric_pieces = 'E6 V6 X6 L6 O6'.split()
@@ -2132,6 +2152,183 @@ class HexiamondsCrescent2Matrix(Hexiamonds):
     def customize_piece_data(self):
         self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsTrefoilMatrix(Hexiamonds):
+
+    """640 solutions"""
+
+    height = 8
+    width = 8
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(2, 6):
+                for x in range(4):
+                    if 3 < x + y + z <= 7:
+                        yield coordsys.Triangular3D((x, y, z))
+            for y in range(4):
+                for x in range(4, 8):
+                    if 5 < x + y + z <= 9:
+                        yield coordsys.Triangular3D((x, y, z))
+            for y in range(4, 8):
+                for x in range(2, 6):
+                    if 7 < x + y + z <= 11:
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['I6'][-1]['rotations'] = None
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class Hexiamonds3HexagonsMatrix(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 4
+    width = 12
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(4):
+                    if 1 < x + y + z <= 5:
+                        yield coordsys.Triangular3D((x, y, z))
+                for x in range(4, 8):
+                    if 5 < x + y + z <= 9:
+                        yield coordsys.Triangular3D((x, y, z))
+                for x in range(8, 12):
+                    if 9 < x + y + z <= 13:
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HexiamondsCoinMatrix(Hexiamonds):
+
+    """304 solutions"""
+
+    height = 6
+    width = 8
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set(((3,2,1), (3,3,0), (3,3,1), (4,2,0), (4,2,1), (4,3,0)))
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( 2 < x + y + z <= 10
+                         and not (x, y, z) in hole):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class Heptiamonds(Polyiamonds):
+
+    piece_data = {
+        'I7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 2, 0, 1),
+                ( 3, 0, 0)), {}),
+        'P7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 2, 0, 1),
+                ( 0, 1, 0)), {}),
+        'E7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 2, 0, 1),
+                ( 1, 1, 0)), {}),
+        'L7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 2, 0, 1),
+                ( 2, 1, 0)), {}),
+        'H7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 1, 1, 0),
+                ( 1, 1, 1)), {}),
+        'G7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 1, 1, 0),
+                ( 0, 1, 1)), {}),
+        'M7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 1, 1, 0),
+                ( 0, 1, 0)), {}),
+        'T7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 0, 1, 0),
+                ( 0,-1, 1)), {}),
+        'X7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 0, 1, 0),
+                ( 1,-1, 1)), {}),
+        'Q7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 0, 1, 0),
+                ( 2,-1, 1)), {}),
+        'R7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 0,-1, 1),
+                ( 0,-1, 0)), {}),
+        'J7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 0,-1, 1),
+                ( 1,-1, 0)), {}),
+        'F7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 0,-1, 1),
+                ( 1,-1, 1)), {}),
+        'C7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 0,-1, 1),
+                ( 2,-1, 1)), {}),
+        'Y7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 1,-1, 1),
+                ( 1,-1, 0)), {}),
+        'Z7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 1,-1, 1), ( 2,-1, 0),
+                ( 2, -1, 1)), {}),
+        'B7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 0, 1, 0), ( 0, 1, 1),
+                ( 1,-1, 1)), {}),
+        'A7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 0,-1, 1), ( 1,-1, 1),
+                ( 2,-1, 0)), {}),
+        'W7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 1,-1, 1), ( 2,-1, 0),
+                ( 1, 1, 0)), {}),
+        'D7': ((( 0, 0, 1), ( 1, 0, 0), ( 0,-1, 1), ( 1,-1, 0), ( 1,-1, 1),
+                ( 0, 1, 0)), {}),
+        'U7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 1, 1, 0), ( 1, 1, 1),
+                ( 0, 1, 0)), {}),
+        'V7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 1, 1, 0), ( 0, 1, 1),
+                ( 0, 2, 0)), {}),
+        'N7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 0,-1, 1), ( 1, 1, 0),
+                ( 1, 1, 1)), {}),
+        'S7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 0,-1, 1), ( 1, 1, 0),
+                ( 0, 1, 1)), {}),}
+    """(0,0,0) is implied."""
+
+    symmetric_pieces = 'C7 D7 I7 M7 V7'.split()
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = (
+        'A7 B7 E7 F7 G7 H7 J7 L7 N7 P7 Q7 R7 S7 T7 U7 W7 X7 Y7 Z7').split()
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+
+class Heptiamonds3x28Matrix(Heptiamonds):
+
+    """ solutions"""
+
+    height = 3
+    width = 28
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+
+class Heptiamonds4x21Matrix(Heptiamonds):
+
+    """ solutions"""
+
+    height = 4
+    width = 21
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+
+class Heptiamonds6x14Matrix(Heptiamonds):
+
+    """ solutions"""
+
+    height = 6
+    width = 14
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+
+class Heptiamonds7x12Matrix(Heptiamonds):
+
+    """ solutions"""
+
+    height = 7
+    width = 12
+
+    duplicate_conditions = ({'rotate_180': True},)
 
 
 if __name__ == '__main__':

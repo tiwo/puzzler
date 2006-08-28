@@ -40,15 +40,19 @@ To implement:
 
 * one-sided pentominoes: 9x10?, 6x15, 5x18, 3x30
 
-  10,440,433 solutions (non-isomorphic in reflection, reflections
-  allowed when counting solutions) are reported in "One-sided
-  Pentominoes in a 9 x 10 Rectangle" by `Alfred Wassermann`_,
-  University of Bayreuth, 2000.
+  9x10: 10,440,433 solutions (non-isomorphic in reflection,
+  reflections allowed when counting solutions) are reported in
+  "One-sided Pentominoes in a 9 x 10 Rectangle" by `Alfred
+  Wassermann`_, University of Bayreuth, 2000.
 
 * polyiamonds:
 
   - O'Beirne's hexagon one-sided hexiamond problem?  (see Knuth's
     "Dancing Links" paper)
+  - heptiamonds: 7x12, 6x14, 4x21 and 3x28 parallelograms; 1-12, 11-6
+    and 19-4 trapezia (top width - height); 13-unit triangle with
+    hole; extended hexagon (i.e. Tenyo snowflake; truncated star of
+    David); star of David with hexagonal hole?; diamond ring; etc.
 
 * polyhexes
 
