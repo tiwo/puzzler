@@ -2331,6 +2331,139 @@ class Heptiamonds7x12Matrix(Heptiamonds):
     duplicate_conditions = ({'rotate_180': True},)
 
 
+class HeptiamondsSnowflakeMatrix(Heptiamonds):
+
+    """ solutions"""
+
+    height = 12
+    width = 12
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if ( 5 < total < 18
+                         and (y > 1 or x < 10 and total > 7)
+                         and (x > 1 or y < 10 and total > 7)
+                         and (total < 16 or x < 10 and y < 10)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['I7'][-1]['rotations'] = None
+        self.piece_data['W7'][-1]['flips'] = None
+
+
+class HeptiamondsTriangleMatrix(Heptiamonds):
+
+    """ solutions"""
+
+    height = 13
+    width = 13
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x + y + z < 13 and (x, y, z) != (4, 4, 0):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['I7'][-1]['rotations'] = None
+        self.piece_data['W7'][-1]['flips'] = None
+
+
+class Heptiamonds12x13TrapeziumMatrix(Heptiamonds):
+
+    """ solutions"""
+
+    height = 12
+    width = 13
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x + y + z < self.width:
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['W7'][-1]['flips'] = None
+
+
+class Heptiamonds6x17TrapeziumMatrix(Heptiamonds12x13TrapeziumMatrix):
+
+    height = 6
+    width = 17
+    
+
+class Heptiamonds4x23TrapeziumMatrix(Heptiamonds12x13TrapeziumMatrix):
+
+    height = 4
+    width = 23
+    
+
+class HeptiamondsHexagramMatrix(Heptiamonds):
+
+    """
+    0 solutions
+
+    16-unit hexagram with central 4-unit hexagonal hole
+    """
+
+    height = 16
+    width = 16
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(4, 16):
+                for x in range(4, 16):
+                    total = x + y + z
+                    if total < 20 and not (5 < x < 10 and 5 < y < 10
+                                           and 13 < total < 18):
+                        yield coordsys.Triangular3D((x, y, z))
+            for y in range(12):
+                for x in range(12):
+                    total = x + y + z
+                    if total >= 12 and not (5 < x < 10 and 5 < y < 10
+                                            and 13 < total < 18):
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HeptiamondsDiamondRingMatrix(Heptiamonds):
+
+    """
+     solutions
+
+    10-unit diamond with central 4-unit diamond hole
+    """
+
+    height = 10
+    width = 10
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.height):
+                    if x < 3 or x > 6 or y < 3 or y > 6:
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['W7'][-1]['flips'] = None
+
+
 if __name__ == '__main__':
     p = Pentominoes6x10Matrix()
     print 'matrix length =', len(p.matrix)

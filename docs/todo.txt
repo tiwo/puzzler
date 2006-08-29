@@ -49,10 +49,6 @@ To implement:
 
   - O'Beirne's hexagon one-sided hexiamond problem?  (see Knuth's
     "Dancing Links" paper)
-  - heptiamonds: 7x12, 6x14, 4x21 and 3x28 parallelograms; 1-12, 11-6
-    and 19-4 trapezia (top width - height); 13-unit triangle with
-    hole; extended hexagon (i.e. Tenyo snowflake; truncated star of
-    David); star of David with hexagonal hole?; diamond ring; etc.
 
 * polyhexes
 

@@ -437,10 +437,26 @@ Puzzler:
 
 * heptiamonds
 
-  - 7x12 parallelogram
-  - 6x14 parallelogram
-  - 4x21 parallelogram
-  - 3x28 parallelogram
+  + parallelograms:
+
+    - 7x12
+    - 6x14
+    - 4x21
+    - 3x28
+
+  + trapezia:
+
+    - 12x13
+    - 6x17
+    - 4x23
+
+  + snowflake 1 (truncated hexagram; a.k.a. `Tenyo's puzzle no. PP-24,
+    "Unmeltable Snow"
+    <http://www.tenyo.co.jp/toyhobby/catalog/onsale/pp-24.html>`__)
+
+  + 13-unit triangle with central 1-unit hole
+
+  + diamond ring (10-unit diamond with central 4-unit diamond hole)
 
 More polyforms are to come:
 
