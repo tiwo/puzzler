@@ -38,7 +38,7 @@ To implement:
     or long edges)
   - Klein bottle?
 
-* one-sided pentominoes: 9x10?, 6x15, 5x18, 3x30
+* one-sided pentominoes: 9x10?, 6x15, 5x18
 
   9x10: 10,440,433 solutions (non-isomorphic in reflection,
   reflections allowed when counting solutions) are reported in
@@ -63,9 +63,9 @@ To implement:
 * one-sided tetrasticks: 5x5 diamond lattice?  All non-isomorphic
   solutions listed in "Covering the Aztec Diamond with One-sided
   Tetrasticks, Extended Version", by `Alfred Wassermann`_, University
-  of Bayreuth (mistakenly called an "aztec diamond", it actually
-  corresponds to a `centered square number
-  <http://mathworld.wolfram.com/CenteredSquareNumber.html>`__).
+  of Bayreuth.  (Wassermann mistakenly called the shape an "aztec
+  diamond", but it actually corresponds to a `centered square number
+  <http://mathworld.wolfram.com/CenteredSquareNumber.html>`__.)
 
 * polysticks of order 1-4: 3x7 diamond lattice (90° angles)::
 

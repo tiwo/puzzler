@@ -151,7 +151,8 @@ The sky's the limit!
 .. _regular polygons: http://mathworld.wolfram.com/RegularPolygon.html
 .. _tile the plane: http://mathworld.wolfram.com/Tiling.html
 .. _tessellation: http://mathworld.wolfram.com/Tessellation.html
-.. _can find them all: ../solutions/pentominoes6x10.txt
+.. _can find them all: 
+   http://puzzler.sourceforge.net/solutions/pentominoes6x10.txt
 .. _regular (Platonic) solids: http://mathworld.wolfram.com/PlatonicSolid.html
 .. _fill space: http://mathworld.wolfram.com/Space-FillingPolyhedron.html
 .. _truncated octahedron: http://mathworld.wolfram.com/TruncatedOctahedron.html
@@ -364,6 +365,10 @@ Puzzler:
 
   + 8x8 square with a central 2x2 hole: 65 solutions
 
+* one-sided pentominoes
+
+  - 3x30 rectangle: 46 solutions
+
 * solid pentominoes
 
   + solids:
@@ -471,6 +476,201 @@ See the `to do list`__ for details.
 
 __ todo.html#puzzles
 .. _Soma cubes: http://en.wikipedia.org/wiki/Soma_cube
+
+
+How should the solution files be interpreted?
+---------------------------------------------
+
+The `solution files <http://puzzler.sourceforge.net/solutions>`__ all
+follow a common pattern.  The first line states the puzzle matrix
+class (from the puzzler.puzzles module) being solved::
+
+    Solving Pentominoes6x10Matrix:
+
+Some puzzles are split up into several matrices.  After all the
+solutions for one matrix are exhausted, the name of the next matrix
+will be stated.
+
+Each solution record contains three parts.  First, the solution header
+with the solution number::
+
+    solution 1:
+
+The second part of the solution record lists the solution coordinates,
+one piece per line, with the piece name last:
+
+    1,1 2,0 2,1 2,2 3,1 X
+    0,0 0,1 0,2 0,3 1,0 L
+    3,0 4,0 4,1 4,2 5,1 F
+    5,0 6,0 6,1 6,2 7,0 T
+    1,2 1,3 2,3 3,2 3,3 U
+    0,4 0,5 1,4 1,5 2,4 P
+    2,5 3,5 4,5 5,5 6,5 I
+    5,2 5,3 6,3 7,3 7,4 Z
+    3,4 4,3 4,4 5,4 6,4 Y
+    7,5 8,5 9,3 9,4 9,5 V
+    7,1 7,2 8,0 8,1 9,0 W
+    8,2 8,3 8,4 9,1 9,2 N
+
+In some puzzles, like the 5x5 tetrasticks, one or more pieces are
+omitted from each solution.  Such omitted pieces are listed with "!"
+in place of the coordinates list:
+
+    ! H
+
+If there are omitted pieces, they are prefixed to the visual
+representation::
+
+    (H omitted)
+
+The third part of the solution record is a visual representation of
+the solution::
+
+    P P I I I I I V V V
+    P P P Y Y Y Y Z N V
+    L U U U Y Z Z Z N V
+    L U X U F Z T W N N
+    L X X X F F T W W N
+    L L X F F T T T W W
+
+Finally, the number of solutions, the number of searches (software
+operations executed), and the duration (time taken to complete the
+execution) are listed::
+
+    2339 solutions, 906813 searches, duration 0:19:10.133000
+
+
+How should polyomino solution files be interpreted?
+---------------------------------------------------
+
+Polyominoes use a 2-dimensional X,Y cartesian coordinate system.
+
+The visual representation consists of piece names (letters) in a 2-D
+grid.  Imagine each letter as a square, with adjacent like-labelled
+squares joined::
+
+    N Z I I I I I U U U
+    N Z Z Z P P P U W U
+    N N T Z X P P W W L
+    V N T X X X W W F L
+    V T T T X Y F F F L
+    V V V Y Y Y Y F L L
+
+
+How should polycube solution files be interpreted?
+--------------------------------------------------
+
+Polycubes (solid pentominoes, Soma cubes) use a 3-dimensional X,Y,Z
+cartesian coordinate system.
+
+The visual representation consists of piece names (letters) in
+multiple layers, each a 2-D slice of a 3-D space.  Imagine the layers
+stacked up from left to right, with each letter as a cube, with
+adjacent like-labelled cubes joined::
+
+    U V V V N    U W T T T    U W Z L Y
+    U W Z V N    X W Z T Y    U F Z L Y
+    X W Z V N    X P P T N    X F F L Y
+    I I I I I    X P P P N    F F L L Y
+
+Some polycube puzzles, like the solid pentomino ring puzzles, are
+equivalent to a 2-dimensional puzzle folded into 3 dimensions.  These
+puzzles' visual representations consist of the view from each side of
+the solution, with corners duplicated between adjacent sides::
+
+    U U V    V Z Y Y Y Y W T F    F L L    U X P P P L L L L
+    X U V    V Z Z Z Y W W T F    F F F    X X X P P N N N F
+    U U V    V V V Z W W T T T    T F N    U X I I I I I N N
+
+In the solution to the 3x3x9 solid pentomino ring puzzle above, the
+left wall is shown first, then the front wall, then the right wall,
+then the back wall.  The back wall is shown with the same orientation
+as the front wall.
+
+
+How should polyhex solution files be interpreted?
+-------------------------------------------------
+
+Polyhexes use a 2-dimensional X,Y, skewed cartesian coordinate system.
+The X and Y axes are 60° apart instead of 90°.
+
+The visual representation is an ASCII-art drawing of the solution,
+with the Y-axis vertical and the X-axis sloping up::
+
+                       __
+                    __/  \
+                 __/  \  /
+              __/   __/  \
+           __/     /   __/
+        __/  \__   \  /  \
+     __/   __   \__/  \  /
+    /  \  /  \__/  \__/  \
+    \  /  \__    __/   __/
+    /  \__/  \  /   __/
+    \  /     /  \__/
+    /  \     \__/
+    \  /   __/
+    /  \__/
+    \__/
+
+
+How should polyiamond solution files be interpreted?
+----------------------------------------------------
+
+Polyiamonds use a pseudo-3-dimensional X,Y,Z, skewed cartesian
+coordinate system.  The X and Y axes are 60° apart instead of 90°, and
+the Z dimension is used to represent the orientation of triangles::
+
+               ____
+        /\     \  /
+    z=0/__\  z=1\/
+
+The visual representation is an ASCII-art drawing of the solution,
+with the X-axis horizontal and the Y-axis sloping to the right::
+
+            ____________________________________
+           /   /           /    \      /       /
+          /   /___________/   ___\    /       /
+         /       /    \      /   /    \  /\  /
+        /_______/      \____/   /______\/  \/
+       /       /\      /   /\       \      /
+      /   ____/  \____/   /  \_______\    /
+     /   /        \       \          /   /
+    /___/__________\_______\________/___/
+
+
+How should polystick solution files be interpreted?
+---------------------------------------------------
+
+Polysticks use a 2-dimensional X,Y cartesian coordinate system, but
+the lines of the grid are significant, not the squares.  The solution
+coordinates consist of individual line segments in the form "x,yh" and
+"x,yv".  Horizontal line segments "x,yh" start at (x,y) and end at
+(x+1,y), one unit to the right.  Vertical line segments "x,yv" start
+at (x,y) and end at (x,y+1), one unit up.  Internal intersections
+(where grid lines cross) are also shown, in the form "x,yi", but can
+be ignored.
+
+The visual representation consists of piece names (letters) in an
+ASCII-art drawing of the 2-D grid.  Imagine each line segment with
+adjacent like-labelled segments joined::
+
+     -R-- -T-- -T-- -R*-
+    Y    R    T    R    Y
+    *    |    |    *    |
+     -Y*- -R-- -R*- -Y--
+    Y    R    T    R    Y
+    *    |    |    *    |
+     -H-- -H-- -H*- -H*-
+    Y    H    X    H    Y
+    *    |    |    *    |
+     -H-- -X-- -X-- -H*-
+    F    F    X    F    F
+    |    |    |    *    *
+     -F-- -F-- -F*- -F*-
+
+The solution above is from the 4x4 welded one-sided tetrasticks
+puzzle.  Asterisks ("*") indicate flipped pieces.
 
 
 The Code

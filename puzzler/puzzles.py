@@ -547,6 +547,38 @@ class Pentominoes8x8CenterHoleMatrixB(Pentominoes8x8CenterHoleMatrix):
         self.build_regular_matrix(keys)
 
 
+class OneSidedPentominoes(Pentominoes):
+
+    def customize_piece_data(self):
+        """
+        Disable flips on all pieces, and add flipped versions of asymmetric
+        pieces.
+        """
+        self.piece_data = copy.deepcopy(self.piece_data)
+        for key in self.piece_data.keys():
+            self.piece_data[key][-1]['flips'] = None
+        for key in self.asymmetric_pieces:
+            self.piece_data[key.lower()] = copy.deepcopy(self.piece_data[key])
+            self.piece_data[key.lower()][-1]['flips'] = (1,)
+
+    def format_solution(self, *args, **kwargs):
+        """Convert solutions to uppercase to avoid duplicates."""
+        solution = Pentominoes.format_solution(self, *args, **kwargs)
+        return solution.upper()
+
+
+class OneSidedPentominoes3x30Matrix(OneSidedPentominoes):
+
+    height = 3
+    width = 30
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'x_reversed': True},
+                            {'y_reversed': True},
+                            {'x_reversed': True, 'y_reversed': True})
+
+
 class SolidPentominoes(Puzzle3D, Pentominoes):
 
     def make_aspects(self, units,
@@ -1174,37 +1206,11 @@ class SomaSteamerMatrix(SomaCubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class TetraSticks(Puzzle):
+class Polysticks(Puzzle):
 
-    piece_data = {
-        'I': ((((0,0),(4,0)),), {}),
-        'L': ((((0,0),(3,0)), ((3,0),(3,1))), {}),
-        'Y': ((((0,0),(3,0)), ((2,0),(2,1))), {}),
-        'V': ((((0,0),(2,0)), ((2,0),(2,2))), {}),
-        'T': ((((0,0),(2,0)), ((1,0),(1,2))), {}),
-        'X': ((((0,1),(2,1)), ((1,0),(1,2))), {}),
-        'U': ((((0,0),(2,0)), ((0,0),(0,1)), ((2,0),(2,1))), {}),
-        'N': ((((0,0),(2,0)), ((2,0),(2,1)), ((2,1),(3,1))), {}),
-        'J': ((((0,0),(2,0)), ((2,0),(2,1)), ((2,1),(1,1))), {}),
-        'H': ((((0,0),(2,0)), ((1,0),(1,1)), ((1,1),(2,1))), {}),
-        'F': ((((0,0),(2,0)), ((0,0),(0,1)), ((1,0),(1,1))), {}),
-        'Z': ((((0,0),(0,1)), ((0,1),(2,1)), ((2,1),(2,2))), {}),
-        'R': ((((0,0),(0,1)), ((0,1),(2,1)), ((1,1),(1,2))), {}),
-        'W': ((((0,0),(1,0)), ((1,0),(1,1)), ((1,1),(2,1)), ((2,1),(2,2))), {}),
-        'P': ((((0,0),(0,1)), ((0,1),(1,1)), ((1,1),(1,0)), ((1,0),(2,0))), {}),
-        'O': ((((0,0),(1,0)), ((1,0),(1,1)), ((1,1),(0,1)), ((0,1),(0,0))), {})}
-
-    symmetric_pieces = 'I O T U V W X'.split()
-    """Pieces with reflexive symmetry, identical to their mirror images."""
-
-    asymmetric_pieces = 'F H J L N P R Y Z'.split()
-    """Pieces without reflexive symmetry, different from their mirror images."""
-
-    welded_pieces = 'F H R T X Y'.split()
-    """Pieces with junction points (where 3 or more segments join)."""
-
-    unwelded_pieces = 'I J L N O P U V W Z '.split()
-    """Pieces without junction points (max. 2 segments join)."""
+    def coordinates(self):
+        # coordinates not yet used (or generated) by polystick puzzles
+        return []
 
     def make_aspects(self, segments, flips=(0, 1), rotations=(0, 1, 2, 3)):
         aspects = set()
@@ -1214,25 +1220,6 @@ class TetraSticks(Puzzle):
                 aspect = polystick.oriented(rotation, flip, normalized=True)
                 aspects.add(aspect)
         return aspects
-
-
-class PolySticks123(object):
-
-    piece_data = {
-        'I1': ((((0,0),(1,0)),), {}),
-        'I2': ((((0,0),(2,0)),), {}),
-        'V2': ((((0,0),(1,0)), ((0,0),(0,1))), {}),
-        'I3': ((((0,0),(3,0)),), {}),
-        'L3': ((((0,0),(2,0)), ((2,0),(2,1))), {}),
-        'T3': ((((0,0),(2,0)), ((1,0),(1,1))), {}),
-        'Z3': ((((0,1),(1,1)), ((1,1),(1,0)), ((1,0),(2,0))), {}),
-        'U3': ((((0,1),(0,0)), ((0,0),(1,0)), ((1,0),(1,1))), {}),}
-
-
-class TetraSticksMatrix(TetraSticks):
-
-    def coordinates(self):
-        return []
 
     def build_matrix_header(self):
         headers = []
@@ -1337,7 +1324,53 @@ class TetraSticksMatrix(TetraSticks):
         return x, y, direction
 
 
-class WeldedTetraSticks4x4Matrix(TetraSticksMatrix):
+class Tetrasticks(Polysticks):
+
+    piece_data = {
+        'I': ((((0,0),(4,0)),), {}),
+        'L': ((((0,0),(3,0)), ((3,0),(3,1))), {}),
+        'Y': ((((0,0),(3,0)), ((2,0),(2,1))), {}),
+        'V': ((((0,0),(2,0)), ((2,0),(2,2))), {}),
+        'T': ((((0,0),(2,0)), ((1,0),(1,2))), {}),
+        'X': ((((0,1),(2,1)), ((1,0),(1,2))), {}),
+        'U': ((((0,0),(2,0)), ((0,0),(0,1)), ((2,0),(2,1))), {}),
+        'N': ((((0,0),(2,0)), ((2,0),(2,1)), ((2,1),(3,1))), {}),
+        'J': ((((0,0),(2,0)), ((2,0),(2,1)), ((2,1),(1,1))), {}),
+        'H': ((((0,0),(2,0)), ((1,0),(1,1)), ((1,1),(2,1))), {}),
+        'F': ((((0,0),(2,0)), ((0,0),(0,1)), ((1,0),(1,1))), {}),
+        'Z': ((((0,0),(0,1)), ((0,1),(2,1)), ((2,1),(2,2))), {}),
+        'R': ((((0,0),(0,1)), ((0,1),(2,1)), ((1,1),(1,2))), {}),
+        'W': ((((0,0),(1,0)), ((1,0),(1,1)), ((1,1),(2,1)), ((2,1),(2,2))), {}),
+        'P': ((((0,0),(0,1)), ((0,1),(1,1)), ((1,1),(1,0)), ((1,0),(2,0))), {}),
+        'O': ((((0,0),(1,0)), ((1,0),(1,1)), ((1,1),(0,1)), ((0,1),(0,0))), {})}
+
+    symmetric_pieces = 'I O T U V W X'.split()
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = 'F H J L N P R Y Z'.split()
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+    welded_pieces = 'F H R T X Y'.split()
+    """Pieces with junction points (where 3 or more segments join)."""
+
+    unwelded_pieces = 'I J L N O P U V W Z '.split()
+    """Pieces without junction points (max. 2 segments join)."""
+
+
+class Polysticks123(object):
+
+    piece_data = {
+        'I1': ((((0,0),(1,0)),), {}),
+        'I2': ((((0,0),(2,0)),), {}),
+        'V2': ((((0,0),(1,0)), ((0,0),(0,1))), {}),
+        'I3': ((((0,0),(3,0)),), {}),
+        'L3': ((((0,0),(2,0)), ((2,0),(2,1))), {}),
+        'T3': ((((0,0),(2,0)), ((1,0),(1,1))), {}),
+        'Z3': ((((0,1),(1,1)), ((1,1),(1,0)), ((1,0),(2,0))), {}),
+        'U3': ((((0,1),(0,0)), ((0,0),(1,0)), ((1,0),(1,1))), {}),}
+
+
+class WeldedTetrasticks4x4Matrix(Tetrasticks):
 
     """
     4 solutions (perfect solutions, i.e. no pieces cross).
@@ -1358,9 +1391,9 @@ class WeldedTetraSticks4x4Matrix(TetraSticksMatrix):
 
     def customize_piece_data(self):
         self.piece_data = copy.deepcopy(self.piece_data)
-        for key in TetraSticksMatrix.unwelded_pieces:
+        for key in self.unwelded_pieces:
             del self.piece_data[key]
-        for key in TetraSticksMatrix.asymmetric_pieces:
+        for key in self.asymmetric_pieces:
             if key not in self.piece_data:
                 continue
             self.piece_data[key][-1]['flips'] = None
@@ -1368,7 +1401,7 @@ class WeldedTetraSticks4x4Matrix(TetraSticksMatrix):
             self.piece_data[key+'*'][-1]['flips'] = (1,)
 
 
-class TetraSticks5x5Matrix(TetraSticksMatrix):
+class Tetrasticks5x5Matrix(Tetrasticks):
 
     """
     1795 solutions total:
@@ -1409,18 +1442,18 @@ class TetraSticks5x5Matrix(TetraSticksMatrix):
 
     def make_aspects(self, segments, flips=(0, 1), rotations=(0, 1, 2, 3)):
         if segments:
-            return TetraSticksMatrix.make_aspects(
+            return Tetrasticks.make_aspects(
                 self, segments, flips=flips, rotations=rotations)
         return set()
 
 
-class PolySticks1234Matrix(TetraSticksMatrix, PolySticks123):
+class Polysticks1234Matrix(Tetrasticks, Polysticks123):
 
-    piece_data = copy.deepcopy(TetraSticks.piece_data)
-    piece_data.update(copy.deepcopy(PolySticks123.piece_data))
+    piece_data = copy.deepcopy(Tetrasticks.piece_data)
+    piece_data.update(copy.deepcopy(Polysticks123.piece_data))
 
 
-class PolySticks1234_6x6Matrix(PolySticks1234Matrix):
+class Polysticks1234_6x6Matrix(Polysticks1234Matrix):
 
     """
     ? solutions (very large number; over 35000 unique solutions in first
@@ -1432,7 +1465,7 @@ class PolySticks1234_6x6Matrix(PolySticks1234Matrix):
     height = 6
 
 
-class PolySticks1234_6x6MatrixA(PolySticks1234_6x6Matrix):
+class Polysticks1234_6x6MatrixA(Polysticks1234_6x6Matrix):
 
     check_for_duplicates = True
     duplicate_conditions = ({'xy_swapped': True},)
@@ -1447,7 +1480,7 @@ class PolySticks1234_6x6MatrixA(PolySticks1234_6x6Matrix):
         self.build_regular_matrix(keys)
 
 
-class PolySticks1234_6x6MatrixB(PolySticks1234_6x6Matrix):
+class Polysticks1234_6x6MatrixB(Polysticks1234_6x6Matrix):
 
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
@@ -1458,7 +1491,7 @@ class PolySticks1234_6x6MatrixB(PolySticks1234_6x6Matrix):
         self.build_regular_matrix(keys)
 
 
-class PolySticks1234_6x6MatrixC(PolySticks1234_6x6Matrix):
+class Polysticks1234_6x6MatrixC(Polysticks1234_6x6Matrix):
 
     check_for_duplicates = True
     duplicate_conditions = ({'y_reversed': True},)
@@ -1473,7 +1506,7 @@ class PolySticks1234_6x6MatrixC(PolySticks1234_6x6Matrix):
         self.build_regular_matrix(keys)
 
 
-class PolySticks1234_6x6MatrixD(PolySticks1234_6x6Matrix):
+class Polysticks1234_6x6MatrixD(Polysticks1234_6x6Matrix):
 
     """symmetry: X at center; remove flip & rotation of P (fix one aspect)"""
 
