@@ -152,7 +152,7 @@ The sky's the limit!
 .. _tile the plane: http://mathworld.wolfram.com/Tiling.html
 .. _tessellation: http://mathworld.wolfram.com/Tessellation.html
 .. _can find them all: 
-   http://puzzler.sourceforge.net/solutions/pentominoes6x10.txt
+   http://puzzler.sourceforge.net/solutions/pentominoes-6x10.txt
 .. _regular (Platonic) solids: http://mathworld.wolfram.com/PlatonicSolid.html
 .. _fill space: http://mathworld.wolfram.com/Space-FillingPolyhedron.html
 .. _truncated octahedron: http://mathworld.wolfram.com/TruncatedOctahedron.html
