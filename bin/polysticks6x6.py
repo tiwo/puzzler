@@ -8,7 +8,7 @@ All are perfect solutions (i.e. no pieces cross).
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.PolySticks1234_6x6MatrixA(),
-             puzzles.PolySticks1234_6x6MatrixB(),
-             puzzles.PolySticks1234_6x6MatrixC(),
-             puzzles.PolySticks1234_6x6MatrixD()))
+core.solver((puzzles.Polysticks1234_6x6MatrixA(),
+             puzzles.Polysticks1234_6x6MatrixB(),
+             puzzles.Polysticks1234_6x6MatrixC(),
+             puzzles.Polysticks1234_6x6MatrixD()))

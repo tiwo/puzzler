@@ -7,4 +7,4 @@
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.WeldedTetraSticks4x4Matrix(),))
+core.solver((puzzles.WeldedTetrasticks4x4Matrix(),))
