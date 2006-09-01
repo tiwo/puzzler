@@ -35,7 +35,7 @@ Changes Since Release 1
 
   - One-sided pentominoes: 3x30
 
-* Added SVG image generation support.
+* Added SVG image generation support (for pentominoes).
 
 * Added unit tests.
 

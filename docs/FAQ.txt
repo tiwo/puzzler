@@ -512,7 +512,7 @@ with the solution number::
     solution 1:
 
 The second part of the solution record lists the solution coordinates,
-one piece per line, with the piece name last:
+one piece per line, with the piece name last::
 
     1,1 2,0 2,1 2,2 3,1 X
     0,0 0,1 0,2 0,3 1,0 L
