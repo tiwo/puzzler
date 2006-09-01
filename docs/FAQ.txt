@@ -356,18 +356,33 @@ Puzzler:
   + rectangles:
 
     - 3x20: 2 solutions
+
+      .. image:: images/pentominoes-3x20.png
+
     - 4x15: 368 solutions
+
+      .. image:: images/pentominoes-4x15.png
+
     - 5x12: 1010 solutions
+
+      .. image:: images/pentominoes-5x12.png
+
     - 6x10: 2339 solutions
+
+      .. image:: images/pentominoes-6x10.png
 
   + 3x20 ring (3x20 rectangle joined at the ends): 2 solutions
     (same as the 3x20 rectangle; the V piece forces a partition)
 
   + 8x8 square with a central 2x2 hole: 65 solutions
 
+    .. image:: images/pentominoes-8x8.png
+
 * one-sided pentominoes
 
   - 3x30 rectangle: 46 solutions
+
+    .. image:: images/one-sided-pentominoes-3x30.png
 
 * solid pentominoes
 

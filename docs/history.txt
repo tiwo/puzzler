@@ -17,15 +17,27 @@
 Changes Since Release 1
 =======================
 
-Added puzzles:
+* Added puzzles:
 
-* Polysticks of order 1 through 4 in a 6 |x| 6 grid
-  (bin/polysticks6x6.py).
+  - Polysticks of order 1 through 4: 6x6 grid.
 
-* Tetrahexes (4 |x| 7 & clipped 3 |x| 10) and pentahexes (10 |x| 11 &
-  5 |x| 22).
+  - Tetrahexes: 4x7, clipped 3x10, "coin".
 
-Began adding unit tests.
+  - Pentahexes: 10x11 & 5x22.
+
+  - Polyhexes of order 1 through 4: 4x10 &  5x8.
+
+  - Hexiamonds: 4x9, 6x6, 4x11 trapezium, 4x10 elongated hexagon,
+    snowflake, ring 2, crescent, crescent 2, 6x8 "coin", trefoil
+
+  - Heptiamonds: 7x12, 6x14, 4x21, 3x28; 12x13, 6x17, & 4x23 trapezia;
+    snowflake 1; triangle with central hole; diamond ring
+
+  - One-sided pentominoes: 3x30
+
+* Added SVG image generation support.
+
+* Added unit tests.
 
 
 Release 1 (2006-08-08)

@@ -109,6 +109,15 @@ class Cartesian2D(Cartesian1D):
         temp = self - pivot
         return temp.rotate0(quadrants) + pivot
 
+    def neighbors(self):
+        """Return a list of adjacent cells."""
+        x, y = self.coords
+        # counterclockwise from right
+        return (self.__class__((x + 1, y)),       # right
+                self.__class__((x,     y + 1)),   # above
+                self.__class__((x - 1, y)),       # left
+                self.__class__((x,     y - 1)))   # below
+
 
 class Cartesian3D(Cartesian2D):
 

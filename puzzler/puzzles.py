@@ -32,6 +32,8 @@ class Puzzle(object):
 
     secondary_columns = 0
 
+    empty_cell = ' '
+
     piece_data = {}
     """Mapping of piece names to 2-tuples:
 
@@ -39,6 +41,32 @@ class Puzzle(object):
     * dictionary of aspect restrictions, keyword arguments to `make_aspects`;
       customized in `customize_piece_data` (make a copy.deepcopy first though)
     """
+
+    svg_header = '''\
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="%(width)s" height="%(height)s" viewBox="0 0 %(width)s %(height)s"
+     xmlns="http://www.w3.org/2000/svg">
+<g>
+'''
+    svg_footer = '</g>\n</svg>\n'
+
+    svg_polygon = '''\
+<polygon fill="%(fill)s" stroke="%(stroke)s" stroke-width="%(stroke_width)s"
+         points="%(points)s" />
+'''
+
+    svg_stroke = 'white'
+    """Polygon outline color."""
+
+    svg_stroke_width = '1'
+    """Width of polygon outline."""
+
+    svg_fills = None
+    """Mapping of piece names to fill colors."""
+
+    svg_unit_length = 10
+    """Unit side length in pixels."""
 
     def __init__(self):
         self.solutions = set()
@@ -123,6 +151,14 @@ class Puzzle(object):
         """
         self.build_regular_matrix(sorted(self.pieces.keys()))
 
+    def build_regular_matrix(self, keys):
+        """
+        Build `self.matrix` rows from puzzle pieces listed in `keys`.
+
+        Implement in subclasses.
+        """
+        raise NotImplementedError
+
     def record_solution(self, solution, solver, stream=sys.stdout, dated=False):
         """
         Output a formatted solution to `stream`.
@@ -146,6 +182,14 @@ class Puzzle(object):
     def format_solution(self, solution):
         """
         Return a puzzle-specific formatting of a solution.
+
+        Implement in subclasses.
+        """
+        raise NotImplementedError
+
+    def format_svg(self, solution):
+        """
+        Return a puzzle-specific SVG formatting of a solution.
 
         Implement in subclasses.
         """
@@ -215,15 +259,102 @@ class Puzzle2D(Puzzle):
         order_functions = (lambda x: x, reversed)
         x_reversed_fn = order_functions[x_reversed]
         y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
-        s_matrix = [[' '] * self.width for y in range(self.height)]
+        s_matrix = self.build_solution_matrix(solution)
+        return '\n'.join(' '.join(x_reversed_fn(s_matrix[y])).rstrip()
+                         for y in y_reversed_fn(range(self.height)))
+
+    def build_solution_matrix(self, solution, margin=0):
+        s_matrix = [[self.empty_cell] * (self.width + 2 * margin)
+                    for y in range(self.height + 2 * margin)]
         for row in solution:
             piece = sorted(i.column.name for i in row.row_data())
             name = piece[-1]
             for cell_name in piece[:-1]:
                 x, y = [int(d.strip()) for d in cell_name.split(',')]
-                s_matrix[y][x] = name
-        return '\n'.join(' '.join(x_reversed_fn(s_matrix[y])).rstrip()
-                         for y in y_reversed_fn(range(self.height)))
+                s_matrix[y + margin][x + margin] = name
+        return s_matrix
+
+    def format_svg(self, solution, s_matrix=None):
+        if s_matrix:
+            assert solution is None, ('Provide only one of solution '
+                                      '& s_matrix arguments, not both.')
+        else:
+            s_matrix = self.build_solution_matrix(solution, margin=1)
+        polygons = []
+        for y, row in enumerate(s_matrix):
+            for x, cell in enumerate(row):
+                if cell == self.empty_cell:
+                    continue
+                polygons.append(self.build_polygon(s_matrix, x, y))
+        header = self.svg_header % {
+            'height': (self.height + 2) * self.svg_unit_length,
+            'width': (self.width + 2) * self.svg_unit_length}
+        return '%s%s%s' % (header, ''.join(polygons), self.svg_footer)
+
+    def build_polygon(self, s_matrix, x, y):
+        points = self.get_polygon_points(s_matrix, x, y)
+        fill = self.svg_fills[s_matrix[y][x]]
+        # Erase cells of this piece:
+        for x, y in self.get_piece_cells(s_matrix, x, y):
+            s_matrix[y][x] = self.empty_cell
+        points_str = ' '.join('%.3f,%.3f' % (x, y) for (x, y) in points)
+        return self.svg_polygon % {'fill': fill,
+                                   'stroke': self.svg_stroke,
+                                   'stroke_width': self.svg_stroke_width,
+                                   'points': points_str}
+
+    edge_trace = {(+1,  0): ((( 0, -1), ( 0, -1)), # right
+                             (( 0,  0), (+1,  0)),
+                             (None,     ( 0, +1))),
+                  (-1,  0): (((-1,  0), ( 0, +1)), # left
+                             ((-1, -1), (-1,  0)),
+                             (None,     ( 0, -1))),
+                  ( 0, +1): ((( 0,  0), (+1,  0)), # up
+                             ((-1,  0), ( 0, +1)),
+                             (None,     (-1,  0))),
+                  ( 0, -1): (((-1, -1), (-1,  0)), # down
+                             (( 0, -1), ( 0, -1)),
+                             (None,     (+1,  0))),}
+    """Mapping of (x,y)-direction vector to list (ordered by test) of
+    2-tuples: examination cell coordinate delta & new direction vector."""
+
+    def get_polygon_points(self, s_matrix, x, y):
+        """
+        Return a list of coordinate tuples, the corner points of the polygon
+        for the piece at (x,y).
+        """
+        cell_content = s_matrix[y][x]
+        unit = self.svg_unit_length
+        height = (self.height + 2) * unit
+        points = [(x * unit, height - y * unit)]
+        direction = (+1, 0)             # to the right
+        start = (x, y)
+        x += 1
+        while (x, y) != start:
+            for delta, new_direction in self.edge_trace[direction]:
+                if ( delta is None
+                     or s_matrix[y + delta[1]][x + delta[0]] == cell_content):
+                    break
+            if new_direction != direction:
+                direction = new_direction
+                points.append((x * unit, height - y * unit))
+            x += direction[0]
+            y += direction[1]
+        return points
+
+    def get_piece_cells(self, s_matrix, x, y):
+        cell_content = s_matrix[y][x]
+        coord = coordsys.Cartesian2D((x, y))
+        cells = set([coord])
+        self._get_piece_cells(cells, coord, s_matrix, cell_content)
+        return cells
+
+    def _get_piece_cells(self, cells, coord, s_matrix, cell_content):
+        for neighbor in coord.neighbors():
+            x, y = neighbor
+            if neighbor not in cells and s_matrix[y][x] == cell_content:
+                cells.add(neighbor)
+                self._get_piece_cells(cells, neighbor, s_matrix, cell_content)
 
 
 class Puzzle3D(Puzzle):
@@ -324,6 +455,20 @@ class Pentominoes(Puzzle2D):
 
     asymmetric_pieces = 'F L P N Y Z'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
+
+    svg_fills = {
+        'I': 'blue',
+        'X': 'red',
+        'F': 'green',
+        'L': 'lime',
+        'N': 'navy',
+        'P': 'magenta',
+        'T': 'orange',
+        'U': 'turquoise',
+        'V': 'blueviolet',
+        'W': 'maroon',
+        'Y': 'gold',
+        'Z': 'salmon'}
 
 
 class Pentominoes6x10Matrix(Pentominoes):
@@ -555,11 +700,13 @@ class OneSidedPentominoes(Pentominoes):
         pieces.
         """
         self.piece_data = copy.deepcopy(self.piece_data)
+        self.svg_fills = copy.deepcopy(self.svg_fills)
         for key in self.piece_data.keys():
             self.piece_data[key][-1]['flips'] = None
         for key in self.asymmetric_pieces:
             self.piece_data[key.lower()] = copy.deepcopy(self.piece_data[key])
             self.piece_data[key.lower()][-1]['flips'] = (1,)
+            self.svg_fills[key.lower()] = self.svg_fills[key]
 
     def format_solution(self, *args, **kwargs):
         """Convert solutions to uppercase to avoid duplicates."""

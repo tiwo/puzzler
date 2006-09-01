@@ -11,15 +11,18 @@ Core processing for Polyform Puzzler.
 
 import sys
 import datetime
+from optparse import OptionParser
 from puzzler import exact_cover
 
 
-def solver(puzzles, output_stream=sys.stdout):
+def solver(puzzles, output_stream=sys.stdout, settings=None):
     """
     Given a list of `puzzles` (subclasses of `puzzler.puzzles.Puzzle`), find
     all solutions and report on `output_stream`.
     """
     start = datetime.datetime.now()
+    if settings is None:
+        settings = process_command_line()
     matrices = []
     stats = []
     for puzzle in puzzles:
@@ -33,8 +36,21 @@ def solver(puzzles, output_stream=sys.stdout):
         solver.root = matrices[i]
         for solution in solver.solve():
             puzzle.record_solution(solution, solver, stream=output_stream)
+            if settings.first_svg:
+                try:
+                    svg_file = open(settings.first_svg, 'w')
+                    svg_file.write(puzzle.format_svg(solution))
+                finally:
+                    svg_file.close()
+                settings.first_svg = False
+            if ( settings.stop_after_number
+                 and solver.num_solutions == settings.stop_after_number):
+                break
         stats.append((solver.num_solutions - last_solutions,
                       solver.num_searches - last_searches))
+        if ( settings.stop_after_number
+             and solver.num_solutions == settings.stop_after_number):
+            break
         last_solutions = solver.num_solutions
         last_searches = solver.num_searches
     end = datetime.datetime.now()
@@ -47,3 +63,14 @@ def solver(puzzles, output_stream=sys.stdout):
             print >>output_stream, (
                 '(%s: %s solutions, %s searches)'
                 % (puzzles[i].__class__.__name__, solutions, searches))
+
+def process_command_line():
+    parser = OptionParser()
+    parser.add_option(
+        '-f', '--first-svg', metavar='FILE',
+        help='Format the first solution as SVG and write it to FILE.')
+    parser.add_option(
+        '-n', '--stop-after-number', type='int', metavar='N',
+        help='Stop processing after generating N solutions.')
+    settings, args = parser.parse_args()
+    return settings
