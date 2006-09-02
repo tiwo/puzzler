@@ -133,8 +133,8 @@ How can others contribute?
     * Kadon's `Poly-4 Supplement
       <http://www.gamepuzzles.com/poly4.htm>`__
 
-    * Kadon's `Iamond Ring
-      <http://www.gamepuzzles.com/esspoly.htm#IR>`__
+    * Kadon's `Iamond Hex
+      <http://www.gamepuzzles.com/esspoly.htm#IH>`__
 
     * Kadon's `Iamond Ring
       <http://www.gamepuzzles.com/esspoly.htm#IR>`__
