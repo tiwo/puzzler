@@ -89,6 +89,86 @@ __ `How are the polyform puzzles solved?`_
 .. _reStructuredText: http://docutils.sf.net/rst.html
 
 
+Can others contribute?
+----------------------
+
+Most definitely, yes!  See the next question for how.
+
+
+How can others contribute?
+--------------------------
+
+**Python programmers**
+    Please jump right in, there's a lot `to do`_!  Patches are
+    welcome, as are new project members (see the next question).
+
+**Programmers who don't know Python**
+    Have you considered learning Python_?  It's a great language,
+    focused on programmer productivity.  Python excels at the rapid
+    creation of maintainable code.  It's scalable.  And it's fun.
+    Give it a try!
+
+    There is one area where Python doesn't shine: raw speed.  But that
+    can be solved with extension modules written in C.  The workhorse
+    of the Polyform Puzzler project, the puzzler.exact_cover_ module,
+    should be rewritten as an extension module C for speed.  See
+    section 4, `The Code`_, for an introduction.
+
+**Non-programmers**
+    Have you considered learning to program?  It's not as difficult as
+    you think, and it can be loads of fun!
+
+**Puzzlers**
+    Use the project, and report on any issues you find.  Contribute
+    some documentation.  Let me know if you use and enjoy Polyform
+    Puzzler!
+
+**Anyone**
+    I love real-world, physical puzzles, and I'd love to receive some!
+    Here's my _`wish list`:
+
+    * Kadon's `Super Deluxe Quintillions
+      <http://www.gamepuzzles.com/polycube.htm#SQd>`__
+
+    * Kadon's `Poly-4 Supplement
+      <http://www.gamepuzzles.com/poly4.htm>`__
+
+    * Kadon's `Iamond Ring
+      <http://www.gamepuzzles.com/esspoly.htm#IR>`__
+
+    * Kadon's `Iamond Ring
+      <http://www.gamepuzzles.com/esspoly.htm#IR>`__
+
+    * Kadon's `Octiamond Ring
+      <http://www.gamepuzzles.com/esspoly.htm#OR>`__
+
+    * Kadon's `Hexnut Jr.
+      <http://www.gamepuzzles.com/esspoly.htm#OR>`__, `Hexnut
+      <http://www.gamepuzzles.com/esspoly2.htm#HN>`__, and `Hexnut II
+      <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__
+
+    * Solomon Golomb's `Polyominoes (2nd ed.)
+      <http://www.amazon.ca/gp/product/0691024448>`__ (I have a copy
+      of the first edition)
+
+    Plus, I have a `wish list on Amazon.ca`__ with a bunch of
+    unrelated DVDs and books.
+
+__ http://www.amazon.ca/gp/registry/registry.html/?ie=UTF8&type=wishlist&id=200YG9OZEZWBW
+.. _to do: todo.html
+
+
+Can others join the project?
+----------------------------
+
+Most certainly, yes!  All you need is a SourceForge_ account, and
+they're free.  Just click the "Create Account" link on the `project
+page`__ or any SourceForge_ page.
+
+__ https://sourceforge.net/projects/puzzler
+.. _SourceForge: https://sourceforge.net
+
+
 Polyforms
 =========
 
@@ -337,9 +417,7 @@ game, and puzzle specialty stores.  If they don't stock what you want,
 ask them to get it for you!
 
 For a wide variety via mail order, I recommend `Kadon Enterprises
-<http://www.gamepuzzles.com/>`__ (their `Super Deluxe Quintillions
-<http://www.gamepuzzles.com/polycube.htm#SQd>`__ set has been on my
-wish list for some time now).
+<http://www.gamepuzzles.com/>`__ (see my `wish list`_).
 
 
 Polyform Puzzles & Solutions
