@@ -38,10 +38,16 @@ def solver(puzzles, output_stream=sys.stdout, settings=None):
             puzzle.record_solution(solution, solver, stream=output_stream)
             if settings.first_svg:
                 try:
-                    svg_file = open(settings.first_svg, 'w')
-                    svg_file.write(puzzle.format_svg(solution))
-                finally:
-                    svg_file.close()
+                    svg = puzzle.format_svg(solution)
+                except NotImplementedError:
+                    print >>sys.stderr, (
+                        'Warning: SVG output not supported by this puzzle.\n')
+                else:
+                    try:
+                        svg_file = open(settings.first_svg, 'w')
+                        svg_file.write(svg)
+                    finally:
+                        svg_file.close()
                 settings.first_svg = False
             if ( settings.stop_after_number
                  and solver.num_solutions == settings.stop_after_number):
@@ -73,4 +79,8 @@ def process_command_line():
         '-n', '--stop-after-number', type='int', metavar='N',
         help='Stop processing after generating N solutions.')
     settings, args = parser.parse_args()
+    if args:
+        print >>sys.stderr, (
+            '%s takes no command-line arguments; "%s" ignored.'
+            % (sys.argv[0], ' '.join(args)))
     return settings
