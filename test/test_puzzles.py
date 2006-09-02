@@ -9,6 +9,7 @@ import sys
 import copy
 import unittest
 from puzzler import puzzles
+from puzzler import coordsys
 
 
 class MockPuzzle(puzzles.Puzzle2D):
@@ -16,6 +17,7 @@ class MockPuzzle(puzzles.Puzzle2D):
     height = 4
     width = 5
     svg_fills = {'#': 'black'}
+    coord_class = coordsys.Cartesian2D
 
     def make_aspects(self, data, **kwargs):
         pass
@@ -68,11 +70,11 @@ U U X I I I I I N N N F T W Y Y Y Y Z V"""
          points="70.000,40.000 110.000,40.000 110.000,30.000 80.000,30.000 80.000,20.000 70.000,20.000" />
 <polygon fill="green" stroke="white" stroke-width="1"
          points="110.000,40.000 120.000,40.000 120.000,30.000 130.000,30.000 130.000,10.000 120.000,10.000 120.000,20.000 100.000,20.000 100.000,30.000 110.000,30.000" />
-<polygon fill="orange" stroke="white" stroke-width="1"
+<polygon fill="darkorange" stroke="white" stroke-width="1"
          points="120.000,40.000 150.000,40.000 150.000,30.000 140.000,30.000 140.000,10.000 130.000,10.000 130.000,30.000 120.000,30.000" />
 <polygon fill="maroon" stroke="white" stroke-width="1"
          points="150.000,40.000 170.000,40.000 170.000,30.000 160.000,30.000 160.000,20.000 150.000,20.000 150.000,10.000 140.000,10.000 140.000,30.000 150.000,30.000" />
-<polygon fill="salmon" stroke="white" stroke-width="1"
+<polygon fill="plum" stroke="white" stroke-width="1"
          points="170.000,40.000 180.000,40.000 180.000,30.000 200.000,30.000 200.000,10.000 190.000,10.000 190.000,20.000 170.000,20.000" />
 <polygon fill="blueviolet" stroke="white" stroke-width="1"
          points="180.000,40.000 210.000,40.000 210.000,10.000 200.000,10.000 200.000,30.000 180.000,30.000" />
@@ -105,7 +107,7 @@ U U X I I I I I N N N F T W Y Y Y Y Z V"""
                     + [[' '] + row + [' '] for row in rows]
                     + [[' '] * width])
         p = puzzles.Pentominoes3x20Matrix()
-        svg = p.format_svg(None, s_matrix)
+        svg = p.format_svg(s_matrix=s_matrix)
         self.assertEquals(svg, self.pentominoes_svg)
 
 

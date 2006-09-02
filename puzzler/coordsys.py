@@ -461,6 +461,17 @@ class Hexagonal2D(Cartesian2D):
         y = coeffs[1][0] * self.coords[0] + coeffs[1][1] * self.coords[1]
         return self.__class__((x, y))
 
+    def neighbors(self):
+        """Return a list of adjacent cells."""
+        x, y = self.coords
+        # counterclockwise from right
+        return (self.__class__((x + 1, y)),       # right
+                self.__class__((x,     y + 1)),   # above-right
+                self.__class__((x - 1, y + 1)),   # above-left
+                self.__class__((x - 1, y)),       # left
+                self.__class__((x,     y - 1)),   # below-left
+                self.__class__((x + 1, y - 1)))   # below-right
+
 
 class HexagonalCoordSet2D(CartesianCoordSet2D):
 
@@ -550,6 +561,19 @@ class Triangular3D(Cartesian3D):
              + coeffs[2][1] * self.coords[1]
              + coeffs[2][2] * self.coords[2])
         return self.__class__((x, y, z))
+
+    def neighbors(self):
+        """Return a list of adjacent cells."""
+        x, y, z = self.coords
+        # counterclockwise from right
+        if z == 0:
+            return (self.__class__((x,     y,     1)), # right
+                    self.__class__((x - 1, y,     1)), # left
+                    self.__class__((x,     y - 1, 1))) # below
+        else:
+            return (self.__class__((x + 1, y,     0)), # right
+                    self.__class__((x,     y + 1, 0)), # above
+                    self.__class__((x,     y,     0))) # left
 
 
 class TriangularCoordSet3D(CartesianCoordSet3D):

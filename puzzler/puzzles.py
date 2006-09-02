@@ -10,6 +10,7 @@ import pdb
 import sys
 import copy
 import datetime
+import math
 from pprint import pprint, pformat
 import coordsys
 
@@ -53,7 +54,9 @@ class Puzzle(object):
 
     svg_polygon = '''\
 <polygon fill="%(fill)s" stroke="%(stroke)s" stroke-width="%(stroke_width)s"
-         points="%(points)s" />
+         points="%(points)s">
+<desc>%(name)s</desc>
+</polygon>
 '''
 
     svg_stroke = 'white'
@@ -67,6 +70,12 @@ class Puzzle(object):
 
     svg_unit_length = 10
     """Unit side length in pixels."""
+
+    svg_unit_width = svg_unit_length
+    """Unit width in pixels."""
+
+    svg_unit_height = svg_unit_length
+    """Unit height in pixels."""
 
     def __init__(self):
         self.solutions = set()
@@ -187,7 +196,7 @@ class Puzzle(object):
         """
         raise NotImplementedError
 
-    def format_svg(self, solution):
+    def format_svg(self, solution=None, s_matrix=None):
         """
         Return a puzzle-specific SVG formatting of a solution.
 
@@ -274,16 +283,16 @@ class Puzzle2D(Puzzle):
                 s_matrix[y + margin][x + margin] = name
         return s_matrix
 
-    def format_svg(self, solution, s_matrix=None):
+    def format_svg(self, solution=None, s_matrix=None):
         if s_matrix:
             assert solution is None, ('Provide only one of solution '
                                       '& s_matrix arguments, not both.')
         else:
             s_matrix = self.build_solution_matrix(solution, margin=1)
         polygons = []
-        for y, row in enumerate(s_matrix):
-            for x, cell in enumerate(row):
-                if cell == self.empty_cell:
+        for y in range(1, self.height + 1):
+            for x in range(1, self.width + 1):
+                if s_matrix[y][x] == self.empty_cell:
                     continue
                 polygons.append(self.build_polygon(s_matrix, x, y))
         header = self.svg_header % {
@@ -293,7 +302,8 @@ class Puzzle2D(Puzzle):
 
     def build_polygon(self, s_matrix, x, y):
         points = self.get_polygon_points(s_matrix, x, y)
-        fill = self.svg_fills[s_matrix[y][x]]
+        name = s_matrix[y][x]
+        fill = self.svg_fills[name]
         # Erase cells of this piece:
         for x, y in self.get_piece_cells(s_matrix, x, y):
             s_matrix[y][x] = self.empty_cell
@@ -301,7 +311,8 @@ class Puzzle2D(Puzzle):
         return self.svg_polygon % {'fill': fill,
                                    'stroke': self.svg_stroke,
                                    'stroke_width': self.svg_stroke_width,
-                                   'points': points_str}
+                                   'points': points_str,
+                                   'name': name}
 
     edge_trace = {(+1,  0): ((( 0, -1), ( 0, -1)), # right
                              (( 0,  0), (+1,  0)),
@@ -315,8 +326,9 @@ class Puzzle2D(Puzzle):
                   ( 0, -1): (((-1, -1), (-1,  0)), # down
                              (( 0, -1), ( 0, -1)),
                              (None,     (+1,  0))),}
-    """Mapping of (x,y)-direction vector to list (ordered by test) of
-    2-tuples: examination cell coordinate delta & new direction vector."""
+    """Mapping of counterclockwise (x,y)-direction vector to list (ordered by
+    test) of 2-tuples: examination cell coordinate delta & new direction
+    vector."""
 
     def get_polygon_points(self, s_matrix, x, y):
         """
@@ -344,7 +356,7 @@ class Puzzle2D(Puzzle):
 
     def get_piece_cells(self, s_matrix, x, y):
         cell_content = s_matrix[y][x]
-        coord = coordsys.Cartesian2D((x, y))
+        coord = self.coord_class((x, y))
         cells = set([coord])
         self._get_piece_cells(cells, coord, s_matrix, cell_content)
         return cells
@@ -419,21 +431,28 @@ class Puzzle3D(Puzzle):
         x_reversed_fn = order_functions[x_reversed]
         y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
         z_reversed_fn = order_functions[z_reversed]
-        s_matrix = [[[' '] * self.width for y in range(self.height)]
-                    for z in range(self.depth)]
-        for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
-                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
-                s_matrix[z][y][x] = name
+        s_matrix = self.build_solution_matrix(solution)
         return '\n'.join(
             '    '.join(' '.join(x_reversed_fn(s_matrix[z][y]))
                         for z in z_reversed_fn(range(self.depth))).rstrip()
             for y in y_reversed_fn(range(self.height)))
 
+    def build_solution_matrix(self, solution, margin=0):
+        s_matrix = [[[' '] * (self.width + 2 * margin)
+                     for y in range(self.height + 2 * margin)]
+                    for z in range(self.depth + 2 * margin)]
+        for row in solution:
+            piece = sorted(i.column.name for i in row.row_data())
+            name = piece[-1]
+            for cell_name in piece[:-1]:
+                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
+                s_matrix[z + margin][y + margin][x + margin] = name
+        return s_matrix
+
 
 class Pentominoes(Puzzle2D):
+
+    coord_class = coordsys.Cartesian2D
 
     piece_data = {
         'F': (((-1,-1), ( 0,-1), ( 1,0), ( 0,1)), {}),
@@ -463,12 +482,12 @@ class Pentominoes(Puzzle2D):
         'L': 'lime',
         'N': 'navy',
         'P': 'magenta',
-        'T': 'orange',
+        'T': 'darkorange',
         'U': 'turquoise',
         'V': 'blueviolet',
         'W': 'maroon',
         'Y': 'gold',
-        'Z': 'salmon'}
+        'Z': 'plum'}
 
 
 class Pentominoes6x10Matrix(Pentominoes):
@@ -885,14 +904,7 @@ class SolidPentominoesRingMatrix(SolidPentominoes):
         y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
         z_reversed_fn = order_functions[z_reversed]
         z_unreversed_fn = order_functions[1 - z_reversed]
-        s_matrix = [[[' '] * self.width for y in range(self.height)]
-                    for z in range(self.depth)]
-        for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
-                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
-                s_matrix[z][y][x] = name
+        s_matrix = self.build_solution_matrix(solution)
         lines = []
         left_index = [0, -1][x_reversed]
         right_index = -1 - left_index
@@ -1037,6 +1049,15 @@ class SomaCubes(Puzzle3D):
         'b': (((0, 1, 0), (1, 0, 0), ( 1,  0, -1)), {}),
         'p': (((0, 1, 0), (1, 0, 0), ( 0,  0,  1)), {})}
     """(0,0,0) is implied."""
+
+    svg_fills = {
+        'V': 'blue',
+        'p': 'red',
+        'T': 'green',
+        'Z': 'lime',
+        'L': 'blueviolet',
+        'a': 'gold',
+        'b': 'navy'}
 
     check_for_duplicates = False
 
@@ -1680,6 +1701,10 @@ class Polyhexes(Puzzle2D):
 
     check_for_duplicates = True
 
+    svg_unit_height = Puzzle3D.svg_unit_length * math.sqrt(3) / 2
+
+    coord_class = coordsys.Hexagonal2D
+
     def coordinates(self):
         for y in range(self.height):
             for x in range(self.width):
@@ -1697,13 +1722,7 @@ class Polyhexes(Puzzle2D):
 
     def format_solution(self, solution,
                         rotate_180=False, row_reversed=False):
-        s_matrix = [[self.empty_cell] * self.width for y in range(self.height)]
-        for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
-                x, y = [int(d.strip()) for d in cell_name.split(',')]
-                s_matrix[y][x] = name
+        s_matrix = self.build_solution_matrix(solution)
         if rotate_180:
             s_matrix = [list(reversed(s_matrix[y]))
                         for y in reversed(range(self.height))]
@@ -1779,6 +1798,77 @@ class Polyhexes(Puzzle2D):
             output.pop(0)
         return '\n'.join(output) + '\n'
 
+    def format_svg(self, solution=None, s_matrix=None):
+        if s_matrix:
+            assert solution is None, ('Provide only one of solution '
+                                      '& s_matrix arguments, not both.')
+        else:
+            s_matrix = self.build_solution_matrix(solution, margin=1)
+        polygons = []
+        for y in range(1, self.height + 1):
+            for x in range(1, self.width + 1):
+                if s_matrix[y][x] == self.empty_cell:
+                    continue
+                polygons.append(self.build_polygon(s_matrix, x, y))
+        header = self.svg_header % {
+            'height': (self.height + 2) * self.svg_unit_height,
+            'width': (self.width + self.height / 2.0 + 2) * self.svg_unit_width}
+        return '%s%s%s' % (header, ''.join(polygons), self.svg_footer)
+
+    edge_trace = {0: ( 0, -1),
+                  1: (+1, -1),
+                  2: (+1,  0),
+                  3: ( 0, +1),
+                  4: (-1, +1),
+                  5: (-1,  0)}
+    """Mapping of counterclockwise edges to examination cell coordinate
+    delta."""
+
+    _sqrt3 = math.sqrt(3)
+    corner_offsets = {0: (0.0, 1 / _sqrt3),
+                      1: (0.0, 0.0),
+                      2: (0.5, -_sqrt3 / 6),
+                      3: (1.0, 0.0),
+                      4: (1.0, 1 / _sqrt3),
+                      5: (0.5, _sqrt3 / 2)}
+    """Offset of corners from the lower left-hand corner of hexagon."""
+
+    def get_polygon_points(self, s_matrix, x, y):
+        """
+        Return a list of coordinate tuples, the corner points of the polygon
+        for the piece at (x,y).
+        """
+        #pdb.set_trace()
+        cell_content = s_matrix[y][x]
+        unit = self.svg_unit_length
+        yunit = self.svg_unit_height
+        height = (self.height + 2) * yunit
+        base_x = (x + (y - 1) / 2.0) * unit
+        base_y = height - y * yunit
+        # the first 2 edges (3 corners) are known:
+        points = [(base_x + self.corner_offsets[corner][0] * unit,
+                   base_y - self.corner_offsets[corner][1] * unit)
+                  for corner in range(3)]
+        corner = 2                   # right & up
+        start = (x, y, 0)
+        while (x, y, corner) != start:
+            delta = self.edge_trace[corner]
+            points.append((base_x + self.corner_offsets[corner][0] * unit,
+                           base_y - self.corner_offsets[corner][1] * unit))
+#             print ('%s: x,y=%r, corner=%r, delta=%r, checking %r (%s)'
+#                    % (cell_content, (x,y), corner, delta,
+#                       (x+delta[0],y+delta[1]),
+#                       s_matrix[y + delta[1]][x + delta[0]]))
+            if s_matrix[y + delta[1]][x + delta[0]] == cell_content:
+                corner = (corner - 1) % 6
+                x += delta[0]
+                y += delta[1]
+                base_x = (x + (y - 1) / 2.0) * unit
+                base_y = height - y * yunit
+            else:
+                corner = (corner + 1) % 6
+        return points
+
 
 class Polyhexes123(object):
 
@@ -1791,10 +1881,15 @@ class Polyhexes123(object):
     """(0,0) is implied."""
 
     symmetric_pieces = piece_data.keys() # all of them
-    """Pieces with reflexive symmetry, identical to their mirror images."""
 
-    asymmetric_pieces = ()
-    """Pieces without reflexive symmetry, different from their mirror images."""
+    asymmetric_pieces = []
+
+    svg_fills = {
+        'H1': 'gray',
+        'I2': 'steelblue',
+        'I3': 'teal',
+        'V3': 'plum',
+        'A3': 'olive'}
 
 
 class Tetrahexes(Polyhexes):
@@ -1812,20 +1907,32 @@ class Tetrahexes(Polyhexes):
     symmetric_pieces = 'I4 O4 U4 Y4'.split()
     """Pieces with reflexive symmetry, identical to their mirror images."""
 
-    asymmetric_pieces = 'L4 P4 S4'.split()
+    asymmetric_pieces = 'J4 P4 S4'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
+
+    svg_fills = {
+        'I4': 'blue',
+        'O4': 'red',
+        'Y4': 'green',
+        'U4': 'lime',
+        'J4': 'blueviolet',
+        'P4': 'gold',
+        'S4': 'navy'}
 
 
 class Polyhex1234(Polyhexes123, Tetrahexes):
 
-    piece_data = copy.deepcopy(Tetrahexes.piece_data)
-    piece_data.update(copy.deepcopy(Polyhexes123.piece_data))
+    symmetric_pieces = (Polyhexes123.symmetric_pieces
+                        + Tetrahexes.symmetric_pieces)
 
-    symmetric_pieces = (tuple(Polyhexes123.symmetric_pieces)
-                        + tuple(Tetrahexes.symmetric_pieces))
+    asymmetric_pieces = (Polyhexes123.asymmetric_pieces
+                         + Tetrahexes.asymmetric_pieces)
 
-    asymmetric_pieces = (tuple(Polyhexes123.asymmetric_pieces)
-                         + tuple(Tetrahexes.asymmetric_pieces))
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(Tetrahexes.piece_data)
+        self.piece_data.update(copy.deepcopy(Polyhexes123.piece_data))
+        self.svg_fills = copy.deepcopy(Tetrahexes.svg_fills)
+        self.svg_fills.update(Polyhexes123.svg_fills)
 
 
 class Pentahexes(Polyhexes):
@@ -1860,6 +1967,30 @@ class Pentahexes(Polyhexes):
 
     asymmetric_pieces = 'J5 P5 N5 r5 p5 u5 S5 q5 T5 y5 G5'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
+
+    svg_fills = {
+        'I5': 'blue',
+        'X5': 'red',
+        'D5': 'green',
+        'C5': 'lime',
+        'V5': 'blueviolet',
+        'W5': 'gold',
+        'U5': 'navy',
+        'E5': 'magenta',
+        'L5': 'darkorange',
+        'Y5': 'turquoise',
+        'A5': 'maroon',
+        'J5': 'darkseagreen',
+        'P5': 'peru',
+        'N5': 'plum',
+        'r5': 'yellow',
+        'p5': 'steelblue',
+        'S5': 'gray',
+        'u5': 'lightcoral',
+        'q5': 'olive',
+        'T5': 'teal',
+        'y5': 'tan',
+        'G5': 'indigo'}
 
 
 class Tetrahex4x7Matrix(Tetrahexes):
@@ -1975,6 +2106,17 @@ class Polyiamonds(Puzzle3D):
 
     check_for_duplicates = True
 
+    svg_unit_height = Puzzle3D.svg_unit_length * math.sqrt(3) / 2
+
+    # stroke-linejoin="round" to avoid long miters on acute angles:
+    svg_polygon = '''\
+<polygon fill="%(fill)s" stroke="%(stroke)s"
+         stroke-width="%(stroke_width)s" stroke-linejoin="round"
+         points="%(points)s">
+<desc>%(name)s</desc>
+</polygon>
+'''
+
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -1994,15 +2136,7 @@ class Polyiamonds(Puzzle3D):
 
     def format_solution(self, solution,
                         rotate_180=False, row_reversed=False, xy_swapped=False):
-        s_matrix = [[[self.empty_cell] * self.width
-                     for y in range(self.height)]
-                    for z in range(self.depth)]
-        for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
-                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
-                s_matrix[z][y][x] = name
+        s_matrix = self.build_solution_matrix(solution)
         if rotate_180:
             s_matrix = [[list(reversed(s_matrix[z][y]))
                          for y in reversed(range(self.height))]
@@ -2024,6 +2158,19 @@ class Polyiamonds(Puzzle3D):
                          for y in range(self.width)]
                         for z in range(self.depth)]
         return self.format_triangular_grid(s_matrix)
+
+    def build_solution_matrix(self, solution, margin=0):
+        s_matrix = [[[self.empty_cell] * (self.width + 2 * margin)
+                     for y in range(self.height + 2 * margin)]
+                    # Z is pseudo-dimension, no margin necessary:
+                    for z in range(self.depth)]
+        for row in solution:
+            piece = sorted(i.column.name for i in row.row_data())
+            name = piece[-1]
+            for cell_name in piece[:-1]:
+                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
+                s_matrix[z][y + margin][x + margin] = name
+        return s_matrix
 
     def format_coords(self):
         s_matrix = [[[self.empty_cell] * self.width
@@ -2096,6 +2243,117 @@ class Polyiamonds(Puzzle3D):
                 left_margin = min(left_margin, len(line) - len(line.lstrip()))
         return '\n'.join(line[left_margin:] for line in output) + '\n'
 
+    def format_svg(self, solution=None, s_matrix=None):
+        if s_matrix:
+            assert solution is None, ('Provide only one of solution '
+                                      '& s_matrix arguments, not both.')
+        else:
+            s_matrix = self.build_solution_matrix(solution, margin=1)
+        polygons = []
+        for y in range(1, self.height + 1):
+            for x in range(1, self.width + 1):
+                for z in range(self.depth):
+                    if s_matrix[z][y][x] == self.empty_cell:
+                        continue
+                    polygons.append(self.build_polygon(s_matrix, x, y, z))
+        header = self.svg_header % {
+            'height': (self.height + 2) * self.svg_unit_height,
+            'width': (self.width + self.height / 2.0 + 2) * self.svg_unit_width}
+        return '%s%s%s' % (header, ''.join(polygons), self.svg_footer)
+
+    def build_polygon(self, s_matrix, x, y, z):
+        points = self.get_polygon_points(s_matrix, x, y, z)
+        name = s_matrix[z][y][x]
+        fill = self.svg_fills[name]
+        # Erase cells of this piece:
+        for x, y, z in self.get_piece_cells(s_matrix, x, y, z):
+            s_matrix[z][y][x] = self.empty_cell
+        points_str = ' '.join('%.3f,%.3f' % (x, y) for (x, y) in points)
+        return self.svg_polygon % {'fill': fill,
+                                   'stroke': self.svg_stroke,
+                                   'stroke_width': self.svg_stroke_width,
+                                   'points': points_str,
+                                   'name': name}
+
+    edge_trace = {(+1,  0): ((( 0, -1, 0), ( 0, -1)), # right
+                             (( 0, -1, 1), (+1, -1)),
+                             (( 0,  0, 0), (+1,  0)),
+                             ((-1,  0, 1), ( 0, +1)),
+                             (None,        (-1, +1))),
+                  ( 0, +1): ((( 0, -1, 1), (+1, -1)), # up & right
+                             (( 0,  0, 0), (+1,  0)),
+                             ((-1,  0, 1), ( 0, +1)),
+                             ((-1,  0, 0), (-1, +1)),
+                             (None,        (-1,  0))),
+                  (-1, +1): ((( 0,  0, 0), (+1,  0)), # up & left
+                             ((-1,  0, 1), ( 0, +1)),
+                             ((-1,  0, 0), (-1, +1)),
+                             ((-1, -1, 1), (-1,  0)),
+                             (None,        ( 0, -1))),
+                  (-1,  0): (((-1,  0, 1), ( 0, +1)), # left
+                             ((-1,  0, 0), (-1, +1)),
+                             ((-1, -1, 1), (-1,  0)),
+                             (( 0, -1, 0), ( 0, -1)),
+                             (None,        (+1, -1))),
+                  ( 0, -1): (((-1,  0, 0), (-1, +1)), # down & left
+                             ((-1, -1, 1), (-1,  0)),
+                             (( 0, -1, 0), ( 0, -1)),
+                             (( 0, -1, 1), (+1, -1)),
+                             (None,        (+1,  0))),
+                  (+1, -1): (((-1, -1, 1), (-1,  0)), # down & right
+                             (( 0, -1, 0), ( 0, -1)),
+                             (( 0, -1, 1), (+1, -1)),
+                             (( 0,  0, 0), (+1,  0)),
+                             (None,        ( 0, +1)))}
+    """Mapping of counterclockwise (x,y)-direction vector to list (ordered by
+    test) of 2-tuples: examination cell coordinate delta & new direction
+    vector."""
+
+    def get_polygon_points(self, s_matrix, x, y, z):
+        """
+        Return a list of coordinate tuples, the corner points of the polygon
+        for the piece at (x,y).
+        """
+        cell_content = s_matrix[z][y][x]
+        xunit = self.svg_unit_width
+        yunit = self.svg_unit_height
+        height = (self.height + 2) * yunit
+        if z == 0:
+            direction = (+1, 0)         # to the right
+        else:
+            direction = (+1, -1)        # down & to the right
+            y += 1                      # begin at top-left corner
+        points = [((x + (y - 1) / 2.0) * xunit, height - y * yunit)]
+        start = (x, y)
+        x += direction[0]
+        y += direction[1]
+        while (x, y) != start:
+            for delta, new_direction in self.edge_trace[direction]:
+                if ( delta is None
+                     or (s_matrix[delta[2]][y + delta[1]][x + delta[0]]
+                         == cell_content)):
+                    break
+            if new_direction != direction:
+                direction = new_direction
+                points.append(((x + (y - 1) / 2.0) * xunit, height - y * yunit))
+            x += direction[0]
+            y += direction[1]
+        return points
+
+    def get_piece_cells(self, s_matrix, x, y, z):
+        cell_content = s_matrix[z][y][x]
+        coord = coordsys.Triangular3D((x, y, z))
+        cells = set([coord])
+        self._get_piece_cells(cells, coord, s_matrix, cell_content)
+        return cells
+
+    def _get_piece_cells(self, cells, coord, s_matrix, cell_content):
+        for neighbor in coord.neighbors():
+            x, y, z = neighbor
+            if neighbor not in cells and s_matrix[z][y][x] == cell_content:
+                cells.add(neighbor)
+                self._get_piece_cells(cells, neighbor, s_matrix, cell_content)
+
 
 class Hexiamonds(Polyiamonds):
 
@@ -2131,6 +2389,20 @@ class Hexiamonds(Polyiamonds):
 
     asymmetric_pieces = 'I6 P6 J6 H6 S6 G6 F6'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
+
+    svg_fills = {
+        'I6': 'blue',
+        'X6': 'red',
+        'O6': 'green',
+        'V6': 'gold',
+        'J6': 'lime',
+        'S6': 'navy',
+        'P6': 'magenta',
+        'E6': 'darkorange',
+        'H6': 'turquoise',
+        'C6': 'blueviolet',
+        'G6': 'maroon',
+        'F6': 'plum'}
 
 
 class Hexiamonds4x9Matrix(Hexiamonds):
@@ -2470,6 +2742,32 @@ class Heptiamonds(Polyiamonds):
         'A7 B7 E7 F7 G7 H7 J7 L7 N7 P7 Q7 R7 S7 T7 U7 W7 X7 Y7 Z7').split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
+    svg_fills = {
+        'I7': 'blue',
+        'M7': 'red',
+        'D7': 'green',
+        'C7': 'lime',
+        'V7': 'gold',
+        'S7': 'navy',
+        'P7': 'magenta',
+        'E7': 'darkorange',
+        'H7': 'turquoise',
+        'W7': 'blueviolet',
+        'G7': 'maroon',
+        'F7': 'darkseagreen',
+        'A7': 'peru',
+        'B7': 'plum',
+        'J7': 'yellowgreen',
+        'L7': 'steelblue',
+        'N7': 'gray',
+        'Q7': 'lightcoral',
+        'R7': 'olive',
+        'T7': 'teal',
+        'U7': 'tan',
+        'X7': 'indigo',
+        'Y7': 'yellow',
+        'Z7': 'orangered'}
+
 
 class Heptiamonds3x28Matrix(Heptiamonds):
 
@@ -2584,13 +2882,13 @@ class Heptiamonds6x17TrapeziumMatrix(Heptiamonds12x13TrapeziumMatrix):
 
     height = 6
     width = 17
-    
+
 
 class Heptiamonds4x23TrapeziumMatrix(Heptiamonds12x13TrapeziumMatrix):
 
     height = 4
     width = 23
-    
+
 
 class HeptiamondsHexagramMatrix(Heptiamonds):
 
