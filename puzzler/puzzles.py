@@ -1321,6 +1321,7 @@ class SomaStepsMatrix(SomaCubes):
                  for z in range(self.depth)]
                 for y in range(self.height)]
 
+
 class SomaBathtubMatrix(SomaCubes):
 
     """158 solutions."""

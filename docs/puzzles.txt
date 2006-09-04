@@ -271,12 +271,12 @@ Tetrahexes
 
 * 4x7 parallelogram: 9 solutions
 
-  .. image:: images/tetrahex-3x10-clipped.png
+  .. image:: images/tetrahex-4x7.png
 
 * 3x10 parallelogram with corners clipped (centered rows of
   length 9, 10, 9): 2 solutions
 
-  .. image:: images/tetrahex-4x7.png
+  .. image:: images/tetrahex-3x10-clipped.png
 
 * 5x7 "coin" (elongated hexagon with central hole): 4 solutions
 
