@@ -1,7 +1,8 @@
 <?xml version="1.0" standalone="no"?>
 <!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
 <svg width="180.0" height="103.923048454" viewBox="0 0 180.0 103.923048454"
-     xmlns="http://www.w3.org/2000/svg">
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
 <g>
 <polygon fill="green" stroke="white" stroke-width="1"
          points="10.000,89.489 10.000,95.263 15.000,98.150 15.000,98.150 20.000,95.263 25.000,98.150 30.000,95.263 30.000,89.489 35.000,86.603 35.000,80.829 30.000,77.942 30.000,72.169 25.000,69.282 20.000,72.169 20.000,77.942 15.000,80.829 15.000,86.603">
@@ -92,4 +93,5 @@
 <desc>E5</desc>
 </polygon>
 </g>
+
 </svg>

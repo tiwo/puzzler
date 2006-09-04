@@ -1,7 +1,8 @@
 <?xml version="1.0" standalone="no"?>
 <!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
 <svg width="320" height="50" viewBox="0 0 320 50"
-     xmlns="http://www.w3.org/2000/svg">
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
 <g>
 <polygon fill="turquoise" stroke="white" stroke-width="1"
          points="10.000,40.000 30.000,40.000 30.000,30.000 20.000,30.000 20.000,20.000 30.000,20.000 30.000,10.000 10.000,10.000">
@@ -76,4 +77,5 @@
 <desc>P</desc>
 </polygon>
 </g>
+
 </svg>

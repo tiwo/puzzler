@@ -1,7 +1,8 @@
 <?xml version="1.0" standalone="no"?>
 <!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
 <svg width="115.0" height="60.6217782649" viewBox="0 0 115.0 60.6217782649"
-     xmlns="http://www.w3.org/2000/svg">
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
 <g>
 <polygon fill="blue" stroke="white" stroke-width="1"
          points="30.000,46.188 30.000,51.962 35.000,54.848 35.000,54.848 40.000,51.962 45.000,54.848 50.000,51.962 55.000,54.848 60.000,51.962 65.000,54.848 70.000,51.962 70.000,46.188 65.000,43.301 60.000,46.188 55.000,43.301 50.000,46.188 45.000,43.301 40.000,46.188 35.000,43.301">
@@ -32,4 +33,5 @@
 <desc>S4</desc>
 </polygon>
 </g>
+
 </svg>

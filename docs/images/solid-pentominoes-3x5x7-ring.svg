@@ -1,0 +1,203 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="113" height="79" viewBox="0 0 113 79"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="cubeF">
+<polygon fill="green" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeI">
+<polygon fill="blue" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeL">
+<polygon fill="lime" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeN">
+<polygon fill="navy" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeP">
+<polygon fill="magenta" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeT">
+<polygon fill="darkorange" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeU">
+<polygon fill="turquoise" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeV">
+<polygon fill="blueviolet" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeW">
+<polygon fill="maroon" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeX">
+<polygon fill="red" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeY">
+<polygon fill="gold" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeZ">
+<polygon fill="plum" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+</defs>
+<g>
+<use xlink:href="#cubeI" x="34.000" y="30.000" />
+<use xlink:href="#cubeI" x="43.000" y="32.000" />
+<use xlink:href="#cubeI" x="52.000" y="34.000" />
+<use xlink:href="#cubeI" x="61.000" y="36.000" />
+<use xlink:href="#cubeI" x="70.000" y="38.000" />
+<use xlink:href="#cubeN" x="79.000" y="40.000" />
+<use xlink:href="#cubeN" x="88.000" y="42.000" />
+<use xlink:href="#cubeX" x="34.000" y="20.000" />
+<use xlink:href="#cubeP" x="43.000" y="22.000" />
+<use xlink:href="#cubeP" x="52.000" y="24.000" />
+<use xlink:href="#cubeN" x="61.000" y="26.000" />
+<use xlink:href="#cubeN" x="70.000" y="28.000" />
+<use xlink:href="#cubeN" x="79.000" y="30.000" />
+<use xlink:href="#cubeF" x="88.000" y="32.000" />
+<use xlink:href="#cubeP" x="34.000" y="10.000" />
+<use xlink:href="#cubeP" x="43.000" y="12.000" />
+<use xlink:href="#cubeP" x="52.000" y="14.000" />
+<use xlink:href="#cubeL" x="61.000" y="16.000" />
+<use xlink:href="#cubeL" x="70.000" y="18.000" />
+<use xlink:href="#cubeL" x="79.000" y="20.000" />
+<use xlink:href="#cubeL" x="88.000" y="22.000" />
+<use xlink:href="#cubeX" x="28.000" y="33.000" />
+<use xlink:href="#cubeF" x="82.000" y="45.000" />
+<use xlink:href="#cubeX" x="28.000" y="23.000" />
+<use xlink:href="#cubeF" x="82.000" y="35.000" />
+<use xlink:href="#cubeX" x="28.000" y="13.000" />
+<use xlink:href="#cubeL" x="82.000" y="25.000" />
+<use xlink:href="#cubeU" x="22.000" y="36.000" />
+<use xlink:href="#cubeT" x="76.000" y="48.000" />
+<use xlink:href="#cubeX" x="22.000" y="26.000" />
+<use xlink:href="#cubeF" x="76.000" y="38.000" />
+<use xlink:href="#cubeU" x="22.000" y="16.000" />
+<use xlink:href="#cubeF" x="76.000" y="28.000" />
+<use xlink:href="#cubeU" x="16.000" y="39.000" />
+<use xlink:href="#cubeT" x="70.000" y="51.000" />
+<use xlink:href="#cubeU" x="16.000" y="29.000" />
+<use xlink:href="#cubeT" x="70.000" y="41.000" />
+<use xlink:href="#cubeU" x="16.000" y="19.000" />
+<use xlink:href="#cubeT" x="70.000" y="31.000" />
+<use xlink:href="#cubeV" x="10.000" y="42.000" />
+<use xlink:href="#cubeV" x="19.000" y="44.000" />
+<use xlink:href="#cubeV" x="28.000" y="46.000" />
+<use xlink:href="#cubeZ" x="37.000" y="48.000" />
+<use xlink:href="#cubeW" x="46.000" y="50.000" />
+<use xlink:href="#cubeW" x="55.000" y="52.000" />
+<use xlink:href="#cubeT" x="64.000" y="54.000" />
+<use xlink:href="#cubeV" x="10.000" y="32.000" />
+<use xlink:href="#cubeZ" x="19.000" y="34.000" />
+<use xlink:href="#cubeZ" x="28.000" y="36.000" />
+<use xlink:href="#cubeZ" x="37.000" y="38.000" />
+<use xlink:href="#cubeY" x="46.000" y="40.000" />
+<use xlink:href="#cubeW" x="55.000" y="42.000" />
+<use xlink:href="#cubeW" x="64.000" y="44.000" />
+<use xlink:href="#cubeV" x="10.000" y="22.000" />
+<use xlink:href="#cubeZ" x="19.000" y="24.000" />
+<use xlink:href="#cubeY" x="28.000" y="26.000" />
+<use xlink:href="#cubeY" x="37.000" y="28.000" />
+<use xlink:href="#cubeY" x="46.000" y="30.000" />
+<use xlink:href="#cubeY" x="55.000" y="32.000" />
+<use xlink:href="#cubeW" x="64.000" y="34.000" />
+</g>
+
+</svg>
