@@ -40,6 +40,8 @@ Changes Since Release 1
 
 * Added unit tests.
 
+* Added "Polyform Puzzler Solutions" document (docs/solutions.txt).
+
 
 Release 1 (2006-08-08)
 ======================
