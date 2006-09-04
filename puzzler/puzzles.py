@@ -47,10 +47,12 @@ class Puzzle(object):
 <?xml version="1.0" standalone="no"?>
 <!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
 <svg width="%(width)s" height="%(height)s" viewBox="0 0 %(width)s %(height)s"
-     xmlns="http://www.w3.org/2000/svg">
-<g>
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
 '''
-    svg_footer = '</g>\n</svg>\n'
+    svg_footer = '\n</svg>\n'
+    svg_g_start = '<g>\n'
+    svg_g_end = '</g>\n'
 
     svg_polygon = '''\
 <polygon fill="%(fill)s" stroke="%(stroke)s" stroke-width="%(stroke_width)s"
@@ -298,7 +300,8 @@ class Puzzle2D(Puzzle):
         header = self.svg_header % {
             'height': (self.height + 2) * self.svg_unit_length,
             'width': (self.width + 2) * self.svg_unit_length}
-        return '%s%s%s' % (header, ''.join(polygons), self.svg_footer)
+        return '%s%s%s%s%s' % (header, self.svg_g_start, ''.join(polygons),
+                               self.svg_g_end, self.svg_footer)
 
     def build_polygon(self, s_matrix, x, y):
         points = self.get_polygon_points(s_matrix, x, y)
@@ -370,6 +373,29 @@ class Puzzle2D(Puzzle):
 
 
 class Puzzle3D(Puzzle):
+
+    svg_x_width = 9
+    svg_x_height = -2
+    svg_y_height = 10
+    svg_z_height = -3
+    svg_z_width = -6
+    svg_stroke_width = '0.5'
+    svg_defs_start = '<defs>\n'
+    svg_cube_def = '''\
+<symbol id="cube%(name)s">
+<polygon fill="%(fill)s" stroke="%(stroke)s"
+         stroke-width="%(stroke_width)s" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="%(stroke)s"
+         stroke-width="%(stroke_width)s" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="%(stroke)s"
+         stroke-width="%(stroke_width)s" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+'''
+    svg_defs_end = '</defs>\n'
+    svg_cube = '<use xlink:href="#cube%(name)s" x="%(x).3f" y="%(y).3f" />\n'
 
     def coordinates(self):
         for z in range(self.depth):
@@ -447,6 +473,60 @@ class Puzzle3D(Puzzle):
             for cell_name in piece[:-1]:
                 x, y, z = [int(d.strip()) for d in cell_name.split(',')]
                 s_matrix[z + margin][y + margin][x + margin] = name
+        return s_matrix
+
+    def format_svg(self, solution=None, s_matrix=None):
+        if s_matrix:
+            assert solution is None, ('Provide only one of solution '
+                                      '& s_matrix arguments, not both.')
+        else:
+            s_matrix = self.build_solution_matrix(solution)
+            s_matrix = self.transform_solution_matrix(s_matrix)
+        s_depth = len(s_matrix)
+        s_height = len(s_matrix[0])
+        s_width = len(s_matrix[0][0])
+        height = (s_height * abs(self.svg_y_height)
+                  + s_depth * abs(self.svg_z_height)
+                  + s_width * abs(self.svg_x_height)
+                  + 2 * self.svg_unit_length)
+        width = (s_width * abs(self.svg_x_width)
+                  + s_depth * abs(self.svg_z_width)
+                  + 2 * self.svg_unit_length)
+        cube_defs = []
+        for name in sorted(self.piece_data.keys()):
+            fill = self.svg_fills[name]
+            cube_defs.append(
+                self.svg_cube_def % {'fill': fill,
+                                     'stroke': self.svg_stroke,
+                                     'stroke_width': self.svg_stroke_width,
+                                     'name': name})
+        cubes = []
+        for z in range(s_depth):
+            for y in range(s_height):
+                for x in range(s_width):
+                    name = s_matrix[z][y][x]
+                    if name == self.empty_cell:
+                        continue
+                    cubes.append(
+                        self.svg_cube
+                        % {'name': name,
+                           'x': (x * self.svg_x_width 
+                                 + (z + 1 - s_depth) * self.svg_z_width
+                                 + self.svg_unit_length),
+                           'y': (height
+                                 - (y * self.svg_y_height
+                                    + (z - s_depth) * self.svg_z_height
+                                    + (x - s_width) * self.svg_x_height
+                                    + 2 * self.svg_unit_length))})
+        header = self.svg_header % {'height': height, 'width': width}
+        defs = '%s%s%s' % (self.svg_defs_start, ''.join(cube_defs),
+                           self.svg_defs_end)
+        return '%s%s%s%s%s%s' % (header, defs, self.svg_g_start,
+                                 ''.join(cubes), self.svg_g_end,
+                                 self.svg_footer)
+
+    def transform_solution_matrix(self, s_matrix):
+        """Transform for rendering `s_matrix`.  Override in subclasses."""
         return s_matrix
 
 
@@ -776,6 +856,11 @@ class SolidPentominoes2x3x10Matrix(SolidPentominoes):
         keys.remove('X')
         self.build_regular_matrix(keys)
 
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for x in range(self.width)]
+                 for z in range(self.depth)]
+                for y in range(self.height)]
+
 
 class SolidPentominoes2x5x6Matrix(SolidPentominoes):
 
@@ -784,6 +869,11 @@ class SolidPentominoes2x5x6Matrix(SolidPentominoes):
     height = 5
     width = 6
     depth = 2
+
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for x in range(self.width)]
+                 for z in range(self.depth)]
+                for y in range(self.height)]
 
 
 class SolidPentominoes2x5x6MatrixA(SolidPentominoes2x5x6Matrix):
@@ -851,6 +941,11 @@ class SolidPentominoes3x4x5Matrix(SolidPentominoes):
     def build_matrix(self):
         keys = self.build_matrix_i((0, 1), (0, 1))
         self.build_regular_matrix(keys)
+
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for x in range(self.width)]
+                 for z in range(self.depth)]
+                for y in range(self.height)]
 
 
 class SolidPentominoesRingMatrix(SolidPentominoes):
@@ -1134,6 +1229,11 @@ class SomaCrystalMatrix(SomaCubes):
                     if x + y <= z:
                         yield coordsys.Cartesian3D((x, y, z))
 
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x]
+                  for y in range(self.height)]
+                 for z in range(self.depth - 1, -1, -1)]
+                for x in range(self.width)]
 
 class SomaLongWallMatrix(SomaCubes):
 
@@ -1151,6 +1251,11 @@ class SomaLongWallMatrix(SomaCubes):
                 for x in range(self.width):
                     if 4 <= x + y <= 6 - z:
                         yield coordsys.Cartesian3D((x, y, z))
+
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for y in range(self.height)]
+                 for z in range(self.depth)]
+                for x in range(self.width)]
 
 
 class SomaHighWallMatrix(SomaCubes):
@@ -1170,6 +1275,11 @@ class SomaHighWallMatrix(SomaCubes):
                 for x in range(self.width):
                     if 3 <= x + y <= 4:
                         yield coordsys.Cartesian3D((x, y, z))
+
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for y in range(self.height)]
+                 for z in range(self.depth)]
+                for x in range(self.width)]
 
 
 class SomaBenchMatrix(SomaCubes):
@@ -1206,6 +1316,10 @@ class SomaStepsMatrix(SomaCubes):
                     if z <= x <= 4 - z:
                         yield coordsys.Cartesian3D((x, y, z))
 
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for x in range(self.width)]
+                 for z in range(self.depth)]
+                for y in range(self.height)]
 
 class SomaBathtubMatrix(SomaCubes):
 
@@ -1245,6 +1359,11 @@ class SomaCurvedWallMatrix(SomaCubes):
                           or (y == 1 and x != 2)
                           or (y == 0 and (x == 0 or x == 4))):
                         yield coordsys.Cartesian3D((x, y, z))
+
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for x in range(self.width)]
+                 for z in range(self.depth)]
+                for y in range(self.height - 1, -1, -1)]
 
 
 class SomaSquareWallMatrix(SomaCubes):
@@ -1335,6 +1454,11 @@ class SomaSkew1Matrix(SomaCubes):
                     if 2 <= x + y <= 4:
                         yield coordsys.Cartesian3D((x, y, z))
 
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for x in range(self.width)]
+                 for z in range(self.depth)]
+                for y in range(self.height)]
+
 
 class SomaSkew2Matrix(SomaCubes):
 
@@ -1354,6 +1478,11 @@ class SomaSkew2Matrix(SomaCubes):
                     if 4 <= x + 2 * y <= 6:
                         yield coordsys.Cartesian3D((x, y, z))
 
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for x in range(self.width)]
+                 for z in range(self.depth)]
+                for y in range(self.height)]
+
 
 class SomaSteamerMatrix(SomaCubes):
 
@@ -1372,6 +1501,11 @@ class SomaSteamerMatrix(SomaCubes):
                 for x in range(z, self.width - z):
                     if 2 + 2 * z <= x + y + z <= 6:
                         yield coordsys.Cartesian3D((x, y, z))
+
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for y in range(self.height)]
+                 for z in range(self.depth)]
+                for x in range(self.width)]
 
 
 class Polysticks(Puzzle):
@@ -1813,7 +1947,8 @@ class Polyhexes(Puzzle2D):
         header = self.svg_header % {
             'height': (self.height + 2) * self.svg_unit_height,
             'width': (self.width + self.height / 2.0 + 2) * self.svg_unit_width}
-        return '%s%s%s' % (header, ''.join(polygons), self.svg_footer)
+        return '%s%s%s%s%s' % (header, self.svg_g_start, ''.join(polygons),
+                               self.svg_g_end, self.svg_footer)
 
     edge_trace = {0: ( 0, -1),
                   1: (+1, -1),
@@ -1838,7 +1973,6 @@ class Polyhexes(Puzzle2D):
         Return a list of coordinate tuples, the corner points of the polygon
         for the piece at (x,y).
         """
-        #pdb.set_trace()
         cell_content = s_matrix[y][x]
         unit = self.svg_unit_length
         yunit = self.svg_unit_height
@@ -1855,10 +1989,6 @@ class Polyhexes(Puzzle2D):
             delta = self.edge_trace[corner]
             points.append((base_x + self.corner_offsets[corner][0] * unit,
                            base_y - self.corner_offsets[corner][1] * unit))
-#             print ('%s: x,y=%r, corner=%r, delta=%r, checking %r (%s)'
-#                    % (cell_content, (x,y), corner, delta,
-#                       (x+delta[0],y+delta[1]),
-#                       s_matrix[y + delta[1]][x + delta[0]]))
             if s_matrix[y + delta[1]][x + delta[0]] == cell_content:
                 corner = (corner - 1) % 6
                 x += delta[0]
@@ -2259,7 +2389,8 @@ class Polyiamonds(Puzzle3D):
         header = self.svg_header % {
             'height': (self.height + 2) * self.svg_unit_height,
             'width': (self.width + self.height / 2.0 + 2) * self.svg_unit_width}
-        return '%s%s%s' % (header, ''.join(polygons), self.svg_footer)
+        return '%s%s%s%s%s' % (header, self.svg_g_start, ''.join(polygons),
+                               self.svg_g_end, self.svg_footer)
 
     def build_polygon(self, s_matrix, x, y, z):
         points = self.get_polygon_points(s_matrix, x, y, z)
