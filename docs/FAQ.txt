@@ -24,7 +24,7 @@
 
 Other documents:
 
-* `Polyform Puzzler Solutions <solutions.html>`_
+* `Puzzles & Solutions <puzzles.html>`_
 * `To do list <todo.html>`_
 
 
@@ -428,7 +428,7 @@ What polyform puzzles are supported?
 ------------------------------------
 
 Various polyomino, polyiamond, polyhex, polycube, and polystick
-puzzles are supported.  For a full list, see the `Polyform Puzzler
+puzzles are supported.  For a full list, see the `Puzzles &
 Solutions`_ document.  More polyforms are to come:
 
 * other polyominoes

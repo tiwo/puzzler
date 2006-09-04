@@ -132,7 +132,7 @@ Project Files & Directories
   to HTML and other formats using Docutils_.
 
   - FAQ.txt: Frequently Asked Questions (with answers!).
-  - solutions.txt: list of puzzles implemented and count of solutions
+  - puzzles.txt: list of puzzles implemented and counts of solutions
   - history.txt: Detailed log of changes.
   - todo.txt: To do list.
 
