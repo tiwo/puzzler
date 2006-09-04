@@ -1,6 +1,6 @@
-============================
- Polyform Puzzler Solutions
-============================
+=======================================
+ Polyform Puzzler: Puzzles & Solutions
+=======================================
 
 :Author: David Goodger <goodger@python.org>
 :Date: $Date$
@@ -15,8 +15,9 @@
 .. contents::
 
 Polyform Puzzler solves a variety of polyomino, polyiamond, polyhex,
-polycube, and polystick puzzles.  Lists of all solutions of most
-puzzles are available at http://puzzler.sourceforge.net/solutions.
+polycube, and polystick puzzles.  Files containing all solutions of
+most puzzles are available at
+http://puzzler.sourceforge.net/solutions.
 
 
 -------------
@@ -119,47 +120,47 @@ Soma Cubes
   .. list-table::
      :class: borderless
 
-     * - .. figure:: soma-bathtub.png
+     * - .. figure:: images/soma-bathtub.png
 
             Bathtub
 
-       - .. figure:: soma-cornerstone.png
+       - .. figure:: images/soma-cornerstone.png
 
             Cornerstone
 
-       - .. figure:: soma-crystal.png
+       - .. figure:: images/soma-crystal.png
 
             Crystal
 
-     * - .. figure:: soma-curved-wall.png
+     * - .. figure:: images/soma-curved-wall.png
 
             Curved Wall
 
-       - .. figure:: soma-high-wall.png
+       - .. figure:: images/soma-high-wall.png
 
             High Wall
 
-       - .. figure:: soma-long-wall.png
+       - .. figure:: images/soma-long-wall.png
 
             Long Wall
 
-     * - .. figure:: soma-skew-1.png
+     * - .. figure:: images/soma-skew-1.png
 
             Skew 1
 
-       - .. figure:: soma-skew-2.png
+       - .. figure:: images/soma-skew-2.png
 
             Skew 2
 
-       - .. figure:: soma-sofa.png
+       - .. figure:: images/soma-sofa.png
 
             Sofa
 
-     * - .. figure:: soma-steamer.png
+     * - .. figure:: images/soma-steamer.png
 
             Steamer
 
-       - .. figure:: soma-steps.png
+       - .. figure:: images/soma-steps.png
 
             Steps
 
@@ -175,50 +176,50 @@ Hexiamonds
 
 * 4x9 parallelogram: 74 solutions
 
-  .. image:: hexiamonds-4x9.png
+  .. image:: images/hexiamonds-4x9.png
 
 * 6x6 parallelogram: 156 solutions
 
-  .. image:: hexiamonds-6x6.png
+  .. image:: images/hexiamonds-6x6.png
 
 * 4x11 trapezium: 76 solutions
 
-  .. image:: hexiamonds-4x11-trapezium.png
+  .. image:: images/hexiamonds-4x11-trapezium.png
 
 * 4x10 elongated hexagon (clipped parallelogram): 856 solutions
 
-  .. image:: hexiamonds-4x10-longhex.png
+  .. image:: images/hexiamonds-4x10-longhex.png
 
 * Snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
   "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`__): 55
   solutions
 
-  .. image:: hexiamonds-snowflake.png
+  .. image:: images/hexiamonds-snowflake.png
 
 * Ring 2 (8-unit hexagon with 4-unit hexagonal hole offset one unit
   from the center): 11 solutions (no solutions for the ring with a
   centered hole)
 
-  .. image:: hexiamonds-ring-2.png
+  .. image:: images/hexiamonds-ring-2.png
 
 * Crescent (8-unit hexagon with a 4-unit hexagonal bite removed from
   one corner): 87 solutions
 
-  .. image:: hexiamonds-crescent.png
+  .. image:: images/hexiamonds-crescent.png
 
 * Crescent 2 (8-unit hexagon with a 4-unit hexagonal bite removed from
   one side): 2 solutions
 
-  .. image:: hexiamonds-crescent-2.png
+  .. image:: images/hexiamonds-crescent-2.png
 
 * 6x8 "coin" (elongated hexagon with central hexagonal hole):
   304 solutions
 
-  .. image:: hexiamonds-coin.png
+  .. image:: images/hexiamonds-coin.png
 
 * Trefoil (3 joined hexagons): 640 solutions
 
-  .. image:: hexiamonds-trefoil.png
+  .. image:: images/hexiamonds-trefoil.png
 
 
 Heptiamonds
@@ -228,7 +229,7 @@ Heptiamonds
 
   - 7x12
 
-    .. image:: heptiamonds-7x12.png
+    .. image:: images/heptiamonds-7x12.png
 
   - 6x14
   - 4x21
@@ -238,11 +239,11 @@ Heptiamonds
 
   - 12x13
 
-    .. image:: heptiamonds-12x13-trapezium.png
+    .. image:: images/heptiamonds-12x13-trapezium.png
 
   - 6x17
 
-    .. image:: heptiamonds-6x17-trapezium.png
+    .. image:: images/heptiamonds-6x17-trapezium.png
 
   - 4x23
 
@@ -250,15 +251,15 @@ Heptiamonds
   "Unmeltable Snow"
   <http://www.tenyo.co.jp/toyhobby/catalog/onsale/pp-24.html>`__)
 
-  .. image:: heptiamonds-snowflake.png
+  .. image:: images/heptiamonds-snowflake.png
 
 * 13-unit triangle with central 1-unit hole
 
-  .. image:: heptiamonds-triangle.png
+  .. image:: images/heptiamonds-triangle.png
 
 * Diamond ring (10-unit diamond with central 4-unit diamond hole)
 
-  .. image:: heptiamonds-diamond-ring.png
+  .. image:: images/heptiamonds-diamond-ring.png
 
 
 -----------
@@ -270,16 +271,16 @@ Tetrahexes
 
 * 4x7 parallelogram: 9 solutions
 
-  .. image:: tetrahex-3x10-clipped.png
+  .. image:: images/tetrahex-3x10-clipped.png
 
 * 3x10 parallelogram with corners clipped (centered rows of
   length 9, 10, 9): 2 solutions
 
-  .. image:: tetrahex-4x7.png
+  .. image:: images/tetrahex-4x7.png
 
 * 5x7 "coin" (elongated hexagon with central hole): 4 solutions
 
-  .. image:: tetrahex-coin.png
+  .. image:: images/tetrahex-coin.png
 
 
 Pentahexes
@@ -287,11 +288,11 @@ Pentahexes
 
 * 10x11 parallelogram: many solutions, exact number unknown
 
-  .. image:: pentahex-10x11.png
+  .. image:: images/pentahex-10x11.png
 
 * 5x22 parallelogram: many solutions, exact number unknown
 
-  .. image:: pentahex-5x22.png
+  .. image:: images/pentahex-5x22.png
 
 
 Polyhexes of Order 1 Through 4
@@ -302,11 +303,11 @@ pieces.
 
 * 4x10 parallelogram: many solutions, exact number unknown
 
-  .. image:: polyhex-4x10.png
+  .. image:: images/polyhex-4x10.png
 
 * 5x8 parallelogram: many solutions, exact number unknown
 
-  .. image:: polyhex-5x8.png
+  .. image:: images/polyhex-5x8.png
 
 
 ------------
