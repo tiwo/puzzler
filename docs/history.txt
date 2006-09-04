@@ -35,8 +35,8 @@ Changes Since Release 1
 
   - One-sided pentominoes: 3x30
 
-* Added SVG image generation support for polyominoes, polyiamonds, and
-  polyhexes.
+* Added SVG image generation support for polyominoes, polyiamonds,
+  polyhexes, and polycubes.
 
 * Added unit tests.
 
