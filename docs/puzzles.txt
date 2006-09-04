@@ -298,7 +298,7 @@ Pentahexes
 Polyhexes of Order 1 Through 4
 ==============================
 
-This puzzle uses the monohex and all dihex, trihex, and tetrahex
+These puzzles uses the monohex and all dihex, trihex, and tetrahex
 pieces.
 
 * 4x10 parallelogram: many solutions, exact number unknown
