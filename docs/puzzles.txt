@@ -167,6 +167,35 @@ Soma Cubes
        -
 
 
+Tetracubes
+==========
+
+* Solids:
+
+  - 2x4x4: 1390 solutions
+
+    .. image:: images/tetracubes-2x4x4.png
+
+  - 2x2x8: 224 solutions
+
+    .. image:: images/tetracubes-2x2x8.png
+
+
+Pentacubes
+==========
+
+The 29 pentacubes cannot form a simple box-shaped solid.  Other forms
+are possible however:
+
+* 5x5x6 tower
+
+  .. image:: images/pentacubes-5x5x6-tower.png
+
+* 2x11x11 frame (11x11 square layer with 7x7 outline on top)
+
+* 5x7x7 open box
+
+
 -------------
  Polyiamonds
 -------------

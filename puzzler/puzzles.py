@@ -271,7 +271,9 @@ class Puzzle2D(Puzzle):
         x_reversed_fn = order_functions[x_reversed]
         y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
         s_matrix = self.build_solution_matrix(solution)
-        return '\n'.join(' '.join(x_reversed_fn(s_matrix[y])).rstrip()
+        return '\n'.join(''.join('%-2s' % name
+                                 for name in x_reversed_fn(s_matrix[y])
+                                 ).rstrip()
                          for y in y_reversed_fn(range(self.height)))
 
     def build_solution_matrix(self, solution, margin=0):
@@ -459,7 +461,8 @@ class Puzzle3D(Puzzle):
         z_reversed_fn = order_functions[z_reversed]
         s_matrix = self.build_solution_matrix(solution)
         return '\n'.join(
-            '    '.join(' '.join(x_reversed_fn(s_matrix[z][y]))
+            '    '.join(''.join('%-2s' % name
+                                for name in x_reversed_fn(s_matrix[z][y]))
                         for z in z_reversed_fn(range(self.depth))).rstrip()
             for y in y_reversed_fn(range(self.height)))
 
@@ -510,7 +513,7 @@ class Puzzle3D(Puzzle):
                     cubes.append(
                         self.svg_cube
                         % {'name': name,
-                           'x': (x * self.svg_x_width 
+                           'x': (x * self.svg_x_width
                                  + (z + 1 - s_depth) * self.svg_z_width
                                  + self.svg_unit_length),
                            'y': (height
@@ -1131,6 +1134,176 @@ class SolidPentominoes6x3x4RingMatrix(SolidPentominoesRingMatrix):
                     self.build_matrix_row('X', translated)
         keys.remove('X')
         self.build_regular_matrix(keys)
+
+
+class Tetracubes(Puzzle3D):
+
+    piece_data = {
+        'I':  ((( 1,  0,  0), ( 2,  0,  0), ( 3,  0,  0)), {}),
+        'L':  (((-1,  0,  0), ( 1,  0,  0), ( 1,  1,  0)), {}),
+        'T':  ((( 1,  0,  0), ( 2,  0,  0), ( 1,  1,  0)), {}),
+        'S':  (((-1,  0,  0), ( 0,  1,  0), ( 1,  1,  0)), {}),
+        'O':  ((( 1,  0,  0), ( 0,  1,  0), ( 1,  1,  0)), {}),
+        'V1': ((( 0,  1,  0), ( 1,  0,  0), ( 0,  1,  1)), {}),
+        'V2': ((( 0,  1,  0), ( 1,  0,  0), ( 0,  0,  1)), {}),
+        'V3': ((( 0,  1,  0), ( 1,  0,  0), ( 1,  0,  1)), {}),}
+    """(0,0,0) is implied.  The names are based on Kadon's 'Poly-4 Supplement'
+    names.  See http://www.gamepuzzles.com/poly4.htm."""
+
+    svg_fills = {
+        'I': 'blue',
+        'O': 'magenta',
+        'T': 'green',
+        'S': 'lime',
+        'L': 'blueviolet',
+        'V1': 'gold',
+        'V2': 'red',
+        'V3': 'navy'}
+
+
+class Tetracubes2x4x4Matrix(Tetracubes):
+
+    """1390 solutions"""
+
+    width = 4
+    height = 4
+    depth = 2
+
+    def transform_solution_matrix(self, s_matrix):
+        return [[[s_matrix[z][y][x] for x in range(self.width)]
+                 for z in range(self.depth)]
+                for y in range(self.height)]
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['V2'][-1]['rotations'] = None
+        self.piece_data['V2'][-1]['flips'] = None
+        self.piece_data['V2'][-1]['axes'] = None
+
+
+class Tetracubes2x2x8Matrix(Tetracubes):
+
+    """224 solutions"""
+
+    width = 8
+    height = 2
+    depth = 2
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['V2'][-1]['rotations'] = None
+        self.piece_data['V2'][-1]['flips'] = None
+        self.piece_data['V2'][-1]['axes'] = None
+
+
+class Pentacubes(Puzzle3D):
+
+    non_planar_piece_data = {
+        'L1': (((-1,  0,  0), ( 1,  0,  0), ( 1,  1,  0), (-1,  0,  1)), {}),
+        'L2': (((-1,  0,  0), ( 1,  0,  0), ( 1,  1,  0), ( 0,  0,  1)), {}),
+        'L3': (((-1,  0,  0), ( 1,  0,  0), ( 1,  1,  0), ( 1,  0,  1)), {}),
+        'L4': (((-1,  0,  0), ( 1,  0,  0), ( 1,  1,  0), ( 1,  1,  1)), {}),
+        'J1': (((-1,  0,  0), ( 1,  0,  0), ( 1,  1,  0), (-1,  0, -1)), {}),
+        'J2': (((-1,  0,  0), ( 1,  0,  0), ( 1,  1,  0), ( 0,  0, -1)), {}),
+        'J4': (((-1,  0,  0), ( 1,  0,  0), ( 1,  1,  0), ( 1,  1, -1)), {}),
+        'N1': (((-1,  0,  0), ( 0,  1,  0), ( 1,  1,  0), (-1,  0, -1)), {}),
+        'N2': (((-1,  0,  0), ( 0,  1,  0), ( 1,  1,  0), ( 0,  0, -1)), {}),
+        'S1': (((-1,  0,  0), ( 0,  1,  0), ( 1,  1,  0), (-1,  0,  1)), {}),
+        'S2': (((-1,  0,  0), ( 0,  1,  0), ( 1,  1,  0), ( 0,  0,  1)), {}),
+        'T1': (((-1, -1,  0), (-1,  0,  0), (-1,  1,  0), (-1,  0,  1)), {}),
+        'T2': (((-1, -1,  0), (-1,  0,  0), (-1,  1,  0), ( 0,  0,  1)), {}),
+        'V1': (((-1,  0,  0), ( 0,  1,  0), (-1,  0,  1), (-1, -1,  1)), {}),
+        'V2': (((-1,  0,  0), ( 0,  1,  0), ( 0,  1,  1), ( 1,  1,  1)), {}),
+        'Q':  ((( 1,  0,  0), ( 0,  1,  0), ( 1,  1,  0), ( 0,  0,  1)), {}),
+        'A':  ((( 1,  0,  0), ( 1,  1,  0), ( 0,  0,  1), ( 1,  1,  1)), {}),}
+    """(0,0,0) is implied.  The names are based on Kadon's 'Superquints' names.
+    Kadon's 'J3' piece is a duplicate of the 'L3' piece.
+    See http://www.gamepuzzles.com/sqnames.htm."""
+
+    svg_fills = {
+        'L1': 'darkseagreen',
+        'L2': 'peru',
+        'L3': 'rosybrown',
+        'L4': 'yellowgreen',
+        'J1': 'steelblue',
+        'J2': 'gray',
+        'J4': 'lightcoral',
+        'N1': 'olive',
+        'N2': 'teal',
+        'S1': 'tan',
+        'S2': 'indigo',
+        'T1': 'yellow',
+        'T2': 'orangered',
+        'V1': 'darkorchid',
+        'V2': 'tomato',
+        'Q':  'thistle',
+        'A':  'cadetblue',}
+
+    def customize_piece_data(self):
+        """
+        Combine piece data from Pentominoes with `self.non_planar_piece_data`.
+        Subclasses should extend this method, not override.
+        """
+        self.piece_data = {}
+        for name, (data, kwargs) in SolidPentominoes.piece_data.items():
+            self.piece_data[name] = (tuple((x, y, 0) for (x, y) in data), {})
+        self.piece_data.update(copy.deepcopy(self.non_planar_piece_data))
+        self.svg_fills = copy.deepcopy(self.svg_fills)
+        self.svg_fills.update(SolidPentominoes.svg_fills)
+
+
+class Pentacubes5x7x7OpenBoxMatrix(Pentacubes):
+
+    """ solutions"""
+
+    width = 7
+    height = 5
+    depth = 7
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( (x == 0) or (x == self.width - 1)
+                         or (z == 0) or (z == self.depth - 1)
+                         or y == 0):
+                        yield coordsys.Cartesian3D((x, y, z))
+
+
+class Pentacubes2x11x11FrameMatrix(Pentacubes):
+
+    """ solutions"""
+
+    width = 11
+    height = 2
+    depth = 11
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for x in range(self.width):
+                yield coordsys.Cartesian3D((x, 0, z))
+        for z in range(2, self.depth - 2):
+            for x in range(2, self.width - 2):
+                if ( x == 2 or x == self.width - 3
+                     or z == 2 or z == self.depth - 3):
+                    yield coordsys.Cartesian3D((x, 1, z))
+
+
+class Pentacubes5x5x6TowerMatrix(Pentacubes):
+
+    """ solutions"""
+
+    width = 5
+    height = 6
+    depth = 5
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if y == 5 and x == 2:
+                        continue
+                    yield coordsys.Cartesian3D((x, y, z))
 
 
 class SomaCubes(Puzzle3D):
