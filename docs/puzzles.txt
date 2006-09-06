@@ -191,11 +191,11 @@ are possible however:
 
   .. image:: images/pentacubes-5x5x6-tower.png
 
-* 2x11x11 frame (11x11 square layer with 7x7 outline on top)
+* 2x11x11 frame (11x11 square bottom layer with 7x7 square frame on top)
 
   .. image:: images/pentacubes-2x11x11-frame.png
 
-* 5x7x7 open box
+* 5x7x7 open box (closed on the bottom)
 
   .. image:: images/pentacubes-5x7x7-open-box.png
 
