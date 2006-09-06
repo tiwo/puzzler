@@ -68,7 +68,8 @@ class Puzzle(object):
     """Width of polygon outline."""
 
     svg_fills = None
-    """Mapping of piece names to fill colors."""
+    """Mapping of piece names to fill colors.  The '0' name is reserved for
+    formatting solution coordinates."""
 
     svg_unit_length = 10
     """Unit side length in pixels."""
@@ -350,7 +351,8 @@ class Puzzle2D(Puzzle):
         while (x, y) != start:
             for delta, new_direction in self.edge_trace[direction]:
                 if ( delta is None
-                     or s_matrix[y + delta[1]][x + delta[0]] == cell_content):
+                     or cell_content != '0'
+                     and s_matrix[y + delta[1]][x + delta[0]] == cell_content):
                     break
             if new_direction != direction:
                 direction = new_direction
@@ -363,7 +365,8 @@ class Puzzle2D(Puzzle):
         cell_content = s_matrix[y][x]
         coord = self.coord_class((x, y))
         cells = set([coord])
-        self._get_piece_cells(cells, coord, s_matrix, cell_content)
+        if cell_content != '0':
+            self._get_piece_cells(cells, coord, s_matrix, cell_content)
         return cells
 
     def _get_piece_cells(self, cells, coord, s_matrix, cell_content):
@@ -372,6 +375,13 @@ class Puzzle2D(Puzzle):
             if neighbor not in cells and s_matrix[y][x] == cell_content:
                 cells.add(neighbor)
                 self._get_piece_cells(cells, neighbor, s_matrix, cell_content)
+
+    def format_coords_svg(self):
+        s_matrix = [[self.empty_cell] * self.width
+                    for y in range(self.height)]
+        for x, y in self.solution_coords:
+            s_matrix[y][x] = '0'
+        return self.format_svg(s_matrix=s_matrix)
 
 
 class Puzzle3D(Puzzle):
@@ -496,7 +506,7 @@ class Puzzle3D(Puzzle):
                   + s_depth * abs(self.svg_z_width)
                   + 2 * self.svg_unit_length)
         cube_defs = []
-        for name in sorted(self.piece_data.keys()):
+        for name in sorted(self.svg_fills.keys()):
             fill = self.svg_fills[name]
             cube_defs.append(
                 self.svg_cube_def % {'fill': fill,
@@ -527,6 +537,14 @@ class Puzzle3D(Puzzle):
         return '%s%s%s%s%s%s' % (header, defs, self.svg_g_start,
                                  ''.join(cubes), self.svg_g_end,
                                  self.svg_footer)
+
+    def format_coords_svg(self):
+        s_matrix = [[[self.empty_cell] * self.width
+                     for y in range(self.height)]
+                    for z in range(self.depth)]
+        for x, y, z in self.solution_coords:
+            s_matrix[z][y][x] = '0'
+        return self.format_svg(s_matrix=s_matrix)
 
     def transform_solution_matrix(self, s_matrix):
         """Transform for rendering `s_matrix`.  Override in subclasses."""
@@ -570,7 +588,8 @@ class Pentominoes(Puzzle2D):
         'V': 'blueviolet',
         'W': 'maroon',
         'Y': 'gold',
-        'Z': 'plum'}
+        'Z': 'plum',
+        '0': 'gray'}
 
 
 class Pentominoes6x10Matrix(Pentominoes):
@@ -1158,7 +1177,8 @@ class Tetracubes(Puzzle3D):
         'L': 'blueviolet',
         'V1': 'gold',
         'V2': 'red',
-        'V3': 'navy'}
+        'V3': 'navy',
+        '0': 'gray'}
 
 
 class Tetracubes2x4x4Matrix(Tetracubes):
@@ -1237,7 +1257,8 @@ class Pentacubes(Puzzle3D):
         'V1': 'darkorchid',
         'V2': 'tomato',
         'Q':  'thistle',
-        'A':  'cadetblue',}
+        'A':  'cadetblue',
+        '0':  'gray'}
 
     def customize_piece_data(self):
         """
@@ -1306,6 +1327,44 @@ class Pentacubes5x5x6TowerMatrix(Pentacubes):
                     yield coordsys.Cartesian3D((x, y, z))
 
 
+class PentacubesCornerCrystalMatrix(Pentacubes):
+
+    """ solutions"""
+
+    width = 10
+    height = 10
+    depth = 10
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if ( total < 6
+                         or total < 10 and (x == 0 or y == 0 or z == 0)):
+                        yield coordsys.Cartesian3D((x, y, z))
+
+    def customize_piece_data(self):
+        """
+        Add a monocube to fill in the extra space, and restrict the X piece to
+        one orientation to account for symmetry.
+        """
+        Pentacubes.customize_piece_data(self)
+        self.piece_data['o'] = ((), {})
+        self.piece_data['X'][-1]['axes'] = None
+        self.svg_fills['o'] = 'white'
+
+    def build_matrix(self):
+        """Restrict the monocube to the 4 interior, hidden spaces."""
+        keys = sorted(self.pieces.keys())
+        o_coords, o_aspect = self.pieces['o'][0]
+        for coords in ((1,1,1), (2,1,1), (1,2,1), (1,1,2)):
+            translated = o_aspect.translate(coords)
+            self.build_matrix_row('o', translated)
+        keys.remove('o')
+        self.build_regular_matrix(keys)
+
+
 class SomaCubes(Puzzle3D):
 
     piece_data = {
@@ -1325,7 +1384,8 @@ class SomaCubes(Puzzle3D):
         'Z': 'lime',
         'L': 'blueviolet',
         'a': 'gold',
-        'b': 'navy'}
+        'b': 'navy',
+        '0': 'gray'}
 
     check_for_duplicates = False
 
@@ -2163,7 +2223,8 @@ class Polyhexes(Puzzle2D):
             delta = self.edge_trace[corner]
             points.append((base_x + self.corner_offsets[corner][0] * unit,
                            base_y - self.corner_offsets[corner][1] * unit))
-            if s_matrix[y + delta[1]][x + delta[0]] == cell_content:
+            if ( cell_content != '0'
+                 and s_matrix[y + delta[1]][x + delta[0]] == cell_content):
                 corner = (corner - 1) % 6
                 x += delta[0]
                 y += delta[1]
@@ -2193,7 +2254,8 @@ class Polyhexes123(object):
         'I2': 'steelblue',
         'I3': 'teal',
         'V3': 'plum',
-        'A3': 'olive'}
+        'A3': 'olive',
+        '0': 'gray'}
 
 
 class Tetrahexes(Polyhexes):
@@ -2221,7 +2283,8 @@ class Tetrahexes(Polyhexes):
         'U4': 'lime',
         'J4': 'blueviolet',
         'P4': 'gold',
-        'S4': 'navy'}
+        'S4': 'navy',
+        '0': 'gray'}
 
 
 class Polyhex1234(Polyhexes123, Tetrahexes):
@@ -2294,7 +2357,8 @@ class Pentahexes(Polyhexes):
         'q5': 'olive',
         'T5': 'teal',
         'y5': 'tan',
-        'G5': 'indigo'}
+        'G5': 'indigo',
+        '0': 'gray'}
 
 
 class Tetrahex4x7Matrix(Tetrahexes):
@@ -2406,9 +2470,13 @@ class Polyiamonds(Puzzle3D):
     The `width` and `height` attributes define the maximum bounds only.
     """
 
-    depth = 2                           # triangle orientation: up=0, down=1
+    # triangle orientation (up=0, down=1):
+    depth = 2
 
     check_for_duplicates = True
+
+    # override Puzzle3D's 0.5px strokes:
+    svg_stroke_width = Puzzle.svg_stroke_width
 
     svg_unit_height = Puzzle3D.svg_unit_length * math.sqrt(3) / 2
 
@@ -2635,8 +2703,9 @@ class Polyiamonds(Puzzle3D):
         while (x, y) != start:
             for delta, new_direction in self.edge_trace[direction]:
                 if ( delta is None
-                     or (s_matrix[delta[2]][y + delta[1]][x + delta[0]]
-                         == cell_content)):
+                     or cell_content != '0'
+                     and (s_matrix[delta[2]][y + delta[1]][x + delta[0]]
+                          == cell_content)):
                     break
             if new_direction != direction:
                 direction = new_direction
@@ -2649,7 +2718,8 @@ class Polyiamonds(Puzzle3D):
         cell_content = s_matrix[z][y][x]
         coord = coordsys.Triangular3D((x, y, z))
         cells = set([coord])
-        self._get_piece_cells(cells, coord, s_matrix, cell_content)
+        if cell_content != '0':
+            self._get_piece_cells(cells, coord, s_matrix, cell_content)
         return cells
 
     def _get_piece_cells(self, cells, coord, s_matrix, cell_content):
@@ -2707,7 +2777,8 @@ class Hexiamonds(Polyiamonds):
         'H6': 'turquoise',
         'C6': 'blueviolet',
         'G6': 'maroon',
-        'F6': 'plum'}
+        'F6': 'plum',
+        '0': 'gray'}
 
 
 class Hexiamonds4x9Matrix(Hexiamonds):
@@ -3071,7 +3142,8 @@ class Heptiamonds(Polyiamonds):
         'U7': 'tan',
         'X7': 'indigo',
         'Y7': 'yellow',
-        'Z7': 'orangered'}
+        'Z7': 'orangered',
+        '0': 'gray'}
 
 
 class Heptiamonds3x28Matrix(Heptiamonds):
