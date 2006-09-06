@@ -122,47 +122,47 @@ Soma Cubes
 
      * - .. figure:: images/soma-bathtub.png
 
-            Bathtub
+            Bathtub (158 solutions)
 
        - .. figure:: images/soma-cornerstone.png
 
-            Cornerstone
+            Cornerstone (10 solutions)
 
        - .. figure:: images/soma-crystal.png
 
-            Crystal
+            Crystal (2800 solutions)
 
      * - .. figure:: images/soma-curved-wall.png
 
-            Curved Wall
+            Curved Wall (66 solutions)
 
        - .. figure:: images/soma-high-wall.png
 
-            High Wall
+            High Wall (46 solutions)
 
        - .. figure:: images/soma-long-wall.png
 
-            Long Wall
+            Long Wall (104 solutions)
 
      * - .. figure:: images/soma-skew-1.png
 
-            Skew 1
+            Skew 1 (244 solutions)
 
        - .. figure:: images/soma-skew-2.png
 
-            Skew 2
+            Skew 2 (14 solutions)
 
        - .. figure:: images/soma-sofa.png
 
-            Sofa
+            Sofa (32 solutions)
 
      * - .. figure:: images/soma-steamer.png
 
-            Steamer
+            Steamer (152 solutions)
 
        - .. figure:: images/soma-steps.png
 
-            Steps
+            Steps (164 solutions)
 
        -
 
@@ -193,7 +193,15 @@ are possible however:
 
 * 2x11x11 frame (11x11 square layer with 7x7 outline on top)
 
+  .. image:: images/pentacubes-2x11x11-frame.png
+
 * 5x7x7 open box
+
+  .. image:: images/pentacubes-5x7x7-open-box.png
+
+* corner crystal (one empty cube is hidden under the crystal)
+
+  .. image:: images/pentacubes-corner-crystal.png
 
 
 -------------
@@ -261,8 +269,16 @@ Heptiamonds
     .. image:: images/heptiamonds-7x12.png
 
   - 6x14
+
+    .. image:: images/heptiamonds-6x14.png
+
   - 4x21
+
+    .. image:: images/heptiamonds-4x21.png
+
   - 3x28
+
+    .. image:: images/heptiamonds-3x28.png
 
 * Trapezia:
 

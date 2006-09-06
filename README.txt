@@ -143,23 +143,31 @@ Project Files & Directories
 Installation
 ============
 
-The first step is to expand the ``.tgz`` archive in a temporary
-directory (**not** directly in Python's ``site-packages``).  It
-contains a distutils setup file "setup.py".  OS-specific installation
-instructions follow.  For non-standard installations, please see
-`Installing Python Modules <http://docs.python.org/inst/inst.html>`_.
+OS-specific installation instructions follow.  For non-standard
+installations (i.e. installing to non-standard places, like your home
+directory), please see `Installing Python Modules
+<http://docs.python.org/inst/inst.html>`_.
 
 
 GNU/Linux, BSDs, Unix, Mac OS X, etc.
 -------------------------------------
 
-1. Open a shell.
+1. Open a shell (terminal).
 
-2. Go to the directory created by expanding the archive::
+2. Expand the ``.tgz`` archive into a temporary directory (**not**
+   directly into Python's ``site-packages``)::
+
+       tar xzf puzzler-snapshot.tgz
+
+   (The archive file name may not be exactly as shown above.)
+
+3. Go to the directory created by expanding the archive::
 
        cd <archive_directory_path>
 
-3. Install the package::
+   It contains a distutils setup file "setup.py".
+
+4. Install the package::
 
        python setup.py install
 
@@ -173,17 +181,30 @@ GNU/Linux, BSDs, Unix, Mac OS X, etc.
 Windows
 -------
 
-Just double-click ``install.py``.  If this doesn't work, try the
-following:
+1. Double-click on the ``.tgz`` archive; this should open the archive
+   in WinZip.  (If you don't have WinZip or equivalent installed,
+   please download and install it.)  Extract the archive's contents
+   into a temporary directory (**not** directly into Python's
+   ``site-packages``).
 
-1. Open a DOS Box (Command Shell, MS-DOS Prompt, or whatever they're
+       tar xzf puzzler-snapshot.tgz
+
+   (The archive file name may not be exactly as shown above.)
+
+2. The extracted folder contains distutils setup files ``setup.py``
+   and ``install.py``.  Just double-click ``install.py`` and you're
+   done.
+
+   If you have any trouble, try the following:
+
+3. Open a DOS Box (Command Shell, MS-DOS Prompt, or whatever they're
    calling it these days).
 
-2. Go to the directory created by expanding the archive::
+4. Go to the directory created by expanding the archive::
 
        cd <archive_directory_path>
 
-3. Install the package::
+5. Install the package::
 
        <path_to_python.exe>\python setup.py install
 
@@ -191,16 +212,33 @@ following:
 Usage
 =====
 
+GNU/Linux, BSDs, Unix, Mac OS X, etc.
+-------------------------------------
+
 After unpacking and installing the Polyform Puzzler package, the
-applications in the ``bin`` directory can be used to solve puzzles::
+applications in the ``bin`` directory can be used to solve puzzles.
+For example, type the following commands (in a shell) to solve the
+3x20 pentominoes puzzle::
 
     cd <archive_directory_path>
     bin/pentominoes3x20.py
 
-On Windows systems, type::
+
+Windows
+-------
+
+For example, type the following commands (in a command prompt window)
+to solve the 3x20 pentominoes puzzle::
 
     cd <archive_directory_path>
     python bin\pentominoes3x20.py
+
+Alternatively, right-click on the puzzle application file, choose
+"Edit with IDLE", then choose "Run script" from the "Edit" menu (or
+hit Ctrl+F5).
+
+(If you just double-click on the puzzle application, it will run, but
+the output window will disappear as soon as the puzzle finishes.)
 
 
 Getting Help

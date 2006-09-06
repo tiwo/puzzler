@@ -46,8 +46,8 @@ How did Polyform Puzzler begin?
 
 I first discovered Pentominoes in Arthur C. Clarke's `Imperial Earth`,
 probably around the time I was 11 or 12 years old.  I picked up a
-"Hexed" puzzle (by Gabriel Toys) at a local hobby store and spent many
-hours solving it.
+pentominoes puzzle ("Hexed", by Gabriel Toys) at a local hobby store
+and spent many hours discovering solutions.
 
 In university, probably while avoiding legitimate study, I wrote the
 first implementation of a Pentominoes-solving project, in Object
@@ -125,23 +125,19 @@ How can others contribute?
     Puzzler!
 
 **Anyone**
-    I love real-world, physical puzzles, and I'd love to receive some!
-    Here's my _`wish list`:
+    Do you enjoy Polyform Puzzler and want to say thanks?  Is there a
+    feature you'd like to see implemented?  (Yes, I *can* be bribed!)
+    Well, I love real-world, physical polyform puzzles too, and I'd
+    love to receive some!  Here's my _`wish list`:
 
     * Kadon's `Super Deluxe Quintillions
-      <http://www.gamepuzzles.com/polycube.htm#SQd>`__
-
-    * Kadon's `Poly-4 Supplement
-      <http://www.gamepuzzles.com/poly4.htm>`__
+      <http://www.gamepuzzles.com/polycube.htm#SQd>`__ and `Poly-4
+      Supplement <http://www.gamepuzzles.com/poly4.htm>`__
 
     * Kadon's `Iamond Hex
-      <http://www.gamepuzzles.com/esspoly.htm#IH>`__
-
-    * Kadon's `Iamond Ring
-      <http://www.gamepuzzles.com/esspoly.htm#IR>`__
-
-    * Kadon's `Octiamond Ring
-      <http://www.gamepuzzles.com/esspoly.htm#OR>`__
+      <http://www.gamepuzzles.com/esspoly.htm#IH>`__, `Iamond Ring
+      <http://www.gamepuzzles.com/esspoly.htm#IR>`__, and `Octiamond
+      Ring <http://www.gamepuzzles.com/esspoly.htm#OR>`__
 
     * Kadon's `Hexnut Jr.
       <http://www.gamepuzzles.com/esspoly.htm#OR>`__, `Hexnut
@@ -153,9 +149,11 @@ How can others contribute?
       of the first edition)
 
     Plus, I have a `wish list on Amazon.ca`__ with a bunch of
-    unrelated DVDs and books.
+    unrelated DVDs and books.  My address is available `on my
+    résumé`__.
 
 __ http://www.amazon.ca/gp/registry/registry.html/?ie=UTF8&type=wishlist&id=200YG9OZEZWBW
+__ http://python.net/~goodger/professional/cv/
 .. _to do: todo.html
 
 
@@ -176,7 +174,7 @@ Polyforms
 What are "Polyforms"?
 ---------------------
 
-The word "polyform" can be defined by its parts:
+The word "polyform" can be defined from its parts:
 
     poly-
         more than one; many
@@ -205,17 +203,16 @@ in the "pentominoes":
 
    The 12 pentominoes, with their common names.
 
-Many sets of polyforms can be combined to fill certain areas or
-volumes.  These can be called "polyform puzzles" or "combinatoric
-dissection puzzles".  For example, the pentominoes can fill a 6x10
-rectangle:
+Many sets of polyforms can combine to fill certain areas or volumes.
+These can be called "polyform puzzles" or "combinatoric dissection
+puzzles".  For example, the pentominoes can fill a 6x10 rectangle:
 
 .. figure:: images/pentominoes6x10.png
 
-   One 6x10 pentominoes solution.
+   One 6 |x| 10 pentominoes solution.
 
 There are 2339 distinct ways to fit the pentominoes into a 6x10
-rectangle.  The Polyform Puzzler `can find them all`_.
+rectangle.  Polyform Puzzler `can find them all`_.
 
 The definition of polyforms above can be generalized to include solids
 (polyhedra) joined face to face.  `Regular (Platonic) solids`_ that
@@ -223,10 +220,11 @@ The definition of polyforms above can be generalized to include solids
 solid that fills space: the cube.  Tetrahedra and octahedra together
 can fill space though.  In addition, the `truncated octahedron`_ (a
 `semi-regular, Archimedian solid`_) and the `rhombic dodecahedron`_
-can each individually fill space.
+can each individually fill space, as can other, less regular
+polyhedra.
 
-The polyform definition can also be extended to include other forms.
-The sky's the limit!
+The polyform definition can also be extended to include other forms,
+like line segments of a grid (polysticks).  The sky's the limit!
 
 .. _Wikipedia definition: http://en.wikipedia.org/wiki/Polyform
 .. _regular polygons: http://mathworld.wolfram.com/RegularPolygon.html
@@ -257,26 +255,55 @@ ones.  Polyform families are given descriptive names:
   The tetrominoes are famous for their role in the videogame "Tetris".
   The 12 pentominoes are probably the most well-known polyform, due to
   their versatility and the large variety of non-trivial puzzles they
-  form.  The 21 polyominoes of order 1-5 are used as the playing
-  pieces in the "Blokus_" board game.
+  form.
+
+  .. figure:: images/pentominoes-3x20.png
+
+     3 |x| 20 Pentominoes (2 solutions; can you see the other one?)
+
+  .. figure:: images/one-sided-pentominoes-3x30.png
+
+     3 |x| 30 One-Sided Pentominoes (46 solutions)
 
 * Substituting a 3D cube for each 2D square in polyominoes results in
-  "solid polyominoes" or "planar polycubes" (see "polycubes" below).
+  "solid polyominoes" or "planar polycubes".  
 
-  The 12 solid pentominoes fill a 3x4x5 solid in 3940 distinct
-  ways.
+  .. figure:: images/solid-pentominoes-3x4x5.png
+
+     3 |x| 4 |x| 5 Solid Pentominoes (3940 solutions)
+
+* Polyforms based on cubes extending into 3 (or more!) dimensions are
+  called "polycubes_".  The polycubes that are flat (only one cube
+  thick) are known as "planar polycubes" or "solid polyominoes".
+
+  .. figure:: images/tetracubes-2x2x8.png
+
+     2 |x| 2 |x| 8 tetracubes (224 solutions)
+
+  `Soma Cubes`_ are a well-known group of 7 polycubes (6 tetracubes
+  and 1 tricube): all the non-convex (non-box-like) 3-dimensional
+  polycubes up to order 4 (because with 5 cubes, we'd need 4
+  dimensions!).
+
+  .. figure:: images/soma-3x3x3.png
+
+     3 |x| 3 |x| 3 Soma Cubes (240 solutions)
+
+  ..  _Soma cubes: http://en.wikipedia.org/wiki/Soma_cube
 
 * Polyforms based on equilateral triangles are named "polyiamonds_"
-  (from the "diamond", which is two triangles joined).  The 22
-  polyiamonds of order 1-6 are used as the playing pieces in the
-  "Blokus Trigon" board game.
+  (from the "diamond", which is two triangles joined).
+
+  .. figure:: images/hexiamonds-4x10-longhex.png
+
+     4 |x| 10 Hexiamond Elongated Hexagon (856 solutions)
 
 * Polyforms based on regular hexagons are named "polyhexes_" (there's
-  no clever etymology here):
+  no clever etymology here).
 
-* Polyforms based on cubes are called "polycubes_".  The polycubes
-  that are flat (only one cube thick) are known as "planar polycubes"
-  or "solid polyominoes".
+  .. figure:: images/tetrahex-coin.png
+
+     5 |x| 7 Tetrahex "Coin" (4 solutions)
 
 * Polyforms based on unit line segments joined end-to-end on a square
   grid are called "polysticks" [#polysticks]_ (a.k.a. "polyedges" or
@@ -289,7 +316,6 @@ ones.  Polyform families are given descriptive names:
    Recreational Mathematics` volume 22 issue 3 (1990), p.165-175
 .. _polyominoes:
    http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyominoes.html
-.. _Blokus: http://en.wikipedia.org/wiki/Blokus
 .. _polyiamonds:
    http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyiamonds.htm
 .. _polyhexes:
@@ -417,8 +443,31 @@ I recommend researching on the web, then checking out your local toy,
 game, and puzzle specialty stores.  If they don't stock what you want,
 ask them to get it for you!
 
-For a wide variety via mail order, I recommend `Kadon Enterprises
-<http://www.gamepuzzles.com/>`__ (see my `wish list`_).
+Here are some sources that I know of:
+
+* The 21 polyominoes of order 1-5 are used as the playing pieces in
+  the "Blokus_" board game.
+
+* Solid pentominoes are commonly available in the "Pocket Play" series
+  by `Shoptaugh Games`_ (distributed in Canada and elsewhere by
+  `Family Games`_).
+
+* Soma Cubes are sold under the name "Block By Block" by ThinkFun_.
+
+* The 22 polyiamonds of order 1-6 are used as the playing pieces in
+  the "Blokus Trigon" board game. 
+
+* In Japan, many polyform puzzles are available from Tenyo_.
+
+For a wide variety via mail order, I **highly recommend** `Kadon
+Enterprises`_ (see my `wish list`_).
+
+.. _Blokus: http://en.wikipedia.org/wiki/Blokus
+.. _Shoptaugh Games: http://www.shoptaugh.com/
+.. _Family Games: http://www.familygamesamerica.com
+.. _ThinkFun: http://www.thinkfun.com
+.. _Tenyo: http://www.tenyo.co.jp/pp/
+.. _Kadon Enterprises: http://www.gamepuzzles.com/
 
 
 Polyform Puzzles & Solutions
@@ -427,16 +476,16 @@ Polyform Puzzles & Solutions
 What polyform puzzles are supported?
 ------------------------------------
 
-Various polyomino, polyiamond, polyhex, polycube, and polystick
-puzzles are supported.  For a full list, see the `Puzzles &
-Solutions`_ document.  More polyforms are to come:
+Many polyomino, polyiamond, polyhex, polycube, and polystick puzzles
+are supported.  For a full list, see the `Puzzles & Solutions`_
+document.  More polyforms are to come:
 
 * other polyominoes
 * other polycubes
 * other polyiamonds
 * other polyhexes
 * other polysticks
-* other polyforms!
+* and other polyforms!
 
 See the `to do list`__ for details.
 
@@ -446,15 +495,16 @@ __ todo.html#puzzles
 How should the solution files be interpreted?
 ---------------------------------------------
 
-The `solution files <http://puzzler.sourceforge.net/solutions>`__ all
-follow a common pattern.  The first line states the puzzle matrix
-class (from the puzzler.puzzles module) being solved::
+The `solution files <http://puzzler.sourceforge.net/solutions>`__ are
+text files that all follow a common pattern.  The first line states
+the puzzle matrix class (from the puzzler.puzzles module) being
+solved::
 
     Solving Pentominoes6x10Matrix:
 
 Some puzzles are split up into several matrices.  After all the
 solutions for one matrix are exhausted, the name of the next matrix
-will be stated.
+will be given.
 
 Each solution record contains three parts.  First, the solution header
 with the solution number::
@@ -479,11 +529,11 @@ one piece per line, with the piece name last::
 
 In some puzzles, like the 5x5 tetrasticks, one or more pieces are
 omitted from each solution.  Such omitted pieces are listed with "!"
-in place of the coordinates list:
+in place of the coordinates list::
 
     ! H
 
-If there are omitted pieces, they are prefixed to the visual
+If there are omitted pieces, a notice is prefixed to the visual
 representation::
 
     (H omitted)
