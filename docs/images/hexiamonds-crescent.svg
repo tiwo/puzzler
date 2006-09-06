@@ -5,62 +5,62 @@
      xmlns:xlink="http://www.w3.org/1999/xlink">
 <g>
 <polygon fill="navy" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="45.000,69.282 50.000,77.942 55.000,69.282 65.000,69.282 70.000,60.622 65.000,51.962 60.000,60.622 50.000,60.622">
 <desc>S6</desc>
 </polygon>
 <polygon fill="blue" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="50.000,77.942 80.000,77.942 85.000,69.282 55.000,69.282">
 <desc>I6</desc>
 </polygon>
 <polygon fill="gold" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="80.000,77.942 90.000,77.942 100.000,60.622 80.000,60.622 75.000,69.282 85.000,69.282">
 <desc>V6</desc>
 </polygon>
 <polygon fill="magenta" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="40.000,60.622 45.000,69.282 55.000,51.962 45.000,51.962 40.000,43.301 30.000,43.301">
 <desc>P6</desc>
 </polygon>
 <polygon fill="lime" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="65.000,69.282 75.000,69.282 80.000,60.622 70.000,43.301 60.000,43.301 70.000,60.622">
 <desc>J6</desc>
 </polygon>
 <polygon fill="plum" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="50.000,60.622 60.000,60.622 65.000,51.962 55.000,34.641 45.000,51.962 55.000,51.962">
 <desc>F6</desc>
 </polygon>
 <polygon fill="red" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="40.000,43.301 45.000,51.962 55.000,34.641 45.000,34.641 40.000,25.981 30.000,43.301">
 <desc>X6</desc>
 </polygon>
 <polygon fill="green" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="55.000,34.641 60.000,43.301 70.000,43.301 75.000,34.641 70.000,25.981 60.000,25.981">
 <desc>O6</desc>
 </polygon>
 <polygon fill="maroon" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="40.000,25.981 45.000,34.641 55.000,34.641 60.000,25.981 50.000,25.981 55.000,17.321 50.000,8.660">
 <desc>G6</desc>
 </polygon>
 <polygon fill="darkorange" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="70.000,25.981 75.000,34.641 80.000,25.981 90.000,25.981 85.000,17.321 65.000,17.321 60.000,25.981">
 <desc>E6</desc>
 </polygon>
 <polygon fill="turquoise" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="50.000,25.981 60.000,25.981 65.000,17.321 75.000,17.321 70.000,8.660 50.000,8.660 55.000,17.321">
 <desc>H6</desc>
 </polygon>
 <polygon fill="blueviolet" stroke="white"
-         stroke-width="0.5" stroke-linejoin="round"
+         stroke-width="1" stroke-linejoin="round"
          points="85.000,17.321 90.000,25.981 100.000,25.981 90.000,8.660 70.000,8.660 75.000,17.321">
 <desc>C6</desc>
 </polygon>
