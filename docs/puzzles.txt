@@ -292,6 +292,8 @@ Heptiamonds
 
   - 4x23
 
+    .. image:: images/heptiamonds-4x23-trapezium.png
+
 * Snowflake 1 (truncated hexagram; a.k.a. `Tenyo's puzzle no. PP-24,
   "Unmeltable Snow"
   <http://www.tenyo.co.jp/toyhobby/catalog/onsale/pp-24.html>`__)
