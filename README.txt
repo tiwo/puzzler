@@ -43,6 +43,9 @@ complete details.
        tar xzf puzzler-snapshot.tgz
        cd puzzler
 
+There are two ways to proceed from here: `install it`_, or `just run
+it`_:
+
 
 Install It
 ----------
@@ -85,9 +88,14 @@ it permanently.
    Because Python searches the current working directory for modules &
    packages, it will find the "puzzler" package directory.
 
+   (For Windows users:) If the the Python executable is not on your
+   ``PATH``, you will have to specify its location::
+
+       C:\Python24\python bin\pentominoes6x10.py
+
 Note that you will only be able to use the "puzzler" package from that
 one location (not from arbitrary locations on your system), unless you
-`install it`_, or you set your PYTHONPATH environment variable.
+`install it`_, or you set your ``PYTHONPATH`` environment variable.
 
 
 Snapshots
@@ -171,9 +179,9 @@ GNU/Linux, BSDs, Unix, Mac OS X, etc.
 
        python setup.py install
 
-   If the python executable isn't on your path, you'll have to specify
-   the complete path, such as /usr/local/bin/python.  You may need
-   root permissions to complete this step.
+   If the Python executable isn't on your ``PATH``, you'll have to
+   specify the complete path, such as /usr/local/bin/python.  You may
+   need root permissions to complete this step.
 
    You can also just run install.py; it does the same thing.
 
@@ -221,7 +229,7 @@ For example, type the following commands (in a shell) to solve the
 3x20 pentominoes puzzle::
 
     cd <archive_directory_path>
-    bin/pentominoes3x20.py
+    bin/pentominoes-3x20.py
 
 
 Windows

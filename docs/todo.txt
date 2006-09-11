@@ -61,10 +61,11 @@ To implement:
   3x5 diamond lattice
 
 * one-sided tetrasticks: 5x5 diamond lattice?  All non-isomorphic
-  solutions listed in "Covering the Aztec Diamond with One-sided
+  solutions are listed in "Covering the Aztec Diamond with One-sided
   Tetrasticks, Extended Version", by `Alfred Wassermann`_, University
-  of Bayreuth.  (Wassermann mistakenly called the shape an "aztec
-  diamond", but it actually corresponds to a `centered square number
+  of Bayreuth.  (Wassermann, and Knuth before him, mistakenly called
+  the shape an "aztec diamond", but it actually corresponds to a
+  `centered square number
   <http://mathworld.wolfram.com/CenteredSquareNumber.html>`__.)
 
 * polysticks of order 1-4: 3x7 diamond lattice (90° angles)::

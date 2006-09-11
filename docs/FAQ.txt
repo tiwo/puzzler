@@ -428,7 +428,7 @@ a few good places to start:
 * `Wikipedia <http://en.wikipedia.org/wiki/Polyform>`__
 * `MathWorld <http://mathworld.wolfram.com/Polyform.html>`__
 * `The Poly Pages <http://www.recmath.com/PolyPages/>`__
-* `Vicher's Puzzle Pages <http://alpha.ujep.cz/~vicher/puzzle/>`__
+* `Vicher's Puzzle Pages <http://www.vicher.cz/puzzle/>`__
 * `MathPuzzle.com <http://www.mathpuzzle.com/polyom.htm>`__
 * `The Geometry Junkyard
   <http://www.ics.uci.edu/~eppstein/junkyard/polyomino.html>`__
