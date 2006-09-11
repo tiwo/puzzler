@@ -6,7 +6,7 @@
 # License: GPL 2 (see __init__.py)
 
 """
-Core processing for Polyform Puzzler.
+Core coordination for Polyform Puzzler.
 """
 
 import sys
@@ -15,7 +15,34 @@ from optparse import OptionParser
 from puzzler import exact_cover
 
 
-def solver(puzzles, output_stream=sys.stdout, settings=None):
+def process_command_line():
+    """Process command-line options & return a settings object."""
+    parser = OptionParser()
+    parser.add_option(
+        '-n', '--stop-after-number', type='int', metavar='N',
+        help='Stop processing after generating N solutions.')
+    parser.add_option(
+        '-r', '--read-solution', metavar='FILE',
+        help='Read a solution from FILE for further processing.')
+    parser.add_option(
+        '-s', '--svg', metavar='FILE',
+        help='Format the first solution found (or supplied via -r) as SVG '
+        'and write it to FILE.')
+    settings, args = parser.parse_args()
+    if args:
+        print >>sys.stderr, (
+            '%s takes no command-line arguments; "%s" ignored.'
+            % (sys.argv[0], ' '.join(args)))
+    return settings
+
+def read_solution(puzzle_class, settings):
+    """Solution record supplied; read & process it."""
+    puzzle = puzzle_class.components()[0](init_puzzle=False)
+    s_matrix = puzzle.read_solution(settings.read_solution)
+    if settings.svg:
+        puzzle.write_svg(settings.svg, s_matrix=s_matrix)
+
+def solver(puzzle_class, output_stream=sys.stdout, settings=None):
     """
     Given a list of `puzzles` (subclasses of `puzzler.puzzles.Puzzle`), find
     all solutions and report on `output_stream`.
@@ -23,8 +50,12 @@ def solver(puzzles, output_stream=sys.stdout, settings=None):
     start = datetime.datetime.now()
     if settings is None:
         settings = process_command_line()
+    if settings.read_solution:
+        read_solution(puzzle_class, settings)
+        return
     matrices = []
     stats = []
+    puzzles = [component() for component in puzzle_class.components()]
     for puzzle in puzzles:
         matrices.append(
             exact_cover.convert_matrix(puzzle.matrix, puzzle.secondary_columns))
@@ -36,19 +67,9 @@ def solver(puzzles, output_stream=sys.stdout, settings=None):
         solver.root = matrices[i]
         for solution in solver.solve():
             puzzle.record_solution(solution, solver, stream=output_stream)
-            if settings.first_svg:
-                try:
-                    svg = puzzle.format_svg(solution)
-                except NotImplementedError:
-                    print >>sys.stderr, (
-                        'Warning: SVG output not supported by this puzzle.\n')
-                else:
-                    try:
-                        svg_file = open(settings.first_svg, 'w')
-                        svg_file.write(svg)
-                    finally:
-                        svg_file.close()
-                settings.first_svg = False
+            if settings.svg:
+                puzzle.write_svg(solution, settings.svg)
+                settings.svg = False
             if ( settings.stop_after_number
                  and solver.num_solutions == settings.stop_after_number):
                 break
@@ -69,18 +90,3 @@ def solver(puzzles, output_stream=sys.stdout, settings=None):
             print >>output_stream, (
                 '(%s: %s solutions, %s searches)'
                 % (puzzles[i].__class__.__name__, solutions, searches))
-
-def process_command_line():
-    parser = OptionParser()
-    parser.add_option(
-        '-f', '--first-svg', metavar='FILE',
-        help='Format the first solution as SVG and write it to FILE.')
-    parser.add_option(
-        '-n', '--stop-after-number', type='int', metavar='N',
-        help='Stop processing after generating N solutions.')
-    settings, args = parser.parse_args()
-    if args:
-        print >>sys.stderr, (
-            '%s takes no command-line arguments; "%s" ignored.'
-            % (sys.argv[0], ' '.join(args)))
-    return settings
