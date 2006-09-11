@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # $Id$
 
-"""
-224 solutions
-"""
+"""224 solutions"""
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.Tetracubes2x2x8Matrix(),))
+core.solver(puzzles.Tetracubes2x2x8)

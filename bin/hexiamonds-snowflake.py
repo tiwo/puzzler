@@ -5,4 +5,4 @@
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.HexiamondsSnowflakeMatrix(),))
+core.solver(puzzles.HexiamondsSnowflake)

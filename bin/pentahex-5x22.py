@@ -5,4 +5,4 @@
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.Pentahex5x22Matrix(),))
+core.solver(puzzles.Pentahex5x22)

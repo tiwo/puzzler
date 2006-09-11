@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # $Id$
 
-"""
-2800 solutions
-"""
+"""2800 solutions"""
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.SomaCrystalMatrix(),))
+core.solver(puzzles.SomaCrystal)

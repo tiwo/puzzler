@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # $Id$
 
-"""
-158 solutions
-"""
+"""158 solutions"""
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.SomaBathtubMatrix(),))
+core.solver(puzzles.SomaBathtub)

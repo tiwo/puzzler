@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # $Id$
 
-"""
- solutions
-"""
+""" solutions"""
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.PentacubesCornerCrystalMatrix(),))
+core.solver(puzzles.PentacubesCornerCrystal)

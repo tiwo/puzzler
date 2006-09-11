@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # $Id$
 
-"""
-244 solutions
-"""
+"""244 solutions"""
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.SomaSkew1Matrix(),))
+core.solver(puzzles.SomaSkew1)

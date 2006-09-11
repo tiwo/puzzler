@@ -5,4 +5,4 @@
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.Heptiamonds6x17TrapeziumMatrix(),))
+core.solver(puzzles.Heptiamonds6x17Trapezium)

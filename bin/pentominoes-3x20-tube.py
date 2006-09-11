@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # $Id$
 
-"""
-? solutions
-"""
+"""? solutions"""
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.Pentominoes3x20TubeMatrix(),))
+core.solver(puzzles.Pentominoes3x20Tube)

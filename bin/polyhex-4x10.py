@@ -5,4 +5,4 @@
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.Polyhex1234_4x10Matrix(),))
+core.solver(puzzles.Polyhex1234_4x10)

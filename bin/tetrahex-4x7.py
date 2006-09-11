@@ -5,4 +5,4 @@
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.Tetrahex4x7Matrix(),))
+core.solver(puzzles.Tetrahex4x7)

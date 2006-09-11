@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # $Id$
 
-"""
-66 solutions
-"""
+"""66 solutions"""
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.SomaCurvedWallMatrix(),))
+core.solver(puzzles.SomaCurvedWall)

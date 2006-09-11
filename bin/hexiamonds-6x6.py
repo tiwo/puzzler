@@ -5,4 +5,4 @@
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.Hexiamonds6x6Matrix(),))
+core.solver(puzzles.Hexiamonds6x6)

@@ -5,4 +5,4 @@
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.HexiamondsCrescentMatrix(),))
+core.solver(puzzles.HexiamondsCrescent)

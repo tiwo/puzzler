@@ -5,4 +5,4 @@
 
 from puzzler import puzzles, core
 
-core.solver((puzzles.Tetrahex3x10ClippedMatrix(),))
+core.solver(puzzles.Tetrahex3x10Clipped)
