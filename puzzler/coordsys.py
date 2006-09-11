@@ -6,7 +6,7 @@
 # License: GPL 2 (see __init__.py)
 
 """
-Coordinate Systems
+Coordinates, coordinate sets, & views.
 """
 
 import sys
@@ -243,18 +243,21 @@ class CartesianView2D(CartesianCoordSet2D):
         pivot = self.coord_class(coord_list[0])
         # transform self under aspect:
         self.orient2D(rotation, flip, pivot)
-        rowvals = [c[0] for c in self]
-        colvals = [c[1] for c in self]
-        self.offset = self.coord_class((min(rowvals), min(colvals)))
-        maxvals = self.coord_class((max(rowvals), max(colvals)))
-        # now we know our bounds; store them:
-        self.bounds = maxvals - self.offset
+        self.offset, self.bounds = self.calculate_offset_and_bounds()
         self.pivot = pivot - self.offset
         # move coordSet to top-left at (0,0)
         self._itranslate(-self.offset)
 
     def __hash__(self):
         return hash(tuple(sorted(self)))
+
+    def calculate_offset_and_bounds(self):
+        rowvals = [c[0] for c in self]
+        colvals = [c[1] for c in self]
+        offset = self.coord_class((min(rowvals), min(colvals)))
+        maxvals = self.coord_class((max(rowvals), max(colvals)))
+        bounds = maxvals - offset
+        return offset, bounds
 
 
 class CartesianView3D(CartesianCoordSet3D):
@@ -270,20 +273,22 @@ class CartesianView3D(CartesianCoordSet3D):
         pivot = self.coord_class(coord_list[0])
         # transform self under aspect:
         self.orient3D(rotation, axis, flip, pivot)
-        rows = [c[0] for c in self]
-        cols = [c[1] for c in self]
-        layers = [c[2] for c in self]
-        self.offset = self.coord_class(
-            (min(rows), min(cols), min(layers)))
-        maxvals = self.coord_class((max(rows), max(cols), max(layers)))
-        # now we know our bounds; store them:
-        self.bounds = maxvals - self.offset
+        self.offset, self.bounds = self.calculate_offset_and_bounds()
         self.pivot = pivot - self.offset
         # move coordSet to top-left at (0,0,0)
         self._itranslate(-self.offset)
 
     def __hash__(self):
         return hash(tuple(sorted(self)))
+
+    def calculate_offset_and_bounds(self):
+        rows = [c[0] for c in self]
+        cols = [c[1] for c in self]
+        layers = [c[2] for c in self]
+        offset = self.coord_class((min(rows), min(cols), min(layers)))
+        maxvals = self.coord_class((max(rows), max(cols), max(layers)))
+        bounds = maxvals - self.offset
+        return offset, bounds
 
 
 class CartesianPath2D:
@@ -398,6 +403,113 @@ class CartesianPath2D:
             yield tuple(sorted(segment))
 
 
+class SquareGrid3D(Cartesian3D):
+
+    """
+    Pseudo-3D (2D + orientation) square coordinate system for gridlines: (x,
+    y, z).  The Z dimension is for orientation: z==0 for horizontal line
+    segments (from (x,y) to (x+1,y)), and z==1 for vertical line segments
+    (from (x,y) to (x,y+1)).  The Z value indicates the index of the dimension
+    to increment.
+    """
+
+    def flip0(self, axis=None):
+        """
+        Flip about y-axis::
+
+            x_new = -x + z - 1
+            y_new = y
+            z_new = z
+
+        The `axis` parameter is ignored.
+        """
+        return self.__class__(
+            ((-self.coords[0] + self.coords[2] + 1),
+             self.coords[1],
+             self.coords[2]))
+
+    rotation_coefficients = {
+        0: (( 1,  0,  0,  0), ( 0,  1,  0,  0), ( 0,  0,  1,  0)),
+        1: (( 0, -1, -1,  0), ( 1,  0,  0,  0), ( 0,  0, -1,  1)),
+        2: ((-1,  0,  1, -1), ( 0, -1, -1,  0), ( 0,  0,  1,  0)),
+        3: (( 0,  1,  0,  0), (-1,  0,  1, -1), ( 0,  0, -1,  1)),}
+    """Pre-computed matrix for rotation by *n* 90-degree steps.
+    Mapping of rotation unit (step) to coefficients matrix:
+    ((x, y, z, 1) for x, (x, y, z, 1) for y, (x, y, z, 1) for z)."""
+
+    def rotate0(self, steps, axis=None):
+        """
+        Rotate about (0,0).  For each 90-degree increment (step)::
+
+            x_new = -y - z
+            y_new = x
+            z_new = 1 - z
+
+        The `self.rotation_coefficients` matrix is used rather than repeated
+        applications of the above rule.  The `axis` parameter is ignored.
+        """
+        coeffs = self.rotation_coefficients[steps]
+        x = (coeffs[0][3]
+             + coeffs[0][0] * self.coords[0]
+             + coeffs[0][1] * self.coords[1]
+             + coeffs[0][2] * self.coords[2])
+        y = (coeffs[1][3]
+             + coeffs[1][0] * self.coords[0]
+             + coeffs[1][1] * self.coords[1]
+             + coeffs[1][2] * self.coords[2])
+        z = (coeffs[2][3]
+             + coeffs[2][0] * self.coords[0]
+             + coeffs[2][1] * self.coords[1]
+             + coeffs[2][2] * self.coords[2])
+        return self.__class__((x, y, z))
+
+    def neighbors(self):
+        """Return a list of adjacent cells."""
+        x, y, z = self.coords
+        # counterclockwise from right
+        if z == 0:
+            return (self.__class__((x + 1, y,     0)), # right, 1 right
+                    self.__class__((x + 1, y,     1)), # up, 1 right
+                    self.__class__((x,     y,     1)), # up
+                    self.__class__((x - 1, y,     0)), # left
+                    self.__class__((x,     y - 1, 1)), # down
+                    self.__class__((x + 1, y - 1, 1))) # down, 1 right
+        else:
+            return (self.__class__((x,     y,     0)), # right
+                    self.__class__((x,     y + 1, 0)), # right, 1 up
+                    self.__class__((x,     y + 1, 1)), # up, 1 up
+                    self.__class__((x - 1, y + 1, 0)), # left, 1 up
+                    self.__class__((x - 1, y,     0)), # left
+                    self.__class__((x,     y - 1, 1))) # down
+
+
+class SquareGridCoordSet3D(CartesianCoordSet3D):
+
+    """Pseudo-3-dimensional square grid coordinate set."""
+
+    coord_class = SquareGrid3D
+
+
+class SquareGridView3D(CartesianView3D):
+
+    """
+    Pseudo-3-dimensional (+x,+y)-quadrant square grid coordinate set with
+    offset, bounds, and pivot.
+    """
+
+    coord_class = SquareGrid3D
+
+    def calculate_offset_and_bounds(self):
+        rows = [c[0] for c in self]
+        cols = [c[1] for c in self]
+        layers = [c[2] for c in self]
+        # keep Z-offset at 0 to keep Z values unaltered:
+        offset = self.coord_class((min(rows), min(cols), 0))
+        maxvals = self.coord_class((max(rows), max(cols), max(layers)))
+        bounds = maxvals - self.offset
+        return offset, bounds
+
+
 class Hexagonal2D(Cartesian2D):
 
     """
@@ -442,7 +554,7 @@ class Hexagonal2D(Cartesian2D):
         3: ((-1,  0), ( 0, -1)),
         4: (( 0,  1), (-1, -1)),
         5: (( 1,  1), (-1,  0))}
-    """Pre-computed matrix for rotation by *n* steps.
+    """Pre-computed matrix for rotation by *n* 60-degree steps.
     Mapping of rotation unit (step) to coefficients matrix:
     ((x, y) for x, (x, y) for y)."""
 
@@ -532,7 +644,7 @@ class Triangular3D(Cartesian3D):
         3: ((-1,  0,  0, -1), ( 0, -1,  0, -1), ( 0,  0, -1,  1)),
         4: (( 0,  1,  0,  0), (-1, -1, -1, -1), ( 0,  0,  1,  0)),
         5: (( 1,  1,  1,  0), (-1,  0,  0, -1), ( 0,  0, -1,  1)),}
-    """Pre-computed matrix for rotation by *n* steps.
+    """Pre-computed matrix for rotation by *n* 60-degree steps.
     Mapping of rotation unit (step) to coefficients matrix:
     ((x, y, z, 1) for x, (x, y, z, 1) for y, (x, y, z, 1) for z)."""
 
@@ -591,6 +703,16 @@ class TriangularView3D(CartesianView3D):
     """
 
     coord_class = Triangular3D
+
+    def calculate_offset_and_bounds(self):
+        rows = [c[0] for c in self]
+        cols = [c[1] for c in self]
+        layers = [c[2] for c in self]
+        # keep Z-offset at 0 to keep Z values unaltered:
+        offset = self.coord_class((min(rows), min(cols), 0))
+        maxvals = self.coord_class((max(rows), max(cols), max(layers)))
+        bounds = maxvals - offset
+        return offset, bounds
 
 
 def sign(num):
