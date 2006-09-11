@@ -11,6 +11,7 @@ import sys
 import copy
 import datetime
 import math
+import re
 from pprint import pprint, pformat
 import coordsys
 
@@ -35,6 +36,8 @@ class Puzzle(object):
 
     empty_cell = ' '
 
+    margin = 1
+
     piece_data = {}
     """Mapping of piece names to 2-tuples:
 
@@ -43,6 +46,10 @@ class Puzzle(object):
       customized in `customize_piece_data` (make a copy.deepcopy first though)
     """
 
+    piece_colors = None
+    """Mapping of piece names to colors.  The '0' name is reserved for
+    formatting solution coordinates."""
+
     svg_header = '''\
 <?xml version="1.0" standalone="no"?>
 <!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
@@ -50,12 +57,12 @@ class Puzzle(object):
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
 '''
-    svg_footer = '\n</svg>\n'
+    svg_footer = '</svg>\n'
     svg_g_start = '<g>\n'
     svg_g_end = '</g>\n'
 
     svg_polygon = '''\
-<polygon fill="%(fill)s" stroke="%(stroke)s" stroke-width="%(stroke_width)s"
+<polygon fill="%(color)s" stroke="%(stroke)s" stroke-width="%(stroke_width)s"
          points="%(points)s">
 <desc>%(name)s</desc>
 </polygon>
@@ -67,10 +74,6 @@ class Puzzle(object):
     svg_stroke_width = '1'
     """Width of polygon outline."""
 
-    svg_fills = None
-    """Mapping of piece names to fill colors.  The '0' name is reserved for
-    formatting solution coordinates."""
-
     svg_unit_length = 10
     """Unit side length in pixels."""
 
@@ -80,7 +83,17 @@ class Puzzle(object):
     svg_unit_height = svg_unit_length
     """Unit height in pixels."""
 
-    def __init__(self):
+    @classmethod
+    def components(cls):
+        """Return a tuple of puzzle component classes (sub-puzzles)."""
+        return (cls,)
+
+    def __init__(self, init_puzzle=True):
+        """
+        Use `init_puzzle` to speed up initialization when not actually solving
+        the puzzle.
+        """
+
         self.solutions = set()
         """Set of all permutations of solutions, for duplicate checking."""
 
@@ -91,17 +104,9 @@ class Puzzle(object):
         """Mapping of piece name to a set of aspects (pieces in all
         orientations)."""
 
-        self.customize_piece_data()
-        for name, (data, kwargs) in self.piece_data.items():
-            self.aspects[name] = self.make_aspects(data, **kwargs)
-
         self.pieces = {}
         """Mapping of piece name to a sorted list of 2-tuples: sorted
         coordinates & aspect objects.  Ensures reproducible results."""
-
-        for name, aspects in self.aspects.items():
-            self.pieces[name] = tuple(sorted((tuple(sorted(aspect)), aspect)
-                                             for aspect in aspects))
 
         self.x_width = len(str(self.width - 1))
         """Maximum width of string representation of X coordinate."""
@@ -118,6 +123,18 @@ class Puzzle(object):
         self.matrix_columns = {}
         """Mapping of `self.matrix` column names to indices."""
 
+        self.customize_piece_data()
+
+        if init_puzzle:
+            self.init_puzzle()
+
+    def init_puzzle(self):
+        """Initialize the puzzle pieces and matrix."""
+        for name, (data, kwargs) in self.piece_data.items():
+            self.aspects[name] = self.make_aspects(data, **kwargs)
+        for name, aspects in self.aspects.items():
+            self.pieces[name] = tuple(sorted((tuple(sorted(aspect)), aspect)
+                                             for aspect in aspects))
         self.build_matrix_header()
         self.build_matrix()
 
@@ -131,7 +148,8 @@ class Puzzle(object):
 
     def customize_piece_data(self):
         """
-        Make instance-specific customizations to a copy of `self.piece_data`.
+        Make instance-specific customizations to copies of `self.piece_data`
+        and `self.piece_colors`.
 
         Override in subclasses.
         """
@@ -207,6 +225,53 @@ class Puzzle(object):
         """
         raise NotImplementedError
 
+    def write_svg(self, output_path, solution=None, s_matrix=None):
+        try:
+            svg = self.format_svg(solution, s_matrix)
+        except NotImplementedError:
+            print >>sys.stderr, (
+                'Warning: SVG output not supported by this puzzle.\n')
+        else:
+            try:
+                svg_file = open(output_path, 'w')
+                svg_file.write(svg)
+            finally:
+                svg_file.close()
+
+    solution_header = re.compile(r'^solution (\d)+:$', re.IGNORECASE)
+
+    def read_solution(self, input_path):
+        if input_path == '-':
+            input_file = sys.stdin
+        else:
+            try:
+                input_file = open(input_path, 'r')
+                for line in input_file:
+                    match = self.solution_header.match(line)
+                    if match:
+                        number = int(match.group(1))
+                        break
+                else:
+                    raise DataError('Input does not contain a solution record.')
+                record = []
+                for line in input_file:
+                    line = line.strip()
+                    if not line:
+                        break
+                    record.append(line)
+            finally:
+                input_file.close()
+        s_matrix = self.convert_record_to_solution_matrix(record)
+        return s_matrix
+
+    def convert_record_to_solution_matrix(self, record):
+        """
+        `record` is a list of strings, the solution record.
+
+        Implement in subclasses
+        """
+        raise NotImplementedError
+
     def store_solutions(self, solution, formatted):
         """
         Store the formatted solution along with puzzle-specific variants
@@ -277,9 +342,13 @@ class Puzzle2D(Puzzle):
                                  ).rstrip()
                          for y in y_reversed_fn(range(self.height)))
 
-    def build_solution_matrix(self, solution, margin=0):
+    def empty_solution_matrix(self, margin=0):
         s_matrix = [[self.empty_cell] * (self.width + 2 * margin)
                     for y in range(self.height + 2 * margin)]
+        return s_matrix
+
+    def build_solution_matrix(self, solution, margin=0):
+        s_matrix = self.empty_solution_matrix(margin)
         for row in solution:
             piece = sorted(i.column.name for i in row.row_data())
             name = piece[-1]
@@ -309,12 +378,12 @@ class Puzzle2D(Puzzle):
     def build_polygon(self, s_matrix, x, y):
         points = self.get_polygon_points(s_matrix, x, y)
         name = s_matrix[y][x]
-        fill = self.svg_fills[name]
+        color = self.piece_colors[name]
         # Erase cells of this piece:
         for x, y in self.get_piece_cells(s_matrix, x, y):
             s_matrix[y][x] = self.empty_cell
         points_str = ' '.join('%.3f,%.3f' % (x, y) for (x, y) in points)
-        return self.svg_polygon % {'fill': fill,
+        return self.svg_polygon % {'color': color,
                                    'stroke': self.svg_stroke,
                                    'stroke_width': self.svg_stroke_width,
                                    'points': points_str,
@@ -377,15 +446,25 @@ class Puzzle2D(Puzzle):
                 self._get_piece_cells(cells, neighbor, s_matrix, cell_content)
 
     def format_coords_svg(self):
-        s_matrix = [[self.empty_cell] * self.width
-                    for y in range(self.height)]
+        s_matrix = self.empty_solution_matrix()
         for x, y in self.solution_coords:
             s_matrix[y][x] = '0'
         return self.format_svg(s_matrix=s_matrix)
 
+    def convert_record_to_solution_matrix(self, record):
+        s_matrix = self.empty_solution_matrix(self.margin)
+        for row in record:
+            parts = row.split()
+            name = parts[-1]
+            for coords in parts[:-1]:
+                x, y = coords.split(',')
+                s_matrix[int(y) + self.margin][int(x) + self.margin] = name
+        return s_matrix
+
 
 class Puzzle3D(Puzzle):
 
+    margin = 0
     svg_x_width = 9
     svg_x_height = -2
     svg_y_height = 10
@@ -395,7 +474,7 @@ class Puzzle3D(Puzzle):
     svg_defs_start = '<defs>\n'
     svg_cube_def = '''\
 <symbol id="cube%(name)s">
-<polygon fill="%(fill)s" stroke="%(stroke)s"
+<polygon fill="%(color)s" stroke="%(stroke)s"
          stroke-width="%(stroke_width)s" stroke-linejoin="round"
          points="0,13 9,15 15,12 15,2 6,0 0,3" />
 <polygon fill="black" fill-opacity="0.25" stroke="%(stroke)s"
@@ -476,10 +555,14 @@ class Puzzle3D(Puzzle):
                         for z in z_reversed_fn(range(self.depth))).rstrip()
             for y in y_reversed_fn(range(self.height)))
 
-    def build_solution_matrix(self, solution, margin=0):
-        s_matrix = [[[' '] * (self.width + 2 * margin)
+    def empty_solution_matrix(self, margin=0):
+        s_matrix = [[[self.empty_cell] * (self.width + 2 * margin)
                      for y in range(self.height + 2 * margin)]
                     for z in range(self.depth + 2 * margin)]
+        return s_matrix
+
+    def build_solution_matrix(self, solution, margin=0):
+        s_matrix = self.empty_solution_matrix(margin)
         for row in solution:
             piece = sorted(i.column.name for i in row.row_data())
             name = piece[-1]
@@ -494,7 +577,7 @@ class Puzzle3D(Puzzle):
                                       '& s_matrix arguments, not both.')
         else:
             s_matrix = self.build_solution_matrix(solution)
-            s_matrix = self.transform_solution_matrix(s_matrix)
+        s_matrix = self.transform_solution_matrix(s_matrix)
         s_depth = len(s_matrix)
         s_height = len(s_matrix[0])
         s_width = len(s_matrix[0][0])
@@ -506,10 +589,10 @@ class Puzzle3D(Puzzle):
                   + s_depth * abs(self.svg_z_width)
                   + 2 * self.svg_unit_length)
         cube_defs = []
-        for name in sorted(self.svg_fills.keys()):
-            fill = self.svg_fills[name]
+        for name in sorted(self.piece_colors.keys()):
+            color = self.piece_colors[name]
             cube_defs.append(
-                self.svg_cube_def % {'fill': fill,
+                self.svg_cube_def % {'color': color,
                                      'stroke': self.svg_stroke,
                                      'stroke_width': self.svg_stroke_width,
                                      'name': name})
@@ -539,15 +622,24 @@ class Puzzle3D(Puzzle):
                                  self.svg_footer)
 
     def format_coords_svg(self):
-        s_matrix = [[[self.empty_cell] * self.width
-                     for y in range(self.height)]
-                    for z in range(self.depth)]
+        s_matrix = self.empty_solution_matrix(margin=self.margin)
         for x, y, z in self.solution_coords:
-            s_matrix[z][y][x] = '0'
+            s_matrix[z + self.margin][y + self.margin][x + self.margin] = '0'
         return self.format_svg(s_matrix=s_matrix)
 
     def transform_solution_matrix(self, s_matrix):
         """Transform for rendering `s_matrix`.  Override in subclasses."""
+        return s_matrix
+
+    def convert_record_to_solution_matrix(self, record):
+        s_matrix = self.empty_solution_matrix(self.margin)
+        for row in record:
+            parts = row.split()
+            name = parts[-1]
+            for coords in parts[:-1]:
+                x, y, z = (int(coord) + self.margin
+                           for coord in coords.split(','))
+                s_matrix[z][y][x] = name
         return s_matrix
 
 
@@ -576,7 +668,7 @@ class Pentominoes(Puzzle2D):
     asymmetric_pieces = 'F L P N Y Z'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
-    svg_fills = {
+    piece_colors = {
         'I': 'blue',
         'X': 'red',
         'F': 'green',
@@ -592,7 +684,7 @@ class Pentominoes(Puzzle2D):
         '0': 'gray'}
 
 
-class Pentominoes6x10Matrix(Pentominoes):
+class Pentominoes6x10(Pentominoes):
 
     """2339 solutions"""
 
@@ -610,15 +702,19 @@ class Pentominoes6x10Matrix(Pentominoes):
         self.build_regular_matrix(keys)
 
 
-class Pentominoes5x12Matrix(Pentominoes):
+class Pentominoes5x12(Pentominoes):
 
     """1010 solutions"""
 
     height = 5
     width = 12
 
+    @classmethod
+    def puzzles(cls):
+        return (Pentominoes5x12A, Pentominoes5x12B)
 
-class Pentominoes5x12MatrixA(Pentominoes5x12Matrix):
+
+class Pentominoes5x12A(Pentominoes5x12):
 
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
@@ -630,7 +726,7 @@ class Pentominoes5x12MatrixA(Pentominoes5x12Matrix):
         self.build_regular_matrix(keys)
 
 
-class Pentominoes5x12MatrixB(Pentominoes5x12Matrix):
+class Pentominoes5x12B(Pentominoes5x12):
 
     """symmetry: X at center; remove flip of P"""
 
@@ -648,15 +744,19 @@ class Pentominoes5x12MatrixB(Pentominoes5x12Matrix):
         self.build_regular_matrix(keys)
 
 
-class Pentominoes4x15Matrix(Pentominoes):
+class Pentominoes4x15(Pentominoes):
 
     """368 solutions"""
 
     height = 4
     width = 15
 
+    @classmethod
+    def puzzles(cls):
+        return (Pentominoes4x15A, Pentominoes4x15B)
 
-class Pentominoes4x15MatrixA(Pentominoes4x15Matrix):
+
+class Pentominoes4x15A(Pentominoes4x15):
 
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
@@ -668,7 +768,7 @@ class Pentominoes4x15MatrixA(Pentominoes4x15Matrix):
         self.build_regular_matrix(keys)
 
 
-class Pentominoes4x15MatrixB(Pentominoes4x15Matrix):
+class Pentominoes4x15B(Pentominoes4x15):
 
     """symmetry: X at center; remove flip of P"""
 
@@ -685,7 +785,7 @@ class Pentominoes4x15MatrixB(Pentominoes4x15Matrix):
         self.build_regular_matrix(keys)
 
 
-class Pentominoes3x20Matrix(Pentominoes):
+class Pentominoes3x20(Pentominoes):
 
     """
     2 solutions.
@@ -711,10 +811,10 @@ class Pentominoes3x20Matrix(Pentominoes):
                         self.build_matrix_row(key, translated)
 
 
-class Pentominoes3x20LoopMatrix(Pentominoes):
+class Pentominoes3x20Loop(Pentominoes):
 
     """
-    2 solutions: same as non-loop `Pentominoes3x20Matrix`.
+    2 solutions: same as non-loop `Pentominoes3x20`.
     Symmetry: fix X; restrict U to 2 quadrants; restrict I to y=0 & 1.
     """
 
@@ -739,7 +839,7 @@ class Pentominoes3x20LoopMatrix(Pentominoes):
                         self.build_matrix_row(key, translated)
 
 
-class Pentominoes3x20TubeMatrix(Pentominoes):
+class Pentominoes3x20Tube(Pentominoes):
 
     """
     Symmetry: restrict X to dx=1 & 6, dy=0; remove flip of F.
@@ -769,12 +869,17 @@ class Pentominoes3x20TubeMatrix(Pentominoes):
                         self.build_matrix_row(key, translated)
 
 
-class Pentominoes8x8CenterHoleMatrix(Pentominoes):
+class Pentominoes8x8CenterHole(Pentominoes):
 
     """65 solutions"""
 
     height = 8
     width = 8
+
+    @classmethod
+    def puzzles(cls):
+        return (Pentominoes8x8CenterHoleA,
+                Pentominoes8x8CenterHoleB)
 
     def coordinates(self):
         for y in range(self.height):
@@ -784,7 +889,7 @@ class Pentominoes8x8CenterHoleMatrix(Pentominoes):
                 yield coordsys.Cartesian2D((x, y))
 
 
-class Pentominoes8x8CenterHoleMatrixA(Pentominoes8x8CenterHoleMatrix):
+class Pentominoes8x8CenterHoleA(Pentominoes8x8CenterHole):
 
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
@@ -796,7 +901,7 @@ class Pentominoes8x8CenterHoleMatrixA(Pentominoes8x8CenterHoleMatrix):
         self.build_regular_matrix(keys)
 
 
-class Pentominoes8x8CenterHoleMatrixB(Pentominoes8x8CenterHoleMatrix):
+class Pentominoes8x8CenterHoleB(Pentominoes8x8CenterHole):
 
     """symmetry: X on diagonal; remove flip of P"""
 
@@ -821,13 +926,13 @@ class OneSidedPentominoes(Pentominoes):
         pieces.
         """
         self.piece_data = copy.deepcopy(self.piece_data)
-        self.svg_fills = copy.deepcopy(self.svg_fills)
+        self.piece_colors = copy.deepcopy(self.piece_colors)
         for key in self.piece_data.keys():
             self.piece_data[key][-1]['flips'] = None
         for key in self.asymmetric_pieces:
             self.piece_data[key.lower()] = copy.deepcopy(self.piece_data[key])
             self.piece_data[key.lower()][-1]['flips'] = (1,)
-            self.svg_fills[key.lower()] = self.svg_fills[key]
+            self.piece_colors[key.lower()] = self.piece_colors[key]
 
     def format_solution(self, *args, **kwargs):
         """Convert solutions to uppercase to avoid duplicates."""
@@ -835,7 +940,7 @@ class OneSidedPentominoes(Pentominoes):
         return solution.upper()
 
 
-class OneSidedPentominoes3x30Matrix(OneSidedPentominoes):
+class OneSidedPentominoes3x30(OneSidedPentominoes):
 
     height = 3
     width = 30
@@ -855,7 +960,7 @@ class SolidPentominoes(Puzzle3D, Pentominoes):
         return Puzzle3D.make_aspects(self, units, flips, axes, rotations)
 
 
-class SolidPentominoes2x3x10Matrix(SolidPentominoes):
+class SolidPentominoes2x3x10(SolidPentominoes):
 
     """12 solutions"""
 
@@ -884,7 +989,7 @@ class SolidPentominoes2x3x10Matrix(SolidPentominoes):
                 for y in range(self.height)]
 
 
-class SolidPentominoes2x5x6Matrix(SolidPentominoes):
+class SolidPentominoes2x5x6(SolidPentominoes):
 
     """264 solutions"""
 
@@ -892,13 +997,17 @@ class SolidPentominoes2x5x6Matrix(SolidPentominoes):
     width = 6
     depth = 2
 
+    @classmethod
+    def puzzles(cls):
+        return (SolidPentominoes2x5x6A, SolidPentominoes2x5x6B)
+
     def transform_solution_matrix(self, s_matrix):
         return [[[s_matrix[z][y][x] for x in range(self.width)]
                  for z in range(self.depth)]
                 for y in range(self.height)]
 
 
-class SolidPentominoes2x5x6MatrixA(SolidPentominoes2x5x6Matrix):
+class SolidPentominoes2x5x6A(SolidPentominoes2x5x6):
 
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
@@ -912,7 +1021,7 @@ class SolidPentominoes2x5x6MatrixA(SolidPentominoes2x5x6Matrix):
         self.build_regular_matrix(keys)
 
 
-class SolidPentominoes2x5x6MatrixB(SolidPentominoes2x5x6Matrix):
+class SolidPentominoes2x5x6B(SolidPentominoes2x5x6):
 
     """symmetry: X in center; remove flip of F"""
 
@@ -932,7 +1041,7 @@ class SolidPentominoes2x5x6MatrixB(SolidPentominoes2x5x6Matrix):
         self.build_regular_matrix(keys)
 
 
-class SolidPentominoes3x4x5Matrix(SolidPentominoes):
+class SolidPentominoes3x4x5(SolidPentominoes):
 
     """
     3940 solutions
@@ -970,7 +1079,7 @@ class SolidPentominoes3x4x5Matrix(SolidPentominoes):
                 for y in range(self.height)]
 
 
-class SolidPentominoesRingMatrix(SolidPentominoes):
+class SolidPentominoesRing(SolidPentominoes):
 
     check_for_duplicates = True
 
@@ -1040,7 +1149,7 @@ class SolidPentominoesRingMatrix(SolidPentominoes):
         return '\n'.join(lines)
 
 
-class SolidPentominoes3x3x9RingMatrix(SolidPentominoesRingMatrix):
+class SolidPentominoes3x3x9Ring(SolidPentominoesRing):
 
     """3 solutions"""
 
@@ -1062,7 +1171,7 @@ class SolidPentominoes3x3x9RingMatrix(SolidPentominoesRingMatrix):
         self.build_regular_matrix(keys)
 
 
-class SolidPentominoes3x4x8RingMatrix(SolidPentominoesRingMatrix):
+class SolidPentominoes3x4x8Ring(SolidPentominoesRing):
 
     """0 solutions"""
 
@@ -1071,7 +1180,7 @@ class SolidPentominoes3x4x8RingMatrix(SolidPentominoesRingMatrix):
     depth = 4
 
 
-class SolidPentominoes3x5x7RingMatrix(SolidPentominoesRingMatrix):
+class SolidPentominoes3x5x7Ring(SolidPentominoesRing):
 
     """1 solution"""
 
@@ -1094,7 +1203,7 @@ class SolidPentominoes3x5x7RingMatrix(SolidPentominoesRingMatrix):
         self.build_regular_matrix(keys)
 
 
-class SolidPentominoes3x6x6RingMatrix(SolidPentominoesRingMatrix):
+class SolidPentominoes3x6x6Ring(SolidPentominoesRing):
 
     """0 solutions"""
 
@@ -1103,7 +1212,7 @@ class SolidPentominoes3x6x6RingMatrix(SolidPentominoesRingMatrix):
     depth = 6
 
 
-class SolidPentominoes5x3x5RingMatrix(SolidPentominoesRingMatrix):
+class SolidPentominoes5x3x5Ring(SolidPentominoesRing):
 
     """186 solutions"""
 
@@ -1127,7 +1236,7 @@ class SolidPentominoes5x3x5RingMatrix(SolidPentominoesRingMatrix):
         self.build_regular_matrix(keys)
 
 
-class SolidPentominoes5x4x4RingMatrix(SolidPentominoesRingMatrix):
+class SolidPentominoes5x4x4Ring(SolidPentominoesRing):
 
     """0 solutions"""
 
@@ -1136,7 +1245,7 @@ class SolidPentominoes5x4x4RingMatrix(SolidPentominoesRingMatrix):
     depth = 4
 
 
-class SolidPentominoes6x3x4RingMatrix(SolidPentominoesRingMatrix):
+class SolidPentominoes6x3x4Ring(SolidPentominoesRing):
 
     """46 solutions"""
 
@@ -1169,7 +1278,7 @@ class Tetracubes(Puzzle3D):
     """(0,0,0) is implied.  The names are based on Kadon's 'Poly-4 Supplement'
     names.  See http://www.gamepuzzles.com/poly4.htm."""
 
-    svg_fills = {
+    piece_colors = {
         'I': 'blue',
         'O': 'magenta',
         'T': 'green',
@@ -1181,7 +1290,7 @@ class Tetracubes(Puzzle3D):
         '0': 'gray'}
 
 
-class Tetracubes2x4x4Matrix(Tetracubes):
+class Tetracubes2x4x4(Tetracubes):
 
     """1390 solutions"""
 
@@ -1201,7 +1310,7 @@ class Tetracubes2x4x4Matrix(Tetracubes):
         self.piece_data['V2'][-1]['axes'] = None
 
 
-class Tetracubes2x2x8Matrix(Tetracubes):
+class Tetracubes2x2x8(Tetracubes):
 
     """224 solutions"""
 
@@ -1240,7 +1349,7 @@ class Pentacubes(Puzzle3D):
     Kadon's 'J3' piece is a duplicate of the 'L3' piece.
     See http://www.gamepuzzles.com/sqnames.htm."""
 
-    svg_fills = {
+    piece_colors = {
         'L1': 'darkseagreen',
         'L2': 'peru',
         'L3': 'rosybrown',
@@ -1269,11 +1378,11 @@ class Pentacubes(Puzzle3D):
         for name, (data, kwargs) in SolidPentominoes.piece_data.items():
             self.piece_data[name] = (tuple((x, y, 0) for (x, y) in data), {})
         self.piece_data.update(copy.deepcopy(self.non_planar_piece_data))
-        self.svg_fills = copy.deepcopy(self.svg_fills)
-        self.svg_fills.update(SolidPentominoes.svg_fills)
+        self.piece_colors = copy.deepcopy(self.piece_colors)
+        self.piece_colors.update(SolidPentominoes.piece_colors)
 
 
-class Pentacubes5x7x7OpenBoxMatrix(Pentacubes):
+class Pentacubes5x7x7OpenBox(Pentacubes):
 
     """ solutions"""
 
@@ -1291,7 +1400,7 @@ class Pentacubes5x7x7OpenBoxMatrix(Pentacubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class Pentacubes2x11x11FrameMatrix(Pentacubes):
+class Pentacubes2x11x11Frame(Pentacubes):
 
     """ solutions"""
 
@@ -1310,7 +1419,7 @@ class Pentacubes2x11x11FrameMatrix(Pentacubes):
                     yield coordsys.Cartesian3D((x, 1, z))
 
 
-class Pentacubes5x5x6TowerMatrix(Pentacubes):
+class Pentacubes5x5x6Tower(Pentacubes):
 
     """ solutions"""
 
@@ -1327,7 +1436,7 @@ class Pentacubes5x5x6TowerMatrix(Pentacubes):
                     yield coordsys.Cartesian3D((x, y, z))
 
 
-class PentacubesCornerCrystalMatrix(Pentacubes):
+class PentacubesCornerCrystal(Pentacubes):
 
     """ solutions"""
 
@@ -1352,7 +1461,7 @@ class PentacubesCornerCrystalMatrix(Pentacubes):
         Pentacubes.customize_piece_data(self)
         self.piece_data['o'] = ((), {})
         self.piece_data['X'][-1]['axes'] = None
-        self.svg_fills['o'] = 'white'
+        self.piece_colors['o'] = 'white'
 
     def build_matrix(self):
         """Restrict the monocube to the 4 interior, hidden spaces."""
@@ -1377,7 +1486,7 @@ class SomaCubes(Puzzle3D):
         'p': (((0, 1, 0), (1, 0, 0), ( 0,  0,  1)), {})}
     """(0,0,0) is implied."""
 
-    svg_fills = {
+    piece_colors = {
         'V': 'blue',
         'p': 'red',
         'T': 'green',
@@ -1396,8 +1505,7 @@ class SomaCubes(Puzzle3D):
         x_reversed_fn = order_functions[x_reversed]
         y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
         z_reversed_fn = order_functions[z_reversed]
-        s_matrix = [[[' '] * self.width for y in range(self.height)]
-                    for z in range(self.depth)]
+        s_matrix = self.empty_solution_matrix()
         for row in solution:
             piece = sorted(i.column.name for i in row.row_data())
             name = piece[-1]
@@ -1416,7 +1524,7 @@ class SomaCubes(Puzzle3D):
             for y in y_reversed_fn(range(self.height)))
 
 
-class Soma3x3x3Matrix(SomaCubes):
+class Soma3x3x3(SomaCubes):
 
     """
     240 solutions
@@ -1445,7 +1553,7 @@ class Soma3x3x3Matrix(SomaCubes):
         self.build_regular_matrix(keys)
 
 
-class SomaCrystalMatrix(SomaCubes):
+class SomaCrystal(SomaCubes):
 
     """2800 solutions."""
 
@@ -1468,7 +1576,7 @@ class SomaCrystalMatrix(SomaCubes):
                  for z in range(self.depth - 1, -1, -1)]
                 for x in range(self.width)]
 
-class SomaLongWallMatrix(SomaCubes):
+class SomaLongWall(SomaCubes):
 
     """104 solutions."""
 
@@ -1491,7 +1599,7 @@ class SomaLongWallMatrix(SomaCubes):
                 for x in range(self.width)]
 
 
-class SomaHighWallMatrix(SomaCubes):
+class SomaHighWall(SomaCubes):
 
     """46 solutions."""
 
@@ -1515,7 +1623,7 @@ class SomaHighWallMatrix(SomaCubes):
                 for x in range(self.width)]
 
 
-class SomaBenchMatrix(SomaCubes):
+class SomaBench(SomaCubes):
 
     """0 solutions."""
 
@@ -1531,7 +1639,7 @@ class SomaBenchMatrix(SomaCubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaStepsMatrix(SomaCubes):
+class SomaSteps(SomaCubes):
 
     """164 solutions."""
 
@@ -1555,7 +1663,7 @@ class SomaStepsMatrix(SomaCubes):
                 for y in range(self.height)]
 
 
-class SomaBathtubMatrix(SomaCubes):
+class SomaBathtub(SomaCubes):
 
     """158 solutions."""
 
@@ -1574,7 +1682,7 @@ class SomaBathtubMatrix(SomaCubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaCurvedWallMatrix(SomaCubes):
+class SomaCurvedWall(SomaCubes):
 
     """66 solutions."""
 
@@ -1600,7 +1708,7 @@ class SomaCurvedWallMatrix(SomaCubes):
                 for y in range(self.height - 1, -1, -1)]
 
 
-class SomaSquareWallMatrix(SomaCubes):
+class SomaSquareWall(SomaCubes):
 
     """0 solutions."""
 
@@ -1616,7 +1724,7 @@ class SomaSquareWallMatrix(SomaCubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSofaMatrix(SomaCubes):
+class SomaSofa(SomaCubes):
 
     """32 solutions."""
 
@@ -1635,7 +1743,7 @@ class SomaSofaMatrix(SomaCubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaCornerstoneMatrix(SomaCubes):
+class SomaCornerstone(SomaCubes):
 
     """10 solutions."""
 
@@ -1653,7 +1761,7 @@ class SomaCornerstoneMatrix(SomaCubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class Soma_W_Matrix(SomaCubes):
+class Soma_W(SomaCubes):
 
     """0 solutions."""
 
@@ -1670,7 +1778,7 @@ class Soma_W_Matrix(SomaCubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
-class SomaSkew1Matrix(SomaCubes):
+class SomaSkew1(SomaCubes):
 
     """244 solutions."""
 
@@ -1694,7 +1802,7 @@ class SomaSkew1Matrix(SomaCubes):
                 for y in range(self.height)]
 
 
-class SomaSkew2Matrix(SomaCubes):
+class SomaSkew2(SomaCubes):
 
     """14 solutions."""
 
@@ -1718,7 +1826,7 @@ class SomaSkew2Matrix(SomaCubes):
                 for y in range(self.height)]
 
 
-class SomaSteamerMatrix(SomaCubes):
+class SomaSteamer(SomaCubes):
 
     """152 solutions."""
 
@@ -1806,26 +1914,8 @@ class Polysticks(Puzzle):
         order_functions = (lambda x: x, reversed)
         x_reversed_fn = order_functions[x_reversed]
         y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
-        h_matrix = [[' '] * self.width for y in range(self.height + 1)]
-        v_matrix = [[' '] * (self.width + 1) for y in range(self.height)]
-        matrices = {'h': h_matrix, 'v': v_matrix}
-        title = ''
-        for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            if piece[0] == '!':
-                title = '(%s omitted)\n' % name
-                continue
-            for segment_name in piece[:-1]:
-                direction = segment_name[-1]
-                if direction == 'i':
-                    continue
-                x, y = (int(d.strip()) for d in segment_name[:-1].split(','))
-                x, y, direction = self.rotate_segment(x, y, direction, rotation)
-                if xy_swapped:
-                    x, y = y, x
-                    direction = 'hv'[direction == 'h']
-                matrices[direction][y][x] = name
+        h_matrix, v_matrix, omitted, prefix = self.build_solution_matrices(
+            solution, xy_swapped, rotation)
         lines = []
         for y in range(self.height + 1):
             lines.append(' ' + ' '.join(
@@ -1839,7 +1929,35 @@ class Polysticks(Puzzle):
                        '    '.join(
                     (name + '|')[1]
                     for name in x_reversed_fn(v_matrix[y])).rstrip()))
-        return title + '\n'.join(y_reversed_fn(lines))
+        return prefix + '\n'.join(y_reversed_fn(lines))
+
+    def build_solution_matrices(self, solution,
+                                xy_swapped=False, rotation=False, margin=0):
+        h_matrix = [[' '] * (self.width + 2 * margin)
+                    for y in range(self.height + 2 * margin + 1)]
+        v_matrix = [[' '] * (self.width + 2 * margin + 1)
+                    for y in range(self.height + 2 * margin)]
+        matrices = {'h': h_matrix, 'v': v_matrix}
+        omitted = []
+        prefix = []
+        for row in solution:
+            piece = sorted(i.column.name for i in row.row_data())
+            name = piece[-1]
+            if piece[0] == '!':
+                omitted.append(name)
+                prefix.append('(%s omitted)\n' % name)
+                continue
+            for segment_coords in piece[:-1]:
+                direction = segment_coords[-1]
+                if direction == 'i':
+                    continue
+                x, y = (int(d.strip()) for d in segment_coords[:-1].split(','))
+                x, y, direction = self.rotate_segment(x, y, direction, rotation)
+                if xy_swapped:
+                    x, y = y, x
+                    direction = 'hv'[direction == 'h']
+                matrices[direction][y + margin][x + margin] = name
+        return h_matrix, v_matrix, omitted, '\n'.join(prefix)
 
     def rotate_segment(self, x, y, direction, rotation):
         quadrant = rotation % 4
@@ -1879,6 +1997,7 @@ class Tetrasticks(Polysticks):
         'W': ((((0,0),(1,0)), ((1,0),(1,1)), ((1,1),(2,1)), ((2,1),(2,2))), {}),
         'P': ((((0,0),(0,1)), ((0,1),(1,1)), ((1,1),(1,0)), ((1,0),(2,0))), {}),
         'O': ((((0,0),(1,0)), ((1,0),(1,1)), ((1,1),(0,1)), ((0,1),(0,0))), {})}
+    """Coordinate pairs are end-points of line segments."""
 
     symmetric_pieces = 'I O T U V W X'.split()
     """Pieces with reflexive symmetry, identical to their mirror images."""
@@ -1893,7 +2012,7 @@ class Tetrasticks(Polysticks):
     """Pieces without junction points (max. 2 segments join)."""
 
 
-class Polysticks123(object):
+class Polysticks123Data(object):
 
     piece_data = {
         'I1': ((((0,0),(1,0)),), {}),
@@ -1906,7 +2025,7 @@ class Polysticks123(object):
         'U3': ((((0,1),(0,0)), ((0,0),(1,0)), ((1,0),(1,1))), {}),}
 
 
-class WeldedTetrasticks4x4Matrix(Tetrasticks):
+class WeldedTetrasticks4x4(Tetrasticks):
 
     """
     4 solutions (perfect solutions, i.e. no pieces cross).
@@ -1937,7 +2056,7 @@ class WeldedTetrasticks4x4Matrix(Tetrasticks):
             self.piece_data[key+'*'][-1]['flips'] = (1,)
 
 
-class Tetrasticks5x5Matrix(Tetrasticks):
+class Tetrasticks5x5(Tetrasticks):
 
     """
     1795 solutions total:
@@ -1983,13 +2102,13 @@ class Tetrasticks5x5Matrix(Tetrasticks):
         return set()
 
 
-class Polysticks1234Matrix(Tetrasticks, Polysticks123):
+class Polysticks1234(Tetrasticks, Polysticks123Data):
 
     piece_data = copy.deepcopy(Tetrasticks.piece_data)
-    piece_data.update(copy.deepcopy(Polysticks123.piece_data))
+    piece_data.update(copy.deepcopy(Polysticks123Data.piece_data))
 
 
-class Polysticks1234_6x6Matrix(Polysticks1234Matrix):
+class Polysticks1234_6x6(Polysticks1234):
 
     """
     ? solutions (very large number; over 35000 unique solutions in first
@@ -2000,8 +2119,15 @@ class Polysticks1234_6x6Matrix(Polysticks1234Matrix):
     width = 6
     height = 6
 
+    @classmethod
+    def puzzles(cls):
+        return (Polysticks1234_6x6A,
+                Polysticks1234_6x6B,
+                Polysticks1234_6x6C,
+                Polysticks1234_6x6D)
 
-class Polysticks1234_6x6MatrixA(Polysticks1234_6x6Matrix):
+
+class Polysticks1234_6x6A(Polysticks1234_6x6):
 
     check_for_duplicates = True
     duplicate_conditions = ({'xy_swapped': True},)
@@ -2016,7 +2142,7 @@ class Polysticks1234_6x6MatrixA(Polysticks1234_6x6Matrix):
         self.build_regular_matrix(keys)
 
 
-class Polysticks1234_6x6MatrixB(Polysticks1234_6x6Matrix):
+class Polysticks1234_6x6B(Polysticks1234_6x6):
 
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
@@ -2027,7 +2153,7 @@ class Polysticks1234_6x6MatrixB(Polysticks1234_6x6Matrix):
         self.build_regular_matrix(keys)
 
 
-class Polysticks1234_6x6MatrixC(Polysticks1234_6x6Matrix):
+class Polysticks1234_6x6C(Polysticks1234_6x6):
 
     check_for_duplicates = True
     duplicate_conditions = ({'y_reversed': True},)
@@ -2042,7 +2168,7 @@ class Polysticks1234_6x6MatrixC(Polysticks1234_6x6Matrix):
         self.build_regular_matrix(keys)
 
 
-class Polysticks1234_6x6MatrixD(Polysticks1234_6x6Matrix):
+class Polysticks1234_6x6D(Polysticks1234_6x6):
 
     """symmetry: X at center; remove flip & rotation of P (fix one aspect)"""
 
@@ -2068,6 +2194,8 @@ class Polyhexes(Puzzle2D):
     """
 
     check_for_duplicates = True
+
+    duplicate_conditions = ()
 
     svg_unit_height = Puzzle3D.svg_unit_length * math.sqrt(3) / 2
 
@@ -2166,6 +2294,12 @@ class Polyhexes(Puzzle2D):
             output.pop(0)
         return '\n'.join(output) + '\n'
 
+    def format_coords(self):
+        s_matrix = self.empty_solution_matrix()
+        for x, y in self.solution_coords:
+            s_matrix[y][x] = '* '
+        return self.format_hex_grid(s_matrix)
+
     def format_svg(self, solution=None, s_matrix=None):
         if s_matrix:
             assert solution is None, ('Provide only one of solution '
@@ -2235,7 +2369,7 @@ class Polyhexes(Puzzle2D):
         return points
 
 
-class Polyhexes123(object):
+class Polyhexes123Data(object):
 
     piece_data = {
         'H1': ((), {}),
@@ -2249,7 +2383,7 @@ class Polyhexes123(object):
 
     asymmetric_pieces = []
 
-    svg_fills = {
+    piece_colors = {
         'H1': 'gray',
         'I2': 'steelblue',
         'I3': 'teal',
@@ -2276,7 +2410,7 @@ class Tetrahexes(Polyhexes):
     asymmetric_pieces = 'J4 P4 S4'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
-    svg_fills = {
+    piece_colors = {
         'I4': 'blue',
         'O4': 'red',
         'Y4': 'green',
@@ -2287,19 +2421,19 @@ class Tetrahexes(Polyhexes):
         '0': 'gray'}
 
 
-class Polyhex1234(Polyhexes123, Tetrahexes):
+class Polyhex1234(Polyhexes123Data, Tetrahexes):
 
-    symmetric_pieces = (Polyhexes123.symmetric_pieces
+    symmetric_pieces = (Polyhexes123Data.symmetric_pieces
                         + Tetrahexes.symmetric_pieces)
 
-    asymmetric_pieces = (Polyhexes123.asymmetric_pieces
+    asymmetric_pieces = (Polyhexes123Data.asymmetric_pieces
                          + Tetrahexes.asymmetric_pieces)
 
     def customize_piece_data(self):
         self.piece_data = copy.deepcopy(Tetrahexes.piece_data)
         self.piece_data.update(copy.deepcopy(Polyhexes123.piece_data))
-        self.svg_fills = copy.deepcopy(Tetrahexes.svg_fills)
-        self.svg_fills.update(Polyhexes123.svg_fills)
+        self.piece_colors = copy.deepcopy(Tetrahexes.piece_colors)
+        self.piece_colors.update(Polyhexes123.piece_colors)
 
 
 class Pentahexes(Polyhexes):
@@ -2335,7 +2469,7 @@ class Pentahexes(Polyhexes):
     asymmetric_pieces = 'J5 P5 N5 r5 p5 u5 S5 q5 T5 y5 G5'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
-    svg_fills = {
+    piece_colors = {
         'I5': 'blue',
         'X5': 'red',
         'D5': 'green',
@@ -2361,7 +2495,7 @@ class Pentahexes(Polyhexes):
         '0': 'gray'}
 
 
-class Tetrahex4x7Matrix(Tetrahexes):
+class Tetrahex4x7(Tetrahexes):
 
     """9 solutions"""
 
@@ -2371,7 +2505,7 @@ class Tetrahex4x7Matrix(Tetrahexes):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Tetrahex7x7TriangleMatrix(Tetrahexes):
+class Tetrahex7x7Triangle(Tetrahexes):
 
     """0 solutions"""
 
@@ -2385,7 +2519,7 @@ class Tetrahex7x7TriangleMatrix(Tetrahexes):
                     yield coordsys.Hexagonal2D((x, y))
 
 
-class Tetrahex3x10ClippedMatrix(Tetrahexes):
+class Tetrahex3x10Clipped(Tetrahexes):
 
     """2 solutions"""
 
@@ -2404,7 +2538,7 @@ class Tetrahex3x10ClippedMatrix(Tetrahexes):
                     yield coordsys.Hexagonal2D((x, y))
 
 
-class TetrahexCoinMatrix(Tetrahexes):
+class TetrahexCoin(Tetrahexes):
 
     """4 solutions"""
 
@@ -2423,7 +2557,7 @@ class TetrahexCoinMatrix(Tetrahexes):
                     yield coordsys.Hexagonal2D((x, y))
 
 
-class Pentahex10x11Matrix(Pentahexes):
+class Pentahex10x11(Pentahexes):
 
     """? (many) solutions"""
 
@@ -2433,7 +2567,7 @@ class Pentahex10x11Matrix(Pentahexes):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Pentahex5x22Matrix(Pentahexes):
+class Pentahex5x22(Pentahexes):
 
     """? (many) solutions"""
 
@@ -2443,7 +2577,25 @@ class Pentahex5x22Matrix(Pentahexes):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Polyhex1234_4x10Matrix(Polyhex1234):
+class Pentahex15x11Trapezium(Pentahexes):
+
+    height = 11
+    width = 15
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x in range(self.width):
+                if x + y < self.width:
+                    yield coordsys.Hexagonal2D((x, y))
+
+
+class Pentahex5x24Trapezium(Pentahex15x11Trapezium):
+
+    height = 5
+    width = 24
+
+
+class Polyhex1234_4x10(Polyhex1234):
 
     """? (many) solutions"""
 
@@ -2453,7 +2605,7 @@ class Polyhex1234_4x10Matrix(Polyhex1234):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Polyhex1234_5x8Matrix(Polyhex1234):
+class Polyhex1234_5x8(Polyhex1234):
 
     """? (many) solutions"""
 
@@ -2466,9 +2618,13 @@ class Polyhex1234_5x8Matrix(Polyhex1234):
 class Polyiamonds(Puzzle3D):
 
     """
+    Polyiamonds use a pseudo-3D coordinate system: 2D + orientation.
+
     The shape of the matrix is defined by the `coordinates` generator method.
     The `width` and `height` attributes define the maximum bounds only.
     """
+
+    margin = 1
 
     # triangle orientation (up=0, down=1):
     depth = 2
@@ -2482,7 +2638,7 @@ class Polyiamonds(Puzzle3D):
 
     # stroke-linejoin="round" to avoid long miters on acute angles:
     svg_polygon = '''\
-<polygon fill="%(fill)s" stroke="%(stroke)s"
+<polygon fill="%(color)s" stroke="%(stroke)s"
          stroke-width="%(stroke_width)s" stroke-linejoin="round"
          points="%(points)s">
 <desc>%(name)s</desc>
@@ -2531,26 +2687,33 @@ class Polyiamonds(Puzzle3D):
                         for z in range(self.depth)]
         return self.format_triangular_grid(s_matrix)
 
-    def build_solution_matrix(self, solution, margin=0):
+    def empty_solution_matrix(self, margin=0):
         s_matrix = [[[self.empty_cell] * (self.width + 2 * margin)
                      for y in range(self.height + 2 * margin)]
-                    # Z is pseudo-dimension, no margin necessary:
                     for z in range(self.depth)]
+        return s_matrix
+
+    def build_solution_matrix(self, solution, margin=0):
+        s_matrix = self.empty_solution_matrix(margin)
         for row in solution:
             piece = sorted(i.column.name for i in row.row_data())
             name = piece[-1]
             for cell_name in piece[:-1]:
                 x, y, z = [int(d.strip()) for d in cell_name.split(',')]
-                s_matrix[z][y + margin][x + margin] = name
+                s_matrix[z + margin][y + margin][x + margin] = name
         return s_matrix
 
     def format_coords(self):
-        s_matrix = [[[self.empty_cell] * self.width
-                     for y in range(self.height)]
-                    for z in range(self.depth)]
+        s_matrix = self.empty_solution_matrix()
         for x, y, z in self.solution_coords:
             s_matrix[z][y][x] = '* '
         return self.format_triangular_grid(s_matrix)
+
+    def format_coords_svg(self):
+        s_matrix = self.empty_solution_matrix(margin=self.margin)
+        for x, y, z in self.solution_coords:
+            s_matrix[z][y + self.margin][x + self.margin] = '0'
+        return self.format_svg(s_matrix=s_matrix)
 
     def format_piece(self, name):
         coords, aspect = self.pieces[name][0]
@@ -2637,12 +2800,12 @@ class Polyiamonds(Puzzle3D):
     def build_polygon(self, s_matrix, x, y, z):
         points = self.get_polygon_points(s_matrix, x, y, z)
         name = s_matrix[z][y][x]
-        fill = self.svg_fills[name]
+        color = self.piece_colors[name]
         # Erase cells of this piece:
         for x, y, z in self.get_piece_cells(s_matrix, x, y, z):
             s_matrix[z][y][x] = self.empty_cell
         points_str = ' '.join('%.3f,%.3f' % (x, y) for (x, y) in points)
-        return self.svg_polygon % {'fill': fill,
+        return self.svg_polygon % {'color': color,
                                    'stroke': self.svg_stroke,
                                    'stroke_width': self.svg_stroke_width,
                                    'points': points_str,
@@ -2729,6 +2892,16 @@ class Polyiamonds(Puzzle3D):
                 cells.add(neighbor)
                 self._get_piece_cells(cells, neighbor, s_matrix, cell_content)
 
+    def convert_record_to_solution_matrix(self, record):
+        s_matrix = self.empty_solution_matrix(self.margin)
+        for row in record:
+            parts = row.split()
+            name = parts[-1]
+            for coords in parts[:-1]:
+                x, y, z = (int(coord) for coord in coords.split(','))
+                s_matrix[z][y + self.margin][x + self.margin] = name
+        return s_matrix
+
 
 class Hexiamonds(Polyiamonds):
 
@@ -2765,7 +2938,7 @@ class Hexiamonds(Polyiamonds):
     asymmetric_pieces = 'I6 P6 J6 H6 S6 G6 F6'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
-    svg_fills = {
+    piece_colors = {
         'I6': 'blue',
         'X6': 'red',
         'O6': 'green',
@@ -2781,7 +2954,7 @@ class Hexiamonds(Polyiamonds):
         '0': 'gray'}
 
 
-class Hexiamonds4x9Matrix(Hexiamonds):
+class Hexiamonds4x9(Hexiamonds):
 
     """74 solutions"""
 
@@ -2791,7 +2964,7 @@ class Hexiamonds4x9Matrix(Hexiamonds):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Hexiamonds6x6Matrix(Hexiamonds):
+class Hexiamonds6x6(Hexiamonds):
 
     """156 solutions"""
 
@@ -2803,7 +2976,7 @@ class Hexiamonds6x6Matrix(Hexiamonds):
                             {'rotate_180': True, 'xy_swapped': True},)
 
 
-class Hexiamonds4x11TrapeziumMatrix(Hexiamonds):
+class Hexiamonds4x11Trapezium(Hexiamonds):
 
     """76 solutions"""
 
@@ -2824,7 +2997,7 @@ class Hexiamonds4x11TrapeziumMatrix(Hexiamonds):
         self.piece_data['I6'][-1]['flips'] = None
 
 
-class Hexiamonds6x9TrapeziumMatrix(Hexiamonds4x11TrapeziumMatrix):
+class Hexiamonds6x9Trapezium(Hexiamonds4x11Trapezium):
 
     """0 solutions (impossible due to parity)"""
 
@@ -2832,7 +3005,7 @@ class Hexiamonds6x9TrapeziumMatrix(Hexiamonds4x11TrapeziumMatrix):
     width = 9
 
 
-class Hexiamonds4x10LongHexagonMatrix(Hexiamonds):
+class Hexiamonds4x10LongHexagon(Hexiamonds):
 
     """856 solutions"""
 
@@ -2853,7 +3026,7 @@ class Hexiamonds4x10LongHexagonMatrix(Hexiamonds):
         self.piece_data['I6'][-1]['flips'] = None
 
 
-class HexiamondsSnowflakeMatrix(Hexiamonds):
+class HexiamondsSnowflake(Hexiamonds):
 
     """55 solutions"""
 
@@ -2879,7 +3052,7 @@ class HexiamondsSnowflakeMatrix(Hexiamonds):
         self.piece_data['J6'][-1]['rotations'] = None
 
 
-class HexiamondsRingMatrix(Hexiamonds):
+class HexiamondsRing(Hexiamonds):
 
     """
     0 solutions
@@ -2902,7 +3075,7 @@ class HexiamondsRingMatrix(Hexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
 
-class HexiamondsRing2Matrix(Hexiamonds):
+class HexiamondsRing2(Hexiamonds):
 
     """
     11 solutions
@@ -2930,7 +3103,7 @@ class HexiamondsRing2Matrix(Hexiamonds):
         self.piece_data['I6'][-1]['flips'] = None
 
 
-class HexiamondsCrescentMatrix(Hexiamonds):
+class HexiamondsCrescent(Hexiamonds):
 
     """
     87 solutions
@@ -2956,7 +3129,7 @@ class HexiamondsCrescentMatrix(Hexiamonds):
         self.piece_data['I6'][-1]['flips'] = None
 
 
-class HexiamondsCrescent2Matrix(Hexiamonds):
+class HexiamondsCrescent2(Hexiamonds):
 
     """
     2 solutions
@@ -2982,7 +3155,7 @@ class HexiamondsCrescent2Matrix(Hexiamonds):
         self.piece_data['I6'][-1]['flips'] = None
 
 
-class HexiamondsTrefoilMatrix(Hexiamonds):
+class HexiamondsTrefoil(Hexiamonds):
 
     """640 solutions"""
 
@@ -3012,7 +3185,7 @@ class HexiamondsTrefoilMatrix(Hexiamonds):
         self.piece_data['I6'][-1]['flips'] = None
 
 
-class Hexiamonds3HexagonsMatrix(Hexiamonds):
+class Hexiamonds3Hexagons(Hexiamonds):
 
     """0 solutions"""
 
@@ -3035,7 +3208,7 @@ class Hexiamonds3HexagonsMatrix(Hexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
 
-class HexiamondsCoinMatrix(Hexiamonds):
+class HexiamondsCoin(Hexiamonds):
 
     """304 solutions"""
 
@@ -3118,7 +3291,7 @@ class Heptiamonds(Polyiamonds):
         'A7 B7 E7 F7 G7 H7 J7 L7 N7 P7 Q7 R7 S7 T7 U7 W7 X7 Y7 Z7').split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
-    svg_fills = {
+    piece_colors = {
         'I7': 'blue',
         'M7': 'red',
         'D7': 'green',
@@ -3146,7 +3319,7 @@ class Heptiamonds(Polyiamonds):
         '0': 'gray'}
 
 
-class Heptiamonds3x28Matrix(Heptiamonds):
+class Heptiamonds3x28(Heptiamonds):
 
     """ solutions"""
 
@@ -3156,7 +3329,7 @@ class Heptiamonds3x28Matrix(Heptiamonds):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Heptiamonds4x21Matrix(Heptiamonds):
+class Heptiamonds4x21(Heptiamonds):
 
     """ solutions"""
 
@@ -3166,7 +3339,7 @@ class Heptiamonds4x21Matrix(Heptiamonds):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Heptiamonds6x14Matrix(Heptiamonds):
+class Heptiamonds6x14(Heptiamonds):
 
     """ solutions"""
 
@@ -3176,7 +3349,7 @@ class Heptiamonds6x14Matrix(Heptiamonds):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Heptiamonds7x12Matrix(Heptiamonds):
+class Heptiamonds7x12(Heptiamonds):
 
     """ solutions"""
 
@@ -3186,7 +3359,7 @@ class Heptiamonds7x12Matrix(Heptiamonds):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class HeptiamondsSnowflakeMatrix(Heptiamonds):
+class HeptiamondsSnowflake1(Heptiamonds):
 
     """ solutions"""
 
@@ -3212,7 +3385,46 @@ class HeptiamondsSnowflakeMatrix(Heptiamonds):
         self.piece_data['W7'][-1]['flips'] = None
 
 
-class HeptiamondsTriangleMatrix(Heptiamonds):
+class HeptiamondsSnowflake2(Heptiamonds):
+
+    """ solutions"""
+
+    height = 16
+    width = 16
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        holes = set(((7,4,0),(7,4,1),(8,4,0),(8,3,1),
+                     (11,3,1),(11,4,0),(11,4,1),(12,4,0),
+                     (11,7,1),(12,7,0),(11,8,0),(11,8,1),
+                     (7,12,0),(7,11,1),(8,11,0),(8,11,1),
+                     (3,11,1),(4,11,0),(4,11,1),(4,12,0),
+                     (3,8,1),(4,8,0),(4,7,1),(4,7,0),))
+        coords = set()
+        for y in range(4, 16):
+            for x in range(4, 16):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if x + y + z < 20 and not coord in holes:
+                        coords.add(coord)
+                        yield coord
+        for y in range(12):
+            for x in range(12):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if ( x + y + z > 11 and not coord in holes
+                         and coord not in coords):
+                        coords.add(coord)
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['P7'][-1]['rotations'] = None
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsTriangle(Heptiamonds):
 
     """ solutions"""
 
@@ -3234,7 +3446,7 @@ class HeptiamondsTriangleMatrix(Heptiamonds):
         self.piece_data['W7'][-1]['flips'] = None
 
 
-class Heptiamonds12x13TrapeziumMatrix(Heptiamonds):
+class Heptiamonds12x13Trapezium(Heptiamonds):
 
     """ solutions"""
 
@@ -3255,46 +3467,309 @@ class Heptiamonds12x13TrapeziumMatrix(Heptiamonds):
         self.piece_data['W7'][-1]['flips'] = None
 
 
-class Heptiamonds6x17TrapeziumMatrix(Heptiamonds12x13TrapeziumMatrix):
+class Heptiamonds6x17Trapezium(Heptiamonds12x13Trapezium):
 
     height = 6
     width = 17
 
 
-class Heptiamonds4x23TrapeziumMatrix(Heptiamonds12x13TrapeziumMatrix):
+class Heptiamonds4x23Trapezium(Heptiamonds12x13Trapezium):
 
     height = 4
     width = 23
 
 
-class HeptiamondsHexagramMatrix(Heptiamonds):
+class HeptiamondsHexagram(Heptiamonds):
 
     """
-    0 solutions
+    0 solutions?
 
-    16-unit hexagram with central 4-unit hexagonal hole
+    16-unit-high hexagram with central 4-unit hexagonal hole
     """
 
     height = 16
     width = 16
 
     def coordinates(self):
+        coords = set()
         for z in range(self.depth):
             for y in range(4, 16):
                 for x in range(4, 16):
                     total = x + y + z
                     if total < 20 and not (5 < x < 10 and 5 < y < 10
                                            and 13 < total < 18):
-                        yield coordsys.Triangular3D((x, y, z))
+                        coord = coordsys.Triangular3D((x, y, z))
+                        coords.add(coord)
+                        yield coord
             for y in range(12):
                 for x in range(12):
                     total = x + y + z
                     if total >= 12 and not (5 < x < 10 and 5 < y < 10
                                             and 13 < total < 18):
-                        yield coordsys.Triangular3D((x, y, z))
+                        coord = coordsys.Triangular3D((x, y, z))
+                        if coord not in coords:
+                            coords.add(coord)
+                            yield coord
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['P7'][-1]['flips'] = None
+        self.piece_data['P7'][-1]['rotations'] = None
 
 
-class HeptiamondsDiamondRingMatrix(Heptiamonds):
+class HeptiamondsHexagon1(Heptiamonds):
+
+    """
+     solutions
+
+    12-unit-high hexagon with central 8-unit-high hexagram hole
+    """
+
+    height = 12
+    width = 12
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set()
+        for y in range(4, 10):
+            for x in range(4, 10):
+                for z in range(self.depth):
+                    if x + y + z < 14:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+        for y in range(2, 8):
+            for x in range(2, 8):
+                for z in range(self.depth):
+                    if x + y + z > 9:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    total = x + y + z
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < total < 18 and coord not in hole:
+                        yield coord
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexagon2(Heptiamonds):
+
+    """
+     solutions
+
+    12-unit-high hexagon with two central stacked 4-unit-high hexagon holes
+    """
+
+    height = 12
+    width = 12
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set()
+        for y in range(2, 6):
+            for x in range(5, 9):
+                for z in range(self.depth):
+                    if 8 < x + y + z < 13:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+        for y in range(6, 10):
+            for x in range(3, 7):
+                for z in range(self.depth):
+                    if 10 < x + y + z < 15:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < x + y + z < 18 and coord not in hole:
+                        yield coord
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexagon3(Heptiamonds):
+
+    """
+     solutions
+
+    12-unit-high hexagon with two central adjacent 4-unit-high hexagon holes
+    (horizontal)
+    """
+
+    height = 12
+    width = 12
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set()
+        for y in range(4, 8):
+            for x in range(2, 6):
+                for z in range(self.depth):
+                    if 7 < x + y + z < 12:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+            for x in range(6, 10):
+                for z in range(self.depth):
+                    if 11 < x + y + z < 16:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < x + y + z < 18 and coord not in hole:
+                        yield coord
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexagon4(Heptiamonds):
+
+    """
+     solutions
+
+    12-unit-high hexagon with two central separated 4-unit-high hexagon holes
+    (horizontal)
+    """
+
+    height = 12
+    width = 12
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set()
+        for y in range(4, 8):
+            for x in range(1, 5):
+                for z in range(self.depth):
+                    if 6 < x + y + z < 11:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+            for x in range(7, 11):
+                for z in range(self.depth):
+                    if 12 < x + y + z < 17:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < x + y + z < 18 and coord not in hole:
+                        yield coord
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexagon5(Heptiamonds):
+
+    """
+     solutions
+
+    12-unit-high hexagon with two 4-unit-high hexagon holes in opposite
+    corners (horizontal)
+    """
+
+    height = 12
+    width = 12
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set()
+        for y in range(4, 8):
+            for x in range(4):
+                for z in range(self.depth):
+                    if 5 < x + y + z < 10:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+            for x in range(8, 12):
+                for z in range(self.depth):
+                    if 13 < x + y + z < 18:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < x + y + z < 18 and coord not in hole:
+                        yield coord
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexagon6(Heptiamonds):
+
+    """
+     solutions
+
+    12-unit-high hexagon with a central snowflake hole
+    """
+
+    height = 12
+    width = 12
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set()
+        for y in range(3, 9):
+            for x in range(3, 9):
+                for z in range(self.depth):
+                    if 8 < x + y + z < 15:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+        for coord in ((4,4,1), (7,3,0), (8,4,1), (3,7,0), (4,8,1), (7,7,0)):
+            hole.remove(coord)
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < x + y + z < 18 and coord not in hole:
+                        yield coord
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexagon7(Heptiamonds):
+
+    """
+     solutions
+
+    12-unit-high hexagon with a central trefoil hole
+    """
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        hole = set()
+        for y in range(3, 9):
+            for x in range(3, 9):
+                for z in range(self.depth):
+                    if 8 < x + y + z < 15:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+        for coord in ((5,3,1), (6,3,0), (8,5,1), (8,6,0), (3,8,0), (3,8,1)):
+            hole.remove(coord)
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < x + y + z < 18 and coord not in hole:
+                        yield coord
+
+    def customize_piece_data(self):
+        self.piece_data = copy.deepcopy(self.piece_data)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsDiamondRing(Heptiamonds):
 
     """
      solutions
@@ -3320,7 +3795,7 @@ class HeptiamondsDiamondRingMatrix(Heptiamonds):
 
 
 if __name__ == '__main__':
-    p = Pentominoes6x10Matrix()
+    p = Pentominoes6x10()
     print 'matrix length =', len(p.matrix)
     print 'first 20 rows:'
     pprint(p.matrix[:20], width=720)
