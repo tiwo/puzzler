@@ -68,7 +68,7 @@ def solver(puzzle_class, output_stream=sys.stdout, settings=None):
         for solution in solver.solve():
             puzzle.record_solution(solution, solver, stream=output_stream)
             if settings.svg:
-                puzzle.write_svg(solution, settings.svg)
+                puzzle.write_svg(settings.svg, solution)
                 settings.svg = False
             if ( settings.stop_after_number
                  and solver.num_solutions == settings.stop_after_number):
