@@ -23,22 +23,23 @@ Changes Since Release 1
 
   - Tetrahexes: 4x7, clipped 3x10, "coin".
 
-  - Pentahexes: 10x11 & 5x22 parallelograms; 15x11 & 5x24 trapezia.
+  - Pentahexes: 10x11 & 5x22 parallelograms; 15x11 & 5x24 trapezia;
+    hexagons.
 
   - Polyhexes of order 1 through 4: 4x10 &  5x8.
 
   - Hexiamonds: 4x9, 6x6, 4x11 trapezium, 4x10 elongated hexagon,
-    snowflake, ring 2, crescents, 6x8 "coin", trefoil
+    snowflake, ring 2, crescents, 6x8 "coin", trefoil.
 
   - Heptiamonds: 7x12, 6x14, 4x21, 3x28; 12x13, 6x17, & 4x23 trapezia;
-    snowflakes; triangle with central hole; diamond ring; hexagons
+    snowflakes; triangle with central hole; diamond ring; hexagons.
 
-  - One-sided pentominoes: 3x30
+  - One-sided pentominoes: 3x30.
 
-  - Tetracubes: 2x2x8 & 2x4x4
+  - Tetracubes: 2x2x8 & 2x4x4.
 
   - Pentacubes: 5x5x6 tower, 2x11x11 frame, 5x7x7 open box, corner
-    crystal
+    crystal.
 
 * Added SVG image generation support for polyominoes, polyiamonds,
   polyhexes, and polycubes.

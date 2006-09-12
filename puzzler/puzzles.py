@@ -2595,6 +2595,98 @@ class Pentahex5x24Trapezium(Pentahex15x11Trapezium):
     width = 24
 
 
+class PentahexHexagon1(Pentahexes):
+
+    """ solutions"""
+
+    height = 13
+    width = 13
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set()
+        for y in range(4, 9):
+            for x in range(4, 9):
+                if 9 < x + y < 15:
+                    hole.add((x,y))
+        hole.remove((8,6))
+        hole.remove((4,6))
+        for y in range(self.height):
+            for x in range(self.width):
+                if 5 < x + y < 19 and (x,y) not in hole:
+                    yield coordsys.Hexagonal2D((x, y))
+
+
+class PentahexHexagon2(Pentahexes):
+
+    """ solutions"""
+
+    height = 13
+    width = 13
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set()
+        for y in range(4, 9):
+            for x in range(4, 9):
+                if 9 < x + y < 15:
+                    hole.add((x,y))
+        hole.remove((7,4))
+        hole.remove((5,8))
+        for y in range(self.height):
+            for x in range(self.width):
+                if 5 < x + y < 19 and (x,y) not in hole:
+                    yield coordsys.Hexagonal2D((x, y))
+
+
+class PentahexHexagon3(Pentahexes):
+
+    """ solutions"""
+
+    height = 15
+    width = 15
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set()
+        for y in range(3, 12):
+            for x in range(3, 12):
+                if 9 < x + y < 19:
+                    hole.add((x,y))
+        hole.remove((11,7))
+        hole.remove((3,7))
+        for y in range(self.height):
+            for x in range(self.width):
+                if 6 < x + y < 22 and (x,y) not in hole:
+                    yield coordsys.Hexagonal2D((x, y))
+
+
+class PentahexHexagon4(Pentahexes):
+
+    """ solutions"""
+
+    height = 15
+    width = 15
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        hole = set()
+        for y in range(3, 12):
+            for x in range(3, 12):
+                if 9 < x + y < 19:
+                    hole.add((x,y))
+        hole.remove((5,11))
+        hole.remove((9,3))
+        for y in range(self.height):
+            for x in range(self.width):
+                if 6 < x + y < 22 and (x,y) not in hole:
+                    yield coordsys.Hexagonal2D((x, y))
+
+
 class Polyhex1234_4x10(Polyhex1234):
 
     """? (many) solutions"""

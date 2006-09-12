@@ -428,6 +428,22 @@ Pentahexes
 
   .. image:: images/pentahex-5x24-trapezium.png
 
+* hexagon 1
+
+  .. image:: images/pentahex-hexagon-1.png
+
+* hexagon 2
+
+  .. image:: images/pentahex-hexagon-2.png
+
+* hexagon 3
+
+  .. image:: images/pentahex-hexagon-3.png
+
+* hexagon 4
+
+  .. image:: images/pentahex-hexagon-4.png
+
 
 Polyhexes of Order 1 Through 4
 ==============================
