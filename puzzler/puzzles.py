@@ -238,14 +238,35 @@ class Puzzle(object):
             finally:
                 svg_file.close()
 
+    def format_x3d(self, solution=None, s_matrix=None):
+        """
+        Return a puzzle-specific X3D formatting of a solution.
+
+        Implement in subclasses.
+        """
+        raise NotImplementedError
+
+    def write_x3d(self, output_path, solution=None, s_matrix=None):
+        try:
+            x3d = self.format_x3d(solution, s_matrix)
+        except NotImplementedError:
+            print >>sys.stderr, (
+                'Warning: X3D output not supported by this puzzle.\n')
+        else:
+            try:
+                x3d_file = open(output_path, 'w')
+                x3d_file.write(x3d)
+            finally:
+                x3d_file.close()
+
     solution_header = re.compile(r'^solution (\d)+:$', re.IGNORECASE)
 
     def read_solution(self, input_path):
         if input_path == '-':
             input_file = sys.stdin
         else:
+            input_file = open(input_path, 'r')
             try:
-                input_file = open(input_path, 'r')
                 for line in input_file:
                     match = self.solution_header.match(line)
                     if match:
@@ -465,6 +486,7 @@ class Puzzle2D(Puzzle):
 class Puzzle3D(Puzzle):
 
     margin = 0
+    piece_width = 2                     # for format_solution
     svg_x_width = 9
     svg_x_height = -2
     svg_y_height = 10
@@ -550,7 +572,7 @@ class Puzzle3D(Puzzle):
         z_reversed_fn = order_functions[z_reversed]
         s_matrix = self.build_solution_matrix(solution)
         return '\n'.join(
-            '    '.join(''.join('%-2s' % name
+            '    '.join(''.join('%-*s' % (self.piece_width, name)
                                 for name in x_reversed_fn(s_matrix[z][y]))
                         for z in z_reversed_fn(range(self.depth))).rstrip()
             for y in y_reversed_fn(range(self.height)))
@@ -627,9 +649,31 @@ class Puzzle3D(Puzzle):
             s_matrix[z + self.margin][y + self.margin][x + self.margin] = '0'
         return self.format_svg(s_matrix=s_matrix)
 
+    def format_x3d(self, solution=None, s_matrix=None):
+        if s_matrix:
+            assert solution is None, ('Provide only one of solution '
+                                      '& s_matrix arguments, not both.')
+        else:
+            s_matrix = self.build_solution_matrix(solution)
+        s_matrix = self.transform_solution_matrix(s_matrix)
+        # TODO
+        return ''
+
     def transform_solution_matrix(self, s_matrix):
         """Transform for rendering `s_matrix`.  Override in subclasses."""
         return s_matrix
+
+    def swap_yz_transform(self, s_matrix):
+        """Common solution matrix transform: swap Y & Z dimensions."""
+        return [[[s_matrix[z][y][x] for x in range(self.width)]
+                 for z in range(self.depth)]
+                for y in range(self.height)]
+
+    def cycle_xyz_transform(self, s_matrix):
+        """Common solution matrix transform: cycle X Y & Z dimensions."""
+        return [[[s_matrix[z][y][x] for y in range(self.height)]
+                 for z in range(self.depth)]
+                for x in range(self.width)]
 
     def convert_record_to_solution_matrix(self, record):
         s_matrix = self.empty_solution_matrix(self.margin)
@@ -710,7 +754,7 @@ class Pentominoes5x12(Pentominoes):
     width = 12
 
     @classmethod
-    def puzzles(cls):
+    def components(cls):
         return (Pentominoes5x12A, Pentominoes5x12B)
 
 
@@ -752,7 +796,7 @@ class Pentominoes4x15(Pentominoes):
     width = 15
 
     @classmethod
-    def puzzles(cls):
+    def components(cls):
         return (Pentominoes4x15A, Pentominoes4x15B)
 
 
@@ -877,7 +921,7 @@ class Pentominoes8x8CenterHole(Pentominoes):
     width = 8
 
     @classmethod
-    def puzzles(cls):
+    def components(cls):
         return (Pentominoes8x8CenterHoleA,
                 Pentominoes8x8CenterHoleB)
 
@@ -983,10 +1027,7 @@ class SolidPentominoes2x3x10(SolidPentominoes):
         keys.remove('X')
         self.build_regular_matrix(keys)
 
-    def transform_solution_matrix(self, s_matrix):
-        return [[[s_matrix[z][y][x] for x in range(self.width)]
-                 for z in range(self.depth)]
-                for y in range(self.height)]
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
 class SolidPentominoes2x5x6(SolidPentominoes):
@@ -998,13 +1039,10 @@ class SolidPentominoes2x5x6(SolidPentominoes):
     depth = 2
 
     @classmethod
-    def puzzles(cls):
+    def components(cls):
         return (SolidPentominoes2x5x6A, SolidPentominoes2x5x6B)
 
-    def transform_solution_matrix(self, s_matrix):
-        return [[[s_matrix[z][y][x] for x in range(self.width)]
-                 for z in range(self.depth)]
-                for y in range(self.height)]
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
 class SolidPentominoes2x5x6A(SolidPentominoes2x5x6):
@@ -1073,10 +1111,7 @@ class SolidPentominoes3x4x5(SolidPentominoes):
         keys = self.build_matrix_i((0, 1), (0, 1))
         self.build_regular_matrix(keys)
 
-    def transform_solution_matrix(self, s_matrix):
-        return [[[s_matrix[z][y][x] for x in range(self.width)]
-                 for z in range(self.depth)]
-                for y in range(self.height)]
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
 class SolidPentominoesRing(SolidPentominoes):
@@ -1298,10 +1333,7 @@ class Tetracubes2x4x4(Tetracubes):
     height = 4
     depth = 2
 
-    def transform_solution_matrix(self, s_matrix):
-        return [[[s_matrix[z][y][x] for x in range(self.width)]
-                 for z in range(self.depth)]
-                for y in range(self.height)]
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
 
     def customize_piece_data(self):
         self.piece_data = copy.deepcopy(self.piece_data)
@@ -1369,6 +1401,8 @@ class Pentacubes(Puzzle3D):
         'A':  'cadetblue',
         '0':  'gray'}
 
+    piece_width = 3                     # for format_solution
+
     def customize_piece_data(self):
         """
         Combine piece data from Pentominoes with `self.non_planar_piece_data`.
@@ -1405,8 +1439,8 @@ class Pentacubes2x11x11Frame(Pentacubes):
     """ solutions"""
 
     width = 11
-    height = 2
-    depth = 11
+    height = 11
+    depth = 2
 
     def coordinates(self):
         for z in range(self.depth):
@@ -1417,6 +1451,8 @@ class Pentacubes2x11x11Frame(Pentacubes):
                 if ( x == 2 or x == self.width - 3
                      or z == 2 or z == self.depth - 3):
                     yield coordsys.Cartesian3D((x, 1, z))
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
 class Pentacubes5x5x6Tower(Pentacubes):
@@ -1472,6 +1508,92 @@ class PentacubesCornerCrystal(Pentacubes):
             self.build_matrix_row('o', translated)
         keys.remove('o')
         self.build_regular_matrix(keys)
+
+
+class PentacubesNineSlices(Pentacubes):
+
+    """ solutions"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( 3 < x + y < 13 and -5 < y - x < 5
+                         and (z + abs(x - 4)) < 5):
+                        yield coordsys.Cartesian3D((x, y, z))
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
+class PentacubesPlus(Pentacubes):
+
+    """
+    Also known as 'Super Deluxe Quintillions', these are the pentacubes with a
+    second L3 piece (a.k.a. J3), allowing the construction of box shapes.  See
+    http://www.gamepuzzles.com/polycube.htm#SQd.
+    """
+
+    def customize_piece_data(self):
+        """Add J3, a copy of L3."""
+        Pentacubes.customize_piece_data(self)
+        self.piece_data['J3'] = copy.deepcopy(self.piece_data['L3'])
+        self.piece_colors['J3'] = self.piece_colors['L3']
+
+    def format_solution(self, solution,
+                        x_reversed=False, y_reversed=False, z_reversed=False):
+        """
+        Consider J3 and L3 as the same piece for solution counting purposes.
+        """
+        solution = Pentacubes.format_solution(
+            self, solution, x_reversed=x_reversed, y_reversed=y_reversed,
+            z_reversed=z_reversed)
+        return solution.replace('J3', 'L3')
+
+
+class PentacubesPlus2x5x15(PentacubesPlus):
+
+    """ solutions"""
+
+    width = 15
+    height = 5
+    depth = 2
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
+class PentacubesPlus2x3x25(PentacubesPlus):
+
+    """ solutions"""
+
+    width = 25
+    height = 3
+    depth = 2
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
+class PentacubesPlus3x5x10(PentacubesPlus):
+
+    """ solutions"""
+
+    width = 10
+    height = 5
+    depth = 3
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
+class PentacubesPlus5x5x6(PentacubesPlus):
+
+    """ solutions"""
+
+    width = 5
+    height = 6
+    depth = 5
 
 
 class SomaCubes(Puzzle3D):
@@ -1593,10 +1715,7 @@ class SomaLongWall(SomaCubes):
                     if 4 <= x + y <= 6 - z:
                         yield coordsys.Cartesian3D((x, y, z))
 
-    def transform_solution_matrix(self, s_matrix):
-        return [[[s_matrix[z][y][x] for y in range(self.height)]
-                 for z in range(self.depth)]
-                for x in range(self.width)]
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
 class SomaHighWall(SomaCubes):
@@ -1617,10 +1736,7 @@ class SomaHighWall(SomaCubes):
                     if 3 <= x + y <= 4:
                         yield coordsys.Cartesian3D((x, y, z))
 
-    def transform_solution_matrix(self, s_matrix):
-        return [[[s_matrix[z][y][x] for y in range(self.height)]
-                 for z in range(self.depth)]
-                for x in range(self.width)]
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
 class SomaBench(SomaCubes):
@@ -1657,10 +1773,7 @@ class SomaSteps(SomaCubes):
                     if z <= x <= 4 - z:
                         yield coordsys.Cartesian3D((x, y, z))
 
-    def transform_solution_matrix(self, s_matrix):
-        return [[[s_matrix[z][y][x] for x in range(self.width)]
-                 for z in range(self.depth)]
-                for y in range(self.height)]
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
 class SomaBathtub(SomaCubes):
@@ -1796,10 +1909,7 @@ class SomaSkew1(SomaCubes):
                     if 2 <= x + y <= 4:
                         yield coordsys.Cartesian3D((x, y, z))
 
-    def transform_solution_matrix(self, s_matrix):
-        return [[[s_matrix[z][y][x] for x in range(self.width)]
-                 for z in range(self.depth)]
-                for y in range(self.height)]
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
 class SomaSkew2(SomaCubes):
@@ -1820,10 +1930,7 @@ class SomaSkew2(SomaCubes):
                     if 4 <= x + 2 * y <= 6:
                         yield coordsys.Cartesian3D((x, y, z))
 
-    def transform_solution_matrix(self, s_matrix):
-        return [[[s_matrix[z][y][x] for x in range(self.width)]
-                 for z in range(self.depth)]
-                for y in range(self.height)]
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
 class SomaSteamer(SomaCubes):
@@ -1844,10 +1951,7 @@ class SomaSteamer(SomaCubes):
                     if 2 + 2 * z <= x + y + z <= 6:
                         yield coordsys.Cartesian3D((x, y, z))
 
-    def transform_solution_matrix(self, s_matrix):
-        return [[[s_matrix[z][y][x] for y in range(self.height)]
-                 for z in range(self.depth)]
-                for x in range(self.width)]
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
 class Polysticks(Puzzle):
@@ -2120,7 +2224,7 @@ class Polysticks1234_6x6(Polysticks1234):
     height = 6
 
     @classmethod
-    def puzzles(cls):
+    def components(cls):
         return (Polysticks1234_6x6A,
                 Polysticks1234_6x6B,
                 Polysticks1234_6x6C,
@@ -3193,6 +3297,103 @@ class HexiamondsRing2(Hexiamonds):
     def customize_piece_data(self):
         self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsHexagon3(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 8
+    width = 8
+
+    def coordinates(self):
+        hole = set()
+        for z in range(self.depth):
+            for y in range(2, 6):
+                for x in range(2, 6):
+                    if 5 < x + y + z < 10:
+                        hole.add((x,y,z))
+        for coord in ((1,5,1), (2,3,0), (4,1,1), (6,2,0), (5,4,1), (3,6,0)):
+            hole.add(coord)
+        for coord in ((2,4,0), (3,2,1), (5,2,0), (5,3,1), (4,5,0), (2,5,1)):
+            hole.remove(coord)
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 3 < x + y + z < 12 and (x,y,z) not in hole:
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HexiamondsHexagon4(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 8
+    width = 8
+
+    def coordinates(self):
+        hole = set()
+        for z in range(self.depth):
+            for y in range(2):
+                for x in range(2):
+                    for bx,by in ((1,4), (3,3), (4,1), (4,4)):
+                        if 0 < x + y + z < 3:
+                            hole.add((x + bx, y + by, z))
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 3 < x + y + z < 12 and (x,y,z) not in hole:
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HexiamondsHexagon5(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 8
+    width = 8
+
+    def coordinates(self):
+        hole = set()
+        for z in range(self.depth):
+            for y in range(2, 6):
+                for x in range(2, 6):
+                    if 5 < x + y + z < 10:
+                        hole.add((x,y,z))
+        for coord in ((1,4,1), (1,5,0), (4,5,1), (5,5,0), (5,1,0), (5,1,1)):
+            hole.add(coord)
+        for coord in ((2,5,0), (2,5,1), (5,3,1), (5,4,0), (3,2,1), (4,2,0)):
+            hole.remove(coord)
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 3 < x + y + z < 12 and (x,y,z) not in hole:
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HexiamondsHexagon6(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 8
+    width = 8
+
+    def coordinates(self):
+        hole = set()
+        for z in range(self.depth):
+            for y in range(2, 6):
+                for x in range(2, 6):
+                    if 5 < x + y + z < 10:
+                        hole.add((x,y,z))
+        for coord in ((1,4,1), (2,3,0), (4,5,1), (3,6,0), (5,1,1), (6,2,0)):
+            hole.add(coord)
+        for coord in ((2,5,0), (2,5,1), (5,3,1), (5,4,0), (3,2,1), (4,2,0)):
+            hole.remove(coord)
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 3 < x + y + z < 12 and (x,y,z) not in hole:
+                        yield coordsys.Triangular3D((x, y, z))
 
 
 class HexiamondsCrescent(Hexiamonds):
