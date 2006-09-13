@@ -25,7 +25,7 @@ def convert_matrix(data, secondary=0):
     input to `ExactCover`, to solve the exact cover problem.  The input `data`
     is a two-dimensional matrix (a list of lists):
 
-    * Each rows is a list of equal length.
+    * Each row is a list of equal length.
 
     * The first row contains the column names: first the puzzle piece names,
       then the solution space coordinates.  For example::

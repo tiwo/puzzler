@@ -287,7 +287,7 @@ class CartesianView3D(CartesianCoordSet3D):
         layers = [c[2] for c in self]
         offset = self.coord_class((min(rows), min(cols), min(layers)))
         maxvals = self.coord_class((max(rows), max(cols), max(layers)))
-        bounds = maxvals - self.offset
+        bounds = maxvals - offset
         return offset, bounds
 
 
@@ -506,7 +506,7 @@ class SquareGridView3D(CartesianView3D):
         # keep Z-offset at 0 to keep Z values unaltered:
         offset = self.coord_class((min(rows), min(cols), 0))
         maxvals = self.coord_class((max(rows), max(cols), max(layers)))
-        bounds = maxvals - self.offset
+        bounds = maxvals - offset
         return offset, bounds
 
 
