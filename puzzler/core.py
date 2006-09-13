@@ -10,6 +10,7 @@ Core coordination for Polyform Puzzler.
 """
 
 import sys
+import copy
 import datetime
 from optparse import OptionParser
 from puzzler import exact_cover
@@ -28,6 +29,10 @@ def process_command_line():
         '-s', '--svg', metavar='FILE',
         help='Format the first solution found (or supplied via -r) as SVG '
         'and write it to FILE.')
+    parser.add_option(
+        '-x', '--x3d', metavar='FILE',
+        help='Format the first solution found (or supplied via -r) as X3D '
+        'and write it to FILE.')
     settings, args = parser.parse_args()
     if args:
         print >>sys.stderr, (
@@ -40,7 +45,9 @@ def read_solution(puzzle_class, settings):
     puzzle = puzzle_class.components()[0](init_puzzle=False)
     s_matrix = puzzle.read_solution(settings.read_solution)
     if settings.svg:
-        puzzle.write_svg(settings.svg, s_matrix=s_matrix)
+        puzzle.write_svg(settings.svg, s_matrix=copy.deepcopy(s_matrix))
+    if settings.x3d:
+        puzzle.write_x3d(settings.x3d, s_matrix=copy.deepcopy(s_matrix))
 
 def solver(puzzle_class, output_stream=sys.stdout, settings=None):
     """
@@ -70,6 +77,9 @@ def solver(puzzle_class, output_stream=sys.stdout, settings=None):
             if settings.svg:
                 puzzle.write_svg(settings.svg, solution)
                 settings.svg = False
+            if settings.x3d:
+                puzzle.write_x3d(settings.x3d, solution)
+                settings.x3d = False
             if ( settings.stop_after_number
                  and solver.num_solutions == settings.stop_after_number):
                 break
