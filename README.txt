@@ -217,6 +217,16 @@ Windows
        <path_to_python.exe>\python setup.py install
 
 
+Optional Acceleration With Psyco
+--------------------------------
+
+If your computer has an Intel/AMD 386-compatible processor (under any
+OS), you can use `Psyco <http://psyco.sourceforge.net/>`_ to
+accelerate processing by 50% to 300%.  Support is already built into
+Polyform Puzzler (a few trivial lines in ``puzzler/exact_cover.py``),
+so just install Psyco_ to enjoy the speed boost!
+
+
 Usage
 =====
 

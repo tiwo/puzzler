@@ -21,7 +21,10 @@ General
 
 * Refactor common methods out of puzzler.puzzles classes.
 
-* Implement a graphical front-end.
+* Implement a graphical front-end.  Ideas:
+
+  - The ability to turn pieces on or off, and control the number of
+    instances of each piece.
 
 
 Puzzles

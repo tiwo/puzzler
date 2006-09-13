@@ -229,9 +229,44 @@ are possible however:
 
   .. image:: images/pentacubes-5x7x7-open-box.png
 
-* corner crystal (one empty cube is hidden in the corner)
+* Corner crystal (one empty cube is hidden in the corner)
 
   .. image:: images/pentacubes-corner-crystal.png
+
+* Nine slices
+
+  .. image:: images/pentacubes-nine-slices.png
+
+
+Pentacubes Plus
+---------------
+
+Sold under the name "`Super Deluxe Quintillions`_" by Kadon, these 30
+pieces are the 29 pentacubes plus a second L3 piece (a.k.a. J3),
+allowing the construction of box shapes.  The Super Deluxe
+Quintillions pieces are named as per the pentominoes, with the
+non-planar "Superquints" named here:
+http://www.gamepuzzles.com/sqnames.htm.
+
+.. _Super Deluxe Quintillions: http://www.gamepuzzles.com/polycube.htm#SQd
+
+* Solids:
+
+  - 5x5x6
+
+    .. image:: images/pentacubes-plus-5x5x6.png
+
+  - 3x5x10
+
+    .. image:: images/pentacubes-plus-3x5x10.png
+
+  - 2x5x15
+
+    .. image:: images/pentacubes-plus-2x5x15.png
+
+  - 2x3x25
+
+    .. image:: images/pentacubes-plus-2x3x25.png
 
 
 -------------
@@ -356,33 +391,35 @@ Heptiamonds
 
   .. image:: images/heptiamonds-hexagram.png
 
-* Hexagon 1
+* Hexagons:
 
-  .. image:: images/heptiamonds-hexagon-1.png
+  - 1
 
-* Hexagon 2
+    .. image:: images/heptiamonds-hexagon-1.png
 
-  .. image:: images/heptiamonds-hexagon-2.png
+  - 2
 
-* Hexagon 3
+    .. image:: images/heptiamonds-hexagon-2.png
 
-  .. image:: images/heptiamonds-hexagon-3.png
+  - 3
 
-* Hexagon 4
+    .. image:: images/heptiamonds-hexagon-3.png
 
-  .. image:: images/heptiamonds-hexagon-4.png
+  - 4
 
-* Hexagon 5
+    .. image:: images/heptiamonds-hexagon-4.png
 
-  .. image:: images/heptiamonds-hexagon-5.png
+  - 5
 
-* Hexagon 6
+    .. image:: images/heptiamonds-hexagon-5.png
 
-  .. image:: images/heptiamonds-hexagon-6.png
+  - 6
 
-* Hexagon 7
+    .. image:: images/heptiamonds-hexagon-6.png
 
-  .. image:: images/heptiamonds-hexagon-7.png
+  - 7
+
+    .. image:: images/heptiamonds-hexagon-7.png
 
 
 -----------
@@ -428,21 +465,23 @@ Pentahexes
 
   .. image:: images/pentahex-5x24-trapezium.png
 
-* hexagon 1
+* Hexagons:
 
-  .. image:: images/pentahex-hexagon-1.png
+  - 1
 
-* hexagon 2
+    .. image:: images/pentahex-hexagon-1.png
 
-  .. image:: images/pentahex-hexagon-2.png
+  - 2
 
-* hexagon 3
+    .. image:: images/pentahex-hexagon-2.png
 
-  .. image:: images/pentahex-hexagon-3.png
+  - 3
 
-* hexagon 4
+    .. image:: images/pentahex-hexagon-3.png
 
-  .. image:: images/pentahex-hexagon-4.png
+  - 4
+
+    .. image:: images/pentahex-hexagon-4.png
 
 
 Polyhexes of Order 1 Through 4
