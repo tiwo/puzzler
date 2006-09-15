@@ -307,9 +307,9 @@ Hexiamonds
   .. image:: images/hexiamonds-4x11-trapezium.png
 
 * 4x10 elongated hexagon (clipped parallelogram): `856 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-4x10-longhex.txt>`__
+  <http://puzzler.sf.net/solutions/hexiamonds-4x10-long-hex.txt>`__
 
-  .. image:: images/hexiamonds-4x10-longhex.png
+  .. image:: images/hexiamonds-4x10-long-hex.png
 
 * Snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
   "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`__): `55
