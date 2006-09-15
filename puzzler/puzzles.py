@@ -1529,6 +1529,27 @@ class PentacubesNineSlices(Pentacubes):
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
+class PentacubesGreatWall(Pentacubes):
+
+    """ solutions"""
+
+    width = 15
+    height = 15
+    depth = 5
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x % 2:
+                        if x + y == 13:
+                            yield coordsys.Cartesian3D((x, y, z))
+                    elif 11 < x + y < 15:
+                        yield coordsys.Cartesian3D((x, y, z))
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
 class PentacubesPlus(Pentacubes):
 
     """
