@@ -217,25 +217,36 @@ Pentacubes
 The 29 pentacubes cannot form a simple box-shaped solid.  Other forms
 are possible however:
 
-* 5x5x6 tower
+* 5x5x6 tower: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower.txt>`__
 
   .. image:: images/pentacubes-5x5x6-tower.png
 
-* 2x11x11 frame (11x11 square bottom layer with 7x7 square frame on top)
+* 2x11x11 frame (11x11 square bottom layer with 7x7 square frame on
+  top): `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-2x11x11-frame.txt>`__
 
   .. image:: images/pentacubes-2x11x11-frame.png
 
-* 5x7x7 open box (closed on the bottom)
+* 5x7x7 open box (closed on the bottom): `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-5x7x7-open-box.txt>`__
 
   .. image:: images/pentacubes-5x7x7-open-box.png
 
-* Corner crystal (one empty cube is hidden in the corner)
+* Corner crystal (one empty cube is hidden in the corner; puzzle
+  suggested/requested by Nick Maeder): `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-corner-crystal.txt>`__
 
   .. image:: images/pentacubes-corner-crystal.png
 
-* Nine slices
+* Nine slices: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-nine-slices.txt>`__
 
   .. image:: images/pentacubes-nine-slices.png
+
+* Great wall
+
+  .. image:: images/pentacubes-great-wall.png
 
 
 Pentacubes Plus
@@ -252,19 +263,23 @@ http://www.gamepuzzles.com/sqnames.htm.
 
 * Solids:
 
-  - 5x5x6
+  - 5x5x6: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentacubes-plus-5x5x6.txt>`__
 
     .. image:: images/pentacubes-plus-5x5x6.png
 
-  - 3x5x10
+  - 3x5x10: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentacubes-plus-3x5x10.txt>`__
 
     .. image:: images/pentacubes-plus-3x5x10.png
 
-  - 2x5x15
+  - 2x5x15: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentacubes-plus-2x5x15.txt>`__
 
     .. image:: images/pentacubes-plus-2x5x15.png
 
-  - 2x3x25
+  - 2x3x25: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentacubes-plus-2x3x25.txt>`__
 
     .. image:: images/pentacubes-plus-2x3x25.png
 
@@ -339,85 +354,106 @@ Heptiamonds
 
 * Parallelograms:
 
-  - 7x12
+  - 7x12: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-7x12.txt>`__
 
     .. image:: images/heptiamonds-7x12.png
 
-  - 6x14
+  - 6x14: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-6x14.txt>`__
 
     .. image:: images/heptiamonds-6x14.png
 
-  - 4x21
+  - 4x21: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-4x21.txt>`__
 
     .. image:: images/heptiamonds-4x21.png
 
-  - 3x28
+  - 3x28: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-3x28.txt>`__
 
     .. image:: images/heptiamonds-3x28.png
 
 * Trapezia:
 
-  - 12x13
+  - 12x13: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-12x13-trapezium.txt>`__
 
     .. image:: images/heptiamonds-12x13-trapezium.png
 
-  - 6x17
+  - 6x17: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-6x17-trapezium.txt>`__
 
     .. image:: images/heptiamonds-6x17-trapezium.png
 
-  - 4x23
+  - 4x23: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-4x23-trapezium.txt>`__
 
     .. image:: images/heptiamonds-4x23-trapezium.png
 
 * Snowflake 1 (truncated hexagram; a.k.a. `Tenyo's puzzle no. PP-24,
   "Unmeltable Snow"
-  <http://www.tenyo.co.jp/toyhobby/catalog/onsale/pp-24.html>`__)
+  <http://www.tenyo.co.jp/toyhobby/catalog/onsale/pp-24.html>`__):
+  `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-snowflake-1.txt>`__
 
   .. image:: images/heptiamonds-snowflake-1.png
 
-* Snowflake 2
+* Snowflake 2: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-snowflake-2.txt>`__
 
   .. image:: images/heptiamonds-snowflake-2.png
 
-* 13-unit triangle with central 1-unit hole
+* 13-unit triangle with central 1-unit hole: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-triangle.txt>`__
 
   .. image:: images/heptiamonds-triangle.png
 
-* Diamond ring (10-unit diamond with central 4-unit diamond hole)
+* Diamond ring (10-unit diamond with central 4-unit diamond hole):
+  `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-diamond-ring.txt>`__
 
   .. image:: images/heptiamonds-diamond-ring.png
 
-* Hexagram
+* Hexagram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-hexagram.txt>`__
 
   .. image:: images/heptiamonds-hexagram.png
 
 * Hexagons:
 
-  - 1
+  - 1: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-1.txt>`__
 
     .. image:: images/heptiamonds-hexagon-1.png
 
-  - 2
+  - 2: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-2.txt>`__
 
     .. image:: images/heptiamonds-hexagon-2.png
 
-  - 3
+  - 3: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-3.txt>`__
 
     .. image:: images/heptiamonds-hexagon-3.png
 
-  - 4
+  - 4: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-4.txt>`__
 
     .. image:: images/heptiamonds-hexagon-4.png
 
-  - 5
+  - 5: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-5.txt>`__
 
     .. image:: images/heptiamonds-hexagon-5.png
 
-  - 6
+  - 6: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-6.txt>`__
 
     .. image:: images/heptiamonds-hexagon-6.png
 
-  - 7
+  - 7: `solutions incomplete
+    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-7.txt>`__
 
     .. image:: images/heptiamonds-hexagon-7.png
 
@@ -449,37 +485,45 @@ Tetrahexes
 Pentahexes
 ==========
 
-* 10x11 parallelogram: many solutions, exact number unknown
+* 10x11 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-10x11.txt>`__
 
   .. image:: images/pentahex-10x11.png
 
-* 5x22 parallelogram: many solutions, exact number unknown
+* 5x22 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-5x22.txt>`__
 
   .. image:: images/pentahex-5x22.png
 
-* 15x11 trapezium
+* 15x11 trapezium: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-15x11-trapezium.txt>`__
 
   .. image:: images/pentahex-15x11-trapezium.png
 
-* 5x24 trapezium
+* 5x24 trapezium: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-5x24-trapezium.txt>`__
 
   .. image:: images/pentahex-5x24-trapezium.png
 
 * Hexagons:
 
-  - 1
+  - 1: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagon-1.txt>`__
 
     .. image:: images/pentahex-hexagon-1.png
 
-  - 2
+  - 2: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagon-2.txt>`__
 
     .. image:: images/pentahex-hexagon-2.png
 
-  - 3
+  - 3: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagon-3.txt>`__
 
     .. image:: images/pentahex-hexagon-3.png
 
-  - 4
+  - 4: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagon-4.txt>`__
 
     .. image:: images/pentahex-hexagon-4.png
 
@@ -490,11 +534,13 @@ Polyhexes of Order 1 Through 4
 These puzzles uses the monohex and all dihex, trihex, and tetrahex
 pieces.
 
-* 4x10 parallelogram: many solutions, exact number unknown
+* 4x10 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polyhex-4x10.txt>`__
 
   .. image:: images/polyhex-4x10.png
 
-* 5x8 parallelogram: many solutions, exact number unknown
+* 5x8 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polyhex-5x8.txt>`__
 
   .. image:: images/polyhex-5x8.png
 
@@ -511,7 +557,7 @@ Tetrasticks
 
 * 5x5 square with 15 of 16 tetrasticks: `1795 solutions
   <http://puzzler.sf.net/solutions/tetrasticks-5x5.txt>`__
-  
+
 
 Polysticks of Order 1 Through 4
 ===============================
@@ -519,9 +565,8 @@ Polysticks of Order 1 Through 4
 This puzzle uses the monostick and all distick, tristick, and
 tetrastick pieces.
 
-* 6x6 square covered with polysticks: many solutions, exact
-  number unknown (I left it running for 3 days and it produced over
-  35,000 solutions, without moving the first 3 pieces [X, I, I1]!).
+* 6x6 square covered with polysticks: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polysticks-6x6.txt>`__
 
 
 .. |---| unicode:: U+2014  .. em dash

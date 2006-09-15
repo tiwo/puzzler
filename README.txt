@@ -175,13 +175,13 @@ GNU/Linux, BSDs, Unix, Mac OS X, etc.
 
    It contains a distutils setup file "setup.py".
 
-4. Install the package::
+4. Install the package (you may need root permissions to complete this
+   step)::
 
        python setup.py install
 
    If the Python executable isn't on your ``PATH``, you'll have to
-   specify the complete path, such as /usr/local/bin/python.  You may
-   need root permissions to complete this step.
+   specify the complete path, such as /usr/local/bin/python.
 
    You can also just run install.py; it does the same thing.
 
@@ -203,7 +203,7 @@ Windows
    and ``install.py``.  Just double-click ``install.py`` and you're
    done.
 
-   If you have any trouble, try the following:
+   If you have any trouble, try the following steps:
 
 3. Open a DOS Box (Command Shell, MS-DOS Prompt, or whatever they're
    calling it these days).
@@ -222,19 +222,25 @@ Optional Acceleration With Psyco
 
 If your computer has an Intel/AMD 386-compatible processor (under any
 OS), you can use `Psyco <http://psyco.sourceforge.net/>`_ to
-accelerate processing by 50% to 300%.  Support is already built into
-Polyform Puzzler (a few trivial lines in ``puzzler/exact_cover.py``),
-so just install Psyco_ to enjoy the speed boost!
+accelerate processing by 1.5 to 3 times.  Support is already built
+into Polyform Puzzler (a few trivial lines in
+``puzzler/exact_cover.py``), so just install Psyco_ to enjoy the speed
+boost!
 
 
 Usage
 =====
 
+After unpacking and installing the Polyform Puzzler package, the
+applications in the ``bin`` directory can be used to solve puzzles.
+
+All of the puzzle applications support several command-line options.
+Use the "-h" or "--help" option to see a complete list.
+
+
 GNU/Linux, BSDs, Unix, Mac OS X, etc.
 -------------------------------------
 
-After unpacking and installing the Polyform Puzzler package, the
-applications in the ``bin`` directory can be used to solve puzzles.
 For example, type the following commands (in a shell) to solve the
 3x20 pentominoes puzzle::
 
@@ -249,7 +255,7 @@ For example, type the following commands (in a command prompt window)
 to solve the 3x20 pentominoes puzzle::
 
     cd <archive_directory_path>
-    python bin\pentominoes3x20.py
+    python bin\pentominoes-3x20.py
 
 Alternatively, right-click on the puzzle application file, choose
 "Edit with IDLE", then choose "Run script" from the "Edit" menu (or

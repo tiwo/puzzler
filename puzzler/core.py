@@ -12,19 +12,21 @@ Core coordination for Polyform Puzzler.
 import sys
 import copy
 import datetime
-from optparse import OptionParser
+import optparse
 from puzzler import exact_cover
 
 
 def process_command_line():
     """Process command-line options & return a settings object."""
-    parser = OptionParser()
+    parser = optparse.OptionParser(
+        formatter=optparse.TitledHelpFormatter(width=78),
+        add_help_option=None)
     parser.add_option(
-        '-n', '--stop-after-number', type='int', metavar='N',
+        '-n', '--stop-after', type='int', metavar='N',
         help='Stop processing after generating N solutions.')
     parser.add_option(
         '-r', '--read-solution', metavar='FILE',
-        help='Read a solution from FILE for further processing.')
+        help='Read a solution record from FILE for further processing.')
     parser.add_option(
         '-s', '--svg', metavar='FILE',
         help='Format the first solution found (or supplied via -r) as SVG '
@@ -33,6 +35,8 @@ def process_command_line():
         '-x', '--x3d', metavar='FILE',
         help='Format the first solution found (or supplied via -r) as X3D '
         'and write it to FILE.')
+    parser.add_option(
+        '-h', '--help', help='Show this help message and exit.', action='help')
     settings, args = parser.parse_args()
     if args:
         print >>sys.stderr, (
@@ -51,8 +55,8 @@ def read_solution(puzzle_class, settings):
 
 def solver(puzzle_class, output_stream=sys.stdout, settings=None):
     """
-    Given a list of `puzzles` (subclasses of `puzzler.puzzles.Puzzle`), find
-    all solutions and report on `output_stream`.
+    Given a `puzzler.puzzles.Puzzle` subclass, find all solutions and report
+    on `output_stream`.
     """
     start = datetime.datetime.now()
     if settings is None:
@@ -80,13 +84,13 @@ def solver(puzzle_class, output_stream=sys.stdout, settings=None):
             if settings.x3d:
                 puzzle.write_x3d(settings.x3d, solution)
                 settings.x3d = False
-            if ( settings.stop_after_number
-                 and solver.num_solutions == settings.stop_after_number):
+            if ( settings.stop_after
+                 and solver.num_solutions == settings.stop_after):
                 break
         stats.append((solver.num_solutions - last_solutions,
                       solver.num_searches - last_searches))
-        if ( settings.stop_after_number
-             and solver.num_solutions == settings.stop_after_number):
+        if ( settings.stop_after
+             and solver.num_solutions == settings.stop_after):
             break
         last_solutions = solver.num_solutions
         last_searches = solver.num_searches

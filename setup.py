@@ -36,9 +36,10 @@ package_data = {
     'name': 'puzzler',
     'description': 'Polyform Puzzler',
     'long_description': """\
-Polyform Puzzler is a software toolkit for exploring &
-solving polyform puzzles, like Pentominoes and Soma Cubes.
-It consists of a set of front-end applications for specific
+Polyform Puzzler is a set of solvers for many polyform
+puzzles (like Pentominoes and Soma Cubes), and a software
+toolkit for exploring & solving polyform puzzles.  It
+consists of a set of front-end applications for specific
 polyform puzzles and a Python library that does the heavy
 lifting.  New polyforms and new puzzles can easily be
 defined and added.  Requires Python 2.4 or higher.""", # wrap at col 60
