@@ -263,6 +263,11 @@ are possible however:
             Tower 2 (`solutions incomplete
             <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-2.txt>`__)
 
+* 3x3x17 tower: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-3x3x17-tower.txt>`__
+
+  .. image:: images/pentacubes-3x3x17-tower.png
+
 
 Pentacubes Plus
 ---------------
