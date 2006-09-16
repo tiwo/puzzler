@@ -1550,6 +1550,51 @@ class PentacubesGreatWall(Pentacubes):
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
+class Pentacubes3x3x20Tower1(Pentacubes):
+
+    """ solutions"""
+
+    width = 3
+    height = 20
+    depth = 3
+
+    def coordinates(self):
+        holes = set()
+        for y in range(1, 19, 2):
+            for z in range(3):
+                holes.add((1,y,z))
+        for z in range(self.depth):
+            for y in range(self.height - 1):
+                for x in range(self.width):
+                    if (x,y,z) not in holes:
+                        yield coordsys.Cartesian3D((x, y, z))
+        yield coordsys.Cartesian3D((1, 19, 1))
+
+
+class Pentacubes3x3x20Tower2(Pentacubes):
+
+    """ solutions"""
+
+    width = 3
+    height = 20
+    depth = 3
+
+    def coordinates(self):
+        holes = set()
+        for y in range(1, 19, 2):
+            for i in range(3):
+                if (y // 2) % 2:
+                    holes.add((i,y,1))
+                else:
+                    holes.add((1,y,i))
+        for z in range(self.depth):
+            for y in range(self.height - 1):
+                for x in range(self.width):
+                    if (x,y,z) not in holes:
+                        yield coordsys.Cartesian3D((x, y, z))
+        yield coordsys.Cartesian3D((1, 19, 1))
+
+
 class PentacubesPlus(Pentacubes):
 
     """

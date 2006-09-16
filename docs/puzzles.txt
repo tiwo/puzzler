@@ -234,7 +234,7 @@ are possible however:
   .. image:: images/pentacubes-5x7x7-open-box.png
 
 * Corner crystal (one empty cube is hidden in the corner; puzzle
-  suggested/requested by Nick Maeder): `solutions incomplete
+  suggested by Nick Maeder): `solutions incomplete
   <http://puzzler.sf.net/solutions/pentacubes-corner-crystal.txt>`__
 
   .. image:: images/pentacubes-corner-crystal.png
@@ -247,6 +247,21 @@ are possible however:
 * Great wall
 
   .. image:: images/pentacubes-great-wall.png
+
+* 3x3x20 towers (suggested by Nick Maeder):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentacubes-3x3x20-tower-1.png
+
+            Tower 1 (`solutions incomplete
+            <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-1.txt>`__)
+
+       - .. figure:: images/pentacubes-3x3x20-tower-2.png
+
+            Tower 2 (`solutions incomplete
+            <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-2.txt>`__)
 
 
 Pentacubes Plus
@@ -422,37 +437,37 @@ Heptiamonds
 
 * Hexagons:
 
-  - 1: `solutions incomplete
+  - Hexagon 1: `solutions incomplete
     <http://puzzler.sf.net/solutions/heptiamonds-hexagon-1.txt>`__
 
     .. image:: images/heptiamonds-hexagon-1.png
 
-  - 2: `solutions incomplete
+  - Hexagon 2: `solutions incomplete
     <http://puzzler.sf.net/solutions/heptiamonds-hexagon-2.txt>`__
 
     .. image:: images/heptiamonds-hexagon-2.png
 
-  - 3: `solutions incomplete
+  - Hexagon 3: `solutions incomplete
     <http://puzzler.sf.net/solutions/heptiamonds-hexagon-3.txt>`__
 
     .. image:: images/heptiamonds-hexagon-3.png
 
-  - 4: `solutions incomplete
+  - Hexagon 4: `solutions incomplete
     <http://puzzler.sf.net/solutions/heptiamonds-hexagon-4.txt>`__
 
     .. image:: images/heptiamonds-hexagon-4.png
 
-  - 5: `solutions incomplete
+  - Hexagon 5: `solutions incomplete
     <http://puzzler.sf.net/solutions/heptiamonds-hexagon-5.txt>`__
 
     .. image:: images/heptiamonds-hexagon-5.png
 
-  - 6: `solutions incomplete
+  - Hexagon 6: `solutions incomplete
     <http://puzzler.sf.net/solutions/heptiamonds-hexagon-6.txt>`__
 
     .. image:: images/heptiamonds-hexagon-6.png
 
-  - 7: `solutions incomplete
+  - Hexagon 7: `solutions incomplete
     <http://puzzler.sf.net/solutions/heptiamonds-hexagon-7.txt>`__
 
     .. image:: images/heptiamonds-hexagon-7.png
@@ -507,22 +522,22 @@ Pentahexes
 
 * Hexagons:
 
-  - 1: `solutions incomplete
+  - Hexagon 1: `solutions incomplete
     <http://puzzler.sf.net/solutions/pentahex-hexagon-1.txt>`__
 
     .. image:: images/pentahex-hexagon-1.png
 
-  - 2: `solutions incomplete
+  - Hexagon 2: `solutions incomplete
     <http://puzzler.sf.net/solutions/pentahex-hexagon-2.txt>`__
 
     .. image:: images/pentahex-hexagon-2.png
 
-  - 3: `solutions incomplete
+  - Hexagon 3: `solutions incomplete
     <http://puzzler.sf.net/solutions/pentahex-hexagon-3.txt>`__
 
     .. image:: images/pentahex-hexagon-3.png
 
-  - 4: `solutions incomplete
+  - Hexagon 4: `solutions incomplete
     <http://puzzler.sf.net/solutions/pentahex-hexagon-4.txt>`__
 
     .. image:: images/pentahex-hexagon-4.png
