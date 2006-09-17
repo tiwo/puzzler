@@ -268,6 +268,11 @@ are possible however:
 
   .. image:: images/pentacubes-3x3x17-tower.png
 
+* 3x3x19 crystal tower: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-3x3x19-crystal-tower.txt>`__
+
+  .. image:: images/pentacubes-3x3x19-crystal-tower.png
+
 
 Pentacubes Plus
 ---------------

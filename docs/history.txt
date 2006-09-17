@@ -41,7 +41,8 @@ Changes Since Release 1
   - Tetracubes: 2x2x8 & 2x4x4.
 
   - Pentacubes: 5x5x6 tower; 2x11x11 frame; 5x7x7 open box; corner
-    crystal; nine slices; great wall; 3x3x20 towers; 3x3x17 tower.
+    crystal; nine slices; great wall; 3x3x20 towers; 3x3x17 tower;
+    3x3x19 crystal tower.
 
   - Pentacubes Plus: 5x5x6, 3x5x10, 2x5x15, 2x3x25.
 

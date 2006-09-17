@@ -1611,6 +1611,23 @@ class Pentacubes3x3x17Tower(Pentacubes):
         yield coordsys.Cartesian3D((1, 16, 1))
 
 
+class Pentacubes3x3x19CrystalTower(Pentacubes):
+
+    """ solutions"""
+
+    width = 3
+    height = 19
+    depth = 3
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height - 1):
+                for x in range(self.width):
+                    if x + y + z < 18:
+                        yield coordsys.Cartesian3D((x, y, z))
+        yield coordsys.Cartesian3D((0, 18, 0))
+
+
 class PentacubesPlus(Pentacubes):
 
     """
