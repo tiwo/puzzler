@@ -28,6 +28,28 @@ General
   - The ability to turn pieces on or off, and control the number of
     instances of each piece.
 
+* Add the ability to save & restore state.  Periodically, or at every
+  solution, or catch KeyboardInterrupt exceptions?  Possible approach:
+
+  - Store the rows from ``exact_cover.ExactCover.solution``.
+    (Or just pickle the ``exact_cover.ExactCover`` object?
+
+  - Restore by initializing ``exact_cover.ExactCover.solution`` from
+    the stored rows.  (Or unpickle?  Must rebuild the matrix for
+    ``exact_cover.ExactCover`` though.)
+
+  - Skip to the saved row for the current recursion level in the ``for
+    r`` loop::
+
+        for r in c.down_siblings():
+            if len(self.solution) > level:
+                if self.solution[level] != r:
+                    continue
+            else:
+                self.solution.append(r)
+            for j in r.right_siblings():
+            ...
+
 
 Puzzles
 =======

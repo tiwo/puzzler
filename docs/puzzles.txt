@@ -55,6 +55,9 @@ Pentominoes
 * 3x20 ring (3x20 rectangle joined at the ends): 2 solutions
   (same as the 3x20 rectangle; the V piece forces a partition)
 
+* 3x20 tube (3x20 rectangle joined at the long edges): `solutions
+  incomplete <http://puzzler.sf.net/solutions/pentominoes-3x20-tube.txt>`__
+
 * 8x8 square with a central 2x2 hole: `65 solutions
   <http://puzzler.sf.net/solutions/pentominoes-8x8.txt>`__
 
@@ -124,75 +127,72 @@ Soma Cubes
 ==========
 
 `Soma Cubes`_ include all non-convex polycubes of order 3 and 4.
+Puzzles of various shapes have been implemented:
 
 ..  _Soma cubes: http://en.wikipedia.org/wiki/Soma_cube
 
-* 3x3x3 cube: `240 solutions
-  <http://puzzler.sf.net/solutions/soma-3x3x3.txt>`__
+.. list-table::
+   :class: borderless
 
-  .. image:: images/soma-3x3x3.png
+   * - .. figure:: images/soma-3x3x3.png
 
-* Various other shapes:
+          3x3x3 cube: `240 solutions
+          <http://puzzler.sf.net/solutions/soma-3x3x3.txt>`__
 
-  .. list-table::
-     :class: borderless
+     - .. figure:: images/soma-bathtub.png
 
-     * - .. figure:: images/soma-bathtub.png
+          Bathtub (`158 solutions
+          <http://puzzler.sf.net/solutions/soma-bathtub.txt>`__)
 
-            Bathtub (`158 solutions
-            <http://puzzler.sf.net/solutions/soma-bathtub.txt>`__)
+     - .. figure:: images/soma-cornerstone.png
 
-       - .. figure:: images/soma-cornerstone.png
+          Cornerstone (`10 solutions
+          <http://puzzler.sf.net/solutions/soma-cornerstone.txt>`__)
 
-            Cornerstone (`10 solutions
-            <http://puzzler.sf.net/solutions/soma-cornerstone.txt>`__)
+   * - .. figure:: images/soma-crystal.png
 
-       - .. figure:: images/soma-crystal.png
+          Crystal (`2800 solutions
+          <http://puzzler.sf.net/solutions/soma-crystal.txt>`__)
 
-            Crystal (`2800 solutions
-            <http://puzzler.sf.net/solutions/soma-crystal.txt>`__)
+     - .. figure:: images/soma-curved-wall.png
 
-     * - .. figure:: images/soma-curved-wall.png
+          Curved Wall (`66 solutions
+          <http://puzzler.sf.net/solutions/soma-curved-wall.txt>`__)
 
-            Curved Wall (`66 solutions
-            <http://puzzler.sf.net/solutions/soma-curved-wall.txt>`__)
+     - .. figure:: images/soma-high-wall.png
 
-       - .. figure:: images/soma-high-wall.png
+          High Wall (`46 solutions
+          <http://puzzler.sf.net/solutions/soma-high-wall.txt>`__)
 
-            High Wall (`46 solutions
-            <http://puzzler.sf.net/solutions/soma-high-wall.txt>`__)
+   * - .. figure:: images/soma-long-wall.png
 
-       - .. figure:: images/soma-long-wall.png
+          Long Wall (`104 solutions
+          <http://puzzler.sf.net/solutions/soma-long-wall.txt>`__)
 
-            Long Wall (`104 solutions
-            <http://puzzler.sf.net/solutions/soma-long-wall.txt>`__)
+     - .. figure:: images/soma-skew-1.png
 
-     * - .. figure:: images/soma-skew-1.png
+          Skew 1 (`244 solutions
+          <http://puzzler.sf.net/solutions/soma-skew-1.txt>`__)
 
-            Skew 1 (`244 solutions
-            <http://puzzler.sf.net/solutions/soma-skew-1.txt>`__)
+     - .. figure:: images/soma-skew-2.png
 
-       - .. figure:: images/soma-skew-2.png
+          Skew 2 (`14 solutions
+          <http://puzzler.sf.net/solutions/soma-skew-2.txt>`__)
 
-            Skew 2 (`14 solutions
-            <http://puzzler.sf.net/solutions/soma-skew-2.txt>`__)
+   * - .. figure:: images/soma-sofa.png
 
-       - .. figure:: images/soma-sofa.png
+          Sofa (`32 solutions
+          <http://puzzler.sf.net/solutions/soma-sofa.txt>`__)
 
-            Sofa (`32 solutions
-            <http://puzzler.sf.net/solutions/soma-sofa.txt>`__)
+     - .. figure:: images/soma-steamer.png
 
-     * - .. figure:: images/soma-steamer.png
+          Steamer (`152 solutions
+          <http://puzzler.sf.net/solutions/soma-steamer.txt>`__)
 
-            Steamer (`152 solutions
-            <http://puzzler.sf.net/solutions/soma-steamer.txt>`__)
+     - .. figure:: images/soma-steps.png
 
-       - .. figure:: images/soma-steps.png
-
-            Steps (`164 solutions
-            <http://puzzler.sf.net/solutions/soma-steps.txt>`__)
-
-       -
+          Steps (`164 solutions
+          <http://puzzler.sf.net/solutions/soma-steps.txt>`__)
 
 
 Tetracubes
@@ -217,10 +217,20 @@ Pentacubes
 The 29 pentacubes cannot form a simple box-shaped solid.  Other forms
 are possible however:
 
-* 5x5x6 tower: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower.txt>`__
+* 5x5x6 towers
 
-  .. image:: images/pentacubes-5x5x6-tower.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentacubes-5x5x6-tower-1.png
+
+            Tower 1: `solutions incomplete
+            <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-1.txt>`__
+
+       - .. figure:: images/pentacubes-5x5x6-tower-2.png
+
+            Tower 2: `solutions incomplete
+            <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-2.txt>`__
 
 * 2x11x11 frame (11x11 square bottom layer with 7x7 square frame on
   top): `solutions incomplete
@@ -228,10 +238,19 @@ are possible however:
 
   .. image:: images/pentacubes-2x11x11-frame.png
 
-* 5x7x7 open box (closed on the bottom): `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-5x7x7-open-box.txt>`__
+* Open boxes (closed on the bottom):
 
-  .. image:: images/pentacubes-5x7x7-open-box.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentacubes-5x7x7-open-box.png
+
+            5x7x7 Open Box: `solutions incomplete
+            <http://puzzler.sf.net/solutions/pentacubes-5x7x7-open-box.txt>`__
+
+       - .. figure:: images/pentacubes-3x9x9-open-box.png
+
+            3x9x9 Open Box
 
 * Corner crystal (one empty cube is hidden in the corner; puzzle
   suggested by Nick Maeder): `solutions incomplete
@@ -248,30 +267,39 @@ are possible however:
 
   .. image:: images/pentacubes-great-wall.png
 
-* 3x3x20 towers (suggested by Nick Maeder):
+* Highrise towers:
 
   .. list-table::
      :class: borderless
 
      * - .. figure:: images/pentacubes-3x3x20-tower-1.png
 
-            Tower 1 (`solutions incomplete
+            3x3x20 Tower 1 (suggested by Nick Maeder; `solutions incomplete
             <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-1.txt>`__)
 
        - .. figure:: images/pentacubes-3x3x20-tower-2.png
 
-            Tower 2 (`solutions incomplete
+            3x3x20 Tower 2 (suggested by Nick Maeder; `solutions incomplete
             <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-2.txt>`__)
 
-* 3x3x17 tower: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-3x3x17-tower.txt>`__
+       - .. figure:: images/pentacubes-3x3x17-tower.png
 
-  .. image:: images/pentacubes-3x3x17-tower.png
+            3x3x17 Tower: `solutions incomplete
+            <http://puzzler.sf.net/solutions/pentacubes-3x3x17-tower.txt>`__
 
-* 3x3x19 crystal tower: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-3x3x19-crystal-tower.txt>`__
+       - .. figure:: images/pentacubes-3x3x19-crystal-tower.png
 
-  .. image:: images/pentacubes-3x3x19-crystal-tower.png
+            3x3x19 Crystal Tower: `solutions incomplete
+            <http://puzzler.sf.net/solutions/pentacubes-3x3x19-crystal-tower.txt>`__
+
+* 5x9x9 fortress (suggested by Nick Maeder)
+
+  .. image:: images/pentacubes-5x9x9-fortress.png
+
+* 3x9x9 mound: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-3x9x9-mound.txt>`__
+
+  .. image:: images/pentacubes-3x9x9-mound.png
 
 
 Pentacubes Plus

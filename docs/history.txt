@@ -40,9 +40,9 @@ Changes Since Release 1
 
   - Tetracubes: 2x2x8 & 2x4x4.
 
-  - Pentacubes: 5x5x6 tower; 2x11x11 frame; 5x7x7 open box; corner
-    crystal; nine slices; great wall; 3x3x20 towers; 3x3x17 tower;
-    3x3x19 crystal tower.
+  - Pentacubes: 5x5x6 towers; 2x11x11 frame; 5x7x7 & 3x9x9 open boxes;
+    corner crystal; nine slices; great wall; 3x3x20 towers; 3x3x17
+    tower; 3x3x19 crystal tower; 5x9x9 fortress; 3x9x9 mound.
 
   - Pentacubes Plus: 5x5x6, 3x5x10, 2x5x15, 2x3x25.
 
@@ -61,8 +61,21 @@ Changes Since Release 1
 Release 1 (2006-08-08)
 ======================
 
-The first release of Polyform Puzzler.  For the pre-history, see
-section 1.2 of the `FAQ <FAQ.html>`_.
+The first release of Polyform Puzzler.  Included 28 puzzles:
+
+* Pentominoes: 3x20, 4x15, 5x12, 6x10 rectangles; 8x8 square with
+  central 2x2 hole; 3x20 loop (short edges joined); 3x20 tube (long
+  edges joined).
+
+* Solid pentominoes: 2x3x10, 2x5x6, 3x4x5 solids; 
+  3x3x9, 3x5x7, 5x3x5, 6x3x4 ring walls.
+
+* Soma cubes: 3x3x3 cube, bathtub, cornerstone, crystal, curvedwall,
+  highwall, longwall, skew 1 & 2, sofa, steamer, steps
+
+* 5x5 Tetrasticks & 4x4 welded one-sided tetrasticks.
+
+For the pre-history, see section 1.2 of the `FAQ <FAQ.html>`_.
 
 
 .. |---| unicode:: U+2014  .. em dash

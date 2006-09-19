@@ -687,6 +687,33 @@ class Puzzle3D(Puzzle):
         return s_matrix
 
 
+class PuzzlePseudo3D(Puzzle3D):
+
+    """The Z dimension is used for direction/orientation."""
+
+    def empty_solution_matrix(self, margin=0):
+        s_matrix = [[[self.empty_cell] * (self.width + 2 * margin)
+                     for y in range(self.height + 2 * margin)]
+                    for z in range(self.depth)]
+        return s_matrix
+
+    def build_solution_matrix(self, solution, margin=0):
+        s_matrix = self.empty_solution_matrix(margin)
+        for row in solution:
+            piece = sorted(i.column.name for i in row.row_data())
+            name = piece[-1]
+            for cell_name in piece[:-1]:
+                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
+                s_matrix[z][y + margin][x + margin] = name
+        return s_matrix
+
+    def format_coords_svg(self):
+        s_matrix = self.empty_solution_matrix(margin=self.margin)
+        for x, y, z in self.solution_coords:
+            s_matrix[z][y + self.margin][x + self.margin] = '0'
+        return self.format_svg(s_matrix=s_matrix)
+
+
 class Pentominoes(Puzzle2D):
 
     coord_class = coordsys.Cartesian2D
@@ -1434,6 +1461,25 @@ class Pentacubes5x7x7OpenBox(Pentacubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
+class Pentacubes3x9x9OpenBox(Pentacubes):
+
+    """ solutions"""
+
+    width = 9
+    height = 9
+    depth = 3
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( z == 0 or x == 0 or x == self.width - 1
+                         or y == 0 or y == self.height - 1):
+                        yield coordsys.Cartesian3D((x, y, z))
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
 class Pentacubes2x11x11Frame(Pentacubes):
 
     """ solutions"""
@@ -1455,7 +1501,7 @@ class Pentacubes2x11x11Frame(Pentacubes):
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
-class Pentacubes5x5x6Tower(Pentacubes):
+class Pentacubes5x5x6Tower1(Pentacubes):
 
     """ solutions"""
 
@@ -1470,6 +1516,23 @@ class Pentacubes5x5x6Tower(Pentacubes):
                     if y == 5 and x == 2:
                         continue
                     yield coordsys.Cartesian3D((x, y, z))
+
+
+class Pentacubes5x5x6Tower2(Pentacubes):
+
+    """ solutions"""
+
+    width = 5
+    height = 6
+    depth = 5
+
+    def coordinates(self):
+        hole = set(((2,5,2), (2,5,1), (1,5,2), (3,5,2), (2,5,3)))
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if (x,y,z) not in hole:
+                        yield coordsys.Cartesian3D((x, y, z))
 
 
 class PentacubesCornerCrystal(Pentacubes):
@@ -1626,6 +1689,49 @@ class Pentacubes3x3x19CrystalTower(Pentacubes):
                     if x + y + z < 18:
                         yield coordsys.Cartesian3D((x, y, z))
         yield coordsys.Cartesian3D((0, 18, 0))
+
+
+class Pentacubes5x9x9Fortress(Pentacubes):
+
+    """ solutions"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x in range(self.width):
+                yield coordsys.Cartesian3D((x, y, 0))
+        for z in range(1, self.depth):
+            for i in range(self.height):
+                if z <= abs(i - 4):
+                    yield coordsys.Cartesian3D((0, i, z))
+                    yield coordsys.Cartesian3D((8, i, z))
+                    if 0 < i < self.width - 1:
+                        yield coordsys.Cartesian3D((i, 0, z))
+                        yield coordsys.Cartesian3D((i, 8, z))
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
+class Pentacubes3x9x9Mound(Pentacubes):
+
+    """ solutions"""
+
+    width = 9
+    height = 9
+    depth = 3
+
+    def coordinates(self):
+        coords = set()
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if (  z <= x < (self.width - z)
+                          and z <= y < (self.height - z)
+                          and not (4 - z < x < 4 + z and 4 - z < y < 4 + z)):
+                        yield coordsys.Cartesian3D((x, y, z))
 
 
 class PentacubesPlus(Pentacubes):
@@ -2910,7 +3016,7 @@ class Polyhex1234_5x8(Polyhex1234):
     duplicate_conditions = ({'rotate_180': True},)
 
 
-class Polyiamonds(Puzzle3D):
+class Polyiamonds(PuzzlePseudo3D):
 
     """
     Polyiamonds use a pseudo-3D coordinate system: 2D + orientation.
@@ -2982,33 +3088,11 @@ class Polyiamonds(Puzzle3D):
                         for z in range(self.depth)]
         return self.format_triangular_grid(s_matrix)
 
-    def empty_solution_matrix(self, margin=0):
-        s_matrix = [[[self.empty_cell] * (self.width + 2 * margin)
-                     for y in range(self.height + 2 * margin)]
-                    for z in range(self.depth)]
-        return s_matrix
-
-    def build_solution_matrix(self, solution, margin=0):
-        s_matrix = self.empty_solution_matrix(margin)
-        for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
-                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
-                s_matrix[z + margin][y + margin][x + margin] = name
-        return s_matrix
-
     def format_coords(self):
         s_matrix = self.empty_solution_matrix()
         for x, y, z in self.solution_coords:
             s_matrix[z][y][x] = '* '
         return self.format_triangular_grid(s_matrix)
-
-    def format_coords_svg(self):
-        s_matrix = self.empty_solution_matrix(margin=self.margin)
-        for x, y, z in self.solution_coords:
-            s_matrix[z][y + self.margin][x + self.margin] = '0'
-        return self.format_svg(s_matrix=s_matrix)
 
     def format_piece(self, name):
         coords, aspect = self.pieces[name][0]

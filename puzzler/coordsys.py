@@ -290,6 +290,20 @@ class CartesianView3D(CartesianCoordSet3D):
         bounds = maxvals - offset
         return offset, bounds
 
+class CartesianViewPseudo3D(CartesianView3D):
+
+    """The Z dimension is used for direction/orientation."""
+
+    def calculate_offset_and_bounds(self):
+        rows = [c[0] for c in self]
+        cols = [c[1] for c in self]
+        layers = [c[2] for c in self]
+        # keep Z-offset at 0 to keep Z values unaltered:
+        offset = self.coord_class((min(rows), min(cols), 0))
+        maxvals = self.coord_class((max(rows), max(cols), max(layers)))
+        bounds = maxvals - offset
+        return offset, bounds
+
 
 class CartesianPath2D:
 
@@ -490,7 +504,7 @@ class SquareGridCoordSet3D(CartesianCoordSet3D):
     coord_class = SquareGrid3D
 
 
-class SquareGridView3D(CartesianView3D):
+class SquareGridView3D(CartesianViewPseudo3D):
 
     """
     Pseudo-3-dimensional (+x,+y)-quadrant square grid coordinate set with
@@ -498,16 +512,6 @@ class SquareGridView3D(CartesianView3D):
     """
 
     coord_class = SquareGrid3D
-
-    def calculate_offset_and_bounds(self):
-        rows = [c[0] for c in self]
-        cols = [c[1] for c in self]
-        layers = [c[2] for c in self]
-        # keep Z-offset at 0 to keep Z values unaltered:
-        offset = self.coord_class((min(rows), min(cols), 0))
-        maxvals = self.coord_class((max(rows), max(cols), max(layers)))
-        bounds = maxvals - offset
-        return offset, bounds
 
 
 class Hexagonal2D(Cartesian2D):
@@ -695,7 +699,7 @@ class TriangularCoordSet3D(CartesianCoordSet3D):
     coord_class = Triangular3D
 
 
-class TriangularView3D(CartesianView3D):
+class TriangularView3D(CartesianViewPseudo3D):
 
     """
     Pseudo-3-dimensional (+x,+y)-quadrant triangle-cell coordinate set with
@@ -703,16 +707,6 @@ class TriangularView3D(CartesianView3D):
     """
 
     coord_class = Triangular3D
-
-    def calculate_offset_and_bounds(self):
-        rows = [c[0] for c in self]
-        cols = [c[1] for c in self]
-        layers = [c[2] for c in self]
-        # keep Z-offset at 0 to keep Z values unaltered:
-        offset = self.coord_class((min(rows), min(cols), 0))
-        maxvals = self.coord_class((max(rows), max(cols), max(layers)))
-        bounds = maxvals - offset
-        return offset, bounds
 
 
 def sign(num):
