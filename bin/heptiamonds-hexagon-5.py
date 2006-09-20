@@ -3,6 +3,6 @@
 
 """ solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.HeptiamondsHexagon5)
+puzzler.run(puzzler.puzzles.HeptiamondsHexagon5)

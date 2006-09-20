@@ -3,6 +3,6 @@
 
 """158 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.SomaBathtub)
+puzzler.run(puzzler.puzzles.SomaBathtub)

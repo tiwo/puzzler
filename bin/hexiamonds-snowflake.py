@@ -3,6 +3,6 @@
 
 """55 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.HexiamondsSnowflake)
+puzzler.run(puzzler.puzzles.HexiamondsSnowflake)

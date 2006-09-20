@@ -3,6 +3,6 @@
 
 """46 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.SomaHighWall)
+puzzler.run(puzzler.puzzles.SomaHighWall)

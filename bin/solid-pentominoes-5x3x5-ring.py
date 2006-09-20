@@ -3,6 +3,6 @@
 
 """186 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.SolidPentominoes5x3x5Ring)
+puzzler.run(puzzler.puzzles.SolidPentominoes5x3x5Ring)

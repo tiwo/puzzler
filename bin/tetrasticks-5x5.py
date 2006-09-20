@@ -13,6 +13,6 @@
 All are perfect solutions (i.e. no pieces cross).
 """
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Tetrasticks5x5)
+puzzler.run(puzzler.puzzles.Tetrasticks5x5)

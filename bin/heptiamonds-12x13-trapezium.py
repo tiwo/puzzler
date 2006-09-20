@@ -3,6 +3,6 @@
 
 """ solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Heptiamonds12x13Trapezium)
+puzzler.run(puzzler.puzzles.Heptiamonds12x13Trapezium)

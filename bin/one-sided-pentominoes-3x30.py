@@ -3,6 +3,6 @@
 
 """ solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.OneSidedPentominoes3x30)
+puzzler.run(puzzler.puzzles.OneSidedPentominoes3x30)

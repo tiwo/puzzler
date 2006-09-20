@@ -3,6 +3,6 @@
 
 """2 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Tetrahex3x10Clipped)
+puzzler.run(puzzler.puzzles.Tetrahex3x10Clipped)

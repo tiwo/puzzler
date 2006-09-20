@@ -3,6 +3,6 @@
 
 """ solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Pentahex5x22)
+puzzler.run(puzzler.puzzles.Pentahex5x22)

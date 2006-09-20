@@ -6,6 +6,6 @@
 All are perfect solutions (i.e. no pieces cross).
 """
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Polysticks1234_6x6)
+puzzler.run(puzzler.puzzles.Polysticks1234_6x6)

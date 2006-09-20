@@ -3,6 +3,6 @@
 
 """10 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.SomaCornerstone)
+puzzler.run(puzzler.puzzles.SomaCornerstone)

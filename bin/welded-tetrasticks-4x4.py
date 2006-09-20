@@ -3,6 +3,6 @@
 
 """4 solutions (perfect solutions, i.e. no pieces cross)"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.WeldedTetrasticks4x4)
+puzzler.run(puzzler.puzzles.WeldedTetrasticks4x4)

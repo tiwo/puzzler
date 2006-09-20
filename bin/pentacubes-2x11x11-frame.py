@@ -3,6 +3,6 @@
 
 """ solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Pentacubes2x11x11Frame)
+puzzler.run(puzzler.puzzles.Pentacubes2x11x11Frame)

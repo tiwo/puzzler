@@ -3,6 +3,6 @@
 
 """ solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Heptiamonds3x28)
+puzzler.run(puzzler.puzzles.Heptiamonds3x28)

@@ -3,6 +3,6 @@
 
 """1390 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Tetracubes2x4x4)
+puzzler.run(puzzler.puzzles.Tetracubes2x4x4)

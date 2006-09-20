@@ -3,6 +3,6 @@
 
 """2339 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Pentominoes6x10)
+puzzler.run(puzzler.puzzles.Pentominoes6x10)

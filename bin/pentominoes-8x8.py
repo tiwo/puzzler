@@ -3,6 +3,6 @@
 
 """8x8 grid with 2x2 center hole: 65 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Pentominoes8x8CenterHole)
+puzzler.run(puzzler.puzzles.Pentominoes8x8CenterHole)

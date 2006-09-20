@@ -3,6 +3,6 @@
 
 """76 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Hexiamonds4x11Trapezium)
+puzzler.run(puzzler.puzzles.Hexiamonds4x11Trapezium)

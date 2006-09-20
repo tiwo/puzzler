@@ -3,6 +3,6 @@
 
 """156 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Hexiamonds6x6)
+puzzler.run(puzzler.puzzles.Hexiamonds6x6)

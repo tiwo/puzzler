@@ -3,6 +3,6 @@
 
 """1 solution"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.SolidPentominoes3x5x7Ring)
+puzzler.run(puzzler.puzzles.SolidPentominoes3x5x7Ring)

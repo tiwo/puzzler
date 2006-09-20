@@ -3,6 +3,6 @@
 
 """87 solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.HexiamondsCrescent)
+puzzler.run(puzzler.puzzles.HexiamondsCrescent)

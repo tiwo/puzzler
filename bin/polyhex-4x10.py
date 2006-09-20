@@ -3,6 +3,6 @@
 
 """? (many) solutions"""
 
-from puzzler import puzzles, core
+import puzzler.puzzles
 
-core.solver(puzzles.Polyhex1234_4x10)
+puzzler.run(puzzler.puzzles.Polyhex1234_4x10)
