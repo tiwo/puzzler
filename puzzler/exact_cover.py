@@ -11,12 +11,12 @@ the exact cover problem (http://en.wikipedia.org/wiki/Dancing_Links).
 """
 
 import sys
-# # optional acceleration with Psyco (up to 3x!):
-# try:
-#     import psyco
-#     psyco.full()
-# except ImportError:
-#     pass
+# optional acceleration with Psyco (up to 3x!):
+try:
+    import psyco
+    psyco.full()
+except ImportError:
+    pass
 
 
 def convert_matrix(data, secondary=0):
