@@ -371,9 +371,8 @@ class Puzzle2D(Puzzle):
     def build_solution_matrix(self, solution, margin=0):
         s_matrix = self.empty_solution_matrix(margin)
         for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
+            name = row[-1]
+            for cell_name in row[:-1]:
                 x, y = [int(d.strip()) for d in cell_name.split(',')]
                 s_matrix[y + margin][x + margin] = name
         return s_matrix
@@ -586,9 +585,8 @@ class Puzzle3D(Puzzle):
     def build_solution_matrix(self, solution, margin=0):
         s_matrix = self.empty_solution_matrix(margin)
         for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
+            name = row[-1]
+            for cell_name in row[:-1]:
                 x, y, z = [int(d.strip()) for d in cell_name.split(',')]
                 s_matrix[z + margin][y + margin][x + margin] = name
         return s_matrix
@@ -700,9 +698,8 @@ class PuzzlePseudo3D(Puzzle3D):
     def build_solution_matrix(self, solution, margin=0):
         s_matrix = self.empty_solution_matrix(margin)
         for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
+            name = row[-1]
+            for cell_name in row[:-1]:
                 x, y, z = [int(d.strip()) for d in cell_name.split(',')]
                 s_matrix[z][y + margin][x + margin] = name
         return s_matrix
@@ -1834,9 +1831,8 @@ class SomaCubes(Puzzle3D):
         z_reversed_fn = order_functions[z_reversed]
         s_matrix = self.empty_solution_matrix()
         for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            for cell_name in piece[:-1]:
+            name = row[-1]
+            for cell_name in row[:-1]:
                 x, y, z = (int(d.strip()) for d in cell_name.split(','))
                 if xy_swapped:
                     x, y = y, x
@@ -2250,13 +2246,12 @@ class Polysticks(Puzzle):
         omitted = []
         prefix = []
         for row in solution:
-            piece = sorted(i.column.name for i in row.row_data())
-            name = piece[-1]
-            if piece[0] == '!':
+            name = row[-1]
+            if row[0] == '!':
                 omitted.append(name)
                 prefix.append('(%s omitted)\n' % name)
                 continue
-            for segment_coords in piece[:-1]:
+            for segment_coords in row[:-1]:
                 direction = segment_coords[-1]
                 if direction == 'i':
                     continue

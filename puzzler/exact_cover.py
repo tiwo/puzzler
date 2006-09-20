@@ -11,12 +11,12 @@ the exact cover problem (http://en.wikipedia.org/wiki/Dancing_Links).
 """
 
 import sys
-# optional acceleration with Psyco (up to 3x!):
-try:
-    import psyco
-    psyco.full()
-except ImportError:
-    pass
+# # optional acceleration with Psyco (up to 3x!):
+# try:
+#     import psyco
+#     psyco.full()
+# except ImportError:
+#     pass
 
 
 def convert_matrix(data, secondary=0):
@@ -103,15 +103,21 @@ class ExactCover(object):
     Uses the Dancing Links approach to Knuth's Algorithm X.
     """
 
-    __slots__ = ('root', 'solution', 'num_solutions', 'num_searches')
+    __slots__ = ('root', 'state', 'solution', 'num_solutions', 'num_searches')
 
-    def __init__(self, root=None):
+    def __init__(self, root=None, state=None):
         self.root = root
-        self.solution = []
-        self.num_solutions = 0
-        self.num_searches = 0
+        self.state = state
+        if state:
+            self.solution = state.solution
+            self.num_solutions = state.num_solutions
+            self.num_searches = state.num_searches
+        else:
+            self.solution = []
+            self.num_solutions = 0
+            self.num_searches = 0
 
-    def solve(self):
+    def solve(self, level=0):
         """A generator that produces all solutions."""
         if self.root.right is self.root:
             yield self.solution
@@ -120,10 +126,17 @@ class ExactCover(object):
         c = self.root.choose_column()
         c.cover()
         for r in c.down_siblings():
-            self.solution.append(r)
+            row = sorted(d.column.name for d in r.row_data())
+            if len(self.solution) > level:
+                if self.solution[level] != row:
+                    continue            # skip rows already fully explored
+            else:
+                self.solution.append(row)
+                if self.state:
+                    self.state.store_periodically(self)
             for j in r.right_siblings():
                 j.column.cover()
-            for solution in self.solve():
+            for solution in self.solve(level+1):
                 yield solution
             self.solution.pop()
             for j in r.left_siblings():
@@ -135,8 +148,7 @@ class ExactCover(object):
         self.num_solutions += 1
         parts = ['solution %i:' % self.num_solutions]
         for row in self.solution:
-            parts.append(' '.join(sorted(i.column.name
-                                         for i in row.row_data())))
+            parts.append(' '.join(row))
         return '\n'.join(parts)
 
 
