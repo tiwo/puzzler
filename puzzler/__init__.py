@@ -45,7 +45,7 @@ def run(puzzle_class, output_stream=sys.stdout, settings=None):
     if settings.read_solution:
         read_solution(puzzle_class, settings)
     else:
-        state = SessionState.restore(settings.store_search_state)
+        state = SessionState.restore(settings.save_search_state)
         solve(puzzle_class, state, output_stream, settings)
 
 def process_command_line():
@@ -68,7 +68,7 @@ def process_command_line():
         help='Format the first solution found (or supplied via -r) as X3D '
         'and write it to FILE.')
     parser.add_option(
-        '-S', '--store-search-state', metavar='FILE',
+        '-S', '--save-search-state', metavar='FILE',
         help='Automatically save & restore the search state to/from FILE.')
     parser.add_option(
         '-h', '--help', help='Show this help message and exit.', action='help')
