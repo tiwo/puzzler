@@ -69,7 +69,7 @@ def process_command_line():
         'and write it to FILE.')
     parser.add_option(
         '-S', '--store-search-state', metavar='FILE',
-        help='Store & restore the search state to/from FILE.')
+        help='Automatically save & restore the search state to/from FILE.')
     parser.add_option(
         '-h', '--help', help='Show this help message and exit.', action='help')
     settings, args = parser.parse_args()
@@ -122,7 +122,7 @@ def solve(puzzle_class, state, output_stream, settings):
         except KeyboardInterrupt:
             state.store(solver)
             state.close()
-            raise
+            sys.exit(1)
         stats.append((solver.num_solutions - last_solutions,
                       solver.num_searches - last_searches))
         if ( settings.stop_after

@@ -65,7 +65,7 @@ Changes Since Release 1
 
 * Simplified the front-end API.
 
-* Added the ability to store & restore the session state
+* Added the ability to automatically save & restore the session state
   (``-S``/``--store-search-state`` option).
 
 
