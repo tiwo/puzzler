@@ -46,16 +46,27 @@ Changes Since Release 1
 
   - Pentacubes Plus: 5x5x6, 3x5x10, 2x5x15, 2x3x25.
 
+* Added ``-n``/``--stop-after`` option.
+
 * Added SVG image generation support for polyominoes, polyiamonds,
-  polyhexes, and polycubes.
+  polyhexes, and polycubes (``-s``/``--svg`` option).
 
 * Added the ability to read in an existing solution record for
-  rendering.
+  rendering (``-r``/``--read-solution`` option).
 
 * Added unit tests.
 
 * Added "Polyform Puzzler: Puzzles & Solutions" document
   (docs/puzzles.txt).
+
+* Removed ``puzzler/core.py``, moved its code into
+  ``puzzler.__init__.py``, and modified the front-end apps in ``bin/``
+  accordingly.
+
+* Simplified the front-end API.
+
+* Added the ability to store & restore the session state
+  (``-S``/``--store-search-state`` option).
 
 
 Release 1 (2006-08-08)
