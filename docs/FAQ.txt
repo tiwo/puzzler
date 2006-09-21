@@ -45,10 +45,10 @@ defined and added to the core.
 How did Polyform Puzzler begin?
 -------------------------------
 
-I first discovered Pentominoes in Arthur C. Clarke's `Imperial Earth`,
-probably around the time I was 11 or 12 years old.  I picked up a
-pentominoes puzzle ("Hexed", by Gabriel Toys) at a local hobby store
-and spent many hours discovering solutions.
+I first discovered Pentominoes in Arthur C. Clarke's novel `Imperial
+Earth`, probably around the time I was 11 or 12 years old.  I picked
+up a pentominoes puzzle ("Hexed", by Gabriel Toys) at a local hobby
+store and spent many hours discovering solutions.
 
 In university, probably while avoiding legitimate study, I wrote the
 first implementation of a Pentominoes-solving project, in Object
@@ -56,11 +56,12 @@ Pascal.  I developed an algorithm that solved the puzzle using brute
 force with some intelligence applied:
 
 * Place each pentomino in every possible location.
-* Check remaining spaces for areas that are a multiple of 5.
-* Check for the availability of a piece for areas exactly 5 squares
-  large.
+* Confirm that the remaining empty spaces all have areas that are a
+  multiple of 5 squares.
+* For areas of exactly 5 squares, determine the piece that fits and
+  confirm its availability.
 * Check for bottlenecks that force a subset of the remaining space to
-  accept only a single specific piece, and check for its availability.
+  accept only a single specific piece, and confirm its availability.
 
 When I first learned Python_, I reimplemented this as a practical
 learning exercise.  I improved the algorithm a bit and got it to work
@@ -79,10 +80,10 @@ that worked well for me, so I started scratching *that* itch, and
 eventually reStructuredText_ & Docutils_ were born.  You could say
 that Polyform Puzzler spawned Docutils_.
 
-Recently (2006) I discovered a new approach for solving such puzzles,
-Donald Knuth's "Dancing Links Algorithm X" ("DLX") approach to the
-"exact cover" problem, `described below`__.  This approach was so
-different from what I'd done previously, and so obviously superior,
+In the summer of 2006 I discovered a new approach for solving polyform
+puzzles, Donald Knuth's "Dancing Links Algorithm X" ("DLX") approach
+to the "exact cover" problem, `described below`__.  This approach was
+so different from what I'd done previously, and so obviously superior,
 that my old itch resurfaced.  Polyform Puzzler is the result.
 
 __ `How are the polyform puzzles solved?`_
@@ -295,7 +296,7 @@ ones.  Polyform families are given descriptive names:
 * Polyforms based on equilateral triangles are named "polyiamonds_"
   (from the "diamond", which is two triangles joined).
 
-  .. figure:: images/hexiamonds-4x10-longhex.png
+  .. figure:: images/hexiamonds-4x10-long-hex.png
 
      4 |x| 10 Hexiamond Elongated Hexagon (856 solutions)
 
