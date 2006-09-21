@@ -28,8 +28,10 @@ applications (solvers) for exploring & solving polyform puzzles.
 
 import sys
 import os
+import threading
 import copy
 import optparse
+import time
 import cPickle as pickle
 from datetime import datetime, timedelta
 from puzzler import exact_cover
@@ -45,8 +47,7 @@ def run(puzzle_class, output_stream=sys.stdout, settings=None):
     if settings.read_solution:
         read_solution(puzzle_class, settings)
     else:
-        state = SessionState.restore(settings.save_search_state)
-        solve(puzzle_class, state, output_stream, settings)
+        solve(puzzle_class, output_stream, settings)
 
 def process_command_line():
     """Process command-line options & return a settings object."""
@@ -88,9 +89,10 @@ def read_solution(puzzle_class, settings):
     if settings.x3d:
         puzzle.write_x3d(settings.x3d, s_matrix=copy.deepcopy(s_matrix))
 
-def solve(puzzle_class, state, output_stream, settings):
+def solve(puzzle_class, output_stream, settings):
     """Find and record all solutions to a puzzle.  Report on `output_stream`."""
     start = datetime.now()
+    state = SessionState.restore(settings.save_search_state)
     matrices = []
     stats = []
     puzzles = []
@@ -101,6 +103,7 @@ def solve(puzzle_class, state, output_stream, settings):
         matrices.append(
             exact_cover.convert_matrix(puzzle.matrix, puzzle.secondary_columns))
     solver = exact_cover.ExactCover(state=state)
+    state.init_periodic_save(solver)
     last_solutions = state.last_solutions
     last_searches = state.last_searches
     for i, puzzle in enumerate(puzzles):
@@ -108,7 +111,7 @@ def solve(puzzle_class, state, output_stream, settings):
         solver.root = matrices[i]
         try:
             for solution in solver.solve():
-                state.store(solver)
+                state.save(solver)
                 puzzle.record_solution(solution, solver, stream=output_stream)
                 if settings.svg:
                     puzzle.write_svg(settings.svg, solution)
@@ -120,7 +123,7 @@ def solve(puzzle_class, state, output_stream, settings):
                      and solver.num_solutions == settings.stop_after):
                     break
         except KeyboardInterrupt:
-            state.store(solver)
+            state.save(solver)
             state.close()
             sys.exit(1)
         stats.append((solver.num_solutions - last_solutions,
@@ -141,59 +144,80 @@ def solve(puzzle_class, state, output_stream, settings):
             print >>output_stream, (
                 '(%s: %s solutions, %s searches)'
                 % (puzzles[i].__class__.__name__, solutions, searches))
+    state.cleanup()
 
 
 class SessionState(object):
 
-    """Stores & restores the state of the session."""
+    """Saves & restores the state of the session."""
 
-    store_interval = timedelta(seconds=60)
+    save_interval = 60                 # seconds, for thread
 
     def __init__(self, path=None):
-        if path:
-            self.state_file = open(path, 'wb')
-        else:
-            self.state_file = None
+        self.init_runtime(path)
         self.solution = []
         self.num_solutions = 0
         self.num_searches = 0
         self.last_solutions = 0
         self.last_searches = 0
         self.completed_components = set()
-        self.last_stored = datetime.min
+
+    def init_runtime(self, path):
+        if path:
+            self.state_file = open(path, 'wb')
+        else:
+            self.state_file = None
+        self.lock = threading.Lock()
+
+    def init_periodic_save(self, solver):
+        if self.state_file:
+            t = threading.Thread(target=self.save_periodically, args=(solver,))
+            t.setDaemon(True)
+            t.start()
 
     def __getstate__(self):
         # copy the dict since we change it:
         odict = self.__dict__.copy()
-        # remove file entry:
-        del odict['state_file']
+        # remove runtime state:
+        del odict['state_file'], odict['lock']
         return odict
 
-    def store(self, solver):
-        self.num_solutions = solver.num_solutions
-        self.num_searches = solver.num_searches
-        self.last_stored = datetime.now()
-        if self.state_file:
+    def save(self, solver):
+        if self.state_file and self.lock.acquire(False):
+            self.num_solutions = solver.num_solutions
+            self.num_searches = solver.num_searches
             self.state_file.seek(0)
             pickle.dump(self, self.state_file, 2)
             self.state_file.flush()
+            self.lock.release()
 
-    def store_periodically(self, solver):
-        now = datetime.now()
-        if now - self.last_stored > self.store_interval:
-            self.store(solver)
+    def save_periodically(self, solver):
+        """This method is run as a daemon thread."""
+        while True:
+            time.sleep(self.save_interval)
+            self.save(solver)
 
     def close(self):
         if self.state_file:
             self.state_file.close()
 
+    def cleanup(self):
+        if self.state_file:
+            path = self.state_file.name
+            self.state_file.close()
+            os.unlink(path)
+
     @classmethod
     def restore(cls, path):
+        """
+        Return either the saved session state or a new `SessionState` object.
+        (A factory function.)
+        """
         if path:
             if os.path.exists(path):
                 state_file = open(path, 'rb')
                 state = pickle.load(state_file)
                 state_file.close()
-                state.state_file = open(path, 'wb')
+                state.init_runtime(path)
                 return state
         return cls(path)

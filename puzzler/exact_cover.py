@@ -103,11 +103,10 @@ class ExactCover(object):
     Uses the Dancing Links approach to Knuth's Algorithm X.
     """
 
-    __slots__ = ('root', 'state', 'solution', 'num_solutions', 'num_searches')
+    __slots__ = ('root', 'solution', 'num_solutions', 'num_searches')
 
     def __init__(self, root=None, state=None):
         self.root = root
-        self.state = state
         if state:
             self.solution = state.solution
             self.num_solutions = state.num_solutions
@@ -132,8 +131,6 @@ class ExactCover(object):
                     continue            # skip rows already fully explored
             else:
                 self.solution.append(row)
-                if self.state:
-                    self.state.store_periodically(self)
             for j in r.right_siblings():
                 j.column.cover()
             for solution in self.solve(level+1):
