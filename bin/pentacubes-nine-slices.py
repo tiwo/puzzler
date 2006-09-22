@@ -5,4 +5,4 @@
 
 import puzzler.puzzles
 
-puzzler.run(puzzler.puzzles.PentacubesDiamondWedge)
+puzzler.run(puzzler.puzzles.PentacubesNineSlices)

@@ -5,4 +5,4 @@
 
 import puzzler.puzzles
 
-puzzler.run(puzzler.puzzles.Pentacubes5x5x6Tower)
+puzzler.run(puzzler.puzzles.Pentacubes5x5x6Tower1)
