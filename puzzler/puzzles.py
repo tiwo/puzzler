@@ -14,6 +14,10 @@ import math
 import re
 from pprint import pprint, pformat
 import coordsys
+import colors
+
+
+class DataError(RuntimeError): pass
 
 
 class Puzzle(object):
@@ -82,6 +86,16 @@ class Puzzle(object):
 
     svg_unit_height = svg_unit_length
     """Unit height in pixels."""
+
+    x3d_header = '''\
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN"
+ "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile="Immersive" version="2.0">
+<Scene>
+'''
+
+    x3d_footer = '</Scene>\n</X3D>\n'
 
     @classmethod
     def components(cls):
@@ -509,6 +523,17 @@ class Puzzle3D(Puzzle):
     svg_defs_end = '</defs>\n'
     svg_cube = '<use xlink:href="#cube%(name)s" x="%(x).3f" y="%(y).3f" />\n'
 
+    x3d_box = '''\
+<Transform translation="%(x)s %(y)s %(z)s">
+  <Shape>
+    <Appearance>
+      <Material diffuseColor="%(color)s"/>
+    </Appearance>
+    <Box size="1 1 1"/>
+  </Shape>
+</Transform>
+'''
+
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -654,18 +679,31 @@ class Puzzle3D(Puzzle):
         else:
             s_matrix = self.build_solution_matrix(solution)
         s_matrix = self.transform_solution_matrix(s_matrix)
-        # TODO
-        return ''
+        s_depth = len(s_matrix)
+        s_height = len(s_matrix[0])
+        s_width = len(s_matrix[0][0])
+        cubes = []
+        for z in range(s_depth):
+            for y in range(s_height):
+                for x in range(s_width):
+                    name = s_matrix[z][y][x]
+                    if name == self.empty_cell:
+                        continue
+                    cubes.append(
+                        self.x3d_box
+                        % {'name': name, 'x': x, 'y': y, 'z': z,
+                           'color': colors.x3d[self.piece_colors[name]]})
+        return '%s%s%s' % (self.x3d_header, ''.join(cubes), self.x3d_footer)
 
     def transform_solution_matrix(self, s_matrix):
         """Transform for rendering `s_matrix`.  Override in subclasses."""
         return s_matrix
 
     def swap_yz_transform(self, s_matrix):
-        """Common solution matrix transform: swap Y & Z dimensions."""
+        """Common solution matrix transform: Z, Y = reversed(Y), Z."""
         return [[[s_matrix[z][y][x] for x in range(self.width)]
                  for z in range(self.depth)]
-                for y in range(self.height)]
+                for y in reversed(range(self.height))]
 
     def cycle_xyz_transform(self, s_matrix):
         """Common solution matrix transform: cycle X Y & Z dimensions."""
@@ -709,6 +747,9 @@ class PuzzlePseudo3D(Puzzle3D):
         for x, y, z in self.solution_coords:
             s_matrix[z][y + self.margin][x + self.margin] = '0'
         return self.format_svg(s_matrix=s_matrix)
+
+    def format_x3d(self, solution=None, s_matrix=None):
+        raise NotImplementedError
 
 
 class Pentominoes(Puzzle2D):
