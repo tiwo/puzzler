@@ -1573,6 +1573,23 @@ class Pentacubes5x5x6Tower2(Pentacubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
+class Pentacubes5x5x6Tower3(Pentacubes):
+
+    """ solutions"""
+
+    width = 5
+    height = 6
+    depth = 5
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if y > 0 and z == 2 == x:
+                        continue
+                    yield coordsys.Cartesian3D((x, y, z))
+
+
 class PentacubesCornerCrystal(Pentacubes):
 
     """ solutions"""

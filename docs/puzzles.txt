@@ -262,6 +262,12 @@ are possible however:
             <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-2.txt>`__
             (`X3D model <images/pentacubes-5x5x6-tower-2.x3d>`__)
 
+       - .. figure:: images/pentacubes-5x5x6-tower-3.png
+
+            Tower 3: `solutions incomplete
+            <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-3.txt>`__
+            (`X3D model <images/pentacubes-5x5x6-tower-3.x3d>`__)
+
 * 2x11x11 frame (11x11 square bottom layer with 7x7 square frame on
   top): `solutions incomplete
   <http://puzzler.sf.net/solutions/pentacubes-2x11x11-frame.txt>`__
