@@ -24,7 +24,7 @@ Changes Since Release 1
   - Tetrahexes: 4x7 parallelogram; clipped 3x10; "coin".
 
   - Pentahexes: 10x11 & 5x22 parallelograms; 15x11 & 5x24 trapezia;
-    hexagons.
+    hexagons; triangles; hexagrams.
 
   - Polyhexes of order 1 through 4: 4x10 & 5x8 parallelograms.
 

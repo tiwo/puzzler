@@ -626,6 +626,78 @@ Pentahexes
 
     .. image:: images/pentahex-hexagon-4.png
 
+* Triangles: a minimal triangle is 120 units, 10 units too large.  But
+  10 units makes a 4-unit-side triangle, so here are five variations
+  with centered 4-unit triangular holes and one with a different hole:
+
+  - Triangle 1: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-triangle-1.txt>`__
+
+    .. image:: images/pentahex-triangle-1.png
+
+  - Triangle 2: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-triangle-2.txt>`__
+
+    .. image:: images/pentahex-triangle-2.png
+
+  - Triangle 3: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-triangle-3.txt>`__
+
+    .. image:: images/pentahex-triangle-3.png
+
+  - Triangle 4: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-triangle-4.txt>`__
+
+    .. image:: images/pentahex-triangle-4.png
+
+  - Triangle 5: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-triangle-5.txt>`__
+
+    .. image:: images/pentahex-triangle-5.png
+
+  - Triangle 6: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-triangle-6.txt>`__
+
+    .. image:: images/pentahex-triangle-6.png
+
+* Hexagrams: a minimal hexagram is 121 units, 11 units too large.
+  These are variations with centered, symmetrical 11-unit holes:
+
+  - Hexagram 1: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagram-1.txt>`__
+
+    .. image:: images/pentahex-hexagram-1.png
+
+  - Hexagram 2: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagram-2.txt>`__
+
+    .. image:: images/pentahex-hexagram-2.png
+
+  - Hexagram 3: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagram-3.txt>`__
+
+    .. image:: images/pentahex-hexagram-3.png
+
+  - Hexagram 4: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagram-4.txt>`__
+
+    .. image:: images/pentahex-hexagram-4.png
+
+  - Hexagram 5: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagram-5.txt>`__
+
+    .. image:: images/pentahex-hexagram-5.png
+
+  - Hexagram 6: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagram-6.txt>`__
+
+    .. image:: images/pentahex-hexagram-6.png
+
+  - Hexagram 7: `solutions incomplete
+    <http://puzzler.sf.net/solutions/pentahex-hexagram-7.txt>`__
+
+    .. image:: images/pentahex-hexagram-7.png
+
 
 Polyhexes of Order 1 Through 4
 ==============================
