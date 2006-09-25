@@ -1527,14 +1527,14 @@ class Pentacubes2x11x11Frame(Pentacubes):
     depth = 2
 
     def coordinates(self):
-        for z in range(self.depth):
+        for y in range(self.height):
             for x in range(self.width):
-                yield coordsys.Cartesian3D((x, 0, z))
-        for z in range(2, self.depth - 2):
+                yield coordsys.Cartesian3D((x, y, 0))
+        for y in range(2, self.height - 2):
             for x in range(2, self.width - 2):
                 if ( x == 2 or x == self.width - 3
-                     or z == 2 or z == self.depth - 3):
-                    yield coordsys.Cartesian3D((x, 1, z))
+                     or y == 2 or y == self.depth - 3):
+                    yield coordsys.Cartesian3D((x, y, 1))
 
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
