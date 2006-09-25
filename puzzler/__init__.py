@@ -106,44 +106,49 @@ def solve(puzzle_class, output_stream, settings):
     state.init_periodic_save(solver)
     last_solutions = state.last_solutions
     last_searches = state.last_searches
-    for i, puzzle in enumerate(puzzles):
-        print >>output_stream, 'solving %s:\n' % puzzle.__class__.__name__
-        solver.root = matrices[i]
+    try:
         try:
-            for solution in solver.solve():
-                state.save(solver)
-                puzzle.record_solution(solution, solver, stream=output_stream)
-                if settings.svg:
-                    puzzle.write_svg(settings.svg, solution)
-                    settings.svg = False
-                if settings.x3d:
-                    puzzle.write_x3d(settings.x3d, solution)
-                    settings.x3d = False
+            for i, puzzle in enumerate(puzzles):
+                print >>output_stream, ('solving %s:\n'
+                                        % puzzle.__class__.__name__)
+                solver.root = matrices[i]
+                for solution in solver.solve():
+                    state.save(solver)
+                    puzzle.record_solution(
+                        solution, solver, stream=output_stream)
+                    if settings.svg:
+                        puzzle.write_svg(settings.svg, solution)
+                        settings.svg = False
+                    if settings.x3d:
+                        puzzle.write_x3d(settings.x3d, solution)
+                        settings.x3d = False
+                    if ( settings.stop_after
+                         and solver.num_solutions == settings.stop_after):
+                        break
+                stats.append((solver.num_solutions - last_solutions,
+                              solver.num_searches - last_searches))
                 if ( settings.stop_after
                      and solver.num_solutions == settings.stop_after):
                     break
+                state.last_solutions = last_solutions = solver.num_solutions
+                state.last_searches = last_searches = solver.num_searches
+                state.completed_components.add(puzzle.__class__.__name__)
         except KeyboardInterrupt:
+            print >>output_stream, 'Session interrupted by user.'
             state.save(solver)
             state.close()
             sys.exit(1)
-        stats.append((solver.num_solutions - last_solutions,
-                      solver.num_searches - last_searches))
-        if ( settings.stop_after
-             and solver.num_solutions == settings.stop_after):
-            break
-        state.last_solutions = last_solutions = solver.num_solutions
-        state.last_searches = last_searches = solver.num_searches
-        state.completed_components.add(puzzle.__class__.__name__)
-    end = datetime.now()
-    duration = end - start
-    print >>output_stream, (
-        '%s solutions, %s searches, duration %s'
-        % (solver.num_solutions, solver.num_searches, duration))
-    if len(puzzles) > 1:
-        for i, (solutions, searches) in enumerate(stats):
-            print >>output_stream, (
-                '(%s: %s solutions, %s searches)'
-                % (puzzles[i].__class__.__name__, solutions, searches))
+    finally:
+        end = datetime.now()
+        duration = end - start
+        print >>output_stream, (
+            '%s solutions, %s searches, duration %s'
+            % (solver.num_solutions, solver.num_searches, duration))
+        if len(stats) > 1:
+            for i, (solutions, searches) in enumerate(stats):
+                print >>output_stream, (
+                    '(%s: %s solutions, %s searches)'
+                    % (puzzles[i].__class__.__name__, solutions, searches))
     state.cleanup()
 
 
