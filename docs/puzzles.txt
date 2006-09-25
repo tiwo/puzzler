@@ -708,8 +708,8 @@ Pentahexes
 Polyhexes of Order 1 Through 4
 ==============================
 
-These puzzles uses the monohex and all dihex, trihex, and tetrahex
-pieces.
+These puzzles uses the monohex, the dihex, the three trihexes, and the
+seven tetrahexes.
 
 * 4x10 parallelogram: `solutions incomplete
   <http://puzzler.sf.net/solutions/polyhex-4x10.txt>`__
