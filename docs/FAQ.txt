@@ -109,7 +109,9 @@ How can others contribute?
     Have you considered learning Python_?  It's a great language,
     focused on programmer productivity.  Python excels at the rapid
     creation of maintainable code.  It's scalable.  And it's fun.
-    Give it a try!
+    `Give it a try!`__
+
+    __ http://wiki.python.org/moin/BeginnersGuide/Programmers
 
     There is one area where Python doesn't shine: raw speed.  But that
     can be solved with extension modules written in C.  The workhorse
@@ -119,7 +121,10 @@ How can others contribute?
 
 **Non-programmers**
     Have you considered learning to program?  It's not as difficult as
-    you think, and it can be loads of fun!
+    you think, and it can be loads of fun!  Here are some `guides for
+    beginners to get you started`__.
+
+    __ http://wiki.python.org/moin/BeginnersGuide/NonProgrammers
 
 **Puzzlers**
     Use the project, and report on any issues you find.  Run a puzzle
