@@ -43,11 +43,11 @@ class Puzzle(object):
     margin = 1
 
     piece_data = {}
-    """Mapping of piece names to 2-tuples:
+    """Mapping of piece names to 2-tuples (a copy.deepcopy is made first):
 
     * list of unit coordinates (usually one unit, the origin, is implicit)
     * dictionary of aspect restrictions, keyword arguments to `make_aspects`;
-      customized in `customize_piece_data` (make a copy.deepcopy first though)
+      customized in `customize_piece_data`
     """
 
     piece_colors = None
@@ -137,6 +137,9 @@ class Puzzle(object):
         self.matrix_columns = {}
         """Mapping of `self.matrix` column names to indices."""
 
+        # Make an object-local deep copy of the dict:
+        self.piece_data = copy.deepcopy(self.piece_data)
+        # Now we can modify it as we like:
         self.customize_piece_data()
 
         if init_puzzle:
@@ -480,9 +483,9 @@ class Puzzle2D(Puzzle):
                 self._get_piece_cells(cells, neighbor, s_matrix, cell_content)
 
     def format_coords_svg(self):
-        s_matrix = self.empty_solution_matrix()
+        s_matrix = self.empty_solution_matrix(margin=self.margin)
         for x, y in self.solution_coords:
-            s_matrix[y][x] = '0'
+            s_matrix[y + self.margin][x + self.margin] = '0'
         return self.format_svg(s_matrix=s_matrix)
 
     def convert_record_to_solution_matrix(self, record):
@@ -840,7 +843,6 @@ class Pentominoes5x12B(Pentominoes5x12):
     """symmetry: X at center; remove flip of P"""
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P'][-1]['flips'] = None
 
     def build_matrix(self):
@@ -882,7 +884,6 @@ class Pentominoes4x15B(Pentominoes4x15):
     """symmetry: X at center; remove flip of P"""
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P'][-1]['flips'] = None
 
     def build_matrix(self):
@@ -931,7 +932,6 @@ class Pentominoes3x20Loop(Pentominoes):
     width = 20
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['U'][-1]['rotations'] = (2, 3)
 
     def build_matrix(self):
@@ -960,7 +960,6 @@ class Pentominoes3x20Tube(Pentominoes):
     check_for_duplicates = True
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['F'][-1]['flips'] = None
 
     def build_matrix(self):
@@ -1015,7 +1014,6 @@ class Pentominoes8x8CenterHoleB(Pentominoes8x8CenterHole):
     """symmetry: X on diagonal; remove flip of P"""
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P'][-1]['flips'] = None
 
     def build_matrix(self):
@@ -1034,7 +1032,6 @@ class OneSidedPentominoes(Pentominoes):
         Disable flips on all pieces, and add flipped versions of asymmetric
         pieces.
         """
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_colors = copy.deepcopy(self.piece_colors)
         for key in self.piece_data.keys():
             self.piece_data[key][-1]['flips'] = None
@@ -1078,7 +1075,6 @@ class SolidPentominoes2x3x10(SolidPentominoes):
     depth = 2
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['F'][-1]['flips'] = None
 
     def build_matrix(self):
@@ -1129,7 +1125,6 @@ class SolidPentominoes2x5x6B(SolidPentominoes2x5x6):
     """symmetry: X in center; remove flip of F"""
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['F'][-1]['flips'] = None
 
     def build_matrix(self):
@@ -1401,7 +1396,6 @@ class Tetracubes2x4x4(Tetracubes):
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['V2'][-1]['rotations'] = None
         self.piece_data['V2'][-1]['flips'] = None
         self.piece_data['V2'][-1]['axes'] = None
@@ -1416,7 +1410,6 @@ class Tetracubes2x2x8(Tetracubes):
     depth = 2
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['V2'][-1]['rotations'] = None
         self.piece_data['V2'][-1]['flips'] = None
         self.piece_data['V2'][-1]['axes'] = None
@@ -1486,17 +1479,18 @@ class Pentacubes5x7x7OpenBox(Pentacubes):
     """ solutions"""
 
     width = 7
-    height = 5
-    depth = 7
+    height = 7
+    depth = 5
 
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
                 for x in range(self.width):
-                    if ( (x == 0) or (x == self.width - 1)
-                         or (z == 0) or (z == self.depth - 1)
-                         or y == 0):
+                    if ( z == 0 or x == 0 or x == self.width - 1
+                         or y == 0 or y == self.height - 1):
                         yield coordsys.Cartesian3D((x, y, z))
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
 class Pentacubes3x9x9OpenBox(Pentacubes):
@@ -1918,7 +1912,6 @@ class Soma3x3x3(SomaCubes):
     depth = 3
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['T'][-1]['flips'] = None
         self.piece_data['T'][-1]['axes'] = None
         self.piece_data['T'][-1]['rotations'] = None
@@ -2407,7 +2400,6 @@ class WeldedTetrasticks4x4(Tetrasticks):
                             {'rotation': 3},)
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         for key in self.unwelded_pieces:
             del self.piece_data[key]
         for key in self.asymmetric_pieces:
@@ -2439,7 +2431,6 @@ class Tetrasticks5x5(Tetrasticks):
     duplicate_conditions = ({'xy_swapped': True},)
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['!'] = ((), {})
 
     def build_matrix(self):
@@ -2535,7 +2526,6 @@ class Polysticks1234_6x6D(Polysticks1234_6x6):
     """symmetry: X at center; remove flip & rotation of P (fix one aspect)"""
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['rotations'] = None
 
@@ -3611,7 +3601,6 @@ class Hexiamonds4x11Trapezium(Hexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I6'][-1]['flips'] = None
 
 
@@ -3640,7 +3629,6 @@ class Hexiamonds4x10LongHexagon(Hexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I6'][-1]['flips'] = None
 
 
@@ -3666,7 +3654,6 @@ class HexiamondsSnowflake(Hexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['J6'][-1]['rotations'] = None
 
 
@@ -3717,7 +3704,6 @@ class HexiamondsRing2(Hexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I6'][-1]['flips'] = None
 
 
@@ -3840,7 +3826,6 @@ class HexiamondsCrescent(Hexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I6'][-1]['flips'] = None
 
 
@@ -3866,7 +3851,6 @@ class HexiamondsCrescent2(Hexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I6'][-1]['flips'] = None
 
 
@@ -3895,7 +3879,6 @@ class HexiamondsTrefoil(Hexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I6'][-1]['rotations'] = None
         self.piece_data['I6'][-1]['flips'] = None
 
@@ -3942,7 +3925,6 @@ class HexiamondsCoin(Hexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I6'][-1]['flips'] = None
 
 
@@ -4095,7 +4077,6 @@ class HeptiamondsSnowflake1(Heptiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I7'][-1]['rotations'] = None
         self.piece_data['W7'][-1]['flips'] = None
 
@@ -4134,7 +4115,6 @@ class HeptiamondsSnowflake2(Heptiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P7'][-1]['rotations'] = None
         self.piece_data['P7'][-1]['flips'] = None
 
@@ -4156,7 +4136,6 @@ class HeptiamondsTriangle(Heptiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['I7'][-1]['rotations'] = None
         self.piece_data['W7'][-1]['flips'] = None
 
@@ -4178,7 +4157,6 @@ class Heptiamonds12x13Trapezium(Heptiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['W7'][-1]['flips'] = None
 
 
@@ -4227,7 +4205,6 @@ class HeptiamondsHexagram(Heptiamonds):
                             yield coord
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P7'][-1]['flips'] = None
         self.piece_data['P7'][-1]['rotations'] = None
 
@@ -4266,7 +4243,6 @@ class HeptiamondsHexagon1(Heptiamonds):
                         yield coord
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P7'][-1]['flips'] = None
 
 
@@ -4303,7 +4279,6 @@ class HeptiamondsHexagon2(Heptiamonds):
                         yield coord
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P7'][-1]['flips'] = None
 
 
@@ -4340,7 +4315,6 @@ class HeptiamondsHexagon3(Heptiamonds):
                         yield coord
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P7'][-1]['flips'] = None
 
 
@@ -4377,7 +4351,6 @@ class HeptiamondsHexagon4(Heptiamonds):
                         yield coord
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P7'][-1]['flips'] = None
 
 
@@ -4414,7 +4387,6 @@ class HeptiamondsHexagon5(Heptiamonds):
                         yield coord
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P7'][-1]['flips'] = None
 
 
@@ -4448,7 +4420,6 @@ class HeptiamondsHexagon6(Heptiamonds):
                         yield coord
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P7'][-1]['flips'] = None
 
 
@@ -4480,7 +4451,6 @@ class HeptiamondsHexagon7(Heptiamonds):
                         yield coord
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['P7'][-1]['flips'] = None
 
 
@@ -4505,7 +4475,6 @@ class HeptiamondsDiamondRing(Heptiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(self.piece_data)
         self.piece_data['W7'][-1]['flips'] = None
 
 
