@@ -12,6 +12,8 @@
 .. image:: images/puzzler.png
    :align: center
 
+.. note:: This document is incomplete, a work in progress.
+
 .. contents::
 
 
