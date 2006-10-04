@@ -70,7 +70,9 @@ Pentominoes
 
   .. image:: images/pentominoes-8x8.png
 
-* 3x21 rectangle with holes: `6 solutions <http://puzzler.sf.net/solutions/pentominoes-3x21.txt>`__
+* 3x21 rectangle with holes: `6 solutions
+  <http://puzzler.sf.net/solutions/pentominoes-3x21.txt>`__ (an
+  example puzzle from `How to Extend Polyform Puzzler <extend.html>`_
 
   .. image:: images/pentominoes-3x21.png
 
