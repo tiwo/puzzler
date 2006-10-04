@@ -28,6 +28,10 @@ General
   - The ability to turn pieces on or off, and control the number of
     instances of each piece.
 
+* Restore state from a solution file instead of from a saved state
+  file?  I.e. use the last solution in the solution file to simulate a
+  saved state file.
+
 
 Puzzles
 =======

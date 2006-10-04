@@ -70,6 +70,10 @@ Pentominoes
 
   .. image:: images/pentominoes-8x8.png
 
+* 3x21 rectangle with holes: `6 solutions <http://puzzler.sf.net/solutions/pentominoes-3x21.txt>`__
+
+  .. image:: images/pentominoes-3x21.png
+
 
 One-Sided Pentominoes
 =====================
