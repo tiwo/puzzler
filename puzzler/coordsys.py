@@ -391,6 +391,23 @@ class CartesianPath2D:
                                       widths[1], intersection[1])
                 intersection += increment
 
+    def labels3d(self, widths):
+        for segment in self.segments:
+            start, end = segment
+            if start > end:
+                start, end = end, start
+            increment = increment_2D(start, end)
+            suffix = '10'[increment[0]]
+            intersection = start + increment
+            while start != end:
+                yield '%0*i,%0*i,%s' % (widths[0], start[0],
+                                       widths[1], start[1], suffix)
+                start += increment
+            while intersection != end:
+                yield '%0*i,%0*ii' % (widths[0], intersection[0],
+                                      widths[1], intersection[1])
+                intersection += increment
+
     def __iter__(self):
         return self._segment_generator()
 
