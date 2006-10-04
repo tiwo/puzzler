@@ -156,9 +156,9 @@ following command::
     python my_puzzle.py
 
 
-------------------------------------------------------
- Define a New Puzzle Using an Existing Polyform As-Is
-------------------------------------------------------
+------------------------------------------------
+ Define a New Puzzle Using an Existing Polyform
+------------------------------------------------
 
 For this example, we'll implement a 3x21 pentomino rectangle with
 three holes:
