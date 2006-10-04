@@ -92,22 +92,27 @@ def read_solution(puzzle_class, settings):
 def solve(puzzle_class, output_stream, settings):
     """Find and record all solutions to a puzzle.  Report on `output_stream`."""
     start = datetime.now()
-    state = SessionState.restore(settings.save_search_state)
-    matrices = []
-    stats = []
-    puzzles = []
-    for component in puzzle_class.components():
-        if component.__name__ not in state.completed_components:
-            puzzles.append(component())
-    for puzzle in puzzles:
-        matrices.append(
-            exact_cover.convert_matrix(puzzle.matrix, puzzle.secondary_columns))
-    solver = exact_cover.ExactCover(state=state)
-    state.init_periodic_save(solver)
-    last_solutions = state.last_solutions
-    last_searches = state.last_searches
     try:
         try:
+            state = SessionState.restore(settings.save_search_state)
+            solver = exact_cover.ExactCover(state=state)
+            if state.num_searches:
+                print >>output_stream, (
+                    '\nResuming session (%s solutions, %s searches).\n'
+                    % (state.num_solutions, state.num_searches))
+            matrices = []
+            stats = []
+            puzzles = []
+            for component in puzzle_class.components():
+                if component.__name__ not in state.completed_components:
+                    puzzles.append(component())
+            for puzzle in puzzles:
+                matrices.append(
+                    exact_cover.convert_matrix(puzzle.matrix,
+                                               puzzle.secondary_columns))
+            state.init_periodic_save(solver)
+            last_solutions = state.last_solutions
+            last_searches = state.last_searches
             for i, puzzle in enumerate(puzzles):
                 print >>output_stream, ('solving %s:\n'
                                         % puzzle.__class__.__name__)
