@@ -1,0 +1,458 @@
+================================
+ How to Extend Polyform Puzzler
+================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2006 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. contents::
+
+
+--------------
+ Introduction
+--------------
+
+This document assumes some (but not much) familiarity with programming
+and the Python_ programming language.  This is not a Python tutorial,
+but it is written for beginning Python programmers.  You should be
+able to follow these instructions after completing a tutorial, or even while 
+
+The Python web site contains lists of tutorials `for those new to
+programming`__, as well as `for programmers new to Python`__
+
+__ http://wiki.python.org/moin/BeginnersGuide/NonProgrammers
+__ http://wiki.python.org/moin/BeginnersGuide/Programmers
+
+Experienced Python developers should just skim the text & code
+examples for technical API details.
+
+
+-----------------------
+ The Parts of a Puzzle
+-----------------------
+
+Polyform Puzzler puzzles conceptually consist of three parts:
+
+1. The coordinate system.
+2. The polyform definition.
+3. The puzzle definition.
+
+Existing coordinate systems (part 1) are implemented in the
+``puzzler/coordsys.py`` module.  Polyform definitions and puzzle
+definitions are implemented in ``puzzler/puzzles.py``.  Polyform
+definitions are classes, subclasses of the ``puzzler.puzzles.Puzzle``
+class.  Puzzle definitions are also classes, subclasses of the
+polyform definition classes.
+
+If the polyform for your puzzle is already defined, just `add a new
+puzzle definition`__.
+
+If the polyform for your puzzle is closely related to an existing
+polyform, you may be able to `modify the existing polyform`__.
+
+If the polyform for your puzzle is new, but the coordinate system for
+that polyform is already implemented, you'll have to `define a new
+polyform`__.
+
+If the polyform for your puzzle requires a coordinate system that is
+not yet implemented, you'll have to `define a new one`__.
+
+__ `Define a New Puzzle Using an Existing Polyform`_
+__ `Modify an Existing Polyform`_
+__ `Define a New Polyform Using an Existing Coordinate System`_
+__ `Define a New Coordinate System`_
+.. _Python: http://www.python.org
+
+
+--------------------------
+ A Module For Your Puzzle
+--------------------------
+
+The first thing you will need is a fresh, clean text file.  Call it
+whatever you like, although the file name should end with ".py" for
+simplicitly, defining a Python source module.  We'll use
+"my_puzzle.py" for these instructions (using underscores instead of
+hyphens in module names is helpful in testing and debugging).
+
+It's best not to edit the Polyform Puzzler files directly.  If you do,
+you may lose your additions when you re-install Polyform Puzzler.  By
+putting your puzzle definition code in a separate module, you isolate
+it from the rest of the Polyform Puzzler code.  You're welcome to send
+your code for addition to the project though.  Write to the `Polyform
+Puzzler users mailing list <puzzler-users@lists.sourceforge.net>`_.
+
+Use a text editor, not a word processor, to create this file (word
+processors create formatted documents; we want a plain text file).  A
+text editor with support for Python code would be helpful, but is not
+necessary.
+
+
+Header
+======
+
+Your text file ("my_puzzle.py") should begin with the following lines
+(flush left; not indented)::
+
+    #!/usr/bin/env python
+
+    import puzzler.puzzles
+    import puzzler.coordsys
+
+The first line is a comment that informs many editors and operating
+systems of the file's content: Python source code.  You can use the
+following shell command to make this module "executable", which saves
+a bit of typing later on (if you don't know what this means or does,
+just skip it)::
+
+    chmod +x my-puzzle.py
+
+The last two lines above contain "import" statements.  They allow your
+puzzle module's code to access the functionality of the
+``puzzler.puzzles`` and ``puzzler.coordsys`` modules in the
+``puzzler`` package.  These modules do most of the work for you.
+
+
+Body
+====
+
+This is where your puzzle's unique defining characteristics go.  The
+possiblilities are described in detail in later sections.  At the very
+least, you'll need a class definition for your puzzle.  In this
+document we'll call your puzzle class "MyPuzzle".
+
+
+Footer
+======
+
+Add the following lines to the end of "my_puzzle.py"::
+
+    if __name__ == '__main__':
+        puzzler.run(MyPuzzle)
+
+The first line is a Python idiom that allows a module to detect its
+execution context.  If a module was imported, its ``__name__``
+variable will contain the name of the module.  If it was executed
+directly, its ``__name__`` variable will be set to "__main__".
+
+The last line runs the puzzle.  The ``puzzler.run`` function (in the
+``__init__.py`` module in the ``puzzler`` package directory) does
+command-line processing and starts solving your puzzle.
+
+
+Solve It
+========
+
+When you have finished defining your puzzle, you'll be ready for
+Polyform Puzzler to solve it.  In a shell or DOS box, enter the
+following command::
+
+    python my_puzzle.py
+
+
+------------------------------------------------------
+ Define a New Puzzle Using an Existing Polyform As-Is
+------------------------------------------------------
+
+For this example, we'll implement a 3x21 pentomino rectangle with
+three holes:
+
+.. image:: images/pentominoes-3x21-shape.png
+
+
+Bounding Box
+============
+
+The first thing to define is the bounding box, size, or maximum
+dimensions of the puzzle solution.  In other words, how wide and how
+high is the puzzle?  Pentominoes puzzles use ordinary 2-dimensional
+(X,Y) Cartesian coordinates.  Other puzzles use 3-dimensional (X,Y,Z)
+Cartesian coordinates or modified coordinate systems.  All puzzles
+begin counting at 0 though.
+
+In the body of your puzzle module (i.e. after the import statements),
+add the following class definition::
+
+    class MyPuzzle(puzzler.puzzles.Pentominoes):
+
+        height = 3
+        width = 21
+
+The first line defines a new class named "MyPuzzle" based on an
+existing polyform "base class" named "Pentominoes" (in the
+"puzzler.puzzles" module).  You should familiarize yourself with the
+classes in the "puzzler.puzzles" module.  Polyform Base classes have
+generic names (like "Pentominoes"), while puzzle classes have specific
+names (like "Pentominoes5x12").  You can use either type for your base
+class, whichever most closely matches your puzzle.
+
+The next lines define two class attributes, the height and width of
+the solution.  ``height = 3`` means that the Y coordinate may be 0, 1,
+or 2; because we start counting at 0, the maximum is never reached.
+
+
+Coordinates
+===========
+
+If this were a simple rectangular puzzle, we could now try to run the
+code to solve it.  But there are holes in this puzzle, and we need to
+define them.
+
+We do this using a "coordinates" method (indented 4 spaces)::
+
+    def coordinates(self):
+        holes = set(((4,1), (10,1), (16,1)))
+        for y in range(self.height):
+            for x in range(self.width):
+                if (x,y) not in holes:
+                    yield puzzler.coordsys.Cartesian2D((x, y))
+
+The first line defines the method; "self" refers to the puzzle object
+and is required in the definition.  The second line defines "holes", a
+set of coordinates.  Each coordinate is a tuple, a kind of list.
+
+Next we generate all possible coordinates, using "for" loops and the
+"range" function.  Note that we can refer to attributes of the puzzle
+object via the "self" name ("self.height", "self.width").  The second
+last line checks to see if the current coordinates are in the set of
+holes; if they are not, we generate a coordinate.
+
+"puzzler.coordsys.Cartesian2D" is a coordinate class.  The
+"puzzler.coordsys" module contains classes for several coordinate
+systems.  You should use the coordinate class appropriate for the
+polyform of your puzzle.  Just look at the definitions of other
+puzzles using the same polyform to determine which coordinate class to
+use.
+
+The last line uses the "yield" statement to generate one coordinate at
+a time to the calling code.  The presence of the "yield" statement
+means that the "coordinates" method is actually a generator function.
+Since the code that calls "coordinates" merely expects a list of
+coordinates to be returned, the "coordinates" method could also be
+written as an ordinary function as follows::
+
+    def coordinates(self):
+        holes = set(((4,1), (10,1), (16,1)))
+        coords = []
+        for y in range(self.height):
+            for x in range(self.width):
+                if (x,y) not in holes:
+                    coords.append(puzzler.coordsys.Cartesian2D((x, y)))
+        return coords
+
+The difference is that the latter variation (the function) calculates
+and stores all coordinates before returning any, whereas the former
+variation (the generator function) produces one coordinate at a time
+and need not store any.  Either approach is perfectly acceptable in
+this context.
+
+
+Preventing Duplicates
+=====================
+
+At this point we can run the module to solve the puzzle.  See `Solve
+It`_ above for instructions.
+
+As defined, this puzzle produces 24 solutions.  If you only want to
+see if the puzzle is solvable -- if there's *any* solution -- you're
+done.
+
+But many of these solutions are duplicates, just rotated or flipped.
+We should take this into account, and Polyform Puzzler provides for
+different approaches to prevent or suppress duplicate solutions.  The
+earlier approaches are simpler but less efficient; the later
+approaches may run faster but take a lot more thought.
+
+
+Check for Duplicates
+--------------------
+
+Add this code to the beginning of the MyPuzzle class (above the
+"coordinates" method)::
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'x_reversed': True},
+                            {'y_reversed': True},
+                            {'x_reversed': True, 'y_reversed': True})
+
+"check_for_duplicates" is a flag that tells Polyform Puzzler to check
+for duplicates, store the formatted solution for future checking, and
+produce and store variations of the formatted solution as well.  Each
+polyform and type of puzzle can have different symmetry properties;
+"duplicate_conditions" lists these conditions.  Each item in the list
+is a dictionary containing a combination of symmetry properties.  The
+entire list (along with the implied, no-change entry) should cover all
+possible duplicates.
+
+(The conditions dictionary is actually passed as default-value keyword
+arguments to the puzzle's "format_solution" method.  See that method's
+code or use "help(puzzle.format_solution)" in Python's interactive
+interpreter for specific details.)
+
+Add the lines above to your puzzle module (if you have any other
+duplicate suppression code, remove it now).  Running the puzzle again
+results in only 6 solutions, all unique.
+
+
+Customize Piece Data
+--------------------
+
+When a puzzle is being solved, all puzzle pieces are rotated and
+flipped into every possible aspect.  So another way to prevent
+duplicates is to put limits on certain puzzle pieces to ensure that no
+duplicates will be possible.  The "customize_piece_data" method is
+designed for this::
+
+    def customize_piece_data(self):
+        self.piece_data['V'][-1]['flips'] = None
+        self.piece_data['V'][-1]['rotations'] = None
+
+(This code is actually modifying a dictionary of aspect restrictions.
+Individual restrictions vary between polyform types.  The restrictions
+dictionary is passed as keyword arguments to the puzzles
+"make_aspects" method.  See that method's code for specific details.)
+
+Remove any other duplicate suppression code and add the lines above to
+your puzzle module.  Running the puzzle again results in only 6
+solutions, all unique.  The set of solutions may differ slightly (by a
+rotation or flip), but they will be consistent.
+
+This approach can be significantly faster than checking for
+duplicates, since it reduces the scope of a puzzle, preventing rather
+than suppressing duplicates.
+
+
+Restrict Piece Placement
+------------------------
+
+Sometimes we can take advantage of the shape and symmetries of a
+puzzle to further restrict the pieces.  Examining the puzzle, we can
+conclude that a certain piece is only possible in certain positions.
+For example, in the example puzzle, the "X" pentomino can only be
+positioned one square in from either end; no other position is
+possible.  Although this in itself does not prevent all duplicates
+(there is still vertical symmetry), more examination could result in
+other observations that, together, do prevent any duplicate solutions.
+For example, the "I" piece can only appear in the top or bottom rows;
+limiting it to the bottom row removes the vertical symmetry from the
+puzzle.
+
+The following code will fix the position of the "X" and "I"
+pentominoes::
+
+    def build_matrix(self):
+        keys = sorted(self.pieces.keys())
+        x_coords, x_aspect = self.pieces['X'][0]
+        translated = x_aspect.translate((1, 0))
+        self.build_matrix_row('X', translated)
+        keys.remove('X')
+        self.build_regular_matrix(keys)
+        i_coords, i_aspect = self.pieces['I'][1]
+        for x in range(3, 17):
+            translated = i_aspect.translate((x, 0))
+            self.build_matrix_row('I', translated)
+        keys.remove('I')
+
+Let's look at this one line at a time.  First, we begin the method
+definition::
+
+    def build_matrix(self):
+
+Next we get a sorted list of all puzzle piece names (the keys of the
+"self.pieces" dictionary)::
+
+        keys = sorted(self.pieces.keys())
+
+Extract the first set of coordinates and its aspect object for the "X"
+piece::
+
+        x_coords, x_aspect = self.pieces['X'][0]
+
+Other pieces may have many aspects, but "X" has full symmetry and
+therefore only one aspect.
+
+Next we offset the "X" piece one square to the right::
+
+        translated = x_aspect.translate((1, 0))
+
+Add the translated piece to the solution matrix::
+
+        self.build_matrix_row('X', translated)
+
+We're done with the "X" piece, so remove it from the list of pieces::
+
+        keys.remove('X')
+
+Extract the second set of coordinates and its aspect object for the
+"I" piece::
+
+        i_coords, i_aspect = self.pieces['I'][1]
+
+The first aspect will be vertical (the coordinates sort first), so we
+take the second aspect.
+
+Since the "X" piece is fixed, the "I" piece cannot overlap it, so
+we'll start just to the right of "X", and end at the right end of the
+puzzle::
+
+        for x in range(3, 17):
+
+Offset the "I" piece *x* squares to the right::
+
+            translated = i_aspect.translate((x, 0))
+
+And add the translated piece to the solution matrix::
+
+            self.build_matrix_row('I', translated)
+
+We're done with the "I" piece too::
+
+        keys.remove('I')
+
+Build the rest of the solution matrix normally::
+
+        self.build_regular_matrix(keys)
+
+Add the lines above to your puzzle module and remove any other
+duplicate suppression code.  Running the puzzle again results in only
+6 solutions, all unique.
+
+This approach also reduces the scope of a puzzle, preventing rather
+than suppressing duplicates.
+
+
+Multiple Puzzle Components
+--------------------------
+
+
+
+-----------------------------
+ Modify an Existing Polyform
+-----------------------------
+
+Customize Piece Data
+
+
+-----------------------------------------------------------
+ Define a New Polyform Using an Existing Coordinate System
+-----------------------------------------------------------
+
+Symmetry
+
+--------------------------------
+ Define a New Coordinate System
+--------------------------------
+
+
+.. |---| unicode:: U+2014  .. em dash
+   :trim:
+.. |c| unicode:: U+00A9 .. copyright sign
+.. |x| unicode:: U+00D7 .. multiplication sign
+   :trim:
