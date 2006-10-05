@@ -71,6 +71,9 @@ Changes Since Release 1
 * Added X3D model generation support for polycubes (``-x``/``--x3d``
   option).
 
+* Added docs/extend.txt, "How to Extend Polyform Puzzler", and sample
+  code in docs/examples/.
+
 
 Release 1 (2006-08-08)
 ======================

@@ -143,7 +143,8 @@ Project Files & Directories
   to HTML and other formats using Docutils_.
 
   - FAQ.txt: Frequently Asked Questions (with answers!).
-  - puzzles.txt: list of puzzles implemented and counts of solutions
+  - puzzles.txt: List of puzzles implemented and counts of solutions
+  - extend.txt: How to extend Polyform Puzzler
   - history.txt: Detailed log of changes.
   - todo.txt: To do list.
 

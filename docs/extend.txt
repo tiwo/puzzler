@@ -12,7 +12,12 @@
 .. image:: images/puzzler.png
    :align: center
 
-.. note:: This document is incomplete, a work in progress.
+.. note:: This document is incomplete, a work in progress.  If you
+   have any questions, please ask on the
+   puzzler-users@lists.sourceforge.net mailing list (`subscribe
+   here`__).
+
+   __ https://lists.sourceforge.net/mailman/listinfo/puzzler-users
 
 .. contents::
 
@@ -258,18 +263,21 @@ this context.
 Preventing Duplicates
 =====================
 
-At this point we can run the module to solve the puzzle.  See `Solve
-It`_ above for instructions.
+At this point we can run the module to solve the puzzle.  The code is
+available as `<examples/my_puzzle_1.py>`__.  See `Solve It`_ above for
+instructions.
 
 As defined, this puzzle produces 24 solutions.  If you only want to
-see if the puzzle is solvable -- if there's *any* solution -- you're
-done.
+see if the puzzle is solvable |---| if there's *any* solution |---|
+you're done.
 
 But many of these solutions are duplicates, just rotated or flipped.
 We should take this into account, and Polyform Puzzler provides for
 different approaches to prevent or suppress duplicate solutions.  The
 earlier approaches are simpler but less efficient; the later
-approaches may run faster but take a lot more thought.
+approaches may run faster but take a lot more thought.  Different
+approaches lend themselves to different puzzles; it's up to you to
+choose the most suitable approach.
 
 
 Check for Duplicates
@@ -299,8 +307,9 @@ code or use "help(puzzle.format_solution)" in Python's interactive
 interpreter for specific details.)
 
 Add the lines above to your puzzle module (if you have any other
-duplicate suppression code, remove it now).  Running the puzzle again
-results in only 6 solutions, all unique.
+duplicate suppression code, remove it now), or use
+`<examples/my_puzzle_2.py>`__.  Running the puzzle again results in
+only 6 solutions, all unique.
 
 
 Customize Piece Data
@@ -322,9 +331,10 @@ dictionary is passed as keyword arguments to the puzzles
 "make_aspects" method.  See that method's code for specific details.)
 
 Remove any other duplicate suppression code and add the lines above to
-your puzzle module.  Running the puzzle again results in only 6
-solutions, all unique.  The set of solutions may differ slightly (by a
-rotation or flip), but they will be consistent.
+your puzzle module (or use `<examples/my_puzzle_3.py>`__).  Running
+the puzzle again results in only 6 solutions, all unique.  The set of
+solutions may differ slightly (by a rotation or flip), but they will
+be consistent.
 
 This approach can be significantly faster than checking for
 duplicates, since it reduces the scope of a puzzle, preventing rather
@@ -397,8 +407,10 @@ Extract the second set of coordinates and its aspect object for the
 
         i_coords, i_aspect = self.pieces['I'][1]
 
-The first aspect will be vertical (the coordinates sort first), so we
-take the second aspect.
+The "I" pentomino has two aspects: horizontal and vertical.  The first
+aspect will be vertical because its coordinates sort first, so we take
+the second, horizontal aspect.  We could also ensure that only one
+aspect exists using the technique from `Customize Piece Data`_.
 
 Since the "X" piece is fixed, the "I" piece cannot overlap it, so
 we'll start just to the right of "X", and end at the right end of the
@@ -423,16 +435,85 @@ Build the rest of the solution matrix normally::
         self.build_regular_matrix(keys)
 
 Add the lines above to your puzzle module and remove any other
-duplicate suppression code.  Running the puzzle again results in only
-6 solutions, all unique.
+duplicate suppression code.  The module is available as
+`<examples/my_puzzle_3.py>`__.  Running the puzzle again results in
+only 6 solutions, all unique.
 
 This approach also reduces the scope of a puzzle, preventing rather
 than suppressing duplicates.
 
 
-Multiple Puzzle Components
---------------------------
+Multiple Sub-Puzzles
+--------------------
 
+Some puzzles can be thought of as multiple sub-puzzles.  Let's use the
+4x15 pentomino puzzle as an example:
+
+.. image:: images/pentominoes-4x15.png
+
+Having only one aspect, the "X" pentomino is a key piece.  We can
+prevent duplicates by limiting the possible placement of "X".  We
+observer that "X" must either touch the bottom or the top of the
+puzzle.  Let's limit it to touching the bottom.  We can also limit "X"
+to the left side of the puzzle.  However, there is a special case
+where there is still some symmetry, when "X" is centered horizontally.
+So we split the puzzle into two sub-puzzles.
+
+Here is the code from the "puzzler.puzzles" module.  First we have the
+main puzzle class, which defines a "components" class method to return
+a list of sub-puzzle classes::
+
+    class Pentominoes4x15(Pentominoes):
+
+        """368 solutions"""
+
+        height = 4
+        width = 15
+
+        @classmethod
+        def components(cls):
+            return (Pentominoes4x15A, Pentominoes4x15B)
+
+The first sub-puzzle class restricts the "X" pentomino to the lower
+left of the rectangle, using the `Restrict Piece Placement`_ approach.
+This sub-puzzle has no symmetry issues::
+
+    class Pentominoes4x15A(Pentominoes4x15):
+
+        def build_matrix(self):
+            keys = sorted(self.pieces.keys())
+            x_coords, x_aspect = self.pieces['X'][0]
+            for x in range(1, 6):
+                translated = x_aspect.translate((x, 0))
+                self.build_matrix_row('X', translated)
+            keys.remove('X')
+            self.build_regular_matrix(keys)
+
+The second sub-puzzle places "X" in the center, touching the bottom,
+using the `Restrict Piece Placement`_ approach.  But there is still
+horizontal symmetry to handle.  So we use the `Customize Piece Data`_
+approach to restrict the aspects of an asymmetrical piece, the "P"
+pentomino in this example; we prevent it from flipping.  That takes
+care of the horizontal symmetry::
+
+    class Pentominoes4x15B(Pentominoes4x15):
+
+        """symmetry: X at center; remove flip of P"""
+
+        def customize_piece_data(self):
+            self.piece_data['P'][-1]['flips'] = None
+
+        def build_matrix(self):
+            keys = sorted(self.pieces.keys())
+            x_coords, x_aspect = self.pieces['X'][0]
+            translated = x_aspect.translate((6, 0))
+            self.build_matrix_row('X', translated)
+            keys.remove('X')
+            self.build_regular_matrix(keys)
+
+Depending on the puzzle and how it is subdivided, this approach can
+reduce the efficiency of a puzzle.  This approach should only be used
+if none of the other approaches prove suitable.
 
 
 -----------------------------
@@ -441,6 +522,8 @@ Multiple Puzzle Components
 
 Customize Piece Data
 
+TBD
+
 
 -----------------------------------------------------------
  Define a New Polyform Using an Existing Coordinate System
@@ -448,9 +531,13 @@ Customize Piece Data
 
 Symmetry
 
+TBD
+
 --------------------------------
  Define a New Coordinate System
 --------------------------------
+
+TBD
 
 
 .. |---| unicode:: U+2014  .. em dash

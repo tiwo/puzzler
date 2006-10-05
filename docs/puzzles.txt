@@ -72,7 +72,7 @@ Pentominoes
 
 * 3x21 rectangle with holes: `6 solutions
   <http://puzzler.sf.net/solutions/pentominoes-3x21.txt>`__ (an
-  example puzzle from `How to Extend Polyform Puzzler <extend.html>`_
+  example puzzle from `How to Extend Polyform Puzzler <extend.html>`_)
 
   .. image:: images/pentominoes-3x21.png
 
@@ -294,7 +294,9 @@ are possible however:
 
        - .. figure:: images/pentacubes-3x9x9-open-box.png
 
-            3x9x9 Open Box
+            3x9x9 Open Box: `solutions incomplete
+            <http://puzzler.sf.net/solutions/pentacubes-3x9x9-open-box.txt>`__
+            (`X3D model <images/pentacubes-3x9x9-open-box.x3d>`__)
 
 * Corner crystal (one empty cube is hidden in the corner; puzzle
   suggested by Nick Maeder): `solutions incomplete
