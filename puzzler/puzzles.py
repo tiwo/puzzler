@@ -1058,6 +1058,24 @@ class OneSidedPentominoes3x30(OneSidedPentominoes):
                             {'x_reversed': True, 'y_reversed': True})
 
 
+class OneSidedPentominoes5x18(OneSidedPentominoes3x30):
+
+    height = 5
+    width = 18
+
+
+class OneSidedPentominoes6x15(OneSidedPentominoes3x30):
+
+    height = 6
+    width = 15
+
+
+class OneSidedPentominoes9x10(OneSidedPentominoes3x30):
+
+    height = 9
+    width = 10
+
+
 class SolidPentominoes(Puzzle3D, Pentominoes):
 
     def make_aspects(self, units,

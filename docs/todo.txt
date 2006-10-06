@@ -47,13 +47,6 @@ To implement:
     or long edges)
   - Klein bottle?
 
-* one-sided pentominoes: 9x10?, 6x15, 5x18
-
-  9x10: 10,440,433 solutions (non-isomorphic in reflection,
-  reflections allowed when counting solutions) are reported in
-  "One-sided Pentominoes in a 9 x 10 Rectangle" by `Alfred
-  Wassermann`_, University of Bayreuth, 2000.
-
 * polyiamonds:
 
   - O'Beirne's hexagon one-sided hexiamond problem?  (see Knuth's
