@@ -6,7 +6,7 @@
 <Transform translation="0 0 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 1.000 0.000"/>
+      <Material diffuseColor="0.000 0.502 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -14,7 +14,7 @@
 <Transform translation="1 0 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.502 0.000"/>
+      <Material diffuseColor="0.000 0.502 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -22,7 +22,7 @@
 <Transform translation="2 0 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.502 0.000"/>
+      <Material diffuseColor="0.294 0.000 0.510"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -30,7 +30,7 @@
 <Transform translation="3 0 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.502 0.502"/>
+      <Material diffuseColor="0.294 0.000 0.510"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -38,7 +38,7 @@
 <Transform translation="4 0 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.502 0.502"/>
+      <Material diffuseColor="0.824 0.706 0.549"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -46,7 +46,7 @@
 <Transform translation="5 0 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.600 0.196 0.800"/>
+      <Material diffuseColor="0.824 0.706 0.549"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -54,7 +54,7 @@
 <Transform translation="6 0 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.502 0.000"/>
+      <Material diffuseColor="0.000 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -62,7 +62,7 @@
 <Transform translation="0 1 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.502 0.000"/>
+      <Material diffuseColor="0.600 0.196 0.800"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -70,7 +70,7 @@
 <Transform translation="1 1 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.502 0.000"/>
+      <Material diffuseColor="0.600 0.196 0.800"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -78,7 +78,7 @@
 <Transform translation="2 1 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.502 0.502"/>
+      <Material diffuseColor="1.000 0.549 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -86,7 +86,7 @@
 <Transform translation="3 1 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.502 0.502"/>
+      <Material diffuseColor="0.294 0.000 0.510"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -94,7 +94,7 @@
 <Transform translation="4 1 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.000 0.000"/>
+      <Material diffuseColor="0.294 0.000 0.510"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -102,7 +102,7 @@
 <Transform translation="5 1 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.600 0.196 0.800"/>
+      <Material diffuseColor="0.824 0.706 0.549"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -110,7 +110,7 @@
 <Transform translation="6 1 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.600 0.196 0.800"/>
+      <Material diffuseColor="0.824 0.706 0.549"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -118,7 +118,7 @@
 <Transform translation="0 2 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.737 0.561 0.561"/>
+      <Material diffuseColor="0.804 0.522 0.247"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -126,7 +126,7 @@
 <Transform translation="1 2 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.737 0.561 0.561"/>
+      <Material diffuseColor="0.600 0.196 0.800"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -134,7 +134,7 @@
 <Transform translation="2 2 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.737 0.561 0.561"/>
+      <Material diffuseColor="1.000 0.549 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -142,7 +142,7 @@
 <Transform translation="3 2 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.000 0.000"/>
+      <Material diffuseColor="1.000 0.549 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -150,7 +150,7 @@
 <Transform translation="4 2 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.000 0.000"/>
+      <Material diffuseColor="1.000 0.549 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -158,7 +158,7 @@
 <Transform translation="5 2 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.847 0.749 0.847"/>
+      <Material diffuseColor="0.502 0.502 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -166,7 +166,7 @@
 <Transform translation="6 2 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.847 0.749 0.847"/>
+      <Material diffuseColor="0.502 0.502 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -174,7 +174,7 @@
 <Transform translation="0 3 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.737 0.561 0.561"/>
+      <Material diffuseColor="0.804 0.522 0.247"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -182,7 +182,7 @@
 <Transform translation="1 3 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.843 0.000"/>
+      <Material diffuseColor="0.804 0.522 0.247"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -190,7 +190,7 @@
 <Transform translation="2 3 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.000 0.000"/>
+      <Material diffuseColor="1.000 0.549 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -198,7 +198,7 @@
 <Transform translation="3 3 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.000 0.000"/>
+      <Material diffuseColor="1.000 0.843 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -206,7 +206,7 @@
 <Transform translation="4 3 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.561 0.737 0.561"/>
+      <Material diffuseColor="0.502 0.502 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -214,7 +214,7 @@
 <Transform translation="5 3 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.847 0.749 0.847"/>
+      <Material diffuseColor="0.502 0.502 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -230,7 +230,7 @@
 <Transform translation="0 4 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.843 0.000"/>
+      <Material diffuseColor="0.804 0.522 0.247"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -262,7 +262,7 @@
 <Transform translation="4 4 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.561 0.737 0.561"/>
+      <Material diffuseColor="1.000 0.843 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -270,7 +270,7 @@
 <Transform translation="5 4 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.561 0.737 0.561"/>
+      <Material diffuseColor="0.847 0.749 0.847"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -278,7 +278,7 @@
 <Transform translation="6 4 0">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.561 0.737 0.561"/>
+      <Material diffuseColor="0.847 0.749 0.847"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -286,7 +286,7 @@
 <Transform translation="0 0 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 1.000 0.000"/>
+      <Material diffuseColor="0.600 0.196 0.800"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -294,7 +294,7 @@
 <Transform translation="1 0 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 1.000 0.000"/>
+      <Material diffuseColor="0.000 0.502 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -302,7 +302,7 @@
 <Transform translation="2 0 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.502 0.000"/>
+      <Material diffuseColor="0.000 0.502 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -310,7 +310,7 @@
 <Transform translation="3 0 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.502 0.502"/>
+      <Material diffuseColor="0.294 0.000 0.510"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -318,7 +318,7 @@
 <Transform translation="4 0 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.502 0.000"/>
+      <Material diffuseColor="0.824 0.706 0.549"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -326,7 +326,7 @@
 <Transform translation="5 0 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.502 0.000"/>
+      <Material diffuseColor="0.000 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -334,7 +334,7 @@
 <Transform translation="6 0 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.502 0.000"/>
+      <Material diffuseColor="0.000 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -342,7 +342,7 @@
 <Transform translation="0 1 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 1.000 0.000"/>
+      <Material diffuseColor="0.600 0.196 0.800"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -350,7 +350,7 @@
 <Transform translation="6 1 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.600 0.196 0.800"/>
+      <Material diffuseColor="0.000 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -358,7 +358,7 @@
 <Transform translation="0 2 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.737 0.561 0.561"/>
+      <Material diffuseColor="0.502 0.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -366,7 +366,7 @@
 <Transform translation="6 2 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.600 0.196 0.800"/>
+      <Material diffuseColor="0.502 0.502 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -374,7 +374,7 @@
 <Transform translation="0 3 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.251 0.878 0.816"/>
+      <Material diffuseColor="0.502 0.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -390,7 +390,7 @@
 <Transform translation="0 4 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.251 0.878 0.816"/>
+      <Material diffuseColor="0.804 0.522 0.247"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -398,7 +398,7 @@
 <Transform translation="6 4 1">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.561 0.737 0.561"/>
+      <Material diffuseColor="0.847 0.749 0.847"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -406,7 +406,7 @@
 <Transform translation="0 0 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 1.000 0.000"/>
+      <Material diffuseColor="0.000 0.000 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -414,7 +414,7 @@
 <Transform translation="1 0 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.549 0.000"/>
+      <Material diffuseColor="0.000 0.502 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -422,7 +422,7 @@
 <Transform translation="2 0 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.549 0.000"/>
+      <Material diffuseColor="0.561 0.737 0.561"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -430,7 +430,7 @@
 <Transform translation="3 0 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.549 0.000"/>
+      <Material diffuseColor="1.000 0.000 1.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -446,7 +446,7 @@
 <Transform translation="5 0 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.502 0.000"/>
+      <Material diffuseColor="0.000 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -462,7 +462,7 @@
 <Transform translation="0 1 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.294 0.000 0.510"/>
+      <Material diffuseColor="0.000 0.000 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -470,7 +470,7 @@
 <Transform translation="6 1 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.000 1.000"/>
+      <Material diffuseColor="0.541 0.169 0.886"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -478,7 +478,7 @@
 <Transform translation="0 2 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.867 0.627 0.867"/>
+      <Material diffuseColor="0.000 0.000 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -486,7 +486,7 @@
 <Transform translation="6 2 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.000 1.000"/>
+      <Material diffuseColor="0.541 0.169 0.886"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -494,7 +494,7 @@
 <Transform translation="0 3 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.867 0.627 0.867"/>
+      <Material diffuseColor="0.502 0.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -502,7 +502,7 @@
 <Transform translation="6 3 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.000 1.000"/>
+      <Material diffuseColor="0.541 0.169 0.886"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -510,7 +510,7 @@
 <Transform translation="0 4 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.251 0.878 0.816"/>
+      <Material diffuseColor="0.502 0.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -518,7 +518,7 @@
 <Transform translation="6 4 2">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.000 1.000"/>
+      <Material diffuseColor="0.867 0.627 0.867"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -526,7 +526,7 @@
 <Transform translation="0 0 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.294 0.000 0.510"/>
+      <Material diffuseColor="0.561 0.737 0.561"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -534,7 +534,7 @@
 <Transform translation="1 0 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.294 0.000 0.510"/>
+      <Material diffuseColor="0.561 0.737 0.561"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -542,7 +542,7 @@
 <Transform translation="2 0 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.549 0.000"/>
+      <Material diffuseColor="0.561 0.737 0.561"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -566,7 +566,7 @@
 <Transform translation="5 0 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.388 0.278"/>
+      <Material diffuseColor="1.000 0.000 1.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -574,7 +574,7 @@
 <Transform translation="6 0 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.000 0.502"/>
+      <Material diffuseColor="0.000 0.000 1.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -582,7 +582,7 @@
 <Transform translation="0 1 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.294 0.000 0.510"/>
+      <Material diffuseColor="0.561 0.737 0.561"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -590,7 +590,7 @@
 <Transform translation="6 1 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.000 0.502"/>
+      <Material diffuseColor="0.541 0.169 0.886"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -598,7 +598,7 @@
 <Transform translation="0 2 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.867 0.627 0.867"/>
+      <Material diffuseColor="0.000 0.000 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -606,7 +606,7 @@
 <Transform translation="6 2 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.000 0.502"/>
+      <Material diffuseColor="0.867 0.627 0.867"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -614,7 +614,7 @@
 <Transform translation="0 3 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.251 0.878 0.816"/>
+      <Material diffuseColor="0.000 0.000 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -622,7 +622,7 @@
 <Transform translation="6 3 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 1.000 0.000"/>
+      <Material diffuseColor="0.867 0.627 0.867"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -630,7 +630,7 @@
 <Transform translation="0 4 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.251 0.878 0.816"/>
+      <Material diffuseColor="0.502 0.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -638,7 +638,7 @@
 <Transform translation="6 4 3">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 1.000 0.000"/>
+      <Material diffuseColor="0.867 0.627 0.867"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -646,7 +646,7 @@
 <Transform translation="0 0 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.294 0.000 0.510"/>
+      <Material diffuseColor="0.737 0.561 0.561"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -654,7 +654,7 @@
 <Transform translation="1 0 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.271 0.000"/>
+      <Material diffuseColor="0.737 0.561 0.561"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -662,7 +662,7 @@
 <Transform translation="2 0 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.549 0.000"/>
+      <Material diffuseColor="0.000 1.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -670,7 +670,7 @@
 <Transform translation="3 0 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.000 1.000"/>
+      <Material diffuseColor="0.000 1.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -678,7 +678,7 @@
 <Transform translation="4 0 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.000 1.000"/>
+      <Material diffuseColor="0.000 1.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -686,7 +686,7 @@
 <Transform translation="5 0 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.388 0.278"/>
+      <Material diffuseColor="0.000 1.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -694,7 +694,7 @@
 <Transform translation="6 0 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.388 0.278"/>
+      <Material diffuseColor="0.000 0.000 1.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -702,7 +702,7 @@
 <Transform translation="0 1 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.867 0.627 0.867"/>
+      <Material diffuseColor="0.737 0.561 0.561"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -710,7 +710,7 @@
 <Transform translation="6 1 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.388 0.278"/>
+      <Material diffuseColor="0.541 0.169 0.886"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -718,7 +718,7 @@
 <Transform translation="0 2 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.867 0.627 0.867"/>
+      <Material diffuseColor="0.737 0.561 0.561"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -726,7 +726,7 @@
 <Transform translation="6 2 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.000 0.502"/>
+      <Material diffuseColor="0.867 0.627 0.867"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -734,7 +734,7 @@
 <Transform translation="0 3 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.941 0.502 0.502"/>
+      <Material diffuseColor="0.275 0.510 0.706"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -742,7 +742,7 @@
 <Transform translation="6 3 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 0.000 0.502"/>
+      <Material diffuseColor="0.941 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -750,7 +750,7 @@
 <Transform translation="0 4 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.541 0.169 0.886"/>
+      <Material diffuseColor="0.275 0.510 0.706"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -758,7 +758,7 @@
 <Transform translation="6 4 4">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 1.000 0.000"/>
+      <Material diffuseColor="0.604 0.804 0.196"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -766,7 +766,7 @@
 <Transform translation="0 0 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.271 0.000"/>
+      <Material diffuseColor="0.737 0.561 0.561"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -774,7 +774,7 @@
 <Transform translation="1 0 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.271 0.000"/>
+      <Material diffuseColor="0.502 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -782,7 +782,7 @@
 <Transform translation="2 0 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.604 0.804 0.196"/>
+      <Material diffuseColor="0.000 1.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -790,7 +790,7 @@
 <Transform translation="3 0 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.604 0.804 0.196"/>
+      <Material diffuseColor="1.000 0.271 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -798,7 +798,7 @@
 <Transform translation="4 0 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.804 0.522 0.247"/>
+      <Material diffuseColor="1.000 0.271 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -806,7 +806,7 @@
 <Transform translation="5 0 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.373 0.620 0.627"/>
+      <Material diffuseColor="1.000 0.271 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -814,7 +814,7 @@
 <Transform translation="6 0 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.373 0.620 0.627"/>
+      <Material diffuseColor="0.000 0.000 1.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -822,7 +822,7 @@
 <Transform translation="0 1 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.271 0.000"/>
+      <Material diffuseColor="1.000 1.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -838,7 +838,7 @@
 <Transform translation="0 2 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.502 0.502"/>
+      <Material diffuseColor="0.373 0.620 0.627"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -846,7 +846,7 @@
 <Transform translation="6 2 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.275 0.510 0.706"/>
+      <Material diffuseColor="1.000 0.388 0.278"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -854,7 +854,7 @@
 <Transform translation="0 3 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.941 0.502 0.502"/>
+      <Material diffuseColor="0.373 0.620 0.627"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -862,7 +862,7 @@
 <Transform translation="6 3 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.824 0.706 0.549"/>
+      <Material diffuseColor="0.941 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -870,7 +870,7 @@
 <Transform translation="0 4 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.541 0.169 0.886"/>
+      <Material diffuseColor="0.275 0.510 0.706"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -878,7 +878,7 @@
 <Transform translation="6 4 5">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 1.000 0.000"/>
+      <Material diffuseColor="0.604 0.804 0.196"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -886,7 +886,7 @@
 <Transform translation="0 0 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.502 0.502"/>
+      <Material diffuseColor="1.000 1.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -894,7 +894,7 @@
 <Transform translation="1 0 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.271 0.000"/>
+      <Material diffuseColor="0.502 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -902,7 +902,7 @@
 <Transform translation="2 0 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.604 0.804 0.196"/>
+      <Material diffuseColor="0.502 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -910,7 +910,7 @@
 <Transform translation="3 0 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.804 0.522 0.247"/>
+      <Material diffuseColor="0.502 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -918,7 +918,7 @@
 <Transform translation="4 0 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.804 0.522 0.247"/>
+      <Material diffuseColor="1.000 0.271 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -926,7 +926,7 @@
 <Transform translation="5 0 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.804 0.522 0.247"/>
+      <Material diffuseColor="1.000 0.388 0.278"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -934,7 +934,7 @@
 <Transform translation="6 0 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.373 0.620 0.627"/>
+      <Material diffuseColor="0.000 0.000 1.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -942,7 +942,7 @@
 <Transform translation="0 1 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.502 0.502"/>
+      <Material diffuseColor="1.000 1.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -950,7 +950,7 @@
 <Transform translation="1 1 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.502 0.502"/>
+      <Material diffuseColor="1.000 1.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -958,7 +958,7 @@
 <Transform translation="2 1 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.604 0.804 0.196"/>
+      <Material diffuseColor="0.502 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -966,7 +966,7 @@
 <Transform translation="3 1 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.804 0.522 0.247"/>
+      <Material diffuseColor="1.000 0.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -974,7 +974,7 @@
 <Transform translation="4 1 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.275 0.510 0.706"/>
+      <Material diffuseColor="1.000 0.271 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -982,7 +982,7 @@
 <Transform translation="5 1 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.373 0.620 0.627"/>
+      <Material diffuseColor="1.000 0.388 0.278"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -990,7 +990,7 @@
 <Transform translation="6 1 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.373 0.620 0.627"/>
+      <Material diffuseColor="1.000 0.388 0.278"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -998,7 +998,7 @@
 <Transform translation="0 2 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.502 0.502 0.502"/>
+      <Material diffuseColor="1.000 1.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1006,7 +1006,7 @@
 <Transform translation="1 2 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.941 0.502 0.502"/>
+      <Material diffuseColor="0.373 0.620 0.627"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1014,7 +1014,7 @@
 <Transform translation="2 2 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.604 0.804 0.196"/>
+      <Material diffuseColor="1.000 0.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1030,7 +1030,7 @@
 <Transform translation="4 2 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.275 0.510 0.706"/>
+      <Material diffuseColor="1.000 0.000 0.000"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1038,7 +1038,7 @@
 <Transform translation="5 2 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.275 0.510 0.706"/>
+      <Material diffuseColor="0.941 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1046,7 +1046,7 @@
 <Transform translation="6 2 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.275 0.510 0.706"/>
+      <Material diffuseColor="0.941 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1054,7 +1054,7 @@
 <Transform translation="0 3 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.941 0.502 0.502"/>
+      <Material diffuseColor="0.373 0.620 0.627"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1062,7 +1062,7 @@
 <Transform translation="1 3 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.941 0.502 0.502"/>
+      <Material diffuseColor="0.373 0.620 0.627"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1070,7 +1070,7 @@
 <Transform translation="2 3 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.000 0.000"/>
+      <Material diffuseColor="0.251 0.878 0.816"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1086,7 +1086,7 @@
 <Transform translation="4 3 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.000 0.000"/>
+      <Material diffuseColor="0.251 0.878 0.816"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1094,7 +1094,7 @@
 <Transform translation="5 3 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.824 0.706 0.549"/>
+      <Material diffuseColor="0.604 0.804 0.196"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1102,7 +1102,7 @@
 <Transform translation="6 3 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.824 0.706 0.549"/>
+      <Material diffuseColor="0.941 0.502 0.502"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1110,7 +1110,7 @@
 <Transform translation="0 4 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.541 0.169 0.886"/>
+      <Material diffuseColor="0.275 0.510 0.706"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1118,7 +1118,7 @@
 <Transform translation="1 4 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.541 0.169 0.886"/>
+      <Material diffuseColor="0.275 0.510 0.706"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1126,7 +1126,7 @@
 <Transform translation="2 4 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.541 0.169 0.886"/>
+      <Material diffuseColor="0.251 0.878 0.816"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1134,7 +1134,7 @@
 <Transform translation="3 4 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="1.000 0.000 0.000"/>
+      <Material diffuseColor="0.251 0.878 0.816"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1142,7 +1142,7 @@
 <Transform translation="4 4 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.824 0.706 0.549"/>
+      <Material diffuseColor="0.251 0.878 0.816"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1150,7 +1150,7 @@
 <Transform translation="5 4 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.824 0.706 0.549"/>
+      <Material diffuseColor="0.604 0.804 0.196"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
@@ -1158,7 +1158,7 @@
 <Transform translation="6 4 6">
   <Shape>
     <Appearance>
-      <Material diffuseColor="0.000 1.000 0.000"/>
+      <Material diffuseColor="0.604 0.804 0.196"/>
     </Appearance>
     <Box size="1 1 1"/>
   </Shape>
