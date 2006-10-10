@@ -1545,7 +1545,7 @@ class Pentacubes2x11x11Frame(Pentacubes):
         for y in range(2, self.height - 2):
             for x in range(2, self.width - 2):
                 if ( x == 2 or x == self.width - 3
-                     or y == 2 or y == self.depth - 3):
+                     or y == 2 or y == self.height - 3):
                     yield coordsys.Cartesian3D((x, y, 1))
 
     transform_solution_matrix = Puzzle3D.swap_yz_transform
