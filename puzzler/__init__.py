@@ -174,7 +174,10 @@ class SessionState(object):
 
     def init_runtime(self, path):
         if path:
-            self.state_file = open(path, 'wb')
+            if os.path.exists(path):
+                self.state_file = open(path, 'r+b')
+            else:
+                self.state_file = open(path, 'wb')
         else:
             self.state_file = None
         self.lock = threading.Lock()
@@ -199,6 +202,7 @@ class SessionState(object):
             self.state_file.seek(0)
             pickle.dump(self, self.state_file, 2)
             self.state_file.flush()
+            self.state_file.truncate()
             self.lock.release()
 
     def save_periodically(self, solver):
