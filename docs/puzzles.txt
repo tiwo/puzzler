@@ -173,6 +173,32 @@ Solid Pentominoes
   Three other rings with no solutions were also implemented: 3x4x8,
   3x6x6, and 5x4x4.
 
+* Steps:
+
+  - 5x5x4: `137 solutions
+    <http://puzzler.sf.net/solutions/solid-pentominoes-5x5x4-steps.txt>`__
+    (`X3D model <images/solid-pentominoes-5x5x4-steps.x3d>`__)
+
+    .. image:: images/solid-pentominoes-5x5x4-steps.png
+
+  - 4x4x6: `279 solutions
+    <http://puzzler.sf.net/solutions/solid-pentominoes-4x4x6-steps.txt>`__
+    (`X3D model <images/solid-pentominoes-4x4x6-steps.x3d>`__)
+
+    .. image:: images/solid-pentominoes-4x4x6-steps.png
+
+  - 3x3x10: `9 solutions
+    <http://puzzler.sf.net/solutions/solid-pentominoes-3x3x10-steps.txt>`__
+    (`X3D model <images/solid-pentominoes-3x3x10-steps.x3d>`__)
+
+    .. image:: images/solid-pentominoes-3x3x10-steps.png
+
+* 4x4x8 crystal: `251 solutions
+  <http://puzzler.sf.net/solutions/solid-pentominoes-4x4x8-crystal.txt>`__
+  (`X3D model <images/solid-pentominoes-4x4x8-crystal.x3d>`__)
+
+  .. image:: images/solid-pentominoes-4x4x8-crystal.png
+
 
 Soma Cubes
 ==========

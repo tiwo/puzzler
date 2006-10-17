@@ -592,12 +592,25 @@ class Puzzle3D(Puzzle):
         self.matrix.append(row)
 
     def format_solution(self, solution,
-                        x_reversed=False, y_reversed=False, z_reversed=False):
+                        x_reversed=False, y_reversed=False, z_reversed=False,
+                        xy_swapped=False, xz_swapped=False, yz_swapped=False):
         order_functions = (lambda x: x, reversed)
         x_reversed_fn = order_functions[x_reversed]
         y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
         z_reversed_fn = order_functions[z_reversed]
-        s_matrix = self.build_solution_matrix(solution)
+        #s_matrix = self.build_solution_matrix(solution)
+        s_matrix = self.empty_solution_matrix()
+        for row in solution:
+            name = row[-1]
+            for cell_name in row[:-1]:
+                x, y, z = (int(d.strip()) for d in cell_name.split(','))
+                if xy_swapped:
+                    x, y = y, x
+                if xz_swapped:
+                    x, z = z, x
+                if yz_swapped:
+                    y, z = z, y
+                s_matrix[z][y][x] = name
         return '\n'.join(
             '    '.join(''.join('%-*s' % (self.piece_width, name)
                                 for name in x_reversed_fn(s_matrix[z][y]))
@@ -1375,6 +1388,86 @@ class SolidPentominoes6x3x4Ring(SolidPentominoesRing):
                     self.build_matrix_row('X', translated)
         keys.remove('X')
         self.build_regular_matrix(keys)
+
+
+class SolidPentominoes4x4x8Crystal(SolidPentominoes):
+
+    """251 solutions"""
+
+    width = 4
+    height = 8
+    depth = 4
+
+    def customize_piece_data(self):
+        self.piece_data['F'][-1]['flips'] = None
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    xz_total = x + z
+                    if total < 8 and (y > 3 or xz_total < 4):
+                        yield coordsys.Cartesian3D((x, y, z))
+
+
+class SolidPentominoes5x5x4Steps(SolidPentominoes):
+
+    """137 solutions"""
+
+    width = 4
+    height = 5
+    depth = 5
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'x_reversed': True},
+                            {'yz_swapped': True},
+                            {'x_reversed': True,
+                             'yz_swapped': True},)
+
+    def customize_piece_data(self):
+        self.piece_data['F'][-1]['flips'] = None
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if y + z < self.height:
+                        yield coordsys.Cartesian3D((x, y, z))
+
+
+class SolidPentominoes4x4x6Steps(SolidPentominoes5x5x4Steps):
+
+    """279 solutions"""
+
+    width = 6
+    height = 4
+    depth = 4
+
+
+class SolidPentominoes3x3x10Steps(SolidPentominoes5x5x4Steps):
+
+    """9 solutions"""
+
+    width = 10
+    height = 3
+    depth = 3
+
+
+class SolidPentominoes3x3x12Tower(SolidPentominoes):
+
+    """0 solutions"""
+
+    width = 3
+    height = 12
+    depth = 3
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x, z in ((0,1), (1,0), (1,1), (1,2), (2,1)):
+                yield coordsys.Cartesian3D((x, y, z))
 
 
 class Tetracubes(Puzzle3D):
@@ -4193,7 +4286,7 @@ class Heptiamonds4x23Trapezium(Heptiamonds12x13Trapezium):
 class HeptiamondsHexagram(Heptiamonds):
 
     """
-    0 solutions?
+     solutions
 
     16-unit-high hexagram with central 4-unit hexagonal hole
     """

@@ -46,6 +46,8 @@ Changes Since Release 1
 
   - Pentacubes Plus: 5x5x6, 3x5x10, 2x5x15, 2x3x25.
 
+  - Solid pentominoes: 5x5x4, 4x4x6, & 3x3x10 steps; 4x4x8 crystal.
+
 * Added ``-n``/``--stop-after`` option.
 
 * Added SVG image generation support for polyominoes, polyiamonds,
