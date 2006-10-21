@@ -1470,6 +1470,22 @@ class SolidPentominoes3x3x12Tower(SolidPentominoes):
                 yield coordsys.Cartesian3D((x, y, z))
 
 
+class SolidPentominoes3x5x7Slope(SolidPentominoes):
+
+    """ solutions"""
+
+    width = 5
+    height = 7
+    depth = 3
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x + y + z < self.height:
+                        yield coordsys.Cartesian3D((x, y, z))
+
+
 class Tetracubes(Puzzle3D):
 
     piece_data = {
@@ -1894,6 +1910,61 @@ class Pentacubes3x9x9Mound(Pentacubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
+class Pentacubes11x11x6Pyramid(Pentacubes):
+
+    """ solutions"""
+
+    width = 11
+    height = 11
+    depth = 6
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if (x,y,z) == (5,5,0):
+                        continue
+                    elif z + abs(x - 5) + abs(y - 5) < self.depth:
+                        yield coordsys.Cartesian3D((x, y, z))
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
+class Pentacubes9x9x9OctahedralPlanes(Pentacubes):
+
+    """ solutions"""
+
+    width = 9
+    height = 9
+    depth = 9
+
+    def coordinates(self):
+        coords = set()
+        for i in range(self.depth):
+            for j in range(self.height):
+                if abs(i - 4) + abs(j - 4) < 6:
+                    coords.add(coordsys.Cartesian3D((i, j, 4)))
+                    coords.add(coordsys.Cartesian3D((i, 4, j)))
+                    coords.add(coordsys.Cartesian3D((4, i, j)))
+        return sorted(coords)
+
+
+class Pentacubes2x13x13DiamondFrame(Pentacubes):
+
+    """ solutions"""
+
+    width = 13
+    height = 13
+    depth = 2
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if z * 4 <= abs(x - 6) + abs(y - 6) < 7:
+                        yield coordsys.Cartesian3D((x, y, z))
+
+
 class PentacubesPlus(Pentacubes):
 
     """
@@ -1959,6 +2030,27 @@ class PentacubesPlus5x5x6(PentacubesPlus):
     width = 5
     height = 6
     depth = 5
+
+
+class PentacubesPlus11x11x11OctahedralPlanes(PentacubesPlus):
+
+    """ solutions"""
+
+    width = 11
+    height = 11
+    depth = 11
+
+    def coordinates(self):
+        coords = set()
+        for i in range(self.depth):
+            for j in range(self.height):
+                if i == j == 5:
+                    continue
+                if abs(i - 5) + abs(j - 5) < 6:
+                    coords.add(coordsys.Cartesian3D((i, j, 5)))
+                    coords.add(coordsys.Cartesian3D((i, 5, j)))
+                    coords.add(coordsys.Cartesian3D((5, i, j)))
+        return sorted(coords)
 
 
 class SomaCubes(Puzzle3D):

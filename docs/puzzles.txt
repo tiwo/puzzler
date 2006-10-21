@@ -199,6 +199,12 @@ Solid Pentominoes
 
   .. image:: images/solid-pentominoes-4x4x8-crystal.png
 
+* 3x5x7 slope: `116 solutions
+  <http://puzzler.sf.net/solutions/solid-pentominoes-3x5x7-slope.txt>`__
+  (`X3D model <images/solid-pentominoes-3x5x7-slope.x3d>`__)
+
+  .. image:: images/solid-pentominoes-3x5x7-slope.png
+
 
 Soma Cubes
 ==========
@@ -368,7 +374,7 @@ are possible however:
 
   .. image:: images/pentacubes-nine-slices.png
 
-* Great wall
+* Great wall: no solutions yet
 
   .. image:: images/pentacubes-great-wall.png
 
@@ -414,6 +420,19 @@ are possible however:
 
   .. image:: images/pentacubes-3x9x9-mound.png
 
+* 11x11x6 pyramid (one empty cube in the center of the bottom layer):
+  no solutions yet
+
+  .. image:: images/pentacubes-11x11x6-pyramid.png
+
+* 9x9x9 octahedral planes: no solutions yet
+
+  .. image:: images/pentacubes-9x9x9-octahedral-planes.png
+
+* 2x13x13 diamond frame: no solutions yet
+
+  .. image:: images/pentacubes-2x13x13-diamond-frame.png
+
 
 Pentacubes Plus
 ---------------
@@ -452,6 +471,10 @@ http://www.gamepuzzles.com/sqnames.htm.
     (`X3D model <images/pentacubes-plus-2x3x25.x3d>`__)
 
     .. image:: images/pentacubes-plus-2x3x25.png
+
+* 11x11x11 octahedral planes (central cube is empty): no solutions yet
+
+  .. image:: images/pentacubes-plus-11x11x11-octahedral-planes.png
 
 
 -------------
