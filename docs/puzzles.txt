@@ -19,7 +19,7 @@ http://puzzler.sourceforge.net/solutions; direct links to individual
 solution files are provided.  The solution images below were generated
 by Polyform Puzzler itself, via the ``-s``/``--svg`` option, and SVG
 converted to PNG with Inkscape_.  The X3D models (created via the
-``-x``/``--x3d`` option) can be viewed with Xj3D (multiplatform),
+``-x``/``--x3d`` option) can be viewed with Xj3D_ (multiplatform),
 FreeWrl_ (Mac & GNU/Linux), `Flux Player`_ (Windows), and other 3-D
 viewing software.
 
