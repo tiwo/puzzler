@@ -12,22 +12,23 @@
 .. image:: images/puzzler.png
    :align: center
 
-.. contents::
-
 Polyform Puzzler solves a variety of polyomino, polyiamond, polyhex,
 polycube, and polystick puzzles.  Files containing all solutions of
 most puzzles are available at
 http://puzzler.sourceforge.net/solutions; direct links to individual
 solution files are provided.  The solution images below were generated
 by Polyform Puzzler itself, via the ``-s``/``--svg`` option, and SVG
-converted to PNG with Inkscape_.  The X3D models can be viewed with
-Xj3D (multiplatform), FreeWrl_ (Mac & GNU/Linux), `Flux Player`_
-(Windows), and other 3-D viewing software.
+converted to PNG with Inkscape_.  The X3D models (created via the
+``-x``/``--x3d`` option) can be viewed with Xj3D (multiplatform),
+FreeWrl_ (Mac & GNU/Linux), `Flux Player`_ (Windows), and other 3-D
+viewing software.
 
 .. _Inkscape: http://www.inkscape.org/
 .. _Xj3D: http://www.xj3d.org/
 .. _FreeWRL: http://freewrl.sourceforge.net/
 .. _Flux Player: http://www.mediamachines.com/
+
+.. contents::
 
 
 -------------
