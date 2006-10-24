@@ -68,9 +68,15 @@ def process_command_line():
         '-x', '--x3d', metavar='FILE',
         help='Format the first solution found (or supplied via -r) as X3D '
         'and write it to FILE.')
+    default = search_state_default()
     parser.add_option(
-        '-S', '--save-search-state', metavar='FILE',
-        help='Automatically save & restore the search state to/from FILE.')
+        '-S', '--search-state-file', metavar='FILE', default=default,
+        help=('Use FILE for automatic search state save & restore.  '
+              'Default: "%s".' % default))
+    parser.add_option(
+        '-N', '--no-search-state', dest='search_state_file',
+        action='store_const', const=None,
+        help='Disable automatic search state save & restore.')
     parser.add_option(
         '-h', '--help', help='Show this help message and exit.', action='help')
     settings, args = parser.parse_args()
@@ -79,6 +85,13 @@ def process_command_line():
             '%s takes no command-line arguments; "%s" ignored.'
             % (sys.argv[0], ' '.join(args)))
     return settings
+
+def search_state_default():
+    """Return the default name for the search state file."""
+    prog = os.path.basename(sys.argv[0])
+    if prog.endswith('.py') or prog.endswith('.pyw') or prog.endswith('.pyc'):
+        prog = prog[:prog.rfind('.py')]
+    return '%s.state' % prog
 
 def read_solution(puzzle_class, settings):
     """A solution record was supplied; just read & process it."""
@@ -93,16 +106,21 @@ def solve(puzzle_class, output_stream, settings):
     """Find and record all solutions to a puzzle.  Report on `output_stream`."""
     start = datetime.now()
     try:
+        state = SessionState.restore(settings.search_state_file)
+    except IOError, error:
+        print >>sys.stderr, 'Unable to initialize the search state file:'
+        print >>sys.stderr, '%s: %s' % (error.__class__.__name__, error)
+        sys.exit(1)
+    solver = exact_cover.ExactCover(state=state)
+    if state.num_searches:
+        print >>output_stream, (
+            '\nResuming session (%s solutions, %s searches).\n'
+            % (state.num_solutions, state.num_searches))
+    matrices = []
+    stats = []
+    puzzles = []
+    try:
         try:
-            state = SessionState.restore(settings.save_search_state)
-            solver = exact_cover.ExactCover(state=state)
-            if state.num_searches:
-                print >>output_stream, (
-                    '\nResuming session (%s solutions, %s searches).\n'
-                    % (state.num_solutions, state.num_searches))
-            matrices = []
-            stats = []
-            puzzles = []
             for component in puzzle_class.components():
                 if component.__name__ not in state.completed_components:
                     puzzles.append(component())
@@ -140,7 +158,7 @@ def solve(puzzle_class, output_stream, settings):
                 state.completed_components.add(puzzle.__class__.__name__)
         except KeyboardInterrupt:
             print >>output_stream, 'Session interrupted by user.'
-            state.save(solver)
+            state.save(solver, final=True)
             state.close()
             sys.exit(1)
     finally:
@@ -195,8 +213,8 @@ class SessionState(object):
         del odict['state_file'], odict['lock']
         return odict
 
-    def save(self, solver):
-        if self.state_file and self.lock.acquire(False):
+    def save(self, solver, final=False):
+        if self.state_file and self.lock.acquire(final):
             self.num_solutions = solver.num_solutions
             self.num_searches = solver.num_searches
             self.state_file.seek(0)
