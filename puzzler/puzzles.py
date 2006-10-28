@@ -1965,6 +1965,56 @@ class Pentacubes2x13x13DiamondFrame(Pentacubes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
+class Pentacubes2x3x2Chair(Pentacubes):
+
+    """
+    A structure made of only two pieces.
+
+    17 solutions
+    """
+
+    width = 2
+    height = 3
+    depth = 2
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'x_reversed': True},)
+
+    custom_class_name = 'Pentacubes2x3x2Chair_%(p1)s_%(p2)s'
+    custom_class_template = """\
+class %s(Pentacubes2x3x2Chair):
+    custom_pieces = [%%(p1)r, %%(p2)r]
+""" % custom_class_name
+
+    @classmethod
+    def components(cls):
+        """
+        Generate subpuzzle classes dynamically.
+        One class for each pair of pieces.
+        """
+        piece_names = sorted(SolidPentominoes.piece_data.keys()
+                             + cls.non_planar_piece_data.keys())
+        classes = []
+        for i, p1 in enumerate(piece_names):
+            for p2 in piece_names[i+1:]: # avoid duplicate combinations
+                exec cls.custom_class_template % locals()
+                classes.append(locals()[cls.custom_class_name % locals()])
+        return classes
+
+    def coordinates(self):
+        for coord in ((0,0,0), (1,0,0), (0,1,0), (1,1,0), (0,2,0), (1,2,0),
+                      (0,0,1), (1,0,1), (0,1,1), (1,1,1)):
+            yield coordsys.Cartesian3D(coord)
+
+    def customize_piece_data(self):
+        """Restrict pieces to those listed in `self.custom_pieces`."""
+        Pentacubes.customize_piece_data(self)
+        for name in self.piece_data.keys():
+            if name not in self.custom_pieces:
+                del self.piece_data[name]
+
+
 class PentacubesPlus(Pentacubes):
 
     """

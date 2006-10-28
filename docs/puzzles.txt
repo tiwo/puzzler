@@ -434,6 +434,14 @@ are possible however:
 
   .. image:: images/pentacubes-2x13x13-diamond-frame.png
 
+* 2x3x2 chair (suggestion from Nick Maeder): `17 solutions
+  <http://puzzler.sf.net/solutions/pentacubes-2x3x2-chair.txt>`__
+  (`X3D model <images/pentacubes-2x3x2-chair.x3d>`__).  Each solution
+  uses only two pentacubes out of 29, and only 17 combinations (out of
+  406) produce solutions.
+
+  .. image:: images/pentacubes-2x3x2-chair.png
+
 
 Pentacubes Plus
 ---------------
