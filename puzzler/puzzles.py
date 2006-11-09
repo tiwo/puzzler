@@ -1912,7 +1912,24 @@ class Pentacubes3x9x9Mound(Pentacubes):
 
 class Pentacubes11x11x6Pyramid(Pentacubes):
 
-    """ solutions"""
+    """
+    One empty cube in the center of the bottom layer.
+
+    0 solutions
+
+    Proof of impossibility: Color the cubes of the 29 pentacubes with a 3-D
+    black & white checkerboard pattern, such that no like-colored faces touch.
+    Each pentacube piece has an imbalance of one, except for X and T1, which
+    both have imbalances of 3.  Therefore the maximum possible imbalance of
+    any puzzle is 33.  Now color the 11x11x6 pyramid with the same
+    checkerboard pattern.  The imbalance is 37 (91 cubes of one color vs. 54
+    of the other), more than the maximum possible imbalance.  Even if the
+    empty cube is moved, the imbalance could only be reduced to 35, which is
+    still too large.  No solution is possible.
+
+    Instead of black & white, the coordinate total (X + Y + Z) of each cube
+    could be used, divided into even & odd totals.
+    """
 
     width = 11
     height = 11

@@ -421,11 +421,6 @@ are possible however:
 
   .. image:: images/pentacubes-3x9x9-mound.png
 
-* 11x11x6 pyramid (one empty cube in the center of the bottom layer):
-  no solutions yet
-
-  .. image:: images/pentacubes-11x11x6-pyramid.png
-
 * 9x9x9 octahedral planes: no solutions yet
 
   .. image:: images/pentacubes-9x9x9-octahedral-planes.png
