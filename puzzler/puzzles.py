@@ -1974,6 +1974,10 @@ class Pentacubes2x13x13DiamondFrame(Pentacubes):
     height = 13
     depth = 2
 
+    def customize_piece_data(self):
+        Pentacubes.customize_piece_data(self)
+        self.piece_data['F'][-1]['rotations'] = None
+
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):

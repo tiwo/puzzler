@@ -425,7 +425,9 @@ are possible however:
 
   .. image:: images/pentacubes-9x9x9-octahedral-planes.png
 
-* 2x13x13 diamond frame: no solutions yet
+* 2x13x13 diamond frame: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-2x13x13-diamond-frame.txt>`__
+  (`X3D model <images/pentacubes-2x13x13-diamond-frame.x3d>`__)
 
   .. image:: images/pentacubes-2x13x13-diamond-frame.png
 
