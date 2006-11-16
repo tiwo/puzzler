@@ -1947,9 +1947,34 @@ class Pentacubes11x11x6Pyramid(Pentacubes):
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
-class Pentacubes9x9x9OctahedralPlanes(Pentacubes):
+class Pentacubes11x11x5Pyramid(Pentacubes):
 
     """ solutions"""
+
+    width = 11
+    height = 11
+    depth = 5
+
+    def coordinates(self):
+        corners = set(((0,2),(0,1),(0,0),(1,0),(2,0),
+                       (8,0),(9,0),(10,0),(10,1),(10,2),
+                       (10,8),(10,9),(10,10),(9,10),(8,10),
+                       (2,10),(1,10),(0,10),(0,9),(0,8)))
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( z == 0 and (x,y) not in corners
+                         or z + abs(x - 5) + abs(y - 5) < self.depth):
+                        yield coordsys.Cartesian3D((x, y, z))
+
+
+class Pentacubes9x9x9OctahedralPlanes(Pentacubes):
+
+    """
+     solutions
+
+    Even/odd imbalance: 23.
+    """
 
     width = 9
     height = 9
@@ -2036,6 +2061,56 @@ class %s(Pentacubes2x3x2Chair):
                 del self.piece_data[name]
 
 
+class Pentacubes5x7x5Cubbyholes(Pentacubes):
+
+    """ solutions"""
+
+    width = 5
+    height = 7
+    depth = 5
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if not (x % 2 and y % 2):
+                        yield coordsys.Cartesian3D((x, y, z))
+
+
+class Pentacubes9x9x5Cubbyholes(Pentacubes):
+
+    """ solutions"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 5 < (x + y) < 11 and not (x % 2 and y % 2):
+                        yield coordsys.Cartesian3D((x, y, z))
+
+
+class Pentacubes7x7x5Block(Pentacubes):
+
+    """ solutions"""
+
+    width = 7
+    height = 7
+    depth = 5
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 1 <= x <= 5 and 1 <= y <= 5 or x == 3 or y == 3:
+                        yield coordsys.Cartesian3D((x, y, z))
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
 class PentacubesPlus(Pentacubes):
 
     """
@@ -2105,7 +2180,11 @@ class PentacubesPlus5x5x6(PentacubesPlus):
 
 class PentacubesPlus11x11x11OctahedralPlanes(PentacubesPlus):
 
-    """ solutions"""
+    """
+     solutions
+
+    Even/odd imbalance: 30.
+    """
 
     width = 11
     height = 11

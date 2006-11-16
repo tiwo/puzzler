@@ -43,7 +43,9 @@ Changes Since Release 1
   - Pentacubes: 5x5x6 towers; 2x11x11 frame; 5x7x7 & 3x9x9 open boxes;
     corner crystal; nine slices; great wall; 3x3x20 towers; 3x3x17
     tower; 3x3x19 crystal tower; 5x9x9 fortress; 3x9x9 mound; 9x9x9
-    octahedral planes; 2x13x13 diamond frame; 2x3x2 chair.
+    octahedral planes; 2x13x13 diamond frame; 2x3x2 chair; 11x11x5
+    pyramid with base; 5x7x5 cubbyholes; 9x9x5 cubbyholes; 7x7x5
+    block.
 
   - Pentacubes Plus: 5x5x6, 3x5x10, 2x5x15, 2x3x25; 11x11x11
     octahedral planes.

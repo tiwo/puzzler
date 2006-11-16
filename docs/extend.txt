@@ -453,7 +453,7 @@ Some puzzles can be thought of as multiple sub-puzzles.  Let's use the
 
 Having only one aspect, the "X" pentomino is a key piece.  We can
 prevent duplicates by limiting the possible placement of "X".  We
-observer that "X" must either touch the bottom or the top of the
+observe that "X" must either touch the bottom or the top of the
 puzzle.  Let's limit it to touching the bottom.  We can also limit "X"
 to the left side of the puzzle.  However, there is a special case
 where there is still some symmetry, when "X" is centered horizontally.
