@@ -439,23 +439,27 @@ are possible however:
 
   .. image:: images/pentacubes-2x3x2-chair.png
 
-* 11x11x5 pyramid with base: no solutions yet
+* 11x11x5 pyramid with base: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-11x11x5-pyramid.txt>`__
+  (`X3D model <images/pentacubes-11x11x5-pyramid.x3d>`__)
 
   .. image:: images/pentacubes-11x11x5-pyramid.png
 
-* 5x7x5 cubbyholes: : `solutions incomplete
+* 5x7x5 cubbyholes: `solutions incomplete
   <http://puzzler.sf.net/solutions/pentacubes-5x7x5-cubbyholes.txt>`__
   (`X3D model <images/pentacubes-5x7x5-cubbyholes.x3d>`__)
 
   .. image:: images/pentacubes-5x7x5-cubbyholes.png
 
-* 9x9x5 cubbyholes: : `solutions incomplete
+* 9x9x5 cubbyholes: `solutions incomplete
   <http://puzzler.sf.net/solutions/pentacubes-9x9x5-cubbyholes.txt>`__
   (`X3D model <images/pentacubes-9x9x5-cubbyholes.x3d>`__)
 
   .. image:: images/pentacubes-9x9x5-cubbyholes.png
 
-* 7x7x5 block: no solutions yet
+* 7x7x5 block: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-7x7x5-block.txt>`__
+  (`X3D model <images/pentacubes-7x7x5-block.x3d>`__)
 
   .. image:: images/pentacubes-7x7x5-block.png
 
