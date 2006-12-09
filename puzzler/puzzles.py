@@ -1786,7 +1786,7 @@ class PentacubesGreatWall(Pentacubes):
                     elif 11 < x + y < 15:
                         yield coordsys.Cartesian3D((x, y, z))
 
-    transform_solution_matrix = Puzzle3D.swap_yz_transform
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
 class Pentacubes3x3x20Tower1(Pentacubes):

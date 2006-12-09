@@ -375,7 +375,9 @@ are possible however:
 
   .. image:: images/pentacubes-nine-slices.png
 
-* Great wall: no solutions yet
+* Great wall: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-great-wall.txt>`__
+  (`X3D model <images/pentacubes-great-wall.x3d>`__)
 
   .. image:: images/pentacubes-great-wall.png
 
