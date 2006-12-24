@@ -23,12 +23,15 @@ converted to PNG with Inkscape_.  The X3D models (created via the
 FreeWrl_ (Mac & GNU/Linux), `Flux Player`_ (Windows), and other 3-D
 viewing software.
 
+.. contents::
+
+Also see: `Polyform Puzzler FAQ`_
+
 .. _Inkscape: http://www.inkscape.org/
 .. _Xj3D: http://www.xj3d.org/
 .. _FreeWRL: http://freewrl.sourceforge.net/
 .. _Flux Player: http://www.mediamachines.com/
-
-.. contents::
+.. _Polyform Puzzler FAQ: FAQ.html
 
 
 -------------

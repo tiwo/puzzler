@@ -22,7 +22,7 @@
 .. sectnum::
 .. contents::
 
-Other documents:
+Related documents:
 
 * `Puzzles & Solutions <puzzles.html>`_
 * `How to Extend Polyform Puzzler <extend.html>`_
