@@ -1040,7 +1040,7 @@ class Pentominoes8x8CenterHoleB(Pentominoes8x8CenterHole):
 
 class Pentominoes8x8WithoutCorners(Pentominoes):
 
-    """ solutions"""
+    """2170 solutions"""
 
     height = 8
     width = 8
