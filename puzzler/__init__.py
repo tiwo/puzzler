@@ -10,7 +10,7 @@ applications (solvers) for exploring & solving polyform puzzles.
 """
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2006 by David J. Goodger
+# Copyright: (C) 1998-2007 by David J. Goodger
 # License: 
 #     This program is free software; you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License version 2

@@ -9,7 +9,7 @@
 **Polyform Puzzler** is a software toolkit for exploring & solving
 polyform puzzles.
 
-Copyright |c| 1998-2006  David J. Goodger <goodger@python.org>
+Copyright |c| 1998-2007  David J. Goodger <goodger@python.org>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the `GNU General Public License version 2
