@@ -3,7 +3,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2006 by David J. Goodger
+# Copyright: (C) 1998-2007 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 import pdb
@@ -1036,6 +1036,25 @@ class Pentominoes8x8CenterHoleB(Pentominoes8x8CenterHole):
         self.build_matrix_row('X', translated)
         keys.remove('X')
         self.build_regular_matrix(keys)
+
+
+class Pentominoes8x8WithoutCorners(Pentominoes):
+
+    """ solutions"""
+
+    height = 8
+    width = 8
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x in range(self.width):
+                if (x == 0 or x == 7) and (y == 0 or y == 7):
+                    continue
+                yield coordsys.Cartesian2D((x, y))
 
 
 class OneSidedPentominoes(Pentominoes):

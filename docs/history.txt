@@ -8,7 +8,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2006 by David J. Goodger
+:Copyright: |c| 1998-2007 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. contents::
@@ -52,6 +52,8 @@ Changes Since Release 1
 
   - Solid pentominoes: 5x5x4, 4x4x6, & 3x3x10 steps; 4x4x8 crystal;
     3x5x7 slope.
+
+  - Pentominoes: 8x8 without corners.
 
 * Added ``-n``/``--stop-after`` option.
 

@@ -6,7 +6,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2006 by David J. Goodger
+:Copyright: |c| 1998-2007 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -73,6 +73,11 @@ Pentominoes
   <http://puzzler.sf.net/solutions/pentominoes-8x8.txt>`__
 
   .. image:: images/pentominoes-8x8.png
+
+* 8x8 square with missing corners: `2170 solutions
+  <http://puzzler.sf.net/solutions/pentominoes-8x8-corners.txt>`__
+
+  .. image:: images/pentominoes-8x8-corners.png
 
 * 3x21 rectangle with holes: `6 solutions
   <http://puzzler.sf.net/solutions/pentominoes-3x21.txt>`__ (an
