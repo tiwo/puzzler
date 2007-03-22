@@ -202,11 +202,31 @@ Solid Pentominoes
 
     .. image:: images/solid-pentominoes-3x3x10-steps.png
 
-* 4x4x8 crystal: `251 solutions
-  <http://puzzler.sf.net/solutions/solid-pentominoes-4x4x8-crystal.txt>`__
-  (`X3D model <images/solid-pentominoes-4x4x8-crystal.x3d>`__)
+* Crystals:
 
-  .. image:: images/solid-pentominoes-4x4x8-crystal.png
+  - 4x4x8: `251 solutions
+    <http://puzzler.sf.net/solutions/solid-pentominoes-4x4x8-crystal.txt>`__
+    (`X3D model <images/solid-pentominoes-4x4x8-crystal.x3d>`__)
+
+    .. image:: images/solid-pentominoes-4x4x8-crystal.png
+
+  - 6x6x6 no. 1: `2 solutions
+    <http://puzzler.sf.net/solutions/solid-pentominoes-6x6x6-crystal-1.txt>`__
+    (`X3D model <images/solid-pentominoes-6x6x6-crystal-1.x3d>`__)
+
+    .. image:: images/solid-pentominoes-6x6x6-crystal-1.png
+
+  - 6x6x6 no. 2: `1 solution
+    <http://puzzler.sf.net/solutions/solid-pentominoes-6x6x6-crystal-2.txt>`__
+    (`X3D model <images/solid-pentominoes-6x6x6-crystal-2.x3d>`__)
+
+    .. image:: images/solid-pentominoes-6x6x6-crystal-2.png
+
+  - 6x6x6 no. 3: `9 solutions
+    <http://puzzler.sf.net/solutions/solid-pentominoes-6x6x6-crystal-3.txt>`__
+    (`X3D model <images/solid-pentominoes-6x6x6-crystal-3.x3d>`__)
+
+    .. image:: images/solid-pentominoes-6x6x6-crystal-3.png
 
 * 3x5x7 slope: `116 solutions
   <http://puzzler.sf.net/solutions/solid-pentominoes-3x5x7-slope.txt>`__

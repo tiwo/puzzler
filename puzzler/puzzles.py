@@ -1505,6 +1505,128 @@ class SolidPentominoes3x5x7Slope(SolidPentominoes):
                         yield coordsys.Cartesian3D((x, y, z))
 
 
+class SolidPentominoes6x6x6Crystal1(SolidPentominoes):
+
+    """2 solutions"""
+
+    width = 6
+    height = 6
+    depth = 6
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['axes'] = None
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x + y + z < 6:
+                        yield coordsys.Cartesian3D((x, y, z))
+        for x, y, z in ((1,1,4), (1,4,1), (4,1,1), (2,2,2)):
+            yield coordsys.Cartesian3D((x, y, z))
+
+
+class SolidPentominoes6x6x6Crystal2(SolidPentominoes):
+
+    """1 solution"""
+
+    width = 6
+    height = 6
+    depth = 6
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x + y + z < 6:
+                        yield coordsys.Cartesian3D((x, y, z))
+        for x, y, z in ((1,2,3), (2,2,2), (3,2,1), (1,4,1)):
+            yield coordsys.Cartesian3D((x, y, z))
+
+
+class SolidPentominoes6x6x6Crystal3(SolidPentominoes):
+
+    """ solutions"""
+
+    width = 6
+    height = 6
+    depth = 6
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['axes'] = None
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x + y + z < 6:
+                        yield coordsys.Cartesian3D((x, y, z))
+        for x, y, z in ((1,2,3), (3,1,2), (2,3,1), (2,2,2)):
+            yield coordsys.Cartesian3D((x, y, z))
+
+
+class SolidPentominoes6x6x6Crystal1(SolidPentominoes):
+
+    """2 solutions"""
+
+    width = 6
+    height = 6
+    depth = 6
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['axes'] = None
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x + y + z < 6:
+                        yield coordsys.Cartesian3D((x, y, z))
+        for x, y, z in ((1,1,4), (1,4,1), (4,1,1), (2,2,2)):
+            yield coordsys.Cartesian3D((x, y, z))
+
+
+class SolidPentominoes6x6x6CrystalX1(SolidPentominoes):
+
+    """0 solutions"""
+
+    width = 6
+    height = 6
+    depth = 6
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x + y + z < 6:
+                        yield coordsys.Cartesian3D((x, y, z))
+        for x, y, z in ((1,1,4), (2,1,3), (3,1,2), (4,1,1)):
+            yield coordsys.Cartesian3D((x, y, z))
+
+
+class SolidPentominoes7x7x7Crystal(SolidPentominoes):
+
+    """0 solutions"""
+
+    width = 7
+    height = 7
+    depth = 7
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if x + y + z < 6:
+                        yield coordsys.Cartesian3D((x, y, z))
+        for x, y, z in ((0,0,6), (0,6,0), (6,0,0), (2,2,2)):
+            yield coordsys.Cartesian3D((x, y, z))
+
+
 class Tetracubes(Puzzle3D):
 
     piece_data = {
