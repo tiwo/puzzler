@@ -180,8 +180,7 @@ The first thing to define is the bounding box, size, or maximum
 dimensions of the puzzle solution.  In other words, how wide and how
 high is the puzzle?  Pentominoes puzzles use ordinary 2-dimensional
 (X,Y) Cartesian coordinates.  Other puzzles use 3-dimensional (X,Y,Z)
-Cartesian coordinates or modified coordinate systems.  All puzzles
-begin counting at 0 though.
+Cartesian coordinates or modified coordinate systems.
 
 In the body of your puzzle module (i.e. after the import statements),
 add the following class definition::
@@ -223,6 +222,8 @@ We do this using a "coordinates" method (indented 4 spaces)::
 The first line defines the method; "self" refers to the puzzle object
 and is required in the definition.  The second line defines "holes", a
 set of coordinates.  Each coordinate is a tuple, a kind of list.
+Coordinates start at 0 (that's the way computers work), so the lower
+left-hand corner is (0,0).
 
 Next we generate all possible coordinates, using "for" loops and the
 "range" function.  Note that we can refer to attributes of the puzzle
@@ -275,9 +276,9 @@ But many of these solutions are duplicates, just rotated or flipped.
 We should take this into account, and Polyform Puzzler provides for
 different approaches to prevent or suppress duplicate solutions.  The
 earlier approaches are simpler but less efficient; the later
-approaches may run faster but take a lot more thought.  Different
-approaches lend themselves to different puzzles; it's up to you to
-choose the most suitable approach.
+approaches may run faster but take more thought.  Different approaches
+lend themselves to different puzzles; it's up to you to choose the
+most suitable approach.
 
 
 Check for Duplicates
@@ -333,8 +334,9 @@ dictionary is passed as keyword arguments to the puzzles
 Remove any other duplicate suppression code and add the lines above to
 your puzzle module (or use `<examples/my_puzzle_3.py>`__).  Running
 the puzzle again results in only 6 solutions, all unique.  The set of
-solutions may differ slightly (by a rotation or flip), but they will
-be consistent.
+solutions may differ slightly (by rotation or reflection) from the
+solutions produced using other duplicate-prevention techniques, but
+they will be equivalent.
 
 This approach can be significantly faster than checking for
 duplicates, since it reduces the scope of a puzzle, preventing rather
