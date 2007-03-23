@@ -1,0 +1,247 @@
+================================
+ Pentacubes Puzzles & Solutions
+================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2007 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+Also see:
+
+| `Solid Pentominoes <solid-pentominoes.html>`_
+| `Polycubes <polycubes.html>`_
+| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+| `Polyform Puzzler FAQ <FAQ.html>`_
+
+.. contents::
+
+
+Pentacubes
+==========
+
+The 29 pentacubes cannot form a simple box-shaped solid.  Other forms
+are possible however:
+
+
+5x5x6 Towers
+------------
+
+.. list-table::
+   :class: borderless
+
+   * - .. figure:: images/pentacubes-5x5x6-tower-1.png
+
+          Tower 1: `solutions incomplete
+          <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-1.txt>`__
+          (`X3D model <images/pentacubes-5x5x6-tower-1.x3d>`__)
+
+     - .. figure:: images/pentacubes-5x5x6-tower-2.png
+
+          Tower 2: `solutions incomplete
+          <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-2.txt>`__
+          (`X3D model <images/pentacubes-5x5x6-tower-2.x3d>`__)
+
+     - .. figure:: images/pentacubes-5x5x6-tower-3.png
+
+          Tower 3: `solutions incomplete
+          <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-3.txt>`__
+          (`X3D model <images/pentacubes-5x5x6-tower-3.x3d>`__)
+
+
+Open Boxes
+----------
+
+(closed on the bottom)
+
+.. list-table::
+   :class: borderless
+
+   * - .. figure:: images/pentacubes-5x7x7-open-box.png
+
+          5x7x7 Open Box: `solutions incomplete
+          <http://puzzler.sf.net/solutions/pentacubes-5x7x7-open-box.txt>`__
+          (`X3D model <images/pentacubes-5x7x7-open-box.x3d>`__)
+
+     - .. figure:: images/pentacubes-3x9x9-open-box.png
+
+          3x9x9 Open Box: `solutions incomplete
+          <http://puzzler.sf.net/solutions/pentacubes-3x9x9-open-box.txt>`__
+          (`X3D model <images/pentacubes-3x9x9-open-box.x3d>`__)
+
+
+Highrise Towers
+---------------
+
+.. list-table::
+   :class: borderless
+
+   * - .. figure:: images/pentacubes-3x3x20-tower-1.png
+
+          3x3x20 Tower 1 (suggested by Nick Maeder): `solutions incomplete
+          <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-1.txt>`__
+          (`X3D model <images/pentacubes-3x3x20-tower-1.x3d>`__)
+
+     - .. figure:: images/pentacubes-3x3x20-tower-2.png
+
+          3x3x20 Tower 2 (suggested by Nick Maeder): `solutions incomplete
+          <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-2.txt>`__
+          (`X3D model <images/pentacubes-3x3x20-tower-2.x3d>`__)
+
+     - .. figure:: images/pentacubes-3x3x17-tower.png
+
+          3x3x17 Tower: `solutions incomplete
+          <http://puzzler.sf.net/solutions/pentacubes-3x3x17-tower.txt>`__
+          (`X3D model <images/pentacubes-3x3x17-tower.x3d>`__)
+
+     - .. figure:: images/pentacubes-3x3x19-crystal-tower.png
+
+          3x3x19 Crystal Tower: `solutions incomplete
+          <http://puzzler.sf.net/solutions/pentacubes-3x3x19-crystal-tower.txt>`__
+          (`X3D model <images/pentacubes-3x3x19-crystal-tower.x3d>`__)
+
+
+Cubbyholes
+----------
+
+* 5x7x5 cubbyholes: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-5x7x5-cubbyholes.txt>`__
+  (`X3D model <images/pentacubes-5x7x5-cubbyholes.x3d>`__)
+
+  .. image:: images/pentacubes-5x7x5-cubbyholes.png
+
+* 9x9x5 cubbyholes: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-9x9x5-cubbyholes.txt>`__
+  (`X3D model <images/pentacubes-9x9x5-cubbyholes.x3d>`__)
+
+  .. image:: images/pentacubes-9x9x5-cubbyholes.png
+
+
+Misc
+----
+
+* 2x11x11 frame (11x11 square bottom layer with 7x7 square frame on
+  top): `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-2x11x11-frame.txt>`__
+  (`X3D model <images/pentacubes-2x11x11-frame.x3d>`__)
+
+  .. image:: images/pentacubes-2x11x11-frame.png
+
+* Corner crystal (one empty cube is hidden in the corner; puzzle
+  suggested by Nick Maeder): `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-corner-crystal.txt>`__
+  (`X3D model <images/pentacubes-corner-crystal.x3d>`__)
+
+  .. image:: images/pentacubes-corner-crystal.png
+
+* Nine slices: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-nine-slices.txt>`__
+  (`X3D model <images/pentacubes-nine-slices.x3d>`__)
+
+  .. image:: images/pentacubes-nine-slices.png
+
+* Great wall: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-great-wall.txt>`__
+  (`X3D model <images/pentacubes-great-wall.x3d>`__)
+
+  .. image:: images/pentacubes-great-wall.png
+
+* 5x9x9 fortress (suggestion by & solutions from Nick Maeder):
+  `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-5x9x9-fortress.txt>`__
+  (`X3D model <images/pentacubes-5x9x9-fortress.x3d>`__)
+
+  .. image:: images/pentacubes-5x9x9-fortress.png
+
+* 3x9x9 mound: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-3x9x9-mound.txt>`__
+  (`X3D model <images/pentacubes-3x9x9-mound.x3d>`__)
+
+  .. image:: images/pentacubes-3x9x9-mound.png
+
+* 9x9x9 octahedral planes: no solutions yet
+
+  .. image:: images/pentacubes-9x9x9-octahedral-planes.png
+
+* 2x13x13 diamond frame: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-2x13x13-diamond-frame.txt>`__
+  (`X3D model <images/pentacubes-2x13x13-diamond-frame.x3d>`__)
+
+  .. image:: images/pentacubes-2x13x13-diamond-frame.png
+
+* 2x3x2 chair (suggestion from Nick Maeder): `17 solutions
+  <http://puzzler.sf.net/solutions/pentacubes-2x3x2-chair.txt>`__
+  (`X3D model <images/pentacubes-2x3x2-chair.x3d>`__).  Each solution
+  uses only two pentacubes out of 29, and only 17 combinations (out of
+  406) produce solutions.
+
+  .. image:: images/pentacubes-2x3x2-chair.png
+
+* 11x11x5 pyramid with base: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-11x11x5-pyramid.txt>`__
+  (`X3D model <images/pentacubes-11x11x5-pyramid.x3d>`__)
+
+  .. image:: images/pentacubes-11x11x5-pyramid.png
+
+* 7x7x5 block: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-7x7x5-block.txt>`__
+  (`X3D model <images/pentacubes-7x7x5-block.x3d>`__)
+
+  .. image:: images/pentacubes-7x7x5-block.png
+
+
+Pentacubes Plus
+===============
+
+Sold under the name "`Super Deluxe Quintillions`_" by Kadon, these 30
+pieces are the 29 pentacubes plus a second L3 piece (a.k.a. J3),
+allowing the construction of box shapes.  The Super Deluxe
+Quintillions pieces are named as per the pentominoes, with the
+non-planar "Superquints" named here:
+http://www.gamepuzzles.com/sqnames.htm.
+
+.. _Super Deluxe Quintillions: http://www.gamepuzzles.com/polycube.htm#SQd
+
+
+Solids
+------
+
+- 5x5x6: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-plus-5x5x6.txt>`__
+  (`X3D model <images/pentacubes-plus-5x5x6.x3d>`__)
+
+  .. image:: images/pentacubes-plus-5x5x6.png
+
+- 3x5x10: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-plus-3x5x10.txt>`__
+  (`X3D model <images/pentacubes-plus-3x5x10.x3d>`__)
+
+  .. image:: images/pentacubes-plus-3x5x10.png
+
+- 2x5x15: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-plus-2x5x15.txt>`__
+  (`X3D model <images/pentacubes-plus-2x5x15.x3d>`__)
+
+  .. image:: images/pentacubes-plus-2x5x15.png
+
+- 2x3x25: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-plus-2x3x25.txt>`__
+  (`X3D model <images/pentacubes-plus-2x3x25.x3d>`__)
+
+  .. image:: images/pentacubes-plus-2x3x25.png
+
+
+Misc
+----
+
+* 11x11x11 octahedral planes (central cube is empty): no solutions yet
+
+  .. image:: images/pentacubes-plus-11x11x11-octahedral-planes.png
+
+
+.. |c| unicode:: U+00A9 .. copyright sign

@@ -1,0 +1,61 @@
+===============================
+ Polyhexes Puzzles & Solutions
+===============================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2007 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+Also see:
+
+| `Pentahexes <pentahexes.html>`_
+| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+| `Polyform Puzzler FAQ <FAQ.html>`_
+
+.. contents::
+
+
+Tetrahexes
+==========
+
+* 4x7 parallelogram: `9 solutions
+  <http://puzzler.sf.net/solutions/tetrahex-4x7.txt>`__
+
+  .. image:: images/tetrahex-4x7.png
+
+* 3x10 parallelogram with corners clipped (centered rows of
+  length 9, 10, 9): `2 solutions
+  <http://puzzler.sf.net/solutions/tetrahex-3x10-clipped.txt>`__
+
+  .. image:: images/tetrahex-3x10-clipped.png
+
+* 5x7 "coin" (elongated hexagon with central hole): `4 solutions
+  <http://puzzler.sf.net/solutions/tetrahex-coin.txt>`__
+
+  .. image:: images/tetrahex-coin.png
+
+
+Polyhexes of Order 1 Through 4
+==============================
+
+These puzzles uses the monohex, the dihex, the three trihexes, and the
+seven tetrahexes.
+
+* 4x10 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polyhex-4x10.txt>`__
+
+  .. image:: images/polyhex-4x10.png
+
+* 5x8 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polyhex-5x8.txt>`__
+
+  .. image:: images/polyhex-5x8.png
+
+
+.. |c| unicode:: U+00A9 .. copyright sign

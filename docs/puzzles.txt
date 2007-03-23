@@ -23,8 +23,6 @@ converted to PNG with Inkscape_.  The X3D models (created via the
 FreeWrl_ (Mac & GNU/Linux), `Flux Player`_ (Windows), and other 3-D
 viewing software.
 
-.. contents::
-
 Also see: `Polyform Puzzler FAQ`_
 
 .. _Inkscape: http://www.inkscape.org/
@@ -34,864 +32,98 @@ Also see: `Polyform Puzzler FAQ`_
 .. _Polyform Puzzler FAQ: FAQ.html
 
 
--------------
- Polyominoes
--------------
-
-Pentominoes
-===========
-
-* Rectangles:
-
-  - 3x20: `2 solutions
-    <http://puzzler.sf.net/solutions/pentominoes-3x20.txt>`__
-
-    .. image:: images/pentominoes-3x20.png
-
-  - 4x15: `368 solutions
-    <http://puzzler.sf.net/solutions/pentominoes-4x15.txt>`__
-
-    .. image:: images/pentominoes-4x15.png
-
-  - 5x12: `1010 solutions
-    <http://puzzler.sf.net/solutions/pentominoes-5x12.txt>`__
-
-    .. image:: images/pentominoes-5x12.png
-
-  - 6x10: `2339 solutions
-    <http://puzzler.sf.net/solutions/pentominoes-6x10.txt>`__
-
-    .. image:: images/pentominoes-6x10.png
-
-* 3x20 ring (3x20 rectangle joined at the ends): 2 solutions
-  (same as the 3x20 rectangle; the V piece forces a partition)
-
-* 3x20 tube (3x20 rectangle joined at the long edges): `solutions
-  incomplete <http://puzzler.sf.net/solutions/pentominoes-3x20-tube.txt>`__
-
-* 8x8 square with a central 2x2 hole: `65 solutions
-  <http://puzzler.sf.net/solutions/pentominoes-8x8.txt>`__
-
-  .. image:: images/pentominoes-8x8.png
-
-* 8x8 square with missing corners: `2170 solutions
-  <http://puzzler.sf.net/solutions/pentominoes-8x8-corners.txt>`__
-
-  .. image:: images/pentominoes-8x8-corners.png
-
-* 3x21 rectangle with holes: `6 solutions
-  <http://puzzler.sf.net/solutions/pentominoes-3x21.txt>`__ (an
-  example puzzle from `How to Extend Polyform Puzzler <extend.html>`_)
-
-  .. image:: images/pentominoes-3x21.png
-
-
-One-Sided Pentominoes
-=====================
-
-* Rectangles:
-
-  - 3x30: `46 solutions
-    <http://puzzler.sf.net/solutions/one-sided-pentominoes-3x30.txt>`__
-
-    .. image:: images/one-sided-pentominoes-3x30.png
-
-  - 5x18: 686,628 solutions (`incomplete list
-    <http://puzzler.sf.net/solutions/one-sided-pentominoes-5x18.txt>`__)
-
-    .. image:: images/one-sided-pentominoes-5x18.png
-
-  - 6x15: 2,567,183 solutions (`incomplete list
-    <http://puzzler.sf.net/solutions/one-sided-pentominoes-6x15.txt>`__)
-
-    .. image:: images/one-sided-pentominoes-6x15.png
-
-  - 9x10: 10,440,433 solutions (`incomplete list
-    <http://puzzler.sf.net/solutions/one-sided-pentominoes-9x10.txt>`__)
-
-    .. image:: images/one-sided-pentominoes-9x10.png
-
-    10,440,433 solutions (non-isomorphic in reflection, reflections
-    allowed when counting solutions) are reported in "One-sided
-    Pentominoes in a 9 x 10 Rectangle" by `Alfred Wassermann`_,
-    University of Bayreuth, 2000.
-
-    .. _Alfred Wassermann:
-       http://did.mat.uni-bayreuth.de/~alfred/home/index.html
-
-  The numbers of solutions for the last three puzzles above were taken
-  from `Gerard Putter's Polyomino Solution Page`__, as reported by
-  Stephen Montgomery-Smith.
-
-  __ http://www.xs4all.nl/~gp/PolyominoSolver/Polyomino.html
-
-
------------
- Polycubes
------------
-
-Solid Pentominoes
-=================
-
-* Solids:
-
-  - 2x3x10: `10 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-2x3x10.txt>`__
-    (`X3D model <images/solid-pentominoes-2x3x10.x3d>`__)
-
-    .. image:: images/solid-pentominoes-2x3x10.png
-
-  - 2x5x6: `264 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-2x5x6.txt>`__
-    (`X3D model <images/solid-pentominoes-2x5x6.x3d>`__)
-
-    .. image:: images/solid-pentominoes-2x5x6.png
-
-  - 3x4x5: `3940 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-3x4x5.txt>`__
-    (`X3D model <images/solid-pentominoes-3x4x5.x3d>`__)
-
-    .. image:: images/solid-pentominoes-3x4x5.png
-
-* Ring walls (rectangular walls, 1 cube thick, with hollow centers):
-
-  - 3x3x9: `3 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-3x3x9-ring.txt>`__
-    (`X3D model <images/solid-pentominoes-3x3x9-ring.x3d>`__)
-
-    .. image:: images/solid-pentominoes-3x3x9-ring.png
-
-  - 3x5x7: `1 solution
-    <http://puzzler.sf.net/solutions/solid-pentominoes-3x5x7-ring.txt>`__
-    (`X3D model <images/solid-pentominoes-3x5x7-ring.x3d>`__)
-
-    .. image:: images/solid-pentominoes-3x5x7-ring.png
-
-  - 5x3x5: `186 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-5x3x5-ring.txt>`__
-    (`X3D model <images/solid-pentominoes-5x3x5-ring.x3d>`__)
-
-    .. image:: images/solid-pentominoes-5x3x5-ring.png
-
-  - 6x3x4: `46 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-6x3x4-ring.txt>`__
-    (`X3D model <images/solid-pentominoes-6x3x4-ring.x3d>`__)
-
-    .. image:: images/solid-pentominoes-6x3x4-ring.png
-
-  Three other rings with no solutions were also implemented: 3x4x8,
-  3x6x6, and 5x4x4.
-
-* Steps:
-
-  - 5x5x4: `137 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-5x5x4-steps.txt>`__
-    (`X3D model <images/solid-pentominoes-5x5x4-steps.x3d>`__)
-
-    .. image:: images/solid-pentominoes-5x5x4-steps.png
-
-  - 4x4x6: `279 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-4x4x6-steps.txt>`__
-    (`X3D model <images/solid-pentominoes-4x4x6-steps.x3d>`__)
-
-    .. image:: images/solid-pentominoes-4x4x6-steps.png
-
-  - 3x3x10: `9 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-3x3x10-steps.txt>`__
-    (`X3D model <images/solid-pentominoes-3x3x10-steps.x3d>`__)
-
-    .. image:: images/solid-pentominoes-3x3x10-steps.png
-
-* Crystals:
-
-  - 4x4x8: `251 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-4x4x8-crystal.txt>`__
-    (`X3D model <images/solid-pentominoes-4x4x8-crystal.x3d>`__)
-
-    .. image:: images/solid-pentominoes-4x4x8-crystal.png
-
-  - 6x6x6 no. 1: `2 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-6x6x6-crystal-1.txt>`__
-    (`X3D model <images/solid-pentominoes-6x6x6-crystal-1.x3d>`__)
-
-    .. image:: images/solid-pentominoes-6x6x6-crystal-1.png
-
-  - 6x6x6 no. 2: `1 solution
-    <http://puzzler.sf.net/solutions/solid-pentominoes-6x6x6-crystal-2.txt>`__
-    (`X3D model <images/solid-pentominoes-6x6x6-crystal-2.x3d>`__)
-
-    .. image:: images/solid-pentominoes-6x6x6-crystal-2.png
-
-  - 6x6x6 no. 3: `9 solutions
-    <http://puzzler.sf.net/solutions/solid-pentominoes-6x6x6-crystal-3.txt>`__
-    (`X3D model <images/solid-pentominoes-6x6x6-crystal-3.x3d>`__)
-
-    .. image:: images/solid-pentominoes-6x6x6-crystal-3.png
-
-* 3x5x7 slope: `116 solutions
-  <http://puzzler.sf.net/solutions/solid-pentominoes-3x5x7-slope.txt>`__
-  (`X3D model <images/solid-pentominoes-3x5x7-slope.x3d>`__)
-
-  .. image:: images/solid-pentominoes-3x5x7-slope.png
-
-
-Soma Cubes
-==========
-
-`Soma Cubes`_ include all non-convex polycubes of order 3 and 4.
-Puzzles of various shapes have been implemented:
-
-..  _Soma cubes: http://en.wikipedia.org/wiki/Soma_cube
-
-.. list-table::
-   :class: borderless
-
-   * - .. figure:: images/soma-3x3x3.png
-
-          3x3x3 cube: `240 solutions
-          <http://puzzler.sf.net/solutions/soma-3x3x3.txt>`__
-          (`X3D model <images/soma-3x3x3.x3d>`__)
-
-     - .. figure:: images/soma-bathtub.png
-
-          Bathtub: `158 solutions
-          <http://puzzler.sf.net/solutions/soma-bathtub.txt>`__
-          (`X3D model <images/soma-bathtub.x3d>`__)
-
-     - .. figure:: images/soma-cornerstone.png
-
-          Cornerstone: `10 solutions
-          <http://puzzler.sf.net/solutions/soma-cornerstone.txt>`__
-          (`X3D model <images/soma-cornerstone.x3d>`__)
-
-   * - .. figure:: images/soma-crystal.png
-
-          Crystal: `2800 solutions
-          <http://puzzler.sf.net/solutions/soma-crystal.txt>`__
-          (`X3D model <images/soma-crystal.x3d>`__)
-
-     - .. figure:: images/soma-curved-wall.png
-
-          Curved Wall: `66 solutions
-          <http://puzzler.sf.net/solutions/soma-curved-wall.txt>`__
-          (`X3D model <images/soma-curved-wall.x3d>`__)
-
-     - .. figure:: images/soma-high-wall.png
-
-          High Wall: `46 solutions
-          <http://puzzler.sf.net/solutions/soma-high-wall.txt>`__
-          (`X3D model <images/soma-high-wall.x3d>`__)
-
-   * - .. figure:: images/soma-long-wall.png
-
-          Long Wall: `104 solutions
-          <http://puzzler.sf.net/solutions/soma-long-wall.txt>`__
-          (`X3D model <images/soma-long-wall.x3d>`__)
-
-     - .. figure:: images/soma-skew-1.png
-
-          Skew 1: `244 solutions
-          <http://puzzler.sf.net/solutions/soma-skew-1.txt>`__
-          (`X3D model <images/soma-skew-1.x3d>`__)
-
-     - .. figure:: images/soma-skew-2.png
-
-          Skew 2: `14 solutions
-          <http://puzzler.sf.net/solutions/soma-skew-2.txt>`__
-          (`X3D model <images/soma-skew-2.x3d>`__)
-
-   * - .. figure:: images/soma-sofa.png
-
-          Sofa: `32 solutions
-          <http://puzzler.sf.net/solutions/soma-sofa.txt>`__
-          (`X3D model <images/soma-sofa.x3d>`__)
-
-     - .. figure:: images/soma-steamer.png
-
-          Steamer: `152 solutions
-          <http://puzzler.sf.net/solutions/soma-steamer.txt>`__
-          (`X3D model <images/soma-steamer.x3d>`__)
-
-     - .. figure:: images/soma-steps.png
-
-          Steps: `164 solutions
-          <http://puzzler.sf.net/solutions/soma-steps.txt>`__
-          (`X3D model <images/soma-steps.x3d>`__)
-
-
-Tetracubes
-==========
-
-* Solids:
-
-  - 2x4x4: `1390 solutions
-    <http://puzzler.sf.net/solutions/tetracubes-2x4x4.txt>`__
-    (`X3D model <images/tetracubes-2x4x4.x3d>`__)
-
-    .. image:: images/tetracubes-2x4x4.png
-
-  - 2x2x8: `224 solutions
-    <http://puzzler.sf.net/solutions/tetracubes-2x2x8.txt>`__
-    (`X3D model <images/tetracubes-2x2x8.x3d>`__)
-
-    .. image:: images/tetracubes-2x2x8.png
-
-
-Pentacubes
-==========
-
-The 29 pentacubes cannot form a simple box-shaped solid.  Other forms
-are possible however:
-
-* 5x5x6 towers
+* Polyominoes
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/pentacubes-5x5x6-tower-1.png
+     * - `Pentominoes <pentominoes.html>`_
 
-            Tower 1: `solutions incomplete
-            <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-1.txt>`__
-            (`X3D model <images/pentacubes-5x5x6-tower-1.x3d>`__)
+         .. image:: images/pentominoes-6x10-small.png
+            :target: pentominoes.html
+            :class: borderless
 
-       - .. figure:: images/pentacubes-5x5x6-tower-2.png
+       - `One-Sided Pentominoes <pentominoes.html#one-sided-pentominoes>`_
+         
+         .. image:: images/one-sided-pentominoes-6x15-small.png
+            :target: pentominoes.html#one-sided-pentominoes
+            :class: borderless
 
-            Tower 2: `solutions incomplete
-            <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-2.txt>`__
-            (`X3D model <images/pentacubes-5x5x6-tower-2.x3d>`__)
-
-       - .. figure:: images/pentacubes-5x5x6-tower-3.png
-
-            Tower 3: `solutions incomplete
-            <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-3.txt>`__
-            (`X3D model <images/pentacubes-5x5x6-tower-3.x3d>`__)
-
-* 2x11x11 frame (11x11 square bottom layer with 7x7 square frame on
-  top): `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-2x11x11-frame.txt>`__
-  (`X3D model <images/pentacubes-2x11x11-frame.x3d>`__)
-
-  .. image:: images/pentacubes-2x11x11-frame.png
-
-* Open boxes (closed on the bottom):
+* Polycubes
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/pentacubes-5x7x7-open-box.png
+     * - `Tetracubes <polycubes.html#tetracubes>`_
 
-            5x7x7 Open Box: `solutions incomplete
-            <http://puzzler.sf.net/solutions/pentacubes-5x7x7-open-box.txt>`__
-            (`X3D model <images/pentacubes-5x7x7-open-box.x3d>`__)
+         .. image:: images/tetracubes-2x4x4-small.png
+            :target: polycubes.html#tetracubes
+            :class: borderless
 
-       - .. figure:: images/pentacubes-3x9x9-open-box.png
+       - `Soma Cubes <polycubes.html#soma-cubes>`_
+         
+         .. image:: images/soma-crystal-small.png
+            :target: polycubes.html#soma-cubes
+            :class: borderless
 
-            3x9x9 Open Box: `solutions incomplete
-            <http://puzzler.sf.net/solutions/pentacubes-3x9x9-open-box.txt>`__
-            (`X3D model <images/pentacubes-3x9x9-open-box.x3d>`__)
+     * - `Solid Pentominoes <solid-pentominoes.html>`_
 
-* Corner crystal (one empty cube is hidden in the corner; puzzle
-  suggested by Nick Maeder): `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-corner-crystal.txt>`__
-  (`X3D model <images/pentacubes-corner-crystal.x3d>`__)
+         .. image:: images/solid-pentominoes-6x6x6-crystal-1-small.png
+            :target: solid-pentominoes.html
+            :class: borderless
 
-  .. image:: images/pentacubes-corner-crystal.png
-
-* Nine slices: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-nine-slices.txt>`__
-  (`X3D model <images/pentacubes-nine-slices.x3d>`__)
-
-  .. image:: images/pentacubes-nine-slices.png
-
-* Great wall: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-great-wall.txt>`__
-  (`X3D model <images/pentacubes-great-wall.x3d>`__)
-
-  .. image:: images/pentacubes-great-wall.png
-
-* Highrise towers:
+       - `Pentacubes <pentacubes.html>`_
+         
+         .. image:: images/pentacubes-great-wall-small.png
+            :target: pentacubes.html
+            :class: borderless
+  
+* Polyiamonds
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/pentacubes-3x3x20-tower-1.png
-
-            3x3x20 Tower 1 (suggested by Nick Maeder): `solutions incomplete
-            <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-1.txt>`__
-            (`X3D model <images/pentacubes-3x3x20-tower-1.x3d>`__)
-
-       - .. figure:: images/pentacubes-3x3x20-tower-2.png
-
-            3x3x20 Tower 2 (suggested by Nick Maeder): `solutions incomplete
-            <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-2.txt>`__
-            (`X3D model <images/pentacubes-3x3x20-tower-2.x3d>`__)
-
-       - .. figure:: images/pentacubes-3x3x17-tower.png
-
-            3x3x17 Tower: `solutions incomplete
-            <http://puzzler.sf.net/solutions/pentacubes-3x3x17-tower.txt>`__
-            (`X3D model <images/pentacubes-3x3x17-tower.x3d>`__)
-
-       - .. figure:: images/pentacubes-3x3x19-crystal-tower.png
-
-            3x3x19 Crystal Tower: `solutions incomplete
-            <http://puzzler.sf.net/solutions/pentacubes-3x3x19-crystal-tower.txt>`__
-            (`X3D model <images/pentacubes-3x3x19-crystal-tower.x3d>`__)
-
-* 5x9x9 fortress (suggestion by & solutions from Nick Maeder):
-  `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-5x9x9-fortress.txt>`__
-  (`X3D model <images/pentacubes-5x9x9-fortress.x3d>`__)
-
-  .. image:: images/pentacubes-5x9x9-fortress.png
-
-* 3x9x9 mound: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-3x9x9-mound.txt>`__
-  (`X3D model <images/pentacubes-3x9x9-mound.x3d>`__)
-
-  .. image:: images/pentacubes-3x9x9-mound.png
-
-* 9x9x9 octahedral planes: no solutions yet
-
-  .. image:: images/pentacubes-9x9x9-octahedral-planes.png
-
-* 2x13x13 diamond frame: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-2x13x13-diamond-frame.txt>`__
-  (`X3D model <images/pentacubes-2x13x13-diamond-frame.x3d>`__)
-
-  .. image:: images/pentacubes-2x13x13-diamond-frame.png
-
-* 2x3x2 chair (suggestion from Nick Maeder): `17 solutions
-  <http://puzzler.sf.net/solutions/pentacubes-2x3x2-chair.txt>`__
-  (`X3D model <images/pentacubes-2x3x2-chair.x3d>`__).  Each solution
-  uses only two pentacubes out of 29, and only 17 combinations (out of
-  406) produce solutions.
-
-  .. image:: images/pentacubes-2x3x2-chair.png
-
-* 11x11x5 pyramid with base: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-11x11x5-pyramid.txt>`__
-  (`X3D model <images/pentacubes-11x11x5-pyramid.x3d>`__)
-
-  .. image:: images/pentacubes-11x11x5-pyramid.png
-
-* 5x7x5 cubbyholes: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-5x7x5-cubbyholes.txt>`__
-  (`X3D model <images/pentacubes-5x7x5-cubbyholes.x3d>`__)
-
-  .. image:: images/pentacubes-5x7x5-cubbyholes.png
-
-* 9x9x5 cubbyholes: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-9x9x5-cubbyholes.txt>`__
-  (`X3D model <images/pentacubes-9x9x5-cubbyholes.x3d>`__)
-
-  .. image:: images/pentacubes-9x9x5-cubbyholes.png
-
-* 7x7x5 block: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-7x7x5-block.txt>`__
-  (`X3D model <images/pentacubes-7x7x5-block.x3d>`__)
-
-  .. image:: images/pentacubes-7x7x5-block.png
-
-
-Pentacubes Plus
----------------
-
-Sold under the name "`Super Deluxe Quintillions`_" by Kadon, these 30
-pieces are the 29 pentacubes plus a second L3 piece (a.k.a. J3),
-allowing the construction of box shapes.  The Super Deluxe
-Quintillions pieces are named as per the pentominoes, with the
-non-planar "Superquints" named here:
-http://www.gamepuzzles.com/sqnames.htm.
-
-.. _Super Deluxe Quintillions: http://www.gamepuzzles.com/polycube.htm#SQd
-
-* Solids:
-
-  - 5x5x6: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentacubes-plus-5x5x6.txt>`__
-    (`X3D model <images/pentacubes-plus-5x5x6.x3d>`__)
-
-    .. image:: images/pentacubes-plus-5x5x6.png
-
-  - 3x5x10: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentacubes-plus-3x5x10.txt>`__
-    (`X3D model <images/pentacubes-plus-3x5x10.x3d>`__)
-
-    .. image:: images/pentacubes-plus-3x5x10.png
-
-  - 2x5x15: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentacubes-plus-2x5x15.txt>`__
-    (`X3D model <images/pentacubes-plus-2x5x15.x3d>`__)
-
-    .. image:: images/pentacubes-plus-2x5x15.png
-
-  - 2x3x25: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentacubes-plus-2x3x25.txt>`__
-    (`X3D model <images/pentacubes-plus-2x3x25.x3d>`__)
-
-    .. image:: images/pentacubes-plus-2x3x25.png
-
-* 11x11x11 octahedral planes (central cube is empty): no solutions yet
-
-  .. image:: images/pentacubes-plus-11x11x11-octahedral-planes.png
-
-
--------------
- Polyiamonds
--------------
-
-Hexiamonds
-==========
-
-* 4x9 parallelogram: `74 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-4x9.txt>`__
-
-  .. image:: images/hexiamonds-4x9.png
-
-* 6x6 parallelogram: `156 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-6x6.txt>`__
-
-  .. image:: images/hexiamonds-6x6.png
-
-* 4x11 trapezium: `76 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-4x11-trapezium.txt>`__
-
-  .. image:: images/hexiamonds-4x11-trapezium.png
-
-* 4x10 elongated hexagon (clipped parallelogram): `856 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-4x10-long-hex.txt>`__
-
-  .. image:: images/hexiamonds-4x10-long-hex.png
-
-* Snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
-  "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`__): `55
-  solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-snowflake.txt>`__
-
-  .. image:: images/hexiamonds-snowflake.png
-
-* Ring 2 (8-unit hexagon with 4-unit hexagonal hole offset one unit
-  from the center): `11 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-ring-2.txt>`__ (no
-  solutions for the ring with a centered hole)
-
-  .. image:: images/hexiamonds-ring-2.png
-
-* Crescent (8-unit hexagon with a 4-unit hexagonal bite removed from
-  one corner): `87 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-crescent.txt>`__
-
-  .. image:: images/hexiamonds-crescent.png
-
-* Crescent 2 (8-unit hexagon with a 4-unit hexagonal bite removed from
-  one side): `2 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-crescent-2.txt>`__
-
-  .. image:: images/hexiamonds-crescent-2.png
-
-* 6x8 "coin" (elongated hexagon with central hexagonal hole):
-  `304 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-coin.txt>`__
-
-  .. image:: images/hexiamonds-coin.png
-
-* Trefoil (3 joined hexagons): `640 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-trefoil.txt>`__
-
-  .. image:: images/hexiamonds-trefoil.png
-
-
-Heptiamonds
-===========
-
-* Parallelograms:
-
-  - 7x12: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-7x12.txt>`__
-
-    .. image:: images/heptiamonds-7x12.png
-
-  - 6x14: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-6x14.txt>`__
-
-    .. image:: images/heptiamonds-6x14.png
-
-  - 4x21: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-4x21.txt>`__
-
-    .. image:: images/heptiamonds-4x21.png
-
-  - 3x28: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-3x28.txt>`__
-
-    .. image:: images/heptiamonds-3x28.png
-
-* Trapezia:
-
-  - 12x13: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-12x13-trapezium.txt>`__
-
-    .. image:: images/heptiamonds-12x13-trapezium.png
-
-  - 6x17: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-6x17-trapezium.txt>`__
-
-    .. image:: images/heptiamonds-6x17-trapezium.png
-
-  - 4x23: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-4x23-trapezium.txt>`__
-
-    .. image:: images/heptiamonds-4x23-trapezium.png
-
-* Snowflake 1 (truncated hexagram; a.k.a. `Tenyo's puzzle no. PP-24,
-  "Unmeltable Snow"
-  <http://www.tenyo.co.jp/toyhobby/catalog/onsale/pp-24.html>`__):
-  `solutions incomplete
-  <http://puzzler.sf.net/solutions/heptiamonds-snowflake-1.txt>`__
-
-  .. image:: images/heptiamonds-snowflake-1.png
-
-* Snowflake 2: `solutions incomplete
-  <http://puzzler.sf.net/solutions/heptiamonds-snowflake-2.txt>`__
-
-  .. image:: images/heptiamonds-snowflake-2.png
-
-* 13-unit triangle with central 1-unit hole: `solutions incomplete
-  <http://puzzler.sf.net/solutions/heptiamonds-triangle.txt>`__
-
-  .. image:: images/heptiamonds-triangle.png
-
-* Diamond ring (10-unit diamond with central 4-unit diamond hole):
-  `solutions incomplete
-  <http://puzzler.sf.net/solutions/heptiamonds-diamond-ring.txt>`__
-
-  .. image:: images/heptiamonds-diamond-ring.png
-
-* Hexagram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/heptiamonds-hexagram.txt>`__
-
-  .. image:: images/heptiamonds-hexagram.png
-
-* Hexagons:
-
-  - Hexagon 1: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-1.txt>`__
-
-    .. image:: images/heptiamonds-hexagon-1.png
-
-  - Hexagon 2: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-2.txt>`__
-
-    .. image:: images/heptiamonds-hexagon-2.png
-
-  - Hexagon 3: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-3.txt>`__
-
-    .. image:: images/heptiamonds-hexagon-3.png
-
-  - Hexagon 4: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-4.txt>`__
-
-    .. image:: images/heptiamonds-hexagon-4.png
-
-  - Hexagon 5: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-5.txt>`__
-
-    .. image:: images/heptiamonds-hexagon-5.png
-
-  - Hexagon 6: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-6.txt>`__
-
-    .. image:: images/heptiamonds-hexagon-6.png
-
-  - Hexagon 7: `solutions incomplete
-    <http://puzzler.sf.net/solutions/heptiamonds-hexagon-7.txt>`__
-
-    .. image:: images/heptiamonds-hexagon-7.png
-
-
------------
- Polyhexes
------------
-
-Tetrahexes
-==========
-
-* 4x7 parallelogram: `9 solutions
-  <http://puzzler.sf.net/solutions/tetrahex-4x7.txt>`__
-
-  .. image:: images/tetrahex-4x7.png
-
-* 3x10 parallelogram with corners clipped (centered rows of
-  length 9, 10, 9): `2 solutions
-  <http://puzzler.sf.net/solutions/tetrahex-3x10-clipped.txt>`__
-
-  .. image:: images/tetrahex-3x10-clipped.png
-
-* 5x7 "coin" (elongated hexagon with central hole): `4 solutions
-  <http://puzzler.sf.net/solutions/tetrahex-coin.txt>`__
-
-  .. image:: images/tetrahex-coin.png
-
-
-Pentahexes
-==========
-
-* 10x11 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentahex-10x11.txt>`__
-
-  .. image:: images/pentahex-10x11.png
-
-* 5x22 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentahex-5x22.txt>`__
-
-  .. image:: images/pentahex-5x22.png
-
-* 15x11 trapezium: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentahex-15x11-trapezium.txt>`__
-
-  .. image:: images/pentahex-15x11-trapezium.png
-
-* 5x24 trapezium: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentahex-5x24-trapezium.txt>`__
-
-  .. image:: images/pentahex-5x24-trapezium.png
-
-* Hexagons:
-
-  - Hexagon 1: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagon-1.txt>`__
-
-    .. image:: images/pentahex-hexagon-1.png
-
-  - Hexagon 2: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagon-2.txt>`__
-
-    .. image:: images/pentahex-hexagon-2.png
-
-  - Hexagon 3: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagon-3.txt>`__
-
-    .. image:: images/pentahex-hexagon-3.png
-
-  - Hexagon 4: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagon-4.txt>`__
-
-    .. image:: images/pentahex-hexagon-4.png
-
-* Triangles: a minimal triangle is 120 units, 10 units too large.  But
-  10 units makes a 4-unit-side triangle, so here are five variations
-  with centered 4-unit triangular holes and one with a different hole:
-
-  - Triangle 1: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-triangle-1.txt>`__
-
-    .. image:: images/pentahex-triangle-1.png
-
-  - Triangle 2: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-triangle-2.txt>`__
-
-    .. image:: images/pentahex-triangle-2.png
-
-  - Triangle 3: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-triangle-3.txt>`__
-
-    .. image:: images/pentahex-triangle-3.png
-
-  - Triangle 4: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-triangle-4.txt>`__
-
-    .. image:: images/pentahex-triangle-4.png
-
-  - Triangle 5: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-triangle-5.txt>`__
-
-    .. image:: images/pentahex-triangle-5.png
-
-  - Triangle 6: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-triangle-6.txt>`__
-
-    .. image:: images/pentahex-triangle-6.png
-
-* Hexagrams: a minimal hexagram is 121 units, 11 units too large.
-  These are variations with centered, symmetrical 11-unit holes:
-
-  - Hexagram 1: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagram-1.txt>`__
-
-    .. image:: images/pentahex-hexagram-1.png
-
-  - Hexagram 2: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagram-2.txt>`__
-
-    .. image:: images/pentahex-hexagram-2.png
-
-  - Hexagram 3: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagram-3.txt>`__
-
-    .. image:: images/pentahex-hexagram-3.png
-
-  - Hexagram 4: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagram-4.txt>`__
-
-    .. image:: images/pentahex-hexagram-4.png
-
-  - Hexagram 5: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagram-5.txt>`__
-
-    .. image:: images/pentahex-hexagram-5.png
-
-  - Hexagram 6: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagram-6.txt>`__
-
-    .. image:: images/pentahex-hexagram-6.png
-
-  - Hexagram 7: `solutions incomplete
-    <http://puzzler.sf.net/solutions/pentahex-hexagram-7.txt>`__
-
-    .. image:: images/pentahex-hexagram-7.png
-
-
-Polyhexes of Order 1 Through 4
-==============================
-
-These puzzles uses the monohex, the dihex, the three trihexes, and the
-seven tetrahexes.
-
-* 4x10 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/polyhex-4x10.txt>`__
-
-  .. image:: images/polyhex-4x10.png
-
-* 5x8 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/polyhex-5x8.txt>`__
-
-  .. image:: images/polyhex-5x8.png
-
-
-------------
- Polysticks
-------------
-
-Tetrasticks
-===========
-
-* 4x4 square with one-sided welded tetrasticks: `4 solutions
-  <http://puzzler.sf.net/solutions/welded-tetrasticks-4x4.txt>`__
-
-* 5x5 square with 15 of 16 tetrasticks: `1795 solutions
-  <http://puzzler.sf.net/solutions/tetrasticks-5x5.txt>`__
-
-
-Polysticks of Order 1 Through 4
-===============================
-
-This puzzle uses the monostick and all distick, tristick, and
-tetrastick pieces.
-
-* 6x6 square covered with polysticks: `solutions incomplete
-  <http://puzzler.sf.net/solutions/polysticks-6x6.txt>`__
+     * - `Hexiamonds <hexiamonds.html>`_
+
+         .. image:: images/hexiamonds-6x6-small.png
+            :target: hexiamonds.html
+            :class: borderless
+
+       - `Heptiamonds <heptiamonds.html>`_
+         
+         .. image:: images/heptiamonds-snowflake-2-small.png
+            :target: heptiamonds.html
+            :class: borderless
+
+* Polyhexes
+
+  .. list-table::
+     :class: borderless
+
+     * - `Tetrahexes <polyhexes.html#tetrahexes>`_
+
+         .. image:: images/tetrahex-coin-small.png
+            :target: polyhexes.html#tetrahexes
+            :class: borderless
+
+       - `Pentahexes <pentahexes.html>`_
+         
+         .. image:: images/pentahex-15x11-trapezium-small.png
+            :target: pentahexes.html
+            :class: borderless
+
+       - `Polyhexes of Order 1 Through 4
+         <polyhexes.html#polyhexes-of-order-1-through-4>`_
+         
+         .. image:: images/polyhex-5x8-small.png
+            :target: polyhexes.html#polyhexes-of-order-1-through-4
+            :class: borderless
+
+* Polysticks
+
+  - `Tetrasticks <polysticks.html#tetrasticks>`_
+  - `Polysticks of Order 1 Through 4
+    <polysticks.html#polysticks-of-order-1-through-4>`_
 
 
 .. |---| unicode:: U+2014  .. em dash

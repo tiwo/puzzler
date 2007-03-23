@@ -83,6 +83,9 @@ Changes Since Release 1
 * Added docs/extend.txt, "How to Extend Polyform Puzzler", and sample
   code in docs/examples/.
 
+* Split docs/puzzles.txt up; it's now a table of contents linking to
+  docs for each puzzle type.
+
 
 Release 1 (2006-08-08)
 ======================

@@ -1,0 +1,125 @@
+===============================
+ Polycubes Puzzles & Solutions
+===============================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2007 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+Also see:
+
+| `Solid Pentominoes <solid-pentominoes.html>`_
+| `Pentacubes <pentacubes.html>`_
+| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+| `Polyform Puzzler FAQ <FAQ.html>`_
+
+.. contents::
+
+
+Tetracubes
+==========
+
+- 2x4x4 solid: `1390 solutions
+  <http://puzzler.sf.net/solutions/tetracubes-2x4x4.txt>`__
+  (`X3D model <images/tetracubes-2x4x4.x3d>`__)
+
+  .. image:: images/tetracubes-2x4x4.png
+
+- 2x2x8 solid: `224 solutions
+  <http://puzzler.sf.net/solutions/tetracubes-2x2x8.txt>`__
+  (`X3D model <images/tetracubes-2x2x8.x3d>`__)
+
+  .. image:: images/tetracubes-2x2x8.png
+
+
+Soma Cubes
+==========
+
+`Soma Cubes`__ include all non-convex polycubes of order 3 and 4.
+Puzzles of various shapes have been implemented:
+
+__ http://en.wikipedia.org/wiki/Soma_cube
+
+.. list-table::
+   :class: borderless
+
+   * - .. figure:: images/soma-3x3x3.png
+
+          3x3x3 cube: `240 solutions
+          <http://puzzler.sf.net/solutions/soma-3x3x3.txt>`__
+          (`X3D model <images/soma-3x3x3.x3d>`__)
+
+     - .. figure:: images/soma-bathtub.png
+
+          Bathtub: `158 solutions
+          <http://puzzler.sf.net/solutions/soma-bathtub.txt>`__
+          (`X3D model <images/soma-bathtub.x3d>`__)
+
+     - .. figure:: images/soma-cornerstone.png
+
+          Cornerstone: `10 solutions
+          <http://puzzler.sf.net/solutions/soma-cornerstone.txt>`__
+          (`X3D model <images/soma-cornerstone.x3d>`__)
+
+   * - .. figure:: images/soma-crystal.png
+
+          Crystal: `2800 solutions
+          <http://puzzler.sf.net/solutions/soma-crystal.txt>`__
+          (`X3D model <images/soma-crystal.x3d>`__)
+
+     - .. figure:: images/soma-curved-wall.png
+
+          Curved Wall: `66 solutions
+          <http://puzzler.sf.net/solutions/soma-curved-wall.txt>`__
+          (`X3D model <images/soma-curved-wall.x3d>`__)
+
+     - .. figure:: images/soma-high-wall.png
+
+          High Wall: `46 solutions
+          <http://puzzler.sf.net/solutions/soma-high-wall.txt>`__
+          (`X3D model <images/soma-high-wall.x3d>`__)
+
+   * - .. figure:: images/soma-long-wall.png
+
+          Long Wall: `104 solutions
+          <http://puzzler.sf.net/solutions/soma-long-wall.txt>`__
+          (`X3D model <images/soma-long-wall.x3d>`__)
+
+     - .. figure:: images/soma-skew-1.png
+
+          Skew 1: `244 solutions
+          <http://puzzler.sf.net/solutions/soma-skew-1.txt>`__
+          (`X3D model <images/soma-skew-1.x3d>`__)
+
+     - .. figure:: images/soma-skew-2.png
+
+          Skew 2: `14 solutions
+          <http://puzzler.sf.net/solutions/soma-skew-2.txt>`__
+          (`X3D model <images/soma-skew-2.x3d>`__)
+
+   * - .. figure:: images/soma-sofa.png
+
+          Sofa: `32 solutions
+          <http://puzzler.sf.net/solutions/soma-sofa.txt>`__
+          (`X3D model <images/soma-sofa.x3d>`__)
+
+     - .. figure:: images/soma-steamer.png
+
+          Steamer: `152 solutions
+          <http://puzzler.sf.net/solutions/soma-steamer.txt>`__
+          (`X3D model <images/soma-steamer.x3d>`__)
+
+     - .. figure:: images/soma-steps.png
+
+          Steps: `164 solutions
+          <http://puzzler.sf.net/solutions/soma-steps.txt>`__
+          (`X3D model <images/soma-steps.x3d>`__)
+
+
+.. |c| unicode:: U+00A9 .. copyright sign

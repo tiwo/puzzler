@@ -1,0 +1,156 @@
+================================
+ Pentahexes Puzzles & Solutions
+================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2007 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+Also see:
+
+| `Polyhexes <polyhexes.html>`_
+| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+| `Polyform Puzzler FAQ <FAQ.html>`_
+
+.. contents::
+
+
+Parallelograms
+==============
+
+* 10x11 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-10x11.txt>`__
+
+  .. image:: images/pentahex-10x11.png
+
+* 5x22 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-5x22.txt>`__
+
+  .. image:: images/pentahex-5x22.png
+
+
+Trapezia
+========
+
+* 15x11 trapezium: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-15x11-trapezium.txt>`__
+
+  .. image:: images/pentahex-15x11-trapezium.png
+
+* 5x24 trapezium: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-5x24-trapezium.txt>`__
+
+  .. image:: images/pentahex-5x24-trapezium.png
+
+
+Hexagons
+========
+
+- Hexagon 1: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagon-1.txt>`__
+
+  .. image:: images/pentahex-hexagon-1.png
+
+- Hexagon 2: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagon-2.txt>`__
+
+  .. image:: images/pentahex-hexagon-2.png
+
+- Hexagon 3: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagon-3.txt>`__
+
+  .. image:: images/pentahex-hexagon-3.png
+
+- Hexagon 4: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagon-4.txt>`__
+
+  .. image:: images/pentahex-hexagon-4.png
+
+
+Triangles
+=========
+
+A minimal triangle is 120 units, 10 units too large.  But
+10 units makes a 4-unit-side triangle, so here are five variations
+with centered 4-unit triangular holes and one with a different hole:
+
+- Triangle 1: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-triangle-1.txt>`__
+
+  .. image:: images/pentahex-triangle-1.png
+
+- Triangle 2: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-triangle-2.txt>`__
+
+  .. image:: images/pentahex-triangle-2.png
+
+- Triangle 3: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-triangle-3.txt>`__
+
+  .. image:: images/pentahex-triangle-3.png
+
+- Triangle 4: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-triangle-4.txt>`__
+
+  .. image:: images/pentahex-triangle-4.png
+
+- Triangle 5: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-triangle-5.txt>`__
+
+  .. image:: images/pentahex-triangle-5.png
+
+- Triangle 6: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-triangle-6.txt>`__
+
+  .. image:: images/pentahex-triangle-6.png
+
+
+Hexagrams
+=========
+
+A minimal hexagram is 121 units, 11 units too large.  These are
+variations with centered, symmetrical 11-unit holes:
+
+- Hexagram 1: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagram-1.txt>`__
+
+  .. image:: images/pentahex-hexagram-1.png
+
+- Hexagram 2: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagram-2.txt>`__
+
+  .. image:: images/pentahex-hexagram-2.png
+
+- Hexagram 3: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagram-3.txt>`__
+
+  .. image:: images/pentahex-hexagram-3.png
+
+- Hexagram 4: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagram-4.txt>`__
+
+  .. image:: images/pentahex-hexagram-4.png
+
+- Hexagram 5: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagram-5.txt>`__
+
+  .. image:: images/pentahex-hexagram-5.png
+
+- Hexagram 6: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagram-6.txt>`__
+
+  .. image:: images/pentahex-hexagram-6.png
+
+- Hexagram 7: `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentahex-hexagram-7.txt>`__
+
+  .. image:: images/pentahex-hexagram-7.png
+
+
+.. |c| unicode:: U+00A9 .. copyright sign

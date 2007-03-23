@@ -1,0 +1,143 @@
+=================================
+ Heptiamonds Puzzles & Solutions
+=================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2007 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+Also see:
+
+| `Hexiamonds <hexiamonds.html>`_
+| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+| `Polyform Puzzler FAQ <FAQ.html>`_
+
+.. contents::
+
+
+Parallelograms
+==============
+
+- 7x12: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-7x12.txt>`__
+
+  .. image:: images/heptiamonds-7x12.png
+
+- 6x14: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-6x14.txt>`__
+
+  .. image:: images/heptiamonds-6x14.png
+
+- 4x21: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-4x21.txt>`__
+
+  .. image:: images/heptiamonds-4x21.png
+
+- 3x28: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-3x28.txt>`__
+
+  .. image:: images/heptiamonds-3x28.png
+
+
+Trapezia
+========
+
+- 12x13: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-12x13-trapezium.txt>`__
+
+  .. image:: images/heptiamonds-12x13-trapezium.png
+
+- 6x17: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-6x17-trapezium.txt>`__
+
+  .. image:: images/heptiamonds-6x17-trapezium.png
+
+- 4x23: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-4x23-trapezium.txt>`__
+
+  .. image:: images/heptiamonds-4x23-trapezium.png
+
+
+Snowflakes
+==========
+
+* Snowflake 1 (truncated hexagram; a.k.a. `Tenyo's puzzle no. PP-24,
+  "Unmeltable Snow"
+  <http://www.tenyo.co.jp/toyhobby/catalog/onsale/pp-24.html>`__):
+  `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-snowflake-1.txt>`__
+
+  .. image:: images/heptiamonds-snowflake-1.png
+
+* Snowflake 2: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-snowflake-2.txt>`__
+
+  .. image:: images/heptiamonds-snowflake-2.png
+
+
+Hexagons
+========
+
+- Hexagon 1: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-hexagon-1.txt>`__
+
+  .. image:: images/heptiamonds-hexagon-1.png
+
+- Hexagon 2: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-hexagon-2.txt>`__
+
+  .. image:: images/heptiamonds-hexagon-2.png
+
+- Hexagon 3: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-hexagon-3.txt>`__
+
+  .. image:: images/heptiamonds-hexagon-3.png
+
+- Hexagon 4: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-hexagon-4.txt>`__
+
+  .. image:: images/heptiamonds-hexagon-4.png
+
+- Hexagon 5: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-hexagon-5.txt>`__
+
+  .. image:: images/heptiamonds-hexagon-5.png
+
+- Hexagon 6: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-hexagon-6.txt>`__
+
+  .. image:: images/heptiamonds-hexagon-6.png
+
+- Hexagon 7: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-hexagon-7.txt>`__
+
+  .. image:: images/heptiamonds-hexagon-7.png
+
+
+Misc
+====
+
+* 13-unit triangle with central 1-unit hole: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-triangle.txt>`__
+
+  .. image:: images/heptiamonds-triangle.png
+
+* Diamond ring (10-unit diamond with central 4-unit diamond hole):
+  `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-diamond-ring.txt>`__
+
+  .. image:: images/heptiamonds-diamond-ring.png
+
+* Hexagram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-hexagram.txt>`__
+
+  .. image:: images/heptiamonds-hexagram.png
+
+
+.. |c| unicode:: U+00A9 .. copyright sign

@@ -1,0 +1,43 @@
+================================
+ Polysticks Puzzles & Solutions
+================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2007 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+Also see:
+
+| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+| `Polyform Puzzler FAQ <FAQ.html>`_
+
+.. contents::
+
+
+Tetrasticks
+===========
+
+* 4x4 square with one-sided welded tetrasticks: `4 solutions
+  <http://puzzler.sf.net/solutions/welded-tetrasticks-4x4.txt>`__
+
+* 5x5 square with 15 of 16 tetrasticks: `1795 solutions
+  <http://puzzler.sf.net/solutions/tetrasticks-5x5.txt>`__
+
+
+Polysticks of Order 1 Through 4
+===============================
+
+This puzzle uses the monostick and all distick, tristick, and
+tetrastick pieces.
+
+* 6x6 square covered with polysticks: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polysticks-6x6.txt>`__
+
+
+.. |c| unicode:: U+00A9 .. copyright sign

@@ -1,0 +1,122 @@
+=================================
+ Pentominoes Puzzles & Solutions
+=================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2007 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+Also see:
+
+| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+| `Polyform Puzzler FAQ <FAQ.html>`_
+
+.. contents::
+
+
+Pentominoes
+===========
+
+Rectangles
+----------
+
+- 3x20: `2 solutions
+  <http://puzzler.sf.net/solutions/pentominoes-3x20.txt>`__
+
+  .. image:: images/pentominoes-3x20.png
+
+- 4x15: `368 solutions
+  <http://puzzler.sf.net/solutions/pentominoes-4x15.txt>`__
+
+  .. image:: images/pentominoes-4x15.png
+
+- 5x12: `1010 solutions
+  <http://puzzler.sf.net/solutions/pentominoes-5x12.txt>`__
+
+  .. image:: images/pentominoes-5x12.png
+
+- 6x10: `2339 solutions
+  <http://puzzler.sf.net/solutions/pentominoes-6x10.txt>`__
+
+  .. image:: images/pentominoes-6x10.png
+
+
+Misc
+----
+
+* 3x20 ring (3x20 rectangle joined at the ends): 2 solutions
+  (same as the 3x20 rectangle; the V piece forces a partition)
+
+* 3x20 tube (3x20 rectangle joined at the long edges): `solutions
+  incomplete <http://puzzler.sf.net/solutions/pentominoes-3x20-tube.txt>`__
+
+* 8x8 square with a central 2x2 hole: `65 solutions
+  <http://puzzler.sf.net/solutions/pentominoes-8x8.txt>`__
+
+  .. image:: images/pentominoes-8x8.png
+
+* 8x8 square with missing corners: `2170 solutions
+  <http://puzzler.sf.net/solutions/pentominoes-8x8-corners.txt>`__
+
+  .. image:: images/pentominoes-8x8-corners.png
+
+* 3x21 rectangle with holes: `6 solutions
+  <http://puzzler.sf.net/solutions/pentominoes-3x21.txt>`__ (an
+  example puzzle from `How to Extend Polyform Puzzler <extend.html>`_)
+
+  .. image:: images/pentominoes-3x21.png
+
+
+One-Sided Pentominoes
+=====================
+
+These are just like regular pentominoes, except that non-isomorphic
+reflections (different shape when flipped over) are treated as
+separate pieces, and pieces are not allowed to be flipped.
+
+
+Rectangles
+----------
+
+- 3x30: `46 solutions
+  <http://puzzler.sf.net/solutions/one-sided-pentominoes-3x30.txt>`__
+
+  .. image:: images/one-sided-pentominoes-3x30.png
+
+- 5x18: 686,628 solutions (`incomplete list
+  <http://puzzler.sf.net/solutions/one-sided-pentominoes-5x18.txt>`__)
+
+  .. image:: images/one-sided-pentominoes-5x18.png
+
+- 6x15: 2,567,183 solutions (`incomplete list
+  <http://puzzler.sf.net/solutions/one-sided-pentominoes-6x15.txt>`__)
+
+  .. image:: images/one-sided-pentominoes-6x15.png
+
+- 9x10: 10,440,433 solutions (`incomplete list
+  <http://puzzler.sf.net/solutions/one-sided-pentominoes-9x10.txt>`__)
+
+  .. image:: images/one-sided-pentominoes-9x10.png
+
+  10,440,433 solutions (non-isomorphic in reflection, reflections
+  allowed when counting solutions) are reported in "One-sided
+  Pentominoes in a 9 x 10 Rectangle" by `Alfred Wassermann`_,
+  University of Bayreuth, 2000.
+
+  .. _Alfred Wassermann:
+     http://did.mat.uni-bayreuth.de/~alfred/home/index.html
+
+The numbers of solutions for the last three puzzles above were taken
+from `Gerard Putter's Polyomino Solution Page`__, as reported by
+Stephen Montgomery-Smith.
+
+__ http://www.xs4all.nl/~gp/PolyominoSolver/Polyomino.html
+
+
+.. |c| unicode:: U+00A9 .. copyright sign
