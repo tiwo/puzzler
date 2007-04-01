@@ -336,7 +336,7 @@ class Puzzle2D(Puzzle):
         coord_list = ((0, 0),) + units
         for flip in flips or (0,):
             for rotation in rotations or (0,):
-                aspect = coordsys.CartesianView2D(coord_list, rotation, flip)
+                aspect = coordsys.Cartesian2DView(coord_list, rotation, flip)
                 aspects.add(aspect)
         return aspects
 
@@ -548,13 +548,13 @@ class Puzzle3D(Puzzle):
         aspects = set()
         coord_list = ((0, 0, 0),) + units
         for axis in axes or (2,):
-            coord_set = coordsys.CartesianView3D(coord_list)
+            coord_set = coordsys.Cartesian3DView(coord_list)
             if axis != 2:
                 coord_set = coord_set.rotate0(1, (1 - axis) % 3)
             coords = tuple(coord_set)
             for flip in flips or (0,):
                 for rotation in rotations or (0,):
-                    aspect = coordsys.CartesianView3D(
+                    aspect = coordsys.Cartesian3DView(
                         coords, rotation, axis, flip)
                     aspects.add(aspect)
         return aspects
@@ -2686,7 +2686,7 @@ class Polysticks(Puzzle):
 
     def make_aspects(self, segments, flips=(0, 1), rotations=(0, 1, 2, 3)):
         aspects = set()
-        polystick = coordsys.CartesianPath2D(segments)
+        polystick = coordsys.Cartesian2DPath(segments)
         for flip in flips or (0,):
             for rotation in rotations or (0,):
                 aspect = polystick.oriented(rotation, flip, normalized=True)
@@ -3036,7 +3036,7 @@ class Polyhexes(Puzzle2D):
         coord_list = ((0, 0),) + units
         for flip in flips or (0,):
             for rotation in rotations or (0,):
-                aspect = coordsys.HexagonalView2D(coord_list, rotation, flip)
+                aspect = coordsys.Hexagonal2DView(coord_list, rotation, flip)
                 aspects.add(aspect)
         return aspects
 
@@ -3255,9 +3255,9 @@ class Polyhex1234(Polyhexes123Data, Tetrahexes):
 
     def customize_piece_data(self):
         self.piece_data = copy.deepcopy(Tetrahexes.piece_data)
-        self.piece_data.update(copy.deepcopy(Polyhexes123.piece_data))
+        self.piece_data.update(copy.deepcopy(Polyhexes123Data.piece_data))
         self.piece_colors = copy.deepcopy(Tetrahexes.piece_colors)
-        self.piece_colors.update(Polyhexes123.piece_colors)
+        self.piece_colors.update(Polyhexes123Data.piece_colors)
 
 
 class Pentahexes(Polyhexes):
@@ -3759,7 +3759,7 @@ class Polyiamonds(PuzzlePseudo3D):
         coord_list = ((0, 0, 0),) + units
         for flip in flips or (0,):
             for rotation in rotations or (0,):
-                aspect = coordsys.TriangularView3D(
+                aspect = coordsys.Triangular3DView(
                     coord_list, rotation, 0, flip) # 0 is axis, ignored
                 aspects.add(aspect)
         return aspects
