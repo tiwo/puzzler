@@ -16,7 +16,7 @@ class MockPuzzle(puzzles.Puzzle2D):
 
     height = 4
     width = 5
-    svg_fills = {'#': 'black'}
+    piece_colors = {'#': 'black'}
     coord_class = coordsys.Cartesian2D
 
     def make_aspects(self, data, **kwargs):
