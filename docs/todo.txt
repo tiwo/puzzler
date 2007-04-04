@@ -15,9 +15,7 @@
 General
 =======
 
-* Convert polysticks to a pseudo-3D coordinate system, using
-  puzzler.coordsys.SquareGrid3D etc.  This will allow SVG rendering
-  and easier specification of coordinates.
+* Implement SVG rendering of polysticks.
 
 * Rewrite exact_cover.py in C as an extension module.
 

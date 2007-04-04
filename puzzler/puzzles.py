@@ -6,7 +6,6 @@
 # Copyright: (C) 1998-2007 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
-import pdb
 import sys
 import copy
 import datetime
@@ -2680,16 +2679,28 @@ class SomaSteamer(SomaCubes):
 
 class Polysticks(Puzzle):
 
-    def coordinates(self):
-        # coordinates not yet used (or generated) by polystick puzzles
-        return []
+    # line segment orientation (horizontal=0, vertical=1):
+    depth = 2
 
-    def make_aspects(self, segments, flips=(0, 1), rotations=(0, 1, 2, 3)):
+    def coordinates(self):
+        """
+        Return coordinates for a typical rectangular polystick puzzle.
+        """
+        for y in range(self.height + 1):
+            for x in range(self.width + 1):
+                for z in range(self.depth):
+                    if z == 1 and y == self.height:
+                        continue
+                    elif z == 0 and x == self.width:
+                        continue
+                    yield coordsys.SquareGrid3D((x, y, z))
+
+    def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3)):
         aspects = set()
-        polystick = coordsys.Cartesian2DPath(segments)
         for flip in flips or (0,):
             for rotation in rotations or (0,):
-                aspect = polystick.oriented(rotation, flip, normalized=True)
+                aspect = coordsys.SquareGrid3DView(
+                    units, rotation, 0, flip) # 0 is axis, ignored
                 aspects.add(aspect)
         return aspects
 
@@ -2698,23 +2709,16 @@ class Polysticks(Puzzle):
         for i, key in enumerate(sorted(self.pieces.keys())):
             self.matrix_columns[key] = i
             headers.append(key)
-        for y in range(self.height + 1):
-            for x in range(self.width):
-                header = '%0*i,%0*ih' % (
-                    self.x_width, x, self.y_width, y)
-                self.matrix_columns[header] = len(headers)
-                headers.append(header)
-        for x in range(self.width + 1):
-            for y in range(self.height):
-                header = '%0*i,%0*iv' % (
-                    self.x_width, x, self.y_width, y)
-                self.matrix_columns[header] = len(headers)
-                headers.append(header)
+        for (x, y, z) in self.coordinates():
+            header = '%0*i,%0*i,%0*i' % (
+                self.x_width, x, self.y_width, y, self.z_width, z)
+            self.matrix_columns[header] = len(headers)
+            headers.append(header)
         primary = len(headers)
+        # intersections on outer edge of solution coordinates not applicable:
         for y in range(1, self.height):
             for x in range(1, self.width):
-                header = '%0*i,%0*ii' % (
-                    self.x_width, x, self.y_width, y)
+                header = '%0*i,%0*ii' % (self.x_width, x, self.y_width, y)
                 self.matrix_columns[header] = len(headers)
                 headers.append(header)
         self.secondary_columns = len(headers) - primary
@@ -2725,14 +2729,20 @@ class Polysticks(Puzzle):
             for coords, aspect in self.pieces[key]:
                 for y in range(self.height + 1 - aspect.bounds[1]):
                     for x in range(self.width + 1 - aspect.bounds[0]):
-                        translated = aspect.translate((x, y))
-                        self.build_matrix_row(key, translated)
+                        translated = aspect.translate((x, y, 0))
+                        if translated.issubset(self.solution_coords):
+                            self.build_matrix_row(key, translated)
 
-    def build_matrix_row(self, name, path):
+    def build_matrix_row(self, name, coords):
         row = [0] * len(self.matrix[0])
         row[self.matrix_columns[name]] = name
-        for label in path.labels((self.x_width, self.y_width)):
-            if not label.endswith('i') or label in self.matrix_columns:
+        for (x,y,z) in coords:
+            label = '%0*i,%0*i,%0*i' % (
+                self.x_width, x, self.y_width, y, self.z_width, z)
+            row[self.matrix_columns[label]] = label
+        for (x,y) in coords.intersections():
+            label = '%0*i,%0*ii' % (self.x_width, x, self.y_width, y)
+            if label in self.matrix_columns:
                 row[self.matrix_columns[label]] = label
         self.matrix.append(row)
 
@@ -2765,7 +2775,7 @@ class Polysticks(Puzzle):
                     for y in range(self.height + 2 * margin + 1)]
         v_matrix = [[' '] * (self.width + 2 * margin + 1)
                     for y in range(self.height + 2 * margin)]
-        matrices = {'h': h_matrix, 'v': v_matrix}
+        matrices = [h_matrix, v_matrix]
         omitted = []
         prefix = []
         for row in solution:
@@ -2775,14 +2785,14 @@ class Polysticks(Puzzle):
                 prefix.append('(%s omitted)\n' % name)
                 continue
             for segment_coords in row[:-1]:
-                direction = segment_coords[-1]
-                if direction == 'i':
+                if segment_coords[-1] == 'i':
                     continue
-                x, y = (int(d.strip()) for d in segment_coords[:-1].split(','))
+                x, y, z = (int(d.strip()) for d in segment_coords.split(','))
+                direction = z
                 x, y, direction = self.rotate_segment(x, y, direction, rotation)
                 if xy_swapped:
                     x, y = y, x
-                    direction = 'hv'[direction == 'h']
+                    direction = 1 - direction
                 matrices[direction][y + margin][x + margin] = name
         return h_matrix, v_matrix, omitted, '\n'.join(prefix)
 
@@ -2794,37 +2804,37 @@ class Polysticks(Puzzle):
                  + self.width * ((quadrant + 1) // 2 % 2))
             y = (coords[(quadrant + 1) % 2] * (-2 * (quadrant // 2 % 2) + 1)
                  + self.height * (quadrant // 2 % 2))
-            if  ((direction == 'v' and quadrant == 1)
-                 or (direction == 'h' and quadrant == 2)):
+            if  ((direction == 1 and quadrant == 1)
+                 or (direction == 0 and quadrant == 2)):
                 x -= 1
-            elif ((direction == 'v' and quadrant == 2)
-                  or (direction == 'h' and quadrant == 3)):
+            elif ((direction == 1 and quadrant == 2)
+                  or (direction == 0 and quadrant == 3)):
                 y -= 1
             if quadrant != 2:
-                direction = 'hv'[direction == 'h']
+                direction = 1 - direction
         return x, y, direction
 
 
 class Tetrasticks(Polysticks):
 
     piece_data = {
-        'I': ((((0,0),(4,0)),), {}),
-        'L': ((((0,0),(3,0)), ((3,0),(3,1))), {}),
-        'Y': ((((0,0),(3,0)), ((2,0),(2,1))), {}),
-        'V': ((((0,0),(2,0)), ((2,0),(2,2))), {}),
-        'T': ((((0,0),(2,0)), ((1,0),(1,2))), {}),
-        'X': ((((0,1),(2,1)), ((1,0),(1,2))), {}),
-        'U': ((((0,0),(2,0)), ((0,0),(0,1)), ((2,0),(2,1))), {}),
-        'N': ((((0,0),(2,0)), ((2,0),(2,1)), ((2,1),(3,1))), {}),
-        'J': ((((0,0),(2,0)), ((2,0),(2,1)), ((2,1),(1,1))), {}),
-        'H': ((((0,0),(2,0)), ((1,0),(1,1)), ((1,1),(2,1))), {}),
-        'F': ((((0,0),(2,0)), ((0,0),(0,1)), ((1,0),(1,1))), {}),
-        'Z': ((((0,0),(0,1)), ((0,1),(2,1)), ((2,1),(2,2))), {}),
-        'R': ((((0,0),(0,1)), ((0,1),(2,1)), ((1,1),(1,2))), {}),
-        'W': ((((0,0),(1,0)), ((1,0),(1,1)), ((1,1),(2,1)), ((2,1),(2,2))), {}),
-        'P': ((((0,0),(0,1)), ((0,1),(1,1)), ((1,1),(1,0)), ((1,0),(2,0))), {}),
-        'O': ((((0,0),(1,0)), ((1,0),(1,1)), ((1,1),(0,1)), ((0,1),(0,0))), {})}
-    """Coordinate pairs are end-points of line segments."""
+        'I': (((0,0,0), (1,0,0), (2,0,0), (3,0,0)), {}),
+        'L': (((0,0,0), (1,0,0), (2,0,0), (3,0,1)), {}),
+        'Y': (((0,0,0), (1,0,0), (2,0,0), (2,0,1)), {}),
+        'V': (((0,0,0), (1,0,0), (2,0,1), (2,1,1)), {}),
+        'T': (((0,0,0), (1,0,0), (1,0,1), (1,1,1)), {}),
+        'X': (((0,1,0), (1,1,0), (1,0,1), (1,1,1)), {}),
+        'U': (((0,0,0), (1,0,0), (0,0,1), (2,0,1)), {}),
+        'N': (((0,0,0), (1,0,0), (2,0,1), (2,1,0)), {}),
+        'J': (((0,0,0), (1,0,0), (2,0,1), (1,1,0)), {}),
+        'H': (((0,0,0), (1,0,0), (1,0,1), (1,1,0)), {}),
+        'F': (((0,0,0), (1,0,0), (0,0,1), (1,0,1)), {}),
+        'Z': (((0,0,1), (0,1,0), (1,1,0), (2,1,1)), {}),
+        'R': (((0,0,1), (0,1,0), (1,1,0), (1,1,1)), {}),
+        'W': (((0,0,0), (1,0,1), (1,1,0), (2,1,1)), {}),
+        'P': (((0,0,1), (0,1,0), (1,0,1), (1,0,0)), {}),
+        'O': (((0,0,0), (1,0,1), (0,1,0), (0,0,1)), {})}
+    """Line segments."""
 
     symmetric_pieces = 'I O T U V W X'.split()
     """Pieces with reflexive symmetry, identical to their mirror images."""
@@ -2842,14 +2852,14 @@ class Tetrasticks(Polysticks):
 class Polysticks123Data(object):
 
     piece_data = {
-        'I1': ((((0,0),(1,0)),), {}),
-        'I2': ((((0,0),(2,0)),), {}),
-        'V2': ((((0,0),(1,0)), ((0,0),(0,1))), {}),
-        'I3': ((((0,0),(3,0)),), {}),
-        'L3': ((((0,0),(2,0)), ((2,0),(2,1))), {}),
-        'T3': ((((0,0),(2,0)), ((1,0),(1,1))), {}),
-        'Z3': ((((0,1),(1,1)), ((1,1),(1,0)), ((1,0),(2,0))), {}),
-        'U3': ((((0,1),(0,0)), ((0,0),(1,0)), ((1,0),(1,1))), {}),}
+        'I1': (((0,0,0),), {}),
+        'I2': (((0,0,0), (1,0,0)), {}),
+        'V2': (((0,0,0), (0,0,1)), {}),
+        'I3': (((0,0,0), (1,0,0), (2,0,0)), {}),
+        'L3': (((0,0,0), (1,0,0), (2,0,1)), {}),
+        'T3': (((0,0,0), (1,0,0), (1,0,1)), {}),
+        'Z3': (((0,1,0), (1,0,1), (1,0,0)), {}),
+        'U3': (((0,0,1), (0,0,0), (1,0,1)), {}),}
 
 
 class WeldedTetrasticks4x4(Tetrasticks):
@@ -2915,7 +2925,7 @@ class Tetrasticks5x5(Tetrasticks):
         x_coords, x_aspect = self.pieces['X'][0]
         self.build_matrix_row('X', x_aspect)
         for x in range(2):
-            translated = x_aspect.translate((x, 1))
+            translated = x_aspect.translate((x, 1, 0))
             self.build_matrix_row('X', translated)
         keys.remove('X')
         self.build_regular_matrix(keys)
@@ -2961,7 +2971,7 @@ class Polysticks1234_6x6A(Polysticks1234_6x6):
         keys = sorted(self.pieces.keys())
         x_coords, x_aspect = self.pieces['X'][0]
         self.build_matrix_row('X', x_aspect)
-        translated = x_aspect.translate((1, 1))
+        translated = x_aspect.translate((1, 1, 0))
         self.build_matrix_row('X', translated)
         keys.remove('X')
         self.build_regular_matrix(keys)
@@ -2972,7 +2982,7 @@ class Polysticks1234_6x6B(Polysticks1234_6x6):
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
         x_coords, x_aspect = self.pieces['X'][0]
-        translated = x_aspect.translate((0, 1))
+        translated = x_aspect.translate((0, 1, 0))
         self.build_matrix_row('X', translated)
         keys.remove('X')
         self.build_regular_matrix(keys)
@@ -2987,7 +2997,7 @@ class Polysticks1234_6x6C(Polysticks1234_6x6):
         keys = sorted(self.pieces.keys())
         x_coords, x_aspect = self.pieces['X'][0]
         for x in range(2):
-            translated = x_aspect.translate((x, 2))
+            translated = x_aspect.translate((x, 2, 0))
             self.build_matrix_row('X', translated)
         keys.remove('X')
         self.build_regular_matrix(keys)
@@ -3004,7 +3014,7 @@ class Polysticks1234_6x6D(Polysticks1234_6x6):
     def build_matrix(self):
         keys = sorted(self.pieces.keys())
         x_coords, x_aspect = self.pieces['X'][0]
-        translated = x_aspect.translate((2, 2))
+        translated = x_aspect.translate((2, 2, 0))
         self.build_matrix_row('X', translated)
         keys.remove('X')
         self.build_regular_matrix(keys)
