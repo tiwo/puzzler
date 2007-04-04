@@ -196,7 +196,7 @@ class Cartesian2DCoordSet(CoordinateSet):
 
     coord_class = Cartesian2D
 
-    def orient2D(self, rotation=0, flip=0, pivot=(0,0)):
+    def orient2D(self, rotation=0, flip=0):
         """
         Transform (rotate, flip) the coordinate set according to parameters.
         """
@@ -204,8 +204,8 @@ class Cartesian2DCoordSet(CoordinateSet):
             newSet = []
             for c in self:
                 if flip:
-                    c = c.flip(pivot)
-                newSet.append(c.rotate(rotation, pivot))
+                    c = c.flip0()
+                newSet.append(c.rotate0(rotation))
             self.clear()
             self.update(newSet)
 
@@ -216,7 +216,7 @@ class Cartesian3DCoordSet(CoordinateSet):
 
     coord_class = Cartesian3D
 
-    def orient3D(self, rotation=0, axis=0, flip=0, pivot=(0,0,0)):
+    def orient3D(self, rotation=0, axis=0, flip=0):
         """
         Transform (rotate, flip) the coordinate set according to parameters.
         """
@@ -224,8 +224,8 @@ class Cartesian3DCoordSet(CoordinateSet):
             newSet = []
             for c in self:
                 if flip:
-                    c = c.flip((axis + 1) % 3, pivot)
-                newSet.append(c.rotate(rotation, axis, pivot))
+                    c = c.flip0((axis + 1) % 3)
+                newSet.append(c.rotate0(rotation, axis))
             self.clear()
             self.update(newSet)
 
@@ -233,20 +233,16 @@ class Cartesian3DCoordSet(CoordinateSet):
 class Cartesian2DView(Cartesian2DCoordSet):
 
     """
-    2 dimensional (+,+)-quadrant square-cell coordinate set with offset,
-    bounds, and pivot
+    2 dimensional (+,+)-quadrant square-cell coordinate set with bounds
     """
 
     def __init__(self, coord_list, rotation=0, flip=0):
         Cartesian2DCoordSet.__init__(self, coord_list)
-        # first coords in coordsList is assumed to be pivot:
-        pivot = self.coord_class(coord_list[0])
         # transform self under aspect:
-        self.orient2D(rotation, flip, pivot)
-        self.offset, self.bounds = self.calculate_offset_and_bounds()
-        self.pivot = pivot - self.offset
+        self.orient2D(rotation, flip)
+        offset, self.bounds = self.calculate_offset_and_bounds()
         # move coordSet to top-left at (0,0)
-        self._itranslate(-self.offset)
+        self._itranslate(-offset)
 
     def __hash__(self):
         return hash(tuple(sorted(self)))
@@ -263,20 +259,16 @@ class Cartesian2DView(Cartesian2DCoordSet):
 class Cartesian3DView(Cartesian3DCoordSet):
 
     """
-    3 dimensional (+,+,+)-quadrant square-cell coordinate set with offset,
-    bounds, and pivot
+    3 dimensional (+,+,+)-quadrant square-cell coordinate set with bounds
     """
 
     def __init__(self, coord_list, rotation=0, axis=0, flip=0):
         Cartesian3DCoordSet.__init__(self, coord_list)
-        # first coords in coordsList is assumed to be pivot:
-        pivot = self.coord_class(coord_list[0])
         # transform self under aspect:
-        self.orient3D(rotation, axis, flip, pivot)
-        self.offset, self.bounds = self.calculate_offset_and_bounds()
-        self.pivot = pivot - self.offset
+        self.orient3D(rotation, axis, flip)
+        offset, self.bounds = self.calculate_offset_and_bounds()
         # move coordSet to top-left at (0,0,0)
-        self._itranslate(-self.offset)
+        self._itranslate(-offset)
 
     def __hash__(self):
         return hash(tuple(sorted(self)))
@@ -306,135 +298,6 @@ class CartesianPseudo3DView(Cartesian3DView):
         return offset, bounds
 
 
-class Cartesian2DPath:
-
-    """
-    2 dimensional path along a square-cell grid's lines.
-    """
-
-    segments = None
-    """List of path segments (start- and end-points), each a
-    `Cartesian2DCoordSet`."""
-
-    intersections = None
-    """A `Cartesian2DCoordSet` of covered internal intersection coordinates."""
-
-    bounds = None
-    """"""
-
-    def __init__(self, segments):
-        self.segments = []
-        self.intersections = Cartesian2DCoordSet(())
-        x_coords = set()
-        y_coords = set()
-        for segment in segments:
-            if isinstance(segment, tuple):
-                self.segments.append(Cartesian2DCoordSet(segment))
-                start, end = [Cartesian2D(endpoint) for endpoint in segment]
-            else:
-                self.segments.append(segment)
-                start, end = segment
-            increment = increment_2D(start, end)
-            intersection = start + increment
-            while intersection != end:
-                self.intersections.add(intersection)
-                intersection += increment
-            x_coords.add(start[0])
-            y_coords.add(start[1])
-            x_coords.add(end[0])
-            y_coords.add(end[1])
-        self.bounds = Cartesian2D((max(x_coords), max(y_coords)))
-
-    def oriented(self, rotation=0, flip=0, pivot=(0,0), normalized=False):
-        """
-        Transform (rotate, flip) the coordinate set according to parameters.
-        """
-        if rotation == 0 and flip == 0:
-            segments = self.segments
-        else:
-            segments = []
-            for s in self.segments:
-                if flip:
-                    s = s.flip(pivot)
-                segments.append(s.rotate(rotation, pivot))
-        if normalized:
-            min_x = min(min(start.coords[0], end.coords[0])
-                        for (start, end) in segments)
-            min_y = min(min(start.coords[1], end.coords[1])
-                        for (start, end) in segments)
-            for coords in segments:
-                coords._itranslate((-min_x, -min_y))
-        return self.__class__((start.coords, end.coords)
-                              for (start, end) in segments)
-
-    def translate(self, offset, moduli=None):
-        """Move by offset"""
-        offset = Cartesian2D(offset)
-        segments = [segment.translate(offset, moduli)
-                    for segment in self.segments]
-        new = self.__class__(segments)
-        return new
-
-    def labels(self, widths):
-        for segment in self.segments:
-            start, end = segment
-            if start > end:
-                start, end = end, start
-            increment = increment_2D(start, end)
-            suffix = 'vh'[increment[0]]
-            intersection = start + increment
-            while start != end:
-                yield '%0*i,%0*i%s' % (widths[0], start[0],
-                                       widths[1], start[1], suffix)
-                start += increment
-            while intersection != end:
-                yield '%0*i,%0*ii' % (widths[0], intersection[0],
-                                      widths[1], intersection[1])
-                intersection += increment
-
-    def labels3d(self, widths):
-        for segment in self.segments:
-            start, end = segment
-            if start > end:
-                start, end = end, start
-            increment = increment_2D(start, end)
-            suffix = '10'[increment[0]]
-            intersection = start + increment
-            while start != end:
-                yield '%0*i,%0*i,%s' % (widths[0], start[0],
-                                       widths[1], start[1], suffix)
-                start += increment
-            while intersection != end:
-                yield '%0*i,%0*ii' % (widths[0], intersection[0],
-                                      widths[1], intersection[1])
-                intersection += increment
-
-    def __iter__(self):
-        return self._segment_generator()
-
-    def __str__(self):
-        return ('Cartesian2DPath(\n    segments=%s,\n    intersections=%s)'
-                % (self.segments, self.intersections))
-
-    def __hash__(self):
-        return hash(self._segments())
-
-    def __eq__(self, other):
-        return (self.bounds == other.bounds
-                and self._segments() == other._segments())
-
-    def __ne__(self, other):
-        return (self.bounds != other.bounds
-                or self._segments() != other._segments())
-
-    def _segments(self):
-        return tuple(sorted(self._segment_generator()))
-
-    def _segment_generator(self):
-        for segment in self.segments:
-            yield tuple(sorted(segment))
-
-
 class SquareGrid3D(Cartesian3D):
 
     """
@@ -456,7 +319,7 @@ class SquareGrid3D(Cartesian3D):
         The `axis` parameter is ignored.
         """
         return self.__class__(
-            ((-self.coords[0] + self.coords[2] + 1),
+            ((-self.coords[0] + self.coords[2] - 1),
              self.coords[1],
              self.coords[2]))
 
@@ -515,21 +378,39 @@ class SquareGrid3D(Cartesian3D):
                     self.__class__((x,     y - 1, 1))) # down
 
 
-class SquareGrid3DCoordSet(Cartesian3DCoordSet):
+class SquareGrid3DCoordSetMixin:
+
+    """
+    Attributes and methods for pseudo-3-dimensional square grid coordinate set.
+    """
+
+    coord_class = SquareGrid3D
+    intersection_coord_class = Cartesian2D
+
+    def intersections(self):
+        coords = set()
+        for (x,y,z) in self:
+            if self.coord_class((x + (z == 0), y + (z == 1), z)) in self:
+                coords.add(self.intersection_coord_class(
+                    (x + (z == 0), y + (z == 1))))
+        return coords
+
+
+class SquareGrid3DCoordSet(SquareGrid3DCoordSetMixin, Cartesian3DCoordSet):
 
     """Pseudo-3-dimensional square grid coordinate set."""
 
-    coord_class = SquareGrid3D
+    pass
 
 
-class SquareGrid3DView(CartesianPseudo3DView):
+class SquareGrid3DView(SquareGrid3DCoordSetMixin, CartesianPseudo3DView):
 
     """
     Pseudo-3-dimensional (+x,+y)-quadrant square grid coordinate set with
-    offset, bounds, and pivot.
+    bounds
     """
 
-    coord_class = SquareGrid3D
+    pass
 
 
 class Hexagonal2D(Cartesian2D):
@@ -617,8 +498,7 @@ class Hexagonal2DCoordSet(Cartesian2DCoordSet):
 class Hexagonal2DView(Cartesian2DView):
 
     """
-    2 dimensional (+,+)-quadrant hex-cell coordinate set with offset,
-    bounds, and pivot
+    2 dimensional (+,+)-quadrant hex-cell coordinate set with bounds
     """
 
     coord_class = Hexagonal2D
@@ -721,7 +601,7 @@ class Triangular3DView(CartesianPseudo3DView):
 
     """
     Pseudo-3-dimensional (+x,+y)-quadrant triangle-cell coordinate set with
-    offset, bounds, and pivot.
+    bounds.
     """
 
     coord_class = Triangular3D
