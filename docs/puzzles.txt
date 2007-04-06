@@ -32,7 +32,7 @@ Also see: `Polyform Puzzler FAQ`_
 .. _Polyform Puzzler FAQ: FAQ.html
 
 
-* Polyominoes
+* Polyominoes (pentominoes_ & variations)
 
   .. list-table::
      :class: borderless
@@ -49,7 +49,7 @@ Also see: `Polyform Puzzler FAQ`_
             :target: pentominoes.html#one-sided-pentominoes
             :class: borderless
 
-* Polycubes
+* `Polycubes <polycubes.html>`_ (& `solid pentominoes`_ & `pentacubes`_)
 
   .. list-table::
      :class: borderless
@@ -78,7 +78,7 @@ Also see: `Polyform Puzzler FAQ`_
             :target: pentacubes.html
             :class: borderless
 
-* Polyiamonds
+* Polyiamonds (`hexiamonds`_ & `heptiamonds`_)
 
   .. list-table::
      :class: borderless
@@ -95,7 +95,7 @@ Also see: `Polyform Puzzler FAQ`_
             :target: heptiamonds.html
             :class: borderless
 
-* Polyhexes
+* `Polyhexes <polyhexes.html>`_ (& `pentahexes`_)
 
   .. list-table::
      :class: borderless
@@ -119,7 +119,7 @@ Also see: `Polyform Puzzler FAQ`_
             :target: polyhexes.html#polyhexes-of-order-1-through-4
             :class: borderless
 
-* Polysticks
+* `Polysticks <polysticks.html>`_
 
   .. list-table::
      :class: borderless
