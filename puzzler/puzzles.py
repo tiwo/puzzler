@@ -481,10 +481,10 @@ class Puzzle2D(Puzzle):
                 cells.add(neighbor)
                 self._get_piece_cells(cells, neighbor, s_matrix, cell_content)
 
-    def format_coords_svg(self):
+    def format_coords_svg(self, piece_name='0'):
         s_matrix = self.empty_solution_matrix(margin=self.margin)
         for x, y in self.solution_coords:
-            s_matrix[y + self.margin][x + self.margin] = '0'
+            s_matrix[y + self.margin][x + self.margin] = piece_name
         return self.format_svg(s_matrix=s_matrix)
 
     def convert_record_to_solution_matrix(self, record):
@@ -681,10 +681,11 @@ class Puzzle3D(Puzzle):
                                  ''.join(cubes), self.svg_g_end,
                                  self.svg_footer)
 
-    def format_coords_svg(self):
+    def format_coords_svg(self, piece_name='0'):
         s_matrix = self.empty_solution_matrix(margin=self.margin)
         for x, y, z in self.solution_coords:
-            s_matrix[z + self.margin][y + self.margin][x + self.margin] = '0'
+            s_matrix[z + self.margin][y + self.margin][
+                x + self.margin] = piece_name
         return self.format_svg(s_matrix=s_matrix)
 
     def format_x3d(self, solution=None, s_matrix=None):
@@ -757,10 +758,10 @@ class PuzzlePseudo3D(Puzzle3D):
                 s_matrix[z][y + margin][x + margin] = name
         return s_matrix
 
-    def format_coords_svg(self):
+    def format_coords_svg(self, piece_name='0'):
         s_matrix = self.empty_solution_matrix(margin=self.margin)
         for x, y, z in self.solution_coords:
-            s_matrix[z][y + self.margin][x + self.margin] = '0'
+            s_matrix[z][y + self.margin][x + self.margin] = piece_name
         return self.format_svg(s_matrix=s_matrix)
 
     def format_x3d(self, solution=None, s_matrix=None):
@@ -805,7 +806,8 @@ class Pentominoes(Puzzle2D):
         'W': 'maroon',
         'Y': 'gold',
         'Z': 'plum',
-        '0': 'gray'}
+        '0': 'gray',
+        '1': 'black'}
 
 
 class Pentominoes6x10(Pentominoes):
@@ -1627,7 +1629,8 @@ class Tetracubes(Puzzle3D):
         'V1': 'gold',
         'V2': 'red',
         'V3': 'navy',
-        '0': 'gray'}
+        '0': 'gray',
+        '1': 'black'}
 
 
 class Tetracubes2x4x4(Tetracubes):
@@ -1702,7 +1705,8 @@ class Pentacubes(Puzzle3D):
         'V2': 'tomato',
         'Q':  'thistle',
         'A':  'cadetblue',
-        '0':  'gray'}
+        '0':  'gray',
+        '1':  'black'}
 
     piece_width = 3                     # for format_solution
 
@@ -2341,7 +2345,8 @@ class SomaCubes(Puzzle3D):
         'L': 'blueviolet',
         'a': 'gold',
         'b': 'navy',
-        '0': 'gray'}
+        '0': 'gray',
+        '1': 'black'}
 
     check_for_duplicates = False
 
@@ -2677,21 +2682,41 @@ class SomaSteamer(SomaCubes):
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
-class Polysticks(Puzzle):
+class Polysticks(PuzzlePseudo3D):
 
     # line segment orientation (horizontal=0, vertical=1):
     depth = 2
+
+    margin = 1
+
+    svg_path = '''\
+<path stroke="%(color)s" stroke-width="%(stroke_width)s" stroke-linecap="round"
+      d="%(path_data)s">
+<desc>%(name)s</desc>
+</path>
+'''
+
+    svg_stroke_width = '2'
+    """Width of line segments."""
+
+    svg_line = 'M %(x).3f,%(y).3f l %(dx).3f,%(dy).3f'
+    svg_ne_curve = 'M %(x).3f,%(y).3f a 2.5,2.5 0 0,0 -2.5,-2.5'
+    svg_nw_curve = 'M %(x).3f,%(y).3f a 2.5,2.5 0 0,1 +2.5,-2.5'
+    svg_se_curve = 'M %(x).3f,%(y).3f a 2.5,2.5 0 0,0 +2.5,-2.5'
+    svg_sw_curve = 'M %(x).3f,%(y).3f a 2.5,2.5 0 0,1 -2.5,-2.5'
 
     def coordinates(self):
         """
         Return coordinates for a typical rectangular polystick puzzle.
         """
-        for y in range(self.height + 1):
-            for x in range(self.width + 1):
+        last_x = self.width - 1
+        last_y = self.height - 1
+        for y in range(self.height):
+            for x in range(self.width):
                 for z in range(self.depth):
-                    if z == 1 and y == self.height:
+                    if z == 1 and y == last_y:
                         continue
-                    elif z == 0 and x == self.width:
+                    elif z == 0 and x == last_x:
                         continue
                     yield coordsys.SquareGrid3D((x, y, z))
 
@@ -2716,8 +2741,8 @@ class Polysticks(Puzzle):
             headers.append(header)
         primary = len(headers)
         # intersections on outer edge of solution coordinates not applicable:
-        for y in range(1, self.height):
-            for x in range(1, self.width):
+        for y in range(1, self.height - 1):
+            for x in range(1, self.width - 1):
                 header = '%0*i,%0*ii' % (self.x_width, x, self.y_width, y)
                 self.matrix_columns[header] = len(headers)
                 headers.append(header)
@@ -2727,8 +2752,8 @@ class Polysticks(Puzzle):
     def build_regular_matrix(self, keys):
         for key in keys:
             for coords, aspect in self.pieces[key]:
-                for y in range(self.height + 1 - aspect.bounds[1]):
-                    for x in range(self.width + 1 - aspect.bounds[0]):
+                for y in range(self.height - aspect.bounds[1]):
+                    for x in range(self.width - aspect.bounds[0]):
                         translated = aspect.translate((x, y, 0))
                         if translated.issubset(self.solution_coords):
                             self.build_matrix_row(key, translated)
@@ -2755,25 +2780,33 @@ class Polysticks(Puzzle):
         h_matrix, v_matrix, omitted, prefix = self.build_solution_matrices(
             solution, xy_swapped, rotation)
         lines = []
-        for y in range(self.height + 1):
-            lines.append(' ' + ' '.join(
-                ('-%s--' % name)[:4]
-                for name in x_reversed_fn(h_matrix[y])).rstrip())
-            if y != self.height:
+        for y in range(self.height):
+            h_segments = []
+            for name in x_reversed_fn(h_matrix[y]):
+                if name == ' ':
+                    h_segments.append('    ')
+                else:
+                    h_segments.append(('-%s--' % name)[:4])
+            lines.append(' ' + ' '.join(h_segments).rstrip())
+            if y != self.height - 1:
+                v_segments_1 = [name[0] for name in x_reversed_fn(v_matrix[y])]
+                v_segments_2 = []
+                for name in x_reversed_fn(v_matrix[y]):
+                    if name == ' ':
+                        v_segments_2.append(' ')
+                    else:
+                        v_segments_2.append((name + '|')[1])
                 lines.append(
                     '%s\n%s'
-                    % ('    '.join(
-                    name[0] for name in x_reversed_fn(v_matrix[y])).rstrip(),
-                       '    '.join(
-                    (name + '|')[1]
-                    for name in x_reversed_fn(v_matrix[y])).rstrip()))
+                    % ('    '.join(v_segments_1).rstrip(),
+                       '    '.join(v_segments_2).rstrip()))
         return prefix + '\n'.join(y_reversed_fn(lines))
 
     def build_solution_matrices(self, solution,
                                 xy_swapped=False, rotation=False, margin=0):
         h_matrix = [[' '] * (self.width + 2 * margin)
-                    for y in range(self.height + 2 * margin + 1)]
-        v_matrix = [[' '] * (self.width + 2 * margin + 1)
+                    for y in range(self.height + 2 * margin)]
+        v_matrix = [[' '] * (self.width + 2 * margin)
                     for y in range(self.height + 2 * margin)]
         matrices = [h_matrix, v_matrix]
         omitted = []
@@ -2801,9 +2834,9 @@ class Polysticks(Puzzle):
         if quadrant:
             coords = (x, y)
             x = (coords[quadrant % 2] * (-2 * ((quadrant + 1) // 2 % 2) + 1)
-                 + self.width * ((quadrant + 1) // 2 % 2))
+                 + (self.width - 1) * ((quadrant + 1) // 2 % 2))
             y = (coords[(quadrant + 1) % 2] * (-2 * (quadrant // 2 % 2) + 1)
-                 + self.height * (quadrant // 2 % 2))
+                 + (self.height - 1) * (quadrant // 2 % 2))
             if  ((direction == 1 and quadrant == 1)
                  or (direction == 0 and quadrant == 2)):
                 x -= 1
@@ -2813,6 +2846,147 @@ class Polysticks(Puzzle):
             if quadrant != 2:
                 direction = 1 - direction
         return x, y, direction
+
+    def convert_record_to_solution_matrix(self, record):
+        s_matrix = self.empty_solution_matrix(self.margin)
+        for row in record:
+            parts = row.split()
+            name = parts[-1]
+            for coords in parts[:-1]:
+                if coords.endswith('i') or coords == '!':
+                    continue            # skip intersections
+                x, y, z = (int(coord) for coord in coords.split(','))
+                s_matrix[z][y + self.margin][x + self.margin] = name
+        return s_matrix
+
+    def build_solution_matrix(self, solution, margin=0):
+        s_matrix = self.empty_solution_matrix(margin)
+        for row in solution:
+            name = row[-1]
+            for cell_name in row[:-1]:
+                if cell_name.endswith('i') or coords == '!':
+                    continue
+                x, y, z = [int(d.strip()) for d in cell_name.split(',')]
+                s_matrix[z + margin][y + margin][x + margin] = name
+        return s_matrix
+
+    def empty_solution_matrix(self, margin=0):
+        s_matrix = [[[self.empty_cell] * (self.width + 2 * margin)
+                     for y in range(self.height + 2 * margin)]
+                    for z in range(self.depth)]
+        return s_matrix
+
+    def format_svg(self, solution=None, s_matrix=None):
+        if s_matrix:
+            assert solution is None, ('Provide only one of solution '
+                                      '& s_matrix arguments, not both.')
+        else:
+            s_matrix = self.build_solution_matrix(solution, margin=1)
+        paths = []
+        for x in range(1, self.width + 1):
+            for y in range(1, self.height + 1):
+                for z in range(self.depth):
+                    if s_matrix[z][y][x] == self.empty_cell:
+                        continue
+                    paths.append(self.build_path(s_matrix, x, y, z))
+        header = self.svg_header % {
+            'height': (self.height + 1) * self.svg_unit_height,
+            'width': (self.width + 1) * self.svg_unit_width}
+        return '%s%s%s%s%s' % (header, self.svg_g_start, ''.join(paths),
+                               self.svg_g_end, self.svg_footer)
+
+    def build_path(self, s_matrix, x, y, z):
+        name = s_matrix[z][y][x]
+        color = self.piece_colors[name]
+        cells = self.get_piece_cells(s_matrix, x, y, z)
+        segments = self.get_path_segments(cells, s_matrix, x, y, z)
+        path_str = ' '.join(segments)
+        return self.svg_path % {'color': color,
+                                'stroke_width': self.svg_stroke_width,
+                                'path_data': path_str,
+                                'name': name}
+
+    def get_piece_cells(self, s_matrix, x, y, z):
+        cell_content = s_matrix[z][y][x]
+        coord = coordsys.SquareGrid3D((x, y, z))
+        cells = set([coord])
+        if cell_content != '0':
+            self._get_piece_cells(cells, coord, s_matrix, cell_content)
+        return cells
+
+    def _get_piece_cells(self, cells, coord, s_matrix, cell_content):
+        for neighbor in coord.neighbors():
+            x, y, z = neighbor
+            if neighbor not in cells and s_matrix[z][y][x] == cell_content:
+                cells.add(neighbor)
+                self._get_piece_cells(cells, neighbor, s_matrix, cell_content)
+
+    def get_path_segments(self, cells, s_matrix, x, y, z):
+        # !!! this code is too hairy, and has magic numbers
+        segments = []
+        unit = self.svg_unit_length
+        height = (self.height + 1) * unit
+        for (x,y,z) in cells:
+            start = end = False
+            if z:                       # vertical
+                if (x-1,y+1,0) in cells:
+                    segments.append(self.svg_ne_curve % {
+                        'x': x * unit, 'y': height - (y * unit + 7.5)})
+                if (x,y+1,0) in cells:
+                    segments.append(self.svg_nw_curve % {
+                        'x': x * unit, 'y': height - (y * unit + 7.5)})
+                if s_matrix[z][y][x] == self.empty_cell:
+                    continue
+                s_matrix[z][y][x] = self.empty_cell
+                y_start = y
+                while (x,y_start-1,z) in cells:
+                    y_start -= 1
+                    s_matrix[z][y_start][x] = self.empty_cell
+                y_end = y
+                while (x,y_end+1,z) in cells:
+                    y_end += 1
+                    s_matrix[z][y_end][x] = self.empty_cell
+                x_from = x * unit
+                dx = 0
+                y_from = height - (y_start * unit + 2)
+                dy = -6 - (y_end - y_start) * unit
+                if (x-1,y_start,0) in cells or (x,y_start,0) in cells:
+                    y_from -= .5
+                    dy += .5
+                if (x-1,y_end+1,0) in cells or (x,y_end+1,0) in cells:
+                    dy += .5
+                segments.append(self.svg_line % {
+                    'x': x_from, 'dx': dx, 'y': y_from, 'dy': dy})
+            else:                       # horizontal
+                if (x+1,y,1) in cells:
+                    segments.append(self.svg_se_curve % {
+                        'x': x * unit + 7.5, 'y': height - y * unit})
+                if (x,y,1) in cells:
+                    segments.append(self.svg_sw_curve % {
+                        'x': x * unit + 2.5, 'y': height - y * unit})
+                if s_matrix[z][y][x] == self.empty_cell:
+                    continue
+                s_matrix[z][y][x] = self.empty_cell
+                x_start = x
+                while (x_start-1,y,z) in cells:
+                    x_start -= 1
+                    s_matrix[z][y][x_start] = self.empty_cell
+                x_end = x
+                while (x_end+1,y,z) in cells:
+                    x_end += 1
+                    s_matrix[z][y][x_end] = self.empty_cell
+                x_from = x_start * unit + 2
+                dx = 6 + (x_end - x_start) * unit
+                y_from = height - y * unit
+                dy = 0
+                if (x_start,y,1) in cells or (x_start,y-1,1) in cells:
+                    x_from += .5
+                    dx -= .5
+                if (x_end+1,y,1) in cells or (x_end+1,y-1,1) in cells:
+                    dx -= .5
+                segments.append(self.svg_line % {
+                    'x': x_from, 'dx': dx, 'y': y_from, 'dy': dy})
+        return segments
 
 
 class Tetrasticks(Polysticks):
@@ -2848,6 +3022,26 @@ class Tetrasticks(Polysticks):
     unwelded_pieces = 'I J L N O P U V W Z '.split()
     """Pieces without junction points (max. 2 segments join)."""
 
+    piece_colors = {
+        'I': 'blue',
+        'X': 'red',
+        'F': 'green',
+        'L': 'lime',
+        'N': 'navy',
+        'P': 'magenta',
+        'T': 'darkorange',
+        'U': 'turquoise',
+        'V': 'blueviolet',
+        'W': 'maroon',
+        'Y': 'gold',
+        'Z': 'plum',
+        'J': 'darkseagreen',
+        'H': 'peru',        
+        'R': 'rosybrown',   
+        'O': 'yellowgreen',
+        '0': 'gray',
+        '1': 'black'}
+
 
 class Polysticks123Data(object):
 
@@ -2861,8 +3055,25 @@ class Polysticks123Data(object):
         'Z3': (((0,1,0), (1,0,1), (1,0,0)), {}),
         'U3': (((0,0,1), (0,0,0), (1,0,1)), {}),}
 
+    piece_colors = {
+        'I1': 'steelblue',
+        'I2': 'gray',
+        'V2': 'lightcoral',
+        'I3': 'olive',
+        'L3': 'teal',
+        'T3': 'tan',
+        'Z3': 'indigo',
+        'U3': 'orangered',
+        '0': 'gray',
+        '1': 'black'}
 
-class WeldedTetrasticks4x4(Tetrasticks):
+
+class Polysticks123(Polysticks123Data, Polysticks):
+
+    pass
+
+
+class WeldedTetrasticks5x5(Tetrasticks):
 
     """
     4 solutions (perfect solutions, i.e. no pieces cross).
@@ -2873,8 +3084,8 @@ class WeldedTetrasticks4x4(Tetrasticks):
     allow reflection when counting solutions either.
     """
 
-    width = 4
-    height = 4
+    width = 5
+    height = 5
 
     check_for_duplicates = True
     duplicate_conditions = ({'rotation': 1},
@@ -2890,9 +3101,10 @@ class WeldedTetrasticks4x4(Tetrasticks):
             self.piece_data[key][-1]['flips'] = None
             self.piece_data[key+'*'] = copy.deepcopy(self.piece_data[key])
             self.piece_data[key+'*'][-1]['flips'] = (1,)
+            self.piece_colors[key+'*'] = self.piece_colors[key]
 
 
-class Tetrasticks5x5(Tetrasticks):
+class Tetrasticks6x6(Tetrasticks):
 
     """
     1795 solutions total:
@@ -2906,8 +3118,8 @@ class Tetrasticks5x5(Tetrasticks):
     All are perfect solutions (i.e. no pieces cross).
     """
 
-    width = 5
-    height = 5
+    width = 6
+    height = 6
 
     check_for_duplicates = True
     duplicate_conditions = ({'xy_swapped': True},)
@@ -2937,13 +3149,62 @@ class Tetrasticks5x5(Tetrasticks):
         return set()
 
 
+class OneSidedTetrasticks(Tetrasticks):
+
+    def customize_piece_data(self):
+        """
+        Disable flips on all pieces, and add flipped versions of asymmetric
+        pieces.
+        """
+        self.piece_colors = copy.deepcopy(self.piece_colors)
+        for key in self.piece_data.keys():
+            self.piece_data[key][-1]['flips'] = None
+        for key in self.asymmetric_pieces:
+            self.piece_data[key.lower()] = copy.deepcopy(self.piece_data[key])
+            self.piece_data[key.lower()][-1]['flips'] = (1,)
+            self.piece_colors[key.lower()] = self.piece_colors[key]
+
+    def format_solution(self, *args, **kwargs):
+        """Convert solutions to uppercase to avoid duplicates."""
+        solution = Pentominoes.format_solution(self, *args, **kwargs)
+        return solution.upper()
+
+
+class OneSidedTetrasticks5x5DiamondLattice(OneSidedTetrasticks):
+
+    """
+    107 solutions (see "Covering the Aztec Diamond with One-sided Tetrasticks,
+    Extended Version", by `Alfred Wassermann`_).
+
+    .. _Alfred Wassermann:
+       http://did.mat.uni-bayreuth.de/~alfred/home/index.html
+    """
+
+    width = 10
+    height = 10
+
+    def customize_piece_data(self):
+        OneSidedTetrasticks.customize_piece_data(self)
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    if -6 < (x - y - z) < 5 and 3 < (x + y) < 14:
+                        yield coordsys.SquareGrid3D((x, y, z))
+
+
 class Polysticks1234(Tetrasticks, Polysticks123Data):
 
     piece_data = copy.deepcopy(Tetrasticks.piece_data)
     piece_data.update(copy.deepcopy(Polysticks123Data.piece_data))
+    piece_colors = copy.deepcopy(Tetrasticks.piece_colors)
+    piece_colors.update(Polysticks123Data.piece_colors)
 
 
-class Polysticks1234_6x6(Polysticks1234):
+class Polysticks1234_7x7(Polysticks1234):
 
     """
     ? solutions (very large number; over 35000 unique solutions in first
@@ -2951,73 +3212,55 @@ class Polysticks1234_6x6(Polysticks1234):
     (perfect solutions, i.e. no pieces cross).
     """
 
-    width = 6
-    height = 6
-
-    @classmethod
-    def components(cls):
-        return (Polysticks1234_6x6A,
-                Polysticks1234_6x6B,
-                Polysticks1234_6x6C,
-                Polysticks1234_6x6D)
-
-
-class Polysticks1234_6x6A(Polysticks1234_6x6):
-
-    check_for_duplicates = True
-    duplicate_conditions = ({'xy_swapped': True},)
-
-    def build_matrix(self):
-        keys = sorted(self.pieces.keys())
-        x_coords, x_aspect = self.pieces['X'][0]
-        self.build_matrix_row('X', x_aspect)
-        translated = x_aspect.translate((1, 1, 0))
-        self.build_matrix_row('X', translated)
-        keys.remove('X')
-        self.build_regular_matrix(keys)
-
-
-class Polysticks1234_6x6B(Polysticks1234_6x6):
-
-    def build_matrix(self):
-        keys = sorted(self.pieces.keys())
-        x_coords, x_aspect = self.pieces['X'][0]
-        translated = x_aspect.translate((0, 1, 0))
-        self.build_matrix_row('X', translated)
-        keys.remove('X')
-        self.build_regular_matrix(keys)
-
-
-class Polysticks1234_6x6C(Polysticks1234_6x6):
-
-    check_for_duplicates = True
-    duplicate_conditions = ({'y_reversed': True},)
-
-    def build_matrix(self):
-        keys = sorted(self.pieces.keys())
-        x_coords, x_aspect = self.pieces['X'][0]
-        for x in range(2):
-            translated = x_aspect.translate((x, 2, 0))
-            self.build_matrix_row('X', translated)
-        keys.remove('X')
-        self.build_regular_matrix(keys)
-
-
-class Polysticks1234_6x6D(Polysticks1234_6x6):
-
-    """symmetry: X at center; remove flip & rotation of P (fix one aspect)"""
+    width = 7
+    height = 7
 
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['rotations'] = None
 
-    def build_matrix(self):
-        keys = sorted(self.pieces.keys())
-        x_coords, x_aspect = self.pieces['X'][0]
-        translated = x_aspect.translate((2, 2, 0))
-        self.build_matrix_row('X', translated)
-        keys.remove('X')
-        self.build_regular_matrix(keys)
+
+class Polysticks1234_3x7DiamondLattice(Polysticks1234):
+
+    """
+    ? solutions
+    """
+
+    width = 10
+    height = 10
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0,1)
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    if -8 < (x - y - z) < 7 and 5 < (x + y) < 12:
+                        yield coordsys.SquareGrid3D((x, y, z))
+
+
+class Polysticks123_4x4Corners(Polysticks123):
+
+    """
+    0 solutions
+    """
+
+    width = 4
+    height = 4
+
+    def coordinates(self):
+        last_x = self.width - 1
+        last_y = self.height - 1
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    if ( (z == 1 and y == last_y)
+                         or (z == 0 and x == last_x)
+                         or (x,y,z) in ((1,1,0),(1,1,1),(1,2,0),(2,1,1))):
+                        continue
+                    yield coordsys.SquareGrid3D((x, y, z))
 
 
 class Polyhexes(Puzzle2D):
@@ -3223,7 +3466,8 @@ class Polyhexes123Data(object):
         'I3': 'teal',
         'V3': 'plum',
         'A3': 'olive',
-        '0': 'gray'}
+        '0': 'gray',
+        '1': 'black'}
 
 
 class Tetrahexes(Polyhexes):
@@ -3252,7 +3496,8 @@ class Tetrahexes(Polyhexes):
         'J4': 'blueviolet',
         'P4': 'gold',
         'S4': 'navy',
-        '0': 'gray'}
+        '0': 'gray',
+        '1': 'black'}
 
 
 class Polyhex1234(Polyhexes123Data, Tetrahexes):
@@ -3326,7 +3571,8 @@ class Pentahexes(Polyhexes):
         'T5': 'teal',
         'y5': 'tan',
         'G5': 'indigo',
-        '0': 'gray'}
+        '0': 'gray',
+        '1': 'black'}
 
 
 class Tetrahex4x7(Tetrahexes):
@@ -4041,7 +4287,8 @@ class Hexiamonds(Polyiamonds):
         'C6': 'blueviolet',
         'G6': 'maroon',
         'F6': 'plum',
-        '0': 'gray'}
+        '0': 'gray',
+        '1': 'black'}
 
 
 class Hexiamonds4x9(Hexiamonds):
@@ -4495,7 +4742,8 @@ class Heptiamonds(Polyiamonds):
         'X7': 'indigo',
         'Y7': 'yellow',
         'Z7': 'orangered',
-        '0': 'gray'}
+        '0': 'gray',
+        '1': 'black'}
 
 
 class Heptiamonds3x28(Heptiamonds):
