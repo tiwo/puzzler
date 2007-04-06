@@ -320,6 +320,10 @@ ones.  Polyform families are given descriptive names:
   polyominoes: polysticks can be thought of as paths joining the
   centers of the squares of polyominoes.
 
+  .. figure:: images/polysticks-3x7-diamond-lattice.png
+
+     Polysticks of Order 1-4 in a 3 |x| 7 Diamond Lattice
+
 .. [#polysticks] Brian R. Barwell, "Polysticks," `Journal of
    Recreational Mathematics` volume 22 issue 3 (1990), p.165-175
 .. _polyominoes:
@@ -535,7 +539,7 @@ one piece per line, with the piece name last::
     7,1 7,2 8,0 8,1 9,0 W
     8,2 8,3 8,4 9,1 9,2 N
 
-In some puzzles, like the 5x5 tetrasticks, one or more pieces are
+In some puzzles, like the 6x6 tetrasticks, one or more pieces are
 omitted from each solution.  Such omitted pieces are listed with "!"
 in place of the coordinates list::
 
@@ -668,12 +672,12 @@ How should polystick solution files be interpreted?
 Polysticks use a pseudo-3-dimensional X,Y,Z cartesian coordinate
 system, but the line segments of the grid are significant, not the
 squares.  The Z dimension is used to represent the direction of line
-segments: 0 = horizontal, 1 = vertical.  Horizontal line segments
-"x,y,0" start at (x,y) and end at (x+1,y), one unit to the right.
-Vertical line segments "x,y,1" start at (x,y) and end at (x,y+1), one
-unit up.  (The Z dimension corresponds to the index of the dimension
-that increases.)  Internal intersections (where grid lines cross) are
-also shown, in the form "x,yi", but these can be ignored.
+segments: 0=horizontal, 1=vertical.  Horizontal line segments "x,y,0"
+start at (x,y) and end at (x+1,y), one unit to the right.  Vertical
+line segments "x,y,1" start at (x,y) and end at (x,y+1), one unit up.
+(The Z dimension corresponds to the index of the dimension that
+increases.)  Internal intersections (where grid lines cross) are also
+shown, in the form "x,yi", but these can be ignored.
 
 The visual representation consists of piece names (letters) in an
 ASCII-art drawing of the 2-D grid.  Imagine each line segment with
@@ -693,7 +697,7 @@ adjacent like-labelled segments joined::
     |    |    |    *    *
      -F-- -F-- -F*- -F*-
 
-The solution above is from the 4x4 welded one-sided tetrasticks
+The solution above is from the 5x5 welded one-sided tetrasticks
 puzzle.  Asterisks ("*") indicate flipped pieces.
 
 

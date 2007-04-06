@@ -44,7 +44,7 @@ Also see: `Polyform Puzzler FAQ`_
             :class: borderless
 
        - `One-Sided Pentominoes <pentominoes.html#one-sided-pentominoes>`_
-         
+
          .. image:: images/one-sided-pentominoes-6x15-small.png
             :target: pentominoes.html#one-sided-pentominoes
             :class: borderless
@@ -61,7 +61,7 @@ Also see: `Polyform Puzzler FAQ`_
             :class: borderless
 
        - `Soma Cubes <polycubes.html#soma-cubes>`_
-         
+
          .. image:: images/soma-crystal-small.png
             :target: polycubes.html#soma-cubes
             :class: borderless
@@ -73,11 +73,11 @@ Also see: `Polyform Puzzler FAQ`_
             :class: borderless
 
        - `Pentacubes <pentacubes.html>`_
-         
+
          .. image:: images/pentacubes-great-wall-small.png
             :target: pentacubes.html
             :class: borderless
-  
+
 * Polyiamonds
 
   .. list-table::
@@ -90,7 +90,7 @@ Also see: `Polyform Puzzler FAQ`_
             :class: borderless
 
        - `Heptiamonds <heptiamonds.html>`_
-         
+
          .. image:: images/heptiamonds-snowflake-2-small.png
             :target: heptiamonds.html
             :class: borderless
@@ -107,23 +107,35 @@ Also see: `Polyform Puzzler FAQ`_
             :class: borderless
 
        - `Pentahexes <pentahexes.html>`_
-         
+
          .. image:: images/pentahex-15x11-trapezium-small.png
             :target: pentahexes.html
             :class: borderless
 
        - `Polyhexes of Order 1 Through 4
          <polyhexes.html#polyhexes-of-order-1-through-4>`_
-         
+
          .. image:: images/polyhex-5x8-small.png
             :target: polyhexes.html#polyhexes-of-order-1-through-4
             :class: borderless
 
 * Polysticks
 
-  - `Tetrasticks <polysticks.html#tetrasticks>`_
-  - `Polysticks of Order 1 Through 4
-    <polysticks.html#polysticks-of-order-1-through-4>`_
+  .. list-table::
+     :class: borderless
+
+     * - `Tetrasticks <polysticks.html#tetrasticks>`_
+
+         .. image:: images/tetrasticks-6x6.png
+            :target: polysticks.html#tetrasticks
+            :class: borderless
+
+       - `Polysticks of Order 1 Through 4
+         <polysticks.html#polysticks-of-order-1-through-4>`_
+
+         .. image:: images/polysticks-3x7-diamond-lattice.png
+            :target: polysticks.html#polysticks-of-order-1-through-4
+            :class: borderless
 
 
 .. |---| unicode:: U+2014  .. em dash

@@ -57,15 +57,16 @@ To implement:
   - Hexahexes (e.g. `Kadon's Hexnut II
     <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__)?
 
-* 15/16 tetrasticks: aztec diamond of order 3; unbordered 6x6 grid;
+* 15/16 tetrasticks: aztec diamond of order 3; unbordered 7x7 grid;
   3x5 diamond lattice
 
-* one-sided tetrasticks: 5x5 diamond lattice?  All non-isomorphic
+* one-sided tetrasticks: 5x5 diamond lattice?  All 107 non-isomorphic
   solutions are listed in "Covering the Aztec Diamond with One-sided
   Tetrasticks, Extended Version", by `Alfred Wassermann`_, University
   of Bayreuth.  (Wassermann, and Knuth before him, mistakenly called
-  the shape an "aztec diamond", but it actually corresponds to a
-  `centered square number
+  the shape an "aztec diamond", but an `aztec diamond is a different
+  shape <http://mathworld.wolfram.com/AztecDiamond.html>`__.  This
+  puzzle actually corresponds to a `centered square number
   <http://mathworld.wolfram.com/CenteredSquareNumber.html>`__.)
 
 * polysticks of order 1-4: 3x7 diamond lattice (90° angles)::

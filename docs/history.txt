@@ -19,7 +19,7 @@ Changes Since Release 1
 
 * Added puzzles:
 
-  - Polysticks of order 1 through 4: 6x6 grid.
+  - Polysticks of order 1 through 4: 7x7 grid, 3x7 diamond lattice.
 
   - Tetrahexes: 4x7 parallelogram; clipped 3x10; "coin".
 
@@ -55,10 +55,12 @@ Changes Since Release 1
 
   - Pentominoes: 8x8 without corners.
 
+  - Tetrasticks: 5x5 diamond lattice.
+
 * Added ``-n``/``--stop-after`` option.
 
 * Added SVG image generation support for polyominoes, polyiamonds,
-  polyhexes, and polycubes (``-s``/``--svg`` option).
+  polyhexes, polycubes, and polysticks (``-s``/``--svg`` option).
 
 * Added the ability to read in an existing solution record for
   rendering (``-r``/``--read-solution`` option).
@@ -86,6 +88,12 @@ Changes Since Release 1
 * Split docs/puzzles.txt up; it's now a table of contents linking to
   docs for each puzzle type.
 
+* Converted polysticks to a pseudo-3D coordinate system
+  (puzzler.coordsys.SquareGrid3D etc.).
+
+* Renamed polystick puzzles to reflect the number of grid lines,
+  instead of the number of squares.
+
 
 Release 1 (2006-08-08)
 ======================
@@ -102,7 +110,7 @@ The first release of Polyform Puzzler.  Included 28 puzzles:
 * Soma cubes: 3x3x3 cube, bathtub, cornerstone, crystal, curvedwall,
   highwall, longwall, skew 1 & 2, sofa, steamer, steps
 
-* 5x5 Tetrasticks & 4x4 welded one-sided tetrasticks.
+* 6x6 Tetrasticks & 5x5 welded one-sided tetrasticks.
 
 For the pre-history, see section 1.2 of the `FAQ <FAQ.html>`_.
 
