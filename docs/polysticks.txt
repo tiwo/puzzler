@@ -23,19 +23,56 @@ Also see:
 Tetrasticks
 ===========
 
-* 5x5 grid with one-sided welded tetrasticks: `4 solutions
+One-Sided Welded Tetrasticks
+----------------------------
+
+The "welded" tetrasticks are those that contain junction points, or
+welds, and therefore do not form simple connected paths (in other
+words, they branch).  There are 6 welded tetrasticks, 4 of which are
+asymmetrical, therefore there are 10 one-sided welded tetrasticks.
+
+* 5x5 grid: `4 solutions
   <http://puzzler.sf.net/solutions/welded-tetrasticks-5x5.txt>`__
 
   .. image:: images/welded-tetrasticks-5x5.png
 
-  The "welded" tetrasticks are those that contain junction points, or
-  welds, and therefore do not form simple connected paths (they
-  branch).
 
-* 6x6 grid with 15 of 16 tetrasticks: `1795 solutions
+15 of 16 Tetrasticks
+--------------------
+
+Due to an imbalance in horizontal/vertical parity, the 16 tetrasticks
+cannot be formed into a symmetrical shape.  But by omitting one of the
+five tetrasticks that have an excess of vertical or horizontal line
+segments (H, J, L, N, Y), symmetrical shapes can be formed.
+
+* 6x6 grid: `1795 solutions
   <http://puzzler.sf.net/solutions/tetrasticks-6x6.txt>`__
 
   .. image:: images/tetrasticks-6x6.png
+
+
+One-Sided Tetrasticks
+---------------------
+
+9 of the 16 tetrasticks are asymmetrical, therefore there are 25
+one-sided tetrasticks.
+
+* 5x5 diamond lattice: 107 solutions (none calculated yet though)
+
+  .. image:: images/one-sided-tetrasticks-5x5-diamond-lattice.png
+
+  All 107 non-isomorphic solutions are listed in "Covering the Aztec
+  Diamond with One-sided Tetrasticks, Extended Version", by `Alfred
+  Wassermann`_, University of Bayreuth.  The solution above is number
+  9 in Wassermann's paper.  (Wassermann, and Knuth before him,
+  mistakenly called the shape an "aztec diamond", but an `aztec
+  diamond is a subtly different shape`__.  This puzzle actually
+  corresponds to a `centered square number`__.)
+
+__ http://mathworld.wolfram.com/AztecDiamond.html
+__ http://mathworld.wolfram.com/CenteredSquareNumber.html
+.. _Alfred Wassermann:
+   http://did.mat.uni-bayreuth.de/~alfred/home/index.html
 
 
 Polysticks of Order 1 Through 4
