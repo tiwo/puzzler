@@ -286,7 +286,7 @@ class Puzzle(object):
                 for line in input_file:
                     match = self.solution_header.match(line)
                     if match:
-                        number = int(match.group(1))
+                        #number = int(match.group(1))
                         break
                 else:
                     raise DataError('Input does not contain a solution record.')
@@ -3160,9 +3160,9 @@ class OneSidedTetrasticks(Tetrasticks):
         for key in self.piece_data.keys():
             self.piece_data[key][-1]['flips'] = None
         for key in self.asymmetric_pieces:
-            self.piece_data[key.lower()] = copy.deepcopy(self.piece_data[key])
-            self.piece_data[key.lower()][-1]['flips'] = (1,)
-            self.piece_colors[key.lower()] = self.piece_colors[key]
+            self.piece_data[key+'*'] = copy.deepcopy(self.piece_data[key])
+            self.piece_data[key+'*'][-1]['flips'] = (1,)
+            self.piece_colors[key+'*'] = self.piece_colors[key]
 
     def format_solution(self, *args, **kwargs):
         """Convert solutions to uppercase to avoid duplicates."""
