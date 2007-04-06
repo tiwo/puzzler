@@ -5,4 +5,4 @@
 
 import puzzler.puzzles
 
-puzzler.run(puzzler.puzzles.WeldedTetrasticks4x4)
+puzzler.run(puzzler.puzzles.WeldedTetrasticks5x5)

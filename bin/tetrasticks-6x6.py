@@ -15,4 +15,4 @@ All are perfect solutions (i.e. no pieces cross).
 
 import puzzler.puzzles
 
-puzzler.run(puzzler.puzzles.Tetrasticks5x5)
+puzzler.run(puzzler.puzzles.Tetrasticks6x6)
