@@ -50,6 +50,8 @@ segments (H, J, L, N, Y), symmetrical shapes can be formed.
 
   .. image:: images/tetrasticks-6x6.png
 
+  In this solution, the "H" piece is omitted.
+
 
 One-Sided Tetrasticks
 ---------------------
@@ -78,8 +80,8 @@ __ http://mathworld.wolfram.com/CenteredSquareNumber.html
 Polysticks of Order 1 Through 4
 ===============================
 
-This puzzle uses the monostick and all distick, tristick, and
-tetrastick pieces.
+This puzzle uses the 1 monostick, 2 disticks, 5 tristicks, and 16
+tetrasticks.
 
 * 7x7 grid: `solutions incomplete
   <http://puzzler.sf.net/solutions/polysticks-7x7.txt>`__
