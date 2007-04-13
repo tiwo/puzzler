@@ -446,16 +446,24 @@ a few good places to start:
   <http://www.ics.uci.edu/~eppstein/junkyard/polyomino.html>`__
 * `Pentamini pentaminos pentominoes
   <http://www.geocities.com/liviozuc/>`__
+* `More about polyforms <http://www.gamepuzzles.com/morepoly.htm>`__
+  (`Kadon Enterprises`_)
+* `More about Polyominoes and Polycubes
+  <http://www.gamepuzzles.com/polyintr.htm>`__ (`Kadon Enterprises`_)
+* `Game and Puzzle Sites <http://www.gamepuzzles.com/resourc5.htm>`__
+  (`Kadon Enterprises`_)
 
 
 Where can I find physical polyform puzzles?
 -------------------------------------------
 
-I recommend researching on the web, then checking out your local toy,
-game, and puzzle specialty stores.  If they don't stock what you want,
-ask them to get it for you!
+For a wide variety via mail order, I **highly recommend** `Kadon
+Enterprises`_ (see my `wish list`_).
 
-Here are some sources that I know of:
+I also recommend doing research on the web, then checking out your
+local toy, game, and puzzle specialty stores.  If they don't stock
+what you want, ask them to get it for you!  Here are some sources that
+I know of:
 
 * The 21 polyominoes of order 1-5 are used as the playing pieces in
   the "Blokus_" board game.
@@ -470,9 +478,6 @@ Here are some sources that I know of:
   the "Blokus Trigon" board game. 
 
 * In Japan, many polyform puzzles are available from Tenyo_.
-
-For a wide variety via mail order, I **highly recommend** `Kadon
-Enterprises`_ (see my `wish list`_).
 
 .. _Blokus: http://en.wikipedia.org/wiki/Blokus
 .. _Shoptaugh Games: http://www.shoptaugh.com/
