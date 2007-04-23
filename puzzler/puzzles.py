@@ -2699,26 +2699,74 @@ class Polysticks(PuzzlePseudo3D):
     svg_stroke_width = '2'
     """Width of line segments."""
 
+    svg_curve_radius = '2.5'
     svg_line = 'M %(x).3f,%(y).3f l %(dx).3f,%(dy).3f'
+    svg_line_length = 6
+    svg_line_end_offset = 7.5
+    svg_line_start_offset = 2.5
+    # difference between a terminal line segment & one with a curve attached:
+    svg_line_end_delta = 0.5
     svg_ne_curve = 'M %(x).3f,%(y).3f a 2.5,2.5 0 0,0 -2.5,-2.5'
     svg_nw_curve = 'M %(x).3f,%(y).3f a 2.5,2.5 0 0,1 +2.5,-2.5'
     svg_se_curve = 'M %(x).3f,%(y).3f a 2.5,2.5 0 0,0 +2.5,-2.5'
     svg_sw_curve = 'M %(x).3f,%(y).3f a 2.5,2.5 0 0,1 -2.5,-2.5'
 
+## initial attempt to generalize the above & format_svg:
+#   svg_curve = ('M %(x).3f,%(y).3f a %(radius)s,%(radius)s 0 0,%(sweep)i'
+#                ' %(x_sign)s%(radius)s,-%(radius)s')
+#   svg_path_data = {
+#       0: Struct(curve_neighbors={(+1, 0, 0): Struct(dx=7.5, dy=0,
+#                                                     sweep=0, x_sign='+'),
+#                                  (0, 0, 0): Struct(dx=2.5, dy=0,
+#                                                    sweep=1, x_sign='-')},
+#                 ),
+#       1: Struct(curve_neighbors={(-1, +1, 0): Struct(dx=0, dy=7.5,
+#                                                      sweep=0, x_sign='-'),
+#                                  (0, +1, 0): Struct(dx=0, dy=7.5,
+#                                                     sweep=1, x_sign='+')},
+#                 start_neighbors=(Struct(dx=-1, dy=0, dlength=-.5, dstart=.5),
+#                                  Struct(dx=0,  dy=0, dlength=-.5, dstart=.5)),
+#                 end_neighbors=(Struct(dx=-1, dy=1, dlength=-.5),
+#                                Struct(dx=0,  dy=1, dlength=-.5)))}
+
     def coordinates(self):
         """
         Return coordinates for a typical rectangular polystick puzzle.
         """
-        last_x = self.width - 1
-        last_y = self.height - 1
-        for y in range(self.height):
-            for x in range(self.width):
-                for z in range(self.depth):
-                    if z == 1 and y == last_y:
-                        continue
-                    elif z == 0 and x == last_x:
+        return self.coordinates_bordered(self.width, self.height)
+
+    def coordinates_bordered(self, m, n):
+        """MxN bordered polystick grid."""
+        last_x = m - 1
+        last_y = n - 1
+        for y in range(n):
+            for x in range(m):
+                for z in range(2):
+                    if (z == 1 and y == last_y) or (z == 0 and x == last_x):
                         continue
                     yield coordsys.SquareGrid3D((x, y, z))
+
+    def coordinates_unbordered(self, m, n):
+        """MxN unbordered polystick grid."""
+        for y in range(n - 1):
+            for x in range(m - 1):
+                for z in range(2):
+                    if (z == 1 and x == 0) or (z == 0 and y == 0):
+                        continue
+                    yield coordsys.SquareGrid3D((x, y, z))
+
+    def coordinates_diamond_lattice(self, m, n):
+        """MxN polystick diamond lattice."""
+        height = width = m + n
+        sw = m - 2
+        ne = m + 2 * n - 1
+        nw = -m - 1
+        se = m
+        for y in range(height):
+            for x in range(width):
+                for z in range(2):
+                    if nw < (x - y - z) < se and sw < (x + y) < ne:
+                        yield coordsys.SquareGrid3D((x, y, z))
 
     def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3)):
         aspects = set()
@@ -2734,18 +2782,22 @@ class Polysticks(PuzzlePseudo3D):
         for i, key in enumerate(sorted(self.pieces.keys())):
             self.matrix_columns[key] = i
             headers.append(key)
-        for (x, y, z) in self.coordinates():
+        deltas = ((1,0,0), (0,1,0))
+        intersections = set()
+        for coord in sorted(self.solution_coords):
+            (x, y, z) = coord
             header = '%0*i,%0*i,%0*i' % (
                 self.x_width, x, self.y_width, y, self.z_width, z)
             self.matrix_columns[header] = len(headers)
             headers.append(header)
+            next = coord + deltas[z]
+            if next in self.solution_coords:
+                intersections.add(next[:2])
         primary = len(headers)
-        # intersections on outer edge of solution coordinates not applicable:
-        for y in range(1, self.height - 1):
-            for x in range(1, self.width - 1):
-                header = '%0*i,%0*ii' % (self.x_width, x, self.y_width, y)
-                self.matrix_columns[header] = len(headers)
-                headers.append(header)
+        for (x, y) in sorted(intersections):
+            header = '%0*i,%0*ii' % (self.x_width, x, self.y_width, y)
+            self.matrix_columns[header] = len(headers)
+            headers.append(header)
         self.secondary_columns = len(headers) - primary
         self.matrix.append(headers)
 
@@ -2922,19 +2974,20 @@ class Polysticks(PuzzlePseudo3D):
                 self._get_piece_cells(cells, neighbor, s_matrix, cell_content)
 
     def get_path_segments(self, cells, s_matrix, x, y, z):
-        # !!! this code is too hairy, and has magic numbers
+        # this code is long & hairy, but the alternative may be worse ;-)
         segments = []
         unit = self.svg_unit_length
         height = (self.height + 1) * unit
         for (x,y,z) in cells:
-            start = end = False
             if z:                       # vertical
                 if (x-1,y+1,0) in cells:
                     segments.append(self.svg_ne_curve % {
-                        'x': x * unit, 'y': height - (y * unit + 7.5)})
+                        'x': x * unit,
+                        'y': height - (y * unit + self.svg_line_end_offset)})
                 if (x,y+1,0) in cells:
                     segments.append(self.svg_nw_curve % {
-                        'x': x * unit, 'y': height - (y * unit + 7.5)})
+                        'x': x * unit,
+                        'y': height - (y * unit + self.svg_line_end_offset)})
                 if s_matrix[z][y][x] == self.empty_cell:
                     continue
                 s_matrix[z][y][x] = self.empty_cell
@@ -2948,22 +3001,25 @@ class Polysticks(PuzzlePseudo3D):
                     s_matrix[z][y_end][x] = self.empty_cell
                 x_from = x * unit
                 dx = 0
-                y_from = height - (y_start * unit + 2)
-                dy = -6 - (y_end - y_start) * unit
+                y_from = y_start * unit + (self.svg_line_start_offset
+                                           - self.svg_line_end_delta)
+                dy = self.svg_line_length + (y_end - y_start) * unit
                 if (x-1,y_start,0) in cells or (x,y_start,0) in cells:
-                    y_from -= .5
-                    dy += .5
+                    y_from += self.svg_line_end_delta
+                    dy -= self.svg_line_end_delta
                 if (x-1,y_end+1,0) in cells or (x,y_end+1,0) in cells:
-                    dy += .5
+                    dy -= self.svg_line_end_delta
                 segments.append(self.svg_line % {
-                    'x': x_from, 'dx': dx, 'y': y_from, 'dy': dy})
+                    'x': x_from, 'dx': dx, 'y': (height - y_from), 'dy': -dy})
             else:                       # horizontal
                 if (x+1,y,1) in cells:
                     segments.append(self.svg_se_curve % {
-                        'x': x * unit + 7.5, 'y': height - y * unit})
+                        'x': x * unit + self.svg_line_end_offset,
+                        'y': height - y * unit})
                 if (x,y,1) in cells:
                     segments.append(self.svg_sw_curve % {
-                        'x': x * unit + 2.5, 'y': height - y * unit})
+                        'x': x * unit + self.svg_line_start_offset,
+                        'y': height - y * unit})
                 if s_matrix[z][y][x] == self.empty_cell:
                     continue
                 s_matrix[z][y][x] = self.empty_cell
@@ -2975,17 +3031,18 @@ class Polysticks(PuzzlePseudo3D):
                 while (x_end+1,y,z) in cells:
                     x_end += 1
                     s_matrix[z][y][x_end] = self.empty_cell
-                x_from = x_start * unit + 2
-                dx = 6 + (x_end - x_start) * unit
-                y_from = height - y * unit
+                x_from = x_start * unit + (self.svg_line_start_offset
+                                           - self.svg_line_end_delta)
+                dx = self.svg_line_length + (x_end - x_start) * unit
+                y_from = y * unit
                 dy = 0
                 if (x_start,y,1) in cells or (x_start,y-1,1) in cells:
-                    x_from += .5
-                    dx -= .5
+                    x_from += self.svg_line_end_delta
+                    dx -= self.svg_line_end_delta
                 if (x_end+1,y,1) in cells or (x_end+1,y-1,1) in cells:
-                    dx -= .5
+                    dx -= self.svg_line_end_delta
                 segments.append(self.svg_line % {
-                    'x': x_from, 'dx': dx, 'y': y_from, 'dy': dy})
+                    'x': x_from, 'dx': dx, 'y': height - y_from, 'dy': dy})
         return segments
 
 
@@ -3019,8 +3076,11 @@ class Tetrasticks(Polysticks):
     welded_pieces = 'F H R T X Y'.split()
     """Pieces with junction points (where 3 or more segments join)."""
 
-    unwelded_pieces = 'I J L N O P U V W Z '.split()
+    unwelded_pieces = 'I J L N O P U V W Z'.split()
     """Pieces without junction points (max. 2 segments join)."""
+
+    imbalance_omittable_pieces = 'H J L N Y'.split()
+    """Pieces to be omitted (one at a time) to remove an overall imbalance."""
 
     piece_colors = {
         'I': 'blue',
@@ -3036,11 +3096,28 @@ class Tetrasticks(Polysticks):
         'Y': 'gold',
         'Z': 'plum',
         'J': 'darkseagreen',
-        'H': 'peru',        
-        'R': 'rosybrown',   
+        'H': 'peru',
+        'R': 'rosybrown',
         'O': 'yellowgreen',
         '0': 'gray',
         '1': 'black'}
+
+    def build_rows_for_omitted_pieces(self):
+        """
+        Build matrix rows for omitted pieces to remove an overall imbalance.
+        """
+        for name in self.imbalance_omittable_pieces:
+            row = [0] * len(self.matrix[0])
+            row[self.matrix_columns['!']] = name
+            row[self.matrix_columns[name]] = name
+            self.matrix.append(row)
+
+    def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3)):
+        if units:
+            return Polysticks.make_aspects(
+                self, units, flips=flips, rotations=rotations)
+        else:
+            return set()
 
 
 class Polysticks123Data(object):
@@ -3128,25 +3205,37 @@ class Tetrasticks6x6(Tetrasticks):
         self.piece_data['!'] = ((), {})
 
     def build_matrix(self):
-        keys = sorted(self.pieces.keys())
-        for name in 'HJLNY':
-            row = [0] * len(self.matrix[0])
-            row[self.matrix_columns['!']] = name
-            row[self.matrix_columns[name]] = name
-            self.matrix.append(row)
+        self.build_rows_for_omitted_pieces()
         x_coords, x_aspect = self.pieces['X'][0]
         self.build_matrix_row('X', x_aspect)
         for x in range(2):
             translated = x_aspect.translate((x, 1, 0))
             self.build_matrix_row('X', translated)
+        keys = sorted(self.pieces.keys())
         keys.remove('X')
         self.build_regular_matrix(keys)
 
-    def make_aspects(self, segments, flips=(0, 1), rotations=(0, 1, 2, 3)):
-        if segments:
-            return Tetrasticks.make_aspects(
-                self, segments, flips=flips, rotations=rotations)
-        return set()
+
+class Tetrasticks3x5DiamondLattice(Tetrasticks):
+
+    """
+    0 solutions
+    """
+
+    width = 8
+    height = 8
+
+    def customize_piece_data(self):
+        self.piece_data['!'] = ((), {})
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0,1)
+
+    def build_matrix(self):
+        self.build_rows_for_omitted_pieces()
+        self.build_regular_matrix(sorted(self.pieces.keys()))
+
+    def coordinates(self):
+        return self.coordinates_diamond_lattice(5, 3)
 
 
 class OneSidedTetrasticks(Tetrasticks):
@@ -3189,11 +3278,7 @@ class OneSidedTetrasticks5x5DiamondLattice(OneSidedTetrasticks):
         self.piece_data['P'][-1]['rotations'] = None
 
     def coordinates(self):
-        for y in range(self.height):
-            for x in range(self.width):
-                for z in range(self.depth):
-                    if -6 < (x - y - z) < 5 and 3 < (x + y) < 14:
-                        yield coordsys.SquareGrid3D((x, y, z))
+        return self.coordinates_diamond_lattice(5, 5)
 
 
 class Polysticks1234(Tetrasticks, Polysticks123Data):
@@ -3234,11 +3319,38 @@ class Polysticks1234_3x7DiamondLattice(Polysticks1234):
         self.piece_data['P'][-1]['rotations'] = (0,1)
 
     def coordinates(self):
-        for y in range(self.height):
-            for x in range(self.width):
-                for z in range(self.depth):
-                    if -8 < (x - y - z) < 7 and 5 < (x + y) < 12:
-                        yield coordsys.SquareGrid3D((x, y, z))
+        return self.coordinates_diamond_lattice(7, 3)
+
+
+class Polysticks1234_8x8Unbordered(Polysticks1234):
+
+    """
+    ? solutions
+    """
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        return self.coordinates_unbordered(self.width, self.height)
+
+
+class Polysticks1234_5x5DiamondLatticeRing(Polysticks1234):
+
+    """
+    """
+
+    width = 10
+    height = 10
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+    def coordinates(self):
+        hole = set((coord + (3,3,0))
+                   for coord in self.coordinates_diamond_lattice(2, 2))
+        return list(set(self.coordinates_diamond_lattice(5, 5)) - hole)
 
 
 class Polysticks123_4x4Corners(Polysticks123):
