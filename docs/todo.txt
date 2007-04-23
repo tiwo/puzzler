@@ -15,8 +15,6 @@
 General
 =======
 
-* Implement SVG rendering of polysticks.
-
 * Rewrite exact_cover.py in C as an extension module.
 
 * Complete unit tests.
