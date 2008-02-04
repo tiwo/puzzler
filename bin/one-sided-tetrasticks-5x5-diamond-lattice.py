@@ -2,7 +2,7 @@
 # $Id$
 
 """
-? solutions
+107 solutions
 """
 
 import puzzler.puzzles

@@ -316,7 +316,9 @@ class Puzzle(object):
         """
         self.solutions.add(formatted)
         for conditions in self.duplicate_conditions:
-            self.solutions.add(self.format_solution(solution, **conditions))
+            formatted = self.format_solution(solution, **conditions)
+            if formatted not in self.solutions:
+                self.solutions.add(formatted)
 
 
 class Puzzle2D(Puzzle):
@@ -2834,7 +2836,8 @@ class Polysticks(PuzzlePseudo3D):
         lines = []
         for y in range(self.height):
             h_segments = []
-            for name in x_reversed_fn(h_matrix[y]):
+            # !!! [:-1] is a hack. Works for bordered grids only:
+            for name in x_reversed_fn(h_matrix[y][:-1]):
                 if name == ' ':
                     h_segments.append('    ')
                 else:
@@ -2852,7 +2855,7 @@ class Polysticks(PuzzlePseudo3D):
                     '%s\n%s'
                     % ('    '.join(v_segments_1).rstrip(),
                        '    '.join(v_segments_2).rstrip()))
-        return prefix + '\n'.join(y_reversed_fn(lines))
+        return (prefix + '\n'.join(y_reversed_fn(lines))).upper()
 
     def build_solution_matrices(self, solution,
                                 xy_swapped=False, rotation=False, margin=0):
@@ -3153,12 +3156,8 @@ class Polysticks123(Polysticks123Data, Polysticks):
 class WeldedTetrasticks5x5(Tetrasticks):
 
     """
-    4 solutions (perfect solutions, i.e. no pieces cross).
+    3 solutions (perfect solutions, i.e. no pieces cross).
     2 solutions are perfectly symmetrical in reflection.
-    The other 2 solutions are isomorphic in reflection if we allow reflection.
-
-    But we don't allow reflection while solving the puzzle, so we shouldn't
-    allow reflection when counting solutions either.
     """
 
     width = 5
@@ -3167,18 +3166,41 @@ class WeldedTetrasticks5x5(Tetrasticks):
     check_for_duplicates = True
     duplicate_conditions = ({'rotation': 1},
                             {'rotation': 2},
-                            {'rotation': 3},)
+                            {'rotation': 3},
+                            {'x_reversed': True},
+                            {'y_reversed': True},
+                            {'xy_swapped': True},
+                            {'x_reversed': True,
+                             'rotation': 1},
+                            {'y_reversed': True,
+                             'rotation': 1},
+                            {'xy_swapped': True,
+                             'rotation': 1},
+                            {'x_reversed': True,
+                             'rotation': 2},
+                            {'y_reversed': True,
+                             'rotation': 2},
+                            {'xy_swapped': True,
+                             'rotation': 2},
+                            {'x_reversed': True,
+                             'rotation': 3},
+                            {'y_reversed': True,
+                             'rotation': 3},
+                            {'xy_swapped': True,
+                             'rotation': 3},)
 
     def customize_piece_data(self):
+        self.piece_colors = copy.deepcopy(self.piece_colors)
         for key in self.unwelded_pieces:
             del self.piece_data[key]
         for key in self.asymmetric_pieces:
             if key not in self.piece_data:
                 continue
             self.piece_data[key][-1]['flips'] = None
-            self.piece_data[key+'*'] = copy.deepcopy(self.piece_data[key])
-            self.piece_data[key+'*'][-1]['flips'] = (1,)
-            self.piece_colors[key+'*'] = self.piece_colors[key]
+            new_key = key.lower()
+            self.piece_data[new_key] = copy.deepcopy(self.piece_data[key])
+            self.piece_data[new_key][-1]['flips'] = (1,)
+            self.piece_colors[new_key] = self.piece_colors[key]
 
 
 class Tetrasticks6x6(Tetrasticks):
@@ -3249,14 +3271,10 @@ class OneSidedTetrasticks(Tetrasticks):
         for key in self.piece_data.keys():
             self.piece_data[key][-1]['flips'] = None
         for key in self.asymmetric_pieces:
-            self.piece_data[key+'*'] = copy.deepcopy(self.piece_data[key])
-            self.piece_data[key+'*'][-1]['flips'] = (1,)
-            self.piece_colors[key+'*'] = self.piece_colors[key]
-
-    def format_solution(self, *args, **kwargs):
-        """Convert solutions to uppercase to avoid duplicates."""
-        solution = Pentominoes.format_solution(self, *args, **kwargs)
-        return solution.upper()
+            new_key = key.lower()
+            self.piece_data[new_key] = copy.deepcopy(self.piece_data[key])
+            self.piece_data[new_key][-1]['flips'] = (1,)
+            self.piece_colors[new_key] = self.piece_colors[key]
 
 
 class OneSidedTetrasticks5x5DiamondLattice(OneSidedTetrasticks):
@@ -3274,11 +3292,180 @@ class OneSidedTetrasticks5x5DiamondLattice(OneSidedTetrasticks):
 
     def customize_piece_data(self):
         OneSidedTetrasticks.customize_piece_data(self)
-        self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['rotations'] = None
 
     def coordinates(self):
         return self.coordinates_diamond_lattice(5, 5)
+
+
+class OneSidedTetrasticks8x8CenterHole(OneSidedTetrasticks):
+
+    """
+    ? solutions
+    """
+
+    width = 8
+    height = 8
+
+    def customize_piece_data(self):
+        OneSidedTetrasticks.customize_piece_data(self)
+        self.piece_data['P'][-1]['rotations'] = None
+        # enough for uniqueness?
+
+    def coordinates(self):
+        hole = coordsys.SquareGrid3DCoordSet(self.coordinates_unbordered(4, 4))
+        hole = hole.translate((2, 2, 0))
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in hole:
+                yield coord
+
+
+class OneSidedTetrasticks8x8ClippedCorners1(OneSidedTetrasticks):
+
+    """
+    ? solutions
+    """
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        hole = set(((0,5,1),(0,6,0),(0,6,1),(0,7,0),(1,6,1),(1,7,0),
+                    (5,0,0),(6,0,0),(6,0,1),(6,1,0),(7,0,1),(7,1,1)))
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in hole:
+                yield coord
+
+
+class OneSidedTetrasticks8x8ClippedCorners2(OneSidedTetrasticks):
+
+    """
+    ? solutions
+    """
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        hole = set(((0,5,1),(0,6,0),(0,6,1),(0,7,0),(1,6,1),(1,7,0),
+                    (5,7,0),(6,6,0),(6,6,1),(6,7,0),(7,5,1),(7,6,1)))
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in hole:
+                yield coord
+
+
+class OneSidedTetrasticks8x8ClippedCorner(OneSidedTetrasticks):
+
+    """
+    ? solutions
+    """
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        hole = set(((0,4,1),(0,5,0),(0,5,1),(0,6,0),(0,6,1),(0,7,0),
+                    (1,5,1),(1,6,0),(1,6,1),(1,7,0),(2,6,1),(2,7,0)))
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in hole:
+                yield coord
+
+
+class OneSidedTetrasticks6x10CenterHole(OneSidedTetrasticks):
+
+    """
+    ? solutions
+    """
+
+    width = 10
+    height = 6
+
+    def coordinates(self):
+        hole = coordsys.SquareGrid3DCoordSet(self.coordinates_bordered(2, 2))
+        hole = hole.translate((4, 2, 0))
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in hole:
+                yield coord
+
+
+class OneSidedTetrasticks6x10Slot(OneSidedTetrasticks):
+
+    """
+    ? solutions
+    """
+
+    width = 10
+    height = 6
+
+    def coordinates(self):
+        hole = set(((3,2,1),(4,2,1),(5,2,1),(6,2,1)))
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in hole:
+                yield coord
+
+
+class OneSidedTetrasticks6x10SideHoles(OneSidedTetrasticks):
+
+    """
+    ? solutions
+    """
+
+    width = 10
+    height = 6
+
+    def coordinates(self):
+        hole = set(((0,2,1),(4,0,0),(4,5,0),(9,2,1)))
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in hole:
+                yield coord
+
+
+class OneSidedTetrasticks6x10ClippedCorners1(OneSidedTetrasticks):
+
+    """
+    ? solutions
+    """
+
+    width = 10
+    height = 6
+
+    def coordinates(self):
+        hole = set(((0,4,1),(0,5,0),(8,0,0),(9,0,1)))
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in hole:
+                yield coord
+
+
+class OneSidedTetrasticks6x10ClippedCorners2(OneSidedTetrasticks):
+
+    """
+    ? solutions
+    """
+
+    width = 10
+    height = 6
+
+    def coordinates(self):
+        hole = set(((0,4,1),(0,5,0),(8,5,0),(9,4,1)))
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in hole:
+                yield coord
+
+
+class OneSidedTetrasticks6x10ClippedCorners3(OneSidedTetrasticks):
+
+    """
+    ? solutions
+    """
+
+    width = 10
+    height = 6
+
+    def coordinates(self):
+        hole = set(((8,0,0),(8,5,0),(9,0,1),(9,4,1)))
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in hole:
+                yield coord
 
 
 class Polysticks1234(Tetrasticks, Polysticks123Data):

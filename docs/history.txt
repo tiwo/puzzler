@@ -55,7 +55,9 @@ Changes Since Release 1
 
   - Pentominoes: 8x8 without corners.
 
-  - One-sided tetrasticks: 5x5 diamond lattice.
+  - One-sided tetrasticks: 5x5 diamond lattice, 8x8 grid with center
+    hole, 8x8 grid with one clipped corner, 8x8 grid with two clipped
+    corners (2 variations).
 
 * Added ``-n``/``--stop-after`` option.
 
