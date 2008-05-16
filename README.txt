@@ -114,7 +114,7 @@ To keep up to date on the latest developments, either download fresh
 copies of the snapshots regularly, or use the `Subversion
 repository`_:
 
-    svn co https://svn.sourceforge.net/svnroot/puzzler/trunk/puzzler
+    svn co https://puzzler.svn.sourceforge.net/svnroot/puzzler/trunk/puzzler
 
 .. _Subversion repository: https://sourceforge.net/svn/?group_id=7049
 
