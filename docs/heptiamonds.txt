@@ -120,6 +120,20 @@ Hexagons
   .. image:: images/heptiamonds-hexagon-7.png
 
 
+Irregular Hexagons
+==================
+
+- 4x22 long hexagon: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-4x22-long-hex.txt>`__
+
+  .. image:: images/heptiamonds-4x22-long-hex.png
+
+- 10x12 short hexagon: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-10x12-short-hex.txt>`__
+
+  .. image:: images/heptiamonds-10x12-short-hex.png
+
+
 Misc
 ====
 

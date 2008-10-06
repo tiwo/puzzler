@@ -5499,12 +5499,48 @@ class HeptiamondsDiamondRing(Heptiamonds):
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
-                for x in range(self.height):
+                for x in range(self.width):
                     if x < 3 or x > 6 or y < 3 or y > 6:
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
         self.piece_data['W7'][-1]['flips'] = None
+
+
+class Heptiamonds4x22LongHexagon(Heptiamonds):
+
+    """
+     solutions
+
+    Elongated hexagon (clipped parallelogram) 4 units high by 22 units wide.
+    """
+
+    height = 4
+    width = 22
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if (self.height / 2 - 1) < (x + y + z) < (self.width + self.height / 2):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['W7'][-1]['flips'] = None
+
+
+class Heptiamonds10x12ShortHexagon(Heptiamonds4x22LongHexagon):
+
+    """
+     solutions
+
+    Shortened hexagon (clipped parallelogram) 10 units wide by 12 units high.
+    """
+
+    height = 12
+    width = 10
 
 
 if __name__ == '__main__':
