@@ -64,6 +64,52 @@ Trapezia
   .. image:: images/heptiamonds-4x23-trapezium.png
 
 
+Chevrons
+========
+
+- 4x21: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-4x21-chevron.txt>`__
+
+  .. image:: images/heptiamonds-4x21-chevron.png
+
+- 6x14: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-6x14-chevron.txt>`__
+
+  .. image:: images/heptiamonds-6x14-chevron.png
+
+- 12x7: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-12x7-chevron.txt>`__
+
+  .. image:: images/heptiamonds-12x7-chevron.png
+
+- 14x6: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-14x6-chevron.txt>`__
+
+  .. image:: images/heptiamonds-14x6-chevron.png
+
+- 28x3: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-28x3-chevron.txt>`__
+
+  .. image:: images/heptiamonds-28x3-chevron.png
+
+
+Stacks
+======
+
+Stacks of 2-unit-high elongated hexagons; approximations of
+rectangles.
+
+- 11x8: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-11x8-stack.txt>`__
+
+  .. image:: images/heptiamonds-11x8-stack.png
+
+- 4x24: `solutions incomplete
+  <http://puzzler.sf.net/solutions/heptiamonds-4x24-stack.txt>`__
+
+  .. image:: images/heptiamonds-4x24-stack.png
+
+
 Snowflakes
 ==========
 
@@ -83,6 +129,8 @@ Snowflakes
 
 Hexagons
 ========
+
+Regular hexagons with holes of various shapes & sizes.
 
 - Hexagon 1: `solutions incomplete
   <http://puzzler.sf.net/solutions/heptiamonds-hexagon-1.txt>`__

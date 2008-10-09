@@ -33,8 +33,9 @@ Changes Since Release 1
     trefoil.
 
   - Heptiamonds: 7x12, 6x14, 4x21, 3x28 parallelograms; 12x13, 6x17, &
-    4x23 trapezia; snowflakes; triangle with central hole; diamond
-    ring; hexagons; 4x22 long hexagon; 10x12 short hexagon.
+    4x23 trapezia; 4x21, 6x14, 12x7, 14x6, & 28x3 chevrons; 11x8 &
+    4x24 stacks; snowflakes; triangle with central hole; diamond ring;
+    hexagons; 4x22 long hexagon; 10x12 short hexagon.
 
   - One-sided pentominoes: 3x30, 5x18, 6x15, 9x10.
 

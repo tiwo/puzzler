@@ -5524,7 +5524,9 @@ class Heptiamonds4x22LongHexagon(Heptiamonds):
         for z in range(self.depth):
             for y in range(self.height):
                 for x in range(self.width):
-                    if (self.height / 2 - 1) < (x + y + z) < (self.width + self.height / 2):
+                    if (  (self.height / 2 - 1)
+                          < (x + y + z)
+                          < (self.width + self.height / 2) ):
                         yield coordsys.Triangular3D((x, y, z))
 
     def customize_piece_data(self):
@@ -5541,6 +5543,103 @@ class Heptiamonds10x12ShortHexagon(Heptiamonds4x22LongHexagon):
 
     height = 12
     width = 10
+
+
+class HeptiamondsChevron(Heptiamonds):
+
+    """
+    Left-facing chevron.
+
+    Width of solution space is (apparent width) + (height / 2).
+    """
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if y >= self.height / 2:
+                        if x < (self.width - self.height / 2):
+                            # top half
+                            yield coordsys.Triangular3D((x, y, z))
+                    elif (self.height / 2 - 1) < (x + y + z) < self.width:
+                        # bottom half
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['W7'][-1]['flips'] = None
+
+
+class Heptiamonds4x21Chevron(HeptiamondsChevron):
+
+    """ solutions."""
+
+    height = 4
+    width = 23                          
+
+
+class Heptiamonds6x14Chevron(HeptiamondsChevron):
+
+    """ solutions."""
+
+    height = 6
+    width = 17
+
+
+class Heptiamonds12x7Chevron(HeptiamondsChevron):
+
+    """ solutions."""
+
+    height = 12
+    width = 13
+
+
+class Heptiamonds14x6Chevron(HeptiamondsChevron):
+
+    """ solutions."""
+
+    height = 14
+    width = 13
+
+
+class Heptiamonds28x3Chevron(HeptiamondsChevron):
+
+    """ solutions."""
+
+    height = 28
+    width = 17
+
+
+class HeptiamondsStack(Heptiamonds):
+
+    """
+    Stack of 2-high elongated hexagons; approximation of a rectangle.
+
+    Width of solution space is (apparent width) + (height / 2) - 1.
+    """
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if (self.height - 1) <= (2 * x + y + z) < (self.width * 2):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['W7'][-1]['flips'] = None
+
+
+class Heptiamonds11x8Stack(HeptiamondsStack):
+
+    height = 8
+    width = 14
+
+
+class Heptiamonds4x24Stack(HeptiamondsStack):
+
+    height = 24
+    width = 15
 
 
 if __name__ == '__main__':
