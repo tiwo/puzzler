@@ -3874,6 +3874,20 @@ class Pentahexes(Polyhexes):
         '1': 'black'}
 
 
+class Polyhex12345(Polyhex1234, Pentahexes):
+
+    symmetric_pieces = (Polyhex1234.symmetric_pieces
+                        + Pentahexes.symmetric_pieces)
+
+    asymmetric_pieces = (Polyhex1234.asymmetric_pieces
+                         + Pentahexes.asymmetric_pieces)
+
+    def customize_piece_data(self):
+        Polyhex1234.customize_piece_data(self)
+        self.piece_data.update(copy.deepcopy(Pentahexes.piece_data))
+        self.piece_colors.update(Pentahexes.piece_colors)
+
+
 class Tetrahex4x7(Tetrahexes):
 
     """9 solutions"""
@@ -4268,6 +4282,46 @@ class Polyhex1234_5x8(Polyhex1234):
 
     height = 5
     width = 8
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+
+class Polyhex12345_3x50(Polyhex12345):
+
+    """0 solutions?"""
+
+    height = 3
+    width = 50
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+
+class Polyhex12345_5x30(Polyhex12345):
+
+    """? solutions"""
+
+    height = 5
+    width = 30
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+
+class Polyhex12345_6x25(Polyhex12345):
+
+    """? solutions"""
+
+    height = 6
+    width = 25
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+
+class Polyhex12345_10x15(Polyhex12345):
+
+    """? solutions"""
+
+    height = 10
+    width = 15
 
     duplicate_conditions = ({'rotate_180': True},)
 

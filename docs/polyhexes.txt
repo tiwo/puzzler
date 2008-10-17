@@ -58,4 +58,26 @@ seven tetrahexes.
   .. image:: images/polyhex-5x8.png
 
 
+Polyhexes of Order 1 Through 5
+==============================
+
+These puzzles uses the monohex, the dihex, the three trihexes, the
+seven tetrahexes, and the 22 pentahexes.
+
+* 5x30 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polyhex-5x30.txt>`__
+
+  .. image:: images/polyhex-5x30.png
+
+* 6x25 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polyhex-6x25.txt>`__
+
+  .. image:: images/polyhex-6x25.png
+
+* 10x15 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polyhex-10x15.txt>`__
+
+  .. image:: images/polyhex-10x15.png
+
+
 .. |c| unicode:: U+00A9 .. copyright sign

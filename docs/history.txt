@@ -28,6 +28,9 @@ Changes Since Release 1
 
   - Polyhexes of order 1 through 4: 4x10 & 5x8 parallelograms.
 
+  - Polyhexes of order 1 through 5: 5x30, 6x25, & 10x15
+    parallelograms.
+
   - Hexiamonds: 4x9 & 6x6 parallelograms; 4x11 trapezium; 4x10
     elongated hexagon; snowflake; ring 2; crescents; 6x8 "coin";
     trefoil.
