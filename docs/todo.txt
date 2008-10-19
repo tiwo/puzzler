@@ -8,7 +8,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2007 by David J. Goodger
+:Copyright: |c| 1998-2008 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 
@@ -47,11 +47,10 @@ To implement:
 
   - O'Beirne's hexagon one-sided hexiamond problem?  (see Knuth's
     "Dancing Links" paper)
+  - Octiamonds
 
 * polyhexes
 
-  - Order 1 through 5 (like `Kadon's Hexnut
-    <http://www.gamepuzzles.com/esspoly2.htm#HN>`__)?
   - Hexahexes (e.g. `Kadon's Hexnut II
     <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__)?
 

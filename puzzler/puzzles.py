@@ -3,7 +3,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2007 by David J. Goodger
+# Copyright: (C) 1998-2008 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 import sys
