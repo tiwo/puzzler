@@ -53,6 +53,7 @@ def process_command_line():
              'starting position.\n'
              'Use "-" to read the starting position from standard input.')
             % (sys.argv[0]))
+        sys.exit(1)
     return settings
 
 def read_start_position_from_stdin():
