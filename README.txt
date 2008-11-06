@@ -15,6 +15,9 @@ front-end applications for specific polyform puzzles and a Python
 library that does the heavy lifting.  New polyforms and new puzzles
 can easily be defined and added.  Python 2.4 or higher is required.
 
+**Polyform Puzzler** also contains a Sudoku puzzle solver using the
+same (versatile!) engine.
+
 .. contents::
 
 

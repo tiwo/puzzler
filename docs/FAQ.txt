@@ -756,6 +756,74 @@ __ http://xxx.lanl.gov/PS_cache/cs/pdf/0011/0011047.pdf
 .. _Algorithm X: http://en.wikipedia.org/wiki/Algorithm_X
 
 
+How are Sudoku puzzles solved?
+------------------------------
+
+Sudoku can be reduced to the same kind of `exact cover`_ problem as
+polyform puzzles, and the same DLX algorithm can be used to solve
+Sudoku puzzles.  It's just a matter of identifying the constraints.
+
+Here's a 4x4 Sudoku puzzle we'll use to illustrate:
+
+    1 . | . 4
+    . 4 | . 2
+    ----+----
+    2 3 | . 1
+    . . | 2 .
+
+Each row, column, and block must contain the digits (1, 2, 3, 4)
+exactly once.  We have four sets of constraints:
+
+1. There are 4 blocks, numbered 0, 1, 2, & 3.  Each block must contain
+   the digits (1, 2, 3, 4) exactly once.  We can name each exact cover
+   matrix column with the combination of digit value and block number:
+
+       1b0 2b0 3b0 4b0 1b1 2b1 3b1 4b1 1b2 2b2 3b2 4b2 1b3 2b3 3b3 4b3
+
+   Each name is of the form: digit + "b" + block number.  There are
+   sixteen combinations, 4 * 4, or 4-squared.  In a 9x9 Sudoku puzzle,
+   there will be 81 combinations.
+
+2. There are 4 columns, again numbered 0, 1, 2, & 3.  Each column must
+   contain each digit exactly once.  Again, we combine the digit
+   values and column numbers to name exact cover matrix columns:
+
+       1c0 2c0 3c0 4c0 1c1 2c1 3c1 4c1 1c2 2c2 3c2 4c2 1c3 2c3 3c3 4c3
+
+   Each name is of the form: digit + "c" + column number.  There are
+   16 combinations, (4 * 4, or 4-squared).  In a 9x9 Sudoku puzzle,
+   there will be 81 combinations.
+
+3. Similarly for the 4 rows:
+
+       1r0 2r0 3r0 4r0 1r1 2r1 3r1 4r1 1r2 2r2 3r2 4r2 1r3 2r3 3r3 4r3
+
+4. We must also make sure that no digit is placed in the same location
+   more than once.  So we have constraints on all coordinate pairs,
+   all combinations of rows & columns:
+
+       0,0 1,0 2,0 3,0 0,1 1,1 2,1 3,1 0,2 1,2 2,2 3,2 0,3 1,3 2,3 3,3
+   
+Altogether there are 4 sets of constraints, each with 16 (4 * 4)
+elements, for a total of 64 columns in the exact cover matrix.  For a
+9x9 puzzle, we will have 4 times (9 squared) = 324 columns.
+
+A Sudoku puzzle has a starting position, a set of given digits in a
+sparse grid.  The program creates one exact cover matrix row for each
+of these digits.  Each row will have exactly four "1" values, one each
+for the block, the column, and the row (each paired with the digit
+value), and one for the column & row coordinate pair.  The program
+will then generates one candidate row for each digit in each empty
+square in the starting position.
+
+The resulting matrix is then fed into the DLX algorithm, which
+produces the result: a set of rows that satisfies all constraints.  If
+the puzzle is ambiguous (and therefore not well-formed), more than one
+result may be produced.  If an entirely empty starting position is
+used, the algorithm will eventually produce every possible Sudoku
+solution (all 6,670,903,752,021,072,936,960 of them, if you give it
+enough time).
+
 .. |---| unicode:: U+2014  .. em dash
    :trim:
 .. |c| unicode:: U+00A9 .. copyright sign

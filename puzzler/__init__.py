@@ -6,7 +6,8 @@
 ==================
 
 "Polyform Puzzler" is a Python library (``puzzler``) and a set of front-end
-applications (solvers) for exploring & solving polyform puzzles.
+applications (solvers) for exploring & solving polyform puzzles and Sudoku
+puzzles.
 """
 
 # Author: David Goodger <goodger@python.org>
