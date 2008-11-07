@@ -6,11 +6,39 @@
 # Copyright: (C) 1998-2008 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
+"""
+Sudoku solver with support for front end applications.
+"""
+
 import sys
 import math
 import optparse
 from datetime import datetime
 from puzzler import exact_cover
+
+usage = '%prog [options] [<puzzle-file>]'
+
+description = """\
+9x9 Sudoku puzzle solver.  Supply a Sudoku starting position: either provide
+the name of the file containing the position (as <puzzle-file> above), or type
+in the starting position at the prompt.  Use periods (".") to represent empty
+squares in starting positions.  Starting positions must be either 9 lines of 9
+columns, or all on one line, with or without spaces between digits.  See the
+README.txt file for details
+(http://puzzler.sourceforge.net/README.html#sudoku).
+"""
+
+cmdline_problem_text = """\
+%s takes one optional command-line argument, the file name of
+the starting position.  Omit the command-line argument or use "-" to read
+the starting position from standard input."""
+
+stdin_prompt = """
+Enter a 9x9 Sudoku starting position: either 9 lines of 9 columns
+or 1 big line, "." for empty squares, spaces optional.
+Ctrl-D (on Linux/Mac), Ctrl-Z + Enter (on Windows) to end:
+"""
+
 
 def run(puzzle_class, start_position=None, output_stream=sys.stdout,
         settings=None):
@@ -20,7 +48,7 @@ def run(puzzle_class, start_position=None, output_stream=sys.stdout,
     elif start_position:
         settings.start_position = start_position
     solve(puzzle_class, output_stream, settings)
-    
+
 def run_from_command_line(puzzle_class, output_stream=sys.stdout,
                           settings=None):
     """
@@ -35,32 +63,27 @@ def process_command_line():
     """Process command-line options & return a settings object."""
     parser = optparse.OptionParser(
         formatter=optparse.TitledHelpFormatter(width=78),
-        add_help_option=None)
+        add_help_option=None, description=description, usage=usage)
     parser.add_option(
         '-n', '--stop-after', type='int', metavar='N',
         help='Stop processing after generating N solutions.')
     parser.add_option(
         '-h', '--help', help='Show this help message and exit.', action='help')
     settings, args = parser.parse_args()
-    if len(args) == 1:
+    if not args:
+        settings.start_position = read_start_position_from_stdin()
+    elif len(args) == 1:
         if args[0] == '-':
             settings.start_position = read_start_position_from_stdin()
         else:
             settings.start_position = read_start_position_from_file(args[0])
     else:
-        print >>sys.stderr, (
-            ('%s takes one command-line argument, the file name of the '
-             'starting position.\n'
-             'Use "-" to read the starting position from standard input.')
-            % (sys.argv[0]))
+        print >>sys.stderr, cmdline_problem_text % (sys.argv[0])
         sys.exit(1)
     return settings
 
 def read_start_position_from_stdin():
-    print >>sys.stderr, (
-        'Enter Sudoku starting position.\n'
-        '9 lines of 9 columns (or 1 big line), "." for empty squares.\n'
-        'Ctrl-D (on Linux/Mac), Ctrl-Z (on Windows) to end:')
+    print >>sys.stderr, stdin_prompt
     data = sys.stdin.read()
     return data
 
@@ -121,7 +144,7 @@ class Settings(object):
 
     def __init__(self, **keywordargs):
         self.__dict__.update(keywordargs)
-    
+
 
 class Puzzle(object):
 
@@ -207,7 +230,7 @@ class Puzzle(object):
         """
         filled = self.build_matrix_rows_for_givens()
         self.build_matrix_rows_for_unknowns(filled)
-    
+
     def build_matrix_rows_for_givens(self):
         """
         Append rows to `self.matrix` from cells in starting position.
@@ -274,17 +297,16 @@ class Puzzle(object):
                         self.matrix.append(row)
 
     def normalize_start_position(self):
-        lines = self.start_position.splitlines()
+        pos = self.start_position
+        pos = pos.replace('-', '').replace('|', '').replace('+', '')
+        lines = [line for line in pos.splitlines() if line]
         if len(lines) == 1:
             line = lines[0].strip()
             cells = line.split()
-            if len(cells) == 1:
-                cells = list(line)
-            elif len(cells) == self.order:
-                cells = list(''.join(cells))
+            cells = list(''.join(cells))
             if len(cells) != self.order ** 2:
                 raise DataError(
-                    '1-line starting position: %i numbers found, %i expected.'
+                    '1-line starting position: %i numbers found, %i expected'
                     % (len(lines), self.order ** 2))
             self.start_position = (
                 '\n'.join(' '.join(cells[n:n+self.order])
@@ -293,16 +315,16 @@ class Puzzle(object):
             new_lines = []
             for i, line in enumerate(lines):
                 cells = line.split()
-                if len(cells) == 1:
-                    cells = list(line)
+                if len(cells) != self.order:
+                    cells = list(''.join(cells))
                 if len(cells) == self.order:
                     new_lines.append(' '.join(cells))
                 else:
-                    raise DataError('%i columns found (in row %i), %i expected.'
+                    raise DataError('%i columns found (in row %i), %i expected'
                                     % (len(cells), i + 1, self.order))
             self.start_position = '\n'.join(new_lines)
         else:
-            raise DataError('%i rows found, %i expected (or all on 1 line).'
+            raise DataError('%i rows found, 1 or %i expected'
                             % (len(lines), self.order))
 
     def record_solution(self, solution, solver, stream=sys.stdout, dated=False):
@@ -362,26 +384,30 @@ class SudokuTest(object):
 # http://en.wikipedia.org/wiki/Algorithmics_of_Sudoku
 # "Exceptionally difficult Sudokus (Hardest Sudokus)":
 """\
-1 . . . . . . . 2
-. 9 . 4 . . . 5 .
-. . 6 . . . 7 . .
-. 5 . 9 . 3 . . .
-. . . . 7 . . . .
-. . . 8 5 . . 4 .
-7 . . . . . 6 . .
-. 3 . . . 9 . 8 .
-. . 2 . . . . . 1
+1.. ... ..2
+.9. 4.. .5.
+..6 ... 7..
+
+.5. 9.3 ...
+... .7. ...
+... 85. .4.
+
+7.. ... 6..
+.3. ..9 .8.
+..2 ... ..1
 """,
 """\
-. . 1 . . 4 . . .
-. . . . 6 . 3 . 5
-. . . 9 . . . . .
-8 . . . . . 7 . 3
-. . . . . . . 2 8
-5 . . . 7 . 6 . .
-3 . . . 8 . . . 6
-. . 9 2 . . . . .
-. 4 . . . 1 . . .
+. . 1 | . . 4 | . . .
+. . . | . 6 . | 3 . 5
+. . . | 9 . . | . . .
+------+-------+------
+8 . . | . . . | 7 . 3
+. . . | . . . | . 2 8
+5 . . | . 7 . | 6 . .
+------+-------+------
+3 . . | . 8 . | . . 6
+. . 9 | 2 . . | . . .
+. 4 . | . . 1 | . . .
 """,
 """\
 . . . . . . . 3 9
@@ -587,7 +613,7 @@ class SudokuTest(object):
             print 'SudokuTest.magictour line %i:\n' % (i + 1)
             run(Sudoku9x9, start_position=pos)
             print
-        
+
 
 if __name__ == '__main__':
     SudokuTest.run9x9()

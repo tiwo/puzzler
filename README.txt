@@ -272,6 +272,90 @@ hit Ctrl+F5).
 the output window will disappear as soon as the puzzle finishes.)
 
 
+Sudoku
+======
+
+To solve a 9x9 Sudoku puzzle, use the ``bin/sudoku.py`` front end
+command as described the Usage_ section above.  You must supply a
+Sudoku starting position, either by providing (on the command line)
+the name of the file containing the position, or by typing in the
+starting position at the prompt.  Use periods (".") to represent empty
+squares in starting positions.  Examples:
+
+* Supply the name of a file containing the starting position::
+
+      bin/sudoku.py start.txt
+
+* Supply the starting position at the prompt::
+
+      bin/sudoku.py start.txt
+
+      Enter a 9x9 Sudoku starting position: either 9 lines of 9 columns
+      or 1 big line, "." for empty squares, spaces optional.
+      Ctrl-D (on Linux/Mac), Ctrl-Z + Enter (on Windows) to end:
+
+      ... enter starting position here ...
+
+Starting positions must be in one of the following formats:
+
+* 9 lines of 9 columns, with or without spaces between digits::
+
+     4 . . . . . 8 . 5
+     . 3 . . . . . . .
+     . . . 7 . . . . .
+     . 2 . . . . . 6 .
+     . . . . 8 . 4 . .
+     . . . . 1 . . . .
+     . . . 6 . 3 . 7 .
+     5 . . 2 . . . . .
+     1 . 4 . . . . . .
+
+     4.....8.5
+     .3.......
+     ...7.....
+     .2.....6.
+     ....8.4..
+     ....1....
+     ...6.3.7.
+     5..2.....
+     1.4......
+
+  Blank lines may be used to separate blocks::
+
+     4.. ... 8.5
+     .3. ... ...
+     ... 7.. ...
+
+     .2. ... .6.
+     ... .8. 4..
+     ... .1. ...
+
+     ... 6.3 .7.
+     5.. 2.. ...
+     1.4 ... ...
+
+  The following format may also be used (the dividing-line characters
+  "-|+" are simply ignored)::
+
+     4 . . | . . . | 8 . 5
+     . 3 . | . . . | . . .
+     . . . | 7 . . | . . .
+     ------+-------+------
+     . 2 . | . . . | . 6 .
+     . . . | . 8 . | 4 . .
+     . . . | . 1 . | . . .
+     ------+-------+------
+     . . . | 6 . 3 | . 7 .
+     5 . . | 2 . . | . . .
+     1 . 4 | . . . | . . .
+
+* All on one line, with or without spaces between digits::
+
+    4.....8.5.3..........7......2.....6.....8.4......1.......6.3.7.5..2.....1.4......
+
+    4.....8.5 .3....... ...7..... .2.....6. ....8.4.. ....1.... ...6.3.7. 5..2..... 1.4......
+
+
 Getting Help
 ============
 
