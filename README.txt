@@ -335,7 +335,7 @@ Starting positions must be in one of the following formats:
      1.4 ... ...
 
   The following format may also be used (the dividing-line characters
-  "-|+" are simply ignored)::
+  "- | +" are simply ignored)::
 
      4 . . | . . . | 8 . 5
      . 3 . | . . . | . . .
