@@ -2684,6 +2684,24 @@ class SomaSteamer(SomaCubes):
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
+class SomaTunnel(SomaCubes):
+
+    """26 solutions."""
+
+    height = 3
+    width = 5
+    depth = 3
+
+    check_for_duplicates = True
+    duplicate_conditions = ({'x_reversed': True, 'z_reversed': True},)
+
+    def coordinates(self):
+        for (x, y) in ((0,0), (1,0), (1,1), (1,2), (2,2),
+                       (3,2), (3,1), (3,0), (4,0)):
+            for z in range(self.depth):
+                yield coordsys.Cartesian3D((x, y, z))
+
+
 class Polysticks(PuzzlePseudo3D):
 
     # line segment orientation (horizontal=0, vertical=1):

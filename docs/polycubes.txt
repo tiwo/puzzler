@@ -121,5 +121,13 @@ __ http://en.wikipedia.org/wiki/Soma_cube
           <http://puzzler.sf.net/solutions/soma-steps.txt>`__
           (`X3D model <images/soma-steps.x3d>`__)
 
+   * - .. figure:: images/soma-tunnel.png
+
+          Sofa: `26 solutions
+          <http://puzzler.sf.net/solutions/soma-tunnel.txt>`__
+          (`X3D model <images/soma-tunnel.x3d>`__)
+
+     -
+     -
 
 .. |c| unicode:: U+00A9 .. copyright sign
