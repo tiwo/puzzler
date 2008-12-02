@@ -2702,6 +2702,30 @@ class SomaTunnel(SomaCubes):
                 yield coordsys.Cartesian3D((x, y, z))
 
 
+class SomaScrew(SomaCubes):
+
+    """ solutions."""
+
+    height = 5
+    width = 3
+    depth = 3
+
+#     check_for_duplicates = True
+#     duplicate_conditions = ({'x_reversed': True, 'z_reversed': True},)
+
+    def coordinates(self):
+        holes = set(((0,0,1), (0,0,2), (1,0,2), (1,1,2), (2,1,2), (2,1,1),
+                     (2,2,1), (2,2,0), (1,2,0), (1,3,0), (0,3,0), (0,3,1)))
+        top = ((2,4,2), (2,4,1), (1,4,1))
+        for z in range(self.depth):
+            for y in range(self.height - 1):
+                for x in range(self.width):
+                    if (x,y,z) not in holes:
+                        yield coordsys.Cartesian3D((x, y, z))
+        for (x,y,z) in top:
+            yield coordsys.Cartesian3D((x, y, z))
+
+
 class Polysticks(PuzzlePseudo3D):
 
     # line segment orientation (horizontal=0, vertical=1):
