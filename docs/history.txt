@@ -63,7 +63,7 @@ Changes Since Release 1
     hole, 8x8 grid with one clipped corner, 8x8 grid with two clipped
     corners (2 variations).
 
-  - Soma cubes: tunnel, screw.
+  - Soma cubes: tunnel, screw, clip.
 
 * Added ``-n``/``--stop-after`` option.
 

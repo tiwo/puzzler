@@ -2428,6 +2428,7 @@ class SomaCrystal(SomaCubes):
                  for z in range(self.depth - 1, -1, -1)]
                 for x in range(self.width)]
 
+
 class SomaLongWall(SomaCubes):
 
     """104 solutions."""
@@ -2704,14 +2705,11 @@ class SomaTunnel(SomaCubes):
 
 class SomaScrew(SomaCubes):
 
-    """ solutions."""
+    """14 solutions."""
 
     height = 5
     width = 3
     depth = 3
-
-#     check_for_duplicates = True
-#     duplicate_conditions = ({'x_reversed': True, 'z_reversed': True},)
 
     def coordinates(self):
         holes = set(((0,0,1), (0,0,2), (1,0,2), (1,1,2), (2,1,2), (2,1,1),
@@ -2724,6 +2722,28 @@ class SomaScrew(SomaCubes):
                         yield coordsys.Cartesian3D((x, y, z))
         for (x,y,z) in top:
             yield coordsys.Cartesian3D((x, y, z))
+
+
+class SomaClip(SomaCubes):
+
+    """20 solutions."""
+
+    height = 4
+    width = 4
+    depth = 3
+
+    check_for_duplicates = True
+    duplicate_conditions = ({'z_reversed': True, 'xy_swapped': True},)
+
+    def coordinates(self):
+        for x in range(self.width):
+            for y in range(self.height):
+                if   ((y == 0) or (x == 0)
+                      or (x == 3 and y == 1) or (y == 3 and x == 1)):
+                    for z in range(self.depth):
+                        yield coordsys.Cartesian3D((x, y, z))
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
 class Polysticks(PuzzlePseudo3D):

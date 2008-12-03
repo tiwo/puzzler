@@ -133,6 +133,10 @@ __ http://en.wikipedia.org/wiki/Soma_cube
           <http://puzzler.sf.net/solutions/soma-screw.txt>`__
           (`X3D model <images/soma-screw.x3d>`__)
 
-     -
+     - .. figure:: images/soma-clip.png
+
+          Clip: `20 solutions
+          <http://puzzler.sf.net/solutions/soma-clip.txt>`__
+          (`X3D model <images/soma-clip.x3d>`__)
 
 .. |c| unicode:: U+00A9 .. copyright sign
