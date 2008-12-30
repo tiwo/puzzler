@@ -10,7 +10,6 @@ An implementation of Donald E. Knuth's "Dancing Links" (DLX) algorithm for
 the exact cover problem (http://en.wikipedia.org/wiki/Dancing_Links).
 """
 
-import sys
 # optional acceleration with Psyco (up to 3x!):
 try:
     import psyco
