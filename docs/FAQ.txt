@@ -763,7 +763,7 @@ Sudoku can be reduced to the same kind of `exact cover`_ problem as
 polyform puzzles, and the same DLX algorithm can be used to solve
 Sudoku puzzles.  It's just a matter of identifying the constraints.
 
-Here's a 4x4 Sudoku puzzle we'll use to illustrate:
+Here's a 4x4 Sudoku puzzle we'll use to illustrate::
 
     1 . | . 4
     . 4 | . 2
@@ -776,7 +776,7 @@ exactly once.  We have four sets of constraints:
 
 1. There are 4 blocks, numbered 0, 1, 2, & 3.  Each block must contain
    the digits (1, 2, 3, 4) exactly once.  We can name each exact cover
-   matrix column with the combination of digit value and block number:
+   matrix column with the combination of digit value and block number::
 
        1b0 2b0 3b0 4b0 1b1 2b1 3b1 4b1 1b2 2b2 3b2 4b2 1b3 2b3 3b3 4b3
 
@@ -786,7 +786,7 @@ exactly once.  We have four sets of constraints:
 
 2. There are 4 columns, again numbered 0, 1, 2, & 3.  Each column must
    contain each digit exactly once.  Again, we combine the digit
-   values and column numbers to name exact cover matrix columns:
+   values and column numbers to name exact cover matrix columns::
 
        1c0 2c0 3c0 4c0 1c1 2c1 3c1 4c1 1c2 2c2 3c2 4c2 1c3 2c3 3c3 4c3
 
@@ -794,13 +794,13 @@ exactly once.  We have four sets of constraints:
    16 combinations, (4 * 4, or 4-squared).  In a 9x9 Sudoku puzzle,
    there will be 81 combinations.
 
-3. Similarly for the 4 rows:
+3. Similarly for the 4 rows::
 
        1r0 2r0 3r0 4r0 1r1 2r1 3r1 4r1 1r2 2r2 3r2 4r2 1r3 2r3 3r3 4r3
 
 4. We must also make sure that no digit is placed in the same location
    more than once.  So we have constraints on all coordinate pairs,
-   all combinations of rows & columns:
+   all combinations of rows & columns::
 
        0,0 1,0 2,0 3,0 0,1 1,1 2,1 3,1 0,2 1,2 2,2 3,2 0,3 1,3 2,3 3,3
    
