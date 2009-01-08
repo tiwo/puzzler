@@ -254,7 +254,7 @@ this set is that, like the `Pentacubes Plus`_ set, box shapes can be
 formed.  Also, lacking the 5-cube-long "I" pentacube, more convoluted
 shapes can be formed.
 
-- zigzag 1 (suggested by Robert Trietsch): `solutions incomplete
+- Zigzag 1 (suggested by Robert Trietsch): `solutions incomplete
   <http://puzzler.sf.net/solutions/pentacubes-zigzag-1.txt>`__
   (`X3D model <images/pentacubes-zigzag-1.x3d>`__)
 
