@@ -2327,6 +2327,36 @@ class PentacubesPlus11x11x11OctahedralPlanes(PentacubesPlus):
         return sorted(coords)
 
 
+class NonConvexPentacubes(Pentacubes):
+
+    """
+    These are the regular pentacubes less the I piece, the only convex piece.
+    """
+
+    def customize_piece_data(self):
+        """Remove I."""
+        Pentacubes.customize_piece_data(self)
+        del self.piece_data['I']
+
+
+class PentacubesZigZag1(NonConvexPentacubes):
+
+    """ solutions"""
+
+    width = 18
+    height = 19
+    depth = 2
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 8 <= (int(x/2) + int(y/2)) <= 9:
+                        yield coordsys.Cartesian3D((x, y, z))
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
 class SomaCubes(Puzzle3D):
 
     piece_data = {

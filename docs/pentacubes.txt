@@ -244,4 +244,20 @@ Misc
   .. image:: images/pentacubes-plus-11x11x11-octahedral-planes.png
 
 
+Non-Convex Pentacubes
+===================== 
+
+There are 28 non-convex pentacubes: all of the pieces that have at
+least one inside corner.  These are the 29 regular pentacubes less the
+"I" (straight) pentacube, the only convex piece.  The advantage of
+this set is that, like the `Pentacubes Plus`_ set, box shapes can be
+formed.  Also, lacking the 5-cube-long "I" pentacube, more convoluted
+shapes can be formed.
+
+- zigzag 1 (suggested by Robert Trietsch): `solutions incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-zigzag-1.txt>`__
+  (`X3D model <images/pentacubes-zigzag-1.x3d>`__)
+
+  .. image:: images/pentacubes-zigzag-1.png
+
 .. |c| unicode:: U+00A9 .. copyright sign
