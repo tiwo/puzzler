@@ -6,7 +6,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2007 by David J. Goodger
+:Copyright: |c| 1998-2009 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -254,10 +254,42 @@ this set is that, like the `Pentacubes Plus`_ set, box shapes can be
 formed.  Also, lacking the 5-cube-long "I" pentacube, more convoluted
 shapes can be formed.
 
+Solids
+------
+
+- 2x5x14: `solutions incomplete
+  <http://puzzler.sf.net/solutions/non-convex-pentacubes-2x5x14.txt>`__
+  (`X3D model <images/non-convex-pentacubes-2x5x14.x3d>`__)
+
+  .. image:: images/non-convex-pentacubes-2x5x14.png
+
+- 2x7x10: `solutions incomplete
+  <http://puzzler.sf.net/solutions/non-convex-pentacubes-2x7x10.txt>`__
+  (`X3D model <images/non-convex-pentacubes-2x7x10.x3d>`__)
+
+  .. image:: images/non-convex-pentacubes-2x7x10.png
+
+- 4x5x7: `solutions incomplete
+  <http://puzzler.sf.net/solutions/non-convex-pentacubes-4x5x7.txt>`__
+  (`X3D model <images/non-convex-pentacubes-4x5x7.x3d>`__)
+
+  .. image:: images/non-convex-pentacubes-4x5x7.png
+
+
+Misc
+----
+
 - Zigzag 1 (suggested by Robert Trietsch): `solutions incomplete
   <http://puzzler.sf.net/solutions/pentacubes-zigzag-1.txt>`__
   (`X3D model <images/pentacubes-zigzag-1.x3d>`__)
 
   .. image:: images/pentacubes-zigzag-1.png
+
+- Zigzag 2 (a symmetrical variation on zigzag 1 above): `solutions
+  incomplete
+  <http://puzzler.sf.net/solutions/pentacubes-zigzag-2.txt>`__ (`X3D
+  model <images/pentacubes-zigzag-2.x3d>`__)
+
+  .. image:: images/pentacubes-zigzag-2.png
 
 .. |c| unicode:: U+00A9 .. copyright sign

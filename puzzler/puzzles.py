@@ -3,7 +3,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2008 by David J. Goodger
+# Copyright: (C) 1998-2009 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 import sys
@@ -2339,6 +2339,39 @@ class NonConvexPentacubes(Pentacubes):
         del self.piece_data['I']
 
 
+class NonConvexPentacubes2x5x14(NonConvexPentacubes):
+
+    """ solutions"""
+
+    width = 14
+    height = 5
+    depth = 2
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
+class NonConvexPentacubes2x7x10(NonConvexPentacubes):
+
+    """ solutions"""
+
+    width = 10
+    height = 7
+    depth = 2
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
+class NonConvexPentacubes4x5x7(NonConvexPentacubes):
+
+    """ solutions"""
+
+    width = 7
+    height = 5
+    depth = 4
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
 class PentacubesZigZag1(NonConvexPentacubes):
 
     """ solutions"""
@@ -2352,6 +2385,49 @@ class PentacubesZigZag1(NonConvexPentacubes):
             for y in range(self.height):
                 for x in range(self.width):
                     if 8 <= (int(x/2) + int(y/2)) <= 9:
+                        yield coordsys.Cartesian3D((x, y, z))
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesZigZag2(NonConvexPentacubes):
+
+    """ solutions"""
+
+    width = 20
+    height = 18
+    depth = 2
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'x_reversed': True, 'y_reversed': True},)
+
+    def coordinates(self):
+        ends = set([(0,16), (19,1)])
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if (x,y) in ends:
+                        continue
+                    if 8 <= (int(x/2) + int(y/2)) <= 9:
+                        yield coordsys.Cartesian3D((x, y, z))
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesDiagonalWall(NonConvexPentacubes):
+
+    """0? solutions"""
+
+    width = 19
+    height = 19
+    depth = 2
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 18 <= (x + y) <= 21:
                         yield coordsys.Cartesian3D((x, y, z))
 
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform

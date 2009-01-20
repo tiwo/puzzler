@@ -8,7 +8,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2008 by David J. Goodger
+:Copyright: |c| 1998-2009 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. contents::
@@ -54,7 +54,7 @@ Changes Since Release 1
   - Pentacubes Plus: 5x5x6, 3x5x10, 2x5x15, 2x3x25; 11x11x11
     octahedral planes.
 
-  - Non-Convex Pentacubes: zigzag.
+  - Non-Convex Pentacubes: 2x5x14, 2x7x10, 4x5x7; zigzag 1 & 2.
 
   - Solid pentominoes: 5x5x4, 4x4x6, & 3x3x10 steps; 4x4x8 crystal; 3
     6x6x6 crystals; 3x5x7 slope.
