@@ -285,7 +285,7 @@ Misc
 
   .. image:: images/pentacubes-zigzag-1.png
 
-- Zigzag 2 (a symmetrical variation on zigzag 1 above): `solutions
+- Zigzag 2 (a symmetrical variation of zigzag 1 above): `solutions
   incomplete
   <http://puzzler.sf.net/solutions/pentacubes-zigzag-2.txt>`__ (`X3D
   model <images/pentacubes-zigzag-2.x3d>`__)
