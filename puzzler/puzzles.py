@@ -209,7 +209,7 @@ class Puzzle(object):
         """
         Output a formatted solution to `stream`.
         """
-        formatted = self.format_solution(solution)
+        formatted = self.format_solution(solution, normalized=True)
         if self.check_for_duplicates:
             if formatted in self.solutions:
                 return
@@ -218,18 +218,25 @@ class Puzzle(object):
             print >>stream, 'at %s,' % datetime.datetime.now(),
         print >>stream, solver.format_solution()
         print >>stream
-        print >>stream, formatted
+        print >>stream, self.format_solution(solution, normalized=False)
         print >>stream
 
     def record_dated_solution(self, solution, solver, stream=sys.stdout):
         """A dated variant of `self.record_solution`."""
         self.record_solution(solution, solver, stream=stream, dated=True)
 
-    def format_solution(self, solution):
+    def format_solution(self, solution, normalized=True):
         """
         Return a puzzle-specific formatting of a solution.
 
         Implement in subclasses.
+
+        * `solution` is a list of pieces.  Each piece is a list of column
+          names from the exact cover matrix: cooridinates and the piece name.
+
+        * `normalized` is a flag; if set, the solution is formatted in a way
+          that allows for easy duplicate detection (such as renaming identical
+          pieces).
         """
         raise NotImplementedError
 
@@ -370,7 +377,7 @@ class Puzzle2D(Puzzle):
             row[self.matrix_columns[label]] = label
         self.matrix.append(row)
 
-    def format_solution(self, solution,
+    def format_solution(self, solution, normalized=True,
                         x_reversed=False, y_reversed=False):
         order_functions = (lambda x: x, reversed)
         x_reversed_fn = order_functions[x_reversed]
@@ -592,7 +599,7 @@ class Puzzle3D(Puzzle):
             row[self.matrix_columns[label]] = label
         self.matrix.append(row)
 
-    def format_solution(self, solution,
+    def format_solution(self, solution, normalized=True,
                         x_reversed=False, y_reversed=False, z_reversed=False,
                         xy_swapped=False, xz_swapped=False, yz_swapped=False):
         order_functions = (lambda x: x, reversed)
@@ -1075,10 +1082,14 @@ class OneSidedPentominoes(Pentominoes):
             self.piece_data[key.lower()][-1]['flips'] = (1,)
             self.piece_colors[key.lower()] = self.piece_colors[key]
 
-    def format_solution(self, *args, **kwargs):
+    def format_solution(self, solution,  normalized=True, **kwargs):
         """Convert solutions to uppercase to avoid duplicates."""
-        solution = Pentominoes.format_solution(self, *args, **kwargs)
-        return solution.upper()
+        formatted = Pentominoes.format_solution(
+            self, solution, normalized, **kwargs)
+        if normalized:
+            return formatted.upper()
+        else:
+            return formatted
 
 
 class OneSidedPentominoes3x30(OneSidedPentominoes):
@@ -1271,7 +1282,7 @@ class SolidPentominoesRing(SolidPentominoes):
                             if translated.issubset(self.solution_coords):
                                 self.build_matrix_row(key, translated)
 
-    def format_solution(self, solution,
+    def format_solution(self, solution, normalized=True,
                         x_reversed=False, y_reversed=False, z_reversed=False):
         order_functions = (lambda x: x, reversed)
         x_reversed_fn = order_functions[x_reversed]
@@ -2249,15 +2260,18 @@ class PentacubesPlus(Pentacubes):
         self.piece_data['J3'] = copy.deepcopy(self.piece_data['L3'])
         self.piece_colors['J3'] = self.piece_colors['L3']
 
-    def format_solution(self, solution,
+    def format_solution(self, solution, normalized=True,
                         x_reversed=False, y_reversed=False, z_reversed=False):
         """
         Consider J3 and L3 as the same piece for solution counting purposes.
         """
-        solution = Pentacubes.format_solution(
-            self, solution, x_reversed=x_reversed, y_reversed=y_reversed,
-            z_reversed=z_reversed)
-        return solution.replace('J3', 'L3')
+        formatted = Pentacubes.format_solution(
+            self, solution, normalized, x_reversed=x_reversed,
+            y_reversed=y_reversed, z_reversed=z_reversed)
+        if normalized:
+            return formatted.replace('J3', 'L3')
+        else:
+            return formatted
 
 
 class PentacubesPlus2x5x15(PentacubesPlus):
@@ -2458,7 +2472,7 @@ class SomaCubes(Puzzle3D):
 
     check_for_duplicates = False
 
-    def format_solution(self, solution,
+    def format_solution(self, solution, normalized=True,
                         x_reversed=False, y_reversed=False, z_reversed=False,
                         xy_swapped=False, xz_swapped=False, yz_swapped=False):
         order_functions = (lambda x: x, reversed)
@@ -2993,7 +3007,7 @@ class Polysticks(PuzzlePseudo3D):
                 row[self.matrix_columns[label]] = label
         self.matrix.append(row)
 
-    def format_solution(self, solution,
+    def format_solution(self, solution, normalized=True,
                         x_reversed=False, y_reversed=False, xy_swapped=False,
                         rotation=False):
         order_functions = (lambda x: x, reversed)
@@ -3760,7 +3774,7 @@ class Polyhexes(Puzzle2D):
                 aspects.add(aspect)
         return aspects
 
-    def format_solution(self, solution,
+    def format_solution(self, solution, normalized=True,
                         rotate_180=False, row_reversed=False):
         s_matrix = self.build_solution_matrix(solution)
         if rotate_180:
@@ -4541,7 +4555,7 @@ class Polyiamonds(PuzzlePseudo3D):
                 aspects.add(aspect)
         return aspects
 
-    def format_solution(self, solution,
+    def format_solution(self, solution, normalized=True,
                         rotate_180=False, row_reversed=False, xy_swapped=False):
         s_matrix = self.build_solution_matrix(solution)
         if rotate_180:
