@@ -749,7 +749,7 @@ description of DLX, see Knuth's paper (`compressed PostScript
 original`__ or `PDF version`__).
 
 __ http://www-cs-faculty.stanford.edu/~knuth/papers/dancing-color.ps.gz
-__ http://xxx.lanl.gov/PS_cache/cs/pdf/0011/0011047.pdf
+__ http://arxiv.org/pdf/cs/0011047
 .. _exact cover: http://en.wikipedia.org/wiki/Exact_cover
 .. _puzzler.exact_cover: ../puzzler/exact_cover.py
 .. _Dancing Links: http://en.wikipedia.org/wiki/Dancing_Links
