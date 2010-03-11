@@ -81,27 +81,41 @@ Just Run It
 -----------
 
 This option allows you to use the "puzzler" package without installing
-it permanently.
+it permanently.  Note that you will only be able to use the "puzzler"
+package from one location (where you unpacked it, not from arbitrary
+locations on your system), unless you `install it`_, or you set your
+``PYTHONPATH`` environment variable.
 
 4. In the top-level directory (containing the "puzzler", "docs", and
-   "bin" directories), run the front-end::
-
-       bin/pentominoes6x10.py          (Unix/Mac)
-       python bin\pentominoes6x10.py   (Windows)
-
-   Because Python searches the current working directory for modules &
-   packages, it will find the "puzzler" package directory.
+   "bin" directories), you can run the various front-ends.
 
    See Usage_ below for details.
+ 
+   * **Unix/Mac users:**
 
-   (For Windows users:) If the the Python executable is not on your
-   ``PATH``, you will have to specify its location::
+     Enter the following command::
 
-       C:\Python24\python bin\pentominoes6x10.py
+         PYTHONPATH= bin/pentominoes3x20.py
 
-Note that you will only be able to use the "puzzler" package from that
-one location (not from arbitrary locations on your system), unless you
-`install it`_, or you set your ``PYTHONPATH`` environment variable.
+     The ``PYTHONPATH=`` part tells Python to look in the current
+     directory for modules and packages, so it can find the "puzzler"
+     package (directory).
+
+   * **Windows users:**
+
+     Enter the following commands::
+
+         set PYTHONPATH=;
+         python bin\pentominoes3x20.py
+
+     The ``set PYTHONPATH=;`` command tells Python to look in the
+     current directory for modules and packages, so it can find the
+     "puzzler" package (directory).
+
+     If the the Python executable is not on your ``PATH``, you will
+     have to specify its location, e.g.::
+
+         C:\Python24\python bin\pentominoes3x20.py
 
 
 Snapshots
