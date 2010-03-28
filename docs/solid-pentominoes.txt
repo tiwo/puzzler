@@ -6,7 +6,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2007 by David J. Goodger
+:Copyright: |c| 1998-2010 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -25,7 +25,7 @@ Also see:
 Solids
 ======
 
-* 2x3x10: `10 solutions
+* 2x3x10: `12 solutions
   <http://puzzler.sf.net/solutions/solid-pentominoes-2x3x10.txt>`__
   (`X3D model <images/solid-pentominoes-2x3x10.x3d>`__)
 
