@@ -3037,7 +3037,11 @@ class Polysticks(PuzzlePseudo3D):
                     '%s\n%s'
                     % ('    '.join(v_segments_1).rstrip(),
                        '    '.join(v_segments_2).rstrip()))
-        return (prefix + '\n'.join(y_reversed_fn(lines))).upper()
+        formatted = (prefix + '\n'.join(y_reversed_fn(lines)))
+        if normalized:
+            return formatted.upper()
+        else:
+            return formatted
 
     def build_solution_matrices(self, solution,
                                 xy_swapped=False, rotation=False, margin=0):
