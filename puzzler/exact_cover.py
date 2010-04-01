@@ -2,12 +2,16 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2007 by David J. Goodger
+# Copyright: (C) 1998-2010 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """
-An implementation of Donald E. Knuth's "Dancing Links" (DLX) algorithm for
-the exact cover problem (http://en.wikipedia.org/wiki/Dancing_Links).
+An implementation of Donald E. Knuth's 'Algorithm X' [1]_ for the generalized
+exact cover problem [2]_ using the 'Dancing Links' technique [3]_.
+
+.. [1] http://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X
+.. [2] http://en.wikipedia.org/wiki/Exact_cover
+.. [3] http://en.wikipedia.org/wiki/Dancing_Links
 """
 
 # optional acceleration with Psyco (up to 3x!):
@@ -303,4 +307,6 @@ if __name__ == '__main__':
     print root, '\n'
     puzzle = ExactCover(root)
     for solution in puzzle.solve():
+        print solution
         print puzzle.format_solution()
+    print puzzle.num_searches, 'searches'
