@@ -6,7 +6,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2007 by David J. Goodger
+:Copyright: |c| 1998-2010 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -176,11 +176,12 @@ three holes:
 Bounding Box
 ============
 
-The first thing to define is the bounding box, size, or maximum
-dimensions of the puzzle solution.  In other words, how wide and how
-high is the puzzle?  Pentominoes puzzles use ordinary 2-dimensional
-(X,Y) Cartesian coordinates.  Other puzzles use 3-dimensional (X,Y,Z)
-Cartesian coordinates or modified coordinate systems.
+The first thing to define is the overall size, or maximum dimensions,
+or bounding box of the puzzle solution.  In other words, how wide and
+how high of a box can the puzzle fit into?  Pentominoes puzzles use
+ordinary 2-dimensional (X, Y) Cartesian coordinates.  Other puzzles
+use 3-dimensional (X, Y, Z) Cartesian coordinates or modified
+coordinate systems.
 
 In the body of your puzzle module (i.e. after the import statements),
 add the following class definition::
@@ -275,17 +276,29 @@ you're done.
 But many of these solutions are duplicates, just rotated or flipped.
 We should take this into account, and Polyform Puzzler provides for
 different approaches to prevent or suppress duplicate solutions.  The
-earlier approaches are simpler but less efficient; the later
-approaches may run faster but take more thought.  Different approaches
-lend themselves to different puzzles; it's up to you to choose the
-most suitable approach.
+"`check for duplicates`_" approach is simpler but less efficient at
+run time; the other approaches may run faster but take more thought.
+Different approaches lend themselves to different puzzles; it's up to
+you to choose the most suitable approach.
+
+If a puzzle takes only a short time to run, there's no need to expend
+the time and effort to choose the most run-time efficient approach
+(the run-time gain is not worth the thinking and programming time).
+However, many puzzles can take significant amounts of time to run
+(days, weeks, or longer); for these puzzles, careful programming pays
+dividends.
 
 
 Check for Duplicates
 --------------------
 
-Add this code to the beginning of the MyPuzzle class (above the
-"coordinates" method)::
+This approach is typically the slowest to run, but is the easiest and
+fastest to code.  It is slow because it only suppresses duplicate
+solutions, all of which are still calculated, rather than preventing
+duplicates in the first place (which is what the other approaches do).
+
+To check for duplicates, add this code to the beginning of the
+MyPuzzle class (above the "coordinates" method)::
 
     check_for_duplicates = True
 
@@ -294,18 +307,19 @@ Add this code to the beginning of the MyPuzzle class (above the
                             {'x_reversed': True, 'y_reversed': True})
 
 "check_for_duplicates" is a flag that tells Polyform Puzzler to check
-for duplicates, store the formatted solution for future checking, and
-produce and store variations of the formatted solution as well.  Each
-polyform and type of puzzle can have different symmetry properties;
-"duplicate_conditions" lists these conditions.  Each item in the list
-is a dictionary containing a combination of symmetry properties.  The
-entire list (along with the implied, no-change entry) should cover all
-possible duplicates.
+if a duplicate solution has already been stored.  If the solution is
+original, Polyform Puzzler will store the formatted solution along
+with all variations for future duplicate checking.  Each polyform and
+type of puzzle can have different symmetry properties, each producing
+a different variation; "duplicate_conditions" lists these conditions.
+Each item in the list is a dictionary containing a combination of
+symmetry properties.  The entire list (along with the implied,
+no-change entry) should cover all possible duplicates.
 
 (The conditions dictionary is actually passed as default-value keyword
 arguments to the puzzle's "format_solution" method.  See that method's
 code or use "help(puzzle.format_solution)" in Python's interactive
-interpreter for specific details.)
+interpreter for details.)
 
 Add the lines above to your puzzle module (if you have any other
 duplicate suppression code, remove it now), or use
@@ -316,20 +330,28 @@ only 6 solutions, all unique.
 Customize Piece Data
 --------------------
 
+This approach can be significantly faster than checking for
+duplicates, since it reduces the scope of a puzzle, preventing rather
+than suppressing duplicates.
+
 When a puzzle is being solved, all puzzle pieces are rotated and
 flipped into every possible aspect.  So another way to prevent
 duplicates is to put limits on certain puzzle pieces to ensure that no
-duplicates will be possible.  The "customize_piece_data" method is
-designed for this::
+duplicates will be possible.  In other words, we can reason that if
+the aspects of a certain piece are restricted, we can prevent
+duplicates in the first place.  In this puzzle, we'll restrict the "V"
+piece to a single aspect (no rotations or flips allowed).  The
+"customize_piece_data" method is where we specify such restrictions::
 
     def customize_piece_data(self):
         self.piece_data['V'][-1]['flips'] = None
         self.piece_data['V'][-1]['rotations'] = None
 
 (This code is actually modifying a dictionary of aspect restrictions.
-Individual restrictions vary between polyform types.  The restrictions
-dictionary is passed as keyword arguments to the puzzles
-"make_aspects" method.  See that method's code for specific details.)
+The restrictions dictionary is passed as keyword arguments to the
+puzzles "make_aspects" method.  Individual restrictions vary between
+polyform types.  See the code of the "make_aspects" method for
+details.)
 
 Remove any other duplicate suppression code and add the lines above to
 your puzzle module (or use `<examples/my_puzzle_3.py>`__).  Running
@@ -338,13 +360,12 @@ solutions may differ slightly (by rotation or reflection) from the
 solutions produced using other duplicate-prevention techniques, but
 they will be equivalent.
 
-This approach can be significantly faster than checking for
-duplicates, since it reduces the scope of a puzzle, preventing rather
-than suppressing duplicates.
-
 
 Restrict Piece Placement
 ------------------------
+
+This is usually the fastest approach, reducing the scope of a puzzle,
+preventing rather than suppressing duplicates.
 
 Sometimes we can take advantage of the shape and symmetries of a
 puzzle to further restrict the pieces.  Examining the puzzle, we can
@@ -367,12 +388,12 @@ pentominoes::
         translated = x_aspect.translate((1, 0))
         self.build_matrix_row('X', translated)
         keys.remove('X')
-        self.build_regular_matrix(keys)
         i_coords, i_aspect = self.pieces['I'][1]
         for x in range(3, 17):
             translated = i_aspect.translate((x, 0))
             self.build_matrix_row('I', translated)
         keys.remove('I')
+        self.build_regular_matrix(keys)
 
 Let's look at this one line at a time.  First, we begin the method
 definition::
@@ -438,18 +459,19 @@ Build the rest of the solution matrix normally::
 
 Add the lines above to your puzzle module and remove any other
 duplicate suppression code.  The module is available as
-`<examples/my_puzzle_3.py>`__.  Running the puzzle again results in
+`<examples/my_puzzle_4.py>`__.  Running the puzzle again results in
 only 6 solutions, all unique.
-
-This approach also reduces the scope of a puzzle, preventing rather
-than suppressing duplicates.
 
 
 Multiple Sub-Puzzles
 --------------------
 
+Depending on the puzzle and how it is subdivided, this approach can
+reduce the efficiency of a puzzle.  This approach should only be used
+if none of the other approaches prove suitable.
+
 Some puzzles can be thought of as multiple sub-puzzles.  Let's use the
-4x15 pentomino puzzle as an example:
+4 |x| 15 pentomino puzzle as an example:
 
 .. image:: images/pentominoes-4x15.png
 
@@ -512,10 +534,6 @@ care of the horizontal symmetry::
             self.build_matrix_row('X', translated)
             keys.remove('X')
             self.build_regular_matrix(keys)
-
-Depending on the puzzle and how it is subdivided, this approach can
-reduce the efficiency of a puzzle.  This approach should only be used
-if none of the other approaches prove suitable.
 
 
 -----------------------------
