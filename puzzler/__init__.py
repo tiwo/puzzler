@@ -11,7 +11,7 @@ puzzles.
 """
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2008 by David J. Goodger
+# Copyright: (C) 1998-2010 by David J. Goodger
 # License: 
 #     This program is free software; you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License version 2
@@ -35,7 +35,7 @@ import optparse
 import time
 import cPickle as pickle
 from datetime import datetime, timedelta
-from puzzler import exact_cover
+from puzzler.exact_cover import ExactCover
 
 
 def run(puzzle_class, output_stream=sys.stdout, settings=None):
@@ -112,7 +112,7 @@ def solve(puzzle_class, output_stream, settings):
         print >>sys.stderr, 'Unable to initialize the search state file:'
         print >>sys.stderr, '%s: %s' % (error.__class__.__name__, error)
         sys.exit(1)
-    solver = exact_cover.ExactCover(state=state)
+    solver = ExactCover(state=state)
     if state.num_searches:
         print >>output_stream, (
             '\nResuming session (%s solutions, %s searches).\n'
@@ -126,16 +126,14 @@ def solve(puzzle_class, output_stream, settings):
                 if component.__name__ not in state.completed_components:
                     puzzles.append(component())
             for puzzle in puzzles:
-                matrices.append(
-                    exact_cover.convert_matrix(puzzle.matrix,
-                                               puzzle.secondary_columns))
+                matrices.append((puzzle.matrix, puzzle.secondary_columns))
             state.init_periodic_save(solver)
             last_solutions = state.last_solutions
             last_searches = state.last_searches
             for i, puzzle in enumerate(puzzles):
                 print >>output_stream, ('solving %s:\n'
                                         % puzzle.__class__.__name__)
-                solver.root = matrices[i]
+                solver.load_matrix(*matrices[i])
                 for solution in solver.solve():
                     state.save(solver)
                     puzzle.record_solution(

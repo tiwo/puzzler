@@ -14,7 +14,7 @@ import sys
 import math
 import optparse
 from datetime import datetime
-from puzzler import exact_cover
+from puzzler.exact_cover import ExactCover
 
 usage = '%prog [options] [<puzzle-file>]'
 
@@ -108,14 +108,12 @@ def solve(puzzle_class, output_stream, settings):
     """Find and record all solutions to a puzzle.  Report on `output_stream`."""
     start = datetime.now()
     puzzle = puzzle_class(settings.start_position)
-    solver = exact_cover.ExactCover()
+    solver = ExactCover(puzzle.matrix)
     try:
         try:
-            matrix = exact_cover.convert_matrix(puzzle.matrix)
             print >>output_stream, ('solving %s:\n'
                                     % puzzle.__class__.__name__)
             print >>output_stream, puzzle.start_position, '\n'
-            solver.root = matrix
             for solution in solver.solve():
                 puzzle.record_solution(
                     solution, solver, stream=output_stream)
@@ -168,7 +166,7 @@ class Puzzle(object):
         """Mapping of (x,y) coordinates to puzzle block."""
 
         self.matrix = []
-        """A list of lists; see puzzler.exact_cover.convert_matrix()."""
+        """A list of lists; see ExactCover.load_matrix()."""
 
         self.matrix_columns = {}
         """Mapping of `self.matrix` column names to indices."""
