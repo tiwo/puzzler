@@ -7,7 +7,7 @@
 
 """
 An implementation of Donald E. Knuth's 'Algorithm X' [1]_ for the generalized
-exact cover problem [2]_ using the 'Dancing Links' technique [3]_.
+exact cover problem [2]_ using the 'Dancing Links' technique [3]_ ('DLX').
 
 .. [1] http://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X
 .. [2] http://en.wikipedia.org/wiki/Exact_cover
@@ -22,81 +22,6 @@ except ImportError:
     pass
 
 
-def convert_matrix(data, secondary=0):
-    """
-    Return a four-way linked representation of a sparse matrix, suitable for
-    input to `ExactCover`, to solve the exact cover problem.  The input `data`
-    is a two-dimensional matrix (a list of lists):
-
-    * Each row is a list of equal length.
-
-    * The first row contains the column names: first the puzzle piece names,
-      then the solution space coordinates.  For example::
-
-          ['A', 'B', 'C', '0,0', '1,0', '0,1', '1,1']
-
-    * The subsequent rows consist of 0/1 (False/True) values.  Each row
-      contains a 1/True value in the column identifying the piece, and 1/True
-      values in each column identifying the position.  There should be one row
-      for each possible position of each puzzle piece.
-
-    The output consists of a `Root` node, the leftmost node in a circular
-    doubly-linked list of `Column` header nodes.  The rightmost column node
-    links (to the right) to the root, and the root links (to the left) to the
-    rightmost column node.  Each column node is the topmost node in a circular
-    doubly-linked list of `Datum` nodes; the last datum node links (downwards)
-    to the column node, and the column node links (upwards) to the last datum
-    node.  Each datum node links to the left and right to the nodes in the
-    same row (again, the rightmost node links to the leftmost and vice-versa,
-    in a circular doubly-linked list).
-
-    The `secondary` parameter is the number of secondary (rightmost) columns,
-    which do not participate in the circular doubly-linked list of column
-    nodes.  The last primary column links (to the right) to the root, and
-    vice-versa (to the left).
-
-    Except for the root node, each node contains four pointers: left, right,
-    up, and down.  In addition, each datum node contains a pointer to its
-    column header, and each column header contains the column name and a count
-    of the number of active nodes in that column.
-    """
-    root = Root()
-    root.left = root.right = root
-    columns = []
-    prev = root
-    for name in data[0]:
-        column = Column(name=name, left=prev, right=root)
-        prev.right = column
-        root.left = column
-        column.up = column.down = column
-        columns.append(column)
-        prev = column
-    for i in range(secondary):
-        column = root.left
-        root.left = column.left
-        root.left.right = root
-        column.left = column.right = column
-    for row in data[1:]:
-        first = None
-        last = None
-        for i, item in enumerate(row):
-            if item:
-                column = columns[i]
-                datum = Datum(column=column, up=column.up, down=column)
-                if first is None:
-                    first = datum
-                    last = datum
-                column.up.down = datum
-                column.up = datum
-                datum.left = last
-                datum.right = first
-                last.right = datum
-                first.left = datum
-                column.size += 1
-                last = datum
-    return root
-
-
 class ExactCover(object):
 
     """
@@ -108,21 +33,112 @@ class ExactCover(object):
 
     __slots__ = ('root', 'solution', 'num_solutions', 'num_searches')
 
-    def __init__(self, root=None, state=None):
-        self.root = root
+    def __init__(self, matrix=None, secondary=0, state=None):
+        """
+        Parameters:
+
+        * `matrix` & `secondary`: see `self.load_matrix`.
+
+        * `state`: a `puzzler.SessionState` object which stores the runtime
+          state of this puzzle (we're resuming a previously interrupted
+          puzzle), or None (no state, we're starting from the beginning).
+        """
+        self.root = None
+        """A `Root` object, set in `self.load_matrix()`."""
+
+        self.solution = []
+        self.num_solutions = 0
+        self.num_searches = 0
+
         if state:
             self.solution = state.solution
             self.num_solutions = state.num_solutions
             self.num_searches = state.num_searches
-        else:
-            self.solution = []
-            self.num_solutions = 0
-            self.num_searches = 0
+        if matrix:
+            self.load_matrix(matrix, secondary)
+
+    def load_matrix(self, matrix, secondary=0):
+        """
+        Convert and store (into `self.root`) the input `matrix` as a four-way
+        linked representation of a sparse matrix.
+
+        The input `matrix` is a two-dimensional list of lists:
+
+        * Each row is a list of equal length.
+
+        * The first row contains the column names: first the puzzle piece
+          names, then the solution space coordinates.  For example::
+
+              ['A', 'B', 'C', '0,0', '1,0', '0,1', '1,1']
+
+        * The subsequent rows consist of 1 & 0 (True & False) values.  Each
+          row contains a 1/True value in the column identifying the piece, and
+          1/True values in each column identifying the position.  There must
+          be one row for each possible position of each puzzle piece.
+
+        The `secondary` parameter is the number of secondary (rightmost)
+        columns: columns which may, but need not, participate in the solution.
+
+        The converted data structure consists of a sparse matrix
+        representation starting at `self.roo`, a `Root` node, the leftmost
+        node in a circular doubly-linked list of `Column` header nodes.  The
+        rightmost column node links (to the right) to the root, and the root
+        links (to the left) to the rightmost column node.  Each column node is
+        the topmost node in a circular doubly-linked list of `Datum` nodes;
+        the last datum node links (downwards) to the column node, and the
+        column node links (upwards) to the last datum node.  Each datum node
+        links to the left and right to the nodes in the same row (again, the
+        rightmost node links to the leftmost and vice-versa, in a circular
+        doubly-linked list).
+
+        The secondary columns are not part of the circular doubly-linked list
+        of column nodes.  The last primary column links (to the right) to the
+        root, and vice-versa (to the left).
+
+        Except for the root node, each node contains four pointers: left,
+        right, up, and down.  In addition, each datum node contains a pointer
+        to its column header, and each column header contains the column name
+        and a count of the number of active nodes in that column.
+        """
+        self.root = root = Root()
+        root.left = root.right = root
+        columns = []
+        prev = root
+        for name in matrix[0]:
+            column = Column(name=name, left=prev, right=root)
+            prev.right = column
+            root.left = column
+            column.up = column.down = column
+            columns.append(column)
+            prev = column
+        for i in range(secondary):
+            column = root.left
+            root.left = column.left
+            root.left.right = root
+            column.left = column.right = column
+        for row in matrix[1:]:
+            first = None
+            last = None
+            for i, item in enumerate(row):
+                if item:
+                    column = columns[i]
+                    datum = Datum(column=column, up=column.up, down=column)
+                    if first is None:
+                        first = datum
+                        last = datum
+                    column.up.down = datum
+                    column.up = datum
+                    datum.left = last
+                    datum.right = first
+                    last.right = datum
+                    first.left = datum
+                    column.size += 1
+                    last = datum
 
     def solve(self, level=0):
-        """A generator that produces all solutions."""
+        """A generator that produces all solutions: Algorithm X.."""
         if self.root.right is self.root:
-            yield self.solution
+            yield list(self.solution)
             return
         self.num_searches += 1
         c = self.root.choose_column()
@@ -295,18 +311,18 @@ class Root(Datum):
 
 
 if __name__ == '__main__':
-    print 'testing exact_cover.py:\n'
-    data = ['A  B  C  D  E  F  G'.split(),
-            [0, 0, 1, 0, 1, 1, 0],
-            [1, 0, 0, 1, 0, 0, 1],
-            [0, 1, 1, 0, 0, 1, 0],
-            [1, 0, 0, 1, 0, 0, 0],
-            [0, 1, 0, 0, 0, 0, 1],
-            [0, 0, 0, 1, 1, 0, 1]]
-    root = convert_matrix(data)
-    print root, '\n'
-    puzzle = ExactCover(root)
+    print 'testing exact_cover_dlx.py:\n'
+    matrix = [
+        'A  B  C  D  E  F  G'.split(),
+        [0, 0, 1, 0, 1, 1, 0],
+        [1, 0, 0, 1, 0, 0, 1],
+        [0, 1, 1, 0, 0, 1, 0],
+        [1, 0, 0, 1, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0, 1],
+        [0, 0, 0, 1, 1, 0, 1]]
+    puzzle = ExactCover(matrix)
+    print 'root (representation) =\n', puzzle.root, '\n'
     for solution in puzzle.solve():
-        print solution
-        print puzzle.format_solution()
+        print puzzle.format_solution(), '\n'
+        print 'unformatted:\n', solution, '\n'
     print puzzle.num_searches, 'searches'
