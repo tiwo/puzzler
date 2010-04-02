@@ -14,7 +14,7 @@ import sys
 import math
 import optparse
 from datetime import datetime
-from puzzler.exact_cover import ExactCover
+from puzzler.exact_cover_dlx import ExactCover
 
 usage = '%prog [options] [<puzzle-file>]'
 

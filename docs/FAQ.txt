@@ -116,9 +116,10 @@ How can others contribute?
 
     There is one area where Python doesn't shine: raw speed.  But that
     can be solved with extension modules written in C.  The workhorse
-    of the Polyform Puzzler project, the puzzler.exact_cover_ module,
-    should be rewritten as an extension module in C for speed.  See
-    section 4, `The Code`_, for an introduction.
+    of the Polyform Puzzler project, the ExactCover class (implemented
+    in the puzzler.exact_cover_dlx__ module), should be rewritten as
+    an extension module in C for speed.  See section 4, `The Code`_,
+    for an introduction.
 
 **Non-programmers**
     Have you considered learning to program?  It's not as difficult as
@@ -743,15 +744,15 @@ solution::
     0  1  0    0  1  1    0  0  1    0  0  0
     0  0  1    0  0  0    0  0  0    1  1  1
 
-The puzzler.exact_cover_ module implements Donald E. Knuth's `Dancing
-Links`_ approach to his `Algorithm X`_ ("DLX").  For a complete
-description of DLX, see Knuth's paper (`compressed PostScript
+The puzzler.exact_cover_dlx_ module implements Donald E. Knuth's
+`Dancing Links`_ approach to his `Algorithm X`_ ("DLX").  For a
+complete description of DLX, see Knuth's paper (`compressed PostScript
 original`__ or `PDF version`__).
 
 __ http://www-cs-faculty.stanford.edu/~knuth/papers/dancing-color.ps.gz
 __ http://arxiv.org/pdf/cs/0011047
 .. _exact cover: http://en.wikipedia.org/wiki/Exact_cover
-.. _puzzler.exact_cover: ../puzzler/exact_cover.py
+.. _puzzler.exact_cover_dlx: ../puzzler/exact_cover_dlx.py
 .. _Dancing Links: http://en.wikipedia.org/wiki/Dancing_Links
 .. _Algorithm X: http://en.wikipedia.org/wiki/Algorithm_X
 

@@ -35,7 +35,7 @@ import optparse
 import time
 import cPickle as pickle
 from datetime import datetime, timedelta
-from puzzler.exact_cover import ExactCover
+from puzzler.exact_cover_dlx import ExactCover
 
 
 def run(puzzle_class, output_stream=sys.stdout, settings=None):

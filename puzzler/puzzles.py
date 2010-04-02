@@ -131,7 +131,8 @@ class Puzzle(object):
         """Maximum width of string representation of Z coordinate."""
 
         self.matrix = []
-        """A list of lists; see puzzler.exact_cover.convert_matrix()."""
+        """A list of lists; see the ExactCover.load_matrix() method of
+        puzzler.exact_cover_dlx."""
 
         self.matrix_columns = {}
         """Mapping of `self.matrix` column names to indices."""
