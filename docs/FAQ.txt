@@ -117,7 +117,7 @@ How can others contribute?
     There is one area where Python doesn't shine: raw speed.  But that
     can be solved with extension modules written in C.  The workhorse
     of the Polyform Puzzler project, the ExactCover class (implemented
-    in the puzzler.exact_cover_dlx__ module), should be rewritten as
+    in the puzzler.exact_cover_dlx_ module), should be rewritten as
     an extension module in C for speed.  See section 4, `The Code`_,
     for an introduction.
 
