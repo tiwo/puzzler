@@ -293,8 +293,7 @@ To solve a 9x9 Sudoku puzzle, use the ``bin/sudoku.py`` front end
 command as described the Usage_ section above.  You must supply a
 Sudoku starting position, either by providing (on the command line)
 the name of the file containing the position, or by typing in the
-starting position at the prompt.  Use periods (".") to represent empty
-squares in starting positions.  Examples:
+starting position at the prompt.  Examples:
 
 * Supply the name of a file containing the starting position::
 
@@ -302,7 +301,7 @@ squares in starting positions.  Examples:
 
 * Supply the starting position at the prompt::
 
-      bin/sudoku.py start.txt
+      bin/sudoku.py
 
       Enter a 9x9 Sudoku starting position: either 9 lines of 9 columns
       or 1 big line, "." for empty squares, spaces optional.
@@ -310,7 +309,8 @@ squares in starting positions.  Examples:
 
       ... enter starting position here ...
 
-Starting positions must be in one of the following formats:
+Starting positions must use periods (".") to represent empty squares,
+and must be in one of the following formats:
 
 * 9 lines of 9 columns, with or without spaces between digits::
 
@@ -334,7 +334,7 @@ Starting positions must be in one of the following formats:
      5..2.....
      1.4......
 
-  Blank lines may be used to separate blocks::
+  Blank lines and spaces may be used to separate blocks::
 
      4.. ... 8.5
      .3. ... ...
@@ -348,8 +348,8 @@ Starting positions must be in one of the following formats:
      5.. 2.. ...
      1.4 ... ...
 
-  The following format may also be used (the dividing-line characters
-  "- | +" are simply ignored)::
+* Dividing-line characters may be used to clarify the diagram ("- | +"
+  are simply ignored)::
 
      4 . . | . . . | 8 . 5
      . 3 . | . . . | . . .
