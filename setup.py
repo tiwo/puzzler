@@ -44,7 +44,7 @@ polyform puzzles and a Python library that does the heavy
 lifting.  New polyforms and new puzzles can easily be
 defined and added.  Requires Python 2.4 or higher.""", # wrap at col 60
     'url': 'http://puzzler.sourceforge.net/',
-    'version': '1',
+    'version': '1+SVN',
     'author': 'David Goodger',
     'author_email': 'goodger@python.org',
     'license': 'GPL 2',
