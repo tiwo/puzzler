@@ -38,6 +38,9 @@ from datetime import datetime, timedelta
 from puzzler.exact_cover_dlx import ExactCover
 
 
+__version__ = '1+SVN'
+
+
 def run(puzzle_class, output_stream=sys.stdout, settings=None):
     """
     Given a `puzzler.puzzles.Puzzle` subclass, process the command line and
