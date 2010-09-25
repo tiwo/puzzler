@@ -3,7 +3,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2008 by David J. Goodger
+# Copyright: (C) 1998-2010 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """
@@ -14,7 +14,8 @@ import sys
 import math
 import optparse
 from datetime import datetime
-from puzzler.exact_cover_dlx import ExactCover
+import puzzler
+
 
 usage = '%prog [options] [<puzzle-file>]'
 
@@ -59,17 +60,28 @@ def run_from_command_line(puzzle_class, output_stream=sys.stdout,
         settings = process_command_line()
     solve(puzzle_class, output_stream, settings)
 
-def process_command_line():
-    """Process command-line options & return a settings object."""
+def process_command_line_options():
+    """Process command-line options & return a settings object & args."""
     parser = optparse.OptionParser(
         formatter=optparse.TitledHelpFormatter(width=78),
         add_help_option=None, description=description, usage=usage)
+    choices = ('x2', 'dlx',)
+    parser.add_option(
+        '-a', '--algorithm', metavar='NAME', choices=choices,
+        default=choices[0],
+        help=('Choice of exact cover algorithm.  Choices: %s.'
+              % ('"%s" (default), "%s"'
+                 % (choices[0], '", "'.join(choices[1:])))))
     parser.add_option(
         '-n', '--stop-after', type='int', metavar='N',
         help='Stop processing after generating N solutions.')
     parser.add_option(
         '-h', '--help', help='Show this help message and exit.', action='help')
     settings, args = parser.parse_args()
+    return settings, args
+
+def process_command_line():
+    settings, args = process_command_line_options()
     if not args:
         settings.start_position = read_start_position_from_stdin()
     elif len(args) == 1:
@@ -108,7 +120,8 @@ def solve(puzzle_class, output_stream, settings):
     """Find and record all solutions to a puzzle.  Report on `output_stream`."""
     start = datetime.now()
     puzzle = puzzle_class(settings.start_position)
-    solver = ExactCover(puzzle.matrix)
+    solver = puzzler.exact_cover_modules[settings.algorithm].ExactCover(
+        puzzle.matrix)
     try:
         try:
             print >>output_stream, ('solving %s:\n'
@@ -137,6 +150,7 @@ class DataError(RuntimeError): pass
 
 class Settings(object):
 
+    algorithm = 'x2'
     stop_after = 0
     start_position = ''
 
@@ -599,20 +613,23 @@ class SudokuTest(object):
 """
 
     @classmethod
-    def run9x9(cls):
+    def run9x9(cls, settings):
         for i, pos in enumerate(cls.start_positions_9x9):
             print 'SudokuTest.start_positions_9x9[%i]:\n' % i
-            run(Sudoku9x9, start_position=pos)
+            run(Sudoku9x9, start_position=pos, settings=settings)
             print
 
     @classmethod
-    def run_magictour(cls):
+    def run_magictour(cls, settings):
         for i, pos in enumerate(cls.magictour.splitlines()):
             print 'SudokuTest.magictour line %i:\n' % (i + 1)
-            run(Sudoku9x9, start_position=pos)
+            run(Sudoku9x9, start_position=pos, settings=settings)
             print
 
 
 if __name__ == '__main__':
-    SudokuTest.run9x9()
-    SudokuTest.run_magictour()
+    settings, args = process_command_line_options()
+    if args:
+        print 'Command line arguments ignored: %r' % args
+    SudokuTest.run9x9(settings)
+    SudokuTest.run_magictour(settings)

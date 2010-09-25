@@ -11,6 +11,8 @@ polyform puzzles.
 
 Copyright |c| 1998-2010  David J. Goodger <goodger@python.org>
 
+Portions copyright |c| 2010  Ali Assaf
+
 This program is free software; you can redistribute it and/or modify
 it under the terms of the `GNU General Public License version 2
 <GPL2.txt>`_ as published by the Free Software Foundation.

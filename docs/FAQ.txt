@@ -117,9 +117,9 @@ How can others contribute?
     There is one area where Python doesn't shine: raw speed.  But that
     can be solved with extension modules written in C.  The workhorse
     of the Polyform Puzzler project, the ExactCover class (implemented
-    in the puzzler.exact_cover_dlx_ module), should be rewritten as
-    an extension module in C for speed.  See section 4, `The Code`_,
-    for an introduction.
+    in the puzzler.exact_cover_dlx_ and puzzler.exact_cover_x2_
+    modules), should be rewritten as an extension module in C for
+    speed.  See section 4, `The Code`_, for an introduction.
 
 **Non-programmers**
     Have you considered learning to program?  It's not as difficult as
@@ -466,8 +466,16 @@ local toy, game, and puzzle specialty stores.  If they don't stock
 what you want, ask them to get it for you!  Here are some sources that
 I know of:
 
-* The 21 polyominoes of order 1-5 are used as the playing pieces in
-  the "Blokus_" board game.
+* "Blokus_" board games:
+
+  - The 21 polyominoes of order 1-5 are used as the playing pieces in
+    the original "Blokus_" board game.
+
+  - The 22 polyiamonds of order 1-6 are used as the playing pieces in
+    the "Blokus Trigon" board game.
+
+  - The 11 polycubes of order 2-4 are used as the playing pieces in
+    the "Blokus 3D" board game.
 
 * Solid pentominoes are commonly available in the "Pocket Play" series
   by `Shoptaugh Games`_ (distributed in Canada and elsewhere by
@@ -475,10 +483,11 @@ I know of:
 
 * Soma Cubes are sold under the name "Block By Block" by ThinkFun_.
 
-* The 22 polyiamonds of order 1-6 are used as the playing pieces in
-  the "Blokus Trigon" board game. 
-
 * In Japan, many polyform puzzles are available from Tenyo_.
+
+* If you're a puzzle afficionado and happen to find yourself in Tokyo,
+  Japan, `Puzzle Shop Torito`_ near Akihabara station is a must-visit.
+  Plan on spending a few hours there (and bring plenty of cash!).
 
 .. _Blokus: http://en.wikipedia.org/wiki/Blokus
 .. _Shoptaugh Games: http://www.shoptaugh.com/
@@ -486,6 +495,7 @@ I know of:
 .. _ThinkFun: http://www.thinkfun.com
 .. _Tenyo: http://www.tenyo.co.jp/pp/
 .. _Kadon Enterprises: http://www.gamepuzzles.com/
+.. _Puzzle Shop Torito: http://www.torito.jp/
 
 
 Polyform Puzzles & Solutions
@@ -749,12 +759,19 @@ The puzzler.exact_cover_dlx_ module implements Donald E. Knuth's
 complete description of DLX, see Knuth's paper (`compressed PostScript
 original`__ or `PDF version`__).
 
+The puzzler.exact_cover_x2_ module implements Knuth's `Algorithm X`_
+using a high-level native data structure technique devised by `Ali
+Assaf`_.  This implementation runs about 3 times faster than DLX in
+native Python.
+
 __ http://www-cs-faculty.stanford.edu/~knuth/papers/dancing-color.ps.gz
 __ http://arxiv.org/pdf/cs/0011047
 .. _exact cover: http://en.wikipedia.org/wiki/Exact_cover
 .. _puzzler.exact_cover_dlx: ../puzzler/exact_cover_dlx.py
+.. _puzzler.exact_cover_x2: ../puzzler/exact_cover_x2.py
 .. _Dancing Links: http://en.wikipedia.org/wiki/Dancing_Links
 .. _Algorithm X: http://en.wikipedia.org/wiki/Algorithm_X
+.. _Ali Assaf: http://www.cs.mcgill.ca/~aassaf9/python/algorithm_x.html
 
 
 How are Sudoku puzzles solved?

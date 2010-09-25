@@ -241,6 +241,9 @@ Windows
 Optional Acceleration With Psyco
 --------------------------------
 
+Note that Psyco does not seem to accelerate the X2 algorithm, only the
+DLX algorithm.
+
 If your computer has an Intel/AMD 386-compatible processor (under any
 OS), you can use `Psyco <http://psyco.sourceforge.net/>`_ to
 accelerate processing by 1.5 to 3 times.  Support is already built

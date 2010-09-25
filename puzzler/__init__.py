@@ -35,10 +35,15 @@ import optparse
 import time
 import cPickle as pickle
 from datetime import datetime, timedelta
-from puzzler.exact_cover_dlx import ExactCover
+from puzzler import exact_cover_dlx
+from puzzler import exact_cover_x2
 
 
 __version__ = '1+SVN'
+
+exact_cover_modules = {
+    'dlx': exact_cover_dlx,
+    'x2': exact_cover_x2,}
 
 
 def run(puzzle_class, output_stream=sys.stdout, settings=None):
@@ -58,6 +63,13 @@ def process_command_line():
     parser = optparse.OptionParser(
         formatter=optparse.TitledHelpFormatter(width=78),
         add_help_option=None)
+    choices = ('xdls', 'dlx',)
+    parser.add_option(
+        '-a', '--algorithm', metavar='NAME', choices=choices,
+        default=choices[0],
+        help=('Choice of exact cover algorithm.  Choices: %s.'
+              % ('"%s" (default), "%s"'
+                 % (choices[0], '", "'.join(choices[1:])))))
     parser.add_option(
         '-n', '--stop-after', type='int', metavar='N',
         help='Stop processing after generating N solutions.')
@@ -115,7 +127,7 @@ def solve(puzzle_class, output_stream, settings):
         print >>sys.stderr, 'Unable to initialize the search state file:'
         print >>sys.stderr, '%s: %s' % (error.__class__.__name__, error)
         sys.exit(1)
-    solver = ExactCover(state=state)
+    solver = exact_cover_modules[settings.algorithm].ExactCover(state=state)
     if state.num_searches:
         print >>output_stream, (
             '\nResuming session (%s solutions, %s searches).\n'

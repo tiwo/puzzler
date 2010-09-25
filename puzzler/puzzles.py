@@ -132,7 +132,7 @@ class Puzzle(object):
 
         self.matrix = []
         """A list of lists; see the ExactCover.load_matrix() method of
-        puzzler.exact_cover_dlx."""
+        puzzler.exact_cover_dlx or puzzler.exact_cover_x2."""
 
         self.matrix_columns = {}
         """Mapping of `self.matrix` column names to indices."""
