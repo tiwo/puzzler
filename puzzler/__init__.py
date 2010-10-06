@@ -63,7 +63,7 @@ def process_command_line():
     parser = optparse.OptionParser(
         formatter=optparse.TitledHelpFormatter(width=78),
         add_help_option=None)
-    choices = ('xdls', 'dlx',)
+    choices = ('x2', 'dlx',)
     parser.add_option(
         '-a', '--algorithm', metavar='NAME', choices=choices,
         default=choices[0],

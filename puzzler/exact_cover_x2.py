@@ -164,7 +164,7 @@ class ExactCover(object):
 
 
 if __name__ == '__main__':
-    print 'testing exact_cover_xdls.py:\n'
+    print 'testing exact_cover_x2.py:\n'
     matrix = [
         'A  B  C  D  E  F  G'.split(),
         [0, 0, 1, 0, 1, 1, 0],
