@@ -22,10 +22,10 @@ usage = '%prog [options] [<puzzle-file>]'
 description = """\
 9x9 Sudoku puzzle solver.  Supply a Sudoku starting position: either provide
 the name of the file containing the position (as <puzzle-file> above), or type
-in the starting position at the prompt.  Use periods (".") to represent empty
-squares in starting positions.  Starting positions must be either 9 lines of 9
-columns, or all on one line, with or without spaces between digits.  See the
-README.txt file for details
+in the starting position at the prompt.  Use periods (".") or zeros ("0") to
+represent empty squares in starting positions.  Starting positions must be
+either 9 lines of 9 columns, or all on one line, with or without spaces
+between digits.  See the README.txt file for details
 (http://puzzler.sourceforge.net/README.html#sudoku).
 """
 
@@ -36,7 +36,7 @@ the starting position from standard input."""
 
 stdin_prompt = """
 Enter a 9x9 Sudoku starting position: either 9 lines of 9 columns
-or 1 big line, "." for empty squares, spaces optional.
+or 1 big line, "." or "0" for empty squares, spaces optional.
 Ctrl-D (on Linux/Mac), Ctrl-Z + Enter (on Windows) to end:
 """
 
@@ -160,6 +160,8 @@ class Settings(object):
 
 class Puzzle(object):
 
+    empties = set(['.', '0'])
+
     def __init__(self, start_position, init_puzzle=True):
         self.start_position = start_position
         """Text specification of the Sudoku puzzle start position, a
@@ -173,7 +175,8 @@ class Puzzle(object):
 
         The number of lines must equal the order of the puzzle, including
         blank lines.  The number of space-separated text columns must also
-        equal the order of the puzzle.  Empty cells must contain a period (".").
+        equal the order of the puzzle.  Empty cells must contain a period (".")
+        or a zero ("0").
         """
 
         self.coordinate_blocks = {}
@@ -256,7 +259,7 @@ class Puzzle(object):
         for y, line in enumerate(lines):
             cells = line.split()
             for x, cell in enumerate(cells):
-                if cell == '.':
+                if cell in self.empties:
                     continue
                 row = [0] * num_cols_in_matrix
                 value = int(cell)
@@ -311,6 +314,7 @@ class Puzzle(object):
     def normalize_start_position(self):
         pos = self.start_position
         pos = pos.replace('-', '').replace('|', '').replace('+', '')
+        pos = pos.replace('0', '.')
         lines = [line for line in pos.splitlines() if line]
         if len(lines) == 1:
             line = lines[0].strip()

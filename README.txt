@@ -307,13 +307,13 @@ starting position at the prompt.  Examples:
       bin/sudoku.py
 
       Enter a 9x9 Sudoku starting position: either 9 lines of 9 columns
-      or 1 big line, "." for empty squares, spaces optional.
+      or 1 big line, "." or "0" for empty squares, spaces optional.
       Ctrl-D (on Linux/Mac), Ctrl-Z + Enter (on Windows) to end:
 
       ... enter starting position here ...
 
-Starting positions must use periods (".") to represent empty squares,
-and must be in one of the following formats:
+Starting positions must use periods (".") or zeros ("0") to represent
+empty squares, and must be in one of the following formats:
 
 * 9 lines of 9 columns, with or without spaces between digits::
 
