@@ -4831,6 +4831,16 @@ class Hexiamonds(Polyiamonds):
         '1': 'black'}
 
 
+class Hexiamonds3x12(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 3
+    width = 12
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+
 class Hexiamonds4x9(Hexiamonds):
 
     """74 solutions"""
