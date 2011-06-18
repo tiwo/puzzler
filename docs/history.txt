@@ -31,7 +31,7 @@ Changes Since Release 1
   - Polyhexes of order 1 through 5: 5x30, 6x25, & 10x15
     parallelograms.
 
-  - Hexiamonds: 4x9 & 6x6 parallelograms; 4x11 trapezium; 4x10
+  - Hexiamonds: 4x9 & 6x6 & 3x12 parallelograms; 4x11 trapezium; 4x10
     elongated hexagon; snowflake; ring 2; crescents; 6x8 "coin";
     trefoil.
 
@@ -103,6 +103,17 @@ Changes Since Release 1
 
 * Renamed polystick puzzles to reflect the number of grid lines,
   instead of the number of squares.
+
+* Added a Sudoku puzzle solver.
+
+* API changes: moved the "convert_matrix" function into the ExactCover
+  class and renamed as the "load_matrix" method; changed
+  ExactCover.__init__ to allow the matrix to be passed in at
+  instantiation time. Also improved test output.
+
+* Added a second implementation of the exact cover solver,
+  exact_cover_x2.py, based on `code by Ali Assaf
+  <http://www.cs.mcgill.ca/~aassaf9/python/algorithm_x.html>`__.
 
 
 Release 1 (2006-08-08)

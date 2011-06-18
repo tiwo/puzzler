@@ -18,6 +18,8 @@ Also see:
 | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
 | `Polyform Puzzler FAQ <FAQ.html>`_
 
+* 3x9 parallelogram: 0 solutions.
+
 * 4x9 parallelogram: `74 solutions
   <http://puzzler.sf.net/solutions/hexiamonds-4x9.txt>`__
 
