@@ -778,8 +778,8 @@ How are Sudoku puzzles solved?
 ------------------------------
 
 Sudoku can be reduced to the same kind of `exact cover`_ problem as
-polyform puzzles, and the same DLX algorithm can be used to solve
-Sudoku puzzles.  It's just a matter of identifying the constraints.
+polyform puzzles, and the same algorithm can be used to solve
+both types of puzzles.  It's just a matter of identifying the constraints.
 
 Here's a 4x4 Sudoku puzzle we'll use to illustrate::
 
@@ -831,16 +831,16 @@ sparse grid.  The program creates one exact cover matrix row for each
 of these digits.  Each row will have exactly four "1" values, one each
 for the block, the column, and the row (each paired with the digit
 value), and one for the column & row coordinate pair.  The program
-will then generates one candidate row for each digit in each empty
+will then generate one candidate row for each digit in each empty
 square in the starting position.
 
-The resulting matrix is then fed into the DLX algorithm, which
+The resulting matrix is then fed into algorithm X, which
 produces the result: a set of rows that satisfies all constraints.  If
 the puzzle is ambiguous (and therefore not well-formed), more than one
 result may be produced.  If an entirely empty starting position is
 used, the algorithm will eventually produce every possible Sudoku
-solution (all 6,670,903,752,021,072,936,960 of them, if you give it
-enough time).
+solution (all 6,670,903,752,021,072,936,960 of them), if you give it
+enough time.
 
 .. |---| unicode:: U+2014  .. em dash
    :trim:

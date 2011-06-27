@@ -3,7 +3,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2010 by David J. Goodger
+# Copyright: (C) 1998-2011 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 import sys
@@ -4911,6 +4911,110 @@ class Hexiamonds4x10LongHexagon(Hexiamonds):
         self.piece_data['I6'][-1]['flips'] = None
 
 
+class Hexiamonds5x8StackedLongHexagons(Hexiamonds):
+
+    """378 solutions"""
+
+    height = 8
+    width = 8
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 7 <= (2 * x + y + z) <= 15:
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class Hexiamonds4x12StackedHexagons(Hexiamonds):
+
+    """51 solutions"""
+
+    height = 12
+    width = 8
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if (  (y < 4 and 4 <= x < 8 and 6 <= total < 10)
+                          or (4 <= y < 8 and 2 <= x < 6 and 8 <= total < 12)
+                          or (8 <= y and x < 4 and 10 <= total < 14)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class Hexiamonds4x10LongButterfly(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 4
+    width = 12
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if (  (total > 3 or x > 1)
+                          and (total < self.width or x < 10)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class Hexiamonds5x8StackedLongButterflies(Hexiamonds):
+
+    """290 solutions"""
+
+    height = 8
+    width = 9
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 8 <= (2 * x + y + z) <= 16:
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class Hexiamonds4x12StackedButterflies(Hexiamonds):
+
+    """26 solutions"""
+
+    height = 12
+    width = 10
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if (  (y < 2 and 6 <= x and total < 10)
+                          or (2 <= y < 6 and 4 <= x < 8 and 8 <= total < 12)
+                          or (6 <= y < 10 and 2 <= x < 6 and 10 <= total < 14)
+                          or (10 <= y and x < 4 and 12 <= total)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
 class HexiamondsSnowflake(Hexiamonds):
 
     """55 solutions"""
@@ -5205,6 +5309,241 @@ class HexiamondsCoin(Hexiamonds):
 
     def customize_piece_data(self):
         self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsIrregularHexagon7x8(Hexiamonds):
+
+    """
+    5885 solutions.
+
+    Suggested by Dan Klarskov, Denmark, under the name 'hexui'.
+    """
+
+    height = 8
+    width = 7
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 1 < x + y + z < 9:
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsStackedChevrons_6x6(Hexiamonds):
+
+    """
+    933 solutions.
+
+    Suggested by Dan Klarskov, Denmark, under the name 'polyam2'.
+    """
+
+    height = 6
+    width = 9
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if self.height <= (2 * x + y + z) < (self.width * 2):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsStackedChevrons_12x3_1(Hexiamonds):
+
+    """269 solutions."""
+
+    height = 12
+    width = 9
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 11 <= (2 * x + y + z) < 17:
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsStackedChevrons_12x3_2(Hexiamonds):
+
+    """114 solutions."""
+
+    height = 12
+    width = 9
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if (  (y < 2 and 6 <= total < 9)
+                          or (2 <= y < 4 and 4 <= x < 7)
+                          or (4 <= y < 6 and 8 <= total < 11)
+                          or (6 <= y < 8 and 2 <= x < 5)
+                          or (8 <= y < 10 and 10 <= total < 13)
+                          or (y >= 10 and x < 3)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsStackedChevrons_12x3_3(Hexiamonds):
+
+    """46 solutions."""
+
+    height = 12
+    width = 9
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if (  (y < 3 and 6 <= total < 9)
+                          or (3 <= y < 6 and 3 <= x < 6)
+                          or (6 <= y < 9 and 9 <= total < 12)
+                          or (y >= 9 and x < 3)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsChevron(Hexiamonds):
+
+    """
+    Left-facing chevron.
+
+    Width of solution space is (apparent width) + (height / 2).
+    """
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if y >= self.height / 2:
+                        if x < (self.width - self.height / 2):
+                            # top half
+                            yield coordsys.Triangular3D((x, y, z))
+                    elif (self.height / 2 - 1) < (x + y + z) < self.width:
+                        # bottom half
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsChevron_4x9(HexiamondsChevron):
+
+    """142 solutions."""
+
+    height = 4
+    width = 11
+
+    check_for_duplicates = False
+
+
+class HexiamondsChevron_6x6(HexiamondsChevron):
+
+    """1004 solutions."""
+
+    height = 6
+    width = 9
+
+    check_for_duplicates = False
+
+
+class HexiamondsChevron_12x3(HexiamondsChevron):
+
+    """29 solutions."""
+
+    height = 12
+    width = 9
+
+    check_for_duplicates = False
+
+
+class HexiamondsV_9x9(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 9
+    width = 9
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if (  self.width <= total
+                          and not (y > 5 and x < 6 and total > 11)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class OneSidedHexiamonds(Hexiamonds):
+
+    def customize_piece_data(self):
+        """
+        Disable flips on all pieces, and add flipped versions of asymmetric
+        pieces.
+        """
+        self.piece_colors = copy.deepcopy(self.piece_colors)
+        for key in self.piece_data.keys():
+            self.piece_data[key][-1]['flips'] = None
+        for key in self.asymmetric_pieces:
+            self.piece_data[key.lower()] = copy.deepcopy(self.piece_data[key])
+            self.piece_data[key.lower()][-1]['flips'] = (1,)
+            self.piece_colors[key.lower()] = self.piece_colors[key]
+
+
+class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
+
+    """
+    124,519 solutions (according to Knuth).
+    
+    O'Beirne's Hexagon consists of 19 small 6-triangle hexagons, arranged in a
+    hexagon like a honeycomb (12 small hexagons around 6 around 1).
+    """
+
+    height = 10
+    width = 10
+
+    def customize_piece_data(self):
+        OneSidedHexiamonds.customize_piece_data(self)
+        # one sphinx pointing up, to eliminate duplicates:
+        self.piece_data['P6'][-1]['rotations'] = None
+
+    def coordinates(self):
+        bumps = set((
+            (0,6,1), (0,7,0), (0,7,1), (9,2,0), (9,2,1), (9,3,0),
+            (6,0,1), (7,0,0), (7,0,1), (2,9,0), (2,9,1), (3,9,0),
+            (2,3,0), (2,2,1), (3,2,0), (6,7,1), (7,7,0), (7,6,1)))
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if (  (5 < (x + y + z) < 14) and (0 < x < 9) and (0 < y < 9)
+                          or (x,y,z) in bumps):
+                        yield coordsys.Triangular3D((x, y, z))
 
 
 class Heptiamonds(Polyiamonds):

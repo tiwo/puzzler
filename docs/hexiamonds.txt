@@ -6,7 +6,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2007 by David J. Goodger
+:Copyright: |c| 1998-2011 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -18,17 +18,69 @@ Also see:
 | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
 | `Polyform Puzzler FAQ <FAQ.html>`_
 
-* 3x9 parallelogram: 0 solutions.
 
-* 4x9 parallelogram: `74 solutions
+Hexiamonds
+==========
+
+Parallelograms
+--------------
+
+* 4x9: `74 solutions
   <http://puzzler.sf.net/solutions/hexiamonds-4x9.txt>`__
 
   .. image:: images/hexiamonds-4x9.png
 
-* 6x6 parallelogram: `156 solutions
+* 6x6: `156 solutions
   <http://puzzler.sf.net/solutions/hexiamonds-6x6.txt>`__
 
   .. image:: images/hexiamonds-6x6.png
+
+* The 3x12 parallelogram has no (0) solutions.
+
+
+Chevrons
+--------
+
+* 12x3: `29 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-chevron-12x3.txt>`__
+
+  .. image:: images/hexiamonds-chevron-12x3.png
+
+* 6x6: `1004 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-chevron-6x6.txt>`__
+
+  .. image:: images/hexiamonds-chevron-6x6.png
+
+* 4x9: `1004 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-chevron-4x9.txt>`__
+
+  .. image:: images/hexiamonds-chevron-4x9.png
+
+* Stacked chevrons 6x6: `933 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-stacked-chevrons-6x6.txt>`__
+
+  Suggested by Dan Klarskov of Denmark, under the name "polyam2".
+
+  .. image:: images/hexiamonds-stacked-chevrons-6x6.png
+
+* Stacked chevrons 12x3, 1: `269 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-stacked-chevrons-12x3-1.txt>`__
+
+  .. image:: images/hexiamonds-stacked-chevrons-12x3-1.png
+
+* Stacked chevrons 12x3, 2: `114 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-stacked-chevrons-12x3-2.txt>`__
+
+  .. image:: images/hexiamonds-stacked-chevrons-12x3-2.png
+
+* Stacked chevrons 12x3, 3: `46 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-stacked-chevrons-12x3-3.txt>`__
+
+  .. image:: images/hexiamonds-stacked-chevrons-12x3-3.png
+
+
+Misc
+----
 
 * 4x11 trapezium: `76 solutions
   <http://puzzler.sf.net/solutions/hexiamonds-4x11-trapezium.txt>`__
@@ -39,6 +91,30 @@ Also see:
   <http://puzzler.sf.net/solutions/hexiamonds-4x10-long-hex.txt>`__
 
   .. image:: images/hexiamonds-4x10-long-hex.png
+
+* 5x8 stacked long hexagons: `378 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-5x8-stacked-long-hexagons.txt>`__
+
+  .. image:: images/hexiamonds-5x8-stacked-long-hexagons.png
+
+* 4x12 stacked hexagons: `51 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-4x12-stacked-hexagons.txt>`__
+
+  .. image:: images/hexiamonds-4x12-stacked-hexagons.png
+
+* 5x8 stacked long butterflies: `290 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-5x8-stacked-long-butterflies.txt>`__
+
+  .. image:: images/hexiamonds-5x8-stacked-long-butterflies.png
+
+* 4x12 stacked butterflies: `26 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-4x12-stacked-butterflies.txt>`__
+
+  All the solutions are also solutions to the 4x12 stacked hexagons
+  above, merely by rearranging the sections.  In fact, the sample
+  solutions shown here are equivalent.
+
+  .. image:: images/hexiamonds-4x12-stacked-butterflies.png
 
 * Snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
   "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`__): `55
@@ -76,6 +152,32 @@ Also see:
   <http://puzzler.sf.net/solutions/hexiamonds-trefoil.txt>`__
 
   .. image:: images/hexiamonds-trefoil.png
+
+* Irregular hexagon 7x8: `5885 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-irregular-hexagon-7x8.txt>`__
+
+  Suggested by Dan Klarskov of Denmark, under the name "hexui".
+
+  .. image:: images/hexiamonds-irregular-hexagon-7x8.png
+
+
+One-Sided Hexiamonds
+====================
+
+* O'Beirne's hexagon (19 small 6-triangle hexagons, arranged in a
+  hexagon like a honeycomb: concentric rings of 12 small hexagons
+  around 6 around 1): 124,519 solutions (`incomplete list
+  <http://puzzler.sf.net/solutions/one-sided-hexiamonds-obeirnes-hexagon.txt>`__)
+
+  124,519 solutions are reported in `Dancing Links`_ by Donald
+  E. Knuth.  The puzzle and its history is briefly described in
+  Knuth's paper, and described in depth in "O’Beirne’s Hexiamond" by
+  Richard K. Guy, a chapter in the book `The Mathemagician and Pied
+  Puzzler: A Collection in Tribute to Martin Gardner`.
+
+  .. _Dancing Links: http://en.wikipedia.org/wiki/Dancing_Links
+
+  .. image:: images/one-sided-hexiamonds-obeirnes-hexagon.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

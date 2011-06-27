@@ -8,7 +8,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2009 by David J. Goodger
+:Copyright: |c| 1998-2011 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. contents::
@@ -32,8 +32,13 @@ Changes Since Release 1
     parallelograms.
 
   - Hexiamonds: 4x9 & 6x6 & 3x12 parallelograms; 4x11 trapezium; 4x10
-    elongated hexagon; snowflake; ring 2; crescents; 6x8 "coin";
-    trefoil.
+    elongated hexagon; 5x8 stacked long hexagons; 4x12 stacked
+    hexagons; 5x8 stacked long butterflies; 4x12 stacked butterflies;
+    snowflake; ring 2; crescents; 6x8 "coin"; trefoil; 12x3 & 4x9 &
+    6x6 chevrons; 6x6 & 3 types of 12x3 stacked chevrons; 7x8
+    irregular hexagon.
+
+  - One-sided hexiamonds: O'Beirne's hexagon.
 
   - Heptiamonds: 7x12, 6x14, 4x21, 3x28 parallelograms; 12x13, 6x17, &
     4x23 trapezia; 4x21, 6x14, 12x7, 14x6, & 28x3 chevrons; 11x8 &

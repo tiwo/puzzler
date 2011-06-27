@@ -8,7 +8,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2008 by David J. Goodger
+:Copyright: |c| 1998-2011 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 
@@ -45,8 +45,6 @@ To implement:
 
 * polyiamonds:
 
-  - O'Beirne's hexagon one-sided hexiamond problem?  (see Knuth's
-    "Dancing Links" paper)
   - Octiamonds
 
 * polyhexes
@@ -58,9 +56,6 @@ To implement:
   3x5 diamond lattice
 
 * polysticks of order 1-4: unbordered 8x8 grid
-
-.. _Alfred Wassermann:
-   http://did.mat.uni-bayreuth.de/~alfred/home/index.html
 
 .. |---| unicode:: U+2014  .. em dash
    :trim:
