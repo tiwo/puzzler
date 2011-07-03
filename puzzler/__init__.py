@@ -186,6 +186,7 @@ def solve(puzzle_class, output_stream, settings):
                 print >>output_stream, (
                     '(%s: %s solutions, %s searches)'
                     % (puzzles[i].__class__.__name__, solutions, searches))
+        output_stream.flush()
     state.cleanup()
 
 

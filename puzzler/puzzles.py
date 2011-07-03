@@ -221,6 +221,7 @@ class Puzzle(object):
         print >>stream
         print >>stream, self.format_solution(solution, normalized=False)
         print >>stream
+        stream.flush()
 
     def record_dated_solution(self, solution, solver, stream=sys.stdout):
         """A dated variant of `self.record_solution`."""
