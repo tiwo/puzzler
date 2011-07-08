@@ -18,6 +18,8 @@ Also see:
 | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
 | `Polyform Puzzler FAQ <FAQ.html>`_
 
+.. contents::
+
 
 Hexiamonds
 ==========
@@ -164,18 +166,19 @@ Misc
 One-Sided Hexiamonds
 ====================
 
-* O'Beirne's hexagon (19 small 6-triangle hexagons, arranged in a
-  hexagon like a honeycomb: concentric rings of 12 small hexagons
-  around 6 around 1): 124,519 solutions (`incomplete list
-  <http://puzzler.sf.net/solutions/one-sided-hexiamonds-obeirnes-hexagon.txt>`__)
+* O'Beirne's hexiamond hexagon (19 small 6-triangle hexagons, arranged
+  in a hexagon on a honeycomb grid: 1 hexagon surrounded by 6 hexagons
+  surrounded by 12 in concentric rings): `124,519 solutions
+  <http://puzzler.sf.net/solutions/one-sided-hexiamonds-obeirnes-hexagon.txt>`__
 
-  124,519 solutions are reported in `Dancing Links`_ by Donald
-  E. Knuth.  The puzzle and its history is briefly described in
-  Knuth's paper, and described in depth in "O’Beirne’s Hexiamond" by
-  Richard K. Guy, a chapter in the book `The Mathemagician and Pied
-  Puzzler: A Collection in Tribute to Martin Gardner`.
+  The number of solutions and their distribution amongst sub-puzzles
+  agrees with what is reported in `Dancing Links`_ by Donald E. Knuth.
+  The puzzle and its history is briefly described in Knuth's paper,
+  and is described in depth in "O’Beirne’s Hexiamond" by Richard
+  K. Guy (a chapter in the book `The Mathemagician and Pied Puzzler: A
+  Collection in Tribute to Martin Gardner`).
 
-  .. _Dancing Links: http://en.wikipedia.org/wiki/Dancing_Links
+  .. _Dancing Links: http://arxiv.org/abs/cs/0011047
 
   .. image:: images/one-sided-hexiamonds-obeirnes-hexagon.png
 
