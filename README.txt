@@ -112,7 +112,7 @@ locations on your system), unless you `install it`_, or you set your
      current directory for modules and packages, so it can find the
      "puzzler" package (directory).
 
-     If the the Python executable is not on your ``PATH``, you will
+     If the Python executable is not on your ``PATH``, you will
      have to specify its location, e.g.::
 
          C:\Python24\python bin\pentominoes3x20.py
