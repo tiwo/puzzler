@@ -11,7 +11,7 @@ puzzles.
 """
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2010 by David J. Goodger
+# Copyright: (C) 1998-2011 by David J. Goodger
 # License: 
 #     This program is free software; you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License version 2
