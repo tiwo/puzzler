@@ -212,9 +212,8 @@ class Puzzle(object):
         """
         formatted = self.format_solution(solution, normalized=True)
         if self.check_for_duplicates:
-            if formatted in self.solutions:
+            if self.store_solutions(solution, formatted):
                 return
-            self.store_solutions(solution, formatted)
         if dated:
             print >>stream, 'at %s,' % datetime.datetime.now(),
         print >>stream, solver.format_solution()
@@ -320,14 +319,28 @@ class Puzzle(object):
 
     def store_solutions(self, solution, formatted):
         """
+        Return True if the solution is a duplicate, false if unique.
+
         Store the formatted solution along with puzzle-specific variants
         (reflections, rotations) in `self.solutions`, to check for duplicates.
         """
+        if formatted in self.solutions:
+            return True
         self.solutions.add(formatted)
+        # keep track of formatted variants of *this* solution, to
+        # differentiate from previous solutions:
+        solutions = set([formatted])
         for conditions in self.duplicate_conditions:
             formatted = self.format_solution(solution, **conditions)
-            if formatted not in self.solutions:
+            if formatted in self.solutions:
+                # applying duplicate conditions may result in variant
+                # solutions identical to `formatted`
+                if formatted not in solutions:
+                    return True
+            else:
                 self.solutions.add(formatted)
+                solutions.add(formatted)
+        return False
 
 
 class Puzzle2D(Puzzle):
@@ -4562,29 +4575,79 @@ class Polyiamonds(PuzzlePseudo3D):
         return aspects
 
     def format_solution(self, solution, normalized=True,
-                        rotate_180=False, row_reversed=False, xy_swapped=False):
+                        rotate_180=False, row_reversed=False, xy_swapped=False,
+                        standardize=False):
         s_matrix = self.build_solution_matrix(solution)
         if rotate_180:
             s_matrix = [[list(reversed(s_matrix[z][y]))
                          for y in reversed(range(self.height))]
                         for z in reversed(range(self.depth))]
+        # row_reversed doesn't work for triangular coordinates:
         if row_reversed:
-            out = []
+            out = [[], []]
             trim = (self.height - 1) // 2
             for y in range(self.height):
                 index = self.height - 1 - y
-                out.append(([self.empty_cell] * index
-                            + s_matrix[index]
-                            + [self.empty_cell] * y)[trim:-trim])
+                for z in range(self.depth):
+                    out[z].append(([self.empty_cell] * index
+                                   + s_matrix[z][index]
+                                   + [self.empty_cell] * y)[trim:-trim])
             s_matrix = out
         if xy_swapped:
-            assert self.height == self.width, \
-                   'Unable to swap x & y: dimensions not equal!'
+            assert self.height == self.width, (
+                'Unable to swap x & y: dimensions not equal!')
             s_matrix = [[[s_matrix[z][x][y]
                           for x in range(self.height)]
                          for y in range(self.width)]
                         for z in range(self.depth)]
+        if standardize:
+            s_matrix = self.standardize_solution_matrix(
+                solution, s_matrix, piece_name=standardize)
         return self.format_triangular_grid(s_matrix)
+
+    def standardize_solution_matrix(self, solution, s_matrix, piece_name):
+        """
+        Format the solution by rotating the puzzle so the named piece is in a
+        standard position, for easy comparison.  In one-sided puzzles if the
+        named piece is flipped (i.e. has a lowercase names), the puzzle is
+        flipped first.
+        """
+        pieces = dict(
+            (piece[-1], [tuple(int(d) for d in coord.split(','))
+                         for coord in piece[:-1]])
+            for piece in solution)
+        coords = set(pieces[piece_name])
+        target = set(self.pieces[piece_name.upper()][0][1])
+        flip = piece_name != piece_name.upper()
+        for rotation in range(6):
+            new = coordsys.Triangular3DView(coords, rotation, flip=flip)
+            if set(new) == target:
+                break
+        else:
+            raise Exception(
+                'unable to match rotation (%s, flip=%s)' % (piece_name, flip))
+        if not rotation and not flip:
+            return s_matrix
+        for piece_name, coords in pieces.items():
+            coord_set = coordsys.Triangular3DCoordSet(coords)
+            if flip:
+                coord_set = coord_set.flip0()
+            coord_set = coord_set.rotate0(rotation)
+            pieces[piece_name] = coord_set
+        min_x = min(coord[0]
+                    for piece_coords in pieces.values()
+                    for coord in piece_coords)
+        min_y = min(coord[1]
+                    for piece_coords in pieces.values()
+                    for coord in piece_coords)
+        offset = coordsys.Triangular3D((-min_x, -min_y, 0))
+        for piece_name, coords in pieces.items():
+            pieces[piece_name] = coords.translate(offset)
+        new_solution = [sorted(','.join(str(d) for d in coord)
+                               for coord in pieces[piece[-1]]) + [piece[-1]]
+                        for piece in solution]
+        new_matrix = self.build_solution_matrix(new_solution)
+        return new_matrix
 
     def format_coords(self):
         s_matrix = self.empty_solution_matrix()
@@ -4809,7 +4872,7 @@ class Hexiamonds(Polyiamonds):
                {}),}                    # Hexagon
     """(0,0,0) is implied."""
 
-    symmetric_pieces = 'E6 V6 X6 L6 O6'.split()
+    symmetric_pieces = 'E6 V6 X6 C6 O6'.split()
     """Pieces with reflexive symmetry, identical to their mirror images."""
 
     asymmetric_pieces = 'I6 P6 J6 H6 S6 G6 F6'.split()
@@ -5520,8 +5583,11 @@ class OneSidedHexiamonds(Hexiamonds):
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
 
     """
-    124,519 solutions (according to Knuth).
-    
+    124,519 solutions, agrees with Knuth.
+
+    Split into 7 sub-puzzles by the distance of the small-hexagon piece (O6)
+    from the center of the puzzle.
+
     O'Beirne's Hexagon consists of 19 small 6-triangle hexagons, arranged in a
     hexagon like a honeycomb (12 small hexagons around 6 around 1).
     """
@@ -5529,10 +5595,18 @@ class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
     height = 10
     width = 10
 
-    def customize_piece_data(self):
-        OneSidedHexiamonds.customize_piece_data(self)
-        # one sphinx pointing up, to eliminate duplicates:
-        self.piece_data['P6'][-1]['rotations'] = None
+    duplicate_conditions = ({'standardize': 'P6'},
+                            {'standardize': 'p6'},)
+
+    @classmethod
+    def components(cls):
+        return (OneSidedHexiamondsOBeirnesHexagon_A,
+                OneSidedHexiamondsOBeirnesHexagon_B,
+                OneSidedHexiamondsOBeirnesHexagon_C,
+                OneSidedHexiamondsOBeirnesHexagon_D,
+                OneSidedHexiamondsOBeirnesHexagon_E,
+                OneSidedHexiamondsOBeirnesHexagon_F,
+                OneSidedHexiamondsOBeirnesHexagon_G,)
 
     def coordinates(self):
         bumps = set((
@@ -5545,6 +5619,136 @@ class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
                     if (  (5 < (x + y + z) < 14) and (0 < x < 9) and (0 < y < 9)
                           or (x,y,z) in bumps):
                         yield coordsys.Triangular3D((x, y, z))
+
+    def build_matrix(self):
+        """"""
+        keys = sorted(self.pieces.keys())
+        o_coords, o_aspect = self.pieces['O6'][0]
+        for coords in self.O6_offsets:
+            translated = o_aspect.translate(coords)
+            self.build_matrix_row('O6', translated)
+        keys.remove('O6')
+        self.build_regular_matrix(keys)
+
+
+class OneSidedHexiamondsOBeirnesHexagon_A(OneSidedHexiamondsOBeirnesHexagon):
+
+    """1914 solutions."""
+
+    O6_offsets = ((4,4,0),)
+
+    def customize_piece_data(self):
+        OneSidedHexiamondsOBeirnesHexagon.customize_piece_data(self)
+        # one sphinx pointing up, to eliminate duplicates & reduce searches:
+        self.piece_data['P6'][-1]['rotations'] = None
+
+
+class OneSidedHexiamondsOBeirnesHexagon_B(OneSidedHexiamondsOBeirnesHexagon):
+
+    """5727 solutions."""
+
+    O6_offsets = ((5,4,0),)
+
+
+class OneSidedHexiamondsOBeirnesHexagon_C(OneSidedHexiamondsOBeirnesHexagon):
+
+    """11447 solutions."""
+
+    O6_offsets = ((3,6,0),)
+
+
+class OneSidedHexiamondsOBeirnesHexagon_D(OneSidedHexiamondsOBeirnesHexagon):
+
+    """7549 solutions."""
+
+    O6_offsets = ((6,4,0),)
+
+
+class OneSidedHexiamondsOBeirnesHexagon_E(OneSidedHexiamondsOBeirnesHexagon):
+
+    """6675 solutions."""
+
+    O6_offsets = ((3,7,0),)
+
+
+class OneSidedHexiamondsOBeirnesHexagon_F(OneSidedHexiamondsOBeirnesHexagon):
+
+    """15717 solutions."""
+
+    O6_offsets = ((7,4,0),)
+
+
+class OneSidedHexiamondsOBeirnesHexagon_G(OneSidedHexiamondsOBeirnesHexagon):
+
+    """75490 solutions."""
+
+    O6_offsets = ((2,8,0),)
+
+
+class OneSidedHexiamonds_TestHexagon(OneSidedHexiamonds):
+
+    """Used to test the 'standardize' duplicate condition."""
+
+    height = 6
+    width = 6
+
+    _test_pieces = set(['I6', 'P6', 'J6', 'V6', 'C6', 'O6'])
+
+    symmetric_pieces = 'V6 C6 O6'.split()
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = 'I6 P6 J6'.split()
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'standardize': 'P6'},
+                            {'standardize': 'p6'})
+
+    @classmethod
+    def components(cls):
+        return (OneSidedHexiamonds_TestHexagon_A,
+                OneSidedHexiamonds_TestHexagon_B)
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 3 <= (x + y + z) < 9:
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def build_matrix(self):
+        """"""
+        keys = sorted(self.pieces.keys())
+        o_coords, o_aspect = self.pieces['O6'][0]
+        for coords in self.O6_offsets:
+            translated = o_aspect.translate(coords)
+            self.build_matrix_row('O6', translated)
+        keys.remove('O6')
+        self.build_regular_matrix(keys)
+
+    def customize_piece_data(self):
+        for key in self.piece_data.keys():
+            if key not in self._test_pieces:
+                del self.piece_data[key]
+        OneSidedHexiamonds.customize_piece_data(self)
+
+
+class OneSidedHexiamonds_TestHexagon_A(OneSidedHexiamonds_TestHexagon):
+
+    O6_offsets = ((1,4,0), (2,4,0), (2,3,0),)
+
+
+class OneSidedHexiamonds_TestHexagon_B(OneSidedHexiamonds_TestHexagon):
+
+    O6_offsets = ((2,2,0),)
+
+    def customize_piece_data(self):
+        OneSidedHexiamonds_TestHexagon.customize_piece_data(self)
+        # one sphinx pointing up, to eliminate duplicates & reduce searches:
+        self.piece_data['P6'][-1]['rotations'] = None
+#         ## doesn't work (omits valid solutions):
+#         #self.piece_data['C6'][-1]['rotations'] = (0,2,4)
 
 
 class Heptiamonds(Polyiamonds):
