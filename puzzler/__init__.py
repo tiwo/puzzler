@@ -132,6 +132,7 @@ def solve(puzzle_class, output_stream, settings):
         print >>output_stream, (
             '\nResuming session (%s solutions, %s searches).\n'
             % (state.num_solutions, state.num_searches))
+        output_stream.flush()
     matrices = []
     stats = []
     puzzles = []
@@ -148,6 +149,7 @@ def solve(puzzle_class, output_stream, settings):
             for i, puzzle in enumerate(puzzles):
                 print >>output_stream, ('solving %s:\n'
                                         % puzzle.__class__.__name__)
+                output_stream.flush()
                 solver.load_matrix(*matrices[i])
                 for solution in solver.solve():
                     state.save(solver)
