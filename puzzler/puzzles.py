@@ -3491,12 +3491,89 @@ class OneSidedTetrasticks5x5DiamondLattice(OneSidedTetrasticks):
     width = 10
     height = 10
 
-    def customize_piece_data(self):
+    check_for_duplicates = False
+
+    @classmethod
+    def components(cls):
+        return (OneSidedTetrasticks5x5DiamondLattice_A,
+                OneSidedTetrasticks5x5DiamondLattice_B,
+                OneSidedTetrasticks5x5DiamondLattice_C,
+                OneSidedTetrasticks5x5DiamondLattice_D,
+                OneSidedTetrasticks5x5DiamondLattice_E,
+                OneSidedTetrasticks5x5DiamondLattice_F,)
+
+    def _customize_piece_data_I(self):
+        """
+        Limit I piece to vertical when X is on the diagonal, to avoid symmetry.
+        """
         OneSidedTetrasticks.customize_piece_data(self)
-        self.piece_data['P'][-1]['rotations'] = None
+        self.piece_data['I'][-1]['rotations'] = None
 
     def coordinates(self):
         return self.coordinates_diamond_lattice(5, 5)
+
+    def build_matrix(self):
+        """"""
+        keys = sorted(self.pieces.keys())
+        x_coords, x_aspect = self.pieces['X'][0]
+        translated = x_aspect.translate(self.X_offset)
+        self.build_matrix_row('X', translated)
+        keys.remove('X')
+        self.build_regular_matrix(keys)
+
+
+class OneSidedTetrasticks5x5DiamondLattice_A(
+    OneSidedTetrasticks5x5DiamondLattice):
+
+    """? solutions."""
+
+    X_offset = (4,4,0)
+
+    def customize_piece_data(self):
+        self._customize_piece_data_I()
+
+
+class OneSidedTetrasticks5x5DiamondLattice_B(
+    OneSidedTetrasticks5x5DiamondLattice):
+
+    """? solutions."""
+
+    X_offset = (4,5,0)
+
+
+class OneSidedTetrasticks5x5DiamondLattice_C(
+    OneSidedTetrasticks5x5DiamondLattice):
+
+    """? solutions."""
+
+    X_offset = (5,5,0)
+
+    def customize_piece_data(self):
+        self._customize_piece_data_I()
+
+
+class OneSidedTetrasticks5x5DiamondLattice_D(
+    OneSidedTetrasticks5x5DiamondLattice):
+
+    """? solutions."""
+
+    X_offset = (4,6,0)
+
+
+class OneSidedTetrasticks5x5DiamondLattice_E(
+    OneSidedTetrasticks5x5DiamondLattice):
+
+    """? solutions."""
+
+    X_offset = (5,6,0)
+
+
+class OneSidedTetrasticks5x5DiamondLattice_F(
+    OneSidedTetrasticks5x5DiamondLattice):
+
+    """? solutions."""
+
+    X_offset = (4,7,0)
 
 
 class OneSidedTetrasticks8x8CenterHole(OneSidedTetrasticks):
