@@ -3504,7 +3504,7 @@ class OneSidedTetrasticks5x5DiamondLattice(OneSidedTetrasticks):
 
     def _customize_piece_data_I(self):
         """
-        Limit I piece to vertical when X is on the diagonal, to avoid symmetry.
+        Limit I piece to horizontal when X is symmetrical (on the diagonal).
         """
         OneSidedTetrasticks.customize_piece_data(self)
         self.piece_data['I'][-1]['rotations'] = None
