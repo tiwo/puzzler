@@ -12,12 +12,20 @@
 .. image:: images/puzzler.png
    :align: center
 
-Also see:
+.. sidebar:: Also see:
 
-| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
-| `Polyform Puzzler FAQ <FAQ.html>`_
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polytrigs (Triangular Polysticks) Puzzles & Solutions <polytrigs.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
 
 .. contents::
+
+During a visit to India in 2010, it was pointed out to me that
+polystick puzzles look a lot like some of `the "kolam" sand/chalk
+drawings`__ that can be seen on sidewalks and patios outside of homes.
+These drawings are thought to bestow prosperity to homes.
+
+__ http://en.wikipedia.org/wiki/Kolam
 
 
 Tetrasticks

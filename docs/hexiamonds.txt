@@ -12,11 +12,11 @@
 .. image:: images/puzzler.png
    :align: center
 
-Also see:
+.. sidebar:: Also see:
 
-| `Heptiamonds <heptiamonds.html>`_
-| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
-| `Polyform Puzzler FAQ <FAQ.html>`_
+   | `Heptiamonds <heptiamonds.html>`_
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
 
 .. contents::
 
@@ -161,6 +161,17 @@ Misc
   Suggested by Dan Klarskov of Denmark, under the name "hexui".
 
   .. image:: images/hexiamonds-irregular-hexagon-7x8.png
+
+* Tenyo's puzzle: `4968 solutions
+  <http://puzzler.sf.net/solutions/hexiamonds-tenyo.txt>`__
+
+  This is the configuration used by the `hexiamond PlaPuzzle`__
+  produced by `Tenyo Inc. of Japan`__.
+
+  __ http://www.tenyo.co.jp/pp/pz04/index.html
+  __ http://www.tenyo.co.jp/pp/
+
+  .. image:: images/hexiamonds-tenyo.png
 
 
 One-Sided Hexiamonds

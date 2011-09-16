@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # $Id$
-# Copyright: (C) 1998-2010 by David J. Goodger
+# Copyright: (C) 1998-2011 by David J. Goodger
 # License: GPL 2 (see GPL2.txt)
 
 import sys
@@ -23,9 +23,9 @@ for scheme in INSTALL_SCHEMES.values():
 
 
 def do_setup():
-    if sys.hexversion < 0x02040000:    # Python 2.4
+    if sys.hexversion < 0x02050000:    # Python 2.5
         print """\
-Polyform Puzzler requires Python 2.4 or later
+Polyform Puzzler requires Python 2.5 or later
 (Python %s installed).""" % (sys.version.split()[0],)
         sys.exit(1)
     kwargs = package_data.copy()
@@ -42,7 +42,7 @@ toolkit for exploring & solving polyform puzzles.  It
 consists of a set of front-end applications for specific
 polyform puzzles and a Python library that does the heavy
 lifting.  New polyforms and new puzzles can easily be
-defined and added.  Requires Python 2.4 or higher.""", # wrap at col 60
+defined and added.  Requires Python 2.5 or higher.""", # wrap at col 60
     'url': 'http://puzzler.sourceforge.net/',
     'version': '1+SVN',
     'author': 'David Goodger',

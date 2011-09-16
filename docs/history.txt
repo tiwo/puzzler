@@ -17,9 +17,16 @@
 Changes Since Release 1
 =======================
 
+**Polyform Puzzler now requires Python 2.5 or later.** Python 2.7.2 or
+later is recommended.
+
 * Added puzzles:
 
-  - Polysticks of order 1 through 4: 7x7 grid, 3x7 diamond lattice.
+  - Polytrigs (triangular polysticks): new puzzle type.  Added
+    puzzles: 5 tritrigs, 1 one-sided tritrigs, 2 polytrigs of order 1
+    through 3.
+
+  - (Square) Polysticks of order 1 through 4: 7x7 grid, 3x7 diamond lattice.
 
   - Tetrahexes: 4x7 parallelogram; clipped 3x10; "coin".
 
@@ -43,7 +50,8 @@ Changes Since Release 1
   - Heptiamonds: 7x12, 6x14, 4x21, 3x28 parallelograms; 12x13, 6x17, &
     4x23 trapezia; 4x21, 6x14, 12x7, 14x6, & 28x3 chevrons; 11x8 &
     4x24 stacks; snowflakes; triangle with central hole; diamond ring;
-    hexagons; 4x22 long hexagon; 10x12 short hexagon.
+    hexagons; 4x22 long hexagon; 10x12 short hexagon; irregular
+    "Tenyo" shape.
 
   - One-sided pentominoes: 3x30, 5x18, 6x15, 9x10.
 

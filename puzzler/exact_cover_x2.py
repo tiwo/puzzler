@@ -159,7 +159,10 @@ class ExactCover(object):
         solution = self.full_solution()
         parts = ['solution %i:' % self.num_solutions]
         for row in solution:
-            parts.append(' '.join(row))
+            parts.append(
+                ' '.join(cell for cell in row
+                         # omit secondary columns (intersections):
+                         if not ((',' in cell) and (cell.endswith('i')))))
         return '\n'.join(parts)
 
 

@@ -160,5 +160,58 @@ class SquareGrid3DTests(unittest.TestCase):
             self.assertEquals(c, self.rotated['c111/0'][(r + 1) % 4])
 
 
+class TriangularGrid3DTests(unittest.TestCase):
+
+    o = coordsys.TriangularGrid3D((0,0,0))
+    o_rotated = ((0,0,0), (0,0,1), (0,0,2), (-1,0,0), (0,-1,1), (1,-1,2))
+    c100 = coordsys.TriangularGrid3D((1,0,0))
+    c111 = coordsys.TriangularGrid3D((1,1,1))
+    rotated = {
+        'c100/0': ((1,0,0), (0,1,1), (-1,1,2), (-2,0,0), (0,-2,1), (2,-2,2)),
+        'c111/0': ((1,1,1), (-1,2,2), (-3,1,0), (-1,-2,1), (2,-3,2), (2,-1,0)),}
+    p = ((1,0,1), (1,1,1), (1,2,0))
+    p_rotated = (
+        ((0,0,1), (0,1,1), (0,2,0)),
+        ((2,0,2), (1,1,2), (0,2,1)),
+        ((2,0,0), (1,0,0), (1,0,2)),
+        ((1,1,1), (1,0,1), (0,0,0)),
+        ((1,2,2), (2,1,2), (2,0,1)),
+        ((0,1,0), (1,1,0), (3,0,2)),)
+
+    def test_flip0(self):
+        self.assertEquals(self.o.flip0(), (0,0,2))
+        self.assertEquals(self.c100.flip0(), (-1,1,2))
+        self.assertEquals(self.c111.flip0(), (-1,2,1))
+
+    def test_rotate0(self):
+        o = self.o
+        for r in range(6):
+            self.assertEquals(self.o.rotate0(r), self.o_rotated[r])
+            o = o.rotate0(1)
+            self.assertEquals(o, self.o_rotated[(r + 1) % 6])
+        c = self.c100
+        for r in range(6):
+            self.assertEquals(self.c100.rotate0(r), self.rotated['c100/0'][r])
+            c = c.rotate0(1)
+            self.assertEquals(c, self.rotated['c100/0'][(r + 1) % 6])
+        c = self.c111
+        for r in range(6):
+            self.assertEquals(self.c111.rotate0(r), self.rotated['c111/0'][r])
+            c = c.rotate0(1)
+            self.assertEquals(c, self.rotated['c111/0'][(r + 1) % 6])
+
+    def test_view(self):
+        v = coordsys.TriangularGrid3DView(self.p)
+        for r in range(7):
+            v = v.rotate0(1)
+            self.assertEquals(v, set(self.p_rotated[(r + 1) % 6]))
+
+    def test_intersection_coordinates(self):
+        self.assertEquals(
+            self.c100.intersection_coordinates(),
+            [(1, 0, 0), (1, 0, 1), (1, 0, 2), (1, 0, 3), (1, 0, 4), (1, 0, 5),
+             (2, 0, 0), (2, 0, 1), (2, 0, 2), (2, 0, 3), (2, 0, 4), (2, 0, 5)])
+
+
 if __name__ == '__main__':
     unittest.main()

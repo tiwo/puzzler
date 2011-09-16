@@ -6,7 +6,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2010 by David J. Goodger
+:Copyright: |c| 1998-2011 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -29,10 +29,10 @@
 This document assumes some (but not much) familiarity with programming
 and the Python_ programming language.  This is not a Python tutorial,
 but it is written for beginning Python programmers.  You should be
-able to follow these instructions after completing a tutorial, or even while 
+able to follow these instructions after completing a tutorial.
 
 The Python web site contains lists of tutorials `for those new to
-programming`__, as well as `for programmers new to Python`__
+programming`__, as well as `for programmers new to Python`__.
 
 __ http://wiki.python.org/moin/BeginnersGuide/NonProgrammers
 __ http://wiki.python.org/moin/BeginnersGuide/Programmers

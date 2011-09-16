@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
@@ -605,6 +606,265 @@ class Triangular3DView(CartesianPseudo3DView):
     """
 
     coord_class = Triangular3D
+
+
+class TriangularGrid3D(Triangular3D):
+
+    """
+    Pseudo-3D (2D + orientation) triangular coordinate system for gridlines:
+    (x, y, z).  The Z dimension is for orientation:
+
+    ==  ==========  ==============================
+    z   (x, y) to   direction
+    ==  ==========  ==============================
+    0   (x+1, y)    0°, horizontal, to the right
+    1   (x,   y+1)  60°, up & to the right
+    2   (x-1, y+1)  120°, up & to the left
+    ==  ==========  ==============================
+
+    Visually::
+
+        z=2  z=1
+          \  /
+           \/___ z=0
+          (x,y)
+    """
+
+    def flip0(self, axis=None):
+        """
+        Flip about y-axis::
+
+            x1 = -x0
+
+            y1 = x0 + y0
+
+            z1 = 2 - z0
+
+        The `axis` parameter is ignored.
+        """
+        return self.__class__(
+            (-self.coords[0],
+             self.coords[0] + self.coords[1],
+             2 - self.coords[2]))
+
+    def rotate0(self, steps, axis=None):
+        """
+        Rotate about (0,0).  For each 60-degree increment (step)::
+
+            x1 = -y0 - ((z0 + 1) // 3)
+
+            y1 = x0 + y0
+
+            z1 = (z0 + 1) % 3
+
+        The `axis` parameter is ignored.
+        """
+        x1, y1, z1 = self.coords
+        for i in range(steps):
+            x0, y0, z0 = x1, y1, z1
+            x1 = -y0 - int((z0 + 1) / 3)
+            y1 = x0 + y0
+            z1 = (z0 + 1) % 3
+        return self.__class__((x1, y1, z1))
+
+    def neighbors(self):
+        """
+        Return a list of adjacent cells, counterclockwise from segment, first
+        around the origin point then around the endpoint.
+        """
+        x, y, z = self.coords
+        if z == 0:
+            return (self.__class__((x    , y,     1)),
+                    self.__class__((x,     y,     2)),
+                    self.__class__((x - 1, y,     0)),
+                    self.__class__((x,     y - 1, 1)),
+                    self.__class__((x + 1, y - 1, 2)),
+                    self.__class__((x + 1, y - 1, 1)),
+                    self.__class__((x + 2, y - 1, 2)),
+                    self.__class__((x + 1, y,     0)),
+                    self.__class__((x + 1, y,     1)),
+                    self.__class__((x + 1, y,     2)))
+        elif z == 1:
+            return (self.__class__((x,     y,     2)),
+                    self.__class__((x - 1, y,     0)),
+                    self.__class__((x,     y - 1, 1)),
+                    self.__class__((x + 1, y - 1, 2)),
+                    self.__class__((x,     y,     0)),
+                    self.__class__((x + 1, y,     2)),
+                    self.__class__((x,     y + 1, 0)),
+                    self.__class__((x,     y + 1, 1)),
+                    self.__class__((x,     y + 1, 2)),
+                    self.__class__((x - 1, y + 1, 0)))
+        elif z == 2:
+            return (self.__class__((x - 1, y,     0)),
+                    self.__class__((x,     y - 1, 1)),
+                    self.__class__((x + 1, y - 1, 2)),
+                    self.__class__((x,     y,     0)),
+                    self.__class__((x,     y,     1)),
+                    self.__class__((x - 1, y + 1, 0)),
+                    self.__class__((x - 1, y + 1, 1)),
+                    self.__class__((x - 1, y + 1, 2)),
+                    self.__class__((x - 2, y + 1, 0)),
+                    self.__class__((x - 1, y,     1)))
+
+    endpoint_deltas = {
+        0: (+1,  0),    # 0°, horizontal, to the right
+        1: ( 0, +1),    # 60°, up & to the right
+        2: (-1, +1)}    # 120°, up & to the left
+
+    def endpoint(self):
+        """
+        Return the coordinates of the endpoint of this segment, a segment
+        sharing this segment's direction.
+        """
+        x, y, z = self.coords
+        delta_x, delta_y = self.endpoint_deltas[z]
+        return self.__class__((x + delta_x, y + delta_y, z))
+
+    def intersection_coordinates(self):
+        """
+        Return a list of coordinates of the intersection segments of the
+        start- and end-points of this coordinate.
+        """
+        intersections = []
+        for coord in (self, self.endpoint()):
+            x, y, z = coord
+            intersections.extend(self.__class__((x, y, z)) for z in range(6))
+        return intersections
+
+    @classmethod
+    def point_neighbors(cls, x, y):
+        """
+        Return a list of segments which adjoin point (x,y), in
+        counterclockwise order from 0-degrees right.
+        """
+        return [cls(coords) for coords in (
+            (x, y, 0), (x, y, 1), (x, y, 2),
+            (x-1, y, 0), (x, y-1, 1), (x+1, y-1, 2))]
+
+
+class TriangularGrid3DCoordSetMixin:
+
+    """
+    Attributes and methods for pseudo-3-dimensional triangular grid coordinate
+    set.
+    """
+
+    coord_class = TriangularGrid3D
+    intersection_coord_class = TriangularGrid3D
+
+    def intersections(self):
+        """
+        Represent contstraints on intersections via up to 6 additional columns
+        per intersection [*]_, in the form i(x,y,z) (or "x,y,zi").  The
+        segment in direction "z" (below) cannot go through the intersection
+        (x,y)::
+
+              2    1
+               \  /
+            3___\/___0
+                /\
+               /  \
+              4    5
+
+        .. [*] Possibly fewer columns for intersections at the edge of a
+           puzzle shape.  This represents an optimization.
+
+           Note that since there are already 3 line segments originating at
+           each intersection, the cost of intersection constraints is 2 per
+           segment, which effectively multiplies the number of coordinate
+           columns by 3.
+
+        Starting at 0°, rotating counter-clockwise::
+
+              B  / A
+            ____/___     D ____    E ____    F ____
+                          /          \
+                C        /  D'        \
+
+        * A: 60° (adjacent), no constraints.
+
+        * B: 120° (one-gapper).  3 constraints: 2 legs {1,3}, plus gap {2}.
+
+        * C: 180° (two-gapper).  4 constraints: 2 legs {3,0}, plus gaps {4,5}.
+
+        * D: 240° (three-gapper), no constraints.  However, D' is a one-gapper
+          (= B).
+
+        * E: 300° (four-gapper), no constraints.
+
+        * F: 360° (five-gapper), no constraints.
+
+        Both ends of each segment must be checked, but only counter-clockwise
+        (to avoid duplication).
+        """
+        icoords = set()
+        for coord in self:
+            neighbors = coord.neighbors()
+            x, y, z = coord
+            # start of segment: check that ccw-adjacent segment not there:
+            if neighbors[0] not in self:
+                if neighbors[1] in self:
+                    icoords.add(self.intersection_coord_class((x, y, z)))
+                    icoords.add(
+                        self.intersection_coord_class((x, y, (z + 1) % 6)))
+                    icoords.add(
+                        self.intersection_coord_class((x, y, (z + 2) % 6)))
+                elif neighbors[2] in self:
+                    icoords.add(self.intersection_coord_class((x, y, z)))
+                    icoords.add(
+                        self.intersection_coord_class((x, y, (z + 1) % 6)))
+                    icoords.add(
+                        self.intersection_coord_class((x, y, (z + 2) % 6)))
+                    icoords.add(
+                        self.intersection_coord_class((x, y, (z + 3) % 6)))
+            # end of segment: check that ccw-adjacent segment not there:
+            if neighbors[5] not in self:
+                # origin of end of segment:
+                xo, yo, zo = neighbors[7 - z]
+                if neighbors[6] in self:
+                    icoords.add(self.intersection_coord_class((xo, yo, z + 3)))
+                    icoords.add(
+                        self.intersection_coord_class((xo, yo, (z + 4) % 6)))
+                    icoords.add(
+                        self.intersection_coord_class((xo, yo, (z + 5) % 6)))
+                elif neighbors[7] in self:
+                    icoords.add(self.intersection_coord_class((xo, yo, z + 3)))
+                    icoords.add(
+                        self.intersection_coord_class((xo, yo, (z + 4) % 6)))
+                    icoords.add(
+                        self.intersection_coord_class((xo, yo, (z + 5) % 6)))
+                    icoords.add(
+                        self.intersection_coord_class((xo, yo, z)))
+        return icoords
+
+
+class TriangularGrid3DCoordSet(TriangularGrid3DCoordSetMixin,
+                               Cartesian3DCoordSet):
+
+    """Pseudo-3-dimensional triangular grid coordinate set."""
+
+    pass
+
+
+class TriangularGrid3DView(TriangularGrid3DCoordSetMixin, CartesianPseudo3DView):
+
+    """
+    Pseudo-3-dimensional (+x,+y)-quadrant triangular grid coordinate set with
+    bounds.
+    """
+
+    def calculate_offset_and_bounds(self):
+        xs = [c[0] for c in self]
+        # include x-coordinates of endpoints when z==2:
+        xs.extend([c.endpoint()[0] for c in self if c[2] == 2])
+        ys = [c[1] for c in self]
+        zs = [c[2] for c in self]
+        # keep Z-offset at 0 to keep Z values unaltered:
+        offset = self.coord_class((min(xs), min(ys), 0))
+        maxvals = self.coord_class((max(xs), max(ys), max(zs)))
+        bounds = maxvals - offset
+        return offset, bounds
 
 
 def sign(num):

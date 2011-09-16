@@ -56,7 +56,7 @@ def run(puzzle_class, output_stream=sys.stdout, settings=None):
     if settings.read_solution:
         read_solution(puzzle_class, settings)
     else:
-        solve(puzzle_class, output_stream, settings)
+        return solve(puzzle_class, output_stream, settings)
 
 def process_command_line():
     """Process command-line options & return a settings object."""
@@ -190,6 +190,7 @@ def solve(puzzle_class, output_stream, settings):
                     % (puzzles[i].__class__.__name__, solutions, searches))
         output_stream.flush()
     state.cleanup()
+    return solver.num_solutions
 
 
 class SessionState(object):

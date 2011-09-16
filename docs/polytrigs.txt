@@ -1,0 +1,103 @@
+=======================================================
+ Polytrigs (Triangular Polysticks) Puzzles & Solutions
+=======================================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2011 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. sidebar:: Also see:
+
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polysticks Puzzles & Solutions <polysticks.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
+
+.. contents::
+
+**Polytrigs** are polysticks on a triangular grid, also known as
+"triangular polysticks".  The name "trig" comes from "TRIangular
+Grid"; a neologism I invented because "triangular polysticks" is too
+unwieldy, especially when combined with order-prefixes (mono-, di-,
+tri-, tetra-, etc.; "triangular tristicks"!?).  I hope the name
+catches on.
+
+    If the square polysticks dont get the respect they deserve, this
+    is doubly true for the triangular polysticks.
+
+    -- Alexandre Owen Muñiz, `Puzzle Zapper Blog
+       <http://puzzlezapper.com/blog/2010/12/polysticks-on-a-regular-spanning-subgraph/>`__
+
+I believe I am the first to address this type of puzzle so thoroughly
+(if not, please let me know!).  Hopefully these puzzles will begin to
+fill this particular gap in the polyform puzzle branch of recreational
+mathematics.
+
+
+Tritrigs
+========
+
+These puzzles use the 12 tritrigs, for a total of 36 line segments on
+the triangular grid.
+
+* 3x1 semi-regular hexagon ring: `1 solution
+  <http://puzzler.sf.net/solutions/tritrigs-hex-3x1-ring.txt>`__
+
+  .. image:: images/tritrigs-hex-3x1-ring.png
+
+* 5x3 trapezoid ring: `1 solution
+  <http://puzzler.sf.net/solutions/tritrigs-trapezoid-5x3-ring.txt>`__
+
+  .. image:: images/tritrigs-trapezoid-5x3-ring.png
+
+* Stacked 2x2x1 elongated hexagons: `9 solutions
+  <http://puzzler.sf.net/solutions/tritrigs-stacked-elongated-hexagons-2x2x1.txt>`__
+
+  .. image:: images/tritrigs-stacked-elongated-hexagons-2x2x1.png
+
+* 5x3 jagged trapezoid: `1 solution
+  <http://puzzler.sf.net/solutions/tritrigs-jagged-trapezoid-5x3.txt>`__
+
+  .. image:: images/tritrigs-jagged-trapezoid-5x3.png
+
+* Spiked triangle: `6 solutions
+  <http://puzzler.sf.net/solutions/tritrigs-spiked-triangle-1.txt>`__
+
+  .. image:: images/tritrigs-spiked-triangle-1.png
+
+
+One-Sided Tritrigs
+==================
+
+7 of the 12 tritrigs are asymmetrical, therefore there are 19
+one-sided tritrigs.
+
+* 4x1 semi-regular hexagon: `solutions incomplete
+  <http://puzzler.sf.net/solutions/one-sided-tritrigs-hex-4x1.txt>`__
+
+  .. image:: images/one-sided-tritrigs-hex-4x1.png
+
+
+Polytrigs of Order 1 Through 3
+==============================
+
+These puzzles use the 1 monotrig, 3 ditrigs, and 12 tritrigs, for a
+total of 43 line segments on the triangular grid.
+
+* 4x3 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polytrigs-123-4x3.txt>`__
+
+  .. image:: images/polytrigs-123-4x3.png
+
+* 5x4 trapezoid: `solutions incomplete
+  <http://puzzler.sf.net/solutions/polytrigs-123-trapezoid-5x4.txt>`__
+
+  .. image:: images/polytrigs-123-trapezoid-5x4.png
+
+
+.. |c| unicode:: U+00A9 .. copyright sign

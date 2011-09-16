@@ -6,18 +6,18 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2007 by David J. Goodger
+:Copyright: |c| 1998-2011 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
    :align: center
 
-Also see:
+.. sidebar:: Also see:
 
-| `Solid Pentominoes <solid-pentominoes.html>`_
-| `Pentacubes <pentacubes.html>`_
-| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
-| `Polyform Puzzler FAQ <FAQ.html>`_
+   | `Solid Pentominoes <solid-pentominoes.html>`_
+   | `Pentacubes <pentacubes.html>`_
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
 
 .. contents::
 

@@ -13,7 +13,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2010 by David J. Goodger
+:Copyright: |c| 1998-2011 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -233,7 +233,8 @@ can each individually fill space, as can other, less regular
 polyhedra.
 
 The polyform definition can also be extended to include other forms,
-like line segments of a grid (polysticks).  The sky's the limit!
+like line segments of a grid (polysticks & polytrigs).  The sky's the
+limit!
 
 .. _Wikipedia definition: http://en.wikipedia.org/wiki/Polyform
 .. _regular polygons: http://mathworld.wolfram.com/RegularPolygon.html
@@ -325,6 +326,17 @@ ones.  Polyform families are given descriptive names:
 
      Polysticks of Order 1-4 in a 3 |x| 7 Diamond Lattice
 
+* Polyforms based on unit line segments joined end-to-end on a
+  triangular grid are called "polytrigs" (a.k.a. "triangular
+  polysticks" etc., but that's too long a name, so excuse the
+  neologism).  Polysticks are related to polyhexes: polysticks can be
+  thought of as paths joining the centers of the hexagon units of
+  polyhexes.
+
+  .. figure:: images/polytrigs-123-4x3.png
+
+     Polytrigs of Order 1-3 in a 4 |x| 3 Parallelogram
+
 .. [#polysticks] Brian R. Barwell, "Polysticks," `Journal of
    Recreational Mathematics` volume 22 issue 3 (1990), p.165-175
 .. _polyominoes:
@@ -343,8 +355,7 @@ How many of each type of polyform are there?
 --------------------------------------------
 
 Hyperlinks in parentheses are to the relevant entries in `The On-Line
-Encyclopedia of Integer Sequences
-<http://www.research.att.com/~njas/sequences/>`_.
+Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
 * Polyominoes (A000105_, A000988_):
 
@@ -362,8 +373,8 @@ Encyclopedia of Integer Sequences
 
   This table also applies to solid polyominoes (planar polycubes).
 
-  .. _A000105: http://www.research.att.com/~njas/sequences/A000105
-  .. _A000988: http://www.research.att.com/~njas/sequences/A000988
+  .. _A000105: http://oeis.org/A000105
+  .. _A000988: http://oeis.org/A000988
 
 * Polyiamonds (A000577_, A006534_):
 
@@ -380,8 +391,8 @@ Encyclopedia of Integer Sequences
   8          octiamond   66           120
   =========  ==========  ===========  =========
 
-  .. _A000577: http://www.research.att.com/~njas/sequences/A000577
-  .. _A006534: http://www.research.att.com/~njas/sequences/A006534
+  .. _A000577: http://oeis.org/A000577
+  .. _A006534: http://oeis.org/A006534
 
 * Polyhexes (A000228_, A006535_):
 
@@ -398,8 +409,8 @@ Encyclopedia of Integer Sequences
 
   .. [*] One hexahex contains a central hole (1 hexagon).  It is used
          for one of the "o" letters in this project's logo.
-  .. _A000228: http://www.research.att.com/~njas/sequences/A000228
-  .. _A006535: http://www.research.att.com/~njas/sequences/A006535
+  .. _A000228: http://oeis.org/A000228
+  .. _A006535: http://oeis.org/A006535
 
 * Polycubes (A000162_):
 
@@ -414,9 +425,9 @@ Encyclopedia of Integer Sequences
   6      hexacube    166
   =====  ==========  =========
 
-  .. _A000162: http://www.research.att.com/~njas/sequences/A000162
+  .. _A000162: http://oeis.org/A000162
 
-* Polysticks (a.k.a. "polyedges"; A019988_):
+* Polysticks (a.k.a. "polyedges"; A019988_, A151537_):
 
   ======  ==========  ==========  =========
   Sticks  Name        Polysticks  One-Sided
@@ -428,7 +439,25 @@ Encyclopedia of Integer Sequences
   5       pentastick  55          99
   ======  ==========  ==========  =========
 
-  .. _A019988: http://www.research.att.com/~njas/sequences/A019988
+  .. _A019988: http://oeis.org/A019988
+  .. _A151537: http://oeis.org/A151537
+
+* Polytrigs (a.k.a. "triangular polysticks"; A159867_, A151539):
+
+  ======  =========  =========  =========
+  Sticks  Name       Polytrigs  One-Sided
+  ======  =========  =========  =========
+  1       monotrig     1          1
+  2       ditrig       3          3
+  3       tritrig     12         19
+  4*      tetratrig   60        104
+  5*      pentatrig  375        719
+  ======  =========  =========  =========
+
+  "*" above means that pieces with enclosed holes exist.
+
+  .. _A159867: http://oeis.org/A159867
+  .. _A151539: http://oeis.org/A151539
 
 
 Where can I find more information about polyforms?
@@ -458,8 +487,10 @@ a few good places to start:
 Where can I find physical polyform puzzles?
 -------------------------------------------
 
-For a wide variety via mail order, I **highly recommend** `Kadon
-Enterprises`_ (see my `wish list`_).
+For a wide variety via internet/mail order, I **highly recommend**
+`Kadon Enterprises`_ (see my `wish list`_).  `PuzzleMaster.ca`_ also
+has a small selection of polyforms, plus a huge selection of other
+types of puzzles (like the Hanayama "cast puzzle" series, very cool).
 
 I also recommend doing research on the web, then checking out your
 local toy, game, and puzzle specialty stores.  If they don't stock
@@ -488,7 +519,10 @@ I know of:
 * If you're a puzzle afficionado and happen to find yourself in Tokyo,
   Japan, `Puzzle Shop Torito`_ near Akihabara station is a must-visit.
   Plan on spending a few hours there (and bring plenty of cash!).
+  They also do internet/mail order, and list their wares on `Amazon
+  Japan`_ (where I discovered them).
 
+.. _PuzzleMaster.ca: http://puzzlemaster.ca
 .. _Blokus: http://en.wikipedia.org/wiki/Blokus
 .. _Shoptaugh Games: http://www.shoptaugh.com/
 .. _Family Games: http://www.familygamesamerica.com
@@ -496,6 +530,7 @@ I know of:
 .. _Tenyo: http://www.tenyo.co.jp/pp/
 .. _Kadon Enterprises: http://www.gamepuzzles.com/
 .. _Puzzle Shop Torito: http://www.torito.jp/
+.. _Amazon Japan: http://amazon.co.jp
 
 
 Polyform Puzzles & Solutions
@@ -513,6 +548,7 @@ document.  More polyforms are to come:
 * other polyiamonds
 * other polyhexes
 * other polysticks
+* other polytrigs
 * and other polyforms!
 
 See the `to do list`__ for details.
@@ -692,29 +728,56 @@ segments: 0=horizontal, 1=vertical.  Horizontal line segments "x,y,0"
 start at (x,y) and end at (x+1,y), one unit to the right.  Vertical
 line segments "x,y,1" start at (x,y) and end at (x,y+1), one unit up.
 (The Z dimension corresponds to the index of the dimension that
-increases.)  Internal intersections (where grid lines cross) are also
-shown, in the form "x,yi", but these can be ignored.
+increases.)  In earlier versions of Polyform Puzzler, internal
+intersections (where grid lines cross) were also shown (in the form
+"x,yi") but these can be ignored.
 
 The visual representation consists of piece names (letters) in an
-ASCII-art drawing of the 2-D grid.  Imagine each line segment with
-adjacent like-labelled segments joined::
+ASCII-art drawing of the 2-D grid.  Imagine that all adjacent line
+segments with the same labels are joined::
 
-     -R-- -T-- -T-- -R*-
-    Y    R    T    R    Y
-    *    |    |    *    |
-     -Y*- -R-- -R*- -Y--
-    Y    R    T    R    Y
-    *    |    |    *    |
-     -H-- -H-- -H*- -H*-
-    Y    H    X    H    Y
-    *    |    |    *    |
-     -H-- -X-- -X-- -H*-
-    F    F    X    F    F
-    |    |    |    *    *
-     -F-- -F-- -F*- -F*-
+     -R-- -T-- -T-- -r--
+    y    R    T    r    Y
+    |    |    |    |    |
+     -y-- -R-- -r-- -Y--
+    y    R    T    r    Y
+    |    |    |    |    |
+     -H-- -H-- -h-- -h--
+    y    H    X    h    Y
+    |    |    |    |    |
+     -H-- -X-- -X-- -h--
+    F    F    X    f    f
+    |    |    |    |    |
+     -F-- -F-- -f-- -f--
 
 The solution above is from the 5x5 welded one-sided tetrasticks
-puzzle.  Asterisks ("*") indicate flipped pieces.
+puzzle.  Lowercase piece names indicate flipped pieces in one-sided
+puzzles (asterisk ["*"] suffixes were used to show flipped pieces in
+earlier versions of Polyform Puzzler).
+
+
+How should polytrig solution files be interpreted?
+---------------------------------------------------
+
+Polytrig solutions are similar to polystick solutions, except on a
+triangular grid like polyiamonds.  The Z dimension is used to
+represent the direction of line segments: 0 = 0° horizontal; 1 = 60°
+counter-clockwise, up and to the right; 2 = 120° counter-clockwise, up
+and to the left.  Example::
+
+             __U3__
+            /U3   /U3
+          T3  \ Y3  \
+          /_Y3_\/_L3_\
+         /T3   /Y3   /L3
+       T3  \ I3  \ P3  \
+       /_Z3_\/    \/_J3_\
+      /Z3   /      P3   /L3
+    C3  \ I3        \ J3  \
+    /_Z3_\/_S3____P3_\/_O3_\
+    C3   /E3   /S3   /O3   /
+     \ I3  \ E3  \ J3  \ O3
+      \/_C3_\/_E3_\/_S3_\/
 
 
 The Code

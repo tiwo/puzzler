@@ -12,12 +12,12 @@
 .. image:: images/puzzler.png
    :align: center
 
-Also see:
+.. sidebar:: Also see:
 
-| `Pentacubes <pentacubes.html>`_
-| `Polycubes <polycubes.html>`_
-| `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
-| `Polyform Puzzler FAQ <FAQ.html>`_
+   | `Pentacubes <pentacubes.html>`_
+   | `Polycubes <polycubes.html>`_
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
 
 .. contents::
 

@@ -6,7 +6,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2007 by David J. Goodger
+:Copyright: |c| 1998-2011 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -135,6 +135,24 @@ Also see: `Polyform Puzzler FAQ`_
 
          .. image:: images/polysticks-3x7-diamond-lattice.png
             :target: polysticks.html#polysticks-of-order-1-through-4
+            :class: borderless
+
+* `Polytrigs (triangular polysticks) <polytrigs.html>`_
+
+  .. list-table::
+     :class: borderless
+
+     * - `tritrigs <polytrigs.html#tritrigs>`_
+
+         .. image:: images/tritrigs-hex-3x1-ring-small.png
+            :target: polytrigs.html#tritrigs
+            :class: borderless
+
+       - `Polytrigs of Order 1 Through 3
+         <polytrigs.html#polytrigs-of-order-1-through-3>`_
+
+         .. image:: images/polytrigs-123-4x3-small.png
+            :target: polytrigs.html#polytrigs-of-order-1-through-3
             :class: borderless
 
 

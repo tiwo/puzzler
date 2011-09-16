@@ -31,7 +31,7 @@ complete details.
 
        http://www.python.org/
 
-   Python 2.4 or later; Python 2.4.2 or later is recommended.
+   Python 2.5 or later; Python 2.7.2 or later is recommended.
 
 2. Use the latest Polyform Puzzler code.  Get the code from Subversion
    or from the snapshot:
