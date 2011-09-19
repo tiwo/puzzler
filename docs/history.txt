@@ -23,7 +23,7 @@ later is recommended.
 * Added puzzles:
 
   - Polytrigs (triangular polysticks): new puzzle type.  Added
-    puzzles: 5 tritrigs, 1 one-sided tritrigs, 2 polytrigs of order 1
+    puzzles: 7 tritrigs, 1 one-sided tritrigs, 2 polytrigs of order 1
     through 3.
 
   - (Square) Polysticks of order 1 through 4: 7x7 grid, 3x7 diamond lattice.

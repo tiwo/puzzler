@@ -50,10 +50,20 @@ the triangular grid.
 
   .. image:: images/tritrigs-hex-3x1-ring.png
 
+* 5x2 paralellogram: `9 solutions
+  <http://puzzler.sf.net/solutions/tritrigs-parallelogram-5x2.txt>`__
+
+  .. image:: images/tritrigs-parallelogram-5x2.png
+
 * 5x3 trapezoid ring: `1 solution
   <http://puzzler.sf.net/solutions/tritrigs-trapezoid-5x3-ring.txt>`__
 
   .. image:: images/tritrigs-trapezoid-5x3-ring.png
+
+* 6x2 trapezoid: `8 solutions
+  <http://puzzler.sf.net/solutions/tritrigs-trapezoid-6x2.txt>`__
+
+  .. image:: images/tritrigs-trapezoid-6x2.png
 
 * Stacked 2x2x1 elongated hexagons: `9 solutions
   <http://puzzler.sf.net/solutions/tritrigs-stacked-elongated-hexagons-2x2x1.txt>`__

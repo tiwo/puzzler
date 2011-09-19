@@ -3932,6 +3932,23 @@ class Polytrigs(Polysticks):
             else:
                 yield coordsys.TriangularGrid3D((x, y, z))
 
+    def coordinates_elongated_hexagon(self, base_length, side_length,
+                                      offset=None):
+        """Elongated hexagonal bordered polytrig grid."""
+        min_xy = side_length
+        max_xy = base_length + side_length * 2
+        x_bound = side_length + base_length
+        y_bound = side_length * 2
+        for coord in self.coordinates_bordered(x_bound, y_bound):
+            x, y, z = coord
+            xy = x + y
+            if (xy < min_xy) or (xy > max_xy) or ((xy == max_xy) and (z != 2)):
+                continue
+            if offset:
+                yield coordsys.TriangularGrid3D((x, y, z)) + offset
+            else:
+                yield coordsys.TriangularGrid3D((x, y, z))
+
     def coordinates_trapezoid(self, width, height):
         max_xy = width
         for coord in self.coordinates_bordered(width, height):
@@ -4098,7 +4115,7 @@ class Polytrigs(Polysticks):
     def format_coords(self):
         s_matrix = self.empty_solution_matrix()
         for x, y, z in self.solution_coords:
-            s_matrix[z][y][x] = '*'
+            s_matrix[z][y][x] = '.'
         return self.format_triangular_grid(s_matrix)
 
     def format_svg(self, solution=None, s_matrix=None):
@@ -4126,7 +4143,8 @@ class Polytrigs(Polysticks):
                 path_data.append(self.svg_line % path_details)
             for ((x0, y0), (x1, y1), r) in curves[name]:
                 path_details = {
-                    'x0': x0, 'y0': y0, 'dx': (x1 - x0), 'dy': (y1 - y0), 'r': r}
+                    'x0': x0, 'y0': y0, 'dx': (x1 - x0), 'dy': (y1 - y0),
+                    'r': r}
                 path_data.append(self.svg_curve % path_details)
             path_data.sort()
             details = {
@@ -4374,9 +4392,9 @@ class Polytrigs123(Polytrigs12):
 class TetratrigsData(object):
 
     piece_data = {
-        'C04': (((2,0,0), (3,0,1), (3,1,2), (0,2,0)), {}),
-        'B04': (((0,0,0), (0,1,1), (1,1,0), (2,0,1)), {}),
-        'B14': (((0,0,0), (0,1,2), (1,0,0), (2,0,2)), {}),
+        'B04': (((0,0,0), (1,0,1), (1,1,0), (2,0,1)), {}),
+        'B14': (((0,0,0), (1,0,2), (0,1,0), (2,0,2)), {}),
+        'C04': (((1,0,0), (1,0,2), (0,1,1), (0,2,0)), {}),
         'D04': (((0,0,0), (0,0,1), (0,1,0), (2,0,2)), {}),
         'D14': (((0,0,1), (0,1,0), (2,0,2), (2,0,0)), {}),
         'D24': (((0,0,1), (0,1,0), (2,0,2), (2,0,1)), {}),
@@ -4386,7 +4404,6 @@ class TetratrigsData(object):
         'F04': (((0,0,0), (1,0,0), (1,0,1), (2,0,1)), {}),
         'F14': (((0,0,0), (1,0,0), (1,0,2), (2,0,2)), {}),
         'F24': (((0,0,0), (1,0,0), (1,0,2), (2,0,1)), {}),
-        'F34': (((0,0,0), (1,0,0), (2,0,1), (2,0,2)), {}),
         'H04': (((0,0,0), (1,0,0), (1,0,1), (0,1,0)), {}),
         'H14': (((0,0,0), (1,0,0), (1,0,1), (1,1,0)), {}),
         'H24': (((0,0,0), (1,0,0), (1,0,1), (1,1,2)), {}),
@@ -4430,9 +4447,10 @@ class TetratrigsData(object):
         'W14': (((0,0,0), (1,0,1), (1,1,0), (2,1,1)), {}),
         'W24': (((0,0,0), (1,0,1), (1,1,0), (2,1,2)), {}),
         'X04': (((0,1,0), (1,1,0), (1,0,1), (1,1,1)), {}),
-        'Y04': (((0,1,0), (1,1,0), (1,2,1), (0,3,2)), {}),
+        'Y04': (((0,1,0), (1,1,0), (2,1,1), (3,0,2)), {}),
         'Y14': (((0,0,0), (1,0,0), (2,0,0), (2,0,1)), {}),
         'Y24': (((0,0,0), (1,0,0), (2,0,0), (2,0,2)), {}),
+        'Y34': (((0,0,0), (1,0,0), (2,0,1), (2,0,2)), {}),
         'Z04': (((0,1,1), (0,1,0), (1,1,0), (2,0,1)), {}),
         }
 
@@ -4442,9 +4460,9 @@ class TetratrigsData(object):
     """Pieces with reflexive symmetry, identical to their mirror images."""
 
     asymmetric_pieces = (
-        'B04 B14 D04 D14 D24 E04 E24 F04 F14 F24 F34 H04 H14 H24 H34 H44 '
+        'B04 B14 D04 D14 D24 E04 E24 F04 F14 F24 H04 H14 H24 H34 H44 '
         'J04 J14 J24 J34 L04 N04 N14 N24 P04 P14 P24 Q04 Q14 Q24 Q34 '
-        'R04 R14 R24 R34 S04 S14 S24 T04 U04 W24 Y14 Y24 Z04').split()
+        'R04 R14 R24 R34 S04 S14 S24 T04 U04 W24 Y14 Y24 Y34 Z04').split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
     piece_colors = {
@@ -4479,7 +4497,6 @@ class TetratrigsData(object):
         'F04': 'darkgoldenrod',
         'F14': 'darkgreen',
         'F24': 'darkkhaki',
-        'F34': 'darkorchid',
         'H04': 'darkseagreen',
         'H14': 'deeppink',
         'H24': 'greenyellow',
@@ -4508,6 +4525,7 @@ class TetratrigsData(object):
         'W24': 'indianred',
         'Y14': 'slateblue',
         'Y24': 'olivedrab',
+        'Y34': 'darkorchid',
         '0': 'gray',
         '1': 'black'}
 
@@ -4637,9 +4655,95 @@ class TritrigsSpikedTriangle2(TritrigsSpikedTriangle1):
             yield coordsys.TriangularGrid3D(coord)
 
 
+class TritrigsParallelogram5x2(Tritrigs):
+
+    """9 solutions."""
+
+    width = 6
+    height = 3
+
+    def coordinates(self):
+        for coord in self.coordinates_bordered(5, 2):
+            if coord != (2,1,0):
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P3'][-1]['rotations'] = (0,1,2)
+    
+
+class TritrigsTrapezoid6x2(Tritrigs):
+
+    """8 solutions."""
+
+    width = 7
+    height = 3
+
+    def coordinates(self):
+        for coord in self.coordinates_trapezoid(6, 2):
+            if coord != (2,1,0):
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P3'][-1]['flips'] = None
+    
+
+class TritrigsTrefoil1(Tritrigs):
+
+    """0 solutions."""
+
+    width = 5
+    height = 5
+
+    def coordinates(self):
+        holes = set([(1,0,2), (4,0,1), (0,4,0)])
+        for coord in self.coordinates_semiregular_hexagon(3, 1):
+            if coord not in holes:
+                yield coord
+
+#     def customize_piece_data(self):
+#         self.piece_data['Z3'][-1]['flips'] = None
+#         self.piece_data['Z3'][-1]['rotations'] = None
+
+
+class TritrigsTrefoil2(Tritrigs):
+
+    """0 solutions."""
+
+    width = 5
+    height = 5
+
+    def coordinates(self):
+        holes = set([(2,0,0), (0,2,1), (3,2,2)])
+        for coord in self.coordinates_semiregular_hexagon(3, 1):
+            if coord not in holes:
+                yield coord
+
+#     def customize_piece_data(self):
+#         self.piece_data['Z3'][-1]['flips'] = None
+#         self.piece_data['Z3'][-1]['rotations'] = None
+
+
+class TritrigsWhorl(Tritrigs):
+
+    """0 solutions."""
+
+    width = 5
+    height = 5
+
+    def coordinates(self):
+        holes = set([(1,0,0), (0,3,1), (4,1,2)])
+        for coord in self.coordinates_semiregular_hexagon(3, 1):
+            if coord not in holes:
+                yield coord
+
+#     def customize_piece_data(self):
+#         self.piece_data['Z3'][-1]['flips'] = None
+#         self.piece_data['Z3'][-1]['rotations'] = None
+
+
 class OneSidedTritrigsSemiRegularHexagon4x1(OneSidedTritrigs):
 
-    """ solutions."""
+    """many solutions."""
 
     width = 6
     height = 6
@@ -4681,6 +4785,34 @@ class Polytrigs123Trapezoid5x4(Polytrigs123):
 
     def customize_piece_data(self):
         self.piece_data['P3'][-1]['flips'] = None
+
+
+class TetratrigsElongatedHex11x3(Tetratrigs):
+
+    """ solutions."""
+
+    width = 15
+    height = 7
+
+    def coordinates(self):
+        holes = set([(6, 4, 0), (7, 2, 0)])
+        for coord in self.coordinates_elongated_hexagon(11, 3):
+            if coord not in holes :
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P04'][-1]['flips'] = None
+        self.piece_data['O04'][-1]['flips'] = None
+        self.piece_data['O04'][-1]['rotations'] = (1,)
+
+    def build_matrix(self):
+        """"""
+        keys = sorted(self.pieces.keys())
+        o_coords, o_aspect = self.pieces['O04'][0]
+        translated = o_aspect.translate((6, 3, 0))
+        self.build_matrix_row('O04', translated)
+        keys.remove('O04')
+        self.build_regular_matrix(keys)
 
 
 class Polyhexes(Puzzle2D):
