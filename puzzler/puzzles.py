@@ -3872,8 +3872,14 @@ class Polytrigs(Polysticks):
         """
         return self.coordinates_bordered(self.width, self.height)
 
+    def coordinate_offset(self, x, y, z, offset):
+        if offset:
+            return coordsys.TriangularGrid3D((x, y, z)) + offset
+        else:
+            return coordsys.TriangularGrid3D((x, y, z))
+
     def coordinates_bordered(self, m, n, offset=None):
-        """Bordered polytrig grid of side length M & N."""
+        """Bordered parallelogram polytrig grid of side length M & N."""
         last_x = m
         last_y = n
         for y in range(n + 1):
@@ -3883,22 +3889,29 @@ class Polytrigs(Polysticks):
                         continue
                     if z == 2 and x == 0:
                         continue
-                    if offset:
-                        yield coordsys.TriangularGrid3D((x, y, z)) + offset
-                    else:
-                        yield coordsys.TriangularGrid3D((x, y, z))
+                    yield self.coordinate_offset(x, y, z, offset)
+
+    def coordinates_unbordered(self, m, n, offset=None):
+        """Unbordered parallelogram polytrig grid of side length M & N."""
+        last_x = m
+        last_y = n
+        for y in range(n):
+            for x in range(m + 1):
+                for z in range(self.depth):
+                    if (not y and z == 0) or (x == last_x and z < 2):
+                        continue
+                    if x == 0 and z != 0:
+                        continue
+                    yield self.coordinate_offset(x, y, z, offset)
 
     def coordinates_triangle(self, side_length, offset=None):
-        
+        """Triangular bordered polytrig grid."""
         for coord in self.coordinates_bordered(side_length, side_length):
             x, y, z = coord
             xy = x + y
             if (xy > side_length) or ((xy == side_length) and (z != 2)):
                 continue
-            if offset:
-                yield coordsys.TriangularGrid3D((x, y, z)) + offset
-            else:
-                yield coordsys.TriangularGrid3D((x, y, z))
+            yield self.coordinate_offset(x, y, z, offset)
 
     def coordinates_hexagon(self, side_length, offset=None):
         """Hexagonal bordered polytrig grid."""
@@ -3910,10 +3923,19 @@ class Polytrigs(Polysticks):
             xy = x + y
             if (xy < min_xy) or (xy > max_xy) or ((xy == max_xy) and (z != 2)):
                 continue
-            if offset:
-                yield coordsys.TriangularGrid3D((x, y, z)) + offset
-            else:
-                yield coordsys.TriangularGrid3D((x, y, z))
+            yield self.coordinate_offset(x, y, z, offset)
+
+    def coordinates_hexagon_unbordered(self, side_length, offset=None):
+        """Hexagonal unbordered polytrig grid."""
+        min_xy = side_length
+        max_xy = 3 * side_length
+        bound = 2 * side_length
+        for coord in self.coordinates_unbordered(bound, bound):
+            x, y, z = coord
+            xy = x + y
+            if (xy < min_xy) or (xy == min_xy and z == 2) or (xy >= max_xy):
+                continue
+            yield self.coordinate_offset(x, y, z, offset)
 
     def coordinates_semiregular_hexagon(self, side_a, side_b, offset=None):
         """Semi-regular hexagonal bordered polytrig grid."""
@@ -3927,10 +3949,7 @@ class Polytrigs(Polysticks):
             xy = x + y
             if (xy < min_xy) or (xy > max_xy) or ((xy == max_xy) and (z != 2)):
                 continue
-            if offset:
-                yield coordsys.TriangularGrid3D((x, y, z)) + offset
-            else:
-                yield coordsys.TriangularGrid3D((x, y, z))
+            yield self.coordinate_offset(x, y, z, offset)
 
     def coordinates_elongated_hexagon(self, base_length, side_length,
                                       offset=None):
@@ -3944,18 +3963,29 @@ class Polytrigs(Polysticks):
             xy = x + y
             if (xy < min_xy) or (xy > max_xy) or ((xy == max_xy) and (z != 2)):
                 continue
-            if offset:
-                yield coordsys.TriangularGrid3D((x, y, z)) + offset
-            else:
-                yield coordsys.TriangularGrid3D((x, y, z))
+            yield self.coordinate_offset(x, y, z, offset)
 
-    def coordinates_trapezoid(self, width, height):
+    def coordinates_trapezoid(self, width, height, offset=None):
         max_xy = width
         for coord in self.coordinates_bordered(width, height):
             x, y, z = coord
             xy = x + y
             if (xy < max_xy) or (xy == max_xy and z == 2):
-                yield coord
+                yield self.coordinate_offset(x, y, z, offset)
+
+    def coordinates_butterfly(self, base_length, side_length, offset=None):
+        """Butterfly-shaped bordered polytrig grid."""
+        x_bound = max_xy = base_length + side_length
+        y_bound = min_xy = side_length * 2
+        for coord in self.coordinates_bordered(x_bound, y_bound):
+            x, y, z = coord
+            xy = x + y
+            xz = x - z / 2
+            if (  (side_length <= xz < base_length)
+                  or (x == base_length and z != 0)
+                  or (min_xy <= xy < max_xy)
+                  or (xy == max_xy and z == 2)):
+                yield self.coordinate_offset(x, y, z, offset)
 
     def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3, 4, 5)):
         aspects = set()
@@ -4115,7 +4145,7 @@ class Polytrigs(Polysticks):
     def format_coords(self):
         s_matrix = self.empty_solution_matrix()
         for x, y, z in self.solution_coords:
-            s_matrix[z][y][x] = '.'
+            s_matrix[z][y][x] = ''
         return self.format_triangular_grid(s_matrix)
 
     def format_svg(self, solution=None, s_matrix=None):
@@ -4388,6 +4418,11 @@ class Polytrigs123(Polytrigs12):
     piece_colors = copy.deepcopy(Polytrigs12.piece_colors)
     piece_colors.update(TritrigsData.piece_colors)
     
+
+class OneSidedPolytrigs123(OneSidedLowercaseMixin, Polytrigs123):
+
+    pass
+
 
 class TetratrigsData(object):
 
@@ -4784,6 +4819,59 @@ class Polytrigs123Trapezoid5x4(Polytrigs123):
         return self.coordinates_trapezoid(5, 4)
 
     def customize_piece_data(self):
+        self.piece_data['P3'][-1]['flips'] = None
+
+
+class OneSidedPolytrigs123Trapezoid10x2(OneSidedPolytrigs123):
+
+    """many solutions."""
+
+    width = 11
+    height = 3
+
+    def coordinates(self):
+        for coord in self.coordinates_trapezoid(10, 2):
+            if coord != (4, 1, 0):
+                yield coord
+
+    def customize_piece_data(self):
+        OneSidedPolytrigs123.customize_piece_data(self)
+        self.piece_data['P3'][-1]['flips'] = None
+
+
+class OneSidedPolytrigs123Parallelogram9x2(OneSidedPolytrigs123):
+
+    """many solutions."""
+
+    width = 10
+    height = 3
+
+    def coordinates(self):
+        for coord in self.coordinates_bordered(9, 2):
+            if coord != (4, 1, 0):
+                yield coord
+
+    def customize_piece_data(self):
+        OneSidedPolytrigs123.customize_piece_data(self)
+        self.piece_data['P3'][-1]['rotations'] = (0,1,2)
+
+
+class OneSidedPolytrigs123Butterfly6x2(OneSidedPolytrigs123):
+
+    """many solutions."""
+
+    width = 9
+    height = 5
+
+    def coordinates(self):
+        hole = set(self.coordinates_hexagon_unbordered(1, offset=(3,1,0)))
+        for coord in self.coordinates_butterfly(6, 2):
+            if coord not in hole:
+                yield coord
+
+    def customize_piece_data(self):
+        OneSidedPolytrigs123.customize_piece_data(self)
+        self.piece_data['P3'][-1]['rotations'] = (0,1,2)
         self.piece_data['P3'][-1]['flips'] = None
 
 

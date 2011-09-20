@@ -110,4 +110,25 @@ total of 43 line segments on the triangular grid.
   .. image:: images/polytrigs-123-trapezoid-5x4.png
 
 
+One-Sided Polytrigs of Order 1 Through 3
+========================================
+
+These puzzles use the 1 monotrig, 3 ditrigs, and 19 one-sided
+tritrigs, for a total of 64 line segments on the triangular grid.
+
+* 9x2 parallelogram: `solutions incomplete
+  <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-parallelogram-9x2.txt>`__
+
+  .. image:: images/one-sided-polytrigs-123-parallelogram-9x2.png
+
+* 10x2 trapezoid: `solutions incomplete
+  <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-trapezoid-10x2.txt>`__
+
+  .. image:: images/one-sided-polytrigs-123-trapezoid-10x2.png
+
+* 6x2 butterfly: `solutions incomplete
+  <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-butterfly-6x2.txt>`__
+
+  .. image:: images/one-sided-polytrigs-123-butterfly-6x2.png
+
 .. |c| unicode:: U+00A9 .. copyright sign
