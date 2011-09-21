@@ -3879,7 +3879,12 @@ class Polytrigs(Polysticks):
             return coordsys.TriangularGrid3D((x, y, z))
 
     def coordinates_bordered(self, m, n, offset=None):
-        """Bordered parallelogram polytrig grid of side length M & N."""
+        """
+        Bordered parallelogram polytrig grid of side length M & N.
+
+        **NOTE:** Puzzle length & width must include edges, typically M+1 x
+        N+1.
+        """
         last_x = m
         last_y = n
         for y in range(n + 1):
@@ -3985,6 +3990,20 @@ class Polytrigs(Polysticks):
                   or (x == base_length and z != 0)
                   or (min_xy <= xy < max_xy)
                   or (xy == max_xy and z == 2)):
+                yield self.coordinate_offset(x, y, z, offset)
+
+    def coordinates_chevron(self, base_length, side_length, offset=None):
+        x_bound = base_length + side_length
+        y_bound = min_xy = side_length * 2
+        max_xy = base_length + side_length * 2
+        for coord in self.coordinates_bordered(x_bound, y_bound):
+            x, y, z = coord
+            xy = x + y
+            if (  ((y < side_length)
+                   and ((x > side_length) or (x == side_length and z != 2)))
+                  or ((y >= side_length)
+                      and ((min_xy <= xy < max_xy)
+                           or (xy == max_xy and z == 2)))):
                 yield self.coordinate_offset(x, y, z, offset)
 
     def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3, 4, 5)):
@@ -4776,6 +4795,20 @@ class TritrigsWhorl(Tritrigs):
 #         self.piece_data['Z3'][-1]['rotations'] = None
 
 
+class TritrigsTriangle5(Tritrigs):
+
+    """0 solutions."""
+
+    width = 6
+    height = 5
+
+    def coordinates(self):
+        hole = set(self.coordinates_triangle(2, offset=(1, 1, 0)))
+        for coord in self.coordinates_triangle(5):
+            if coord not in hole:
+                yield coord
+
+
 class OneSidedTritrigsSemiRegularHexagon4x1(OneSidedTritrigs):
 
     """many solutions."""
@@ -4792,6 +4825,119 @@ class OneSidedTritrigsSemiRegularHexagon4x1(OneSidedTritrigs):
         OneSidedTritrigs.customize_piece_data(self)
         self.piece_data['I3'][-1]['rotations'] = None
         self.piece_data['I3'][-1]['flips'] = None
+
+
+class OneSidedTritrigsTriangle6(OneSidedTritrigs):
+
+    """many solutions."""
+
+    width = 7
+    height = 6
+
+    def coordinates(self):
+        hole = set(self.coordinates_hexagon_unbordered(1, offset=(1, 1, 0)))
+        for coord in self.coordinates_triangle(6):
+            if coord not in hole:
+                yield coord
+
+    def customize_piece_data(self):
+        """Limit I3 piece to one aspect."""
+        OneSidedTritrigs.customize_piece_data(self)
+        self.piece_data['I3'][-1]['rotations'] = None
+        self.piece_data['I3'][-1]['flips'] = None
+
+
+class OneSidedTritrigsButterfly5x2(OneSidedTritrigs):
+
+    """many solutions."""
+
+    width = 8
+    height = 5
+
+    def coordinates(self):
+        return self.coordinates_butterfly(5, 2)
+
+    #def customize_piece_data(self):
+    #    OneSidedTritrigs.customize_piece_data(self)
+
+
+class OneSidedTritrigsChevron3x3(OneSidedTritrigs):
+
+    """many solutions."""
+
+    width = 7
+    height = 7
+
+    def coordinates(self):
+        hole = set(self.coordinates_hexagon_unbordered(1, offset=(3, 2, 0)))
+        for coord in self.coordinates_chevron(3, 3):
+            if coord not in hole:
+                yield coord
+
+    #def customize_piece_data(self):
+    #    OneSidedTritrigs.customize_piece_data(self)
+
+
+class OneSidedTritrigsChevron2x4_1(OneSidedTritrigs):
+
+    """many solutions."""
+
+    width = 7
+    height = 9
+
+    hole = set([(4,4,0)])
+
+    def coordinates(self):
+        for coord in self.coordinates_chevron(2, 4):
+            if coord not in self.hole:
+                yield coord
+
+
+class OneSidedTritrigsChevron2x4_2(OneSidedTritrigsChevron2x4_1):
+
+    """many solutions."""
+
+    hole = set([(5,4,0)])
+
+
+class OneSidedTritrigsTrapezoid7x3_1(OneSidedTritrigs):
+
+    """many solutions."""
+
+    width = 8
+    height = 4
+
+    hole = set([(2,2,0)])
+
+    def coordinates(self):
+        for coord in self.coordinates_trapezoid(self.width - 1,
+                                                self.height - 1):
+            if coord not in self.hole:
+                yield coord
+
+
+class OneSidedTritrigsTrapezoid7x3_2(OneSidedTritrigsTrapezoid7x3_1):
+
+    """many solutions."""
+
+    hole = set([(3,0,0)])
+
+
+class OneSidedTritrigsTrapezoid9x2_1(OneSidedTritrigsTrapezoid7x3_1):
+
+    """many solutions."""
+
+    width = 10
+    height = 3
+
+    hole = set([(4,0,0)])
+
+
+class OneSidedTritrigsTrapezoid9x2_2(OneSidedTritrigsTrapezoid9x2_1):
+
+    """many solutions."""
+
+    hole = set([(3,2,0)])
 
 
 class Polytrigs123_4x3(Polytrigs123):
@@ -4822,6 +4968,116 @@ class Polytrigs123Trapezoid5x4(Polytrigs123):
         self.piece_data['P3'][-1]['flips'] = None
 
 
+class Polytrigs123Chevron3x2(Polytrigs123):
+
+    """many solutions."""
+
+    width = 6
+    height = 5
+
+    def coordinates(self):
+        return self.coordinates_chevron(3, 2)
+
+
+class Polytrigs123Butterfly4x2(Polytrigs123):
+
+    """many solutions."""
+
+    width = 7
+    height = 5
+
+    def coordinates(self):
+        for coord in self.coordinates_butterfly(4, 2):
+            if coord != (2, 3, 0):
+                yield coord
+
+
+class Polytrigs123Trapezoid7x2_1(Polytrigs123):
+
+    """many solutions."""
+
+    width = 8
+    height = 3
+
+    hole = set([(2,2,0)])
+
+    def coordinates(self):
+        for coord in self.coordinates_trapezoid(7, 2):
+            if coord not in self.hole:
+                yield coord
+
+
+class Polytrigs123Trapezoid7x2_2(Polytrigs123Trapezoid7x2_1):
+
+    """many solutions."""
+
+    hole = set([(3,0,0)])
+
+
+class Polytrigs123Triangle5_1(Polytrigs123):
+
+    """many solutions."""
+
+    width = 6
+    height = 5
+
+    hole = set([(2,1,1), (2,1,2)])
+
+    def coordinates(self):
+        for coord in self.coordinates_triangle(5):
+            if coord not in self.hole:
+                yield coord
+
+
+class Polytrigs123Triangle5_2(Polytrigs123Triangle5_1):
+
+    """many solutions."""
+
+    hole = set([(1,1,0), (2,1,0)])
+
+
+class Polytrigs123Triangle5_3(Polytrigs123Triangle5_1):
+
+    """many solutions."""
+
+    hole = set([(1,2,0), (0,4,0)])
+
+
+class Polytrigs123Triangle5_4(Polytrigs123Triangle5_1):
+
+    """many solutions."""
+
+    hole = set([(0,1,0), (3,1,0)])
+
+
+class Polytrigs123Triangle5_5(Polytrigs123Triangle5_1):
+
+    """many solutions."""
+
+    hole = set([(0,2,0), (2,2,0)])
+
+
+class Polytrigs123Triangle5_6(Polytrigs123Triangle5_1):
+
+    """many solutions."""
+
+    hole = set([(0,3,0), (1,3,0)])
+
+
+class Polytrigs123Triangle5_7(Polytrigs123Triangle5_1):
+
+    """many solutions."""
+
+    hole = set([(1,0,0), (3,0,0)])
+
+
+class Polytrigs123Triangle5_8(Polytrigs123Triangle5_1):
+
+    """many solutions."""
+
+    hole = set([(2,0,0), (1,2,0)])
+
+
 class OneSidedPolytrigs123Trapezoid10x2(OneSidedPolytrigs123):
 
     """many solutions."""
@@ -4837,6 +5093,24 @@ class OneSidedPolytrigs123Trapezoid10x2(OneSidedPolytrigs123):
     def customize_piece_data(self):
         OneSidedPolytrigs123.customize_piece_data(self)
         self.piece_data['P3'][-1]['flips'] = None
+
+
+class OneSidedPolytrigs123Trapezoid7x4(OneSidedPolytrigs123):
+
+    """many solutions."""
+
+    width = 8
+    height = 5
+
+    def coordinates(self):
+        hole = set([(3,1,1), (3,1,2), (2,2,0), (2,2,1), (3,2,2)])
+        for coord in self.coordinates_trapezoid(7, 4):
+            if coord not in hole:
+                yield coord
+
+    def customize_piece_data(self):
+        OneSidedPolytrigs123.customize_piece_data(self)
+        #self.piece_data['P3'][-1]['flips'] = None
 
 
 class OneSidedPolytrigs123Parallelogram9x2(OneSidedPolytrigs123):
@@ -4856,6 +5130,24 @@ class OneSidedPolytrigs123Parallelogram9x2(OneSidedPolytrigs123):
         self.piece_data['P3'][-1]['rotations'] = (0,1,2)
 
 
+class OneSidedPolytrigs123Parallelogram5x4(OneSidedPolytrigs123):
+
+    """many solutions."""
+
+    width = 6
+    height = 5
+
+    def coordinates(self):
+        hole = set([(3,1,1), (3,1,2), (2,2,0), (2,2,1), (3,2,2)])
+        for coord in self.coordinates_bordered(5, 4):
+            if coord not in hole:
+                yield coord
+
+    def customize_piece_data(self):
+        OneSidedPolytrigs123.customize_piece_data(self)
+        #self.piece_data['P3'][-1]['rotations'] = (0,1,2)
+
+
 class OneSidedPolytrigs123Butterfly6x2(OneSidedPolytrigs123):
 
     """many solutions."""
@@ -4873,6 +5165,137 @@ class OneSidedPolytrigs123Butterfly6x2(OneSidedPolytrigs123):
         OneSidedPolytrigs123.customize_piece_data(self)
         self.piece_data['P3'][-1]['rotations'] = (0,1,2)
         self.piece_data['P3'][-1]['flips'] = None
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_1(OneSidedPolytrigs123):
+
+    """many solutions."""
+
+    width = 7
+    height = 5
+
+    hole = set([(1,2,0), (2,2,0), (3,2,0), (4,2,0)])
+
+    def coordinates(self):
+        for coord in self.coordinates_elongated_hexagon(4, 2):
+            if coord not in self.hole:
+                yield coord
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_2(
+    OneSidedPolytrigs123ElongatedHex4x2_1):
+
+    """many solutions."""
+
+    hole = set([(2,3,1), (3,3,2), (1,4,0), (2,4,0)])
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_3(
+    OneSidedPolytrigs123ElongatedHex4x2_1):
+
+    """many solutions."""
+
+    hole = set([(3,0,0), (4,0,0), (1,4,0), (2,4,0)])
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_4(
+    OneSidedPolytrigs123ElongatedHex4x2_1):
+
+    """many solutions."""
+
+    hole = set([(0,4,0), (1,4,0), (2,4,0), (3,4,0)])
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_5(
+    OneSidedPolytrigs123ElongatedHex4x2_1):
+
+    """many solutions."""
+
+    hole = set([(3,1,0), (2,2,0), (3,2,0), (2,3,0)])
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_6(
+    OneSidedPolytrigs123ElongatedHex4x2_1):
+
+    """many solutions."""
+
+    hole = set([(2,2,0), (3,2,0), (3,2,1), (3,2,2)])
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_7(
+    OneSidedPolytrigs123ElongatedHex4x2_1):
+
+    """many solutions."""
+
+    hole = set([(2,0,2), (6,0,1), (0,3,1), (5,3,2)])
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_8(
+    OneSidedPolytrigs123ElongatedHex4x2_1):
+
+    """many solutions."""
+
+    hole = set([(2,0,2), (1,1,2), (6,0,1), (6,1,1)])
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_9(
+    OneSidedPolytrigs123ElongatedHex4x2_1):
+
+    """many solutions."""
+
+    hole = set([(3,1,0), (1,2,0), (4,2,0), (2,3,0)])
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_10(
+    OneSidedPolytrigs123ElongatedHex4x2_1):
+
+    """many solutions."""
+
+    hole = set([(3,1,2), (3,1,1), (4,1,2), (4,1,1)])
+
+
+class OneSidedPolytrigs123ElongatedHex4x2_11(
+    OneSidedPolytrigs123ElongatedHex4x2_1):
+
+    """many solutions."""
+
+    hole = set([(3,1,1), (4,1,2), (3,2,1), (3,2,2)])
+
+
+class OneSidedPolytrigs123Trapezoid8x3_1(OneSidedPolytrigs123):
+
+    """many solutions."""
+
+    width = 9
+    height = 4
+
+    hole = set([(3,1,1), (3,1,2), (4,1,1), (4,1,2)])
+
+    def coordinates(self):
+        for coord in self.coordinates_trapezoid(8, 3):
+            if coord not in self.hole:
+                yield coord
+
+
+class OneSidedPolytrigs123Trapezoid8x3_2(OneSidedPolytrigs123Trapezoid8x3_1):
+
+    """many solutions."""
+
+    hole = set([(2,1,1), (2,1,2), (5,1,1), (5,1,2)])
+
+
+class OneSidedPolytrigs123Trapezoid8x3_3(OneSidedPolytrigs123Trapezoid8x3_1):
+
+    """many solutions."""
+
+    hole = set([(2,1,1), (3,1,2), (4,1,1), (5,1,2)])
+
+
+class OneSidedPolytrigs123Trapezoid8x3_4(OneSidedPolytrigs123Trapezoid8x3_1):
+
+    """many solutions."""
+
+    hole = set([(1,1,1), (3,1,2), (4,1,1), (6,1,2)])
 
 
 class TetratrigsElongatedHex11x3(Tetratrigs):

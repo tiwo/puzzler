@@ -7,4 +7,4 @@ many solutions.
 
 import puzzler.puzzles
 
-puzzler.run(puzzler.puzzles.OneSidedTritrigsSemiRegularHexagon4x1)
+puzzler.run(puzzler.puzzles.OneSidedPolytrigs123ElongatedHex4x2_1)
