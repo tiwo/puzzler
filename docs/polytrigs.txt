@@ -118,6 +118,11 @@ grid.
 
   .. image:: images/one-sided-tritrigs-chevron-2x4-2.png
 
+* 8x1 chevron: `solutions incomplete
+  <http://puzzler.sf.net/solutions/one-sided-tritrigs-chevron-8x1.txt>`__
+
+  .. image:: images/one-sided-tritrigs-chevron-8x1.png
+
 * 7x3 trapezoid 1: `solutions incomplete
   <http://puzzler.sf.net/solutions/one-sided-tritrigs-trapezoid-7x3-1.txt>`__
 
@@ -327,6 +332,11 @@ tritrigs, for a total of 64 line segments on the triangular grid.
      <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-trapezoid-8x3-4.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-trapezoid-8x3-4.png
+
+* 9x1 chevron: `solutions incomplete
+  <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-chevron-9x1.txt>`__
+
+  .. image:: images/one-sided-polytrigs-123-chevron-9x1.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

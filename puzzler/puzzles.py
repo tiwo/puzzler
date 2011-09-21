@@ -4900,6 +4900,21 @@ class OneSidedTritrigsChevron2x4_2(OneSidedTritrigsChevron2x4_1):
     hole = set([(5,4,0)])
 
 
+class OneSidedTritrigsChevron8x1(OneSidedTritrigs):
+
+    """many solutions."""
+
+    width = 10
+    height = 3
+
+    hole = set([(8,1,0)])
+
+    def coordinates(self):
+        for coord in self.coordinates_chevron(8, 1):
+            if coord not in self.hole:
+                yield coord
+
+
 class OneSidedTritrigsTrapezoid7x3_1(OneSidedTritrigs):
 
     """many solutions."""
@@ -5296,6 +5311,21 @@ class OneSidedPolytrigs123Trapezoid8x3_4(OneSidedPolytrigs123Trapezoid8x3_1):
     """many solutions."""
 
     hole = set([(1,1,1), (3,1,2), (4,1,1), (6,1,2)])
+
+
+class OneSidedPolytrigs123Chevron9x1(OneSidedPolytrigs123):
+
+    """many solutions."""
+
+    width = 11
+    height = 3
+
+    hole = set([(9,1,0)])
+
+    def coordinates(self):
+        for coord in self.coordinates_chevron(9, 1):
+            if coord not in self.hole:
+                yield coord
 
 
 class TetratrigsElongatedHex11x3(Tetratrigs):
