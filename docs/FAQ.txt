@@ -442,7 +442,7 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   .. _A019988: http://oeis.org/A019988
   .. _A151537: http://oeis.org/A151537
 
-* Polytrigs (a.k.a. "triangular polysticks"; A159867_, A151539):
+* Polytrigs (a.k.a. "triangular polysticks"; A159867_, A151539_):
 
   ======  =========  =========  =========
   Sticks  Name       Polytrigs  One-Sided
