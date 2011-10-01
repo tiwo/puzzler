@@ -3139,7 +3139,7 @@ class Polysticks(PuzzlePseudo3D):
                 if cell_name.endswith('i') or cell_name == '!':
                     continue
                 x, y, z = [int(d.strip()) for d in cell_name.split(',')]
-                s_matrix[z + margin][y + margin][x + margin] = name
+                s_matrix[z][y + margin][x + margin] = name
         return s_matrix
 
     def empty_solution_matrix(self, margin=0):
@@ -4589,6 +4589,18 @@ class Tetratrigs(TetratrigsData, Polytrigs):
     pass
 
 
+class Polytrigs1234(Polytrigs123):
+
+    piece_data = copy.deepcopy(Polytrigs123.piece_data)
+    piece_data.update(copy.deepcopy(TetratrigsData.piece_data))
+    symmetric_pieces = (
+        Polytrigs123.symmetric_pieces + TetratrigsData.symmetric_pieces)
+    asymmetric_pieces = (
+        Polytrigs123.asymmetric_pieces + TetratrigsData.asymmetric_pieces)
+    piece_colors = copy.deepcopy(Polytrigs123.piece_colors)
+    piece_colors.update(TetratrigsData.piece_colors)
+
+
 class TritrigsHex2Ring(Tritrigs):
 
     """0 solutions."""
@@ -5338,7 +5350,7 @@ class TetratrigsElongatedHex11x3(Tetratrigs):
     def coordinates(self):
         holes = set([(6, 4, 0), (7, 2, 0)])
         for coord in self.coordinates_elongated_hexagon(11, 3):
-            if coord not in holes :
+            if coord not in holes:
                 yield coord
 
     def customize_piece_data(self):
@@ -5354,6 +5366,22 @@ class TetratrigsElongatedHex11x3(Tetratrigs):
         self.build_matrix_row('O04', translated)
         keys.remove('O04')
         self.build_regular_matrix(keys)
+
+
+class Polytrigs1234Trapezoid15x8(Polytrigs1234):
+
+    """ solutions."""
+
+    width = 16
+    height = 9
+
+    # create multiple sub-puzzles, each with O04 & I1 placed
+
+    def coordinates(self):
+        return self.coordinates_trapezoid(15, 8)
+
+    def customize_piece_data(self):
+        self.piece_data['P3'][-1]['flips'] = None
 
 
 class Polyhexes(Puzzle2D):
