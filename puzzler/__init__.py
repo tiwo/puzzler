@@ -49,12 +49,14 @@ exact_cover_modules = {
 def run(puzzle_class, output_stream=sys.stdout, settings=None):
     """
     Given a `puzzler.puzzles.Puzzle` subclass, process the command line and
-    either find all solutions or process the solution supplied.
+    dispatch accordingly.
     """
     if settings is None:
         settings = process_command_line()
     if settings.read_solution:
         read_solution(puzzle_class, settings)
+    elif settings.report_search_state:
+        report_search_state(puzzle_class, output_stream, settings)
     else:
         return solve(puzzle_class, output_stream, settings)
 
@@ -94,6 +96,11 @@ def process_command_line():
         action='store_const', const=None,
         help='Disable automatic search state save & restore.')
     parser.add_option(
+        '-R', '--report-search-state', action='store_true',
+        help=('Report on the current search state (partial solution), '
+              'useful for long-running puzzles. Use -S/--search-state-file '
+              'to read a search state file other than the default.'))
+    parser.add_option(
         '-h', '--help', help='Show this help message and exit.', action='help')
     settings, args = parser.parse_args()
     if args:
@@ -118,6 +125,24 @@ def read_solution(puzzle_class, settings):
     if settings.x3d:
         puzzle.write_x3d(settings.x3d, s_matrix=copy.deepcopy(s_matrix))
 
+def report_search_state(puzzle_class, output_stream, settings):
+    state = SessionState.restore(settings.search_state_file, read_only=True)
+    solver = exact_cover_modules[settings.algorithm].ExactCover(state=state)
+    puzzle = puzzle_class.components()[0]()
+    solver.load_matrix(puzzle.matrix, puzzle.secondary_columns)
+    solution = solver.full_solution()
+    if state.num_searches:
+        print >>output_stream, (
+            '\nSession report: %s solutions, %s searches.\n'
+            % (state.num_solutions, state.num_searches))
+        output_stream.flush()
+    puzzle.record_solution(
+        solution, solver, stream=output_stream)
+    if settings.svg:
+        puzzle.write_svg(settings.svg, solution)
+    if settings.x3d:
+        puzzle.write_x3d(settings.x3d, solution)
+
 def solve(puzzle_class, output_stream, settings):
     """Find and record all solutions to a puzzle.  Report on `output_stream`."""
     start = datetime.now()
@@ -140,6 +165,8 @@ def solve(puzzle_class, output_stream, settings):
         try:
             for component in puzzle_class.components():
                 if component.__name__ not in state.completed_components:
+                    # !!! instantiate inside the loop instead?
+                    # will save time initially with multi-part puzzles
                     puzzles.append(component())
             for puzzle in puzzles:
                 matrices.append((puzzle.matrix, puzzle.secondary_columns))
@@ -258,7 +285,7 @@ class SessionState(object):
             os.unlink(path)
 
     @classmethod
-    def restore(cls, path):
+    def restore(cls, path, read_only=False):
         """
         Return either the saved session state or a new `SessionState` object.
         (A factory function.)
@@ -268,6 +295,12 @@ class SessionState(object):
                 state_file = open(path, 'rb')
                 state = pickle.load(state_file)
                 state_file.close()
-                state.init_runtime(path)
+                if not read_only:
+                    state.init_runtime(path)
                 return state
+            elif read_only:
+                print >>sys.stderr, (
+                    'The search state file "%s" does not exist; exiting.'
+                    % path)
+                sys.exit(1)
         return cls(path)
