@@ -45,13 +45,16 @@ later is recommended.
     6x6 chevrons; 6x6 & 3 types of 12x3 stacked chevrons; 7x8
     irregular hexagon.
 
-  - One-sided hexiamonds: O'Beirne's hexagon.
+  - One-sided hexiamonds: O'Beirne's hexagon, 8x3/11x6 long hexagon.
 
   - Heptiamonds: 7x12, 6x14, 4x21, 3x28 parallelograms; 12x13, 6x17, &
     4x23 trapezia; 4x21, 6x14, 12x7, 14x6, & 28x3 chevrons; 11x8 &
     4x24 stacks; snowflakes; triangle with central hole; diamond ring;
-    hexagons; 4x22 long hexagon; 10x12 short hexagon; irregular
-    "Tenyo" shape.
+    regular & irregular hexagons; 4x22 long hexagon; 10x12 short
+    hexagon; irregular "Tenyo" shape; hexagrams; hexed triangle; short
+    hex ring; triangle ring; configurations of four 2x3 hexagons; sets
+    of two identical 6x2/8x8 semi-regular hexagons with triangular
+    holes.
 
   - One-sided pentominoes: 3x30, 5x18, 6x15, 9x10.
 

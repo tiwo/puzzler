@@ -7392,6 +7392,21 @@ class OneSidedHexiamonds_TestHexagon_B(OneSidedHexiamonds_TestHexagon):
 #         #self.piece_data['C6'][-1]['rotations'] = (0,2,4)
 
 
+class OneSidedHexiamondsLongHexagon8x3(OneSidedHexiamonds):
+
+    """Many solutions."""
+
+    height = 6
+    width = 11
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if 2 < x + y + z <= 13:
+                        yield coordsys.Triangular3D((x, y, z))
+
+
 class Heptiamonds(Polyiamonds):
 
     piece_data = {
@@ -7674,6 +7689,68 @@ class HeptiamondsHexagram(Heptiamonds):
         self.piece_data['P7'][-1]['rotations'] = None
 
 
+class HeptiamondsHexagram2(Heptiamonds):
+
+    """
+    16-unit-high hexagram (side length = 4) with two 4-unit-high hexagram
+    holes (side length = 1) arranged horizontally, 1 unit apart.
+
+    Many solutions.
+    """
+
+    height = 16
+    width = 16
+
+    offsets = ((4,6,0), (8,6,0))
+
+    def coordinates_hexagram(self, side_length):
+        max_total = side_length * 5
+        min_total = side_length * 3
+        for z in range(self.depth):
+            for y in range(side_length * 4):
+                for x in range(side_length * 4):
+                    total = x + y + z
+                    if (  (x >= side_length and y >= side_length
+                           and total < max_total)
+                          or (total >= min_total
+                              and x < min_total
+                              and y < min_total)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+    def coordinates(self):
+        holes = set()
+        for coord in self.coordinates_hexagram(1):
+            for offset in self.offsets:
+                holes.add(coord + offset)
+        for coord in self.coordinates_hexagram(4):
+            if coord not in holes:
+                yield coord
+
+
+class HeptiamondsHexagram3(HeptiamondsHexagram2):
+
+    """
+    16-unit-high hexagram (side length = 4) with two 4-unit-high hexagram
+    holes (side length = 1) arranged horizontally, 3 units apart.
+
+    Many solutions.
+    """
+
+    offsets = ((3,6,0), (9,6,0))
+
+
+class HeptiamondsHexagram4(HeptiamondsHexagram2):
+
+    """
+    16-unit-high hexagram (side length = 4) with two 4-unit-high hexagram
+    holes (side length = 1) arranged vertically, touching.
+
+    Many solutions.
+    """
+
+    offsets = ((5,8,0), (7,4,0))
+
+
 class HeptiamondsHexagon1(Heptiamonds):
 
     """
@@ -7919,6 +7996,130 @@ class HeptiamondsHexagon7(Heptiamonds):
         self.piece_data['P7'][-1]['flips'] = None
 
 
+class HeptiamondsHexagon8(Heptiamonds):
+
+    """
+    many solutions.
+
+    12-unit-high hexagon with a central hexagonal whorl hole.
+    """
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        hole = set()
+        for y in range(3, 9):
+            for x in range(3, 9):
+                for z in range(self.depth):
+                    if 8 < x + y + z < 15:
+                        hole.add(coordsys.Triangular3D((x, y, z)))
+        for coord in ((5,3,1), (8,3,0), (8,5,1), (6,8,0), (3,6,0), (3,8,1)):
+            hole.remove(coord)
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < x + y + z < 18 and coord not in hole:
+                        yield coord
+
+
+class HeptiamondsHexagon9(Heptiamonds):
+
+    """
+    many solutions.
+
+    12-unit-high hexagon with a central triangular whorl hole.
+    """
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        hole = set()
+        for y in range(4, 10):
+            for x in range(4, 10):
+                for z in range(self.depth):
+                    if x + y + z < 14:
+                        hole.add((x, y, z))
+        for y in range(2):
+            for x in range(2):
+                for z in range(self.depth):
+                    if x + y + z > 1:
+                        for dx, dy in ((2,4), (8,2), (4,8)):
+                            hole.add((x + dx, y + dy, z))
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < x + y + z < 18 and coord not in hole:
+                        yield coord
+
+
+class HeptiamondsHexagon10(Heptiamonds):
+
+    """
+    many solutions.
+
+    12-unit-high hexagon with a central tri-lobed hole.
+    """
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        hole = set()
+        for y in range(4, 8):
+            for x in range(4, 8):
+                for z in range(self.depth):
+                    if 9 < x + y + z < 14:
+                        hole.add((x, y, z))
+        for y in range(2, 10):
+            for x in range(2, 10):
+                for z in range(self.depth):
+                    total = x + y + z
+                    if 7 < total < 16:
+                        if (  ((5 <= y <= 6) and (x < 6))
+                              or ((5 <= x <= 6) and (y > 6))
+                              or ((11 <= total <= 12) and (x > 6))):
+                            hole.add((x, y, z))
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < x + y + z < 18 and coord not in hole:
+                        yield coord
+
+
+class HeptiamondsHexagon11(Heptiamonds):
+
+    """
+    many solutions.
+
+    12-unit-high hexagon with three hexagonal holes.
+    """
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        hole = set()
+        for y in range(2, 10):
+            for x in range(2, 10):
+                for z in range(self.depth):
+                    total = x + y + z
+                    if (  ((y <= 4) and (3 < x < 8) and (7 < total < 11))
+                          or ((y >= 7) and (x < 5) and (9 < total < 14))
+                          or ((4 <= y <= 7) and (x > 6) and (12 < total < 16))):
+                        hole.add((x, y, z))
+        for y in range(self.height):
+            for x in range(self.width):
+                for z in range(self.depth):
+                    coord = coordsys.Triangular3D((x, y, z))
+                    if 5 < x + y + z < 18 and coord not in hole:
+                        yield coord
+
+
 class HeptiamondsDiamondRing(Heptiamonds):
 
     """
@@ -8076,6 +8277,246 @@ class Heptiamonds4x24Stack(HeptiamondsStack):
 
     height = 24
     width = 15
+
+
+class HeptiamondsHexedTriangle(Heptiamonds):
+
+    """many solutions"""
+
+    height = 14
+    width = 14
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if ( (x + 2 * y + z >= 13)
+                         and (y - x <= 7)
+                         and (2 * x + y + z <= 27)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HeptiamondsShortHexRing(Heptiamonds):
+
+    """
+    many solutions.
+
+    2x8 short hexagon with central 2-unit hexagon hole.
+    """
+
+    height = 10
+    width = 10
+
+    duplicate_conditions = ({'rotate_180': True},)
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if (  (1 < total < 18)
+                          and (total < 8 or total > 11
+                               or x < 3 or x > 6 or y < 3 or y > 6)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HeptiamondsTriangleRing(Heptiamonds):
+
+    """many solutions"""
+
+    height = 13
+    width = 13
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if 0 < total < 14 and (x < 3 or y < 3 or total > 10):
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HeptiamondsSemiregularHexagon8x3(Heptiamonds):
+
+    """many solutions"""
+
+    height = 11
+    width = 11
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    total = x + y + z
+                    if 2 < total < 14 and ((x, y, z) != (4,4,1)):
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HeptiamondsHexagons2x3_1(Heptiamonds):
+
+    """
+    Four 2x3 hexagons stacked vertically (I4 tetrahex).
+
+    Many solutions.
+    """
+
+    height = 24
+    width = 14
+
+    offsets = [(0,18,0), (3,12,0), (6,6,0), (9,0,0)]
+
+    def coordinates(self):
+        for coord in self.coordinates_hex():
+            for offset in self.offsets:
+                yield coord + offset
+
+    def coordinates_hex(self):
+        for z in range(self.depth):
+            for y in range(6):
+                for x in range(5):
+                    total = x + y + z
+                    if 2 < total < 8:
+                        yield coordsys.Triangular3D((x, y, z))
+
+
+class HeptiamondsHexagons2x3_2(HeptiamondsHexagons2x3_1):
+
+    """
+    Two horizontally adjacent groups of two 2x3 vertically stacked hexagons.
+
+    Many solutions.
+    """
+
+    height = 12
+    width = 13
+
+    offsets = [(0,6,0), (3,0,0), (5,6,0), (8,0,0)]
+
+
+class HeptiamondsHexagons2x3_3(HeptiamondsHexagons2x3_1):
+
+    """
+    Four 2x3 hexagons in a honeycomb grid (one nestled on each side of central
+    stack of two; O4 tetrahex).
+
+    Many solutions.
+    """
+
+    height = 12
+    width = 12
+
+    offsets = [(0,3,0), (5,0,0), (2,6,0), (7,3,0)]
+
+
+class HeptiamondsHexagons2x3_4(HeptiamondsHexagons2x3_1):
+
+    """
+    As in #3, but the two central hexagons are now two vertical units apart.
+
+    Many solutions.
+    """
+
+    height = 14
+    width = 11
+
+    offsets = [(0,4,0), (5,0,0), (1,8,0), (6,4,0)]
+
+
+class HeptiamondsHexagons2x3_5(HeptiamondsHexagons2x3_1):
+
+    """
+    As in #3, but the two central hexagons are now four vertical units apart.
+
+    Many solutions.
+    """
+
+    height = 16
+    width = 10
+
+    offsets = [(0,5,0), (5,0,0), (0,10,0), (5,5,0)]
+
+
+class HeptiamondsHexagons2x3_6(HeptiamondsHexagons2x3_1):
+
+    """
+    Four 2x3 hexagons arranged as a trefoil (Y4 tetrahex): three hexagons
+    attached to one central hexagon.
+
+    Many solutions.
+    """
+
+    height = 15
+    width = 13
+
+    offsets = [(0,9,0), (5,6,0), (7,9,0), (8,0,0)]
+
+
+class HeptiamondsHexagons2x3_7(HeptiamondsHexagons2x3_1):
+
+    """
+    Four 2x3 hexagons adjacent horizontally, with corners touching.
+
+     solutions.
+    """
+
+    height = 6
+    width = 20
+
+    offsets = [(0,0,0), (5,0,0), (10,0,0), (15,0,0)]
+
+    I7_offsets = [(4, (0,0,0)), (5, (1,0,0)), (4, (1,1,0)), (3, (1,2,0))]
+
+    def build_matrix(self):
+        """
+        There are only 4 possible positions for the I7 piece.
+
+        After that, duplication prevention gets hard (if it's even necessary).
+        """
+        keys = sorted(self.pieces.keys())
+        for aspect_index, coords in self.I7_offsets:
+            i_coords, i_aspect = self.pieces['I7'][aspect_index]
+            translated = i_aspect.translate(coords)
+            self.build_matrix_row('I7', translated)
+        keys.remove('I7')
+        self.build_regular_matrix(keys)
+
+
+class HeptiamondsSemiregularHexagons6x2(Heptiamonds):
+
+    """
+    Two identical semi-regular hexagons with triangular holes (second rotated
+    to save space).
+
+    Many solutions.
+    """
+
+    height = 8
+    width = 13
+
+    def coordinates(self):
+        holes = set([(2,3,1), (3,2,1), (3,3,0), (3,3,1),
+                     (9,4,0), (9,4,1), (9,5,0), (10,4,0)])
+        for z in range(self.depth):
+            for y in range(self.height):
+                for x in range(self.width):
+                    if (x,y,z) in holes:
+                        continue
+                    total = x + y + z
+                    if total < 10:
+                        if total < 2 or x > 7:
+                            continue
+                    elif total > 10:
+                        if x < 5 or total > 18:
+                            continue
+                    else:
+                        continue
+                    yield coordsys.Triangular3D((x, y, z))
 
 
 if __name__ == '__main__':
