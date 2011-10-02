@@ -45,7 +45,8 @@ later is recommended.
     6x6 chevrons; 6x6 & 3 types of 12x3 stacked chevrons; 7x8
     irregular hexagon.
 
-  - One-sided hexiamonds: O'Beirne's hexagon, 8x3/11x6 long hexagon.
+  - One-sided hexiamonds: O'Beirne's hexagon, 8x3 [11x6] long hexagon,
+    11x3 [11x6] butterfly.
 
   - Heptiamonds: 7x12, 6x14, 4x21, 3x28 parallelograms; 12x13, 6x17, &
     4x23 trapezia; 4x21, 6x14, 12x7, 14x6, & 28x3 chevrons; 11x8 &
