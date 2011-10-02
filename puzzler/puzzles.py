@@ -6179,10 +6179,46 @@ class Polyiamonds(PuzzlePseudo3D):
 '''
 
     def coordinates(self):
+        return self.coordinates_parallelogram(self.width, self.height)
+
+    def coordinates_parallelogram(self, base_length, side_length, offset=None):
         for z in range(self.depth):
-            for y in range(self.height):
-                for x in range(self.width):
-                    yield coordsys.Triangular3D((x, y, z))
+            for y in range(side_length):
+                for x in range(base_length):
+                    yield self.coordinate_offset(x, y, z, offset)
+
+    def coordinate_offset(self, x, y, z, offset):
+        if offset:
+            return coordsys.TriangularGrid3D((x, y, z)) + offset
+        else:
+            return coordsys.TriangularGrid3D((x, y, z))
+
+    def coordinates_hexagram(self, side_length, offset=None):
+        max_total = side_length * 5
+        min_total = side_length * 3
+        for z in range(self.depth):
+            for y in range(side_length * 4):
+                for x in range(side_length * 4):
+                    total = x + y + z
+                    if (  (x >= side_length and y >= side_length
+                           and total < max_total)
+                          or (total >= min_total
+                              and x < min_total
+                              and y < min_total)):
+                        yield self.coordinate_offset(x, y, z, offset)
+
+    def coordinates_butterfly(self, base_length, side_length, offset=None):
+        for coord in self.coordinates_parallelogram(base_length + side_length,
+                                                    side_length * 2):
+            x, y, z = coord
+            total = x + y + z
+            min_total = side_length * 2
+            max_total = base_length + side_length
+            if (  (y < side_length and x < side_length)
+                  or (y >= side_length and total < min_total)
+                  or (x >= base_length and total >= max_total)):
+                continue
+            yield self.coordinate_offset(x, y, z, offset)
 
     def make_aspects(self, units, flips=(False, True),
                      rotations=(0, 1, 2, 3, 4, 5)):
@@ -7407,6 +7443,25 @@ class OneSidedHexiamondsLongHexagon8x3(OneSidedHexiamonds):
                         yield coordsys.Triangular3D((x, y, z))
 
 
+class OneSidedHexiamondsButterfly11x3(OneSidedHexiamonds):
+
+    """Many solutions."""
+
+    height = 6
+    width = 14
+
+    def coordinates(self):
+        return self.coordinates_butterfly(11, 3)
+
+
+class OneSidedHexiamonds19x3(OneSidedHexiamonds):
+
+    """0 solutions."""
+
+    height = 3
+    width = 19
+
+
 class Heptiamonds(Polyiamonds):
 
     piece_data = {
@@ -7702,20 +7757,6 @@ class HeptiamondsHexagram2(Heptiamonds):
     width = 16
 
     offsets = ((4,6,0), (8,6,0))
-
-    def coordinates_hexagram(self, side_length):
-        max_total = side_length * 5
-        min_total = side_length * 3
-        for z in range(self.depth):
-            for y in range(side_length * 4):
-                for x in range(side_length * 4):
-                    total = x + y + z
-                    if (  (x >= side_length and y >= side_length
-                           and total < max_total)
-                          or (total >= min_total
-                              and x < min_total
-                              and y < min_total)):
-                        yield coordsys.Triangular3D((x, y, z))
 
     def coordinates(self):
         holes = set()

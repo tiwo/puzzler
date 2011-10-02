@@ -193,10 +193,15 @@ One-Sided Hexiamonds
 
   .. image:: images/one-sided-hexiamonds-obeirnes-hexagon.png
 
-* Long hexagon 8x3/11x6: `solutions incomplete
+* Long hexagon 8x3 [11x6]: `solutions incomplete
   <../solutions/one-sided-hexiamonds-long-hexagon-8x3.txt>`__
 
   .. image:: images/one-sided-hexiamonds-long-hexagon-8x3.png
+
+* Butterfly 11x3 [11x6]: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-butterfly-11x3.txt>`__
+
+  .. image:: images/one-sided-hexiamonds-butterfly-11x3.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign
