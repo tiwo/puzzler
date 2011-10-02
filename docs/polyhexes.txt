@@ -25,18 +25,18 @@ Tetrahexes
 ==========
 
 * 4x7 parallelogram: `9 solutions
-  <http://puzzler.sf.net/solutions/tetrahex-4x7.txt>`__
+  <../solutions/tetrahex-4x7.txt>`__
 
   .. image:: images/tetrahex-4x7.png
 
 * 3x10 parallelogram with corners clipped (centered rows of
   length 9, 10, 9): `2 solutions
-  <http://puzzler.sf.net/solutions/tetrahex-3x10-clipped.txt>`__
+  <../solutions/tetrahex-3x10-clipped.txt>`__
 
   .. image:: images/tetrahex-3x10-clipped.png
 
 * 5x7 "coin" (elongated hexagon with central hole): `4 solutions
-  <http://puzzler.sf.net/solutions/tetrahex-coin.txt>`__
+  <../solutions/tetrahex-coin.txt>`__
 
   .. image:: images/tetrahex-coin.png
 
@@ -48,12 +48,12 @@ These puzzles uses the monohex, the dihex, the three trihexes, and the
 seven tetrahexes.
 
 * 4x10 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/polyhex-4x10.txt>`__
+  <../solutions/polyhex-4x10.txt>`__
 
   .. image:: images/polyhex-4x10.png
 
 * 5x8 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/polyhex-5x8.txt>`__
+  <../solutions/polyhex-5x8.txt>`__
 
   .. image:: images/polyhex-5x8.png
 
@@ -65,17 +65,17 @@ These puzzles uses the monohex, the dihex, the three trihexes, the
 seven tetrahexes, and the 22 pentahexes.
 
 * 5x30 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/polyhex-5x30.txt>`__
+  <../solutions/polyhex-5x30.txt>`__
 
   .. image:: images/polyhex-5x30.png
 
 * 6x25 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/polyhex-6x25.txt>`__
+  <../solutions/polyhex-6x25.txt>`__
 
   .. image:: images/polyhex-6x25.png
 
 * 10x15 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/polyhex-10x15.txt>`__
+  <../solutions/polyhex-10x15.txt>`__
 
   .. image:: images/polyhex-10x15.png
 

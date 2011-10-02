@@ -46,37 +46,37 @@ These puzzles use the 12 tritrigs, for a total of 36 line segments on
 the triangular grid.
 
 * 3x1 semi-regular hexagon ring: `1 solution
-  <http://puzzler.sf.net/solutions/tritrigs-hex-3x1-ring.txt>`__
+  <../solutions/tritrigs-hex-3x1-ring.txt>`__
 
   .. image:: images/tritrigs-hex-3x1-ring.png
 
 * 5x2 paralellogram: `9 solutions
-  <http://puzzler.sf.net/solutions/tritrigs-parallelogram-5x2.txt>`__
+  <../solutions/tritrigs-parallelogram-5x2.txt>`__
 
   .. image:: images/tritrigs-parallelogram-5x2.png
 
 * 5x3 trapezoid ring: `1 solution
-  <http://puzzler.sf.net/solutions/tritrigs-trapezoid-5x3-ring.txt>`__
+  <../solutions/tritrigs-trapezoid-5x3-ring.txt>`__
 
   .. image:: images/tritrigs-trapezoid-5x3-ring.png
 
 * 6x2 trapezoid: `8 solutions
-  <http://puzzler.sf.net/solutions/tritrigs-trapezoid-6x2.txt>`__
+  <../solutions/tritrigs-trapezoid-6x2.txt>`__
 
   .. image:: images/tritrigs-trapezoid-6x2.png
 
 * Stacked 2x2x1 elongated hexagons: `9 solutions
-  <http://puzzler.sf.net/solutions/tritrigs-stacked-elongated-hexagons-2x2x1.txt>`__
+  <../solutions/tritrigs-stacked-elongated-hexagons-2x2x1.txt>`__
 
   .. image:: images/tritrigs-stacked-elongated-hexagons-2x2x1.png
 
 * 5x3 jagged trapezoid: `1 solution
-  <http://puzzler.sf.net/solutions/tritrigs-jagged-trapezoid-5x3.txt>`__
+  <../solutions/tritrigs-jagged-trapezoid-5x3.txt>`__
 
   .. image:: images/tritrigs-jagged-trapezoid-5x3.png
 
 * Spiked triangle: `6 solutions
-  <http://puzzler.sf.net/solutions/tritrigs-spiked-triangle-1.txt>`__
+  <../solutions/tritrigs-spiked-triangle-1.txt>`__
 
   .. image:: images/tritrigs-spiked-triangle-1.png
 
@@ -89,57 +89,57 @@ one-sided tritrigs.  The puzzles take up 57 segments on the triangular
 grid.
 
 * 4x1 semi-regular hexagon: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-hex-4x1.txt>`__
+  <../solutions/one-sided-tritrigs-hex-4x1.txt>`__
 
   .. image:: images/one-sided-tritrigs-hex-4x1.png
 
 * Length-6 triangle: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-triangle-6.txt>`__
+  <../solutions/one-sided-tritrigs-triangle-6.txt>`__
 
   .. image:: images/one-sided-tritrigs-triangle-6.png
 
 * 5x2 butterfly: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-butterfly-5x2.txt>`__
+  <../solutions/one-sided-tritrigs-butterfly-5x2.txt>`__
 
   .. image:: images/one-sided-tritrigs-butterfly-5x2.png
 
 * 3x3 chevron: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-chevron-3x3.txt>`__
+  <../solutions/one-sided-tritrigs-chevron-3x3.txt>`__
 
   .. image:: images/one-sided-tritrigs-chevron-3x3.png
 
 * 2x4 chevron 1: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-chevron-2x4-1.txt>`__
+  <../solutions/one-sided-tritrigs-chevron-2x4-1.txt>`__
 
   .. image:: images/one-sided-tritrigs-chevron-2x4-1.png
 
 * 2x4 chevron 2: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-chevron-2x4-2.txt>`__
+  <../solutions/one-sided-tritrigs-chevron-2x4-2.txt>`__
 
   .. image:: images/one-sided-tritrigs-chevron-2x4-2.png
 
 * 8x1 chevron: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-chevron-8x1.txt>`__
+  <../solutions/one-sided-tritrigs-chevron-8x1.txt>`__
 
   .. image:: images/one-sided-tritrigs-chevron-8x1.png
 
 * 7x3 trapezoid 1: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-trapezoid-7x3-1.txt>`__
+  <../solutions/one-sided-tritrigs-trapezoid-7x3-1.txt>`__
 
   .. image:: images/one-sided-tritrigs-trapezoid-7x3-1.png
 
 * 7x3 trapezoid 2: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-trapezoid-7x3-2.txt>`__
+  <../solutions/one-sided-tritrigs-trapezoid-7x3-2.txt>`__
 
   .. image:: images/one-sided-tritrigs-trapezoid-7x3-2.png
 
 * 9x2 trapezoid 1: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-trapezoid-9x2-1.txt>`__
+  <../solutions/one-sided-tritrigs-trapezoid-9x2-1.txt>`__
 
   .. image:: images/one-sided-tritrigs-trapezoid-9x2-1.png
 
 * 9x2 trapezoid 2: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-tritrigs-trapezoid-9x2-2.txt>`__
+  <../solutions/one-sided-tritrigs-trapezoid-9x2-2.txt>`__
 
   .. image:: images/one-sided-tritrigs-trapezoid-9x2-2.png
 
@@ -151,74 +151,74 @@ These puzzles use the 1 monotrig, 3 ditrigs, and 12 tritrigs, for a
 total of 43 line segments on the triangular grid.
 
 * 4x3 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/polytrigs-123-4x3.txt>`__
+  <../solutions/polytrigs-123-4x3.txt>`__
 
   .. image:: images/polytrigs-123-4x3.png
 
 * 5x4 trapezoid: `solutions incomplete
-  <http://puzzler.sf.net/solutions/polytrigs-123-trapezoid-5x4.txt>`__
+  <../solutions/polytrigs-123-trapezoid-5x4.txt>`__
 
   .. image:: images/polytrigs-123-trapezoid-5x4.png
 
 * 3x2 chevron:  `solutions incomplete
-  <http://puzzler.sf.net/solutions/polytrigs-123-chevron-3x2.txt>`__
+  <../solutions/polytrigs-123-chevron-3x2.txt>`__
 
   .. image:: images/polytrigs-123-chevron-3x2.png
 
 * 4x2 butterfly:  `solutions incomplete
-  <http://puzzler.sf.net/solutions/polytrigs-123-butterfly-4x2.txt>`__
+  <../solutions/polytrigs-123-butterfly-4x2.txt>`__
 
   .. image:: images/polytrigs-123-butterfly-4x2.png
 
 * 7x2 trapezoid 1:  `solutions incomplete
-  <http://puzzler.sf.net/solutions/polytrigs-123-trapezoid-7x2-1.txt>`__
+  <../solutions/polytrigs-123-trapezoid-7x2-1.txt>`__
 
   .. image:: images/polytrigs-123-trapezoid-7x2-1.png
 
 * 7x2 trapezoid 2:  `solutions incomplete
-  <http://puzzler.sf.net/solutions/polytrigs-123-trapezoid-7x2-2.txt>`__
+  <../solutions/polytrigs-123-trapezoid-7x2-2.txt>`__
 
   .. image:: images/polytrigs-123-trapezoid-7x2-2.png
 
 * Length-5 triangle, with various holes:
 
   1. `solutions incomplete
-     <http://puzzler.sf.net/solutions/polytrigs-123-triangle-5-1.txt>`__
+     <../solutions/polytrigs-123-triangle-5-1.txt>`__
 
      .. image:: images/polytrigs-123-triangle-5-1.png
 
   2. `solutions incomplete
-     <http://puzzler.sf.net/solutions/polytrigs-123-triangle-5-2.txt>`__
+     <../solutions/polytrigs-123-triangle-5-2.txt>`__
 
      .. image:: images/polytrigs-123-triangle-5-2.png
 
   3. `solutions incomplete
-     <http://puzzler.sf.net/solutions/polytrigs-123-triangle-5-3.txt>`__
+     <../solutions/polytrigs-123-triangle-5-3.txt>`__
 
      .. image:: images/polytrigs-123-triangle-5-3.png
 
   4. `solutions incomplete
-     <http://puzzler.sf.net/solutions/polytrigs-123-triangle-5-4.txt>`__
+     <../solutions/polytrigs-123-triangle-5-4.txt>`__
 
      .. image:: images/polytrigs-123-triangle-5-4.png
 
   5. `solutions incomplete
-     <http://puzzler.sf.net/solutions/polytrigs-123-triangle-5-5.txt>`__
+     <../solutions/polytrigs-123-triangle-5-5.txt>`__
 
      .. image:: images/polytrigs-123-triangle-5-5.png
 
   6. `solutions incomplete
-     <http://puzzler.sf.net/solutions/polytrigs-123-triangle-5-6.txt>`__
+     <../solutions/polytrigs-123-triangle-5-6.txt>`__
 
      .. image:: images/polytrigs-123-triangle-5-6.png
 
   7. `solutions incomplete
-     <http://puzzler.sf.net/solutions/polytrigs-123-triangle-5-7.txt>`__
+     <../solutions/polytrigs-123-triangle-5-7.txt>`__
 
      .. image:: images/polytrigs-123-triangle-5-7.png
 
   8. `solutions incomplete
-     <http://puzzler.sf.net/solutions/polytrigs-123-triangle-5-8.txt>`__
+     <../solutions/polytrigs-123-triangle-5-8.txt>`__
 
      .. image:: images/polytrigs-123-triangle-5-8.png
 
@@ -230,111 +230,111 @@ These puzzles use the 1 monotrig, 3 ditrigs, and 19 one-sided
 tritrigs, for a total of 64 line segments on the triangular grid.
 
 * 9x2 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-parallelogram-9x2.txt>`__
+  <../solutions/one-sided-polytrigs-123-parallelogram-9x2.txt>`__
 
   .. image:: images/one-sided-polytrigs-123-parallelogram-9x2.png
 
 * 5x4 parallelogram: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-parallelogram-5x4.txt>`__
+  <../solutions/one-sided-polytrigs-123-parallelogram-5x4.txt>`__
 
   .. image:: images/one-sided-polytrigs-123-parallelogram-5x4.png
 
 * 10x2 trapezoid: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-trapezoid-10x2.txt>`__
+  <../solutions/one-sided-polytrigs-123-trapezoid-10x2.txt>`__
 
   .. image:: images/one-sided-polytrigs-123-trapezoid-10x2.png
 
 * 7x4 trapezoid: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-trapezoid-7x4.txt>`__
+  <../solutions/one-sided-polytrigs-123-trapezoid-7x4.txt>`__
 
   .. image:: images/one-sided-polytrigs-123-trapezoid-7x4.png
 
 * 6x2 butterfly: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-butterfly-6x2.txt>`__
+  <../solutions/one-sided-polytrigs-123-butterfly-6x2.txt>`__
 
   .. image:: images/one-sided-polytrigs-123-butterfly-6x2.png
 
 * 4x2 elongated hexagons, with various holes:
 
   1. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-1.txt>`__
+     <../solutions/one-sided-polytrigs-123-hex-4x2-1.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-hex-4x2-1.png
 
   2. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-2.txt>`__
+     <../solutions/one-sided-polytrigs-123-hex-4x2-2.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-hex-4x2-2.png
 
   3. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-3.txt>`__
+     <../solutions/one-sided-polytrigs-123-hex-4x2-3.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-hex-4x2-3.png
 
   4. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-4.txt>`__
+     <../solutions/one-sided-polytrigs-123-hex-4x2-4.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-hex-4x2-4.png
 
   5. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-5.txt>`__
+     <../solutions/one-sided-polytrigs-123-hex-4x2-5.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-hex-4x2-5.png
 
   6. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-6.txt>`__
+     <../solutions/one-sided-polytrigs-123-hex-4x2-6.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-hex-4x2-6.png
 
   7. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-7.txt>`__
+     <../solutions/one-sided-polytrigs-123-hex-4x2-7.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-hex-4x2-7.png
 
   8. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-8.txt>`__
+     <../solutions/one-sided-polytrigs-123-hex-4x2-8.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-hex-4x2-8.png
 
   9. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-9.txt>`__
+     <../solutions/one-sided-polytrigs-123-hex-4x2-9.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-hex-4x2-9.png
 
   10. `solutions incomplete
-      <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-10.txt>`__
+      <../solutions/one-sided-polytrigs-123-hex-4x2-10.txt>`__
 
       .. image:: images/one-sided-polytrigs-123-hex-4x2-10.png
 
   11. `solutions incomplete
-      <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-hex-4x2-11.txt>`__
+      <../solutions/one-sided-polytrigs-123-hex-4x2-11.txt>`__
 
       .. image:: images/one-sided-polytrigs-123-hex-4x2-11.png
 
 * 8x3 trapezoids, with various holes:
 
   1. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-trapezoid-8x3-1.txt>`__
+     <../solutions/one-sided-polytrigs-123-trapezoid-8x3-1.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-trapezoid-8x3-1.png
 
   2. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-trapezoid-8x3-2.txt>`__
+     <../solutions/one-sided-polytrigs-123-trapezoid-8x3-2.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-trapezoid-8x3-2.png
 
   3. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-trapezoid-8x3-3.txt>`__
+     <../solutions/one-sided-polytrigs-123-trapezoid-8x3-3.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-trapezoid-8x3-3.png
 
   4. `solutions incomplete
-     <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-trapezoid-8x3-4.txt>`__
+     <../solutions/one-sided-polytrigs-123-trapezoid-8x3-4.txt>`__
 
      .. image:: images/one-sided-polytrigs-123-trapezoid-8x3-4.png
 
 * 9x1 chevron: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-polytrigs-123-chevron-9x1.txt>`__
+  <../solutions/one-sided-polytrigs-123-chevron-9x1.txt>`__
 
   .. image:: images/one-sided-polytrigs-123-chevron-9x1.png
 

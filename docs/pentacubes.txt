@@ -38,19 +38,19 @@ are possible however:
    * - .. figure:: images/pentacubes-5x5x6-tower-1.png
 
           Tower 1: `solutions incomplete
-          <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-1.txt>`__
+          <../solutions/pentacubes-5x5x6-tower-1.txt>`__
           (`X3D model <images/pentacubes-5x5x6-tower-1.x3d>`__)
 
      - .. figure:: images/pentacubes-5x5x6-tower-2.png
 
           Tower 2: `solutions incomplete
-          <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-2.txt>`__
+          <../solutions/pentacubes-5x5x6-tower-2.txt>`__
           (`X3D model <images/pentacubes-5x5x6-tower-2.x3d>`__)
 
      - .. figure:: images/pentacubes-5x5x6-tower-3.png
 
           Tower 3: `solutions incomplete
-          <http://puzzler.sf.net/solutions/pentacubes-5x5x6-tower-3.txt>`__
+          <../solutions/pentacubes-5x5x6-tower-3.txt>`__
           (`X3D model <images/pentacubes-5x5x6-tower-3.x3d>`__)
 
 
@@ -65,13 +65,13 @@ Open Boxes
    * - .. figure:: images/pentacubes-5x7x7-open-box.png
 
           5x7x7 Open Box: `solutions incomplete
-          <http://puzzler.sf.net/solutions/pentacubes-5x7x7-open-box.txt>`__
+          <../solutions/pentacubes-5x7x7-open-box.txt>`__
           (`X3D model <images/pentacubes-5x7x7-open-box.x3d>`__)
 
      - .. figure:: images/pentacubes-3x9x9-open-box.png
 
           3x9x9 Open Box: `solutions incomplete
-          <http://puzzler.sf.net/solutions/pentacubes-3x9x9-open-box.txt>`__
+          <../solutions/pentacubes-3x9x9-open-box.txt>`__
           (`X3D model <images/pentacubes-3x9x9-open-box.x3d>`__)
 
 
@@ -84,25 +84,25 @@ Highrise Towers
    * - .. figure:: images/pentacubes-3x3x20-tower-1.png
 
           3x3x20 Tower 1 (suggested by Nick Maeder): `solutions incomplete
-          <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-1.txt>`__
+          <../solutions/pentacubes-3x3x20-tower-1.txt>`__
           (`X3D model <images/pentacubes-3x3x20-tower-1.x3d>`__)
 
      - .. figure:: images/pentacubes-3x3x20-tower-2.png
 
           3x3x20 Tower 2 (suggested by Nick Maeder): `solutions incomplete
-          <http://puzzler.sf.net/solutions/pentacubes-3x3x20-tower-2.txt>`__
+          <../solutions/pentacubes-3x3x20-tower-2.txt>`__
           (`X3D model <images/pentacubes-3x3x20-tower-2.x3d>`__)
 
      - .. figure:: images/pentacubes-3x3x17-tower.png
 
           3x3x17 Tower: `solutions incomplete
-          <http://puzzler.sf.net/solutions/pentacubes-3x3x17-tower.txt>`__
+          <../solutions/pentacubes-3x3x17-tower.txt>`__
           (`X3D model <images/pentacubes-3x3x17-tower.x3d>`__)
 
      - .. figure:: images/pentacubes-3x3x19-crystal-tower.png
 
           3x3x19 Crystal Tower: `solutions incomplete
-          <http://puzzler.sf.net/solutions/pentacubes-3x3x19-crystal-tower.txt>`__
+          <../solutions/pentacubes-3x3x19-crystal-tower.txt>`__
           (`X3D model <images/pentacubes-3x3x19-crystal-tower.x3d>`__)
 
 
@@ -110,13 +110,13 @@ Cubbyholes
 ----------
 
 * 5x7x5 cubbyholes: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-5x7x5-cubbyholes.txt>`__
+  <../solutions/pentacubes-5x7x5-cubbyholes.txt>`__
   (`X3D model <images/pentacubes-5x7x5-cubbyholes.x3d>`__)
 
   .. image:: images/pentacubes-5x7x5-cubbyholes.png
 
 * 9x9x5 cubbyholes: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-9x9x5-cubbyholes.txt>`__
+  <../solutions/pentacubes-9x9x5-cubbyholes.txt>`__
   (`X3D model <images/pentacubes-9x9x5-cubbyholes.x3d>`__)
 
   .. image:: images/pentacubes-9x9x5-cubbyholes.png
@@ -127,39 +127,39 @@ Misc
 
 * 2x11x11 frame (11x11 square bottom layer with 7x7 square frame on
   top): `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-2x11x11-frame.txt>`__
+  <../solutions/pentacubes-2x11x11-frame.txt>`__
   (`X3D model <images/pentacubes-2x11x11-frame.x3d>`__)
 
   .. image:: images/pentacubes-2x11x11-frame.png
 
 * Corner crystal (one empty cube is hidden in the corner; puzzle
   suggested by Nick Maeder): `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-corner-crystal.txt>`__
+  <../solutions/pentacubes-corner-crystal.txt>`__
   (`X3D model <images/pentacubes-corner-crystal.x3d>`__)
 
   .. image:: images/pentacubes-corner-crystal.png
 
 * Nine slices: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-nine-slices.txt>`__
+  <../solutions/pentacubes-nine-slices.txt>`__
   (`X3D model <images/pentacubes-nine-slices.x3d>`__)
 
   .. image:: images/pentacubes-nine-slices.png
 
 * Great wall: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-great-wall.txt>`__
+  <../solutions/pentacubes-great-wall.txt>`__
   (`X3D model <images/pentacubes-great-wall.x3d>`__)
 
   .. image:: images/pentacubes-great-wall.png
 
 * 5x9x9 fortress (suggestion by & solutions from Nick Maeder):
   `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-5x9x9-fortress.txt>`__
+  <../solutions/pentacubes-5x9x9-fortress.txt>`__
   (`X3D model <images/pentacubes-5x9x9-fortress.x3d>`__)
 
   .. image:: images/pentacubes-5x9x9-fortress.png
 
 * 3x9x9 mound: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-3x9x9-mound.txt>`__
+  <../solutions/pentacubes-3x9x9-mound.txt>`__
   (`X3D model <images/pentacubes-3x9x9-mound.x3d>`__)
 
   .. image:: images/pentacubes-3x9x9-mound.png
@@ -169,13 +169,13 @@ Misc
   .. image:: images/pentacubes-9x9x9-octahedral-planes.png
 
 * 2x13x13 diamond frame: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-2x13x13-diamond-frame.txt>`__
+  <../solutions/pentacubes-2x13x13-diamond-frame.txt>`__
   (`X3D model <images/pentacubes-2x13x13-diamond-frame.x3d>`__)
 
   .. image:: images/pentacubes-2x13x13-diamond-frame.png
 
 * 2x3x2 chair (suggestion from Nick Maeder): `17 solutions
-  <http://puzzler.sf.net/solutions/pentacubes-2x3x2-chair.txt>`__
+  <../solutions/pentacubes-2x3x2-chair.txt>`__
   (`X3D model <images/pentacubes-2x3x2-chair.x3d>`__).  Each solution
   uses only two pentacubes out of 29, and only 17 combinations (out of
   406) produce solutions.
@@ -183,13 +183,13 @@ Misc
   .. image:: images/pentacubes-2x3x2-chair.png
 
 * 11x11x5 pyramid with base: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-11x11x5-pyramid.txt>`__
+  <../solutions/pentacubes-11x11x5-pyramid.txt>`__
   (`X3D model <images/pentacubes-11x11x5-pyramid.x3d>`__)
 
   .. image:: images/pentacubes-11x11x5-pyramid.png
 
 * 7x7x5 block: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-7x7x5-block.txt>`__
+  <../solutions/pentacubes-7x7x5-block.txt>`__
   (`X3D model <images/pentacubes-7x7x5-block.x3d>`__)
 
   .. image:: images/pentacubes-7x7x5-block.png
@@ -212,25 +212,25 @@ Solids
 ------
 
 - 5x5x6: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-plus-5x5x6.txt>`__
+  <../solutions/pentacubes-plus-5x5x6.txt>`__
   (`X3D model <images/pentacubes-plus-5x5x6.x3d>`__)
 
   .. image:: images/pentacubes-plus-5x5x6.png
 
 - 3x5x10: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-plus-3x5x10.txt>`__
+  <../solutions/pentacubes-plus-3x5x10.txt>`__
   (`X3D model <images/pentacubes-plus-3x5x10.x3d>`__)
 
   .. image:: images/pentacubes-plus-3x5x10.png
 
 - 2x5x15: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-plus-2x5x15.txt>`__
+  <../solutions/pentacubes-plus-2x5x15.txt>`__
   (`X3D model <images/pentacubes-plus-2x5x15.x3d>`__)
 
   .. image:: images/pentacubes-plus-2x5x15.png
 
 - 2x3x25: `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-plus-2x3x25.txt>`__
+  <../solutions/pentacubes-plus-2x3x25.txt>`__
   (`X3D model <images/pentacubes-plus-2x3x25.x3d>`__)
 
   .. image:: images/pentacubes-plus-2x3x25.png
@@ -258,19 +258,19 @@ Solids
 ------
 
 - 2x5x14: `solutions incomplete
-  <http://puzzler.sf.net/solutions/non-convex-pentacubes-2x5x14.txt>`__
+  <../solutions/non-convex-pentacubes-2x5x14.txt>`__
   (`X3D model <images/non-convex-pentacubes-2x5x14.x3d>`__)
 
   .. image:: images/non-convex-pentacubes-2x5x14.png
 
 - 2x7x10: `solutions incomplete
-  <http://puzzler.sf.net/solutions/non-convex-pentacubes-2x7x10.txt>`__
+  <../solutions/non-convex-pentacubes-2x7x10.txt>`__
   (`X3D model <images/non-convex-pentacubes-2x7x10.x3d>`__)
 
   .. image:: images/non-convex-pentacubes-2x7x10.png
 
 - 4x5x7: `solutions incomplete
-  <http://puzzler.sf.net/solutions/non-convex-pentacubes-4x5x7.txt>`__
+  <../solutions/non-convex-pentacubes-4x5x7.txt>`__
   (`X3D model <images/non-convex-pentacubes-4x5x7.x3d>`__)
 
   .. image:: images/non-convex-pentacubes-4x5x7.png
@@ -280,14 +280,14 @@ Misc
 ----
 
 - Zigzag 1 (suggested by Robert Trietsch): `solutions incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-zigzag-1.txt>`__
+  <../solutions/pentacubes-zigzag-1.txt>`__
   (`X3D model <images/pentacubes-zigzag-1.x3d>`__)
 
   .. image:: images/pentacubes-zigzag-1.png
 
 - Zigzag 2 (a symmetrical variation of zigzag 1 above): `solutions
   incomplete
-  <http://puzzler.sf.net/solutions/pentacubes-zigzag-2.txt>`__ (`X3D
+  <../solutions/pentacubes-zigzag-2.txt>`__ (`X3D
   model <images/pentacubes-zigzag-2.x3d>`__)
 
   .. image:: images/pentacubes-zigzag-2.png

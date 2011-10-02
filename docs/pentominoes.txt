@@ -27,22 +27,22 @@ Rectangles
 ----------
 
 - 3x20: `2 solutions
-  <http://puzzler.sf.net/solutions/pentominoes-3x20.txt>`__
+  <../solutions/pentominoes-3x20.txt>`__
 
   .. image:: images/pentominoes-3x20.png
 
 - 4x15: `368 solutions
-  <http://puzzler.sf.net/solutions/pentominoes-4x15.txt>`__
+  <../solutions/pentominoes-4x15.txt>`__
 
   .. image:: images/pentominoes-4x15.png
 
 - 5x12: `1010 solutions
-  <http://puzzler.sf.net/solutions/pentominoes-5x12.txt>`__
+  <../solutions/pentominoes-5x12.txt>`__
 
   .. image:: images/pentominoes-5x12.png
 
 - 6x10: `2339 solutions
-  <http://puzzler.sf.net/solutions/pentominoes-6x10.txt>`__
+  <../solutions/pentominoes-6x10.txt>`__
 
   .. image:: images/pentominoes-6x10.png
 
@@ -54,20 +54,20 @@ Misc
   (same as the 3x20 rectangle; the V piece forces a partition)
 
 * 3x20 tube (3x20 rectangle joined at the long edges): `solutions
-  incomplete <http://puzzler.sf.net/solutions/pentominoes-3x20-tube.txt>`__
+  incomplete <../solutions/pentominoes-3x20-tube.txt>`__
 
 * 8x8 square with a central 2x2 hole: `65 solutions
-  <http://puzzler.sf.net/solutions/pentominoes-8x8.txt>`__
+  <../solutions/pentominoes-8x8.txt>`__
 
   .. image:: images/pentominoes-8x8.png
 
 * 8x8 square with missing corners: `2170 solutions
-  <http://puzzler.sf.net/solutions/pentominoes-8x8-corners.txt>`__
+  <../solutions/pentominoes-8x8-corners.txt>`__
 
   .. image:: images/pentominoes-8x8-corners.png
 
 * 3x21 rectangle with holes: `6 solutions
-  <http://puzzler.sf.net/solutions/pentominoes-3x21.txt>`__ (an
+  <../solutions/pentominoes-3x21.txt>`__ (an
   example puzzle from `How to Extend Polyform Puzzler <extend.html>`_)
 
   .. image:: images/pentominoes-3x21.png
@@ -85,22 +85,22 @@ Rectangles
 ----------
 
 - 3x30: `46 solutions
-  <http://puzzler.sf.net/solutions/one-sided-pentominoes-3x30.txt>`__
+  <../solutions/one-sided-pentominoes-3x30.txt>`__
 
   .. image:: images/one-sided-pentominoes-3x30.png
 
 - 5x18: 686,628 solutions (`incomplete list
-  <http://puzzler.sf.net/solutions/one-sided-pentominoes-5x18.txt>`__)
+  <../solutions/one-sided-pentominoes-5x18.txt>`__)
 
   .. image:: images/one-sided-pentominoes-5x18.png
 
 - 6x15: 2,567,183 solutions (`incomplete list
-  <http://puzzler.sf.net/solutions/one-sided-pentominoes-6x15.txt>`__)
+  <../solutions/one-sided-pentominoes-6x15.txt>`__)
 
   .. image:: images/one-sided-pentominoes-6x15.png
 
 - 9x10: 10,440,433 solutions (`incomplete list
-  <http://puzzler.sf.net/solutions/one-sided-pentominoes-9x10.txt>`__)
+  <../solutions/one-sided-pentominoes-9x10.txt>`__)
 
   .. image:: images/one-sided-pentominoes-9x10.png
 

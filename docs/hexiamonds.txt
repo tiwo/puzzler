@@ -28,12 +28,12 @@ Parallelograms
 --------------
 
 * 4x9: `74 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-4x9.txt>`__
+  <../solutions/hexiamonds-4x9.txt>`__
 
   .. image:: images/hexiamonds-4x9.png
 
 * 6x6: `156 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-6x6.txt>`__
+  <../solutions/hexiamonds-6x6.txt>`__
 
   .. image:: images/hexiamonds-6x6.png
 
@@ -44,39 +44,39 @@ Chevrons
 --------
 
 * 12x3: `29 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-chevron-12x3.txt>`__
+  <../solutions/hexiamonds-chevron-12x3.txt>`__
 
   .. image:: images/hexiamonds-chevron-12x3.png
 
 * 6x6: `1004 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-chevron-6x6.txt>`__
+  <../solutions/hexiamonds-chevron-6x6.txt>`__
 
   .. image:: images/hexiamonds-chevron-6x6.png
 
 * 4x9: `1004 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-chevron-4x9.txt>`__
+  <../solutions/hexiamonds-chevron-4x9.txt>`__
 
   .. image:: images/hexiamonds-chevron-4x9.png
 
 * Stacked chevrons 6x6: `933 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-stacked-chevrons-6x6.txt>`__
+  <../solutions/hexiamonds-stacked-chevrons-6x6.txt>`__
 
   Suggested by Dan Klarskov of Denmark, under the name "polyam2".
 
   .. image:: images/hexiamonds-stacked-chevrons-6x6.png
 
 * Stacked chevrons 12x3, 1: `269 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-stacked-chevrons-12x3-1.txt>`__
+  <../solutions/hexiamonds-stacked-chevrons-12x3-1.txt>`__
 
   .. image:: images/hexiamonds-stacked-chevrons-12x3-1.png
 
 * Stacked chevrons 12x3, 2: `114 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-stacked-chevrons-12x3-2.txt>`__
+  <../solutions/hexiamonds-stacked-chevrons-12x3-2.txt>`__
 
   .. image:: images/hexiamonds-stacked-chevrons-12x3-2.png
 
 * Stacked chevrons 12x3, 3: `46 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-stacked-chevrons-12x3-3.txt>`__
+  <../solutions/hexiamonds-stacked-chevrons-12x3-3.txt>`__
 
   .. image:: images/hexiamonds-stacked-chevrons-12x3-3.png
 
@@ -85,32 +85,32 @@ Misc
 ----
 
 * 4x11 trapezium: `76 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-4x11-trapezium.txt>`__
+  <../solutions/hexiamonds-4x11-trapezium.txt>`__
 
   .. image:: images/hexiamonds-4x11-trapezium.png
 
 * 4x10 elongated hexagon (clipped parallelogram): `856 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-4x10-long-hex.txt>`__
+  <../solutions/hexiamonds-4x10-long-hex.txt>`__
 
   .. image:: images/hexiamonds-4x10-long-hex.png
 
 * 5x8 stacked long hexagons: `378 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-5x8-stacked-long-hexagons.txt>`__
+  <../solutions/hexiamonds-5x8-stacked-long-hexagons.txt>`__
 
   .. image:: images/hexiamonds-5x8-stacked-long-hexagons.png
 
 * 4x12 stacked hexagons: `51 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-4x12-stacked-hexagons.txt>`__
+  <../solutions/hexiamonds-4x12-stacked-hexagons.txt>`__
 
   .. image:: images/hexiamonds-4x12-stacked-hexagons.png
 
 * 5x8 stacked long butterflies: `290 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-5x8-stacked-long-butterflies.txt>`__
+  <../solutions/hexiamonds-5x8-stacked-long-butterflies.txt>`__
 
   .. image:: images/hexiamonds-5x8-stacked-long-butterflies.png
 
 * 4x12 stacked butterflies: `26 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-4x12-stacked-butterflies.txt>`__
+  <../solutions/hexiamonds-4x12-stacked-butterflies.txt>`__
 
   All the solutions are also solutions to the 4x12 stacked hexagons
   above, merely by rearranging the sections.  In fact, the sample
@@ -121,49 +121,49 @@ Misc
 * Snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
   "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`__): `55
   solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-snowflake.txt>`__
+  <../solutions/hexiamonds-snowflake.txt>`__
 
   .. image:: images/hexiamonds-snowflake.png
 
 * Ring 2 (8-unit hexagon with 4-unit hexagonal hole offset one unit
   from the center): `11 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-ring-2.txt>`__ (no
+  <../solutions/hexiamonds-ring-2.txt>`__ (no
   solutions for the ring with a centered hole)
 
   .. image:: images/hexiamonds-ring-2.png
 
 * Crescent (8-unit hexagon with a 4-unit hexagonal bite removed from
   one corner): `87 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-crescent.txt>`__
+  <../solutions/hexiamonds-crescent.txt>`__
 
   .. image:: images/hexiamonds-crescent.png
 
 * Crescent 2 (8-unit hexagon with a 4-unit hexagonal bite removed from
   one side): `2 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-crescent-2.txt>`__
+  <../solutions/hexiamonds-crescent-2.txt>`__
 
   .. image:: images/hexiamonds-crescent-2.png
 
 * 6x8 "coin" (elongated hexagon with central hexagonal hole):
   `304 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-coin.txt>`__
+  <../solutions/hexiamonds-coin.txt>`__
 
   .. image:: images/hexiamonds-coin.png
 
 * Trefoil (3 joined hexagons): `640 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-trefoil.txt>`__
+  <../solutions/hexiamonds-trefoil.txt>`__
 
   .. image:: images/hexiamonds-trefoil.png
 
 * Irregular hexagon 7x8: `5885 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-irregular-hexagon-7x8.txt>`__
+  <../solutions/hexiamonds-irregular-hexagon-7x8.txt>`__
 
   Suggested by Dan Klarskov of Denmark, under the name "hexui".
 
   .. image:: images/hexiamonds-irregular-hexagon-7x8.png
 
 * Tenyo's puzzle: `4968 solutions
-  <http://puzzler.sf.net/solutions/hexiamonds-tenyo.txt>`__
+  <../solutions/hexiamonds-tenyo.txt>`__
 
   This is the configuration used by the `hexiamond PlaPuzzle`__
   produced by `Tenyo Inc. of Japan`__.
@@ -180,7 +180,7 @@ One-Sided Hexiamonds
 * O'Beirne's hexiamond hexagon (19 small 6-triangle hexagons, arranged
   in a hexagon on a honeycomb grid: 1 hexagon surrounded by 6 hexagons
   surrounded by 12 in concentric rings): `124,519 solutions
-  <http://puzzler.sf.net/solutions/one-sided-hexiamonds-obeirnes-hexagon.txt>`__
+  <../solutions/one-sided-hexiamonds-obeirnes-hexagon.txt>`__
 
   The number of solutions and their distribution amongst sub-puzzles
   agrees with what is reported in `Dancing Links`_ by Donald E. Knuth.
@@ -194,7 +194,7 @@ One-Sided Hexiamonds
   .. image:: images/one-sided-hexiamonds-obeirnes-hexagon.png
 
 * Long hexagon 8x3/11x6: `solutions incomplete
-  <http://puzzler.sf.net/solutions/one-sided-hexiamonds-long-hexagon-8x3.txt>`__
+  <../solutions/one-sided-hexiamonds-long-hexagon-8x3.txt>`__
 
   .. image:: images/one-sided-hexiamonds-long-hexagon-8x3.png
 
