@@ -1111,6 +1111,20 @@ class Pentominoes8x8WithoutCorners(Pentominoes):
                 yield coordsys.Cartesian2D((x, y))
 
 
+class PentominoesPlusSquareTetromino8x8(Pentominoes):
+
+    """16146 solutions"""
+
+    height = 8
+    width = 8
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+        self.piece_data['S'] = (((1, 0), (0, 1), (1, 1)), {})
+        self.piece_colors['S'] = 'gray'
+
+
 class OneSidedPentominoes(OneSidedLowercaseMixin, Pentominoes):
 
     def format_solution(self, solution,  normalized=True, **kwargs):

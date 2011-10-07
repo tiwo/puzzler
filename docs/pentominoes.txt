@@ -16,6 +16,9 @@
 
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
+   |
+   | `Gerard Putter's Polyomino Solver page
+     <http://gp.home.xs4all.nl/Site/Polyomino_Solver.html>`__
 
 .. contents::
 
@@ -60,6 +63,11 @@ Misc
   <../solutions/pentominoes-8x8.txt>`__
 
   .. image:: images/pentominoes-8x8.png
+
+* 8x8 square with a free 2x2 square tetromino: `16146 solutions
+  <../solutions/pentominoes-plus-square-tetromino-8x8.txt>`__
+
+  .. image:: images/pentominoes-plus-square-tetromino-8x8.png
 
 * 8x8 square with missing corners: `2170 solutions
   <../solutions/pentominoes-8x8-corners.txt>`__
