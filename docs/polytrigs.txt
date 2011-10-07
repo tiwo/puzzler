@@ -27,7 +27,7 @@ unwieldy, especially when combined with order-prefixes (mono-, di-,
 tri-, tetra-, etc.; "triangular tristicks"!?).  I hope the name
 catches on.
 
-    If the square polysticks dont get the respect they deserve, this
+    If the square polysticks don't get the respect they deserve, this
     is doubly true for the triangular polysticks.
 
     -- Alexandre Owen Muñiz, `Puzzle Zapper Blog
