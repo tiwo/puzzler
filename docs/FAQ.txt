@@ -202,8 +202,9 @@ square, and the hexagon.  Other polygons can be used though.  With a
 given polygon, the set of polyforms of order *N* is defined by
 constructing all possible combinations of *N* copies of that polygon,
 joined edge to edge, without overlapping.  Duplicates (from rotation
-or reflection) are typically ignored, although some puzzles explicitly
-treat reflections separately ("one-sided").
+or reflection) are typically ignored (the "free polyforms"), although
+some puzzles explicitly treat reflections separately ("one-sided
+polyforms").
 
 For example, 5 squares can be combined in 12 different ways, resulting
 in the "pentominoes":
@@ -791,10 +792,11 @@ problems.  Briefly, to solve an exact cover problem, given a matrix of
 exactly one 1 in each column.  To find every solution we must find all
 such sets of rows.
 
-We construct a two-dimensional matrix with named columns.  The column
-names consist of the puzzle piece names, then the coordinates of the
-solution space.  For example, in a puzzle with three pieces to be
-placed in a 3x3 grid, we'd have 12 columns::
+We construct a two-dimensional matrix with named columns.  The first
+row consists of the column names: first the puzzle piece names, then
+the coordinates of the solution space as text strings.  For example,
+in a puzzle with three pieces to be placed in a 3x3 grid, we'd have 12
+columns::
 
     A  B  C    0,0  1,0  2,0    0,1  1,1  2,1    0,2  1,2  2,2
 
@@ -807,10 +809,27 @@ would create this row in the matrix::
 
     1  0  0    1  0  0    1  1  0    0  0  0
 
+.. note:: Polyform Puzzler doesn't actually use 1s in its internal
+   matrices, it uses the column titles (the piece names and coordinate
+   strings) instead.  For example, the row above is actually
+   represented in the internal matrix as follows::
+
+       ['A', 0, 0, '0,0', 0, 0, '0,1', '1,1', 0, 0, 0, 0]
+
+   This redundancy makes debugging easier, makes individual rows
+   intelligible without having to refer to the header row, and is a
+   shortcut when reporting solutions.
+
+   Polyform Puzzler is written using the Python programming language,
+   and in Python any non-zero number or non-empty text string (even a
+   text string like '0,0' or even '0') is the equivalent of a "True"
+   boolean value, equivalent to the number 1.  This representation
+   doesn't affect the operation of the exact cover algorithm.
+
 Once all the rows have been constructed (there may be many), the
 solutions can be found by identifying sets of rows that, combined,
-have exactly one 1 in each column.  For example, this is one such
-solution::
+have exactly one 1 (or equivalent) in each column.  For example, this
+is one such solution::
 
     1  0  0    1  0  0    1  1  0    0  0  0
     0  1  0    0  1  1    0  0  1    0  0  0
