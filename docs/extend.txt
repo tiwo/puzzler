@@ -19,6 +19,11 @@
 
    __ https://lists.sourceforge.net/mailman/listinfo/puzzler-users
 
+.. sidebar:: Also see:
+
+   | `Polyform Puzzler FAQ <FAQ.html>`_
+   | `Puzzles & Solutions <puzzles.html>`_
+
 .. contents::
 
 

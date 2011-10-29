@@ -1,6 +1,6 @@
-================================
- Polysticks Puzzles & Solutions
-================================
+=================================
+ Polysticks: Puzzles & Solutions
+=================================
 
 :Author: David Goodger <goodger@python.org>
 :Date: $Date$
@@ -15,8 +15,11 @@
 .. sidebar:: Also see:
 
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
-   | `Polytrigs (Triangular Polysticks) Puzzles & Solutions <polytrigs.html>`_
+   | `Polytrigs (Triangular-Grid Polysticks) Puzzles & Solutions <polytrigs.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
+   |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+       `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+       `interpreting solution files <FAQ.html#how-should-polystick-solution-files-be-interpreted>`__)
 
 .. contents::
 
@@ -67,22 +70,54 @@ One-Sided Tetrasticks
 9 of the 16 tetrasticks are asymmetrical, therefore there are 25
 one-sided tetrasticks.
 
-* 5x5 diamond lattice: 107 solutions (none calculated yet though)
+* 5x5 diamond lattice: `107 solutions
+  <../solutions/one-sided-tetrasticks-5x5-diamond-lattice.txt>`__
 
   .. image:: images/one-sided-tetrasticks-5x5-diamond-lattice.png
 
-  All 107 non-isomorphic solutions are listed in "Covering the Aztec
-  Diamond with One-sided Tetrasticks, Extended Version", by `Alfred
-  Wassermann`_, University of Bayreuth.  The solution above is number
-  9 in Wassermann's paper.  (Wassermann, and Knuth before him,
-  mistakenly called the shape an "aztec diamond", but an `aztec
-  diamond is a subtly different shape`__.  This puzzle actually
-  corresponds to a `centered square number`__.)
+  Calculating all 107 non-isomorphic solutions took approximately **11
+  weeks** using one core of a 2.66GHz Intel Core 2 Duo E6750 CPU
+  (Python 2.6.6, Windows XP) on an otherwise idle and always-on
+  machine.  The calculated solutions correspond to those listed in
+  `"Covering the Aztec Diamond with One-sided Tetrasticks, Extended
+  Version", by Alfred Wassermann, University of Bayreuth`__.
+  (Wassermann, and Knuth before him, mistakenly called the shape an
+  "aztec diamond", but an `aztec diamond is a subtly different
+  shape`__.  This puzzle actually corresponds to a `centered square
+  number`__.)
 
+  __ http://did.mat.uni-bayreuth.de/~alfred/home/index.html
   __ http://mathworld.wolfram.com/AztecDiamond.html
   __ http://mathworld.wolfram.com/CenteredSquareNumber.html
-  .. _Alfred Wassermann:
-     http://did.mat.uni-bayreuth.de/~alfred/home/index.html
+
+  The solution above is number 9 in Wassermann's paper, and number 58
+  in the `Polyform Puzzler solutions`__.  Both Wassermann's and the
+  Polyform Puzzler solution sets are split into six sub-puzzles by
+  position of the "X" piece, and correspond as follows:
+
+  ================  ==========  =========
+  X-Position (sub-puzzle)
+  ----------------------------  ---------
+  Polyform Puzzler  Wassermann  Solutions
+  ================  ==========  =========
+  A (symmetrical)   6           19
+  B                 5           36
+  C (symmetrical)   2           11
+  D                 4           19
+  E                 1           15
+  F                 3           7
+  ================  ==========  =========
+
+  __ ../solutions/one-sided-tetrasticks-5x5-diamond-lattice.txt
+
+  Note: The Polyform Puzzler order for the X-positions is in
+  increasing distance from the center of the puzzle.  Wassermann's
+  order is as follows: with all X-piece possitions in the upper-left
+  quadrant in two horizontal rows (rotate the diagrams in the paper
+  90° clockwise), ordered from left to right, top to bottom.
+  Symmetrical X-positions (X-piece on the diagonal) have the I-piece
+  limited to horizontal for both Polyform Puzzler and Wassermann (when
+  rotated as noted above).
 
 * 8x8 grid with center hole: `solutions incomplete
   <../solutions/one-sided-tetrasticks-8x8-center-hole.txt>`__

@@ -19,14 +19,14 @@
 .. image:: images/puzzler.png
    :align: center
 
+.. sidebar:: Also see:
+
+   | `Puzzles & Solutions <puzzles.html>`_
+   | `How to Extend Polyform Puzzler <extend.html>`_
+   | `To do list <todo.html>`_
+
 .. sectnum::
 .. contents::
-
-Related documents:
-
-* `Puzzles & Solutions <puzzles.html>`_
-* `How to Extend Polyform Puzzler <extend.html>`_
-* `To do list <todo.html>`_
 
 
 The Project
@@ -195,6 +195,11 @@ According to the `Wikipedia definition`_,
     a polyform is a plane figure constructed by joining together
     identical basic polygons
 
+`Wolfram MathWorld's definition`_:
+
+    A plane figure or solid consisting of multiple connected copies of
+    a given base shape.
+
 `Regular polygons`_ which `tile the plane`_ (fill, without gaps or
 overlap; a tessellation_) are the most satisfying basic polygons for
 polyform puzzles, and there are three: the equilateral triangle, the
@@ -207,7 +212,7 @@ some puzzles explicitly treat reflections separately ("one-sided
 polyforms").
 
 For example, 5 squares can be combined in 12 different ways, resulting
-in the "pentominoes":
+in the "pentominoes_":
 
 .. figure:: images/pentominoes.png
 
@@ -238,9 +243,11 @@ like line segments of a grid (polysticks & polytrigs).  The sky's the
 limit!
 
 .. _Wikipedia definition: http://en.wikipedia.org/wiki/Polyform
+.. _Wolfram MathWorld's definition: http://mathworld.wolfram.com/Polyform.html
 .. _regular polygons: http://mathworld.wolfram.com/RegularPolygon.html
 .. _tile the plane: http://mathworld.wolfram.com/Tiling.html
 .. _tessellation: http://mathworld.wolfram.com/Tessellation.html
+.. _pentominoes: pentominoes.html
 .. _can find them all: ../solutions/pentominoes-6x10.txt
 .. _regular (Platonic) solids: http://mathworld.wolfram.com/PlatonicSolid.html
 .. _fill space: http://mathworld.wolfram.com/Space-FillingPolyhedron.html
@@ -275,12 +282,17 @@ ones.  Polyform families are given descriptive names:
 
      3 |x| 30 One-Sided Pentominoes (46 solutions)
 
+  **In Polyform Puzzler:** `Pentomino Puzzles & Solutions <pentominoes.html>`_
+
 * Substituting a 3D cube for each 2D square in polyominoes results in
   "solid polyominoes" or "planar polycubes".  
 
   .. figure:: images/solid-pentominoes-3x4x5.png
 
      3 |x| 4 |x| 5 Solid Pentominoes (3940 solutions)
+
+  **In Polyform Puzzler:** `Solid Pentomino Puzzles & Solutions
+  <solid-pentominoes.html>`_
 
 * Polyforms based on cubes extending into 3 (or more!) dimensions are
   called "polycubes_".  The polycubes that are flat (only one cube
@@ -301,6 +313,11 @@ ones.  Polyform families are given descriptive names:
 
   ..  _Soma cubes: http://en.wikipedia.org/wiki/Soma_cube
 
+  **In Polyform Puzzler:**
+
+  * `Pentacube Puzzles & Solutions <pentacubes.html>`_
+  * `Polycube Puzzles & Solutions <polycubes.html>`_
+
 * Polyforms based on equilateral triangles are named "polyiamonds_"
   (from the "diamond", which is two triangles joined).
 
@@ -308,12 +325,22 @@ ones.  Polyform families are given descriptive names:
 
      4 |x| 10 Hexiamond Elongated Hexagon (856 solutions)
 
+  **In Polyform Puzzler:**
+
+  * `Hexiamond Puzzles & Solutions <hexiamonds.html>`_
+  * `Heptiamond Puzzles & Solutions <hexiamonds.html>`_
+
 * Polyforms based on regular hexagons are named "polyhexes_" (there's
   no clever etymology here).
 
   .. figure:: images/tetrahex-coin.png
 
      5 |x| 7 Tetrahex "Coin" (4 solutions)
+
+  **In Polyform Puzzler:**
+
+  * `Pentahex Puzzles & Solutions <pentahexes.html>`_
+  * `Polyhex Puzzles & Solutions <polyhexes.html>`_
 
 * Polyforms based on unit line segments joined end-to-end on a square
   grid are called "polysticks" [#polysticks]_ (a.k.a. "polyedges" or
@@ -326,16 +353,22 @@ ones.  Polyform families are given descriptive names:
 
      Polysticks of Order 1-4 in a 3 |x| 7 Diamond Lattice
 
+  **In Polyform Puzzler:** `Polystick Puzzles & Solutions
+  <polysticks.html>`_
+
 * Polyforms based on unit line segments joined end-to-end on a
-  triangular grid are called "polytrigs" (a.k.a. "triangular
+  triangular grid are called "polytrigs" (a.k.a. "triangular-grid
   polysticks" etc., but that's too long a name, so excuse the
-  neologism).  Polysticks are related to polyhexes: polysticks can be
+  neologism).  Polytrigs are related to polyhexes: polytrigs can be
   thought of as paths joining the centers of the hexagon units of
   polyhexes.
 
   .. figure:: images/polytrigs-123-4x3.png
 
      Polytrigs of Order 1-3 in a 4 |x| 3 Parallelogram
+
+  **In Polyform Puzzler:** `Polytrig Puzzles & Solutions
+  <polytrigs.html>`_
 
 .. [#polysticks] Brian R. Barwell, "Polysticks," `Journal of
    Recreational Mathematics` volume 22 issue 3 (1990), p.165-175
@@ -373,6 +406,11 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   This table also applies to solid polyominoes (planar polycubes).
 
+  **In Polyform Puzzler:**
+
+  * `Pentomino Puzzles & Solutions`_
+  * `Solid Pentomino Puzzles & Solutions`_
+
   .. _A000105: http://oeis.org/A000105
   .. _A000988: http://oeis.org/A000988
 
@@ -390,6 +428,11 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   7          heptiamond  24           43
   8          octiamond   66           120
   =========  ==========  ===========  =========
+
+  **In Polyform Puzzler:**
+
+  * `Hexiamond Puzzles & Solutions`_
+  * `Heptiamond Puzzles & Solutions`_
 
   .. _A000577: http://oeis.org/A000577
   .. _A006534: http://oeis.org/A006534
@@ -409,6 +452,12 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   .. [*] One hexahex contains a central hole (1 hexagon).  It is used
          for one of the "o" letters in this project's logo.
+
+  **In Polyform Puzzler:**
+
+  * `Pentahex Puzzles & Solutions`_
+  * `Polyhex Puzzles & Solutions`_
+
   .. _A000228: http://oeis.org/A000228
   .. _A006535: http://oeis.org/A006535
 
@@ -425,6 +474,11 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   6      hexacube    166
   =====  ==========  =========
 
+  **In Polyform Puzzler:**
+
+  * `Pentacube Puzzles & Solutions`_
+  * `Polycube Puzzles & Solutions`_
+
   .. _A000162: http://oeis.org/A000162
 
 * Polysticks (a.k.a. "polyedges"; A019988_, A151537_):
@@ -438,6 +492,8 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   4       tetrastick  16          25
   5       pentastick  55          99
   ======  ==========  ==========  =========
+
+  **In Polyform Puzzler:** `Polystick Puzzles & Solutions`_
 
   .. _A019988: http://oeis.org/A019988
   .. _A151537: http://oeis.org/A151537
@@ -455,6 +511,8 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   ======  =========  =========  =========
 
   "*" above means that pieces with enclosed holes exist.
+
+  **In Polyform Puzzler:** `Polytrig Puzzles & Solutions`_
 
   .. _A159867: http://oeis.org/A159867
   .. _A151539: http://oeis.org/A151539
@@ -635,6 +693,8 @@ squares joined::
     V T T T X Y F F F L
     V V V Y Y Y Y F L L
 
+**In Polyform Puzzler:** `Pentomino Puzzles & Solutions`_
+
 
 How should polycube solution files be interpreted?
 --------------------------------------------------
@@ -666,6 +726,12 @@ left wall is shown first, then the front wall, then the right wall,
 then the back wall.  The back wall is shown with the same orientation
 as the front wall.
 
+**In Polyform Puzzler:**
+
+* `Solid Pentomino Puzzles & Solutions`_
+* `Pentacube Puzzles & Solutions`_
+* `Polycube Puzzles & Solutions`_
+
 
 How should polyhex solution files be interpreted?
 -------------------------------------------------
@@ -692,6 +758,11 @@ with the Y-axis vertical and the X-axis sloping up::
     /  \__/
     \__/
 
+**In Polyform Puzzler:**
+
+* `Pentahex Puzzles & Solutions`_
+* `Polyhex Puzzles & Solutions`_
+
 
 How should polyiamond solution files be interpreted?
 ----------------------------------------------------
@@ -716,6 +787,11 @@ with the X-axis horizontal and the Y-axis sloping to the right::
       /   ____/  \____/   /  \_______\    /
      /   /        \       \          /   /
     /___/__________\_______\________/___/
+
+**In Polyform Puzzler:**
+
+* `Hexiamond Puzzles & Solutions`_
+* `Heptiamond Puzzles & Solutions`_
 
 
 How should polystick solution files be interpreted?
@@ -755,6 +831,8 @@ puzzle.  Lowercase piece names indicate flipped pieces in one-sided
 puzzles (asterisk ["*"] suffixes were used to show flipped pieces in
 earlier versions of Polyform Puzzler).
 
+**In Polyform Puzzler:** `Polystick Puzzles & Solutions`_
+
 
 How should polytrig solution files be interpreted?
 ---------------------------------------------------
@@ -778,6 +856,8 @@ and to the left.  Example::
     C3   /E3   /S3   /O3   /
      \ I3  \ E3  \ J3  \ O3
       \/_C3_\/_E3_\/_S3_\/
+
+**In Polyform Puzzler:** `Polytrig Puzzles & Solutions`_
 
 
 The Code

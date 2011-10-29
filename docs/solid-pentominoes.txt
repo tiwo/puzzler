@@ -1,6 +1,6 @@
-=======================================
- Solid Pentominoes Puzzles & Solutions
-=======================================
+========================================
+ Solid Pentominoes: Puzzles & Solutions
+========================================
 
 :Author: David Goodger <goodger@python.org>
 :Date: $Date$
@@ -18,6 +18,9 @@
    | `Polycubes <polycubes.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
+   |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+       `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+       `interpreting solution files <FAQ.html#how-should-polycube-solution-files-be-interpreted>`__)
 
 .. contents::
 

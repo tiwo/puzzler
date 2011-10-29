@@ -12,6 +12,12 @@
 :License: `GPL 2 <../COPYING.html>`__
 
 
+.. sidebar:: Also see:
+
+   | `Polyform Puzzler FAQ <FAQ.html>`_
+   | `Puzzles & Solutions <puzzles.html>`_
+
+
 General
 =======
 
