@@ -14,8 +14,9 @@
 
 .. sidebar:: Also see:
 
-   | `Solid Pentominoes <solid-pentominoes.html>`_
-   | `Polycubes <polycubes.html>`_
+   | `Pentominoes: Puzzles & Solutions <pentominoes.html>`_
+   | `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
+   | `Polycubes: Puzzles & Solutions <polycubes.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
    |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,

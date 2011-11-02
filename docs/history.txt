@@ -85,6 +85,8 @@ later is recommended.
 
   - Soma cubes: tunnel, screw, clip.
 
+  - Polycubes: Diabolical Cube & Nancy Sheldon's variations.
+
 * Added ``-n``/``--stop-after`` option.
 
 * Added SVG image generation support for polyominoes, polyiamonds,
@@ -132,6 +134,10 @@ later is recommended.
 * Added a second implementation of the exact cover solver,
   exact_cover_x2.py, based on `code by Ali Assaf
   <http://www.cs.mcgill.ca/~aassaf9/python/algorithm_x.html>`__.
+
+* Added the ability to report on the current search state (partial
+  solution), useful for long-running puzzles
+  (``-R``/``--report-search-state``).
 
 
 Release 1 (2006-08-08)

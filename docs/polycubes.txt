@@ -14,8 +14,9 @@
 
 .. sidebar:: Also see:
 
-   | `Solid Pentominoes <solid-pentominoes.html>`_
-   | `Pentacubes <pentacubes.html>`_
+   | `Pentominoes: Puzzles & Solutions <pentominoes.html>`_
+   | `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
+   | `Pentacubes: Puzzles & Solutions <pentacubes.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
    |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
@@ -45,7 +46,8 @@ Soma Cubes
 ==========
 
 `Soma Cubes`__ include all non-convex polycubes of order 3 and 4.
-Puzzles of various shapes have been implemented:
+They were invented by Piet Hein in 1933.  Puzzles of various shapes
+have been implemented:
 
 __ http://en.wikipedia.org/wiki/Soma_cube
 
@@ -141,5 +143,41 @@ __ http://en.wikipedia.org/wiki/Soma_cube
           Clip: `20 solutions
           <../solutions/soma-clip.txt>`__
           (`X3D model <images/soma-clip.x3d>`__)
+
+
+Diabolical Cube
+===============
+
+The Diabolical Cube puzzle dates from the 19th century, published in
+`Puzzles Old and New` by Professor L. Hoffmann, London 1893.  The
+puzzle contains one piece from each of the solid polyominoes of orders
+2 through 7 (i.e one solid domino, ..., one solid heptomino).  More
+info in `The Puzzling World of Polyhedral Dissections
+<http://www.johnrausch.com/PuzzlingWorld/chap03a.htm>`__.
+
+* Original: `13 solutions <../solutions/diabolical-cube.txt>`__
+  (`X3D model <images/diabolical-cube.x3d>`__)
+
+  .. image:: images/diabolical-cube.png
+
+* Nancy Sheldon's variations:
+
+  1. Replace the 'U' pentomino with a 'P' pentomino (lowers surface
+     area): `146 solutions <../solutions/sheldons-cube-1.txt>`__ (`X3D
+     model <images/sheldons-cube-1.x3d>`__)
+
+     .. image:: images/sheldons-cube-1.png
+
+  2. Replace the 'L' heptomino with a 'T' heptomino (increases
+     symmetry): `16 solutions <../solutions/sheldons-cube-2.txt>`__
+     (`X3D model <images/sheldons-cube-2.x3d>`__)
+
+     .. image:: images/sheldons-cube-2.png
+
+  3. Both substitutions combined (1 & 2 above):
+     `43 solutions <../solutions/sheldons-cube-3.txt>`__
+     (`X3D model <images/sheldons-cube-3.x3d>`__)
+
+     .. image:: images/sheldons-cube-3.png
 
 .. |c| unicode:: U+00A9 .. copyright sign
