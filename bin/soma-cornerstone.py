@@ -3,6 +3,7 @@
 
 """10 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.somacubes import SomaCornerstone
 
-puzzler.run(puzzler.puzzles.SomaCornerstone)
+puzzler.run(SomaCornerstone)

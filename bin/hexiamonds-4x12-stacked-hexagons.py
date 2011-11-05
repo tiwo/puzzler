@@ -3,6 +3,7 @@
 
 """51 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import Hexiamonds4x12StackedHexagons
 
-puzzler.run(puzzler.puzzles.Hexiamonds4x12StackedHexagons)
+puzzler.run(Hexiamonds4x12StackedHexagons)

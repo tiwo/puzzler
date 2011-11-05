@@ -3,6 +3,7 @@
 
 """ solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentominoes import OneSidedPentominoes6x15
 
-puzzler.run(puzzler.puzzles.OneSidedPentominoes6x15)
+puzzler.run(OneSidedPentominoes6x15)

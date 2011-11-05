@@ -3,6 +3,7 @@
 
 """66 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.somacubes import SomaCurvedWall
 
-puzzler.run(puzzler.puzzles.SomaCurvedWall)
+puzzler.run(SomaCurvedWall)

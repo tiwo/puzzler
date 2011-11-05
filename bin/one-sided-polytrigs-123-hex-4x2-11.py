@@ -5,6 +5,7 @@
 many solutions.
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.polytrigs123 import OneSidedPolytrigs123ElongatedHex4x2_11
 
-puzzler.run(puzzler.puzzles.OneSidedPolytrigs123ElongatedHex4x2_11)
+puzzler.run(OneSidedPolytrigs123ElongatedHex4x2_11)

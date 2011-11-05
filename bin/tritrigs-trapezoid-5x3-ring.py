@@ -5,6 +5,7 @@
 1 solution.
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.tritrigs import TritrigsTrapezoid5x3Ring
 
-puzzler.run(puzzler.puzzles.TritrigsTrapezoid5x3Ring)
+puzzler.run(TritrigsTrapezoid5x3Ring)

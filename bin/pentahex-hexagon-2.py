@@ -3,6 +3,7 @@
 
 """ solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentahexes import PentahexHexagon2
 
-puzzler.run(puzzler.puzzles.PentahexHexagon2)
+puzzler.run(PentahexHexagon2)

@@ -3,6 +3,7 @@
 
 """17 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentacubes import Pentacubes2x3x2Chair
 
-puzzler.run(puzzler.puzzles.Pentacubes2x3x2Chair)
+puzzler.run(Pentacubes2x3x2Chair)

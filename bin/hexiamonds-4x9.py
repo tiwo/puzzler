@@ -3,6 +3,7 @@
 
 """74 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import Hexiamonds4x9
 
-puzzler.run(puzzler.puzzles.Hexiamonds4x9)
+puzzler.run(Hexiamonds4x9)

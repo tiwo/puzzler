@@ -3,6 +3,7 @@
 
 """ solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import OneSidedHexiamondsOBeirnesHexagon
 
-puzzler.run(puzzler.puzzles.OneSidedHexiamondsOBeirnesHexagon)
+puzzler.run(OneSidedHexiamondsOBeirnesHexagon)

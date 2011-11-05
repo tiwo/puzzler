@@ -3,6 +3,7 @@
 
 """4968 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import HexiamondsTenyo
 
-puzzler.run(puzzler.puzzles.HexiamondsTenyo)
+puzzler.run(HexiamondsTenyo)

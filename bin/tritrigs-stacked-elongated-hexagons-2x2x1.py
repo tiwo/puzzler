@@ -5,6 +5,7 @@
 9 solutions.
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.tritrigs import TritrigsStackedElongatedHexagons2x2x1
 
-puzzler.run(puzzler.puzzles.TritrigsStackedElongatedHexagons2x2x1)
+puzzler.run(TritrigsStackedElongatedHexagons2x2x1)

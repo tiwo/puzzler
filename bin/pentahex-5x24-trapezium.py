@@ -3,6 +3,7 @@
 
 """ solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentahexes import Pentahex5x24Trapezium
 
-puzzler.run(puzzler.puzzles.Pentahex5x24Trapezium)
+puzzler.run(Pentahex5x24Trapezium)

@@ -50,7 +50,7 @@ defined and added.  Requires Python 2.5 or higher.""", # wrap at col 60
     'license': 'GPL 2',
     'platforms': 'OS-independent',
     'package_dir': {'puzzler': 'puzzler',},
-    'packages': ['puzzler',],
+    'packages': ['puzzler', 'puzzler.puzzles'],
     'scripts' : glob.glob('bin/*.py'),}
 """Distutils setup parameters."""
 

@@ -3,6 +3,7 @@
 
 """29 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import HexiamondsChevron_12x3
 
-puzzler.run(puzzler.puzzles.HexiamondsChevron_12x3)
+puzzler.run(HexiamondsChevron_12x3)

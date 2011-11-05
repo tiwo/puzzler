@@ -3,6 +3,7 @@
 
 """26 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.somacubes import SomaTunnel
 
-puzzler.run(puzzler.puzzles.SomaTunnel)
+puzzler.run(SomaTunnel)

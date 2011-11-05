@@ -3,6 +3,7 @@
 
 """368 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentominoes import Pentominoes4x15
 
-puzzler.run(puzzler.puzzles.Pentominoes4x15)
+puzzler.run(Pentominoes4x15)

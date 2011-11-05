@@ -3,6 +3,7 @@
 
 """many solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import OneSidedHexiamondsButterfly11x3
 
-puzzler.run(puzzler.puzzles.OneSidedHexiamondsButterfly11x3)
+puzzler.run(OneSidedHexiamondsButterfly11x3)

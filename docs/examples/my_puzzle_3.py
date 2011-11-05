@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
-import puzzler.puzzles
 import puzzler.coordsys
+from puzzler.puzzles.polyominoes import Pentominoes
 
 
-class MyPuzzle(puzzler.puzzles.Pentominoes):
+class MyPuzzle(Pentominoes):
 
     height = 3
     width = 21

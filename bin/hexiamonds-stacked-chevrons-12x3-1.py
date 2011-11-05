@@ -3,6 +3,7 @@
 
 """269 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import HexiamondsStackedChevrons_12x3_1
 
-puzzler.run(puzzler.puzzles.HexiamondsStackedChevrons_12x3_1)
+puzzler.run(HexiamondsStackedChevrons_12x3_1)

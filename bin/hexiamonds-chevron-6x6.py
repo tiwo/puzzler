@@ -3,6 +3,7 @@
 
 """1004 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import HexiamondsChevron_6x6
 
-puzzler.run(puzzler.puzzles.HexiamondsChevron_6x6)
+puzzler.run(HexiamondsChevron_6x6)

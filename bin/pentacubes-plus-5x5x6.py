@@ -3,6 +3,7 @@
 
 """ solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentacubes import PentacubesPlus5x5x6
 
-puzzler.run(puzzler.puzzles.PentacubesPlus5x5x6)
+puzzler.run(PentacubesPlus5x5x6)

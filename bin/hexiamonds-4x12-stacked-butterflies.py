@@ -3,6 +3,7 @@
 
 """26 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import Hexiamonds4x12StackedButterflies
 
-puzzler.run(puzzler.puzzles.Hexiamonds4x12StackedButterflies)
+puzzler.run(Hexiamonds4x12StackedButterflies)

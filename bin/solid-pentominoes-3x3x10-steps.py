@@ -3,6 +3,7 @@
 
 """9 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.solid_pentominoes import SolidPentominoes3x3x10Steps
 
-puzzler.run(puzzler.puzzles.SolidPentominoes3x3x10Steps)
+puzzler.run(SolidPentominoes3x3x10Steps)

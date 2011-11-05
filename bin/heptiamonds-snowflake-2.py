@@ -3,6 +3,7 @@
 
 """ solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.heptiamonds import HeptiamondsSnowflake2
 
-puzzler.run(puzzler.puzzles.HeptiamondsSnowflake2)
+puzzler.run(HeptiamondsSnowflake2)

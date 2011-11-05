@@ -3,6 +3,7 @@
 
 """ solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentacubes import Pentacubes3x3x17Tower
 
-puzzler.run(puzzler.puzzles.Pentacubes3x3x17Tower)
+puzzler.run(Pentacubes3x3x17Tower)

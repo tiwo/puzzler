@@ -3,6 +3,7 @@
 
 """1 solution"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.solid_pentominoes import SolidPentominoes6x6x6Crystal2
 
-puzzler.run(puzzler.puzzles.SolidPentominoes6x6x6Crystal2)
+puzzler.run(SolidPentominoes6x6x6Crystal2)

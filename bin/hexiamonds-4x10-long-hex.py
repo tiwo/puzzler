@@ -3,6 +3,7 @@
 
 """856 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import Hexiamonds4x10LongHexagon
 
-puzzler.run(puzzler.puzzles.Hexiamonds4x10LongHexagon)
+puzzler.run(Hexiamonds4x10LongHexagon)

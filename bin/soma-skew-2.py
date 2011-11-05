@@ -3,6 +3,7 @@
 
 """14 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.somacubes import SomaSkew2
 
-puzzler.run(puzzler.puzzles.SomaSkew2)
+puzzler.run(SomaSkew2)

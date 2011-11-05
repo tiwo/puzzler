@@ -5,6 +5,7 @@
 many solutions.
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.tritrigs import OneSidedTritrigsSemiRegularHexagon4x1
 
-puzzler.run(puzzler.puzzles.OneSidedTritrigsSemiRegularHexagon4x1)
+puzzler.run(OneSidedTritrigsSemiRegularHexagon4x1)

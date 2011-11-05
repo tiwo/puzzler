@@ -3,6 +3,7 @@
 
 """many solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.heptiamonds import HeptiamondsSemiregularHexagons6x2
 
-puzzler.run(puzzler.puzzles.HeptiamondsSemiregularHexagons6x2)
+puzzler.run(HeptiamondsSemiregularHexagons6x2)

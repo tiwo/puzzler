@@ -3,6 +3,7 @@
 
 """many solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.heptiamonds import HeptiamondsHexagram3
 
-puzzler.run(puzzler.puzzles.HeptiamondsHexagram3)
+puzzler.run(HeptiamondsHexagram3)

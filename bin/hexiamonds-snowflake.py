@@ -3,6 +3,7 @@
 
 """55 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import HexiamondsSnowflake
 
-puzzler.run(puzzler.puzzles.HexiamondsSnowflake)
+puzzler.run(HexiamondsSnowflake)

@@ -139,6 +139,9 @@ later is recommended.
   solution), useful for long-running puzzles
   (``-R``/``--report-search-state``).
 
+* Split the enormous puzzler/puzzles.py module into a package of
+  smaller modules, in puzzler/puzzles/.
+
 
 Release 1 (2006-08-08)
 ======================

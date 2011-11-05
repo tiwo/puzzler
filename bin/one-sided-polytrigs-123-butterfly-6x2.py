@@ -5,6 +5,7 @@
 many solutions.
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.polytrigs123 import OneSidedPolytrigs123Butterfly6x2
 
-puzzler.run(puzzler.puzzles.OneSidedPolytrigs123Butterfly6x2)
+puzzler.run(OneSidedPolytrigs123Butterfly6x2)

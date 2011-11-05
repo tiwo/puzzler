@@ -5,6 +5,7 @@
 many solutions.
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.tritrigs import OneSidedTritrigsTrapezoid7x3_2
 
-puzzler.run(puzzler.puzzles.OneSidedTritrigsTrapezoid7x3_2)
+puzzler.run(OneSidedTritrigsTrapezoid7x3_2)

@@ -3,6 +3,7 @@
 
 """? (many) solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.polyhexes12345 import Polyhex12345_5x30
 
-puzzler.run(puzzler.puzzles.Polyhex12345_5x30)
+puzzler.run(Polyhex12345_5x30)

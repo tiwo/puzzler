@@ -5,6 +5,7 @@
 ? solutions
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.polysticks1234 import Polysticks1234_3x7DiamondLattice
 
-puzzler.run(puzzler.puzzles.Polysticks1234_3x7DiamondLattice)
+puzzler.run(Polysticks1234_3x7DiamondLattice)

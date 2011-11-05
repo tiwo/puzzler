@@ -3,6 +3,7 @@
 
 """264 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.solid_pentominoes import SolidPentominoes2x5x6
 
-puzzler.run(puzzler.puzzles.SolidPentominoes2x5x6)
+puzzler.run(SolidPentominoes2x5x6)

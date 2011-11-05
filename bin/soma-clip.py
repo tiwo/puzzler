@@ -3,6 +3,7 @@
 
 """20 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.somacubes import SomaClip
 
-puzzler.run(puzzler.puzzles.SomaClip)
+puzzler.run(SomaClip)

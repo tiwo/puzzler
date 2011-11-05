@@ -3,6 +3,7 @@
 
 """11 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import HexiamondsRing2
 
-puzzler.run(puzzler.puzzles.HexiamondsRing2)
+puzzler.run(HexiamondsRing2)

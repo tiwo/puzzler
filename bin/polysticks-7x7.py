@@ -6,6 +6,7 @@
 All are perfect solutions (i.e. no pieces cross).
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.polysticks1234 import Polysticks1234_7x7
 
-puzzler.run(puzzler.puzzles.Polysticks1234_7x7)
+puzzler.run(Polysticks1234_7x7)

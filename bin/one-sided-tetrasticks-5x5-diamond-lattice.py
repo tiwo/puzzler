@@ -5,6 +5,7 @@
 107 solutions
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.tetrasticks import OneSidedTetrasticks5x5DiamondLattice
 
-puzzler.run(puzzler.puzzles.OneSidedTetrasticks5x5DiamondLattice)
+puzzler.run(OneSidedTetrasticks5x5DiamondLattice)

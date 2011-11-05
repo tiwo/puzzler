@@ -3,6 +3,7 @@
 
 """640 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.hexiamonds import HexiamondsTrefoil
 
-puzzler.run(puzzler.puzzles.HexiamondsTrefoil)
+puzzler.run(HexiamondsTrefoil)

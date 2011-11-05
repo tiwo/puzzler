@@ -3,6 +3,7 @@
 
 """many solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.heptiamonds import HeptiamondsTriangleRing
 
-puzzler.run(puzzler.puzzles.HeptiamondsTriangleRing)
+puzzler.run(HeptiamondsTriangleRing)

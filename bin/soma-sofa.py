@@ -3,6 +3,7 @@
 
 """32 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.somacubes import SomaSofa
 
-puzzler.run(puzzler.puzzles.SomaSofa)
+puzzler.run(SomaSofa)

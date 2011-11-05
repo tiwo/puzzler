@@ -58,10 +58,10 @@ Polyform Puzzler puzzles conceptually consist of three parts:
 
 Existing coordinate systems (part 1) are implemented in the
 ``puzzler/coordsys.py`` module.  Polyform definitions and puzzle
-definitions are implemented in ``puzzler/puzzles.py``.  Polyform
-definitions are classes, subclasses of the ``puzzler.puzzles.Puzzle``
-class.  Puzzle definitions are also classes, subclasses of the
-polyform definition classes.
+definitions are implemented in modules in the ``puzzler/puzzles/``
+directory.  Polyform definitions are classes, subclasses of the
+``puzzler.puzzles.Puzzle`` class.  Puzzle definitions are also
+classes, subclasses of the polyform definition classes.
 
 If the polyform for your puzzle is already defined, just `add a new
 puzzle definition`__.
@@ -114,21 +114,22 @@ Your text file ("my_puzzle.py") should begin with the following lines
 
     #!/usr/bin/env python
 
-    import puzzler.puzzles
     import puzzler.coordsys
-
-The first line is a comment that informs many editors and operating
-systems of the file's content: Python source code.  You can use the
-following shell command to make this module "executable", which saves
-a bit of typing later on (if you don't know what this means or does,
-just skip it)::
-
-    chmod +x my-puzzle.py
+    from puzzler.puzzles.polyominoes import Pentominoes
 
 The last two lines above contain "import" statements.  They allow your
 puzzle module's code to access the functionality of the
-``puzzler.puzzles`` and ``puzzler.coordsys`` modules in the
-``puzzler`` package.  These modules do most of the work for you.
+``puzzler.coordsys`` module in the ``puzzler`` package, and the
+``Pentominoes`` class in the ``puzzler.puzzles.polyominoes`` module.
+This code will do most of the work for you.
+
+The first line in the code above is a comment that informs many
+editors and operating systems of the file's content: Python source
+code.  You can use the following shell command to make this module
+"executable", which saves a bit of typing later on (if you don't know
+what this means or does, just skip it)::
+
+    chmod +x my-puzzle.py
 
 
 Body
@@ -191,18 +192,19 @@ coordinate systems.
 In the body of your puzzle module (i.e. after the import statements),
 add the following class definition::
 
-    class MyPuzzle(puzzler.puzzles.Pentominoes):
+    class MyPuzzle(Pentominoes):
 
         height = 3
         width = 21
 
 The first line defines a new class named "MyPuzzle" based on an
 existing polyform "base class" named "Pentominoes" (in the
-"puzzler.puzzles" module).  You should familiarize yourself with the
-classes in the "puzzler.puzzles" module.  Polyform Base classes have
-generic names (like "Pentominoes"), while puzzle classes have specific
-names (like "Pentominoes5x12").  You can use either type for your base
-class, whichever most closely matches your puzzle.
+"puzzler.puzzles.polyominoes" module).  You should familiarize
+yourself with the modules and classes in the "puzzler.puzzles"
+directory (also known as a Python "package").  Polyform Base classes
+have generic names (like "Pentominoes"), while concrete puzzle classes
+have specific names (like "Pentominoes5x12").  You can use either type
+for your base class, whichever most closely matches your puzzle.
 
 The next lines define two class attributes, the height and width of
 the solution.  ``height = 3`` means that the Y coordinate may be 0, 1,

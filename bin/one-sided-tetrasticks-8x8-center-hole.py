@@ -5,6 +5,7 @@
 ? solutions
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.tetrasticks import OneSidedTetrasticks8x8CenterHole
 
-puzzler.run(puzzler.puzzles.OneSidedTetrasticks8x8CenterHole)
+puzzler.run(OneSidedTetrasticks8x8CenterHole)

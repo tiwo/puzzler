@@ -3,6 +3,7 @@
 
 """ solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentacubes import PentacubesCornerCrystal
 
-puzzler.run(puzzler.puzzles.PentacubesCornerCrystal)
+puzzler.run(PentacubesCornerCrystal)

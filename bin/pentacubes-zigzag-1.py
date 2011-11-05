@@ -3,6 +3,7 @@
 
 """ solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentacubes import PentacubesZigZag1
 
-puzzler.run(puzzler.puzzles.PentacubesZigZag1)
+puzzler.run(PentacubesZigZag1)

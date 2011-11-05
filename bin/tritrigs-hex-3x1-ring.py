@@ -5,6 +5,7 @@
 1 solution.
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.tritrigs import TritrigsHex3x1Ring
 
-puzzler.run(puzzler.puzzles.TritrigsHex3x1Ring)
+puzzler.run(TritrigsHex3x1Ring)

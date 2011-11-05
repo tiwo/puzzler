@@ -3,6 +3,7 @@
 
 """2800 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.somacubes import SomaCrystal
 
-puzzler.run(puzzler.puzzles.SomaCrystal)
+puzzler.run(SomaCrystal)

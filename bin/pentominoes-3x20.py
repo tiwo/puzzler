@@ -3,6 +3,7 @@
 
 """2 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentominoes import Pentominoes3x20
 
-puzzler.run(puzzler.puzzles.Pentominoes3x20)
+puzzler.run(Pentominoes3x20)

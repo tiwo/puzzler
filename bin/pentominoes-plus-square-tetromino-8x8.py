@@ -7,6 +7,7 @@
 16146 solutions
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentominoes import PentominoesPlusSquareTetromino8x8
 
-puzzler.run(puzzler.puzzles.PentominoesPlusSquareTetromino8x8)
+puzzler.run(PentominoesPlusSquareTetromino8x8)

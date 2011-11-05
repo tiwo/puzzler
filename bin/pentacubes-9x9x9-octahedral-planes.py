@@ -3,6 +3,7 @@
 
 """ solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.pentacubes import Pentacubes9x9x9OctahedralPlanes
 
-puzzler.run(puzzler.puzzles.Pentacubes9x9x9OctahedralPlanes)
+puzzler.run(Pentacubes9x9x9OctahedralPlanes)

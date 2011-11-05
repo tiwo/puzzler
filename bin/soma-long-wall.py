@@ -3,6 +3,7 @@
 
 """104 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.somacubes import SomaLongWall
 
-puzzler.run(puzzler.puzzles.SomaLongWall)
+puzzler.run(SomaLongWall)

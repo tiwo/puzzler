@@ -13,6 +13,7 @@
 All are perfect solutions (i.e. no pieces cross).
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.tetrasticks import Tetrasticks6x6
 
-puzzler.run(puzzler.puzzles.Tetrasticks6x6)
+puzzler.run(Tetrasticks6x6)

@@ -5,6 +5,7 @@
 9 solutions.
 """
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.tritrigs import TritrigsParallelogram5x2
 
-puzzler.run(puzzler.puzzles.TritrigsParallelogram5x2)
+puzzler.run(TritrigsParallelogram5x2)

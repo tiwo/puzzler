@@ -3,6 +3,7 @@
 
 """240 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.somacubes import Soma3x3x3
 
-puzzler.run(puzzler.puzzles.Soma3x3x3)
+puzzler.run(Soma3x3x3)
