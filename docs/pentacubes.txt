@@ -168,7 +168,8 @@ Misc
 
   .. image:: images/pentacubes-3x9x9-mound.png
 
-* 9x9x9 octahedral planes: no solutions yet
+* 9x9x9 octahedral planes: no solutions yet, and probably none exist
+  due to extreme parity imbalances
 
   .. image:: images/pentacubes-9x9x9-octahedral-planes.png
 
@@ -243,7 +244,8 @@ Solids
 Misc
 ----
 
-* 11x11x11 octahedral planes (central cube is empty): no solutions yet
+* 11x11x11 octahedral planes (central cube is empty): no solutions
+  yet, and probably none exist due to extreme parity imbalances
 
   .. image:: images/pentacubes-plus-11x11x11-octahedral-planes.png
 
