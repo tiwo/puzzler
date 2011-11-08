@@ -5,6 +5,7 @@
 Concrete tetrastick puzzles.
 """
 
+import copy
 from puzzler import coordsys
 from puzzler.puzzles.polysticks import Tetrasticks, OneSidedTetrasticks
 

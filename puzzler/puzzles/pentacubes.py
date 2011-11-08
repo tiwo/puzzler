@@ -7,7 +7,7 @@ Concrete pentacube puzzles.
 
 from puzzler.puzzles import Puzzle3D
 from puzzler.puzzles.polycubes import (
-     Pentacubes, PentacubesPlus, NonConvexPentacubes)
+     SolidPentominoes, Pentacubes, PentacubesPlus, NonConvexPentacubes)
 
 
 class Pentacubes5x7x7OpenBox(Pentacubes):

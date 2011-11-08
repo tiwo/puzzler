@@ -3,6 +3,7 @@
 
 """13 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.polycubes_misc import DiabolicalCube
 
-puzzler.run(puzzler.puzzles.DiabolicalCube)
+puzzler.run(DiabolicalCube)

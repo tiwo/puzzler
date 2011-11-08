@@ -3,6 +3,7 @@
 
 """13 solutions"""
 
-import puzzler.puzzles
+import puzzler
+from puzzler.puzzles.polycubes_misc import SheldonsCube2
 
-puzzler.run(puzzler.puzzles.SheldonsCube2)
+puzzler.run(SheldonsCube2)

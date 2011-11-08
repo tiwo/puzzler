@@ -8,6 +8,7 @@ Polytrig puzzle base classes.
 
 import copy
 import math
+import collections
 
 from puzzler import coordsys
 from puzzler.puzzles import OneSidedLowercaseMixin

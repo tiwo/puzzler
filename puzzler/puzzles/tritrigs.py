@@ -5,6 +5,7 @@
 Concrete tritrig puzzles.
 """
 
+from puzzler import coordsys
 from puzzler.puzzles.polytrigs import Tritrigs, OneSidedTritrigs
 
 
@@ -107,7 +108,7 @@ class TritrigsSpikedTriangle1(Tritrigs):
         for coord in self.coordinates_triangle(4, (1,1,0)):
             yield coord
         for coord in ((0,5,0), (1,4,2), (2,0,1), (2,0,2), (4,2,0), (5,1,1)):
-            yield coord
+            yield coordsys.TriangularGrid3D(coord)
 
     def customize_piece_data(self):
         self.piece_data['I3'][-1]['rotations'] = None
@@ -125,7 +126,7 @@ class TritrigsSpikedTriangle2(TritrigsSpikedTriangle1):
         for coord in self.coordinates_triangle(4, (1,1,0)):
             yield coord
         for coord in ((0,4,0), (1,3,2), (3,0,1), (3,0,2), (3,3,0), (4,2,1)):
-            yield coord
+            yield coordsys.TriangularGrid3D(coord)
 
 
 class TritrigsParallelogram5x2(Tritrigs):
