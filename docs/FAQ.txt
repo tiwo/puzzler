@@ -615,8 +615,8 @@ How should the solution files be interpreted?
 
 The `solution files <http://puzzler.sourceforge.net/solutions>`__ are
 text files that all follow a common pattern.  The first line states
-the puzzle matrix class (from the puzzler.puzzles module) being
-solved::
+the puzzle matrix class (from a module in the puzzler.puzzles package)
+being solved::
 
     Solving Pentominoes6x10Matrix:
 
