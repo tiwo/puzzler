@@ -89,13 +89,14 @@ class ExactCover(object):
         The `secondary` parameter is the number of secondary (rightmost)
         columns: columns which may, but need not, participate in the solution.
         """
-        column_names = matrix[0]
+        matrix_iter = iter(matrix)
+        column_names = matrix_iter.next()
         self.secondary_columns = set(
             column_names[(len(column_names) - secondary):])
         self.columns = dict((j, set()) for j in column_names)
         self.rows = [
             [column_names[j] for j in range(len(column_names)) if row[j]]
-            for (i, row) in enumerate(matrix[1:])]
+            for row in matrix_iter]
         for (r, row) in enumerate(self.rows):
             for c in row:
                 self.columns[c].add(r)
