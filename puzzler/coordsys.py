@@ -85,6 +85,12 @@ class Cartesian1D(CartesianCoordinates):
 
     """1D coordinate system: (x)"""
 
+    rotation_steps = None
+
+    rotation_axes = None
+
+    flippable = True
+
     def flip0(self):
         """Flip on last dimension, about origin"""
         return self.__class__(self.coords[:-1] + (-self.coords[-1],))
@@ -98,6 +104,12 @@ class Cartesian1D(CartesianCoordinates):
 class Cartesian2D(Cartesian1D):
 
     """2D coordinate system: (x, y)"""
+
+    rotation_steps = 4
+
+    rotation_axes = None
+
+    flippable = True
 
     def rotate0(self, quadrants):
         """Rotate about (0,0)"""
@@ -124,6 +136,12 @@ class Cartesian3D(Cartesian2D):
 
     """3D coordinate system: (x, y, z)"""
 
+    rotation_steps = 4
+
+    rotation_axes = 3
+
+    flippable = True
+
     def rotate0(self, quadrants, axis):
         """Rotate about (0,0,0); `axis` is 0/x, 1/y, 2/z."""
         rotated = Cartesian2D((self.coords[(axis + 1) % 3],
@@ -144,6 +162,16 @@ class Cartesian3D(Cartesian2D):
         """Flip axis (180 degree rotation about next axis) about pivot"""
         temp = self - pivot
         return temp.flip0(axis) + pivot
+
+    def neighbors(self):
+        """Return a list of adjacent cells."""
+        x, y, z = self.coords
+        return (self.__class__((x + 1, y,     z)),       # right
+                self.__class__((x - 1, y,     z)),       # left
+                self.__class__((x,     y + 1, z)),       # above
+                self.__class__((x,     y - 1, z)),       # below
+                self.__class__((x,     y,     z + 1)),   # in front
+                self.__class__((x,     y,     z - 1)))   # behind
 
 
 class CoordinateSet(set):
@@ -237,7 +265,7 @@ class Cartesian2DView(Cartesian2DCoordSet):
     2 dimensional (+,+)-quadrant square-cell coordinate set with bounds
     """
 
-    def __init__(self, coord_list, rotation=0, flip=0):
+    def __init__(self, coord_list, rotation=0, flip=0, axis=None):
         Cartesian2DCoordSet.__init__(self, coord_list)
         # transform self under aspect:
         self.orient2D(rotation, flip)
@@ -308,6 +336,12 @@ class SquareGrid3D(Cartesian3D):
     (from (x,y) to (x,y+1)).  The Z value indicates the index of the dimension
     to increment.
     """
+
+    rotation_steps = 4
+
+    rotation_axes = None
+
+    flippable = True
 
     def flip0(self, axis=None):
         """
@@ -441,6 +475,12 @@ class Hexagonal2D(Cartesian2D):
     and to the right, but the representation above is easier to draw in ASCII.
     """
 
+    rotation_steps = 6
+
+    rotation_axes = None
+
+    flippable = True
+
     def flip0(self):
         """
         Flip about y-axis::
@@ -524,6 +564,12 @@ class Triangular3D(Cartesian3D):
         y=0/__\/__\/__\/__\/__\/   z=0/__\  z=1\/
            x=0  1   2   3   4
     """
+
+    rotation_steps = 6
+
+    rotation_axes = None
+
+    flippable = True
 
     def flip0(self, axis=None):
         """
@@ -629,6 +675,12 @@ class TriangularGrid3D(Cartesian3D):
            \/___ z=0
           (x,y)
     """
+
+    rotation_steps = 6
+
+    rotation_axes = None
+
+    flippable = True
 
     def flip0(self, axis=None):
         """
@@ -891,6 +943,12 @@ class HexagonalGrid3D(Cartesian3D):
           /
         z=2
     """
+
+    rotation_steps = 6
+
+    rotation_axes = None
+
+    flippable = True
 
     def flip0(self, axis=None):
         """
