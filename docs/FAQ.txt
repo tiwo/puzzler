@@ -397,10 +397,13 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   4        tetromino   5            7
   5        pentomino   12           18
   6        hexomino    35           60
-  7        heptomino   108          196
+  7*       heptomino   108          196
+  8*       octomino    369          704
   =======  ==========  ===========  =========
 
   This table also applies to solid polyominoes (planar polycubes).
+
+  "*" above means that pieces with enclosed holes exist.
 
   **In Polyform Puzzler:**
 
@@ -443,11 +446,15 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   3         trihex      3          3
   4         tetrahex    7          10
   5         pentahex    22         33
-  6         hexahex     82 [*]_    147
+  6*        hexahex     82         147
+  7*        heptahex    333        620
+  8*        octahex     1448       2821
   ========  ==========  =========  =========
 
-  .. [*] One hexahex contains a central hole (1 hexagon).  It is used
-         for one of the "o" letters in this project's logo.
+  "*" above means that pieces with enclosed holes exist.
+
+  One hexahex contains a central hole (1 hexagon).  It is used for one
+  of the "o" letters in this project's logo.
 
   **In Polyform Puzzler:**
 
@@ -468,6 +475,8 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   4      tetracube   8
   5      pentacube   29
   6      hexacube    166
+  7      heptacube   1023
+  8      octacube    6922
   =====  ==========  =========
 
   **In Polyform Puzzler:**
@@ -487,7 +496,10 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   3       tristick    5           7
   4       tetrastick  16          25
   5       pentastick  55          99
+  6*      hexastick   222         416
   ======  ==========  ==========  =========
+
+  "*" above means that pieces with enclosed holes exist.
 
   **In Polyform Puzzler:** `Polystick Puzzles & Solutions`_
 
@@ -499,11 +511,12 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   ======  =========  =========  =========
   Sticks  Name       Polytrigs  One-Sided
   ======  =========  =========  =========
-  1       monotrig     1          1
-  2       ditrig       3          3
-  3       tritrig     12         19
-  4*      tetratrig   60        104
+  1       monotrig   1          1
+  2       ditrig     3          3
+  3       tritrig    12         19
+  4*      tetratrig  60         104
   5*      pentatrig  375        719
+  6*      hexatrig   2613       5123
   ======  =========  =========  =========
 
   "*" above means that pieces with enclosed holes exist.
