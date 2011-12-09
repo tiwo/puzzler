@@ -18,7 +18,7 @@ from puzzler.puzzles.polysticks import Polysticks
 class Polytrigs(Polysticks):
 
     """
-    'Polytrigs' == triangular polysticks ('trig' = TRIangular Grid).
+    'Polytrigs' == triangular-grid polysticks ('trig' = TRIangular Grid).
     """
 
     # line segment orientation (horizontal/right=0, 60deg=1, 120deg=2):
