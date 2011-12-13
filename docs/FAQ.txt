@@ -592,6 +592,12 @@ I know of:
 
 * Soma Cubes are sold under the name "Block By Block" by ThinkFun_.
 
+* The 24 polysticks of order 1-4 are used as the playing pieces in
+  `the "Nexos" board game`__, designed by the designer of the "Blokus"
+  games.
+
+  __ http://boardgamegeek.com/boardgame/84453/nexos
+
 * In Japan, many polyform puzzles are available from Tenyo_.
 
 * If you're a puzzle afficionado and happen to find yourself in Tokyo,
@@ -608,7 +614,7 @@ I know of:
 .. _Tenyo: http://www.tenyo.co.jp/pp/
 .. _Kadon Enterprises: http://www.gamepuzzles.com/
 .. _Puzzle Shop Torito: http://www.torito.jp/
-.. _Amazon Japan: http://amazon.co.jp
+.. _Amazon Japan: http://amazon.co.jp/gp/aag/main?seller=A3HSPHRGB3HM3O
 
 
 Polyform Puzzles & Solutions
