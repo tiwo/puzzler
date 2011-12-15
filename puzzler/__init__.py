@@ -158,6 +158,7 @@ def solve(puzzle_class, output_stream, settings):
             '\nResuming session (%s solutions, %s searches).\n'
             % (state.num_solutions, state.num_searches))
         output_stream.flush()
+    starting_solutions = state.num_solutions
     matrices = []
     stats = []
     puzzles = []
@@ -189,7 +190,8 @@ def solve(puzzle_class, output_stream, settings):
                         puzzle.write_x3d(settings.x3d, solution)
                         settings.x3d = False
                     if ( settings.stop_after
-                         and solver.num_solutions == settings.stop_after):
+                         and ((solver.num_solutions - starting_solutions)
+                              >= settings.stop_after)):
                         break
                 stats.append((solver.num_solutions - last_solutions,
                               solver.num_searches - last_searches))
