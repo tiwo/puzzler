@@ -361,7 +361,7 @@ class Polytrigs(Polysticks):
                 path_details = {
                     'x': x0, 'y': y0, 'dx': (x1 - x0), 'dy': (y1 - y0)}
                 path_data.append(self.svg_line % path_details)
-            for ((x0, y0), (x1, y1), r) in curves[name]:
+            for ((x0, y0), (x1, y1), r) in curves.get(name, []):
                 path_details = {
                     'x0': x0, 'y0': y0, 'dx': (x1 - x0), 'dy': (y1 - y0),
                     'r': r}
