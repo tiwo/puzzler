@@ -1018,41 +1018,6 @@ class HexagonalGrid3D(Cartesian3D):
                     self.__class__((x - 1, y,     0)),
                     self.__class__((x,     y - 1, 1)))
 
-#     endpoint_deltas = {
-#         0: (+1,  0),    # 0°, horizontal, to the right
-#         1: ( 0, +1),    # 120°, up & to the left
-#         2: (-1,  0)}    # 240°, down & to the left
-
-#     def endpoint(self):
-#         """
-#         Return the coordinates of the endpoint of this segment, a segment
-#         sharing this segment's direction.
-#         """
-#         x, y, z = self.coords
-#         delta_x, delta_y = self.endpoint_deltas[z]
-#         return self.__class__((x + delta_x, y + delta_y, z))
-
-#     def intersection_coordinates(self):
-#         """
-#         Return a list of coordinates of the intersection segments of the
-#         start- and end-points of this coordinate.
-#         """
-#         intersections = []
-#         for coord in (self, self.endpoint()):
-#             x, y, z = coord
-#             intersections.extend(self.__class__((x, y, z)) for z in range(6))
-#         return intersections
-
-#     @classmethod
-#     def point_neighbors(cls, x, y):
-#         """
-#         Return a list of segments which adjoin point (x,y), in
-#         counterclockwise order from 0-degrees right.
-#         """
-#         return [cls(coords) for coords in (
-#             (x, y, 0), (x, y, 1), (x, y, 2),
-#             (x-1, y, 0), (x, y-1, 1), (x+1, y-1, 2))]
-
 
 class HexagonalGrid3DCoordSet(Cartesian3DCoordSet):
 
@@ -1072,8 +1037,6 @@ class HexagonalGrid3DView(CartesianPseudo3DView):
 
     def calculate_offset_and_bounds(self):
         xs = [c[0] for c in self]
-#         # include x-coordinates of endpoints when z==2:
-#         xs.extend([c.endpoint()[0] for c in self if c[2] == 2])
         ys = [c[1] for c in self]
         zs = [c[2] for c in self]
         # keep Z-offset at 0 to keep Z values unaltered:
