@@ -404,10 +404,13 @@ class Puzzle2D(Puzzle):
         x_reversed_fn = order_functions[x_reversed]
         y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
         s_matrix = self.build_solution_matrix(solution)
-        return '\n'.join(''.join('%-2s' % name
-                                 for name in x_reversed_fn(s_matrix[y])
-                                 ).rstrip()
-                         for y in y_reversed_fn(range(self.height)))
+        formatted= '\n'.join(
+            ''.join('%-2s' % name for name in x_reversed_fn(s_matrix[y])
+                    ).rstrip()
+            for y in y_reversed_fn(range(self.height)))
+        omitted = '\n'.join(
+            '(%s omitted)' % row[-1] for row in solution if row[0] == '!')
+        return '\n'.join([omitted, formatted])
 
     def empty_solution_matrix(self, margin=0):
         s_matrix = [[self.empty_cell] * (self.width + 2 * margin)
@@ -419,6 +422,8 @@ class Puzzle2D(Puzzle):
         for row in solution:
             name = row[-1]
             for cell_name in row[:-1]:
+                if cell_name.endswith('i') or cell_name == '!':
+                    continue            # skip intersections & omitted pieces
                 x, y = [int(d.strip()) for d in cell_name.split(',')]
                 s_matrix[y + margin][x + margin] = name
         return s_matrix
@@ -523,6 +528,8 @@ class Puzzle2D(Puzzle):
             parts = row.split()
             name = parts[-1]
             for coords in parts[:-1]:
+                if coords.endswith('i') or coords == '!':
+                    continue            # skip intersections & omitted pieces
                 x, y = coords.split(',')
                 s_matrix[int(y) + self.margin][int(x) + self.margin] = name
         return s_matrix
@@ -763,6 +770,8 @@ class Puzzle3D(Puzzle):
             parts = row.split()
             name = parts[-1]
             for coords in parts[:-1]:
+                if coords.endswith('i') or coords == '!':
+                    continue            # skip intersections & omitted pieces
                 x, y, z = (int(coord) + self.margin
                            for coord in coords.split(','))
                 s_matrix[z][y][x] = name
