@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # $Id$
 
+# Author: David Goodger <goodger@python.org>
+# Copyright: (C) 1998-2012 by David J. Goodger
+# License: GPL 2 (see __init__.py)
+
 """
 Concrete polytrig (orders 1 through 4) puzzles.
 """

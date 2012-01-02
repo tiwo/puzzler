@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # $Id$
 
+# Author: David Goodger <goodger@python.org>
+# Copyright: (C) 1998-2012 by David J. Goodger
+# License: GPL 2 (see __init__.py)
+
 """
 Concrete pentomino puzzles.
 """
@@ -273,8 +277,8 @@ class PentominoesPlusSquareTetromino8x8(Pentominoes):
 class PentominoesTriangle(Pentominoes):
 
     """
-    55-square triangle, so 11 pieces are used and one unused.
-    All but the 'P' & 'W' pieces can be unused.
+    55-square triangle, so 11 pieces are used and one piece must be omitted.
+    All but the 'P' & 'W' pieces can be omitted.
 
     580 solutions
     """

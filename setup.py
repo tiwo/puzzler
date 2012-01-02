@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # $Id$
-# Copyright: (C) 1998-2011 by David J. Goodger
+# Copyright: (C) 1998-2012 by David J. Goodger
 # License: GPL 2 (see GPL2.txt)
 
 import sys

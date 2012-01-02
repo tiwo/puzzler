@@ -5,7 +5,7 @@
 :Author: David Goodger <goodger@python.org>
 :Date: $Date$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2011 by David J. Goodger
+:Copyright: |c| 1998-2012 by David J. Goodger
 :License: `GPL 2 <COPYING.html>`__
 
 **Polyform Puzzler** is a set of solvers for many polyform puzzles
