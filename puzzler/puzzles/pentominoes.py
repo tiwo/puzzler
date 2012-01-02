@@ -270,6 +270,44 @@ class PentominoesPlusSquareTetromino8x8(Pentominoes):
         self.piece_colors['S'] = 'gray'
 
 
+class PentominoesTriangle(Pentominoes):
+
+    """
+    55-square triangle, so 11 pieces are used and one unused.
+    All but the 'P' & 'W' pieces can be unused.
+
+    580 solutions
+    """
+
+    height = 10
+    width = 10
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x in range(self.width):
+                if x + y < self.height:
+                    yield (x, y)
+
+    def customize_piece_data(self):
+        self.piece_data['!'] = ((), {})
+        self.piece_data['P'][-1]['flips'] = None
+
+    def build_matrix(self):
+        self.build_rows_for_omitted_pieces()
+        keys = set(self.piece_data.keys())
+        keys.remove('!')
+        self.build_regular_matrix(sorted(keys))
+
+    def build_rows_for_omitted_pieces(self):
+        for name in self.piece_data:
+            if name == '!':
+                continue
+            row = [0] * len(self.matrix[0])
+            row[self.matrix_columns['!']] = name
+            row[self.matrix_columns[name]] = name
+            self.matrix.append(row)
+
+
 class OneSidedPentominoes3x30(OneSidedPentominoes):
 
     height = 3

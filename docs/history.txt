@@ -77,7 +77,8 @@ later is recommended.
   - Solid pentominoes: 5x5x4, 4x4x6, & 3x3x10 steps; 4x4x8 crystal; 3
     6x6x6 crystals; 3x5x7 slope.
 
-  - Pentominoes: 8x8 without corners, 8x8 with 2x2 square tetromino.
+  - Pentominoes: 8x8 without corners, 8x8 with 2x2 square tetromino,
+    10x10 triangle with one omitted piece.
 
   - One-sided tetrasticks: 5x5 diamond lattice, 8x8 grid with center
     hole, 8x8 grid with one clipped corner, 8x8 grid with two clipped

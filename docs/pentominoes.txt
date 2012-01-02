@@ -86,6 +86,14 @@ Misc
 
   .. image:: images/pentominoes-3x21.png
 
+* 10x10 triangle with one omitted piece: `580 solutions 
+  <../solutions/pentominoes-triangle.txt>`__
+
+  Solutions are possible omitting all but the "P" & "W" pieces.  This
+  solution omits the "V" piece:
+
+  .. image:: images/pentominoes-triangle.png
+
 
 One-Sided Pentominoes
 =====================
