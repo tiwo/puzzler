@@ -43,9 +43,9 @@ words, they branch).  There are 6 welded tetrasticks, 4 of which are
 asymmetrical, therefore there are 10 one-sided welded tetrasticks.
 
 * 5x5 grid: `3 solutions
-  <../solutions/welded-tetrasticks-5x5.txt>`__
+  <../solutions/one-sided-welded-tetrasticks-5x5.txt>`__
 
-  .. image:: images/welded-tetrasticks-5x5.png
+  .. image:: images/one-sided-welded-tetrasticks-5x5.png
 
 
 15 of 16 Tetrasticks
