@@ -342,7 +342,7 @@ class OneSidedTetrasticks6x10ClippedCorners3(OneSidedTetrasticks):
                 yield coord
 
 
-class OneSidedWeldedTetrasticks5x5(Tetrasticks):
+class OneSidedWeldedTetrasticks5x5(OneSidedTetrasticks):
 
     """
     3 solutions (perfect solutions, i.e. no pieces cross).
