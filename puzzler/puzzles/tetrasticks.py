@@ -342,7 +342,7 @@ class OneSidedTetrasticks6x10ClippedCorners3(OneSidedTetrasticks):
                 yield coord
 
 
-class WeldedTetrasticks5x5(Tetrasticks):
+class OneSidedWeldedTetrasticks5x5(Tetrasticks):
 
     """
     3 solutions (perfect solutions, i.e. no pieces cross).
@@ -380,14 +380,8 @@ class WeldedTetrasticks5x5(Tetrasticks):
          'rotation': 3},)
 
     def customize_piece_data(self):
-        self.piece_colors = copy.deepcopy(self.piece_colors)
         for key in self.unwelded_pieces:
             del self.piece_data[key]
-        for key in self.asymmetric_pieces:
-            if key not in self.piece_data:
-                continue
-            self.piece_data[key][-1]['flips'] = None
-            new_key = key.lower()
-            self.piece_data[new_key] = copy.deepcopy(self.piece_data[key])
-            self.piece_data[new_key][-1]['flips'] = (1,)
-            self.piece_colors[new_key] = self.piece_colors[key]
+        self.asymmetric_pieces = sorted(
+            set(self.asymmetric_pieces) - set(self.unwelded_pieces))
+        OneSidedTetrasticks.customize_piece_data(self)
