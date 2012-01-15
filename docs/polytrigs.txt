@@ -14,32 +14,16 @@
 
 .. sidebar:: Also see:
 
-   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `An Introduction to Polytrigs <polytrigs-intro.html>`_
    | `Polysticks: Puzzles & Solutions <polysticks.html>`_
+   | `Polytwigs (Hexagonal-Grid Polysticks): Puzzles & Solutions <polytwigs.html>`_
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
    |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
        `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
        `interpreting solution files <FAQ.html#how-should-polytrig-solution-files-be-interpreted>`__)
 
 .. contents::
-
-**Polytrigs** are polysticks on a triangular grid, also known as
-"triangular-grid polysticks" or "triangular polysticks".  The name
-"trig" comes from "TRIangular Grid"; a neologism I invented because
-"triangular-grid polysticks" is too unwieldy, especially when combined
-with order-prefixes (mono-, di-, tri-, tetra-, etc.; "triangular-grid
-tristicks"!?).  I hope the name catches on.
-
-    If the square polysticks don't get the respect they deserve, this
-    is doubly true for the triangular polysticks.
-
-    -- Alexandre Owen Muñiz, `Puzzle Zapper Blog
-       <http://puzzlezapper.com/blog/2010/12/polysticks-on-a-regular-spanning-subgraph/>`__
-
-I believe I am the first to address this type of puzzle so thoroughly
-(if not, please let me know!).  Hopefully these puzzles will begin to
-fill this particular gap in the polyform puzzle branch of recreational
-mathematics.
 
 
 Tritrigs

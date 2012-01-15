@@ -128,14 +128,14 @@ viewing software.
 
      * - `Tetrasticks <polysticks.html#tetrasticks>`_
 
-         .. image:: images/tetrasticks-6x6.png
+         .. image:: images/tetrasticks-6x6-small.png
             :target: polysticks.html#tetrasticks
             :class: borderless
 
        - `Polysticks of Order 1 Through 4
          <polysticks.html#polysticks-of-order-1-through-4>`_
 
-         .. image:: images/polysticks-3x7-diamond-lattice.png
+         .. image:: images/polysticks-3x7-diamond-lattice-small.png
             :target: polysticks.html#polysticks-of-order-1-through-4
             :class: borderless
 
@@ -157,6 +157,27 @@ viewing software.
             :target: polytrigs.html#polytrigs-of-order-1-through-3
             :class: borderless
 
+  Also see `An Introduction to Polytrigs <polytrigs-intro.html>`_.
+
+* `Polytwigs (hexagonal-grid polysticks) <polytwigs.html>`_
+
+  .. list-table::
+     :class: borderless
+
+     * - `Pentawigs <polytwigs.html#pentatwigs>`_
+
+         .. image:: images/pentatwigs-triangle-small.png
+            :target: polytwigs.html#pentatwigs
+            :class: borderless
+
+       - `Polytwigs of Order 1 Through 4
+         <polytwigs.html#polytwigs-of-order-1-through-4>`_
+
+         .. image:: images/polytwigs-1234-hex-1-small.png
+            :target: polytwigs.html#polytwigs-of-order-1-through-4
+            :class: borderless
+
+  Also see `An Introduction to Polytwigs <polytwigs-intro.html>`_.
 
 .. |---| unicode:: U+2014  .. em dash
    :trim:

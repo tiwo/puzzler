@@ -69,12 +69,17 @@ class Puzzle(object):
     svg_header = '''\
 <?xml version="1.0" standalone="no"?>
 <!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
-<svg width="%(width)s" height="%(height)s" viewBox="0 0 %(width)s %(height)s"
+<svg width="%(width).3f" height="%(height).3f"
+     viewBox="0 0 %(width).3f %(height).3f"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
 '''
     svg_footer = '</svg>\n'
     svg_g_start = '<g>\n'
+    svg_g_start_with_transform = (
+        '<g transform="%(extra)stranslate(%(dx).3f,%(dy).3f)'
+        ' rotate(%(angle)s)">\n')
+    svg_flip_matrix = 'matrix(1,0,0,-1,0,%(dy).3f)'
     svg_g_end = '</g>\n'
 
     svg_polygon = '''\
@@ -98,6 +103,12 @@ class Puzzle(object):
 
     svg_unit_height = svg_unit_length
     """Unit height in pixels."""
+
+    svg_rotation = 0
+    """Default figure rotation, in degrees clockwise."""
+
+    svg_flip = False
+    """Default figure flip (about X axis)."""
 
     x3d_header = '''\
 <?xml version="1.0" encoding="UTF-8"?>
@@ -308,7 +319,7 @@ class Puzzle(object):
         elif hasattr(input_path, 'readline'):
             input_file = input_path
         else:
-            input_file = open(input_path, 'r')
+            input_file = open(input_path, 'rU')
         try:
             for line in input_file:
                 match = self.solution_header.match(line)
@@ -456,7 +467,14 @@ class Puzzle2D(Puzzle):
         header = self.svg_header % {
             'height': (self.height + 2) * self.svg_unit_length,
             'width': (self.width + 2) * self.svg_unit_length}
-        return '%s%s%s%s%s' % (header, self.svg_g_start, ''.join(polygons),
+        if self.svg_rotation:
+            g_start = self.svg_g_start_with_transform % {
+                'dx': (self.height * self.svg_unit_length
+                       * math.sin(math.pi / 180 * self.svg_rotation)),
+                'angle': self.svg_rotation}
+        else:
+            g_start = self.svg_g_start
+        return '%s%s%s%s%s' % (header, g_start, ''.join(polygons),
                                self.svg_g_end, self.svg_footer)
 
     def build_polygon(self, s_matrix, x, y):

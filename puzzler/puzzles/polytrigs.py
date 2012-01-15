@@ -349,10 +349,30 @@ class Polytrigs(Polysticks):
         else:
             s_matrix = self.build_solution_matrix(solution, margin=self.margin)
         paths = self.svg_paths(s_matrix)
+        height = self.height * self.svg_unit_height
+        width = (self.width + self.height/2.0 - 0.5) * self.svg_unit_width
+        if self.svg_flip:
+            g_flip_matrix = self.svg_flip_matrix % {'dy': height} + ' '
+        else:
+            g_flip_matrix = ''
+        if self.svg_rotation:
+            max_dim = max(height, width)
+            g_start = self.svg_g_start_with_transform % {
+                'extra': g_flip_matrix,
+                'dx': max_dim,
+                'dy': max_dim * (0.5 - self.svg_flip),
+                'angle': self.svg_rotation}
+            height = width = max_dim * 2
+        else:
+            if g_flip_matrix:
+                g_start = self.svg_g_start_with_transform % {
+                    'extra': g_flip_matrix, 'dx': 0.0, 'dy': 0.0, 'angle': 0}
+            else:
+                g_start = self.svg_g_start
         header = self.svg_header % {
-            'height': (self.height) * self.svg_unit_height,
-            'width': (self.width + self.height/2.0 - 0.5) * self.svg_unit_width}
-        return '%s%s%s%s%s' % (header, self.svg_g_start, ''.join(paths),
+            'height': height,
+            'width': width}
+        return '%s%s%s%s%s' % (header, g_start, ''.join(paths),
                                self.svg_g_end, self.svg_footer)
 
     def svg_paths(self, s_matrix):
@@ -625,19 +645,18 @@ class TetratrigsData(object):
         'B14': (((0,0,0), (1,0,2), (0,1,0), (2,0,2)), {}),
         'C04': (((1,0,0), (1,0,2), (0,1,1), (0,2,0)), {}),
         'D04': (((0,0,0), (0,0,1), (0,1,0), (2,0,2)), {}),
-        'D14': (((0,0,1), (0,1,0), (2,0,2), (2,0,0)), {}),
-        'D24': (((0,0,1), (0,1,0), (2,0,2), (2,0,1)), {}),
         'E04': (((0,0,1), (0,1,0), (2,0,2), (1,0,2)), {}),
         'E14': (((0,1,0), (1,1,0), (1,1,1), (2,0,2)), {}),
         'E24': (((0,0,0), (1,0,1), (2,0,2), (1,1,0)), {}),
+        'E34': (((0,0,0), (1,0,1), (2,0,2), (1,0,2)), {}),
         'F04': (((0,0,0), (1,0,0), (1,0,1), (2,0,1)), {}),
         'F14': (((0,0,0), (1,0,0), (1,0,2), (2,0,2)), {}),
         'F24': (((0,0,0), (1,0,0), (1,0,2), (2,0,1)), {}),
+        'F34': (((0,0,0), (1,0,0), (2,0,1), (2,0,2)), {}),
         'H04': (((0,0,0), (1,0,0), (1,0,1), (0,1,0)), {}),
         'H14': (((0,0,0), (1,0,0), (1,0,1), (1,1,0)), {}),
         'H24': (((0,0,0), (1,0,0), (1,0,1), (1,1,2)), {}),
         'H34': (((0,0,0), (1,0,0), (2,0,2), (1,1,1)), {}),
-        'H44': (((0,0,0), (1,0,1), (1,1,0), (1,1,2)), {}),
         'I04': (((0,0,0), (1,0,0), (2,0,0), (3,0,0)), {}),
         'J04': (((0,0,0), (1,0,0), (2,0,0), (3,0,2)), {}),
         'J14': (((0,0,0), (1,0,0), (2,0,1), (2,1,2)), {}),
@@ -648,15 +667,13 @@ class TetratrigsData(object):
         'M04': (((1,0,0), (1,0,1), (1,1,2), (0,2,0)), {}),
         'N04': (((0,0,0), (1,0,0), (2,0,2), (1,1,0)), {}),
         'N14': (((0,0,0), (1,0,1), (2,0,2), (2,0,1)), {}),
-        'N24': (((0,0,0), (1,0,1), (2,0,2), (1,0,2)), {}),
         'O04': (((0,0,0), (1,0,1), (0,1,0), (0,0,1)), {}),
         'P04': (((0,0,0), (1,0,0), (1,0,1), (2,0,2)), {}),
         'P14': (((0,0,0), (1,0,1), (1,0,2), (0,1,0)), {}),
         'P24': (((0,0,0), (1,0,0), (2,0,1), (3,0,2)), {}),
+        'P34': (((0,0,1), (0,1,0), (2,0,2), (2,0,0)), {}),
         'Q04': (((1,0,0), (2,0,2), (0,1,0), (1,1,1)), {}),
         'Q14': (((1,1,0), (2,1,2), (0,2,0), (1,0,1)), {}),
-        'Q24': (((1,0,0), (2,0,2), (0,1,0), (0,1,1)), {}),
-        'Q34': (((1,0,0), (2,0,2), (0,1,0), (2,0,1)), {}),
         'R04': (((0,1,0), (1,1,0), (3,0,2), (1,1,1)), {}),
         'R14': (((0,1,0), (1,1,0), (3,0,2), (1,1,2)), {}),
         'R24': (((0,1,0), (1,1,0), (2,0,1), (1,1,2)), {}),
@@ -664,8 +681,11 @@ class TetratrigsData(object):
         'S04': (((0,0,1), (0,1,0), (1,1,0), (2,1,1)), {}),
         'S14': (((0,0,0), (1,0,1), (1,1,0), (2,1,0)), {}),
         'S24': (((0,0,1), (0,1,0), (1,1,0), (2,1,2)), {}),
+        'S34': (((1,0,0), (2,0,2), (0,1,0), (0,1,1)), {}),
+        'S44': (((0,0,1), (0,1,0), (2,0,2), (2,0,1)), {}),
         'T04': (((0,0,1), (0,1,0), (1,1,0), (0,1,1)), {}),
         'T14': (((1,0,2), (0,1,0), (1,1,0), (0,1,1)), {}),
+        'T24': (((1,0,0), (2,0,2), (0,1,0), (2,0,1)), {}),
         'U04': (((0,0,1), (0,1,0), (1,1,0), (2,0,1)), {}),
         'U14': (((0,0,1), (0,1,0), (1,1,0), (3,0,2)), {}),
         'U24': (((0,0,1), (0,0,0), (1,0,0), (2,0,2)), {}),
@@ -679,7 +699,7 @@ class TetratrigsData(object):
         'Y04': (((0,1,0), (1,1,0), (2,1,1), (3,0,2)), {}),
         'Y14': (((0,0,0), (1,0,0), (2,0,0), (2,0,1)), {}),
         'Y24': (((0,0,0), (1,0,0), (2,0,0), (2,0,2)), {}),
-        'Y34': (((0,0,0), (1,0,0), (2,0,1), (2,0,2)), {}),
+        'Y34': (((0,0,0), (1,0,1), (1,1,0), (1,1,2)), {}),
         'Z04': (((0,1,1), (0,1,0), (1,1,0), (2,0,1)), {}),
         }
 
@@ -689,23 +709,57 @@ class TetratrigsData(object):
     """Pieces with reflexive symmetry, identical to their mirror images."""
 
     asymmetric_pieces = (
-        'B04 B14 D04 D14 D24 E04 E24 F04 F14 F24 H04 H14 H24 H34 H44 '
-        'J04 J14 J24 J34 L04 N04 N14 N24 P04 P14 P24 Q04 Q14 Q24 Q34 '
-        'R04 R14 R24 R34 S04 S14 S24 T04 U04 W24 Y14 Y24 Y34 Z04').split()
+        'B04 B14 D04 E04 E24 E34 F04 F14 F24 F34 H04 H14 H24 H34 '
+        'J04 J14 J24 J34 L04 N04 N14 P04 P14 P24 P34 Q04 Q14 R04 R14 R24 R34 '
+        'S04 S14 S24 S34 S44 T04 T24 U04 W24 Y14 Y24 Y34 Z04').split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
     piece_colors = {
-        'I04': 'blue',
-        'O04': 'red',
-        'X04': 'green',
+        'B04': 'tan',
+        'B14': 'cyan',
         'C04': 'lime',
+        'D04': 'aquamarine',
+        'E04': 'burlywood',
         'E14': 'navy',
+        'E24': 'crimson',
+        'E34': 'paleturquoise',
+        'F04': 'darkgoldenrod',
+        'F14': 'darkgreen',
+        'F24': 'darkkhaki',
+        'F34': 'darkorchid',
+        'H04': 'darkseagreen',
+        'H14': 'deeppink',
+        'H24': 'greenyellow',
+        'H34': 'hotpink',
+        'I04': 'blue',
+        'J04': 'lightblue',
+        'J14': 'lightseagreen',
+        'J24': 'lightsteelblue',
+        'J34': 'limegreen',
+        'K04': 'blueviolet',
+        'L04': 'mediumpurple',
+        'M04': 'maroon',
+        'N04': 'orange',
+        'N14': 'palegreen',
+        'O04': 'red',
         'P04': 'magenta',
+        'P14': 'palevioletred',
+        'P24': 'peachpuff',
+        'P34': 'brown',
+        'Q04': 'plum',
+        'Q14': 'silver',
+        'R04': 'violet',
+        'R14': 'wheat',
+        'R24': 'lightpink',
+        'R34': 'lightslategray',
+        'S04': 'gold',
+        'S14': 'darkmagenta',
+        'S24': 'deepskyblue',
+        'S34': 'thistle',
+        'S44': 'cadetblue',
         'T04': 'darkorange',
         'T14': 'turquoise',
-        'K04': 'blueviolet',
-        'M04': 'maroon',
-        'S04': 'gold',
+        'T24': 'tomato',
         'U04': 'plum',
         'U14': 'darkseagreen',
         'U24': 'peru',
@@ -714,47 +768,13 @@ class TetratrigsData(object):
         'V24': 'gray',
         'W04': 'teal',
         'W14': 'olive',
-        'Y04': 'yellow',
-        'Z04': 'indigo',
-        'B04': 'tan',
-        'B14': 'cyan',
-        'D04': 'aquamarine',
-        'D14': 'brown',
-        'D24': 'cadetblue',
-        'E04': 'burlywood',
-        'E24': 'crimson',
-        'F04': 'darkgoldenrod',
-        'F14': 'darkgreen',
-        'F24': 'darkkhaki',
-        'H04': 'darkseagreen',
-        'H14': 'deeppink',
-        'H24': 'greenyellow',
-        'H34': 'hotpink',
-        'H44': 'khaki',
-        'J04': 'lightblue',
-        'J14': 'lightseagreen',
-        'J24': 'lightsteelblue',
-        'J34': 'limegreen',
-        'L04': 'mediumpurple',
-        'N04': 'orange',
-        'N14': 'palegreen',
-        'N24': 'paleturquoise',
-        'P14': 'palevioletred',
-        'P24': 'peachpuff',
-        'Q04': 'plum',
-        'Q14': 'silver',
-        'Q24': 'thistle',
-        'Q34': 'tomato',
-        'R04': 'violet',
-        'R14': 'wheat',
-        'R24': 'lightpink',
-        'R34': 'lightslategray',
-        'S14': 'darkmagenta',
-        'S24': 'deepskyblue',
         'W24': 'indianred',
+        'X04': 'green',
+        'Y04': 'yellow',
         'Y14': 'slateblue',
         'Y24': 'olivedrab',
-        'Y34': 'darkorchid',
+        'Y34': 'khaki',
+        'Z04': 'indigo',
         '0': 'gray',
         '1': 'black'}
 

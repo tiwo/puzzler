@@ -225,18 +225,21 @@ puzzles".  For example, the pentominoes can fill a 6x10 rectangle:
 There are 2339 distinct ways to fit the pentominoes into a 6x10
 rectangle.  Polyform Puzzler `can find them all`_.
 
-The definition of polyforms above can be generalized to include solids
-(polyhedra) joined face to face.  `Regular (Platonic) solids`_ that
-`fill space`_ are the most satisfying, but there is only one Platonic
-solid that fills space: the cube.  Tetrahedra and octahedra together
-can fill space though.  In addition, the `truncated octahedron`_ (a
-`semi-regular, Archimedian solid`_) and the `rhombic dodecahedron`_
-can each individually fill space, as can other, less regular
-polyhedra.
+The definition of polyforms above can be generalized to include:
 
-The polyform definition can also be extended to include other forms,
-like line segments of a grid (polysticks & polytrigs).  The sky's the
-limit!
+* Solids (polyhedra) joined face to face.  `Regular (Platonic)
+  solids`_ that `fill space`_ are the most satisfying, but there is
+  only one Platonic solid that fills space: the cube.  Tetrahedra and
+  octahedra together can fill space though.  In addition, the
+  `truncated octahedron`_ (a `semi-regular, Archimedian solid`_) and
+  the `rhombic dodecahedron`_ can each individually fill space, as can
+  other, less regular polyhedra.
+
+* Line segments of a grid (polysticks, polytrigs, & polytwigs).
+
+* Two-dimensional squares in a three-dimensional grid: polyominoids.
+
+The sky's the limit!
 
 .. _Wikipedia definition: http://en.wikipedia.org/wiki/Polyform
 .. _Wolfram MathWorld's definition: http://mathworld.wolfram.com/Polyform.html
@@ -363,8 +366,26 @@ ones.  Polyform families are given descriptive names:
 
      Polytrigs of Order 1-3 in a 4 |x| 3 Parallelogram
 
-  **In Polyform Puzzler:** `Polytrig Puzzles & Solutions
-  <polytrigs.html>`_
+  **In Polyform Puzzler:**
+
+  * `An Introduction to Polytrigs <polytrigs-intro.html>`_
+  * `Polytrig Puzzles & Solutions <polytrigs.html>`_
+
+* Polyforms based on unit line segments joined end-to-end on a
+  hexagonal grid are called "polytwigs" (a.k.a. "hexagonal-grid
+  polysticks" etc., but again, that's too long a name, so excuse the
+  neologism).  Polytwigs are related to polyiamonds: polytwigs can be
+  thought of as paths joining the centers of the triangle units of
+  polyiamonds.
+
+  .. figure:: images/polytwigs-12345-inset-rectangle-5x5.png
+
+     Polytwigs of Order 1-5 in a 5 |x| 5 Inset Rectangle
+
+  **In Polyform Puzzler:**
+
+  * `An Introduction to Polytwigs <polytwigs-intro.html>`_
+  * `Polytwig Puzzles & Solutions <polytwigs.html>`_
 
 .. [#polysticks] Brian R. Barwell, "Polysticks," `Journal of
    Recreational Mathematics` volume 22 issue 3 (1990), p.165-175
@@ -517,25 +538,51 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   .. _A019988: http://oeis.org/A019988
   .. _A151537: http://oeis.org/A151537
 
-* Polytrigs (a.k.a. "triangular polysticks"; A159867_, A151539_):
+* Polytrigs (a.k.a. "triangular-grid polysticks"; A159867_, A151539_):
 
-  ======  =========  =========  =========
-  Sticks  Name       Polytrigs  One-Sided
-  ======  =========  =========  =========
-  1       monotrig   1          1
-  2       ditrig     3          3
-  3       tritrig    12         19
-  4*      tetratrig  60         104
-  5*      pentatrig  375        719
-  6*      hexatrig   2613       5123
-  ======  =========  =========  =========
+  =====  =========  =========  =========
+  Lines  Name       Polytrigs  One-Sided
+  =====  =========  =========  =========
+  1      monotrig   1          1
+  2      ditrig     3          3
+  3      tritrig    12         19
+  4*     tetratrig  60         104
+  5*     pentatrig  375        719
+  6*     hexatrig   2613       5123
+  =====  =========  =========  =========
 
   "*" above means that pieces with enclosed holes exist.
 
-  **In Polyform Puzzler:** `Polytrig Puzzles & Solutions`_
+  **In Polyform Puzzler:**
+
+  * `An Introduction to Polytrigs`_
+  * `Polytrig Puzzles & Solutions`_
 
   .. _A159867: http://oeis.org/A159867
   .. _A151539: http://oeis.org/A151539
+
+
+* Polytwigs (a.k.a. "hexagonal-grid polysticks"; A197459_, A197460_):
+
+  =====  =========  =========  =========
+  Lines  Name       Polytwigs  One-Sided
+  =====  =========  =========  =========
+  1      monotwig   1          1
+  2      ditwig     1          1
+  3      tritwig    3          4
+  4      tetratwig  4          6
+  5      pentatwig  12         19
+  6      hexatwig   27         49
+  7      heptatwig  78         143
+  =====  =========  =========  =========
+
+  **In Polyform Puzzler:**
+
+  * `An Introduction to Polytwigs`_
+  * `Polytwig Puzzles & Solutions`_
+
+  .. _A197459: http://oeis.org/A197459
+  .. _A197460: http://oeis.org/A197460
 
 
 Where can I find more information about polyforms?
@@ -633,6 +680,7 @@ document.  More polyforms are to come:
 * other polyhexes
 * other polysticks
 * other polytrigs
+* other polytwigs
 * and other polyforms!
 
 See the `to do list`__ for details.
@@ -867,7 +915,10 @@ Polytrig solutions are similar to polystick solutions, except on a
 triangular grid like polyiamonds.  The Z dimension is used to
 represent the direction of line segments: 0 = 0° horizontal; 1 = 60°
 counter-clockwise, up and to the right; 2 = 120° counter-clockwise, up
-and to the left.  Example::
+and to the left.
+
+The visual representation consists of piece names (letters & numbers)
+in an ASCII-art drawing of the triangular 2-D grid.  Example::
 
              __U3__
             /U3   /U3
@@ -883,7 +934,42 @@ and to the left.  Example::
      \ I3  \ E3  \ J3  \ O3
       \/_C3_\/_E3_\/_S3_\/
 
-**In Polyform Puzzler:** `Polytrig Puzzles & Solutions`_
+**In Polyform Puzzler:**
+
+* `An Introduction to Polytrigs`_
+* `Polytrig Puzzles & Solutions`_
+
+
+How should polytwig solution files be interpreted?
+---------------------------------------------------
+
+Polytwig solutions are similar to polystick solutions, except on a
+hexagonal grid like polyhexes.  The Z dimension is used to represent
+the direction of line segments: 0 = 0° horizontal to the right; 1 =
+120° counter-clockwise, up and to the left; 2 = 240°
+counter-clockwise, down and to the left.
+
+The visual representation consists of piece names (letters & numbers)
+in an ASCII-art drawing of the hexagonal 2-D grid.  Example::
+
+            _L2_
+           Y3   L2
+      _Y3_/      \_C4_
+     W4   Y3     C4   C4
+    /      \    /      \
+    W4     Y4   I1     C4
+     \_Y4_/      \_P4_/
+     W4   Y4     P4   C3
+    /      \    /      \
+    W4     Y4   P4     C3
+     \_S3_/      \_C3_/
+          S3     P4
+           \_S3_/
+
+**In Polyform Puzzler:**
+
+* `An Introduction to Polytwigs`_
+* `Polytwig Puzzles & Solutions`_
 
 
 The Code

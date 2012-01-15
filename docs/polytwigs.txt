@@ -1,0 +1,512 @@
+============================================================
+ Polytwigs (Hexagonal-Grid Polysticks): Puzzles & Solutions
+============================================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2012 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. sidebar:: Also see:
+
+   | `An Introduction to Polytwigs <polytwigs-intro.html>`_
+   | `Polysticks: Puzzles & Solutions <polysticks.html>`_
+   | `Polytrigs (Triangular-Grid Polysticks): Puzzles & Solutions <polytrigs.html>`_
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
+   |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+       `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+       `interpreting solution files <FAQ.html#how-should-polytwig-solution-files-be-interpreted>`__)
+
+.. contents::
+
+
+One-Sided Polytwigs of Order 1 Through 3
+========================================
+
+This puzzle uses the 1 monotwig, 1 ditwig, and 4 one-sided tritwigs,,
+for a total of 15 line segments on the hexagonal grid.
+
+* Triangle: `3 solutions
+  <../solutions/one-sided-polytwigs-123-triangle.txt>`__
+
+  .. image:: images/one-sided-polytwigs-123-triangle.png
+
+
+Tetratwigs
+==========
+
+This puzzle uses the 4 tetratwigs for a total of 16 line segments on
+the hexagonal grid.
+
+* Arch: `2 solutions
+  <../solutions/tetratwigs-arch.txt>`__
+
+  .. image:: images/tetratwigs-arch.png
+
+
+One-Sided Tetratwigs
+====================
+
+These puzzles use the 6 one-sided tetratwigs for a total of 24 line
+segments on the hexagonal grid.
+
+* Triangles with 3 line segments omitted in various positions:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-tetratwigs-triangle-1.png
+
+            `2 solutions
+            <../solutions/one-sided-tetratwigs-triangle-1.txt>`__
+
+       - .. figure:: images/one-sided-tetratwigs-triangle-2.png
+
+            `1 solution
+            <../solutions/one-sided-tetratwigs-triangle-2.txt>`__
+
+       - .. figure:: images/one-sided-tetratwigs-triangle-3.png
+
+            `2 solutions
+            <../solutions/one-sided-tetratwigs-triangle-3.txt>`__
+
+       - .. figure:: images/one-sided-tetratwigs-triangle-4.png
+
+            `1 solution
+            <../solutions/one-sided-tetratwigs-triangle-4.txt>`__
+
+* Arches with 3 line segments omitted in various positions:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-tetratwigs-arch-1.png
+
+            `1 solution
+            <../solutions/one-sided-tetratwigs-arch-1.txt>`__
+
+       - .. figure:: images/one-sided-tetratwigs-arch-2.png
+
+            `1 solution
+            <../solutions/one-sided-tetratwigs-arch-2.txt>`__
+
+       - .. figure:: images/one-sided-tetratwigs-arch-3.png
+
+            `1 solution
+            <../solutions/one-sided-tetratwigs-arch-3.txt>`__
+
+       - .. figure:: images/one-sided-tetratwigs-arch-4.png
+
+            `1 solution
+            <../solutions/one-sided-tetratwigs-arch-4.txt>`__
+
+
+Polytwigs of Order 1 Through 4
+==============================
+
+These puzzles use the 1 monotwig, 1 ditwig, 3 tritwigs, and 4
+tetratwigs, for a total of 28 line segments on the hexagonal grid.
+
+* Hexagons with 2 line segments omitted in various positions:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polytwigs-1234-hex-1.png
+
+            `1175 solutions
+            <../solutions/polytwigs-1234-hex-1.txt>`__
+
+       - .. figure:: images/polytwigs-1234-hex-2.png
+
+            `1506 solutions
+            <../solutions/polytwigs-1234-hex-2.txt>`__
+
+       - .. figure:: images/polytwigs-1234-hex-3.png
+
+            `2019 solutions
+            <../solutions/polytwigs-1234-hex-3.txt>`__
+
+     * - .. figure:: images/polytwigs-1234-hex-4.png
+
+            `2007 solutions
+            <../solutions/polytwigs-1234-hex-4.txt>`__
+
+       - .. figure:: images/polytwigs-1234-hex-5.png
+
+            `958 solutions
+            <../solutions/polytwigs-1234-hex-5.txt>`__
+
+       - .. figure:: images/polytwigs-1234-hex-6.png
+
+            `962 solutions
+            <../solutions/polytwigs-1234-hex-6.txt>`__
+
+* 4x2 inset rectangle: `solutions incomplete
+  <../solutions/polytwigs-1234-inset-rectangle-4x2.txt>`__
+
+  .. image:: images/polytwigs-1234-inset-rectangle-4x2.png
+
+
+One-Sided Polytwigs of Order 1 Through 4
+========================================
+
+These puzzles use the 1 monotwig, 1 ditwig, 4 one-sided tritwigs, and
+6 one-sided tetratwigs, for a total of 39 line segments on the
+hexagonal grid.
+
+* 5x2 trapezoid: `solutions incomplete
+  <../solutions/one-sided-polytwigs-1234-trapezoid-5x2.txt>`__
+
+  .. image:: images/one-sided-polytwigs-1234-trapezoid-5x2.png
+
+* 3x2 elongated hexagons with 2 segments omitted in various positions:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-polytwigs-1234-elongated-hexagon-3x2-1.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-elongated-hexagon-3x2-1.txt>`__
+
+       - .. figure:: images/one-sided-polytwigs-1234-elongated-hexagon-3x2-2.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-elongated-hexagon-3x2-2.txt>`__
+
+       - .. figure:: images/one-sided-polytwigs-1234-elongated-hexagon-3x2-3.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-elongated-hexagon-3x2-3.txt>`__
+
+       - .. figure:: images/one-sided-polytwigs-1234-elongated-hexagon-3x2-4.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-elongated-hexagon-3x2-4.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-1234-elongated-hexagon-3x2-5.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-elongated-hexagon-3x2-5.txt>`__
+
+       - .. figure:: images/one-sided-polytwigs-1234-elongated-hexagon-3x2-6.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-elongated-hexagon-3x2-6.txt>`__
+
+       - .. figure:: images/one-sided-polytwigs-1234-elongated-hexagon-3x2-7.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-elongated-hexagon-3x2-7.txt>`__
+
+       - .. figure:: images/one-sided-polytwigs-1234-elongated-hexagon-3x2-8.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-elongated-hexagon-3x2-8.txt>`__
+
+
+Pentatwigs
+==========
+
+These puzzles use the 12 pentatwigs, for a total of 60 line segments
+on the hexagonal grid.
+
+* Triangle: `56 solutions <../solutions/pentatwigs-triangle.txt>`__
+
+  .. image:: images/pentatwigs-triangle.png
+
+* 5x3 parallelogram: `solutions incomplete
+  <../solutions/pentatwigs-5x3.txt>`__
+
+  .. image:: images/pentatwigs-5x3.png
+
+* 6x3 trapezoid: `solutions incomplete
+  <../solutions/pentatwigs-trapezoid-6x3.txt>`__
+
+  .. image:: images/pentatwigs-trapezoid-6x3.png
+
+* 5x3 staggered rectangle: `145 solutions
+  <../solutions/pentatwigs-staggered-rectangle-5x3.txt>`__
+
+  .. image:: images/pentatwigs-staggered-rectangle-5x3.png
+
+* 3x3 chevron: `solutions incomplete
+  <../solutions/pentatwigs-chevron-3x3.txt>`__
+
+  .. image:: images/pentatwigs-chevron-3x3.png
+
+* 5x2 chevron: `solutions incomplete
+  <../solutions/pentatwigs-chevron-5x2.txt>`__
+
+  .. image:: images/pentatwigs-chevron-5x2.png
+
+
+One-Sided Pentatwigs
+====================
+
+These puzzles use the 19 one-sided pentatwigs, for a total of 95 line
+segments on the hexagonal grid.
+
+* 12x2 trapezoid:  `solutions incomplete
+  <../solutions/one-sided-pentatwigs-trapezoid-12x2.txt>`__
+
+  .. image:: images/one-sided-pentatwigs-trapezoid-12x2.png
+
+* 7x4 inset rectangle with 1 segment omitted in various positions:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-pentatwigs-inset-rectangle-7x4-1.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-inset-rectangle-7x4-1.txt>`__
+
+       - .. figure:: images/one-sided-pentatwigs-inset-rectangle-7x4-2.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-inset-rectangle-7x4-2.txt>`__
+
+     * - .. figure:: images/one-sided-pentatwigs-inset-rectangle-7x4-3.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-inset-rectangle-7x4-3.txt>`__
+
+       - .. figure:: images/one-sided-pentatwigs-inset-rectangle-7x4-4.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-inset-rectangle-7x4-4.txt>`__
+
+
+Polytwigs of Order 1 Through 5
+==============================
+
+These puzzles use the 1 monotwig, 1 ditwig, 3 tritwigs, 4 tetratwigs,
+and 12 pentatwigs, for a total of 88 line segments on the hexagonal
+grid.
+
+* 5x5 inset rectangle: `solutions incomplete
+  <../solutions/polytwigs-12345-inset-rectangle-5x5.txt>`__
+
+  .. image:: images/polytwigs-12345-inset-rectangle-5x5.png
+
+* 6x4 parallelograms with 3 segments omitted in various positions:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polytwigs-12345-6x4-1.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-1.txt>`__
+
+       - .. figure:: images/polytwigs-12345-6x4-2.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-2.txt>`__
+
+     * - .. figure:: images/polytwigs-12345-6x4-3.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-3.txt>`__
+
+       - .. figure:: images/polytwigs-12345-6x4-4.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-4.txt>`__
+
+     * - .. figure:: images/polytwigs-12345-6x4-5.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-5.txt>`__
+
+       - .. figure:: images/polytwigs-12345-6x4-6.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-6.txt>`__
+
+     * - .. figure:: images/polytwigs-12345-6x4-7.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-7.txt>`__
+
+       - .. figure:: images/polytwigs-12345-6x4-8.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-8.txt>`__
+
+     * - .. figure:: images/polytwigs-12345-6x4-9.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-9.txt>`__
+
+       - .. figure:: images/polytwigs-12345-6x4-10.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-10.txt>`__
+
+     * - .. figure:: images/polytwigs-12345-6x4-11.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-11.txt>`__
+
+       - .. figure:: images/polytwigs-12345-6x4-12.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-12.txt>`__
+
+     * - .. figure:: images/polytwigs-12345-6x4-13.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-13.txt>`__
+
+       - .. figure:: images/polytwigs-12345-6x4-14.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-14.txt>`__
+
+     * - .. figure:: images/polytwigs-12345-6x4-15.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-6x4-15.txt>`__
+
+       -
+
+* 9x3 trapezoid ring: `solutions incomplete
+  <../solutions/polytwigs-12345-trapezoid-ring-9x3.txt>`__
+
+  .. image:: images/polytwigs-12345-trapezoid-ring-9x3.png
+
+* 4x3 elongated hexagon with 1 segment omitted: `solutions incomplete
+  <../solutions/polytwigs-12345-elongated-hexagon-4x3.txt>`__
+
+  .. image:: images/polytwigs-12345-elongated-hexagon-4x3.png
+
+* 8x2 butterfly with 2 segments omitted in various positions:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polytwigs-12345-butterfly-8x2-1.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-butterfly-8x2-1.txt>`__
+
+       - .. figure:: images/polytwigs-12345-butterfly-8x2-2.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-butterfly-8x2-2.txt>`__
+
+     * - .. figure:: images/polytwigs-12345-butterfly-8x2-3.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-butterfly-8x2-3.txt>`__
+
+       - .. figure:: images/polytwigs-12345-butterfly-8x2-4.png
+
+            `solutions incomplete
+            <../solutions/polytwigs-12345-butterfly-8x2-4.txt>`__
+
+
+One-Sided Polytwigs of Order 1 Through 5
+========================================
+
+These puzzles use the 1 monotwig, 1 ditwig, 4 one-sided tritwigs, 6
+one-sided tetratwigs, and 19 one-sided pentatwigs, for a total of 134
+line segments on the hexagonal grid.
+
+* 12x2 butterfly: `solutions incomplete
+  <../solutions/one-sided-polytwigs-12345-butterfly-12x2.txt>`__
+
+  .. image:: images/one-sided-polytwigs-12345-butterfly-12x2.png
+
+* 12x3 parallelogram with 3 segments omitted in various positions:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-polytwigs-12345-12x3-1.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-12x3-1.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-12345-12x3-2.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-12x3-2.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-12345-12x3-3.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-12x3-3.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-12345-12x3-4.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-12x3-4.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-12345-12x3-5.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-12x3-5.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-12345-12x3-6.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-12x3-6.txt>`__
+
+* 13x3 trapezoid with 3 segments omitted in various positions:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-polytwigs-12345-trapezoid-13x3-1.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-trapezoid-13x3-1.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-12345-trapezoid-13x3-2.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-trapezoid-13x3-2.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-12345-trapezoid-13x3-3.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-trapezoid-13x3-3.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-12345-trapezoid-13x3-4.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-trapezoid-13x3-4.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-12345-trapezoid-13x3-5.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-trapezoid-13x3-5.txt>`__
+
+     * - .. figure:: images/one-sided-polytwigs-12345-trapezoid-13x3-6.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-12345-trapezoid-13x3-6.txt>`__
+
+
+Hexatwigs
+=========
+
+These puzzles use the 27 hexatwigs, for a total of 162 line segments
+on the hexagonal grid.
+
+* Triangle: `solutions incomplete <../solutions/hexatwigs-triangle.txt>`__
+
+  .. image:: images/hexatwigs-triangle.png
+
+
+.. |c| unicode:: U+00A9 .. copyright sign
