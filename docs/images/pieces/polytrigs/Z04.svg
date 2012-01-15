@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="100.000" height="100.000"
+     viewBox="0 0 100.000 100.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="matrix(1,0,0,-1,0,25.981) translate(50.000,-25.000) rotate(60)">
+<path stroke="black" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 11.500,10.392 l 2.200,-3.811 M 13.000,12.990 a 1.732,1.732 0 0,1 -1.500,-2.598 M 13.000,12.990 l 7.000,0.000 M 20.000,12.990 l 7.000,0.000 M 26.300,19.399 l 2.200,-3.811 M 27.000,12.990 a 1.732,1.732 0 0,1 1.500,2.598">
+<desc>Z04</desc>
+</path>
+</g>
+</svg>

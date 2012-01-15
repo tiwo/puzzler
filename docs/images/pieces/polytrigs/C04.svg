@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="45.000" height="34.641"
+     viewBox="0 0 45.000 34.641"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g>
+<path stroke="black" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 11.600,18.879 l 1.800,-3.118 M 11.600,24.422 a 5.543,5.543 0 0,1 0.000,-5.543 M 13.400,15.762 a 5.543,5.543 0 0,1 4.800,-2.771 M 13.400,27.540 l -1.800,-3.118 M 18.200,12.990 l 4.200,0.000 M 18.200,30.311 a 5.543,5.543 0 0,1 -4.800,-2.771 M 18.200,30.311 l 4.200,0.000">
+<desc>C04</desc>
+</path>
+</g>
+</svg>

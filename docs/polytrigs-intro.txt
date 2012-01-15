@@ -1,0 +1,641 @@
+===========================================================
+ An Introduction to Polytrigs (Triangular-Grid Polysticks)
+===========================================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2012 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. sidebar:: Also see:
+
+   | `Polytrigs: Puzzles & Solutions <polytrigs.html>`_
+   | `Polysticks: Puzzles & Solutions <polysticks.html>`_
+   | `Polytwigs (Hexagonal-Grid Polysticks): Puzzles & Solutions <polytwigs.html>`_
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
+   |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+       `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+       `interpreting solution files <FAQ.html#how-should-polytrig-solution-files-be-interpreted>`__)
+
+**Polytrigs** are polyfors constructed from unit line segments (edges)
+joined end-to-end on a regular triangular grid, also known as
+"triangular-grid polysticks" or "triangular polysticks".
+
+Here is a puzzle containing all the polytrigs of order 1 through 3:
+
+.. image:: images/polytrigs-123-trapezoid-5x4.png
+
+See `Polytrigs: Puzzles & Solutions`_ for many more puzzles.
+
+The name "trig" comes from "TRIangular Grid"; a neologism I invented
+because "triangular-grid polysticks" is too unwieldy, especially when
+combined with order-prefixes (mono-, di-, tri-, tetra-, etc.;
+"triangular-grid tristicks"!?).  I hope the name catches on.
+
+    If the square polysticks don't get the respect they deserve, this
+    is doubly true for the triangular polysticks.
+
+    -- Alexandre Owen Muñiz, `Puzzle Zapper Blog
+       <http://puzzlezapper.com/blog/2010/12/polysticks-on-a-regular-spanning-subgraph/>`__
+
+The polytrigs can be thought of as the projective duals of polyhexes.
+Most of the polytrigs of order N can be derived from the polyhexes of
+order N+1 (i.e., joining the centers of the hexagons of a tetrahex
+results in a tritrig).  The exceptions are the polytrigs with loops
+(e.g. the "O04" tetratrig), which are duals of the same order or
+lower-order polyhexes.
+
+I believe I am the first to address this type of puzzle so thoroughly
+(if not, please let me know!).  Hopefully these puzzles will begin to
+fill this particular gap in the polyform puzzle branch of recreational
+mathematics.
+
+
+Polyforms
+=========
+
+The number and names of the various orders of polytrigs are as follows:
+
+=====  ==========  ===========  ===========
+Order  | Polyform  | Free       | One-Sided
+       | Name      | Polytrigs  | Polytrigs
+=====  ==========  ===========  ===========
+1      monotrig    1            1
+2      ditrigs     3            3
+3      tritrigs    12           19
+4*     tetratrigs  60           104
+5*     pentatrigs  375          719
+6*     hexatrigs   2613         5123
+=====  ==========  ===========  ===========
+
+"*" above means that forms with enclosed holes exist.
+
+The numbers of polytrigs can also be found in the following sequences
+from `The On-Line Encyclopedia of Integer Sequences
+<http://oeis.org>`_: A159867_ (free) and A151539_ (one-sided).
+
+.. _A159867: http://oeis.org/A159867
+.. _A151539: http://oeis.org/A151539
+
+Examples of the polytrigs from order 1 (monotrig) to order 4
+(tetratrigs) are given in the tables below.
+
+The polytrigs are named with a letter-number scheme, like "I1", "C3",
+and "R14".  The letter part is the letter of the alphabet that the
+polytrig most closely resembles.  In some cases, that resemblance is
+weak, and the letters are arbitrary.  The final digit of the number
+represents the polyform order (how many line segments are in the
+polytrig).  There are more tetratrigs than letters in the alphabet, so
+their names have an extra middle digit (numbered from 0) to
+differentiate the variations.
+
+In the tables below, "Aspects" refers to the number of unique
+orientations that a polyform may take (different rotations, flipped or
+not).  This varies with the symmetry of the polyform.
+
+The "One-Sided" column identifies polyforms that are asymmetrical in
+reflection.  Treating the flipped and unflipped versions of
+asymmetrical polytrigs as distinct polyforms (and disallowing further
+reflection or "flipping"), results in "one-sided" polytrigs and
+puzzles.
+
+
+Monotrig
+--------
+
+There is only one monotrig (order-1 polytrig):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - I1
+     - .. image:: images/pieces/polytrigs/I1.png
+     - 3
+     -
+
+
+
+
+Ditrigs
+-------
+
+There are 3 ditrigs (order-2 polytrigs):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - I2
+     - .. image:: images/pieces/polytrigs/I2.png
+     - 3
+     -
+
+   * - L2
+     - .. image:: images/pieces/polytrigs/L2.png
+     - 6
+     -
+
+   * - V2
+     - .. image:: images/pieces/polytrigs/V2.png
+     - 6
+     -
+
+
+Tritrigs
+--------
+
+There are 12 free tritrigs (order-3 polytrigs) and 19 one-sided tritrigs:
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - C3
+     - .. image:: images/pieces/polytrigs/C3.png
+     - 6
+     -
+
+   * - E3
+     - .. image:: images/pieces/polytrigs/E3.png
+     - 6
+     -
+
+   * - I3
+     - .. image:: images/pieces/polytrigs/I3.png
+     - 3
+     -
+
+   * - J3
+     - .. image:: images/pieces/polytrigs/J3.png
+     - 12
+     - yes
+
+   * - L3
+     - .. image:: images/pieces/polytrigs/L3.png
+     - 12
+     - yes
+
+   * - O3
+     - .. image:: images/pieces/polytrigs/O3.png
+     - 2
+     -
+
+   * - P3
+     - .. image:: images/pieces/polytrigs/P3.png
+     - 12
+     - yes
+
+   * - S3
+     - .. image:: images/pieces/polytrigs/S3.png
+     - 6
+     - yes
+
+   * - T3
+     - .. image:: images/pieces/polytrigs/T3.png
+     - 12
+     - yes
+
+   * - U3
+     - .. image:: images/pieces/polytrigs/U3.png
+     - 12
+     - yes
+
+   * - Y3
+     - .. image:: images/pieces/polytrigs/Y3.png
+     - 2
+     -
+
+   * - Z3
+     - .. image:: images/pieces/polytrigs/Z3.png
+     - 6
+     - yes
+
+
+Tetratrigs
+----------
+
+There are 60 free tetratrigs (order-4 polytrigs) and 104 one-sided
+tetratrigs:
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - B04
+     - .. image:: images/pieces/polytrigs/B04.png
+     - 12
+     - yes
+
+   * - B14
+     - .. image:: images/pieces/polytrigs/B14.png
+     - 12
+     - yes
+
+   * - C04
+     - .. image:: images/pieces/polytrigs/C04.png
+     - 6
+     -
+
+   * - D04
+     - .. image:: images/pieces/polytrigs/D04.png
+     - 12
+     - yes
+
+   * - E04
+     - .. image:: images/pieces/polytrigs/E04.png
+     - 12
+     - yes
+
+   * - E14
+     - .. image:: images/pieces/polytrigs/E14.png
+     - 6
+     -
+
+   * - E24
+     - .. image:: images/pieces/polytrigs/E24.png
+     - 12
+     - yes
+
+   * - E34
+     - .. image:: images/pieces/polytrigs/E34.png
+     - 12
+     - yes
+
+   * - F04
+     - .. image:: images/pieces/polytrigs/F04.png
+     - 12
+     - yes
+
+   * - F14
+     - .. image:: images/pieces/polytrigs/F14.png
+     - 12
+     - yes
+
+   * - F24
+     - .. image:: images/pieces/polytrigs/F24.png
+     - 12
+     - yes
+
+   * - F34
+     - .. image:: images/pieces/polytrigs/F34.png
+     - 12
+     - yes
+
+   * - H04
+     - .. image:: images/pieces/polytrigs/H04.png
+     - 12
+     - yes
+
+   * - H14
+     - .. image:: images/pieces/polytrigs/H14.png
+     - 12
+     - yes
+
+   * - H24
+     - .. image:: images/pieces/polytrigs/H24.png
+     - 12
+     - yes
+
+   * - H34
+     - .. image:: images/pieces/polytrigs/H34.png
+     - 12
+     - yes
+
+   * - I04
+     - .. image:: images/pieces/polytrigs/I04.png
+     - 3
+     -
+
+   * - J04
+     - .. image:: images/pieces/polytrigs/J04.png
+     - 12
+     - yes
+
+   * - J14
+     - .. image:: images/pieces/polytrigs/J14.png
+     - 12
+     - yes
+
+   * - J24
+     - .. image:: images/pieces/polytrigs/J24.png
+     - 12
+     - yes
+
+   * - J34
+     - .. image:: images/pieces/polytrigs/J34.png
+     - 12
+     - yes
+
+   * - K04
+     - .. image:: images/pieces/polytrigs/K04.png
+     - 6
+     -
+
+   * - L04
+     - .. image:: images/pieces/polytrigs/L04.png
+     - 12
+     - yes
+
+   * - M04
+     - .. image:: images/pieces/polytrigs/M04.png
+     - 6
+     -
+
+   * - N04
+     - .. image:: images/pieces/polytrigs/N04.png
+     - 12
+     - yes
+
+   * - N14
+     - .. image:: images/pieces/polytrigs/N14.png
+     - 12
+     - yes
+
+   * - O04
+     - .. image:: images/pieces/polytrigs/O04.png
+     - 3
+     -
+
+   * - P04
+     - .. image:: images/pieces/polytrigs/P04.png
+     - 12
+     - yes
+
+   * - P14
+     - .. image:: images/pieces/polytrigs/P14.png
+     - 12
+     - yes
+
+   * - P24
+     - .. image:: images/pieces/polytrigs/P24.png
+     - 12
+     - yes
+
+   * - P34
+     - .. image:: images/pieces/polytrigs/P34.png
+     - 12
+     - yes
+
+   * - Q04
+     - .. image:: images/pieces/polytrigs/Q04.png
+     - 12
+     - yes
+
+   * - Q14
+     - .. image:: images/pieces/polytrigs/Q14.png
+     - 12
+     - yes
+
+   * - R04
+     - .. image:: images/pieces/polytrigs/R04.png
+     - 12
+     - yes
+
+   * - R14
+     - .. image:: images/pieces/polytrigs/R14.png
+     - 12
+     - yes
+
+   * - R24
+     - .. image:: images/pieces/polytrigs/R24.png
+     - 12
+     - yes
+
+   * - R34
+     - .. image:: images/pieces/polytrigs/R34.png
+     - 12
+     - yes
+
+   * - S04
+     - .. image:: images/pieces/polytrigs/S04.png
+     - 6
+     - yes
+
+   * - S14
+     - .. image:: images/pieces/polytrigs/S14.png
+     - 12
+     - yes
+
+   * - S24
+     - .. image:: images/pieces/polytrigs/S24.png
+     - 12
+     - yes
+
+   * - S34
+     - .. image:: images/pieces/polytrigs/S34.png
+     - 12
+     - yes
+
+   * - S44
+     - .. image:: images/pieces/polytrigs/S44.png
+     - 12
+     - yes
+
+   * - T04
+     - .. image:: images/pieces/polytrigs/T04.png
+     - 12
+     - yes
+
+   * - T14
+     - .. image:: images/pieces/polytrigs/T14.png
+     - 6
+     -
+
+   * - T24
+     - .. image:: images/pieces/polytrigs/T24.png
+     - 12
+     - yes
+
+   * - U04
+     - .. image:: images/pieces/polytrigs/U04.png
+     - 12
+     - yes
+
+   * - U14
+     - .. image:: images/pieces/polytrigs/U14.png
+     - 6
+     -
+
+   * - U24
+     - .. image:: images/pieces/polytrigs/U24.png
+     - 6
+     -
+
+   * - V04
+     - .. image:: images/pieces/polytrigs/V04.png
+     - 6
+     -
+
+   * - V14
+     - .. image:: images/pieces/polytrigs/V14.png
+     - 6
+     -
+
+   * - V24
+     - .. image:: images/pieces/polytrigs/V24.png
+     - 6
+     -
+
+   * - W04
+     - .. image:: images/pieces/polytrigs/W04.png
+     - 6
+     -
+
+   * - W14
+     - .. image:: images/pieces/polytrigs/W14.png
+     - 6
+     -
+
+   * - W24
+     - .. image:: images/pieces/polytrigs/W24.png
+     - 12
+     - yes
+
+   * - X04
+     - .. image:: images/pieces/polytrigs/X04.png
+     - 3
+     -
+
+   * - Y04
+     - .. image:: images/pieces/polytrigs/Y04.png
+     - 6
+     -
+
+   * - Y14
+     - .. image:: images/pieces/polytrigs/Y14.png
+     - 12
+     - yes
+
+   * - Y24
+     - .. image:: images/pieces/polytrigs/Y24.png
+     - 12
+     - yes
+
+   * - Y34
+     - .. image:: images/pieces/polytrigs/Y34.png
+     - 12
+     - yes
+
+   * - Z04
+     - .. image:: images/pieces/polytrigs/Z04.png
+     - 6
+     - yes
+
+
+Coordinate System
+=================
+
+Polytrig puzzles use a pseudo-3D skewed coordinate system, where the X
+and Y axes are 60° apart instead of the usual 90°.  The typical
+representation (as seen in the Polyform Puzzler solution data files)
+positions the X axis horizontally with the Y axis 30° clockwise from
+vertical.
+
+The (X,Y) 2-dimensional coordinate identifies the lower-left corner of
+the (X,Y,0) triangle in a polyiamond grid.  The first three line
+segments emanating from this point share the (X,Y) coordinate, and the
+Z dimension is used for the direction of the line segment:
+
+| z = 0: 0° horizontal, to the right;
+| z = 1: 60° counter-clockwise, up and to the right;
+| z = 2: 120° counter-clockwise, up and to the left.
+
+
+Intersections
+-------------
+
+As there is the possibility for polytrigs to cross each other at any
+(X,Y) intersection, the solution algorithm needs to prevent such
+crossings.  Unlike with polysticks, the intersections are not simple
+(either used or available); multiple polyforms can use an intersection
+simultaneously.
+
+In the puzzle matrix, we represent contstraints on intersections via
+up to 6 additional columns per intersection [*]_, in the form i(X,Y,Z)
+(or "X,Y,Zi").  This means that the segment in direction Z cannot go
+through the intersection, (X,Y).  These are the Z directions::
+
+      2    1
+       \  /
+    3___\/___0
+        /\
+       /  \
+      4    5
+
+.. [*] Possibly fewer columns for intersections at the edge of a
+   puzzle shape.  This represents a possible future optimization.
+
+   Note that since there are already 3 line segments originating at
+   each intersection, the cost of intersection constraints is 2 per
+   segment, which effectively multiplies the number of coordinate
+   columns by 3.  Polytrig puzzle matrixes 
+
+These intersection constraints are secondary columns, meaning that at
+most one polyform may use or fill a column.  Unlike primary columns,
+secondary columns may remain unused/unfilled.
+
+For each polyform, we check the angle between each pair of line
+segments.  Both ends of each segment must be checked, but only in one
+direction (counter-clockwise) to avoid duplication.  For any two line
+segments, there are six possibilities::
+
+      B  / A
+    ____/___     D ____    E ____    F ____
+                  /          \
+        C        /  D'        \
+
+* A: 60° (adjacent) -- no constraints are added.
+
+* B: 120° (one-gapper) -- 3 constraints are added: the 2 line segments
+  themselves (e.g. Z={1,3}), plus the gap in-between (e.g. Z=2).
+
+* C: 180° (two-gapper) -- 4 constraints are added: the 2 line segments
+  (e.g. Z={3,0}), plus the two gaps (e.g. Z={4,5}).  Note that the
+  gaps on the opposite side will be added when the other line segment
+  is checked.
+
+* D: 240° (three-gapper) -- no constraints are added.  However, D' is
+  a case of a 120° one-gapper (case B).
+
+* E: 300° (four-gapper) -- no constraints are added.
+
+* F: 360° (five-gapper or stub; only one segment involved) -- no
+  constraints are added.
+
+Only cases B & C require constraints.
+
+If an intersection constraint is already used (or otherwise
+unavailable), no other polyform with the same contstraint may be
+placed in the puzzle solution.
+
+.. !!! Add example?
+
+
+.. |c| unicode:: U+00A9 .. copyright sign

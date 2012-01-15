@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="110.000" height="110.000"
+     viewBox="0 0 110.000 110.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(55.000,27.500) rotate(90)">
+<path stroke="black" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 15.000,12.990 l 10.000,0.000 M 25.000,12.990 l 10.000,0.000 M 35.000,12.990 l 7.400,0.000 M 7.600,12.990 l 7.400,0.000">
+<desc>I04</desc>
+</path>
+</g>
+</svg>

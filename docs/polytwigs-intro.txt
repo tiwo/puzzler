@@ -1,0 +1,470 @@
+==========================================================
+ An Introduction to Polytwigs (Hexagonal-Grid Polysticks)
+==========================================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2012 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. sidebar:: Also see:
+
+   | `Polytwigs: Puzzles & Solutions <polytwigs.html>`_
+   | `Polysticks: Puzzles & Solutions <polysticks.html>`_
+   | `Polytrigs (Triangular-Grid Polysticks): Puzzles & Solutions <polytrigs.html>`_
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
+   |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+       `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+       `interpreting solution files <FAQ.html#how-should-polytwig-solution-files-be-interpreted>`__)
+
+**Polytwigs** are polyforms constructed from unit line segments
+(edges) joined end-to-end on a regular hexagonal grid.  Unit line
+segments on a square grid are called "polysticks", so polytwigs could
+also be called "polysticks on a hexagonal grid" or "hexagonal-grid
+polysticks" or "hexagonal polysticks".  The polytwigs are a subset of
+the polytrigs (triangular-grid polysticks); polytwigs would fit on a
+polytrig grid, but there are a lot fewer of them.
+
+Here is a puzzle containing all the polytwigs of order 1 through 5:
+
+.. image:: images/polytwigs-12345-inset-rectangle-5x5.png
+
+And here is a puzzle containing all the hexatwigs (order 6):
+
+.. image:: images/hexatwigs-triangle.png
+
+See `Polytwigs: Puzzles & Solutions`_ for many more puzzles.
+
+Most of the polytwigs of order N can be thought of as the projective
+duals of the polyiamonds of order N+1 (i.e., joining the centers of
+the triangles of a hexiamond results in a pentatwig).  The exceptions
+are the polytwigs with loops (e.g. the "O06" hexatwig), which are
+duals of the same order or lower-order polyiamonds.
+
+I believe I am the first to explore this type of puzzle (if not,
+please let me know!).
+
+I invented the name "polytwigs" because "hexagonal-grid polysticks" is
+too unwieldy, especially when combined with order-prefixes (mono-,
+di-, tri-, tetra-, etc.; "hexagonal-grid tristicks"!?).  The name
+comes from "twig" being a small stick, often bent and branching.
+"Polytwig" is also similar to "polytrig", the name I invented for
+triangular-grid polytsicks.  I hope these names catch on.
+
+
+Polyforms
+=========
+
+The number and names of the various orders of polytwigs are as follows:
+
+=====  ==========  ===========  ===========
+Order  | Polyform  | Free       | One-Sided
+       | Name      | Polytwigs  | Polytwigs
+=====  ==========  ===========  ===========
+1      monotwig    1            1
+2      ditwig      1            1
+3      tritwigs    3            4
+4      tetratwigs  4            6
+5      pentatwigs  12           19
+6      hexatwigs   27           49
+7      heptatwigs  78           143
+=====  ==========  ===========  ===========
+
+The numbers of polytwigs can also be found in the following sequences
+from `The On-Line Encyclopedia of Integer Sequences
+<http://oeis.org>`_: A197459_ (free) and A197460_ (one-sided).
+
+.. _A197459: http://oeis.org/A197459
+.. _A197460: http://oeis.org/A197460
+
+Examples of the polytwigs from order 1 (monotwig) to order 6
+(hexatwigs) are given in the tables below.
+
+The polytwigs are named with a letter-number scheme, like "I1", "C3",
+and "R16".  The letter part is the letter of the alphabet that the
+polytwig most closely resembles.  In some cases, that resemblance is
+weak, and the letters are arbitrary.  The final digit of the number
+represents the polyform order (how many line segments are in the
+polytwig).  There are more hexatwigs than letters in the alphabet, so
+their names have an extra middle digit (numbered from 0) to
+differentiate the variations.
+
+In the tables below, "Aspects" refers to the number of unique
+orientations that a polyform may take (different rotations, flipped or
+not).  This varies with the symmetry of the polyform.
+
+The "One-Sided" column identifies polyforms that are asymmetrical in
+reflection.  Treating the flipped and unflipped versions of
+asymmetrical polytwigs as distinct polyforms (and disallowing further
+reflection or "flipping"), results in "one-sided" polytwigs and
+puzzles.
+
+
+Monotwig
+--------
+
+There is only one monotwig (order-1 polytwig):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - I1
+     - .. image:: images/pieces/polytwigs/I1.png
+     - 3
+     -
+
+
+Ditwig
+------
+
+There is only one ditwig (order-2 polytwig):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - L2
+     - .. image:: images/pieces/polytwigs/L2.png
+     - 6
+     -
+
+
+Tritwigs
+--------
+
+There are 3 free tritwigs (order-3 polytwigs) and 4 one-sided
+tritwigs:
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - C3
+     - .. image:: images/pieces/polytwigs/C3.png
+     - 6
+     -
+
+   * - S3
+     - .. image:: images/pieces/polytwigs/S3.png
+     - 6
+     - yes
+
+   * - Y3
+     - .. image:: images/pieces/polytwigs/Y3.png
+     - 2
+     -
+
+
+Tetratwigs
+----------
+
+There are 4 free tetratwigs (order-4 polytwigs) and 6 one-sided
+tetratwigs:
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - C4
+     - .. image:: images/pieces/polytwigs/C4.png
+     - 6
+     -
+
+   * - P4
+     - .. image:: images/pieces/polytwigs/P4.png
+     - 12
+     - yes
+
+   * - W4
+     - .. image:: images/pieces/polytwigs/W4.png
+     - 6
+     -
+
+   * - Y4
+     - .. image:: images/pieces/polytwigs/Y4.png
+     - 12
+     - yes
+
+
+Pentatwigs
+----------
+
+There are 12 free pentatwigs (order-4 polytwigs) and 19 one-sided
+pentatwigs:
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - C5
+     - .. image:: images/pieces/polytwigs/C5.png
+     - 6
+     -
+
+   * - H5
+     - .. image:: images/pieces/polytwigs/H5.png
+     - 12
+     - yes
+
+   * - I5
+     - .. image:: images/pieces/polytwigs/I5.png
+     - 6
+     - yes
+
+   * - L5
+     - .. image:: images/pieces/polytwigs/L5.png
+     - 12
+     - yes
+
+   * - P5
+     - .. image:: images/pieces/polytwigs/P5.png
+     - 12
+     - yes
+
+   * - R5
+     - .. image:: images/pieces/polytwigs/R5.png
+     - 12
+     - yes
+
+   * - S5
+     - .. image:: images/pieces/polytwigs/S5.png
+     - 6
+     - yes
+
+   * - T5
+     - .. image:: images/pieces/polytwigs/T5.png
+     - 6
+     -
+
+   * - U5
+     - .. image:: images/pieces/polytwigs/U5.png
+     - 6
+     -
+
+   * - W5
+     - .. image:: images/pieces/polytwigs/W5.png
+     - 12
+     - yes
+
+   * - X5
+     - .. image:: images/pieces/polytwigs/X5.png
+     - 6
+     -
+
+   * - Y5
+     - .. image:: images/pieces/polytwigs/Y5.png
+     - 6
+     -
+
+
+Hexatwigs
+---------
+
+There are 27 free hexatwigs (order-6 polytwigs) and 49 one-sided
+hexatwigs:
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - C06
+     - .. image:: images/pieces/polytwigs/C06.png
+     - 12
+     - yes
+
+   * - F06
+     - .. image:: images/pieces/polytwigs/F06.png
+     - 12
+     - yes
+
+   * - H06
+     - .. image:: images/pieces/polytwigs/H06.png
+     - 12
+     - yes
+
+   * - H16
+     - .. image:: images/pieces/polytwigs/H16.png
+     - 12
+     - yes
+
+   * - I06
+     - .. image:: images/pieces/polytwigs/I06.png
+     - 6
+     -
+
+   * - J06
+     - .. image:: images/pieces/polytwigs/J06.png
+     - 12
+     - yes
+
+   * - L06
+     - .. image:: images/pieces/polytwigs/L06.png
+     - 12
+     - yes
+
+   * - L16
+     - .. image:: images/pieces/polytwigs/L16.png
+     - 12
+     - yes
+
+   * - L26
+     - .. image:: images/pieces/polytwigs/L26.png
+     - 12
+     - yes
+
+   * - M06
+     - .. image:: images/pieces/polytwigs/M06.png
+     - 6
+     -
+
+   * - O06
+     - .. image:: images/pieces/polytwigs/O06.png
+     - 1
+     -
+
+   * - Q06
+     - .. image:: images/pieces/polytwigs/Q06.png
+     - 12
+     - yes
+
+   * - Q16
+     - .. image:: images/pieces/polytwigs/Q16.png
+     - 12
+     - yes
+
+   * - Q26
+     - .. image:: images/pieces/polytwigs/Q26.png
+     - 12
+     - yes
+
+   * - R06
+     - .. image:: images/pieces/polytwigs/R06.png
+     - 12
+     - yes
+
+   * - R16
+     - .. image:: images/pieces/polytwigs/R16.png
+     - 12
+     - yes
+
+   * - S06
+     - .. image:: images/pieces/polytwigs/S06.png
+     - 12
+     - yes
+
+   * - S16
+     - .. image:: images/pieces/polytwigs/S16.png
+     - 12
+     - yes
+
+   * - S26
+     - .. image:: images/pieces/polytwigs/S26.png
+     - 12
+     - yes
+
+   * - U06
+     - .. image:: images/pieces/polytwigs/U06.png
+     - 6
+     -
+
+   * - V06
+     - .. image:: images/pieces/polytwigs/V06.png
+     - 6
+     -
+
+   * - W06
+     - .. image:: images/pieces/polytwigs/W06.png
+     - 12
+     - yes
+
+   * - X06
+     - .. image:: images/pieces/polytwigs/X06.png
+     - 12
+     - yes
+
+   * - X16
+     - .. image:: images/pieces/polytwigs/X16.png
+     - 12
+     - yes
+
+   * - Y06
+     - .. image:: images/pieces/polytwigs/Y06.png
+     - 4
+     - yes
+
+   * - Y16
+     - .. image:: images/pieces/polytwigs/Y16.png
+     - 12
+     - yes
+
+   * - Y26
+     - .. image:: images/pieces/polytwigs/Y26.png
+     - 12
+     - yes
+
+
+Coordinate System
+=================
+
+Polytwig puzzles use a pseudo-3D skewed coordinate system, where the X
+and Y axes are 60° apart instead of the usual 90°.  The typical
+representation (as seen in the Polyform Puzzler solution data files)
+positions the Y axis vertically with the X axis 30° counter-clockwise
+from horizontal.  Solution graphics are often rotated so the X axis is
+horizontal, and the Y axis 30° clockwise from vertical.
+
+The (X,Y) 2-dimensional coordinate identifies the lower-left corner of
+the (X,Y) hexagon in a polyhex grid (a honeycomb with hexagons with
+horizontal tops & bottoms).  The three line segments emanating from
+this point share the (X,Y) coordinate, and the Z dimension is used for
+the direction of the line segment:
+
+| z = 0: 0° horizontal, to the right;
+| z = 1: 120° counter-clockwise, up and to the left;
+| z = 2: 240° counter-clockwise, down and to the left.
+
+Since only three line segments may emanate from each (X,Y)
+intersection, there is no possibility for polytwigs to cross each
+other and no need to keep track of intersections.  This separates
+polytwigs from polysticks and polytrigs, where such considerations are
+crucial.
+
+
+.. |c| unicode:: U+00A9 .. copyright sign

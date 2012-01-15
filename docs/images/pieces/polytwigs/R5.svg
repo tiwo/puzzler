@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="155.885" height="155.885"
+     viewBox="0 0 155.885 155.885"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="matrix(1,0,0,-1,0,77.942) translate(77.942,0.000) rotate(60)">
+<path stroke="black" stroke-width="2" stroke-linecap="round"
+      fill="none" d="M 13.400,40.530 a 5.543,5.543 0 0,1 0.000,5.543 M 13.400,40.530 l -2.700,-4.677 M 13.400,46.073 a 5.543,5.543 0 0,1 4.800,-2.771 M 13.400,46.073 l -2.700,4.677 M 18.200,43.301 a 5.543,5.543 0 0,1 -4.800,-2.771 M 18.200,43.301 l 3.600,0.000 M 21.800,43.301 a 5.543,5.543 0 0,1 4.800,2.771 M 28.400,49.190 a 5.543,5.543 0 0,1 0.000,5.543 M 28.400,49.190 l -1.800,-3.118 M 28.400,54.733 l -2.700,4.677">
+<desc>R5</desc>
+</path>
+</g>
+</svg>
