@@ -6,7 +6,6 @@
 """
 
 import puzzler
-#from puzzler.puzzles.polytwigs1234
-from polytwigs import Polytwigs1234Hex5
+from puzzler.puzzles.polytwigs1234 import Polytwigs1234Hex5
 
 puzzler.run(Polytwigs1234Hex5)

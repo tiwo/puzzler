@@ -6,7 +6,6 @@
 """
 
 import puzzler
-#from puzzler.puzzles.tetratwigs
-from polytwigs import OneSidedTetratwigsArch_4
+from puzzler.puzzles.tetratwigs import OneSidedTetratwigsArch_4
 
 puzzler.run(OneSidedTetratwigsArch_4)

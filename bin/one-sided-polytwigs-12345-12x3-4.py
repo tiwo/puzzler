@@ -6,7 +6,6 @@ many solutions.
 """
 
 import puzzler
-#from puzzler.puzzles.polytwigs12345
-from polytwigs import OneSidedPolytwigs12345_12x3_4
+from puzzler.puzzles.polytwigs12345 import OneSidedPolytwigs12345_12x3_4
 
 puzzler.run(OneSidedPolytwigs12345_12x3_4)

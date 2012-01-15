@@ -6,7 +6,6 @@
 """
 
 import puzzler
-#from puzzler.puzzles.polytwigs123
-from polytwigs import OneSidedPolytwigs123Triangle
+from puzzler.puzzles.polytwigs123 import OneSidedPolytwigs123Triangle
 
 puzzler.run(OneSidedPolytwigs123Triangle)
