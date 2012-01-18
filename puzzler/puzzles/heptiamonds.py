@@ -636,6 +636,8 @@ class HeptiamondsDiamondRing(Heptiamonds):
 
     duplicate_conditions = ({'rotate_180': True},)
 
+    svg_rotation = 30
+
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -740,6 +742,8 @@ class Heptiamonds14x6Chevron(HeptiamondsChevron):
     height = 14
     width = 13
 
+    svg_rotation = 90
+
 
 class Heptiamonds28x3Chevron(HeptiamondsChevron):
 
@@ -747,6 +751,8 @@ class Heptiamonds28x3Chevron(HeptiamondsChevron):
 
     height = 28
     width = 17
+
+    svg_rotation = 90
 
 
 class HeptiamondsStack(Heptiamonds):
@@ -781,6 +787,8 @@ class Heptiamonds4x24Stack(HeptiamondsStack):
     height = 24
     width = 15
 
+    svg_rotation = 90
+
 
 class HeptiamondsHexedTriangle(Heptiamonds):
 
@@ -790,6 +798,8 @@ class HeptiamondsHexedTriangle(Heptiamonds):
     width = 14
 
     check_for_duplicates = False
+
+    svg_rotation = -30
 
     def coordinates(self):
         for z in range(self.depth):
@@ -813,6 +823,8 @@ class HeptiamondsShortHexRing(Heptiamonds):
     width = 10
 
     duplicate_conditions = ({'rotate_180': True},)
+
+    svg_rotation = 30
 
     def coordinates(self):
         for z in range(self.depth):

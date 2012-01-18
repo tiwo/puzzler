@@ -58,6 +58,8 @@ class Tetrasticks3x5DiamondLattice(Tetrasticks):
     width = 8
     height = 8
 
+    svg_rotation = -45
+
     def customize_piece_data(self):
         self.piece_data['!'] = ((), {})
         self.piece_data['P'][-1]['flips'] = None
@@ -85,6 +87,8 @@ class OneSidedTetrasticks5x5DiamondLattice(OneSidedTetrasticks):
     height = 10
 
     check_for_duplicates = False
+
+    svg_rotation = -45
 
     @classmethod
     def components(cls):

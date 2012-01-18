@@ -121,6 +121,8 @@ class Hexiamonds4x12StackedHexagons(Hexiamonds):
 
     duplicate_conditions = ({'rotate_180': True},)
 
+    svg_rotation = 90
+
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -180,6 +182,8 @@ class Hexiamonds4x12StackedButterflies(Hexiamonds):
     width = 10
 
     duplicate_conditions = ({'rotate_180': True},)
+
+    svg_rotation = 90
 
     def coordinates(self):
         for z in range(self.depth):
@@ -549,6 +553,8 @@ class HexiamondsStackedChevrons_12x3_1(Hexiamonds):
 
     check_for_duplicates = False
 
+    svg_rotation = 90
+
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -568,6 +574,8 @@ class HexiamondsStackedChevrons_12x3_2(Hexiamonds):
     width = 9
 
     check_for_duplicates = False
+
+    svg_rotation = 90
 
     def coordinates(self):
         for z in range(self.depth):
@@ -594,6 +602,8 @@ class HexiamondsStackedChevrons_12x3_3(Hexiamonds):
     width = 9
 
     check_for_duplicates = False
+
+    svg_rotation = 90
 
     def coordinates(self):
         for z in range(self.depth):
@@ -663,6 +673,8 @@ class HexiamondsChevron_12x3(HexiamondsChevron):
 
     check_for_duplicates = False
 
+    svg_rotation = 90
+
 
 class HexiamondsV_9x9(Hexiamonds):
 
@@ -697,6 +709,8 @@ class HexiamondsTenyo(Hexiamonds):
     width = 7
 
     check_for_duplicates = False
+
+    svg_rotation = 90
 
     def coordinates(self):
         for z in range(self.depth):

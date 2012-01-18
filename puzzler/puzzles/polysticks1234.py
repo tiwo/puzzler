@@ -38,6 +38,8 @@ class Polysticks1234_3x7DiamondLattice(Polysticks1234):
     width = 10
     height = 10
 
+    svg_rotation = -45
+
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['rotations'] = (0,1)
@@ -66,6 +68,8 @@ class Polysticks1234_5x5DiamondLatticeRing(Polysticks1234):
 
     width = 10
     height = 10
+
+    svg_rotation = -45
 
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None

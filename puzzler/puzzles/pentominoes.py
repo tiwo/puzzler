@@ -286,6 +286,8 @@ class PentominoesTriangle(Pentominoes):
     height = 10
     width = 10
 
+    svg_rotation = 135
+
     def coordinates(self):
         for y in range(self.height):
             for x in range(self.width):
