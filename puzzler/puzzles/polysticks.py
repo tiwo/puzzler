@@ -266,12 +266,7 @@ class Polysticks(PuzzlePseudo3D):
                     for z in range(self.depth)]
         return s_matrix
 
-    def format_svg(self, solution=None, s_matrix=None):
-        if s_matrix:
-            assert solution is None, ('Provide only one of solution '
-                                      '& s_matrix arguments, not both.')
-        else:
-            s_matrix = self.build_solution_matrix(solution, margin=1)
+    def format_svg_shapes(self, s_matrix):
         paths = []
         for x in range(1, self.width + 1):
             for y in range(1, self.height + 1):
@@ -279,11 +274,12 @@ class Polysticks(PuzzlePseudo3D):
                     if s_matrix[z][y][x] == self.empty_cell:
                         continue
                     paths.append(self.build_path(s_matrix, x, y, z))
-        header = self.svg_header % {
-            'height': (self.height + 1) * self.svg_unit_height,
-            'width': (self.width + 1) * self.svg_unit_width}
-        return '%s%s%s%s%s' % (header, self.svg_g_start, ''.join(paths),
-                               self.svg_g_end, self.svg_footer)
+        return paths
+
+    def calculate_svg_dimensions(self):
+        height = (self.height + 1) * self.svg_unit_height
+        width = (self.width + 1) * self.svg_unit_width
+        return height, width
 
     def build_path(self, s_matrix, x, y, z):
         name = s_matrix[z][y][x]

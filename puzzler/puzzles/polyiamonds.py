@@ -243,12 +243,7 @@ class Polyiamonds(PuzzlePseudo3D):
                 left_margin = min(left_margin, len(line) - len(line.lstrip()))
         return '\n'.join(line[left_margin:] for line in output) + '\n'
 
-    def format_svg(self, solution=None, s_matrix=None):
-        if s_matrix:
-            assert solution is None, ('Provide only one of solution '
-                                      '& s_matrix arguments, not both.')
-        else:
-            s_matrix = self.build_solution_matrix(solution, margin=1)
+    def format_svg_shapes(self, s_matrix):
         polygons = []
         for y in range(1, self.height + 1):
             for x in range(1, self.width + 1):
@@ -256,11 +251,12 @@ class Polyiamonds(PuzzlePseudo3D):
                     if s_matrix[z][y][x] == self.empty_cell:
                         continue
                     polygons.append(self.build_polygon(s_matrix, x, y, z))
-        header = self.svg_header % {
-            'height': (self.height + 2) * self.svg_unit_height,
-            'width': (self.width + self.height / 2.0 + 2) * self.svg_unit_width}
-        return '%s%s%s%s%s' % (header, self.svg_g_start, ''.join(polygons),
-                               self.svg_g_end, self.svg_footer)
+        return polygons
+
+    def calculate_svg_dimensions(self):
+        height = (self.height + 2) * self.svg_unit_height
+        width = (self.width + self.height / 2.0 + 2) * self.svg_unit_width
+        return height, width
 
     def build_polygon(self, s_matrix, x, y, z):
         points = self.get_polygon_points(s_matrix, x, y, z)

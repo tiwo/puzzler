@@ -130,23 +130,10 @@ class Polyhexes(Puzzle2D):
             s_matrix[y][x] = '* '
         return self.format_hex_grid(s_matrix)
 
-    def format_svg(self, solution=None, s_matrix=None):
-        if s_matrix:
-            assert solution is None, ('Provide only one of solution '
-                                      '& s_matrix arguments, not both.')
-        else:
-            s_matrix = self.build_solution_matrix(solution, margin=1)
-        polygons = []
-        for y in range(1, self.height + 1):
-            for x in range(1, self.width + 1):
-                if s_matrix[y][x] == self.empty_cell:
-                    continue
-                polygons.append(self.build_polygon(s_matrix, x, y))
-        header = self.svg_header % {
-            'height': (self.height + 2) * self.svg_unit_height,
-            'width': (self.width + self.height / 2.0 + 2) * self.svg_unit_width}
-        return '%s%s%s%s%s' % (header, self.svg_g_start, ''.join(polygons),
-                               self.svg_g_end, self.svg_footer)
+    def calculate_svg_dimensions(self):
+        height = (self.height + 2) * self.svg_unit_height
+        width = (self.width + self.height / 2.0 + 2) * self.svg_unit_width
+        return height, width
 
     edge_trace = {0: ( 0, -1),
                   1: (+1, -1),

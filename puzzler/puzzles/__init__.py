@@ -454,28 +454,47 @@ class Puzzle2D(Puzzle):
 
     def format_svg(self, solution=None, s_matrix=None):
         if s_matrix:
-            assert solution is None, ('Provide only one of solution '
-                                      '& s_matrix arguments, not both.')
+            assert solution is None, (
+                'Provide only one of solution & s_matrix arguments, not both.')
         else:
             s_matrix = self.build_solution_matrix(solution, margin=1)
+        shapes = self.format_svg_shapes(s_matrix)
+        height, width = self.calculate_svg_dimensions()
+        if self.svg_flip:
+            g_flip_matrix = self.svg_flip_matrix % {'dy': height} + ' '
+        else:
+            g_flip_matrix = ''
+        if self.svg_rotation:
+            max_dim = max(height, width)
+            g_start = self.svg_g_start_with_transform % {
+                'extra': g_flip_matrix,
+                'dx': max_dim,
+                'dy': max_dim * (0.5 - self.svg_flip),
+                'angle': self.svg_rotation}
+            height = width = max_dim * 2
+        else:
+            if g_flip_matrix:
+                g_start = self.svg_g_start_with_transform % {
+                    'extra': g_flip_matrix, 'dx': 0.0, 'dy': 0.0, 'angle': 0}
+            else:
+                g_start = self.svg_g_start
+        header = self.svg_header % {'height': height, 'width': width}
+        return '%s%s%s%s%s' % (
+            header, g_start, ''.join(shapes), self.svg_g_end, self.svg_footer)
+
+    def format_svg_shapes(self, s_matrix):
         polygons = []
         for y in range(1, self.height + 1):
             for x in range(1, self.width + 1):
                 if s_matrix[y][x] == self.empty_cell:
                     continue
                 polygons.append(self.build_polygon(s_matrix, x, y))
-        header = self.svg_header % {
-            'height': (self.height + 2) * self.svg_unit_length,
-            'width': (self.width + 2) * self.svg_unit_length}
-        if self.svg_rotation:
-            g_start = self.svg_g_start_with_transform % {
-                'dx': (self.height * self.svg_unit_length
-                       * math.sin(math.pi / 180 * self.svg_rotation)),
-                'angle': self.svg_rotation}
-        else:
-            g_start = self.svg_g_start
-        return '%s%s%s%s%s' % (header, g_start, ''.join(polygons),
-                               self.svg_g_end, self.svg_footer)
+        return polygons
+
+    def calculate_svg_dimensions(self):
+        height = (self.height + 2) * self.svg_unit_length
+        width = (self.width + 2) * self.svg_unit_length
+        return height, width
 
     def build_polygon(self, s_matrix, x, y):
         points = self.get_polygon_points(s_matrix, x, y)
@@ -809,7 +828,7 @@ class Puzzle3D(Puzzle):
         return s_matrix
 
 
-class PuzzlePseudo3D(Puzzle3D):
+class PuzzlePseudo3D(Puzzle3D, Puzzle2D):
 
     """The Z dimension is used for direction/orientation."""
 
@@ -833,6 +852,8 @@ class PuzzlePseudo3D(Puzzle3D):
         for x, y, z in self.solution_coords:
             s_matrix[z][y + self.margin][x + self.margin] = piece_name
         return self.format_svg(s_matrix=s_matrix)
+
+    format_svg = Puzzle2D.format_svg
 
     def format_x3d(self, solution=None, s_matrix=None):
         raise NotImplementedError
