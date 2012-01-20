@@ -82,6 +82,21 @@ the triangular grid.
             `4 solutions
             <../solutions/tritrigs-triangle-2.txt>`__
 
+* Hearts (designed by Leslie E. Shader):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/tritrigs-heart-1.png
+
+            `50 solutions
+            <../solutions/tritrigs-heart-1.txt>`__
+
+       - .. figure:: images/tritrigs-heart-2.png
+
+            `52 solutions
+            <../solutions/tritrigs-heart-2.txt>`__
+
 
 One-Sided Tritrigs
 ==================

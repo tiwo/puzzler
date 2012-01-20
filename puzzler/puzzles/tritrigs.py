@@ -280,6 +280,35 @@ class TritrigsTriangle_no_solutions(TritrigsTriangle1):
     """
 
 
+class TritrigsHeart1(Tritrigs):
+
+    """50 solutions."""
+
+    width = 5
+    height = 5
+
+    hole = set(((2,1,1), (2,2,0), (2,2,2)))
+
+    svg_rotation = -30
+
+    def coordinates(self):
+        hole = set(((2,3,1), (1,4,0), (3,3,2)))
+        hole.update(self.hole)
+        for coord in self.coordinates_hexagon(2):
+            if coord not in hole:
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['Z3'][-1]['flips'] = None
+
+
+class TritrigsHeart2(TritrigsHeart1):
+
+    """52 solutions."""
+
+    hole = set(((2,2,1), (1,2,0), (3,1,2)))
+
+
 class OneSidedTritrigsSemiRegularHexagon4x1(OneSidedTritrigs):
 
     """many solutions."""
