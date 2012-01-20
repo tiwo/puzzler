@@ -284,34 +284,62 @@ class PentominoesTriangle(Pentominoes):
     """
 
     height = 10
-    width = 10
+    width = 14
 
-    svg_rotation = 135
+    # These 9 coordinates form a minimal cover for all 12 pentominoes
+    omitted_piece_coordinates = (
+        (11,4), (11,5), (11,6), (12,2), (12,3), (12,4), (12,5), (12,6), (13,4))
+
+    # Since there are only 9 coordinates for the omitted piece, only 1 piece
+    # can fit.  By setting these 9 coordinates as secondary columns, the extra
+    # 4 coordinates are ignored.
+    secondary_columns = 9
+
+    # These are the fixed positions for omitted pieces, to prevent duplicates.
+    omitted_piece_positions = {
+        'F': ((11,4), (11,5), (12,3), (12,4), (13,4)),
+        'I': ((12,2), (12,3), (12,4), (12,5), (12,6)),
+        'L': ((12,2), (12,3), (12,4), (12,5), (11,5)),
+        'N': ((12,2), (12,3), (12,4), (11,4), (11,5)),
+        'P': ((11,4), (11,5), (11,6), (12,5), (12,6)),
+        'T': ((12,2), (12,3), (12,4), (11,4), (13,4)),
+        'U': ((11,4), (11,5), (11,6), (12,4), (12,6)),
+        'V': ((11,4), (11,5), (11,6), (12,4), (13,4)),
+        'W': ((11,5), (11,6), (12,4), (12,5), (13,4)),
+        'X': ((11,4), (12,3), (12,4), (12,5), (13,4)),
+        'Y': ((12,2), (12,3), (12,4), (12,5), (11,4)),
+        'Z': ((12,4), (12,5), (12,6), (11,6), (13,4)),}
+
+    svg_rotation = -45
 
     def coordinates(self):
         for y in range(self.height):
-            for x in range(self.width):
-                if x + y < self.height:
+            for x in range(self.height):
+                if x + y >= (self.height - 1) and x < self.height:
                     yield (x, y)
+        for coord in self.omitted_piece_coordinates:
+            yield coord
 
     def customize_piece_data(self):
-        self.piece_data['!'] = ((), {})
         self.piece_data['P'][-1]['flips'] = None
 
     def build_matrix(self):
         self.build_rows_for_omitted_pieces()
-        keys = set(self.piece_data.keys())
-        keys.remove('!')
-        self.build_regular_matrix(sorted(keys))
+        self.build_regular_matrix(sorted(self.piece_data.keys()))
 
     def build_rows_for_omitted_pieces(self):
-        for name in self.piece_data:
-            if name == '!':
-                continue
-            row = [0] * len(self.matrix[0])
-            row[self.matrix_columns['!']] = name
-            row[self.matrix_columns[name]] = name
-            self.matrix.append(row)
+        for key, coords in self.omitted_piece_positions.items():
+            self.build_matrix_row(key, coords)
+
+    def build_regular_matrix(self, keys):
+        for key in keys:
+            for coords, aspect in self.pieces[key]:
+                for y in range(self.height - aspect.bounds[1]):
+                    # can't use self.width; omitted pieces are handled above:
+                    for x in range(self.height - aspect.bounds[0]):
+                        translated = aspect.translate((x, y))
+                        if translated.issubset(self.solution_coords):
+                            self.build_matrix_row(key, translated)
 
 
 class OneSidedPentominoes3x30(OneSidedPentominoes):

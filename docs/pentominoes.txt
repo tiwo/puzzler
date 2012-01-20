@@ -90,7 +90,7 @@ Misc
   <../solutions/pentominoes-triangle.txt>`__
 
   Solutions are possible omitting all but the "P" & "W" pieces.  This
-  solution omits the "V" piece:
+  solution omits the "V" piece (shown to the side):
 
   .. image:: images/pentominoes-triangle.png
 
