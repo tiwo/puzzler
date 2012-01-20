@@ -77,15 +77,16 @@ def process_command_line():
         help='Stop processing after generating N solutions.')
     parser.add_option(
         '-r', '--read-solution', metavar='FILE',
-        help='Read a solution record from FILE for further processing.')
+        help='Read a solution record from FILE for further processing '
+        ' ("-" for STDIN).')
     parser.add_option(
         '-s', '--svg', metavar='FILE',
         help='Format the first solution found (or supplied via -r) as SVG '
-        'and write it to FILE.')
+        'and write it to FILE ("-" for STDOUT).')
     parser.add_option(
         '-x', '--x3d', metavar='FILE',
         help='Format the first solution found (or supplied via -r) as X3D '
-        'and write it to FILE.')
+        'and write it to FILE ("-" for STDOUT).')
     default = search_state_default()
     parser.add_option(
         '-S', '--search-state-file', metavar='FILE', default=default,
