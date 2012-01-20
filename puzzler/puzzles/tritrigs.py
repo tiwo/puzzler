@@ -219,18 +219,65 @@ class TritrigsWhorl(Tritrigs):
 #         self.piece_data['Z3'][-1]['rotations'] = None
 
 
-class TritrigsTriangle5(Tritrigs):
+class TritrigsTriangle1(Tritrigs):
 
-    """0 solutions."""
+    """1 solution."""
 
     width = 6
     height = 5
 
+    def coordinates_hole(self):
+        hole = set(self.coordinates_hexagon_unbordered(1, offset=(1, 0, 0)))
+        hole.update(
+            set(self.coordinates_triangle_unbordered(2, offset=(0, 3, 0))))
+        return hole
+
     def coordinates(self):
-        hole = set(self.coordinates_triangle(2, offset=(1, 1, 0)))
+        hole = self.coordinates_hole()
         for coord in self.coordinates_triangle(5):
             if coord not in hole:
                 yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['Z3'][-1]['flips'] = None
+
+
+class TritrigsTriangle2(TritrigsTriangle1):
+
+    """4 solutions."""
+
+    def coordinates_hole(self):
+        hole = set(((2,0,2), (3,0,1), (0,4,0)))
+        hole.update(
+            set(self.coordinates_hexagon_unbordered(1, offset=(1, 0, 0))))
+        return hole
+
+
+class TritrigsTriangle_no_solutions(TritrigsTriangle1):
+
+    """
+    0 solutions for each set of hole coordinates:
+
+    set(Tritrigs().coordinates_triangle(2, offset=(1, 1, 0)))
+
+    set(((1,0,2), (4,0,1), (0,4,0),
+         (2,0,2), (3,0,1),
+         (1,1,2), (0,3,0),
+         (3,1,1), (1,3,0)))
+
+    set(((1,0,2), (4,0,1), (0,4,0),
+         (2,0,1), (3,0,2),
+         (1,2,2), (0,2,0),
+         (2,2,1), (2,2,0)))
+
+    set(((1,0,2), (4,0,1), (0,4,0),
+         (2,1,1), (2,1,2), (1,2,0),
+         (2,0,1), (1,2,2), (2,2,0)))
+
+    set(self.coordinates_triangle_unbordered(3, offset=(1, 0, 0))))
+
+    set(self.coordinates_triangle_unbordered(3, offset=(0, 2, 0)))
+    """
 
 
 class OneSidedTritrigsSemiRegularHexagon4x1(OneSidedTritrigs):

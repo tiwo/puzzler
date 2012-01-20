@@ -93,6 +93,15 @@ class Polytrigs(Polysticks):
                 continue
             yield self.coordinate_offset(x, y, z, offset)
 
+    def coordinates_triangle_unbordered(self, side_length, offset=None):
+        """Triangular unbordered polytrig grid."""
+        for coord in self.coordinates_unbordered(side_length, side_length):
+            x, y, z = coord
+            xy = x + y
+            if xy >= side_length:
+                continue
+            yield self.coordinate_offset(x, y, z, offset)
+
     def coordinates_hexagon(self, side_length, offset=None):
         """Hexagonal bordered polytrig grid."""
         min_xy = side_length
@@ -343,7 +352,7 @@ class Polytrigs(Polysticks):
         return self.format_triangular_grid(s_matrix)
 
     def calculate_svg_dimensions(self):
-        height = self.height * self.svg_unit_height
+        height = (self.height + 1) * self.svg_unit_height
         width = (self.width + self.height/2.0 - 0.5) * self.svg_unit_width
         return height, width
 
@@ -448,7 +457,7 @@ class Polytrigs(Polysticks):
         """
         x, y, z = coord 
         yunit = self.svg_unit_height
-        height = (self.height - 0.5) * yunit
+        height = (self.height + 0.5) * yunit
         return coordsys.Cartesian2D(
             ((x + (y + 1) / 2.0) * self.svg_unit_width, height - y * yunit))
         

@@ -67,6 +67,21 @@ the triangular grid.
 
   .. image:: images/tritrigs-spiked-triangle-1.png
 
+* Length-5 triangles with 9 segments omitted:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/tritrigs-triangle-1.png
+
+            `1 solution
+            <../solutions/tritrigs-triangle-1.txt>`__
+
+       - .. figure:: images/tritrigs-triangle-2.png
+
+            `4 solutions
+            <../solutions/tritrigs-triangle-2.txt>`__
+
 
 One-Sided Tritrigs
 ==================
