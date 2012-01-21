@@ -87,7 +87,7 @@ Examples of the polytrigs from order 1 (monotrig) to order 4
 (tetratrigs) are given in the tables below.
 
 The polytrigs are named with a letter-number scheme, like "I1", "C3",
-and "R14".  The letter part is the letter of the alphabet that the
+and "R14".  The initial letter is the letter of the alphabet that the
 polytrig most closely resembles.  In some cases, that resemblance is
 weak, and the letters are arbitrary.  The final digit of the number
 represents the polyform order (how many line segments are in the
@@ -124,8 +124,6 @@ There is only one monotrig (order-1 polytrig):
      - .. image:: images/pieces/polytrigs/I1.png
      - 3
      -
-
-
 
 
 Ditrigs

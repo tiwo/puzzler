@@ -82,6 +82,20 @@ the triangular grid.
             `4 solutions
             <../solutions/tritrigs-triangle-2.txt>`__
 
+     * - .. figure:: images/tritrigs-triangle-3.png
+
+            `6 solutions
+            <../solutions/tritrigs-triangle-3.txt>`__
+
+       - .. figure:: images/tritrigs-triangle-4.png
+
+            `1 solution
+            <../solutions/tritrigs-triangle-4.txt>`__
+
+* Spinner: `6 solutions  <../solutions/tritrigs-spinner.txt>`__
+
+  .. image:: images/tritrigs-spinner.png
+
 * Hearts (designed by Leslie E. Shader):
 
   .. list-table::
@@ -96,6 +110,26 @@ the triangular grid.
 
             `52 solutions
             <../solutions/tritrigs-heart-2.txt>`__
+
+* Length-2 hexagons with 6 segments omitted:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/tritrigs-hexagon-1.png
+
+            `5 solutions
+            <../solutions/tritrigs-hexagon-1.txt>`__
+
+       - .. figure:: images/tritrigs-hexagon-2.png
+
+            `10 solutions
+            <../solutions/tritrigs-hexagon-2.txt>`__
+
+       - .. figure:: images/tritrigs-hexagon-3.png
+
+            `9 solutions
+            <../solutions/tritrigs-hexagon-3.txt>`__
 
 
 One-Sided Tritrigs

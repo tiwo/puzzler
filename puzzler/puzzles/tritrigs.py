@@ -252,9 +252,6 @@ class TritrigsTriangle2(TritrigsTriangle1):
             set(self.coordinates_hexagon_unbordered(1, offset=(1, 0, 0))))
         return hole
 
-
-class TritrigsTriangle_no_solutions(TritrigsTriangle1):
-
     """
     0 solutions for each set of hole coordinates:
 
@@ -277,7 +274,42 @@ class TritrigsTriangle_no_solutions(TritrigsTriangle1):
     set(self.coordinates_triangle_unbordered(3, offset=(1, 0, 0))))
 
     set(self.coordinates_triangle_unbordered(3, offset=(0, 2, 0)))
+
+    set(((1,1,1), (2,1,0), (2,2,2), (1,2,2), (2,0,1), (2,2,0))).union(
+        set(self.coordinates_triangle_unbordered(2, offset=(1, 1, 0))))
+
+    set(((1,1,1), (2,1,0), (2,2,2), (1,3,2), (1,0,1), (3,1,0))).union(
+        set(self.coordinates_triangle_unbordered(2, offset=(1, 1, 0))))
+
+    set(((1,1,1), (2,1,0), (2,2,2), (0,4,0), (1,0,2), (4,0,1))).union(
+        set(self.coordinates_triangle_unbordered(2, offset=(1, 1, 0))))
     """
+
+
+class TritrigsTriangle3(TritrigsTriangle1):
+
+    """6 solutions."""
+
+    def coordinates_hole(self):
+        hole = set(((1,1,1), (2,1,0), (2,2,2), (0,3,0), (2,0,2), (3,1,1)))
+        hole.update(
+            set(self.coordinates_triangle_unbordered(2, offset=(1, 1, 0))))
+        return hole
+
+    def customize_piece_data(self):
+        self.piece_data['I3'][-1]['flips'] = None
+        self.piece_data['I3'][-1]['rotations'] = None
+
+
+class TritrigsTriangle4(TritrigsTriangle3):
+
+    """1 solution."""
+
+    def coordinates_hole(self):
+        hole = set(((1,1,1), (2,1,0), (2,2,2), (0,1,0), (1,3,1), (4,0,2)))
+        hole.update(
+            set(self.coordinates_triangle_unbordered(2, offset=(1, 1, 0))))
+        return hole
 
 
 class TritrigsHeart1(Tritrigs):
@@ -307,6 +339,100 @@ class TritrigsHeart2(TritrigsHeart1):
     """52 solutions."""
 
     hole = set(((2,2,1), (1,2,0), (3,1,2)))
+
+
+class TritrigsSpinner(Tritrigs):
+
+    """6 solutions."""
+
+    width = 7
+    height = 7
+
+    extras = ((2,0,1), (2,0,2), (1,1,0), (1,1,1),
+              (0,5,0), (1,4,1), (1,4,2), (2,4,2),
+              (4,1,0), (5,1,1), (5,1,2), (4,2,0))
+
+    def coordinates(self):
+        base = self.coordinates_semiregular_hexagon(2, 1, offset=(1, 1, 0))
+        for coord in base:
+            yield coord
+        for coord in self.extras:
+            yield coordsys.TriangularGrid3D(coord)
+
+    def customize_piece_data(self):
+        self.piece_data['I3'][-1]['rotations'] = None
+        self.piece_data['I3'][-1]['flips'] = None
+
+    """
+    no solutions:
+
+    extras = ((0,3,0), (0,3,1), (0,4,0), (1,3,2),
+              (3,0,0), (3,0,1), (3,0,2), (4,0,2),
+              (3,3,0), (3,3,1), (4,2,1), (4,3,2))
+
+    extras = ((0,2,0), (0,2,1), (0,3,0), (1,2,2),
+              (4,0,0), (4,0,1), (4,0,2), (5,0,2),
+              (2,4,0), (2,4,1), (3,3,1), (3,4,2))
+    """
+
+
+class TritrigsThreeHexes(Tritrigs):
+
+    """0 solutions."""
+
+    width = 5
+    height = 5
+
+    def coordinates(self):
+        for offset in (None, (2,0,0), (0,2,0)):
+            for coord in self.coordinates_hexagon(1, offset=offset):
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['I3'][-1]['rotations'] = None
+        self.piece_data['I3'][-1]['flips'] = None
+
+
+class TritrigsHexagon1(Tritrigs):
+
+    """5 solutions."""
+
+    width = 5
+    height = 5
+
+    holes = set(((0,3,0), (1,1,0), (1,3,1), (3,0,2), (3,2,1), (4,1,2)))
+
+    def coordinates(self):
+        for coord in self.coordinates_hexagon(2):
+            if coord not in self.holes:
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['I3'][-1]['rotations'] = None
+        self.piece_data['I3'][-1]['flips'] = None
+        self.piece_data['P3'][-1]['flips'] = None
+
+
+class TritrigsHexagon2(TritrigsHexagon1):
+
+    """10 solutions."""
+
+    holes = set(((0,2,0), (2,3,1), (4,0,2), (1,2,0), (3,1,2), (2,2,1)))
+
+
+class TritrigsHexagon3(TritrigsHexagon1):
+
+    """9 solutions."""
+
+    holes = set(((1,3,2), (2,0,1), (3,2,0), (1,2,0), (3,1,2), (2,2,1)))
+
+    """
+    no solutions:
+
+    holes = set(((0,3,0), (1,2,2), (3,0,1), (3,0,2), (2,3,0), (3,2,1)))
+    holes = set(((0,2,0), (1,3,2), (2,0,1), (2,3,1), (3,2,0), (4,0,2)))
+    holes = set(((0,3,0), (1,1,1), (2,3,2), (3,0,2), (3,2,1), (3,1,0)))
+    """
 
 
 class OneSidedTritrigsSemiRegularHexagon4x1(OneSidedTritrigs):
