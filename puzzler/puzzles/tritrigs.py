@@ -343,33 +343,24 @@ class TritrigsHeart2(TritrigsHeart1):
 
 class TritrigsSpinner(Tritrigs):
 
-    """6 solutions."""
+    """
+    base = self.coordinates_semiregular_hexagon(2, 1, offset=(1, 1, 0))
 
-    width = 7
-    height = 7
+    Same as TritrigsSpikedTriangle1:
 
+    base +
     extras = ((2,0,1), (2,0,2), (1,1,0), (1,1,1),
               (0,5,0), (1,4,1), (1,4,2), (2,4,2),
               (4,1,0), (5,1,1), (5,1,2), (4,2,0))
 
-    def coordinates(self):
-        base = self.coordinates_semiregular_hexagon(2, 1, offset=(1, 1, 0))
-        for coord in base:
-            yield coord
-        for coord in self.extras:
-            yield coordsys.TriangularGrid3D(coord)
-
-    def customize_piece_data(self):
-        self.piece_data['I3'][-1]['rotations'] = None
-        self.piece_data['I3'][-1]['flips'] = None
-
-    """
     no solutions:
 
+    base +
     extras = ((0,3,0), (0,3,1), (0,4,0), (1,3,2),
               (3,0,0), (3,0,1), (3,0,2), (4,0,2),
               (3,3,0), (3,3,1), (4,2,1), (4,3,2))
 
+    base +
     extras = ((0,2,0), (0,2,1), (0,3,0), (1,2,2),
               (4,0,0), (4,0,1), (4,0,2), (5,0,2),
               (2,4,0), (2,4,1), (3,3,1), (3,4,2))

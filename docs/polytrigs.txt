@@ -92,10 +92,6 @@ the triangular grid.
             `1 solution
             <../solutions/tritrigs-triangle-4.txt>`__
 
-* Spinner: `6 solutions  <../solutions/tritrigs-spinner.txt>`__
-
-  .. image:: images/tritrigs-spinner.png
-
 * Hearts (designed by Leslie E. Shader):
 
   .. list-table::
