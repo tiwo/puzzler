@@ -20,11 +20,16 @@ Changes Since Release 1
 **Polyform Puzzler now requires Python 2.5 or later.** Python 2.7.2 or
 later is recommended.
 
-* Added puzzles:
+* Added lots of puzzles, many (but not all; I lost track) listed
+  below:
 
-  - Polytrigs (triangular-grid polysticks): new puzzle type.  Added
-    puzzles: 7 tritrigs, 11 one-sided tritrigs, 14 polytrigs of order 1
-    through 3, 21 one-sided polytrigs of order 1 through 3.
+  - Polytwigs (hexagonal-grid polysticks): new puzzle type.  Added
+    many puzzles.
+
+  - Polytrigs (triangular-grid polysticks): new puzzle type.
+    Initially added puzzles: 7 tritrigs, 11 one-sided tritrigs, 14
+    polytrigs of order 1 through 3, 21 one-sided polytrigs of order 1
+    through 3.
 
   - (Square) Polysticks of order 1 through 4: 7x7 grid, 3x7 diamond
     lattice.
