@@ -1,0 +1,85 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="200.000" height="200.000"
+     viewBox="0 0 200.000 200.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(100.000,50.000) rotate(-30)">
+<path stroke="gold" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 38.400,53.520 l -2.100,-3.637 M 43.200,56.292 a 5.543,5.543 0 0,1 -4.800,-2.771 M 43.200,56.292 l 3.600,0.000 M 51.600,53.520 a 5.543,5.543 0 0,1 -4.800,2.771 M 51.600,53.520 l 2.100,-3.637">
+<desc>C3</desc>
+</path>
+<path stroke="maroon" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 36.300,45.380 l 2.200,-3.811 M 38.400,41.742 a 5.543,5.543 0 0,1 4.800,-2.771 M 38.500,41.569 a 1.732,1.732 0 0,1 3.000,0.000 M 41.500,41.569 a 1.732,1.732 0 0,1 1.500,-2.598 M 43.000,38.971 l 4.400,0.000 M 43.700,45.380 l -2.200,-3.811">
+<desc>E3</desc>
+</path>
+<path stroke="blue" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 47.600,47.631 l 7.400,0.000 M 55.000,47.631 l 10.000,0.000 M 65.000,47.631 l 7.400,0.000">
+<desc>I3</desc>
+</path>
+<path stroke="blueviolet" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 46.500,15.588 a 1.732,1.732 0 0,1 1.500,-2.598 M 48.000,12.990 l 7.000,0.000 M 48.700,19.399 l -2.200,-3.811 M 55.000,12.990 l 7.400,0.000">
+<desc>J3</desc>
+</path>
+<path stroke="lime" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 41.300,54.040 l 3.700,-6.409 M 45.000,47.631 l 3.400,-5.889 M 48.400,36.200 a 5.543,5.543 0 0,1 0.000,5.543 M 48.400,36.200 l -2.100,-3.637">
+<desc>L3</desc>
+</path>
+<path stroke="red" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 51.500,41.569 a 1.732,1.732 0 0,1 1.500,-2.598 M 53.000,38.971 l 4.000,0.000 M 53.500,45.033 l -2.000,-3.464 M 56.500,45.033 a 1.732,1.732 0 0,1 -3.000,0.000 M 56.500,45.033 l 2.000,-3.464 M 57.000,38.971 a 1.732,1.732 0 0,1 1.500,2.598">
+<desc>O3</desc>
+</path>
+<path stroke="magenta" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 66.300,45.380 l 2.100,-3.637 M 66.500,32.909 a 1.732,1.732 0 0,1 1.500,-2.598 M 68.000,30.311 l 4.400,0.000 M 68.400,36.200 a 5.543,5.543 0 0,1 0.000,5.543 M 68.400,36.200 l -1.900,-3.291">
+<desc>P3</desc>
+</path>
+<path stroke="navy" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 47.600,64.952 l 4.200,0.000 M 56.600,62.181 a 5.543,5.543 0 0,1 -4.800,2.771 M 56.600,62.181 l 1.800,-3.118 M 58.400,59.063 a 5.543,5.543 0 0,1 4.800,-2.771 M 63.200,56.292 l 4.200,0.000">
+<desc>S3</desc>
+</path>
+<path stroke="darkorange" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 62.600,21.651 l 4.400,0.000 M 66.800,21.651 a 5.543,5.543 0 0,1 4.800,2.771 M 68.500,19.053 a 1.732,1.732 0 0,1 -1.500,2.598 M 70.000,21.651 l -3.700,-6.409 M 73.700,28.059 l -3.700,-6.409">
+<desc>T3</desc>
+</path>
+<path stroke="turquoise" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 21.600,36.200 l 2.100,-3.637 M 21.600,41.742 a 5.543,5.543 0 0,1 0.000,-5.543 M 23.500,45.033 l -1.900,-3.291 M 26.500,45.033 a 1.732,1.732 0 0,1 -3.000,0.000 M 26.500,45.033 l 2.200,-3.811">
+<desc>U3</desc>
+</path>
+<path stroke="green" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 41.300,36.719 l 2.100,-3.637 M 43.400,27.540 a 5.543,5.543 0 0,1 0.000,5.543 M 43.400,27.540 l -2.100,-3.637 M 43.400,33.082 a 5.543,5.543 0 0,1 4.800,-2.771 M 48.200,30.311 a 5.543,5.543 0 0,1 -4.800,-2.771 M 48.200,30.311 l 4.200,0.000">
+<desc>Y3</desc>
+</path>
+<path stroke="plum" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 28.500,36.373 l -2.200,-3.811 M 31.500,36.373 a 1.732,1.732 0 0,1 -3.000,0.000 M 31.500,36.373 l 2.000,-3.464 M 33.500,32.909 a 1.732,1.732 0 0,1 3.000,0.000 M 38.700,36.719 l -2.200,-3.811">
+<desc>Z3</desc>
+</path>
+<path stroke="blueviolet" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 57.600,30.311 l 4.400,0.000 M 60.000,21.651 l -3.700,-6.409 M 63.500,27.713 a 1.732,1.732 0 0,1 -1.500,2.598 M 63.500,27.713 l -3.500,-6.062">
+<desc>j3</desc>
+</path>
+<path stroke="lime" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 57.600,64.952 l 4.200,0.000 M 66.600,62.181 a 5.543,5.543 0 0,1 -4.800,2.771 M 66.600,62.181 l 3.400,-5.889 M 70.000,56.292 l 3.700,-6.409">
+<desc>l3</desc>
+</path>
+<path stroke="magenta" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 51.300,36.719 l 2.200,-3.811 M 53.500,32.909 a 1.732,1.732 0 0,1 3.000,0.000 M 58.400,36.200 l -1.900,-3.291 M 63.200,38.971 a 5.543,5.543 0 0,1 -4.800,-2.771 M 63.200,38.971 l 4.200,0.000">
+<desc>p3</desc>
+</path>
+<path stroke="navy" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 46.300,62.700 l 2.100,-3.637 M 48.400,59.063 a 5.543,5.543 0 0,1 4.800,-2.771 M 53.200,56.292 l 3.600,0.000 M 61.600,53.520 a 5.543,5.543 0 0,1 -4.800,2.771 M 61.600,53.520 l 2.100,-3.637">
+<desc>s3</desc>
+</path>
+<path stroke="darkorange" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 42.600,21.651 l 7.400,0.000 M 46.800,21.651 a 5.543,5.543 0 0,1 4.800,2.771 M 50.000,21.651 l 7.400,0.000 M 51.500,24.249 a 1.732,1.732 0 0,1 1.500,-2.598 M 53.700,28.059 l -2.200,-3.811">
+<desc>t3</desc>
+</path>
+<path stroke="turquoise" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 28.500,53.694 l -2.200,-3.811 M 31.500,53.694 a 1.732,1.732 0 0,1 -3.000,0.000 M 31.500,53.694 l 1.900,-3.291 M 33.400,44.860 a 5.543,5.543 0 0,1 0.000,5.543 M 33.400,44.860 l -2.100,-3.637">
+<desc>u3</desc>
+</path>
+<path stroke="plum" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 26.300,28.059 l 2.200,-3.811 M 28.500,24.249 a 1.732,1.732 0 0,1 3.000,0.000 M 33.500,27.713 l -2.000,-3.464 M 36.500,27.713 a 1.732,1.732 0 0,1 -3.000,0.000 M 36.500,27.713 l 2.200,-3.811">
+<desc>z3</desc>
+</path>
+</g>
+</svg>

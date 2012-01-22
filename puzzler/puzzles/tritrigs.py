@@ -178,10 +178,6 @@ class TritrigsTrefoil1(Tritrigs):
             if coord not in holes:
                 yield coord
 
-#     def customize_piece_data(self):
-#         self.piece_data['Z3'][-1]['flips'] = None
-#         self.piece_data['Z3'][-1]['rotations'] = None
-
 
 class TritrigsTrefoil2(Tritrigs):
 
@@ -196,10 +192,6 @@ class TritrigsTrefoil2(Tritrigs):
             if coord not in holes:
                 yield coord
 
-#     def customize_piece_data(self):
-#         self.piece_data['Z3'][-1]['flips'] = None
-#         self.piece_data['Z3'][-1]['rotations'] = None
-
 
 class TritrigsWhorl(Tritrigs):
 
@@ -213,10 +205,6 @@ class TritrigsWhorl(Tritrigs):
         for coord in self.coordinates_semiregular_hexagon(3, 1):
             if coord not in holes:
                 yield coord
-
-#     def customize_piece_data(self):
-#         self.piece_data['Z3'][-1]['flips'] = None
-#         self.piece_data['Z3'][-1]['rotations'] = None
 
 
 class TritrigsTriangle1(Tritrigs):
@@ -378,10 +366,6 @@ class TritrigsThreeHexes(Tritrigs):
         for offset in (None, (2,0,0), (0,2,0)):
             for coord in self.coordinates_hexagon(1, offset=offset):
                 yield coord
-
-    def customize_piece_data(self):
-        self.piece_data['I3'][-1]['rotations'] = None
-        self.piece_data['I3'][-1]['flips'] = None
 
 
 class TritrigsHexagon1(Tritrigs):
@@ -570,3 +554,55 @@ class OneSidedTritrigsTrapezoid9x2_2(OneSidedTritrigsTrapezoid9x2_1):
     """many solutions."""
 
     hole = set([(3,2,0)])
+
+
+class OneSidedTritrigsTrilobedCuboid(OneSidedTritrigs):
+
+    """9 solutions."""
+
+    width = 7
+    height = 7
+
+    holes = set((
+        (0,3,0), (0,4,0), (0,5,0), (1,2,0), (1,3,0), (1,4,0), (2,1,0), (2,2,0),
+        (1,5,1), (2,5,1), (3,5,1), (2,4,1), (3,4,1), (4,4,1), (4,3,1), (5,3,1),
+        (4,0,2), (4,1,2), (5,0,2), (5,1,2), (5,2,2), (6,0,2), (6,1,2), (6,2,2),
+        (0,5,1), (0,6,0), (1,5,2),
+        (3,0,0), (3,0,1), (3,0,2),
+        (5,3,0), (6,2,1), (6,3,2),))
+
+    i_offsets = ((2,3,0), (3,1,0), (3,2,0))
+
+    svg_rotation = -30
+
+    def coordinates(self):
+        for coord in self.coordinates_hexagon(3):
+            if coord not in self.holes:
+                yield coord
+
+    def customize_piece_data(self):
+        OneSidedTritrigs.customize_piece_data(self)
+        self.piece_data['I3'][-1]['rotations'] = None
+
+    def build_matrix(self):
+        keys = sorted(self.pieces.keys())
+        i_coords, i_aspect = self.pieces['I3'][0]
+        for offset in self.i_offsets:
+            translated = i_aspect.translate(offset)
+            self.build_matrix_row('I3', translated)
+        keys.remove('I3')
+        self.build_regular_matrix(keys)
+
+    """
+    0 solutions.
+
+    no place for O3 piece:
+    holes = set((
+        (0,3,1), (1,2,2), (2,6,0), (4,5,2), (5,0,0), (6,0,1),
+        (0,3,0), (0,4,0), (0,5,0), (1,2,0), (1,3,0), (1,4,0),
+        (2,1,0), (2,2,0), (2,3,0),
+        (1,5,1), (2,5,1), (3,5,1), (2,4,1), (3,4,1), (4,4,1),
+        (3,3,1), (4,3,1), (5,3,1),
+        (4,0,2), (4,1,2), (4,2,2), (5,0,2), (5,1,2), (5,2,2),
+        (6,0,2), (6,1,2), (6,2,2),))
+    """

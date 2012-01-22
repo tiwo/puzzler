@@ -190,6 +190,11 @@ grid.
 
   .. image:: images/one-sided-tritrigs-trapezoid-9x2-2.png
 
+* Tri-lobed cuboid: `9 solutions
+  <../solutions/one-sided-tritrigs-trilobed-cuboid.txt>`__
+
+  .. image:: images/one-sided-tritrigs-trilobed-cuboid.png
+
 
 Polytrigs of Order 1 Through 3
 ==============================
