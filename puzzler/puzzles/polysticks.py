@@ -77,7 +77,7 @@ class Polysticks(PuzzlePseudo3D):
                 for z in range(2):
                     if (z == 1 and y == last_y) or (z == 0 and x == last_x):
                         continue
-                    yield (x, y, z)
+                    yield coordsys.SquareGrid3D((x, y, z))
 
     def coordinates_unbordered(self, m, n):
         """MxN unbordered polystick grid."""
@@ -86,7 +86,7 @@ class Polysticks(PuzzlePseudo3D):
                 for z in range(2):
                     if (z == 1 and x == 0) or (z == 0 and y == 0):
                         continue
-                    yield (x, y, z)
+                    yield coordsys.SquareGrid3D((x, y, z))
 
     def coordinates_diamond_lattice(self, m, n):
         """MxN polystick diamond lattice."""
@@ -99,7 +99,7 @@ class Polysticks(PuzzlePseudo3D):
             for x in range(width):
                 for z in range(2):
                     if nw < (x - y - z) < se and sw < (x + y) < ne:
-                        yield (x, y, z)
+                        yield coordsys.SquareGrid3D((x, y, z))
 
     def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3)):
         aspects = set()
