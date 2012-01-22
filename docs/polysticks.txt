@@ -54,15 +54,15 @@ asymmetrical, therefore there are 10 one-sided welded tetrasticks.
 
 Due to an imbalance in horizontal/vertical parity, the 16 tetrasticks
 cannot be formed into a symmetrical shape.  But by omitting one of the
-five tetrasticks that have an excess of vertical or horizontal line
-segments (H, J, L, N, Y), symmetrical shapes can be formed.
+five tetrasticks that have an excess of 2 vertical or horizontal line
+segments (H, J, L, N, or Y), symmetrical shapes can be formed.
 
 * 6x6 grid: `1795 solutions
   <../solutions/tetrasticks-6x6.txt>`__
 
-  .. image:: images/tetrasticks-6x6.png
+  In this solution, the "Y" piece is omitted:
 
-  In this solution, the "H" piece is omitted.
+  .. image:: images/tetrasticks-6x6.png
 
 
 One-Sided Tetrasticks

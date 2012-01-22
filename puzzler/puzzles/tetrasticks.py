@@ -28,25 +28,60 @@ class Tetrasticks6x6(Tetrasticks):
     All are perfect solutions (i.e. no pieces cross).
     """
 
-    width = 6
+    width = 8
     height = 6
 
-    check_for_duplicates = True
-    duplicate_conditions = ({'xy_swapped': True},)
+    # check_for_duplicates = True
+    # duplicate_conditions = ({'xy_swapped': True},)
+
+    # These 9 coordinates form a minimal cover for all 12 pentominoes
+    omitted_piece_coordinates = (
+        (6,1,0), (6,1,1), (6,2,0), (6,2,1), (6,3,0), (6,3,1),
+        (7,1,1), (7,2,1), (7,3,1))
+
+    # These are the fixed positions for omitted pieces, to prevent duplicates.
+    omitted_piece_positions = {
+        'H': ((6,1,1), (6,2,0), (6,2,1), (7,1,1)),
+        'J': ((6,1,1), (6,1,0), (7,2,1), (7,1,1)),
+        'L': ((6,1,1), (6,1,0), (6,2,1), (6,3,1)),
+        'N': ((6,1,1), (6,2,0), (7,2,1), (7,3,1)),
+        'Y': ((7,1,1), (6,3,0), (7,2,1), (7,3,1)),}
+
+    def coordinates(self):
+        for coord in self.coordinates_bordered(self.height, self.height):
+            yield coord
+        for coord in self.omitted_piece_coordinates:
+            yield coordsys.SquareGrid3D(coord)
 
     def customize_piece_data(self):
-        self.piece_data['!'] = ((), {})
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
 
     def build_matrix(self):
+        self.secondary_columns += 9
         self.build_rows_for_omitted_pieces()
-        x_coords, x_aspect = self.pieces['X'][0]
-        self.build_matrix_row('X', x_aspect)
-        for x in range(2):
-            translated = x_aspect.translate((x, 1, 0))
-            self.build_matrix_row('X', translated)
-        keys = sorted(self.pieces.keys())
-        keys.remove('X')
-        self.build_regular_matrix(keys)
+        self.build_regular_matrix(sorted(self.piece_data.keys()))
+
+    def build_rows_for_omitted_pieces(self):
+        for key, coords in self.omitted_piece_positions.items():
+            row = [0] * len(self.matrix[0])
+            row[self.matrix_columns[key]] = key
+            for (x,y,z) in coords:
+                label = '%0*i,%0*i,%0*i' % (
+                    self.x_width, x, self.y_width, y, self.z_width, z)
+                row[self.matrix_columns[label]] = label
+            self.matrix.append(row)
+            #self.build_matrix_row(key, coords)
+
+    def build_regular_matrix(self, keys):
+        for key in keys:
+            for coords, aspect in self.pieces[key]:
+                for y in range(self.height - aspect.bounds[1]):
+                    # can't use self.width; omitted pieces are handled above:
+                    for x in range(self.height - aspect.bounds[0]):
+                        translated = aspect.translate((x, y, 0))
+                        if translated.issubset(self.solution_coords):
+                            self.build_matrix_row(key, translated)
 
 
 class Tetrasticks3x5DiamondLattice(Tetrasticks):
