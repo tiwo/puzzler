@@ -352,8 +352,10 @@ ones.  Polyform families are given descriptive names:
 
      Polysticks of Order 1-4 in a 3 |x| 7 Diamond Lattice
 
-  **In Polyform Puzzler:** `Polystick Puzzles & Solutions
-  <polysticks.html>`_
+  **In Polyform Puzzler:**
+
+  * `An Introduction to Polysticks <polysticks-intro.html>`_
+  * `Polystick Puzzles & Solutions <polysticks.html>`_
 
 * Polyforms based on unit line segments joined end-to-end on a
   triangular grid are called "polytrigs" (a.k.a. "triangular-grid
@@ -533,7 +535,10 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   "*" above means that pieces with enclosed holes exist.
 
-  **In Polyform Puzzler:** `Polystick Puzzles & Solutions`_
+  **In Polyform Puzzler:**
+
+  * `An Introduction to Polysticks`_
+  * `Polystick Puzzles & Solutions`_
 
   .. _A019988: http://oeis.org/A019988
   .. _A151537: http://oeis.org/A151537
@@ -905,7 +910,10 @@ puzzle.  Lowercase piece names indicate flipped pieces in one-sided
 puzzles (asterisk ["*"] suffixes were used to show flipped pieces in
 earlier versions of Polyform Puzzler).
 
-**In Polyform Puzzler:** `Polystick Puzzles & Solutions`_
+**In Polyform Puzzler:**
+
+* `An Introduction to Polysticks`_
+* `Polystick Puzzles & Solutions`_
 
 
 How should polytrig solution files be interpreted?

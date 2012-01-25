@@ -14,6 +14,7 @@
 
 .. sidebar:: Also see:
 
+   | `An Introduction to Polysticks <polysticks-intro.html>`_
    | `Polytrigs (Triangular-Grid Polysticks): Puzzles & Solutions <polytrigs.html>`_
    | `An Introduction to Polytrigs (Triangular-Grid Polysticks) <polytrigs-intro.html>`_
    | `Polytwigs (Hexagonal-Grid Polysticks): Puzzles & Solutions <polytwigs.html>`_
@@ -25,13 +26,6 @@
        `interpreting solution files <FAQ.html#how-should-polystick-solution-files-be-interpreted>`__)
 
 .. contents::
-
-During a visit to India in 2010, it was pointed out to me that
-polystick puzzles look a lot like some of `the "kolam" sand/chalk
-drawings`__ that can be seen on sidewalks and patios outside of homes.
-These drawings are thought to bestow prosperity to homes.
-
-__ http://en.wikipedia.org/wiki/Kolam
 
 
 Tetrasticks

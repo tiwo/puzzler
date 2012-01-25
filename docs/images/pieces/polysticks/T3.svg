@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="40.000" height="30.000"
+     viewBox="0 0 40.000 30.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="matrix(1,0,0,-1,0,30.000) translate(0.000,0.000) rotate(0)">
+<path stroke="black" stroke-width="2" stroke-linecap="round"
+      fill="none" d="M 17.500,20.000 a 2.5,2.5 0 0,0 +2.5,-2.5 M 12.000,20.000 l 16.000,0.000 M 20.000,17.500 l 0.000,-5.500 M 22.500,20.000 a 2.5,2.5 0 0,1 -2.5,-2.5">
+<desc>T3</desc>
+</path>
+</g>
+</svg>

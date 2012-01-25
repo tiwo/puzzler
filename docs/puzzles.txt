@@ -139,6 +139,8 @@ viewing software.
             :target: polysticks.html#polysticks-of-order-1-through-4
             :class: borderless
 
+  Also see `An Introduction to Polysticks <polysticks-intro.html>`_.
+
 * `Polytrigs (triangular-grid polysticks) <polytrigs.html>`_
 
   .. list-table::
