@@ -28,6 +28,28 @@
 .. contents::
 
 
+Polysticks of Order 1 Through 3
+===============================
+
+These puzzles use the 1 monostick, 2 disticks, and 5 tristicks, for
+a total of 20 line segments on the square grid.
+
+* 4x4 grid with clipped corners:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polysticks-123-4x4-clipped-corners-1.png
+
+            `21 solutions
+            <../solutions/polysticks-123-4x4-clipped-corners-1.txt>`__
+
+       - .. figure:: images/polysticks-123-4x4-clipped-corners-2.png
+
+            `132 solutions
+            <../solutions/polysticks-123-4x4-clipped-corners-2.txt>`__
+
+
 Tetrasticks
 ===========
 
