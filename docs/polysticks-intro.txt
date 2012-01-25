@@ -28,7 +28,7 @@
 **Polysticks** are polyforms constructed from unit line segments
 (edges) joined end-to-end on a regular square grid.  Polysticks were
 named by and seem to have been first formally expolored by Brian
-R. Barwell [#barwell].
+R. Barwell [#barwell]_.
 
 Here is a puzzle containing all the polysticks of order 1 through 4:
 
@@ -52,6 +52,9 @@ drawings`__ that can be seen on sidewalks and patios outside of homes.
 These drawings are thought to bestow prosperity to homes.
 
 __ http://en.wikipedia.org/wiki/Kolam
+
+.. [#barwell] Brian R. Barwell, "Polysticks," `Journal of Recreational
+   Mathematics` volume 22 issue 3 (1990), p.165-175
 
 
 Polyforms
