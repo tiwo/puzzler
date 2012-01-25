@@ -495,3 +495,8 @@ class Polysticks1234(Tetrasticks, Polysticks123Data):
     piece_data.update(copy.deepcopy(Polysticks123Data.piece_data))
     piece_colors = copy.deepcopy(Tetrasticks.piece_colors)
     piece_colors.update(Polysticks123Data.piece_colors)
+
+
+class OneSidedPolysticks1234(OneSidedLowercaseMixin, Polysticks1234):
+
+    pass

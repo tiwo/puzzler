@@ -31,9 +31,6 @@ class Tetrasticks6x6(Tetrasticks):
     width = 8
     height = 6
 
-    # check_for_duplicates = True
-    # duplicate_conditions = ({'xy_swapped': True},)
-
     # These 9 coordinates form a minimal cover for all 12 pentominoes
     omitted_piece_coordinates = (
         (6,1,0), (6,1,1), (6,2,0), (6,2,1), (6,3,0), (6,3,1),
@@ -58,7 +55,7 @@ class Tetrasticks6x6(Tetrasticks):
         self.piece_data['P'][-1]['rotations'] = None
 
     def build_matrix(self):
-        self.secondary_columns += 9
+        self.secondary_columns += len(self.omitted_piece_coordinates)
         self.build_rows_for_omitted_pieces()
         self.build_regular_matrix(sorted(self.piece_data.keys()))
 
@@ -84,11 +81,36 @@ class Tetrasticks6x6(Tetrasticks):
                             self.build_matrix_row(key, translated)
 
 
+class Tetrasticks7x7Unbordered(Tetrasticks6x6):
+
+    """0 solutions"""
+
+    width = 9
+    height = 7
+
+    # These 9 coordinates form a minimal cover for all 12 pentominoes
+    omitted_piece_coordinates = (
+        (7,1,0), (7,1,1), (7,2,0), (7,2,1), (7,3,0), (7,3,1),
+        (8,1,1), (8,2,1), (8,3,1))
+
+    # These are the fixed positions for omitted pieces, to prevent duplicates.
+    omitted_piece_positions = {
+        'H': ((7,1,1), (7,2,0), (7,2,1), (8,1,1)),
+        'J': ((7,1,1), (7,1,0), (8,2,1), (8,1,1)),
+        'L': ((7,1,1), (7,1,0), (7,2,1), (7,3,1)),
+        'N': ((7,1,1), (7,2,0), (8,2,1), (8,3,1)),
+        'Y': ((8,1,1), (7,3,0), (8,2,1), (8,3,1)),}
+
+    def coordinates(self):
+        for coord in self.coordinates_unbordered(self.height, self.height):
+            yield coord
+        for coord in self.omitted_piece_coordinates:
+            yield coordsys.SquareGrid3D(coord)
+
+
 class Tetrasticks3x5DiamondLattice(Tetrasticks):
 
-    """
-    0 solutions
-    """
+    """0 solutions"""
 
     width = 8
     height = 8
@@ -424,3 +446,29 @@ class OneSidedWeldedTetrasticks5x5(OneSidedTetrasticks):
         self.asymmetric_pieces = sorted(
             set(self.asymmetric_pieces) - set(self.unwelded_pieces))
         OneSidedTetrasticks.customize_piece_data(self)
+
+
+class OneSidedWeldedTetrasticks5x2DiamondLattice(OneSidedWeldedTetrasticks5x5):
+
+    """0 solutions"""
+
+    width = 7
+    height = 7
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        return self.coordinates_diamond_lattice(5, 2)
+
+
+class OneSidedWeldedTetrasticks6x6Unbordered(OneSidedWeldedTetrasticks5x5):
+
+    """0 solutions"""
+
+    width = 6
+    height = 6
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        return self.coordinates_unbordered(6, 6)

@@ -13,23 +13,42 @@ from puzzler import coordsys
 from puzzler.puzzles.polysticks import Polysticks123
 
 
-class Polysticks123_4x4Corners(Polysticks123):
+class Polysticks123_4x4ClippedCorners1(Polysticks123):
 
     """
-    0 solutions
+    21 solutions
     """
 
     width = 4
     height = 4
 
+    holes = set(((0,0,0), (0,0,1), (2,3,0), (3,2,1)))
+
+    """
+    no solutions:
+    
+    holes = set(((1,1,0), (1,1,1), (1,2,0), (2,1,1)))
+
+    holes = set(((0,1,1), (1,0,0), (1,3,0), (3,1,1)))
+    """
+
     def coordinates(self):
-        last_x = self.width - 1
-        last_y = self.height - 1
-        for y in range(self.height):
-            for x in range(self.width):
-                for z in range(self.depth):
-                    if ( (z == 1 and y == last_y)
-                         or (z == 0 and x == last_x)
-                         or (x,y,z) in ((1,1,0),(1,1,1),(1,2,0),(2,1,1))):
-                        continue
-                    yield (x, y, z)
+        for coord in self.coordinates_bordered(self.width, self.height):
+            if coord not in self.holes:
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['L3'][-1]['flips'] = None
+        self.piece_data['L3'][-1]['rotations'] = (0, 1)
+
+
+class Polysticks123_4x4ClippedCorners2(Polysticks123_4x4ClippedCorners1):
+
+    """
+    132 solutions
+    """
+
+    holes = set(((0,3,0), (0,2,1), (2,3,0), (3,2,1)))
+
+    def customize_piece_data(self):
+        self.piece_data['L3'][-1]['flips'] = None
