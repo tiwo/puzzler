@@ -94,6 +94,11 @@ Misc
 
   .. image:: images/pentominoes-triangle.png
 
+* 15x8 triangle with a free 2x2 square tetromino: `473 solutions
+  <../solutions/pentominoes-plus-square-tetromino-triangle.txt>`__
+
+  .. image:: images/pentominoes-plus-square-tetromino-triangle.png
+
 
 One-Sided Pentominoes
 =====================

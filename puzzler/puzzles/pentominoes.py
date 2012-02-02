@@ -260,7 +260,14 @@ class Pentominoes8x8WithoutCorners(Pentominoes):
                 yield (x, y)
 
 
-class PentominoesPlusSquareTetromino8x8(Pentominoes):
+class PentominoesPlusSquareTetromino(Pentominoes):
+
+    def add_square_tetromino(self):
+        self.piece_data['S'] = (((1, 0), (0, 1), (1, 1)), {})
+        self.piece_colors['S'] = 'gray'
+
+
+class PentominoesPlusSquareTetromino8x8(PentominoesPlusSquareTetromino):
 
     """16146 solutions"""
 
@@ -270,8 +277,25 @@ class PentominoesPlusSquareTetromino8x8(Pentominoes):
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['rotations'] = None
-        self.piece_data['S'] = (((1, 0), (0, 1), (1, 1)), {})
-        self.piece_colors['S'] = 'gray'
+        self.add_square_tetromino()
+
+
+class PentominoesPlusSquareTetrominoTriangle(PentominoesPlusSquareTetromino):
+
+    """473 solutions"""
+
+    height = 8
+    width = 15
+
+    def coordinates(self):
+        for coord in PentominoesPlusSquareTetromino.coordinates(self):
+            x, y = coord
+            if (y <= x) and (y < (self.width - x)):
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.add_square_tetromino()
 
 
 class PentominoesTriangle(Pentominoes):
