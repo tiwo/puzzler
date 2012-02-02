@@ -442,7 +442,10 @@ class Puzzle2D(Puzzle):
             for y in y_reversed_fn(range(self.height)))
         omitted = '\n'.join(
             '(%s omitted)' % row[-1] for row in solution if row[0] == '!')
-        return '\n'.join([omitted, formatted])
+        if omitted:
+            return '\n'.join([omitted, formatted])
+        else:
+            return formatted
 
     def empty_solution_matrix(self, margin=0):
         s_matrix = [[self.empty_cell] * (self.width + 2 * margin)
