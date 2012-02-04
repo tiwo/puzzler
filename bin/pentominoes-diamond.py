@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-"""0 solutions"""
+"""8 solutions"""
 
 import puzzler
 from puzzler.puzzles.pentominoes import PentominoesDiamond
