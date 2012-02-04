@@ -99,6 +99,11 @@ Misc
 
   .. image:: images/pentominoes-plus-square-tetromino-triangle.png
 
+* 11x10 diamond: `8 solutions
+  <../solutions/pentominoes-diamond.txt>`__
+
+  .. image:: images/pentominoes-diamond.png
+
 
 One-Sided Pentominoes
 =====================

@@ -366,6 +366,29 @@ class PentominoesTriangle(Pentominoes):
                             self.build_matrix_row(key, translated)
 
 
+class PentominoesDiamond(Pentominoes):
+
+    """
+    8 solutions
+
+    (Puzzle with central hole has no solutions.)
+    """
+
+    height = 10
+    width = 11
+
+    def coordinates(self):
+        for coord in Pentominoes.coordinates(self):
+            x, y = coord
+            xy = x + y
+            x_y = x - y
+            if (5 <= xy <= 15) and (-5 <= x_y <= 5):
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+
+
 class OneSidedPentominoes3x30(OneSidedPentominoes):
 
     height = 3
