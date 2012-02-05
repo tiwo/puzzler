@@ -65,15 +65,10 @@ Misc
 * 3x20 tube (3x20 rectangle joined at the long edges): `solutions
   incomplete <../solutions/pentominoes-3x20-tube.txt>`__
 
-* 8x8 square with a central 2x2 hole: `65 solutions
+* _`8x8 square with a central 2x2 hole`: `65 solutions
   <../solutions/pentominoes-8x8.txt>`__
 
   .. image:: images/pentominoes-8x8.png
-
-* 8x8 square with a free 2x2 square tetromino: `16146 solutions
-  <../solutions/pentominoes-plus-square-tetromino-8x8.txt>`__
-
-  .. image:: images/pentominoes-plus-square-tetromino-8x8.png
 
 * 8x8 square with missing corners: `2170 solutions
   <../solutions/pentominoes-8x8-corners.txt>`__
@@ -94,15 +89,30 @@ Misc
 
   .. image:: images/pentominoes-triangle.png
 
-* 15x8 triangle with a free 2x2 square tetromino: `473 solutions
-  <../solutions/pentominoes-plus-square-tetromino-triangle.txt>`__
-
-  .. image:: images/pentominoes-plus-square-tetromino-triangle.png
-
 * 11x10 diamond: `8 solutions
   <../solutions/pentominoes-diamond.txt>`__
 
   .. image:: images/pentominoes-diamond.png
+
+  (The configuration with a central hole has no solutions,
+  unfortunately.)
+
+
+Pentominoes Plus A Square Tetromino
+===================================
+
+* 8x8 square: `16146 solutions
+  <../solutions/pentominoes-plus-square-tetromino-8x8.txt>`__
+
+  .. image:: images/pentominoes-plus-square-tetromino-8x8.png
+
+  The `8x8 square with a central 2x2 hole`_ puzzle above can be
+  considered a subset of this puzzle.
+
+* 15x8 triangle: `473 solutions
+  <../solutions/pentominoes-plus-square-tetromino-triangle.txt>`__
+
+  .. image:: images/pentominoes-plus-square-tetromino-triangle.png
 
 
 One-Sided Pentominoes
