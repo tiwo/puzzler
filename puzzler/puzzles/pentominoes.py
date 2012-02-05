@@ -9,7 +9,8 @@
 Concrete pentomino puzzles.
 """
 
-from puzzler.puzzles.polyominoes import Pentominoes, OneSidedPentominoes
+from puzzler.puzzles.polyominoes import (
+    Pentominoes, OneSidedPentominoes, PentominoesPlusSquareTetromino)
 
 
 class Pentominoes6x10(Pentominoes):
@@ -260,13 +261,6 @@ class Pentominoes8x8WithoutCorners(Pentominoes):
                 yield (x, y)
 
 
-class PentominoesPlusSquareTetromino(Pentominoes):
-
-    def add_square_tetromino(self):
-        self.piece_data['S'] = (((1, 0), (0, 1), (1, 1)), {})
-        self.piece_colors['S'] = 'gray'
-
-
 class PentominoesPlusSquareTetromino8x8(PentominoesPlusSquareTetromino):
 
     """16146 solutions"""
@@ -277,7 +271,6 @@ class PentominoesPlusSquareTetromino8x8(PentominoesPlusSquareTetromino):
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['rotations'] = None
-        self.add_square_tetromino()
 
 
 class PentominoesPlusSquareTetrominoTriangle(PentominoesPlusSquareTetromino):
@@ -295,7 +288,6 @@ class PentominoesPlusSquareTetrominoTriangle(PentominoesPlusSquareTetromino):
 
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
-        self.add_square_tetromino()
 
 
 class PentominoesTriangle(Pentominoes):
