@@ -104,8 +104,6 @@ Misc
 
 * Chevrons:
 
-  .. image:: 
-
   .. list-table::
      :class: borderless
 
