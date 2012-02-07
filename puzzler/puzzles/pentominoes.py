@@ -381,6 +381,107 @@ class PentominoesDiamond(Pentominoes):
         self.piece_data['P'][-1]['flips'] = None
 
 
+class PentominoesTrapezoid(Pentominoes):
+
+    """
+    140 solutions
+    """
+
+    height = 11
+    width = 11
+
+    svg_rotation = -45
+
+    def coordinates(self):
+        for coord in Pentominoes.coordinates(self):
+            x, y = coord
+            xy = x + y
+            if xy >= (self.height - 1) and xy < (self.height * 2 - 4):
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+
+
+class PentominoesTrapezoid2(Pentominoes):
+
+    """
+    0 solutions
+    """
+
+    height = 14
+    width = 14
+
+    def coordinates(self):
+        for coord in Pentominoes.coordinates(self):
+            x, y = coord
+            xy = x + y
+            if xy >= (self.height - 1) and xy < (self.height * 2 - 10):
+                yield coord
+
+
+class PentominoesChevron1(Pentominoes):
+
+    """
+    101 solutions
+    """
+
+    height = 11
+    width = 11
+
+    svg_rotation = -45
+
+    def coordinates(self):
+        for coord in Pentominoes.coordinates(self):
+            x, y = coord
+            xy = x + y
+            if xy >= (self.height - 1) and ((x > 6) or (y > 6)):
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+
+
+class PentominoesChevron2(Pentominoes):
+
+    """
+    82 solutions
+    """
+
+    height = 11
+    width = 11
+
+    svg_rotation = -45
+
+    def coordinates(self):
+        for coord in Pentominoes.coordinates(self):
+            x, y = coord
+            if ((x > 6) or (y > 6)) and (-7 <= y - x <= 7):
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+
+
+class PentominoesChevron_X(Pentominoes):
+
+    """
+    0 solutions ("I" piece doesn't fit anywhere)
+    """
+
+    height = 11
+    width = 15
+
+    def coordinates(self):
+        center = (self.width + 1) / 2
+        for coord in Pentominoes.coordinates(self):
+            x, y = coord
+            if (  ((x < center) and (x <= y < x + 4))
+                  or ((x >= center)
+                      and ((self.width - x) <= y < (self.width - x + 4)))):
+                yield coord
+
+
 class OneSidedPentominoes3x30(OneSidedPentominoes):
 
     height = 3

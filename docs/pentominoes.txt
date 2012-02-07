@@ -97,6 +97,26 @@ Misc
   (The configuration with a central hole has no solutions,
   unfortunately.)
 
+* Trapezoid: `140 solutions
+  <../solutions/pentominoes-trapezoid.txt>`__
+
+  .. image:: images/pentominoes-trapezoid.png
+
+* Chevrons:
+
+  .. image:: 
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentominoes-chevron-1.png
+
+         `101 solutions <../solutions/pentominoes-chevron-1.txt>`__
+
+       - .. figure:: images/pentominoes-chevron-2.png
+
+         `82 solutions <../solutions/pentominoes-chevron-2.txt>`__
+
 
 Pentominoes Plus A Square Tetromino
 ===================================
