@@ -509,5 +509,15 @@ on the hexagonal grid.
 
   .. image:: images/hexatwigs-triangle.png
 
+* Hexagon ring (design by Peter F. Esser): `solutions incomplete
+  <../solutions/hexatwigs-hexagon-ring.txt>`__
+
+  .. image:: images/hexatwigs-hexagon-ring.png
+
+* Elongated hexagon ring (design by Peter F. Esser): `solutions
+  incomplete <../solutions/hexatwigs-elongated-hexagon-ring.txt>`__
+
+  .. image:: images/hexatwigs-elongated-hexagon-ring.png
+
 
 .. |c| unicode:: U+00A9 .. copyright sign

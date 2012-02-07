@@ -127,6 +127,20 @@ class Polytwigs(Polytrigs):
                 continue
             yield self.coordinate_offset(x, y, z, offset)
 
+    def coordinates_elongated_hexagon_unbordered(
+            self, base_length, side_length, offset=None):
+        
+        x_bound = side_length + base_length - 1
+        y_bound = side_length * 2 - 1
+        min_xy = side_length - 1
+        max_xy = base_length + 2 * side_length - 2
+        for coord in self.coordinates_unbordered(x_bound, y_bound):
+            x, y, z = coord
+            xy = x + y
+            if (xy <= min_xy) or (xy > max_xy) or ((xy == max_xy) and (z != 2)):
+                continue
+            yield self.coordinate_offset(x, y, z, offset)
+
     def coordinates_trapezoid(self, m, n, offset=None):
         """
         Trapezoidal bordered polytwig grid of base length M & height N hexagons.
