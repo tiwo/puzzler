@@ -58,9 +58,6 @@ To implement:
   - Hexahexes (e.g. `Kadon's Hexnut II
     <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__)?
 
-* 15/16 tetrasticks: aztec diamond of order 3; unbordered 7x7 grid;
-  3x5 diamond lattice
-
 * polysticks of order 1-4: unbordered 8x8 grid
 
 .. |---| unicode:: U+2014  .. em dash

@@ -26,12 +26,15 @@ class Tetrasticks6x6(Tetrasticks):
     * 204 omitting Y
 
     All are perfect solutions (i.e. no pieces cross).
+
+    Uses 15 of 16 tetrasticks (one piece with imbalance omitted).
     """
 
     width = 8
+    main_width = 6
     height = 6
 
-    # These 9 coordinates form a minimal cover for all 12 pentominoes
+    # These 9 coordinates form a minimal cover for all 5 omitted tetrasticks
     omitted_piece_coordinates = (
         (6,1,0), (6,1,1), (6,2,0), (6,2,1), (6,3,0), (6,3,1),
         (7,1,1), (7,2,1), (7,3,1))
@@ -45,7 +48,7 @@ class Tetrasticks6x6(Tetrasticks):
         'Y': ((7,1,1), (6,3,0), (7,2,1), (7,3,1)),}
 
     def coordinates(self):
-        for coord in self.coordinates_bordered(self.height, self.height):
+        for coord in self.coordinates_bordered(self.main_width, self.height):
             yield coord
         for coord in self.omitted_piece_coordinates:
             yield coordsys.SquareGrid3D(coord)
@@ -68,27 +71,65 @@ class Tetrasticks6x6(Tetrasticks):
                     self.x_width, x, self.y_width, y, self.z_width, z)
                 row[self.matrix_columns[label]] = label
             self.matrix.append(row)
-            #self.build_matrix_row(key, coords)
 
     def build_regular_matrix(self, keys):
         for key in keys:
             for coords, aspect in self.pieces[key]:
                 for y in range(self.height - aspect.bounds[1]):
                     # can't use self.width; omitted pieces are handled above:
-                    for x in range(self.height - aspect.bounds[0]):
+                    for x in range(self.main_width - aspect.bounds[0]):
                         translated = aspect.translate((x, y, 0))
                         if translated.issubset(self.solution_coords):
                             self.build_matrix_row(key, translated)
 
 
-class Tetrasticks7x7Unbordered(Tetrasticks6x6):
+class TetrasticksAztecDiamond(Tetrasticks6x6):
 
-    """0 solutions"""
+    """
+    3 solutions
+
+    Uses 15 of 16 tetrasticks (one piece with imbalance omitted).
+    """
 
     width = 9
     height = 7
+    main_width = 7
 
-    # These 9 coordinates form a minimal cover for all 12 pentominoes
+    # These 9 coordinates form a minimal cover for all 5 omitted tetrasticks
+    omitted_piece_coordinates = (
+        (7,2,0), (7,2,1), (7,3,0), (7,3,1), (7,4,0), (7,4,1),
+        (8,2,1), (8,3,1), (8,4,1))
+
+    # These are the fixed positions for omitted pieces, to prevent duplicates.
+    omitted_piece_positions = {
+        'H': ((7,2,1), (7,3,0), (7,3,1), (8,2,1)),
+        'J': ((7,2,1), (7,2,0), (8,3,1), (8,2,1)),
+        'L': ((7,2,1), (7,2,0), (7,3,1), (7,4,1)),
+        'N': ((7,2,1), (7,3,0), (8,3,1), (8,4,1)),
+        'Y': ((8,2,1), (7,4,0), (8,3,1), (8,4,1)),}
+
+    def coordinates(self):
+        for coord in self.coordinates_bordered(self.main_width, self.height):
+            x, y, z = coord
+            if (2 <= x + y <= 9) and (-3 <= y + z - x <= 4):
+                yield coord
+        for coord in self.omitted_piece_coordinates:
+            yield coordsys.SquareGrid3D(coord)
+
+
+class Tetrasticks7x7Unbordered(Tetrasticks6x6):
+
+    """
+    0 solutions
+
+    Uses 15 of 16 tetrasticks (one piece with imbalance omitted).
+    """
+
+    width = 9
+    height = 7
+    main_width = 7
+
+    # These 9 coordinates form a minimal cover for all 5 omitted tetrasticks
     omitted_piece_coordinates = (
         (7,1,0), (7,1,1), (7,2,0), (7,2,1), (7,3,0), (7,3,1),
         (8,1,1), (8,2,1), (8,3,1))
@@ -102,7 +143,7 @@ class Tetrasticks7x7Unbordered(Tetrasticks6x6):
         'Y': ((8,1,1), (7,3,0), (8,2,1), (8,3,1)),}
 
     def coordinates(self):
-        for coord in self.coordinates_unbordered(self.height, self.height):
+        for coord in self.coordinates_unbordered(self.main_width, self.height):
             yield coord
         for coord in self.omitted_piece_coordinates:
             yield coordsys.SquareGrid3D(coord)
@@ -472,3 +513,36 @@ class OneSidedWeldedTetrasticks6x6Unbordered(OneSidedWeldedTetrasticks5x5):
 
     def coordinates(self):
         return self.coordinates_unbordered(6, 6)
+
+
+class OneSidedWeldedTetrasticksTriangle(OneSidedWeldedTetrasticks5x5):
+
+    """9 solutions"""
+
+    width = 6
+    height = 6
+
+    svg_rotation = 135
+
+    def coordinates(self):
+        for coord in self.coordinates_bordered(6, 6):
+            x, y, z = coord
+            if x + y <= 5:
+                yield coord
+
+
+class OneSidedWeldedTetrasticksTrapezoid(OneSidedWeldedTetrasticks5x5):
+
+    """7 solutions"""
+
+    width = 8
+    height = 4
+
+    check_for_duplicates = True
+    duplicate_conditions = ({'x_reversed': True},)
+
+    def coordinates(self):
+        for coord in self.coordinates_bordered(self.width, self.height):
+            x, y, z = coord
+            if x + y < self.width and y - x + z <= 1:
+                yield coord

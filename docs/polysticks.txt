@@ -66,6 +66,16 @@ asymmetrical, therefore there are 10 one-sided welded tetrasticks.
 
   .. image:: images/one-sided-welded-tetrasticks-5x5.png
 
+* Triangle: `9 solutions
+  <../solutions/one-sided-welded-tetrasticks-triangle.txt>`__
+
+  .. image:: images/one-sided-welded-tetrasticks-triangle.png
+
+* Trapezoid: `7 solutions
+  <../solutions/one-sided-welded-tetrasticks-trapezoid.txt>`__
+
+  .. image:: images/one-sided-welded-tetrasticks-trapezoid.png
+
 
 15 of 16 Tetrasticks
 --------------------
@@ -81,6 +91,13 @@ segments (H, J, L, N, or Y), symmetrical shapes can be formed.
   In this solution, the "Y" piece is omitted:
 
   .. image:: images/tetrasticks-6x6.png
+
+* Aztec Diamond of order 3: `3 solutions
+  <../solutions/tetrasticks-aztec-diamond.txt>`__
+
+  In this solution, the "J" piece is omitted:
+
+  .. image:: images/tetrasticks-aztec-diamond.png
 
 
 One-Sided Tetrasticks
