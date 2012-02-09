@@ -2,7 +2,7 @@
 # $Id$
 
 """
- solutions
+7 solutions
 """
 
 import puzzler

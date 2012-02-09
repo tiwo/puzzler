@@ -2,7 +2,9 @@
 # $Id$
 
 """
- solutions
+many solutions
+
+Design by Peter F. Esser.
 """
 
 import puzzler

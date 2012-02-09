@@ -30,7 +30,11 @@ class HexatwigsTriangle(Hexatwigs):
 
 class HexatwigsHexagonRing(Hexatwigs):
 
-    """many solutions"""
+    """
+    many solutions
+
+    Design by Peter F. Esser.
+    """
 
     height = 10
     width = 10
@@ -64,7 +68,11 @@ class HexatwigsHexagonRing2(HexatwigsHexagonRing):
 
 class HexatwigsElongatedHexagonRing(Hexatwigs):
 
-    """many solutions"""
+    """
+    many solutions
+
+    Discovered by Peter F. Esser.
+    """
 
     height = 10
     width = 10
@@ -99,3 +107,23 @@ class OneSidedHexatwigsHexagonRing(OneSidedHexatwigs):
     def customize_piece_data(self):
         OneSidedHexatwigs.customize_piece_data(self)
         self.piece_data['R06'][-1]['rotations'] = None
+
+
+class OneSidedHexatwigsElongatedHexagon26x2(OneSidedHexatwigs):
+
+    """
+     solutions
+
+    Discovered by Peter F. Esser.
+    """
+
+    height = 4
+    width = 28
+
+    def coordinates(self):
+        return self.coordinates_elongated_hexagon(26, 2)
+
+    def customize_piece_data(self):
+        OneSidedHexatwigs.customize_piece_data(self)
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1, 2)

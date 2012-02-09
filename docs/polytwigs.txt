@@ -514,7 +514,7 @@ on the hexagonal grid.
 
   .. image:: images/hexatwigs-hexagon-ring.png
 
-* Elongated hexagon ring (design by Peter F. Esser): `solutions
+* Elongated hexagon ring (discovered by Peter F. Esser): `solutions
   incomplete <../solutions/hexatwigs-elongated-hexagon-ring.txt>`__
 
   .. image:: images/hexatwigs-elongated-hexagon-ring.png

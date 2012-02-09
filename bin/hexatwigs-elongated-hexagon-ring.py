@@ -3,6 +3,8 @@
 
 """
 many solutions
+
+Discovered by Peter F. Esser.
 """
 
 import puzzler
