@@ -158,6 +158,16 @@ class PentominoesPlusSquareTetromino(Pentominoes):
     piece_colors['S'] = 'gray'
 
 
+class PentominoesPlusMonomino(Pentominoes):
+
+    piece_data = copy.deepcopy(Pentominoes.piece_data)
+    piece_data['M'] = ((), {})
+    symmetric_pieces = (
+        Pentominoes.symmetric_pieces + ['M'])
+    piece_colors = copy.deepcopy(Pentominoes.piece_colors)
+    piece_colors['M'] = 'black'
+
+
 class PentominoesPlusTetrominoes(Pentominoes):
 
     piece_data = copy.deepcopy(Pentominoes.piece_data)

@@ -116,7 +116,15 @@ Misc
          `82 solutions <../solutions/pentominoes-chevron-2.txt>`__
 
 
-Pentominoes Plus A Square Tetromino
+* Cross 1 (suggested by Dan Klarskov): `14 solutions
+  <../solutions/pentominoes-cross-1.txt>`__
+
+  .. image:: images/pentominoes-cross-1.png
+
+  Also see `Pentominoes Plus the Monomino`_.
+
+
+Pentominoes Plus a Square Tetromino
 ===================================
 
 * 8x8 square: `16146 solutions
@@ -131,6 +139,15 @@ Pentominoes Plus A Square Tetromino
   <../solutions/pentominoes-plus-square-tetromino-triangle.txt>`__
 
   .. image:: images/pentominoes-plus-square-tetromino-triangle.png
+
+
+Pentominoes Plus the Monomino
+=============================
+
+* Cross 1 (suggested by Dan Klarskov): `366 solutions
+  <../solutions/pentominoes-plus-monomino-cross-1.txt>`__
+
+  .. image:: images/pentominoes-plus-monomino-cross-1.png
 
 
 One-Sided Pentominoes

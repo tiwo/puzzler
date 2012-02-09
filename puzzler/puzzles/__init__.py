@@ -388,9 +388,18 @@ class Puzzle2D(Puzzle):
                             {'x_reversed': True, 'y_reversed': True})
 
     def coordinates(self):
-        for y in range(self.height):
-            for x in range(self.width):
-                yield coordsys.Cartesian2D((x, y))
+        return self.coordinates_rectangle(self.width, self.height)
+
+    def coordinate_offset(self, x, y, offset):
+        if offset:
+            return coordsys.Cartesian2D((x, y)) + offset
+        else:
+            return coordsys.Cartesian2D((x, y))
+
+    def coordinates_rectangle(self, width, height, offset=None):
+        for y in range(height):
+            for x in range(width):
+                yield self.coordinate_offset(x, y, offset)
 
     def make_aspects(self, units, flips=(False, True), rotations=(0, 1, 2, 3)):
         aspects = set()

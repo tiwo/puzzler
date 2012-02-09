@@ -10,7 +10,8 @@ Concrete pentomino puzzles.
 """
 
 from puzzler.puzzles.polyominoes import (
-    Pentominoes, OneSidedPentominoes, PentominoesPlusSquareTetromino)
+    Pentominoes, OneSidedPentominoes,
+    PentominoesPlusMonomino, PentominoesPlusSquareTetromino)
 
 
 class Pentominoes6x10(Pentominoes):
@@ -480,6 +481,51 @@ class PentominoesChevron_X(Pentominoes):
                   or ((x >= center)
                       and ((self.width - x) <= y < (self.width - x + 4)))):
                 yield coord
+
+
+class PentominoesCross1(Pentominoes):
+
+    """
+    14 solutions
+
+    Suggested by Dan Klarskov.
+    """
+
+    height = 11
+    width = 11
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(11, 3, offset=(0,4)))
+        coords.update(self.coordinates_rectangle(3, 11, offset=(4,0)))
+        coords.update(self.coordinates_rectangle(5, 5, offset=(3,3)))
+        coords.remove((5,5))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
+class PentominoesPlusMonominoCross1(PentominoesPlusMonomino):
+
+    """
+    366 solutions
+
+    Suggested by Dan Klarskov.
+    """
+
+    height = 11
+    width = 11
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(11, 3, offset=(0,4)))
+        coords.update(self.coordinates_rectangle(3, 11, offset=(4,0)))
+        coords.update(self.coordinates_rectangle(5, 5, offset=(3,3)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
 
 
 class OneSidedPentominoes3x30(OneSidedPentominoes):
