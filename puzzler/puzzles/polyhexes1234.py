@@ -30,3 +30,23 @@ class Polyhex1234_5x8(Polyhex1234):
     width = 8
 
     duplicate_conditions = ({'rotate_180': True},)
+
+
+class Polyhex1234_6x7(Polyhex1234):
+
+    """? (many) solutions"""
+
+    height = 6
+    width = 7
+
+    check_for_duplicates = False
+
+    hole = set(((3,2), (3,3)))
+
+    def coordinates(self):
+        for coord in self.coordinates_parallelogram(self.width, self.height):
+            if coord not in self.hole:
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['rotations'] = (0,1,2)

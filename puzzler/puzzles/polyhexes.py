@@ -32,9 +32,18 @@ class Polyhexes(Puzzle2D):
     coord_class = coordsys.Hexagonal2D
 
     def coordinates(self):
-        for y in range(self.height):
-            for x in range(self.width):
-                yield (x, y)
+        return self.coordinates_parallelogram(self.width, self.height)
+
+    def coordinates_parallelogram(self, width, height, offset=None):
+        for y in range(height):
+            for x in range(width):
+                yield self.coordinate_offset(x, y, offset)
+
+    def coordinate_offset(self, x, y, offset):
+        if offset:
+            return coordsys.Hexagonal2D((x, y)) + offset
+        else:
+            return coordsys.Hexagonal2D((x, y))
 
     def make_aspects(self, units, flips=(False, True),
                      rotations=(0, 1, 2, 3, 4, 5)):
@@ -242,17 +251,17 @@ class Tetrahexes(Polyhexes):
 
 class Polyhex1234(Polyhexes123Data, Tetrahexes):
 
+    piece_data = copy.deepcopy(Tetrahexes.piece_data)
+    piece_data.update(copy.deepcopy(Polyhexes123Data.piece_data))
+
     symmetric_pieces = (Polyhexes123Data.symmetric_pieces
                         + Tetrahexes.symmetric_pieces)
 
     asymmetric_pieces = (Polyhexes123Data.asymmetric_pieces
                          + Tetrahexes.asymmetric_pieces)
 
-    def customize_piece_data(self):
-        self.piece_data = copy.deepcopy(Tetrahexes.piece_data)
-        self.piece_data.update(copy.deepcopy(Polyhexes123Data.piece_data))
-        self.piece_colors = copy.deepcopy(Tetrahexes.piece_colors)
-        self.piece_colors.update(Polyhexes123Data.piece_colors)
+    piece_colors = copy.deepcopy(Tetrahexes.piece_colors)
+    piece_colors.update(Polyhexes123Data.piece_colors)
 
 
 class Pentahexes(Polyhexes):
@@ -317,13 +326,14 @@ class Pentahexes(Polyhexes):
 
 class Polyhex12345(Polyhex1234, Pentahexes):
 
+    piece_data = copy.deepcopy(Pentahexes.piece_data)
+    piece_data.update(copy.deepcopy(Polyhex1234.piece_data))
+
     symmetric_pieces = (Polyhex1234.symmetric_pieces
                         + Pentahexes.symmetric_pieces)
 
     asymmetric_pieces = (Polyhex1234.asymmetric_pieces
                          + Pentahexes.asymmetric_pieces)
 
-    def customize_piece_data(self):
-        Polyhex1234.customize_piece_data(self)
-        self.piece_data.update(copy.deepcopy(Pentahexes.piece_data))
-        self.piece_colors.update(Pentahexes.piece_colors)
+    piece_colors = copy.deepcopy(Pentahexes.piece_colors)
+    piece_colors.update(Polyhex1234.piece_colors)

@@ -60,6 +60,11 @@ seven tetrahexes.
 
   .. image:: images/polyhex-5x8.png
 
+* 6x7 parallelogram (suggested by Dan Klarskov): `solutions incomplete
+  <../solutions/polyhex-1234-6x7.txt>`__
+
+  .. image:: images/polyhex-1234-6x7.png
+
 
 Polyhexes of Order 1 Through 5
 ==============================
