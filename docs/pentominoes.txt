@@ -140,7 +140,6 @@ Misc
        - .. figure:: images/pentominoes-cross-4.png
 
          `21 solutions <../solutions/pentominoes-cross-4.txt>`__
-         (designed by Dan Klarskov)
 
 
 Pentominoes Plus a Square Tetromino

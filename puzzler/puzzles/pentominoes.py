@@ -384,7 +384,7 @@ class PentominoesDiamond(Pentominoes):
 
 class PentominoesPlusMonominoDiamond(PentominoesPlusMonomino):
 
-    """ solutions"""
+    """10 solutions"""
 
     height = 11
     width = 11
@@ -656,7 +656,7 @@ class PentominoesPlusSquareTetrominoCross3(PentominoesPlusSquareTetromino):
 
 class PentominoesCross4(Pentominoes):
 
-    """ solutions"""
+    """21 solutions"""
 
     height = 14
     width = 9

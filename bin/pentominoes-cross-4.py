@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-""" solutions"""
+"""21 solutions"""
 
 import puzzler
 from puzzler.puzzles.pentominoes import PentominoesCross4
