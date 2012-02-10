@@ -95,7 +95,8 @@ Misc
   .. image:: images/pentominoes-diamond.png
 
   (The configuration with a central hole has no solutions,
-  unfortunately.)
+  unfortunately.  But see the diamond puzzle in `Pentominoes Plus the
+  Monomino`_.)
 
 * Trapezoid: `140 solutions
   <../solutions/pentominoes-trapezoid.txt>`__
@@ -116,12 +117,30 @@ Misc
          `82 solutions <../solutions/pentominoes-chevron-2.txt>`__
 
 
-* Cross 1 (suggested by Dan Klarskov): `14 solutions
-  <../solutions/pentominoes-cross-1.txt>`__
+* Crosses
 
-  .. image:: images/pentominoes-cross-1.png
+  .. list-table::
+     :class: borderless
 
-  Also see `Pentominoes Plus the Monomino`_.
+     * - .. figure:: images/pentominoes-cross-1.png
+
+         `14 solutions <../solutions/pentominoes-cross-1.txt>`__.
+         Also see `Pentominoes Plus the Monomino`_, cross 1.
+
+       - .. figure:: images/pentominoes-cross-2.png
+
+         `84 solutions <../solutions/pentominoes-cross-2.txt>`__
+         (designed by Dan Klarskov)
+
+     * - .. figure:: images/pentominoes-cross-3.png
+
+         `28 solutions <../solutions/pentominoes-cross-3.txt>`__
+         (designed by Dan Klarskov)
+
+       - .. figure:: images/pentominoes-cross-4.png
+
+         `21 solutions <../solutions/pentominoes-cross-4.txt>`__
+         (designed by Dan Klarskov)
 
 
 Pentominoes Plus a Square Tetromino
@@ -140,6 +159,35 @@ Pentominoes Plus a Square Tetromino
 
   .. image:: images/pentominoes-plus-square-tetromino-triangle.png
 
+* Crosses
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentominoes-plus-square-tetromino-cross-1.png
+
+         `5380 solutions
+         <../solutions/pentominoes-plus-square-tetromino-cross-1.txt>`__
+         (designed by Dan Klarskov)
+
+       - .. figure:: images/pentominoes-plus-square-tetromino-cross-2.png
+
+         `2071 solutions
+         <../solutions/pentominoes-plus-square-tetromino-cross-2.txt>`__
+         (designed by Dan Klarskov)
+
+     * - .. figure:: images/pentominoes-plus-square-tetromino-cross-3.png
+
+         `177 solutions
+         <../solutions/pentominoes-plus-square-tetromino-cross-3.txt>`__
+         (designed by Dan Klarskov)
+
+       - .. figure:: images/pentominoes-plus-square-tetromino-cross-4.png
+
+         `2 solutions
+         <../solutions/pentominoes-plus-square-tetromino-cross-4.txt>`__
+         (designed by Dan Klarskov)
+
 
 Pentominoes Plus the Monomino
 =============================
@@ -148,6 +196,13 @@ Pentominoes Plus the Monomino
   <../solutions/pentominoes-plus-monomino-cross-1.txt>`__
 
   .. image:: images/pentominoes-plus-monomino-cross-1.png
+
+* Diamond: `10 solutions
+  <../solutions/pentominoes-plus-monomino-diamond.txt>`__
+
+  .. image:: images/pentominoes-plus-monomino-diamond.png
+
+  In all solutions the monomino is at the edge of the diamond.
 
 
 One-Sided Pentominoes

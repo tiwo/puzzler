@@ -382,6 +382,26 @@ class PentominoesDiamond(Pentominoes):
         self.piece_data['P'][-1]['flips'] = None
 
 
+class PentominoesPlusMonominoDiamond(PentominoesPlusMonomino):
+
+    """ solutions"""
+
+    height = 11
+    width = 11
+
+    def coordinates(self):
+        for coord in Pentominoes.coordinates(self):
+            x, y = coord
+            xy = x + y
+            x_y = x - y
+            if (5 <= xy <= 15) and (-5 <= x_y <= 5):
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
 class PentominoesTrapezoid(Pentominoes):
 
     """
@@ -485,11 +505,7 @@ class PentominoesChevron_X(Pentominoes):
 
 class PentominoesCross1(Pentominoes):
 
-    """
-    14 solutions
-
-    Suggested by Dan Klarskov.
-    """
+    """14 solutions"""
 
     height = 11
     width = 11
@@ -521,6 +537,221 @@ class PentominoesPlusMonominoCross1(PentominoesPlusMonomino):
         coords = set(self.coordinates_rectangle(11, 3, offset=(0,4)))
         coords.update(self.coordinates_rectangle(3, 11, offset=(4,0)))
         coords.update(self.coordinates_rectangle(5, 5, offset=(3,3)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
+class PentominoesPlusSquareTetrominoCross1(PentominoesPlusSquareTetromino):
+
+    """
+    5380 solutions
+
+    Designed by Dan Klarskov.
+    """
+
+    height = 8
+    width = 10
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(10, 4, offset=(0,2)))
+        coords.update(self.coordinates_rectangle(6, 8, offset=(2,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class PentominoesCross2(Pentominoes):
+
+    """
+    84 solutions
+
+    Designed by Dan Klarskov.
+    """
+
+    height = 8
+    width = 10
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(10, 4, offset=(0,2)))
+        coords.update(self.coordinates_rectangle(6, 8, offset=(2,0)))
+        coords.difference_update(self.coordinates_rectangle(2, 2, offset=(4,3)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class PentominoesPlusSquareTetrominoCross2(PentominoesPlusSquareTetromino):
+
+    """
+    2071 solutions
+
+    Designed by Dan Klarskov.
+    """
+
+    height = 9
+    width = 9
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(9, 5, offset=(0,2)))
+        coords.update(self.coordinates_rectangle(5, 9, offset=(2,0)))
+        coords.remove((4,4))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
+class PentominoesCross3(Pentominoes):
+
+    """
+    28 solutions
+
+    Designed by Dan Klarskov.
+    """
+
+    height = 9
+    width = 9
+
+    hole = set(((3,4), (4,3), (4,4), (4,5), (5,4)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(9, 5, offset=(0,2)))
+        coords.update(self.coordinates_rectangle(5, 9, offset=(2,0)))
+        coords.difference_update(self.hole)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
+class PentominoesPlusSquareTetrominoCross3(PentominoesPlusSquareTetromino):
+
+    """
+    177 solutions
+
+    Designed by Dan Klarskov.
+    """
+
+    height = 10
+    width = 10
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(10, 4, offset=(0,3)))
+        coords.update(self.coordinates_rectangle(4, 10, offset=(3,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
+class PentominoesCross4(Pentominoes):
+
+    """ solutions"""
+
+    height = 14
+    width = 9
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(9, 3, offset=(0,8)))
+        coords.update(self.coordinates_rectangle(3, 14, offset=(3,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+
+
+class PentominoesCross_X1(Pentominoes):
+
+    """0 solutions"""
+
+    height = 10
+    width = 10
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(10, 4, offset=(0,3)))
+        coords.update(self.coordinates_rectangle(4, 10, offset=(3,0)))
+        coords.difference_update(self.coordinates_rectangle(2, 2, offset=(4,4)))
+        return sorted(coords)
+
+
+class PentominoesCross_X2(Pentominoes):
+
+    """0 solutions"""
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(12, 2, offset=(0,5)))
+        coords.update(self.coordinates_rectangle(2, 12, offset=(5,0)))
+        coords.update(self.coordinates_rectangle(4, 8, offset=(4,2)))
+        coords.update(self.coordinates_rectangle(8, 4, offset=(2,4)))
+        coords.difference_update(self.coordinates_rectangle(2, 2, offset=(5,5)))
+        return sorted(coords)
+
+
+class PentominoesCross_X3(Pentominoes):
+
+    """0 solutions"""
+
+    height = 10
+    width = 10
+
+    holes = set(((3,3), (3,6), (6,3), (6,6)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(10, 4, offset=(0,3)))
+        coords.update(self.coordinates_rectangle(4, 10, offset=(3,0)))
+        coords.difference_update(self.holes)
+        return sorted(coords)
+
+
+class PentominoesCross_X4(Pentominoes):
+
+    """0 solutions"""
+
+    height = 9
+    width = 9
+
+    hole = set(((3,3), (3,5), (4,4), (5,3), (5,5)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(9, 5, offset=(0,2)))
+        coords.update(self.coordinates_rectangle(5, 9, offset=(2,0)))
+        coords.difference_update(self.hole)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
+class PentominoesPlusSquareTetrominoCross4(PentominoesPlusSquareTetromino):
+
+    """
+    2 solutions
+
+    Designed by Dan Klarskov.
+    """
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(12, 2, offset=(0,5)))
+        coords.update(self.coordinates_rectangle(2, 12, offset=(5,0)))
+        coords.update(self.coordinates_rectangle(4, 8, offset=(4,2)))
+        coords.update(self.coordinates_rectangle(8, 4, offset=(2,4)))
         return sorted(coords)
 
     def customize_piece_data(self):
