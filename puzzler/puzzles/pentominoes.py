@@ -759,6 +759,137 @@ class PentominoesPlusSquareTetrominoCross4(PentominoesPlusSquareTetromino):
         self.piece_data['P'][-1]['rotations'] = None
 
 
+class PentominoesFlower1(Pentominoes):
+
+    """
+    47 solutions
+
+    Designed by Dan Klarskov.
+    """
+
+    height = 9
+    width = 9
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(7, 7, offset=(1,1)))
+        coords.update(self.coordinates_rectangle(3, 9, offset=(3,0)))
+        coords.update(self.coordinates_rectangle(9, 3, offset=(0,3)))
+        coords.remove((4,4))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
+class PentominoesFlower2(Pentominoes):
+
+    """
+    414 solutions
+
+    Designed by Dan Klarskov.
+    """
+
+    height = 7
+    width = 11
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(9, 5, offset=(1,1)))
+        coords.update(self.coordinates_rectangle(5, 7, offset=(3,0)))
+        coords.update(self.coordinates_rectangle(11, 3, offset=(0,2)))
+        coords.remove((5,3))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class PentominoesFlower3(Pentominoes):
+
+    """
+    15 solutions
+
+    Designed by Dan Klarskov.
+    """
+
+    height = 8
+    width = 10
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(8, 6, offset=(1,1)))
+        coords.update(self.coordinates_rectangle(4, 8, offset=(3,0)))
+        coords.update(self.coordinates_rectangle(10, 4, offset=(0,2)))
+        coords.difference_update(self.coordinates_rectangle(2, 2, offset=(4,3)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class PentominoesFlower4(Pentominoes):
+
+    """
+    57 solutions
+
+    Designed by Dan Klarskov.
+    """
+
+    height = 9
+    width = 10
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(10, 3, offset=(0,3)))
+        coords.update(self.coordinates_rectangle(8, 5, offset=(1,2)))
+        coords.update(self.coordinates_rectangle(6, 7, offset=(2,1)))
+        coords.update(self.coordinates_rectangle(4, 9, offset=(3,0)))
+        coords.difference_update(self.coordinates_rectangle(2, 3, offset=(4,3)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class PentominoesFlower5(Pentominoes):
+
+    """1595 solutions"""
+
+    height = 8
+    width = 9
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(9, 4, offset=(0,2)))
+        coords.update(self.coordinates_rectangle(7, 6, offset=(1,1)))
+        coords.update(self.coordinates_rectangle(5, 8, offset=(2,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class PentominoesTruncatedTriangle(Pentominoes):
+
+    """3626 solutions"""
+
+    height = 9
+    width = 9
+
+    svg_rotation = -45
+
+    def coordinates(self):
+        for coord in Pentominoes.coordinates(self):
+            x, y = coord
+            xy = x + y
+            if xy >= 6:
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+
+
 class OneSidedPentominoes3x30(OneSidedPentominoes):
 
     height = 3

@@ -89,6 +89,11 @@ Misc
 
   .. image:: images/pentominoes-triangle.png
 
+* Truncated triangle: `3626 solutions 
+  <../solutions/pentominoes-truncated-triangle.txt>`__
+
+  .. image:: images/pentominoes-truncated-triangle.png
+
 * 11x10 diamond: `8 solutions
   <../solutions/pentominoes-diamond.txt>`__
 
@@ -117,7 +122,7 @@ Misc
          `82 solutions <../solutions/pentominoes-chevron-2.txt>`__
 
 
-* Crosses
+* Crosses:
 
   .. list-table::
      :class: borderless
@@ -140,6 +145,37 @@ Misc
        - .. figure:: images/pentominoes-cross-4.png
 
          `21 solutions <../solutions/pentominoes-cross-4.txt>`__
+
+* Flowers:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentominoes-flower-1.png
+
+         `47 solutions <../solutions/pentominoes-flower-1.txt>`__
+         (designed by Dan Klarskov)
+
+       - .. figure:: images/pentominoes-flower-2.png
+
+         `414 solutions <../solutions/pentominoes-flower-2.txt>`__
+         (designed by Dan Klarskov)
+
+     * - .. figure:: images/pentominoes-flower-3.png
+
+         `15 solutions <../solutions/pentominoes-flower-3.txt>`__
+         (designed by Dan Klarskov)
+
+       - .. figure:: images/pentominoes-flower-4.png
+
+         `57 solutions <../solutions/pentominoes-flower-4.txt>`__
+         (designed by Dan Klarskov)
+
+     * - .. figure:: images/pentominoes-flower-5.png
+
+         `1595 solutions <../solutions/pentominoes-flower-5.txt>`__
+
+       -
 
 
 Pentominoes Plus a Square Tetromino
