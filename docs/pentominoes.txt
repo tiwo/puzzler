@@ -178,8 +178,8 @@ Misc
        -
 
 
-Pentominoes Plus a Square Tetromino
-===================================
+Pentominoes Plus the Square Tetromino
+=====================================
 
 * 8x8 square: `16146 solutions
   <../solutions/pentominoes-plus-square-tetromino-8x8.txt>`__
