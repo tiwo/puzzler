@@ -890,6 +890,39 @@ class PentominoesTruncatedTriangle(Pentominoes):
         self.piece_data['P'][-1]['flips'] = None
 
 
+class PentominoesArch1(Pentominoes):
+
+    """602 solutions"""
+
+    height = 7
+    width = 11
+
+    holes = set((
+        (0,3), (0,4), (0,5), (0,6), (1,5), (1,6), (2,6), (3,6), (5,0),
+        (10,3), (10,4), (10,5), (10,6), (9,5), (9,6), (8,6), (7,6)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(self.width, self.height))
+        coords.difference_update(self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+
+
+class PentominoesArch2(PentominoesArch1):
+
+    """125 solutions"""
+
+    height = 7
+    width = 12
+
+    holes = set((
+        (0,3), (0,4), (0,5), (0,6), (1,5), (1,6), (2,6), (3,6),
+        (4,0), (5,0), (6,0), (7,0), (4,1), (5,1), (6,1), (7,1),
+        (11,3), (11,4), (11,5), (11,6), (10,5), (10,6), (9,6), (8,6)))
+
+
 class OneSidedPentominoes3x30(OneSidedPentominoes):
 
     height = 3

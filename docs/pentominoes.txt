@@ -177,6 +177,20 @@ Misc
 
        -
 
+* Arches:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentominoes-arch-1.png
+
+         `602 solutions <../solutions/pentominoes-arch-1.txt>`__
+
+       - .. figure:: images/pentominoes-arch-2.png
+
+         `125 solutions <../solutions/pentominoes-arch-2.txt>`__
+
+
 
 Pentominoes Plus the Square Tetromino
 =====================================
