@@ -8,6 +8,6 @@ Design by Peter F. Esser.
 """
 
 import puzzler
-from puzzler.puzzles.hexatwigs import HexatwigsHexagonRing
+from puzzler.puzzles.hexatwigs import HexatwigsHexagonRing1
 
-puzzler.run(HexatwigsHexagonRing)
+puzzler.run(HexatwigsHexagonRing1)

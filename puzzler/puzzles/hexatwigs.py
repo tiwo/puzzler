@@ -28,7 +28,7 @@ class HexatwigsTriangle(Hexatwigs):
         self.piece_data['R06'][-1]['rotations'] = (0,1)
 
 
-class HexatwigsHexagonRing(Hexatwigs):
+class HexatwigsHexagonRing1(Hexatwigs):
 
     """
     many solutions
@@ -55,15 +55,29 @@ class HexatwigsHexagonRing(Hexatwigs):
         self.piece_data['R06'][-1]['rotations'] = (0, 1, 2)
 
 
-class HexatwigsHexagonRing2(HexatwigsHexagonRing):
+class HexatwigsHexagonRing2(HexatwigsHexagonRing1):
 
-    """ solutions"""
+    """many solutions"""
 
     holes = set(((2,4,1), (2,7,2), (4,2,0), (4,7,0), (7,2,2), (7,4,1)))
 
     def customize_piece_data(self):
         self.piece_data['R06'][-1]['flips'] = None
         self.piece_data['R06'][-1]['rotations'] = None
+
+
+class HexatwigsHexagonRing3(HexatwigsHexagonRing2):
+
+    """many solutions"""
+
+    holes = set(((1,4,1), (1,8,2), (4,1,0), (4,8,0), (8,1,2), (8,4,1)))
+
+
+class HexatwigsHexagonRing4(HexatwigsHexagonRing2):
+
+    """many solutions"""
+
+    holes = set(((1,6,0), (3,3,2), (3,7,1), (6,1,1), (6,6,2), (7,3,0)))
 
 
 class HexatwigsElongatedHexagonRing(Hexatwigs):
