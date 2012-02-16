@@ -31,7 +31,7 @@ class ExactCover(object):
     """
     Given a sparse matrix of 0s and 1s, find every set of rows containing
     exactly one 1 in each primary column (and at most one 1 in each secondary
-    column).  See `convert_matrix` for a description of the data structure.
+    column).  See `load_matrix` for a description of the data structure.
     Uses the native approach to Knuth's Algorithm X.
     """
 

@@ -607,6 +607,7 @@ class Puzzle2D(Puzzle):
 
 class Puzzle3D(Puzzle):
 
+    duplicate_conditions = ()
     margin = 0
     piece_width = 2                     # for format_solution
     svg_x_width = 9

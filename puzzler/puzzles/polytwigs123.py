@@ -20,8 +20,6 @@ class OneSidedPolytwigs123Triangle(OneSidedPolytwigs123):
     height = 3
     width = 3
 
-    check_for_duplicates = True
-
     def coordinates(self):
         return self.coordinates_triangle(2)
 
