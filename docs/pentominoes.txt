@@ -81,7 +81,7 @@ Misc
 
   .. image:: images/pentominoes-3x21.png
 
-* 10x10 triangle with one omitted piece: `580 solutions 
+* 10x10 triangle with one omitted piece: `580 solutions
   <../solutions/pentominoes-triangle.txt>`__
 
   Solutions are possible omitting all but the "P" & "W" pieces.  This
@@ -89,7 +89,7 @@ Misc
 
   .. image:: images/pentominoes-triangle.png
 
-* Truncated triangle: `3626 solutions 
+* Truncated triangle: `3626 solutions
   <../solutions/pentominoes-truncated-triangle.txt>`__
 
   .. image:: images/pentominoes-truncated-triangle.png
@@ -190,6 +190,11 @@ Misc
 
          `125 solutions <../solutions/pentominoes-arch-2.txt>`__
 
+     * - .. figure:: images/pentominoes-arch-3.png
+
+         `85 solutions <../solutions/pentominoes-arch-3.txt>`__
+
+       -
 
 
 Pentominoes Plus the Square Tetromino

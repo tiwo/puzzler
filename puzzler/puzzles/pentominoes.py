@@ -923,6 +923,21 @@ class PentominoesArch2(PentominoesArch1):
         (11,3), (11,4), (11,5), (11,6), (10,5), (10,6), (9,6), (8,6)))
 
 
+class PentominoesArch3(PentominoesArch1):
+
+    """85 solutions"""
+
+    height = 7
+    width = 13
+
+    holes = set((
+        (0,3), (0,4), (0,5), (0,6), (1,5), (1,6), (2,6), (3,6),
+        (4,0), (5,0), (6,0), (7,0), (8,0),
+        (4,1), (5,1), (6,1), (7,1), (8,1),
+        (4,2), (5,2), (6,2), (7,2), (8,2),
+        (12,3), (12,4), (12,5), (12,6), (11,5), (11,6), (10,6), (9,6)))
+
+
 class OneSidedPentominoes3x30(OneSidedPentominoes):
 
     height = 3
