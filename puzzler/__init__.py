@@ -45,6 +45,15 @@ exact_cover_modules = {
     'dlx': exact_cover_dlx,
     'x2': exact_cover_x2,}
 
+algorithm_choices = ('x2', 'dlx',)
+
+try:
+    from puzzler import exact_cover_c
+    exact_cover_modules['c'] = exact_cover_c
+    algorithm_choices = ('c',) + algorithm_choices
+except ImportError:
+    pass
+
 
 def run(puzzle_class, output_stream=sys.stdout, settings=None):
     """
@@ -65,13 +74,12 @@ def process_command_line():
     parser = optparse.OptionParser(
         formatter=optparse.TitledHelpFormatter(width=78),
         add_help_option=None)
-    choices = ('x2', 'dlx',)
     parser.add_option(
-        '-a', '--algorithm', metavar='NAME', choices=choices,
-        default=choices[0],
+        '-a', '--algorithm', metavar='NAME', choices=algorithm_choices,
+        default=algorithm_choices[0],
         help=('Choice of exact cover algorithm.  Choices: %s.'
               % ('"%s" (default), "%s"'
-                 % (choices[0], '", "'.join(choices[1:])))))
+                 % (algorithm_choices[0], '", "'.join(algorithm_choices[1:])))))
     parser.add_option(
         '-n', '--stop-after', type='int', metavar='N',
         help='Stop processing after generating N solutions.')
