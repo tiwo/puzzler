@@ -119,6 +119,34 @@ class PentatwigsStaggeredRectangle5x3(Pentatwigs):
         self.piece_data['R5'][-1]['flips'] = None
 
 
+class PentatwigsButterfly1(Pentatwigs):
+
+    """8 solutions"""
+
+    height = 6
+    width = 7
+
+    hole = set(((2,3,0), (3,2,0), (3,2,1), (3,2,2), (3,3,2)))
+
+    svg_rotation = -60
+
+    def coordinates(self):
+        for coord in self.coordinates_butterfly(4, 3):
+            if coord not in self.hole:
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['R5'][-1]['flips'] = None
+        self.piece_data['R5'][-1]['rotations'] = (0,1,2)
+
+
+class PentatwigsButterfly_X(PentatwigsButterfly1):
+
+    """0 solutions"""
+
+    hole = set(((2,4,0), (2,4,2), (3,1,0), (4,0,1), (4,1,2)))
+
+
 class OneSidedPentatwigsTrapezoid12x2(OneSidedPentatwigs):
 
     """many solutions"""

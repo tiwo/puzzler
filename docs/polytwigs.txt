@@ -248,6 +248,11 @@ on the hexagonal grid.
 
   .. image:: images/pentatwigs-chevron-5x2.png
 
+* Butterfly: `8 solutions
+  <../solutions/pentatwigs-butterfly-1.txt>`__
+
+  .. image:: images/pentatwigs-butterfly-1.png
+
 
 One-Sided Pentatwigs
 ====================
