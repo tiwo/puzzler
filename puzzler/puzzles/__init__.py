@@ -319,7 +319,7 @@ class Puzzle(object):
                 if not ((output_path == '-') or hasattr(output_path, 'write')):
                     x3d_file.close()
 
-    solution_header = re.compile(r'^solution (\d)+:$', re.IGNORECASE)
+    solution_header = re.compile(r'^solution (\d)+.*:$', re.IGNORECASE)
 
     def read_solution(self, input_path):
         if input_path == '-':
