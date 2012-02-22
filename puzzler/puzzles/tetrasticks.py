@@ -177,6 +177,17 @@ class OneSidedTetrasticks5x5DiamondLattice(OneSidedTetrasticks):
     107 solutions (see "Covering the Aztec Diamond with One-sided Tetrasticks,
     Extended Version", by `Alfred Wassermann`_).
 
+    ==========  =========
+    Sub-Puzzle  Solutions
+    ==========  =========
+    A (symm.)   19
+    B           36
+    C (symm.)   11
+    D           19
+    E           15
+    F           7
+    ==========  =========
+
     .. _Alfred Wassermann:
        http://did.mat.uni-bayreuth.de/~alfred/home/index.html
     """
@@ -220,7 +231,7 @@ class OneSidedTetrasticks5x5DiamondLattice(OneSidedTetrasticks):
 class OneSidedTetrasticks5x5DiamondLattice_A(
     OneSidedTetrasticks5x5DiamondLattice):
 
-    """? solutions."""
+    """19 solutions."""
 
     X_offset = (4,4,0)
 
@@ -231,7 +242,7 @@ class OneSidedTetrasticks5x5DiamondLattice_A(
 class OneSidedTetrasticks5x5DiamondLattice_B(
     OneSidedTetrasticks5x5DiamondLattice):
 
-    """? solutions."""
+    """36 solutions."""
 
     X_offset = (4,5,0)
 
@@ -239,7 +250,7 @@ class OneSidedTetrasticks5x5DiamondLattice_B(
 class OneSidedTetrasticks5x5DiamondLattice_C(
     OneSidedTetrasticks5x5DiamondLattice):
 
-    """? solutions."""
+    """11 solutions."""
 
     X_offset = (5,5,0)
 
@@ -250,7 +261,7 @@ class OneSidedTetrasticks5x5DiamondLattice_C(
 class OneSidedTetrasticks5x5DiamondLattice_D(
     OneSidedTetrasticks5x5DiamondLattice):
 
-    """? solutions."""
+    """19 solutions."""
 
     X_offset = (4,6,0)
 
@@ -258,7 +269,7 @@ class OneSidedTetrasticks5x5DiamondLattice_D(
 class OneSidedTetrasticks5x5DiamondLattice_E(
     OneSidedTetrasticks5x5DiamondLattice):
 
-    """? solutions."""
+    """15 solutions."""
 
     X_offset = (5,6,0)
 
@@ -266,7 +277,7 @@ class OneSidedTetrasticks5x5DiamondLattice_E(
 class OneSidedTetrasticks5x5DiamondLattice_F(
     OneSidedTetrasticks5x5DiamondLattice):
 
-    """? solutions."""
+    """7 solutions."""
 
     X_offset = (4,7,0)
 
@@ -274,7 +285,7 @@ class OneSidedTetrasticks5x5DiamondLattice_F(
 class OneSidedTetrasticks8x8CenterHole(OneSidedTetrasticks):
 
     """
-    ? solutions
+    many solutions
     """
 
     width = 8
@@ -296,7 +307,7 @@ class OneSidedTetrasticks8x8CenterHole(OneSidedTetrasticks):
 class OneSidedTetrasticks8x8ClippedCorners1(OneSidedTetrasticks):
 
     """
-    ? solutions
+    many solutions
     """
 
     width = 8
@@ -332,7 +343,7 @@ class OneSidedTetrasticks8x8ClippedCorners2(OneSidedTetrasticks):
 class OneSidedTetrasticks8x8ClippedCorner(OneSidedTetrasticks):
 
     """
-    ? solutions
+    many solutions
     """
 
     width = 8
