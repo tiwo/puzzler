@@ -37,6 +37,13 @@ import cPickle as pickle
 from datetime import datetime, timedelta
 from puzzler import exact_cover_dlx
 from puzzler import exact_cover_x2
+from puzzler.utils import thousands
+
+try:
+    import locale
+    locale.setlocale(locale.LC_ALL, '')
+except:
+    pass
 
 
 __version__ = '1+SVN'
@@ -143,7 +150,7 @@ def report_search_state(puzzle_class, output_stream, settings):
     if state.num_searches:
         print >>output_stream, (
             '\nSession report: %s solutions, %s searches.\n'
-            % (state.num_solutions, state.num_searches))
+            % (thousands(state.num_solutions), thousands(state.num_searches)))
         output_stream.flush()
     puzzle.record_solution(
         solution, solver, stream=output_stream)
@@ -165,7 +172,7 @@ def solve(puzzle_class, output_stream, settings):
     if state.num_searches:
         print >>output_stream, (
             '\nResuming session (%s solutions, %s searches).\n'
-            % (state.num_solutions, state.num_searches))
+            % (thousands(state.num_solutions), thousands(state.num_searches)))
         output_stream.flush()
     starting_solutions = state.num_solutions
     matrices = []
@@ -220,12 +227,14 @@ def solve(puzzle_class, output_stream, settings):
         duration = end - start
         print >>output_stream, (
             '%s solutions, %s searches, duration %s'
-            % (solver.num_solutions, solver.num_searches, duration))
+            % (thousands(solver.num_solutions), thousands(solver.num_searches),
+               duration))
         if len(stats) > 1:
             for i, (solutions, searches) in enumerate(stats):
                 print >>output_stream, (
                     '(%s: %s solutions, %s searches)'
-                    % (puzzles[i].__class__.__name__, solutions, searches))
+                    % (puzzles[i].__class__.__name__, thousands(solutions),
+                       thousands(searches)))
         output_stream.flush()
     state.cleanup()
     return solver.num_solutions

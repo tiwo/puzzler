@@ -18,6 +18,7 @@ technique [3]_ ('DLX').
 """
 
 import exactcover
+from puzzler.utils import thousands
 
 
 class ExactCover(object):
@@ -105,8 +106,8 @@ class ExactCover(object):
         """Return a simple formatted string representation of the solution."""
         self.num_solutions += 1
         parts = [
-            'solution %i (%i searches):'
-            % (self.num_solutions, self.num_searches)]
+            'solution %i (%s searches):'
+            % (self.num_solutions, thousands(self.num_searches))]
         for row in self.solution:
             parts.append(
                 ' '.join(cell for cell in row
