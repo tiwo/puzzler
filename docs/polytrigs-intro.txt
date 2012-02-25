@@ -40,12 +40,6 @@ because "triangular-grid polysticks" is too unwieldy, especially when
 combined with order-prefixes (mono-, di-, tri-, tetra-, etc.;
 "triangular-grid tristicks"!?).  I hope the name catches on.
 
-    If the square polysticks don't get the respect they deserve, this
-    is doubly true for the triangular polysticks.
-
-    -- Alexandre Owen Muñiz, `Puzzle Zapper Blog
-       <http://puzzlezapper.com/blog/2010/12/polysticks-on-a-regular-spanning-subgraph/>`__
-
 The polytrigs can be thought of as the projective duals of polyhexes.
 Most of the polytrigs of order N can be derived from the polyhexes of
 order N+1 (i.e., joining the centers of the hexagons of a tetrahex
@@ -53,10 +47,34 @@ results in a tritrig).  The exceptions are the polytrigs with loops
 (e.g. the "O04" tetratrig), which are duals of the same order or
 lower-order polyhexes.
 
-I believe I am the first to address this type of puzzle so thoroughly
-(if not, please let me know!).  Hopefully these puzzles will begin to
-fill this particular gap in the polyform puzzle branch of recreational
-mathematics.
+Hopefully these puzzles will begin to fill this particular gap in the
+polyform puzzle branch of recreational mathematics.
+
+
+Prior Research
+==============
+
+    If the square polysticks don't get the respect they deserve, this
+    is doubly true for the triangular polysticks.
+
+    -- Alexandre Owen Muñiz, `Puzzle Zapper Blog
+       <http://puzzlezapper.com/blog/2010/12/polysticks-on-a-regular-spanning-subgraph/>`__
+
+Brief mention of triangular-grid polysticks is made on the `Wolfram
+Mathworld page on Polysticks`__, in Alexandre Owen Muñiz's blog above,
+as well as in Livio Zucca's work (the original site is gone, `but a
+mirror exists`__).
+
+__ http://mathworld.wolfram.com/Polystick.html
+__ http://www.iread.it/lz/index.html
+
+In January 2012 I received email from Leslie E. Shader (Ph.D.,
+Professor Emeritus, Mathematics, University of Wyoming), who shared
+the results of his unpublished work on triangular-grid polysticks from
+around 1993.
+
+If you know of any other work on this type of puzzle, please let me
+know!
 
 
 Polyforms
