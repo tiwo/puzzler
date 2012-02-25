@@ -25,6 +25,8 @@
        `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
        `interpreting solution files <FAQ.html#how-should-polystick-solution-files-be-interpreted>`__)
 
+.. contents::
+
 **Polysticks** are polyforms constructed from unit line segments
 (edges) joined end-to-end on a regular square grid.  Polysticks were
 named by and seem to have been first formally expolored by Brian
