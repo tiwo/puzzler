@@ -216,12 +216,27 @@ hexagonal grid.
 Pentatwigs
 ==========
 
-These puzzles use the 12 pentatwigs, for a total of 60 line segments
-on the hexagonal grid.
+These puzzles use the 12 pentatwigs (a.k.a. pentacules), for a total
+of 60 line segments on the hexagonal grid.
 
 * Triangle: `56 solutions <../solutions/pentatwigs-triangle.txt>`__
 
   .. image:: images/pentatwigs-triangle.png
+
+* Triangle variations (puzzle designs by Colin F. Brown):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentatwigs-triangle-2.png
+
+            `6 solutions
+            <../solutions/pentatwigs-triangle-2.txt>`__
+
+       - .. figure:: images/pentatwigs-triangle-3.png
+
+            `2 solutions
+            <../solutions/pentatwigs-triangle-3.txt>`__
 
 * 5x3 parallelogram: `solutions incomplete
   <../solutions/pentatwigs-5x3.txt>`__
@@ -252,6 +267,35 @@ on the hexagonal grid.
   <../solutions/pentatwigs-butterfly-1.txt>`__
 
   .. image:: images/pentatwigs-butterfly-1.png
+
+* Trefoil (puzzle design by Colin F. Brown): `4 solutions
+  <../solutions/pentatwigs-trefoil.txt>`__
+
+  .. image:: images/pentatwigs-trefoil.png
+
+  If you look carefully, you can see that the solution above consists
+  of 3 congruent shapes (in fact, all 4 solutions share this
+  property).  This is illustrated explicitly in the following exploded
+  form (same `4 solutions
+  <../solutions/pentatwigs-3-congruent-1.txt>`__, just rearranged):
+
+  .. image:: images/pentatwigs-3-congruent-1.png
+
+* Möbius strip (puzzle design by Colin F. Brown): `6 solutions?
+  <../solutions/pentatwigs-mobius-strip-1.txt>`__
+
+  .. image:: images/pentatwigs-mobius-strip-1.png
+
+  Take the puzzle strip above, give one end a half-twist, and join it
+  to the other end, resulting in a `Möbius strip`__, a surface with
+  only one side and one edge.
+
+  __ http://en.wikipedia.org/wiki/M%C3%B6bius_strip
+
+  This puzzle was implemented without any coordinate "wrap-around": a
+  piece cannot begin at the right edge and continue (through the join)
+  to the left edge.  There may be many more solutions with such a
+  wrap-around configuration.
 
 
 One-Sided Pentatwigs

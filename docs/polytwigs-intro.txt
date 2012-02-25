@@ -16,6 +16,7 @@
 
    | `Polytwigs: Puzzles & Solutions <polytwigs.html>`_
    | `Polysticks: Puzzles & Solutions <polysticks.html>`_
+   | `An Introduction to Polysticks) <polysticks-intro.html>`_
    | `Polytrigs (Triangular-Grid Polysticks): Puzzles & Solutions <polytrigs.html>`_
    | `An Introduction to Polytrigs (Triangular-Grid Polysticks) <polytrigs-intro.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
@@ -24,13 +25,13 @@
        `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
        `interpreting solution files <FAQ.html#how-should-polytwig-solution-files-be-interpreted>`__)
 
-**Polytwigs** are polyforms constructed from unit line segments
-(edges) joined end-to-end on a regular hexagonal grid.  Unit line
-segments on a square grid are called "polysticks", so polytwigs could
-also be called "polysticks on a hexagonal grid" or "hexagonal-grid
-polysticks" or "hexagonal polysticks".  The polytwigs are a subset of
-the polytrigs (triangular-grid polysticks); polytwigs would fit on a
-polytrig grid, but there are a lot fewer of them.
+**Polytwigs** (a.k.a. polycules) are polyforms constructed from unit
+line segments (edges) joined end-to-end on a regular hexagonal grid.
+Unit line segments on a square grid are called "polysticks", so
+polytwigs could also be called "polysticks on a hexagonal grid" or
+"hexagonal-grid polysticks" or "hexagonal polysticks".  The polytwigs
+are a subset of the polytrigs (triangular-grid polysticks); polytwigs
+would fit on a polytrig grid, but there are a lot fewer of them.
 
 Here is a puzzle containing all the polytwigs of order 1 through 5:
 
@@ -62,17 +63,17 @@ Prior Research
 When I began working on the hexagonal-grid polysticks, I was unable to
 find any references to prior research.  While (to my knowledge)
 nothing seems to have been published, I couldn't believe that this was
-a completely novel idea -- an intuition that proved to be true.
+a completely novel idea — an intuition that proved to be true.
 
 In February 2012 I received email from Mr. Colin F. Brown, a puzzle
 enthusiast from Dudley, England, who shared the results of his
 unpublished work on hexagonal-grid polysticks from the late 1970s and
 early 1980s.  Mr. Brown wrote,
 
-    I did name them ‘Polycules’, from the fact that sea sponges have
-    spicules that resemble a tri-cule (your 3-stick hexagon gridded
-    ‘polytwig’) each segment being set at 120° apart.  I also gave
-    each pentacule a name...
+    I did name them **‘Polycules’**, from the fact that sea sponges
+    have spicules that resemble a tri-cule (your 3-stick hexagon
+    gridded ‘polytwig’) each segment being set at 120° apart.  I also
+    gave each pentacule a name...
 
 See the `Wikipedia article on "sponge spicules"`__ for an image
 demonstrating the resemblance.  In fact, Mr. Brown used the term
@@ -91,6 +92,12 @@ pentacule names are listed in the pentatwigs_ section below.  See
 Mr. Brown's puzzle constructions.
 
 __ http://en.wikipedia.org/wiki/Sponge_spicule
+
+Mr. Brown also explored the quasi-tritwigs.  When limited to length-1
+gaps between segments, he showed that in addition to the 3 connected
+tritwigs, there are 5 semi-connected (one gap) quasi-tritwigs and 9
+disconnected (two gaps) quasi-tritrigs, for a total of 17
+quasi-tritwigs.
 
 If you know of any other work on this type of puzzle, please let me
 know!
@@ -254,9 +261,10 @@ tetratwigs:
 Pentatwigs
 ----------
 
-There are 12 free pentatwigs (order-4 polytwigs) and 19 one-sided
-pentatwigs.  The "Pentacule" and last "Name" columns list Colin
-F. Brown's original names for these pieces.
+There are 12 free pentatwigs (order-5 polytwigs, a.k.a. pentacules)
+and 19 one-sided pentatwigs.  Colin F. Brown's original pieces and
+their evocative names are listed in the "Pentacule" and last "Name"
+columns.
 
 .. list-table::
    :widths: 20 20 20 20 20 20

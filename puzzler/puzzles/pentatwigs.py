@@ -28,6 +28,36 @@ class PentatwigsTriangle(Pentatwigs):
         self.piece_data['R5'][-1]['rotations'] = (0, 1)
 
 
+class PentatwigsTriangle2(PentatwigsTriangle):
+
+    """
+    6 solutions
+
+    Puzzle design by Colin F. Brown.
+    """
+
+    holes = set(((1,2,0), (2,1,1), (2,2,2)))
+    extras = set(((0,0,2), (0,5,1), (5,0,0)))
+
+    def coordinates(self):
+        for coord in self.coordinates_triangle(5):
+            if coord not in self.holes:
+                yield coord
+        for coord in self.extras:
+            yield self.coordinate_offset(*coord, offset=None)
+
+
+class PentatwigsTriangle3(PentatwigsTriangle2):
+
+    """
+    2 solutions
+
+    Puzzle design by Colin F. Brown.
+    """
+
+    holes = set(((1,1,2), (1,3,1), (3,1,0)))
+
+
 class Pentatwigs5x3(Pentatwigs):
 
     """many solutions"""
@@ -145,6 +175,100 @@ class PentatwigsButterfly_X(PentatwigsButterfly1):
     """0 solutions"""
 
     hole = set(((2,4,0), (2,4,2), (3,1,0), (4,0,1), (4,1,2)))
+
+
+class PentatwigsTrefoil(Pentatwigs):
+
+    """
+    4 solutions, all equivalent to the solutions to Pentatwigs3Congruent1.
+
+    Puzzle design by Colin F. Brown.
+    """
+
+    height = 6
+    width = 6
+
+    hole = set((
+        (2,0,0), (2,0,1), (3,0,2), (2,1,0),
+        (0,4,1), (0,5,0), (0,5,2), (1,4,2),
+        (4,2,1), (4,3,0), (5,2,1), (5,2,2)))
+
+    svg_rotation = 0
+
+    def coordinates(self):
+        for coord in self.coordinates_hexagon(3):
+            if coord not in self.hole:
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['R5'][-1]['flips'] = None
+        self.piece_data['R5'][-1]['rotations'] = (0, 1)
+
+
+class Pentatwigs3Congruent1(Pentatwigs):
+
+    """
+    4 solutions
+
+    Puzzle design by Colin F. Brown.
+    """
+
+    height = 7
+    width = 7
+
+    coords = [
+        (0, 2, 0), (0, 2, 1), (0, 3, 0), (0, 3, 1), (0, 3, 2),
+        (0, 4, 0), (0, 4, 2), (1, 1, 0), (1, 1, 1), (1, 2, 0),
+        (1, 2, 1), (1, 2, 2), (1, 3, 0), (1, 3, 1), (1, 3, 2),
+        (2, 1, 1), (2, 1, 2), (2, 2, 0), (2, 2, 1), (2, 2, 2),
+
+        (1, 5, 0), (1, 5, 1), (1, 6, 0), (1, 6, 2), (2, 4, 0),
+        (2, 4, 1), (2, 4, 2), (2, 5, 0), (2, 5, 1), (2, 5, 2),
+        (2, 6, 0), (2, 6, 2), (3, 4, 0), (3, 4, 1), (3, 4, 2),
+        (3, 5, 0), (3, 5, 1), (3, 5, 2), (4, 4, 1), (4, 4, 2),
+        
+        (4, 0, 0), (4, 0, 1), (4, 1, 0), (4, 1, 1), (4, 1, 2),
+        (4, 2, 0), (4, 2, 1), (4, 2, 2), (5, 0, 0), (5, 0, 1),
+        (5, 0, 2), (5, 1, 0), (5, 1, 1), (5, 1, 2), (5, 2, 0),
+        (5, 2, 2), (6, 0, 1), (6, 0, 2), (6, 1, 1), (6, 1, 2)]
+
+    svg_rotation = 0
+
+    def coordinates(self):
+        for coord in self.coords:
+            yield self.coordinate_offset(*coord, offset=None)
+
+    def customize_piece_data(self):
+        self.piece_data['R5'][-1]['rotations'] = (0, 1)
+
+
+class PentatwigsTrefoil_X(PentatwigsTrefoil):
+
+    """0 solutions"""
+
+    hole = set((
+        (2,0,0), (2,0,1), (3,0,2), (2,2,0),
+        (0,4,1), (0,5,0), (0,5,2), (2,3,2),
+        (3,2,1), (4,3,0), (5,2,1), (5,2,2)))
+
+
+class PentatwigsMobiusStrip1(Pentatwigs):
+
+    """
+    6 solutions?
+
+    Puzzle design by Colin F. Brown.
+    """
+
+    height = 5
+    width = 12
+
+    holes = set(((0,0,0), (0,0,1), (0,1,2), (8,0,1), (8,1,1), (8,1,2), (7,2,0)))
+
+    def coordinates(self):
+        for coord in self.coordinates_bordered(8, 2):
+            if coord not in self.holes:
+                yield coord
 
 
 class OneSidedPentatwigsTrapezoid12x2(OneSidedPentatwigs):
