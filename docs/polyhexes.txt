@@ -32,8 +32,8 @@ Tetrahexes
 
   .. image:: images/tetrahex-4x7.png
 
-* 3x10 parallelogram with corners clipped (centered rows of
-  length 9, 10, 9): `2 solutions
+* 3x10 parallelogram with corners clipped (centered rows of length 9,
+  10, 9; alternately, a 9x2 elongated hexagon): `2 solutions
   <../solutions/tetrahex-3x10-clipped.txt>`__
 
   .. image:: images/tetrahex-3x10-clipped.png
@@ -44,26 +44,152 @@ Tetrahexes
   .. image:: images/tetrahex-coin.png
 
 
+Trihexes & Tetrahexes: Polyhexes of Order 3 & 4
+===============================================
+
+These puzzles use the three trihexes and the seven tetrahexes.  This
+combination was featured in `The Puzzling World of Polyhedral
+Dissections, by Stewart T. Coffin`__ and produced as the `Snowflake
+puzzle`_.
+
+__ http://www.johnrausch.com/PuzzlingWorld/chap02g.htm
+.. _Snowflake puzzle: http://www.johnrausch.com/PuzzleWorld/puz/snowflake.htm
+
+* Hexagon: `12,290 solutions
+  <../solutions/polyhexes-34-hexagon.txt>`__
+
+  .. image:: images/polyhexes-34-hexagon.png
+
+* Hexagram: `167 solutions
+  <../solutions/polyhexes-34-hexagram.txt>`__
+
+  .. image:: images/polyhexes-34-hexagram.png
+
+* Tri-lobed Crowns:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polyhexes-34-trilobed-crown-1.png
+
+            `127 solutions
+            <../solutions/polyhexes-34-trilobed-crown-1.txt>`__
+
+       - .. figure:: images/polyhexes-34-trilobed-crown-2.png
+
+            `159 solutions
+            <../solutions/polyhexes-34-trilobed-crown-2.txt>`__
+
+
 Polyhexes of Order 1 Through 4
 ==============================
 
-These puzzles uses the monohex, the dihex, the three trihexes, and the
+These puzzles use the monohex, the dihex, the three trihexes, and the
 seven tetrahexes.
 
-* 4x10 parallelogram: `solutions incomplete
+* 4x10 parallelogram: `3,665,348 solutions
   <../solutions/polyhex-4x10.txt>`__
 
   .. image:: images/polyhex-4x10.png
 
-* 5x8 parallelogram: `solutions incomplete
+* 5x8 parallelogram: `7,578,295 solutions
   <../solutions/polyhex-5x8.txt>`__
 
   .. image:: images/polyhex-5x8.png
 
-* 6x7 parallelogram (suggested by Dan Klarskov): `solutions incomplete
-  <../solutions/polyhex-1234-6x7.txt>`__
+* 6x7 parallelogram with hole (discovered by Dan Klarskov): `3,832,702
+  solutions <../solutions/polyhex-1234-6x7.txt>`__
 
   .. image:: images/polyhex-1234-6x7.png
+
+* 13x2 elongated hexagon: `1,389,980 solutions
+  <../solutions/polyhexes-1234-elongated-hexagon-13x2.txt>`__
+
+  .. image:: images/polyhexes-1234-elongated-hexagon-13x2.png
+
+* Irregular hexagons:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polyhexes-1234-irregular-hexagon-1.png
+
+            `37,293,445 solutions
+            <../solutions/polyhexes-1234-irregular-hexagon-1.txt>`__
+            (discovered by Dan Klarskov)
+
+       - .. figure:: images/polyhexes-1234-irregular-hexagon-2.png
+
+            `14,211,672 solutions
+            <../solutions/polyhexes-1234-irregular-hexagon-2.txt>`__
+
+     * - .. figure:: images/polyhexes-1234-irregular-hexagon-3.png
+
+            `655,208 solutions
+            <../solutions/polyhexes-1234-irregular-hexagon-3.txt>`__
+            (discovered by Dan Klarskov)
+
+       - .. figure:: images/polyhexes-1234-irregular-hexagon-4.png
+
+            `1,361,945 solutions
+            <../solutions/polyhexes-1234-irregular-hexagon-4.txt>`__
+            (discovered by Dan Klarskov)
+
+     * - .. figure:: images/polyhexes-1234-irregular-hexagon-5.png
+
+            `50,041,967 solutions
+            <../solutions/polyhexes-1234-irregular-hexagon-5.txt>`__
+            (discovered by Kate Jones)
+
+       -
+
+* 9x8 trapezoid (discovered by Dan Klarskov): `1,310,969 solutions
+  <../solutions/polyhexes-1234-trapezoid-9x8.txt>`__
+
+  .. image:: images/polyhexes-1234-trapezoid-9x8.png
+
+* Triangle: `427,731 solutions
+  <../solutions/polyhexes-1234-triangle.txt>`__
+
+  .. image:: images/polyhexes-1234-triangle.png
+
+* Tri-lobed Crown (inspired by the `Snowflake puzzle`_): `1,349,201
+  solutions <../solutions/polyhexes-1234-trilobed-crown.txt>`__
+
+  .. image:: images/polyhexes-1234-trilobed-crown.png
+
+* 2x6 elongated hexagon ring (discovered by Dan Klarskov): `659,517
+  solutions
+  <../solutions/polyhexes-1234-elongated-hexagon-2x6-ring.txt>`__
+
+  .. image:: images/polyhexes-1234-elongated-hexagon-2x6-ring.png
+
+* Diamond ring (discovered by Dan Klarskov): `83,837 solutions
+  <../solutions/polyhexes-1234-diamond-ring.txt>`__
+
+  .. image:: images/polyhexes-1234-diamond-ring.png
+
+* Hexagon rings:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. _Hexnut inner ring:
+
+         .. figure:: images/polyhexes-1234-hexagon-ring-1.png
+
+            `11,417 solutions
+            <../solutions/polyhexes-1234-hexagon-ring-1.txt>`__
+
+            Equivalent to the inner ring of the featured solution of
+            `Kadon's "Hexnut" puzzle
+            <http://gamepuzzles.com/esspoly2.htm#HN>`_; see the `full
+            Hexnut puzzle`_.
+
+       - .. figure:: images/polyhexes-1234-hexagon-ring-2.png
+
+            `6,645 solutions
+            <../solutions/polyhexes-1234-hexagon-ring-2.txt>`__
 
 
 Polyhexes of Order 1 Through 5
@@ -87,5 +213,15 @@ seven tetrahexes, and the 22 pentahexes.
 
   .. image:: images/polyhex-10x15.png
 
+* .. _full Hexnut puzzle:
+
+  Hexagon ring (equivalent to `Kadon's "Hexnut" puzzle`_, and
+  subdivided similarly to the featured solution by Michael Keller,
+  with the pentahexes in an outer ring and the order 1 through 4
+  polyhexes in an inner ring; see the solution to the `Hexnut inner
+  ring`_): `solutions incomplete
+  <../solutions/polyhexes-12345-hexagon-ring-1.txt>`__
+
+  .. image:: images/polyhexes-12345-hexagon-ring-1.png
 
 .. |c| unicode:: U+00A9 .. copyright sign

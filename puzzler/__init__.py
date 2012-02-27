@@ -213,6 +213,8 @@ def solve(puzzle_class, output_stream, settings):
                               solver.num_searches - last_searches))
                 if ( settings.stop_after
                      and solver.num_solutions == settings.stop_after):
+                    print >>output_stream, (
+                        'User-requested solution limit reached.')
                     break
                 state.last_solutions = last_solutions = solver.num_solutions
                 state.last_searches = last_searches = solver.num_searches

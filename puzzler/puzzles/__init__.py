@@ -222,7 +222,7 @@ class Puzzle(object):
         """
         self.build_regular_matrix(sorted(self.pieces.keys()))
 
-    def build_regular_matrix(self, keys):
+    def build_regular_matrix(self, keys, solution_coords=None):
         """
         Build `self.matrix` rows from puzzle pieces listed in `keys`.
 
@@ -421,13 +421,15 @@ class Puzzle2D(Puzzle):
             headers.append(header)
         self.matrix.append(headers)
 
-    def build_regular_matrix(self, keys):
+    def build_regular_matrix(self, keys, solution_coords=None):
+        if solution_coords is None:
+            solution_coords = self.solution_coords
         for key in keys:
             for coords, aspect in self.pieces[key]:
                 for y in range(self.height - aspect.bounds[1]):
                     for x in range(self.width - aspect.bounds[0]):
                         translated = aspect.translate((x, y))
-                        if translated.issubset(self.solution_coords):
+                        if translated.issubset(solution_coords):
                             self.build_matrix_row(key, translated)
 
     def build_matrix_row(self, name, coords):
@@ -678,14 +680,16 @@ class Puzzle3D(Puzzle):
             headers.append(header)
         self.matrix.append(headers)
 
-    def build_regular_matrix(self, keys):
+    def build_regular_matrix(self, keys, solution_coords=None):
+        if solution_coords is None:
+            solution_coords = self.solution_coords
         for key in keys:
             for coords, aspect in self.pieces[key]:
                 for z in range(self.depth - aspect.bounds[2]):
                     for y in range(self.height - aspect.bounds[1]):
                         for x in range(self.width - aspect.bounds[0]):
                             translated = aspect.translate((x, y, z))
-                            if translated.issubset(self.solution_coords):
+                            if translated.issubset(solution_coords):
                                 self.build_matrix_row(key, translated)
 
     def build_matrix_row(self, name, coords):

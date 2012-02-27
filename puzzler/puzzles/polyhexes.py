@@ -34,16 +34,66 @@ class Polyhexes(Puzzle2D):
     def coordinates(self):
         return self.coordinates_parallelogram(self.width, self.height)
 
-    def coordinates_parallelogram(self, width, height, offset=None):
+    @classmethod
+    def coordinates_parallelogram(cls, width, height, offset=None):
         for y in range(height):
             for x in range(width):
-                yield self.coordinate_offset(x, y, offset)
+                yield cls.coordinate_offset(x, y, offset)
 
-    def coordinate_offset(self, x, y, offset):
+    @classmethod
+    def coordinate_offset(cls, x, y, offset):
         if offset:
             return coordsys.Hexagonal2D((x, y)) + offset
         else:
             return coordsys.Hexagonal2D((x, y))
+
+    @classmethod
+    def coordinates_hexagon(cls, side_length, offset=None):
+        bound = side_length * 2 - 1
+        min_xy = side_length - 1
+        max_xy = 3 * side_length - 3
+        for coord in cls.coordinates_parallelogram(bound, bound):
+            x, y = coord
+            if min_xy <= (x + y) <= max_xy:
+                yield cls.coordinate_offset(x, y, offset)
+
+    @classmethod
+    def coordinates_elongated_hexagon(cls, base_length, side_length,
+                                      offset=None):
+        x_bound = side_length + base_length - 1
+        y_bound = 2 * side_length - 1
+        min_xy = side_length - 1
+        max_xy = base_length + 2 * side_length - 3
+        for coord in cls.coordinates_parallelogram(x_bound, y_bound):
+            x, y = coord
+            if min_xy <= (x + y) <= max_xy:
+                yield cls.coordinate_offset(x, y, offset)
+
+    @classmethod
+    def coordinates_hexagram(cls, side_length, offset=None):
+        bound = (side_length - 1) * 4 + 1
+        min_x = min_y = side_length - 1
+        max_x = max_y = (side_length - 1) * 3
+        min_xy = (side_length - 1) * 3
+        max_xy = (side_length - 1) * 5
+        for coord in cls.coordinates_parallelogram(bound, bound):
+            x, y = coord
+            xy = x + y
+            if (  (min_xy <= xy and y <= max_y and x <= max_x)
+                  or (xy <= max_xy and y >= min_y and x >= min_x)):
+                yield cls.coordinate_offset(x, y, offset)
+
+    @classmethod
+    def coordinates_trapezoid(cls, base_length, side_length, offset=None):
+        max_xy = base_length - 1
+        for coord in cls.coordinates_parallelogram(base_length, side_length):
+            x, y = coord
+            if (x + y) <= max_xy:
+                yield cls.coordinate_offset(x, y, offset)
+
+    @classmethod
+    def coordinates_triangle(cls, side_length, offset=None):
+        return cls.coordinates_trapezoid(side_length, side_length, offset)
 
     def make_aspects(self, units, flips=(False, True),
                      rotations=(0, 1, 2, 3, 4, 5)):
@@ -195,11 +245,33 @@ class Polyhexes(Puzzle2D):
         return points
 
 
-class Polyhexes123Data(object):
+class Monohex(Polyhexes):
+
+    piece_data = {'H1': ((), {})}
+    """(0,0) is implied."""
+
+    symmetric_pieces = piece_data.keys() # all of them
+
+    asymmetric_pieces = []
+
+    piece_colors = {'H1': 'gray'}
+
+
+class Dihex(Polyhexes):
+
+    piece_data = {'I2': ((( 1, 0),), {})}
+    """(0,0) is implied."""
+
+    symmetric_pieces = piece_data.keys() # all of them
+
+    asymmetric_pieces = []
+
+    piece_colors = {'I2': 'steelblue'}
+
+
+class Trihexes(Polyhexes):
 
     piece_data = {
-        'H1': ((), {}),
-        'I2': ((( 1, 0),), {}),
         'I3': ((( 1, 0), ( 2, 0)), {}),
         'V3': ((( 1, 0), ( 1, 1)), {}),
         'A3': ((( 1, 0), ( 0, 1)), {}),}
@@ -210,8 +282,6 @@ class Polyhexes123Data(object):
     asymmetric_pieces = []
 
     piece_colors = {
-        'H1': 'gray',
-        'I2': 'steelblue',
         'I3': 'teal',
         'V3': 'plum',
         'A3': 'olive',
@@ -249,19 +319,40 @@ class Tetrahexes(Polyhexes):
         '1': 'black'}
 
 
-class Polyhex1234(Polyhexes123Data, Tetrahexes):
+class Polyhexes34(Tetrahexes):
 
     piece_data = copy.deepcopy(Tetrahexes.piece_data)
-    piece_data.update(copy.deepcopy(Polyhexes123Data.piece_data))
+    piece_data.update(copy.deepcopy(Trihexes.piece_data))
 
-    symmetric_pieces = (Polyhexes123Data.symmetric_pieces
+    symmetric_pieces = (Trihexes.symmetric_pieces
                         + Tetrahexes.symmetric_pieces)
 
-    asymmetric_pieces = (Polyhexes123Data.asymmetric_pieces
+    asymmetric_pieces = (Trihexes.asymmetric_pieces
                          + Tetrahexes.asymmetric_pieces)
 
     piece_colors = copy.deepcopy(Tetrahexes.piece_colors)
-    piece_colors.update(Polyhexes123Data.piece_colors)
+    piece_colors.update(Trihexes.piece_colors)
+
+    check_for_duplicates = False
+
+
+class Polyhex1234(Polyhexes34):
+
+    piece_data = copy.deepcopy(Polyhexes34.piece_data)
+    piece_data.update(copy.deepcopy(Monohex.piece_data))
+    piece_data.update(copy.deepcopy(Dihex.piece_data))
+
+    symmetric_pieces = (Monohex.symmetric_pieces + Dihex.symmetric_pieces
+                        + Polyhexes34.symmetric_pieces)
+
+    asymmetric_pieces = (Monohex.asymmetric_pieces + Dihex.asymmetric_pieces
+                         + Polyhexes34.asymmetric_pieces)
+
+    piece_colors = copy.deepcopy(Polyhexes34.piece_colors)
+    piece_colors.update(Monohex.piece_colors)
+    piece_colors.update(Dihex.piece_colors)
+
+    check_for_duplicates = False
 
 
 class Pentahexes(Polyhexes):
