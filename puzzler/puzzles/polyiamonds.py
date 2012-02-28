@@ -10,6 +10,7 @@ Polyiamond puzzle base classes.
 """
 
 import math
+import copy
 
 from puzzler import coordsys
 from puzzler.puzzles import (
@@ -49,22 +50,25 @@ class Polyiamonds(PuzzlePseudo3D):
     def coordinates(self):
         return self.coordinates_parallelogram(self.width, self.height)
 
-    def coordinates_parallelogram(self, base_length, side_length, offset=None):
-        for z in range(self.depth):
+    @classmethod
+    def coordinates_parallelogram(cls, base_length, side_length, offset=None):
+        for z in range(cls.depth):
             for y in range(side_length):
                 for x in range(base_length):
-                    yield self.coordinate_offset(x, y, z, offset)
+                    yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinate_offset(self, x, y, z, offset):
+    @classmethod
+    def coordinate_offset(cls, x, y, z, offset):
         if offset:
             return coordsys.Triangular3D((x, y, z)) + offset
         else:
             return coordsys.Triangular3D((x, y, z))
 
-    def coordinates_hexagram(self, side_length, offset=None):
+    @classmethod
+    def coordinates_hexagram(cls, side_length, offset=None):
         max_total = side_length * 5
         min_total = side_length * 3
-        for z in range(self.depth):
+        for z in range(cls.depth):
             for y in range(side_length * 4):
                 for x in range(side_length * 4):
                     total = x + y + z
@@ -73,20 +77,21 @@ class Polyiamonds(PuzzlePseudo3D):
                           or (total >= min_total
                               and x < min_total
                               and y < min_total)):
-                        yield self.coordinate_offset(x, y, z, offset)
+                        yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_butterfly(self, base_length, side_length, offset=None):
-        for coord in self.coordinates_parallelogram(base_length + side_length,
-                                                    side_length * 2):
+    @classmethod
+    def coordinates_butterfly(cls, base_length, side_length, offset=None):
+        min_total = side_length * 2
+        max_total = base_length + side_length
+        for coord in cls.coordinates_parallelogram(base_length + side_length,
+                                                   side_length * 2):
             x, y, z = coord
             total = x + y + z
-            min_total = side_length * 2
-            max_total = base_length + side_length
             if (  (y < side_length and x < side_length)
                   or (y >= side_length and total < min_total)
                   or (x >= base_length and total >= max_total)):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
     def make_aspects(self, units, flips=(False, True),
                      rotations=(0, 1, 2, 3, 4, 5)):
@@ -364,6 +369,137 @@ class Polyiamonds(PuzzlePseudo3D):
         return s_matrix
 
 
+class Moniamond(Polyiamonds):
+
+    piece_data = {'T1': ((), {})}
+    """(0,0) is implied."""
+
+    symmetric_pieces = piece_data.keys() # all of them
+
+    asymmetric_pieces = []
+
+    piece_colors = {'T1': 'gray'}
+
+
+class Diamond(Polyiamonds):
+
+    piece_data = {'D2': (((0, 0, 1),), {}),}
+    """(0,0) is implied."""
+
+    symmetric_pieces = piece_data.keys() # all of them
+
+    asymmetric_pieces = []
+
+    piece_colors = {'D2': 'steelblue'}
+
+
+class Triamond(Polyiamonds):
+
+    piece_data = {'I3': (((0, 0, 1), (1, 0, 0)), {}),}
+    """(0,0) is implied."""
+
+    symmetric_pieces = piece_data.keys() # all of them
+
+    asymmetric_pieces = []
+
+    piece_colors = {'I3': 'teal'}
+
+
+class Polyiamonds123(Polyiamonds):
+
+    piece_data = copy.deepcopy(Moniamond.piece_data)
+    piece_data.update(copy.deepcopy(Diamond.piece_data))
+    piece_data.update(copy.deepcopy(Triamond.piece_data))
+    symmetric_pieces = (
+        Moniamond.symmetric_pieces + Diamond.symmetric_pieces
+        + Triamond.symmetric_pieces)
+    asymmetric_pieces = []
+    piece_colors = copy.deepcopy(Moniamond.piece_colors)
+    piece_colors.update(copy.deepcopy(Diamond.piece_colors))
+    piece_colors.update(copy.deepcopy(Triamond.piece_colors))
+
+
+class Tetriamonds(Polyiamonds):
+
+    piece_data = {
+        'I4': (((0, 0, 1), (1, 0, 0), (1, 0, 1)), {}),
+        'C4': (((0, 0, 1), (1, 0, 0), (1,-1, 1)), {}),
+        'T4': (((0, 0, 1), (1, 0, 0), (0, 1, 0)), {}),}
+    """(0,0) is implied."""
+
+    symmetric_pieces = ['C4', 'T4']
+
+    asymmetric_pieces = ['I4']
+
+    piece_colors = {
+        'C4': 'brown',
+        'I4': 'plum',
+        'T4': 'tomato',}
+
+
+class OneSidedTetriamonds(OneSidedLowercaseMixin, Tetriamonds):
+
+    pass
+
+
+class Polyiamonds1234(Polyiamonds123):
+
+    piece_data = copy.deepcopy(Polyiamonds123.piece_data)
+    piece_data.update(copy.deepcopy(Tetriamonds.piece_data))
+    symmetric_pieces = (
+        Polyiamonds123.symmetric_pieces + Tetriamonds.symmetric_pieces)
+    asymmetric_pieces = Tetriamonds.asymmetric_pieces[:]
+    piece_colors = copy.deepcopy(Polyiamonds123.piece_colors)
+    piece_colors.update(Tetriamonds.piece_colors)
+
+
+class OneSidedPolyiamonds1234(OneSidedLowercaseMixin, Polyiamonds1234):
+
+    pass
+
+
+class Pentiamonds(Polyiamonds):
+
+    piece_data = {
+        'I5': (((0, 0, 1), (1, 0, 0), (1, 0, 1), (2, 0, 0)), {}),
+        'C5': (((0, 0, 1), (1, 0, 0), (1,-1, 1), (0,-1, 1)), {}),
+        'L5': (((0, 0, 1), (1, 0, 0), (1, 0, 1), (1, 1, 0)), {}),
+        'P5': (((0, 0, 1), (1, 0, 0), (1, 0, 1), (0, 1, 0)), {}),}
+    """(0,0) is implied."""
+
+    symmetric_pieces = ['C5', 'I5']
+
+    asymmetric_pieces = ['L5', 'P5']
+
+    piece_colors = {
+        'C5': 'olive',
+        'I5': 'orangered',
+        'L5': 'darkseagreen',
+        'P5': 'indigo',}
+
+
+class OneSidedPentiamonds(OneSidedLowercaseMixin, Pentiamonds):
+
+    pass
+
+
+class Polyiamonds12345(Polyiamonds1234):
+
+    piece_data = copy.deepcopy(Polyiamonds1234.piece_data)
+    piece_data.update(copy.deepcopy(Pentiamonds.piece_data))
+    symmetric_pieces = (
+        Polyiamonds1234.symmetric_pieces + Pentiamonds.symmetric_pieces)
+    asymmetric_pieces = (
+        Polyiamonds1234.asymmetric_pieces + Pentiamonds.asymmetric_pieces)
+    piece_colors = copy.deepcopy(Polyiamonds1234.piece_colors)
+    piece_colors.update(Pentiamonds.piece_colors)
+
+
+class OneSidedPolyiamonds12345(OneSidedLowercaseMixin, Polyiamonds12345):
+
+    pass
+
+
 class Hexiamonds(Polyiamonds):
 
     piece_data = {
@@ -417,6 +553,23 @@ class Hexiamonds(Polyiamonds):
 
 
 class OneSidedHexiamonds(OneSidedLowercaseMixin, Hexiamonds):
+
+    pass
+
+
+class Polyiamonds123456(Polyiamonds12345):
+
+    piece_data = copy.deepcopy(Polyiamonds12345.piece_data)
+    piece_data.update(copy.deepcopy(Hexiamonds.piece_data))
+    symmetric_pieces = (
+        Polyiamonds12345.symmetric_pieces + Hexiamonds.symmetric_pieces)
+    asymmetric_pieces = (
+        Polyiamonds12345.asymmetric_pieces + Hexiamonds.asymmetric_pieces)
+    piece_colors = copy.deepcopy(Polyiamonds12345.piece_colors)
+    piece_colors.update(Hexiamonds.piece_colors)
+
+
+class OneSidedPolyiamonds123456(OneSidedLowercaseMixin, Polyiamonds123456):
 
     pass
 
@@ -508,3 +661,25 @@ class Heptiamonds(Polyiamonds):
         'Z7': 'orangered',
         '0': 'gray',
         '1': 'black'}
+
+
+class OneSidedHeptiamonds(OneSidedLowercaseMixin, Heptiamonds):
+
+    pass
+
+
+class Polyiamonds1234567(Polyiamonds123456):
+
+    piece_data = copy.deepcopy(Polyiamonds123456.piece_data)
+    piece_data.update(copy.deepcopy(Heptiamonds.piece_data))
+    symmetric_pieces = (
+        Polyiamonds123456.symmetric_pieces + Heptiamonds.symmetric_pieces)
+    asymmetric_pieces = (
+        Polyiamonds123456.asymmetric_pieces + Heptiamonds.asymmetric_pieces)
+    piece_colors = copy.deepcopy(Polyiamonds123456.piece_colors)
+    piece_colors.update(Heptiamonds.piece_colors)
+
+
+class OneSidedPolyiamonds1234567(OneSidedLowercaseMixin, Polyiamonds1234567):
+
+    pass

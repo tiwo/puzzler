@@ -252,3 +252,15 @@ class Polyominoes2345(Polyominoes12345):
     symmetric_pieces = Polyominoes12345.symmetric_pieces[1:]
     piece_colors = copy.deepcopy(Polyominoes12345.piece_colors)
     del piece_colors['O1']
+
+
+class Polyominoes45(Polyominoes):
+
+    piece_data = copy.deepcopy(Tetrominoes.piece_data)
+    piece_data.update(copy.deepcopy(Pentominoes.piece_data))
+    symmetric_pieces = (
+        Tetrominoes.symmetric_pieces + Pentominoes.symmetric_pieces)
+    asymmetric_pieces = (
+        Tetrominoes.asymmetric_pieces + Pentominoes.asymmetric_pieces)
+    piece_colors = copy.deepcopy(Tetrominoes.piece_colors)
+    piece_colors.update(Pentominoes.piece_colors)

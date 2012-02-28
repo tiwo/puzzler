@@ -13,7 +13,7 @@ import copy
 import math
 
 from puzzler import coordsys
-from puzzler.puzzles import Puzzle2D, Puzzle3D
+from puzzler.puzzles import Puzzle2D, OneSidedLowercaseMixin
 
 
 class Polyhexes(Puzzle2D):
@@ -27,7 +27,7 @@ class Polyhexes(Puzzle2D):
 
     duplicate_conditions = ()
 
-    svg_unit_height = Puzzle3D.svg_unit_length * math.sqrt(3) / 2
+    svg_unit_height = Puzzle2D.svg_unit_length * math.sqrt(3) / 2
 
     coord_class = coordsys.Hexagonal2D
 
@@ -94,6 +94,24 @@ class Polyhexes(Puzzle2D):
     @classmethod
     def coordinates_triangle(cls, side_length, offset=None):
         return cls.coordinates_trapezoid(side_length, side_length, offset)
+
+    @classmethod
+    def coordinates_butterfly(cls, base_length, side_length, offset=None):
+        """
+        The base_length is actually the figure height (vertical length), and
+        the side_length is the length of the four angled sides.
+        """
+        x_bound = side_length * 2 - 1
+        y_bound = base_length + side_length - 1
+        min_y = side_length - 1
+        max_y = base_length - 1
+        min_xy = x_bound - 1
+        max_xy = y_bound - 1
+        for coord in cls.coordinates_parallelogram(x_bound, y_bound):
+            x, y = coord
+            xy = x + y
+            if ((xy >= min_xy) or (y >= min_y)) and ((xy <= max_xy) or (y <= max_y)):
+                yield cls.coordinate_offset(x, y, offset)
 
     def make_aspects(self, units, flips=(False, True),
                      rotations=(0, 1, 2, 3, 4, 5)):
@@ -353,6 +371,11 @@ class Polyhex1234(Polyhexes34):
     piece_colors.update(Dihex.piece_colors)
 
     check_for_duplicates = False
+
+
+class OneSidedPolyhexes1234(OneSidedLowercaseMixin, Polyhex1234):
+
+    pass
 
 
 class Pentahexes(Polyhexes):
