@@ -649,10 +649,21 @@ class Puzzle3D(Puzzle):
 '''
 
     def coordinates(self):
-        for z in range(self.depth):
-            for y in range(self.height):
-                for x in range(self.width):
-                    yield coordsys.Cartesian3D((x, y, z))
+        return self.coordinates_cuboid(self.width, self.height, self.depth)
+
+    @classmethod
+    def coordinate_offset(cls, x, y, z, offset):
+        if offset:
+            return coordsys.Cartesian3D((x, y, z)) + offset
+        else:
+            return coordsys.Cartesian3D((x, y, z))
+
+    @classmethod
+    def coordinates_cuboid(cls, width, height, depth, offset=None):
+        for z in range(depth):
+            for y in range(height):
+                for x in range(width):
+                    yield cls.coordinate_offset(x, y, z, offset)
 
     def make_aspects(self, units,
                      flips=(0, 1), axes=(0, 1, 2), rotations=(0, 1, 2, 3)):

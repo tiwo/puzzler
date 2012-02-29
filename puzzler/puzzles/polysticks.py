@@ -68,7 +68,15 @@ class Polysticks(PuzzlePseudo3D):
         """
         return self.coordinates_bordered(self.width, self.height)
 
-    def coordinates_bordered(self, m, n):
+    @classmethod
+    def coordinate_offset(cls, x, y, z, offset):
+        if offset:
+            return coordsys.SquareGrid3D((x, y, z)) + offset
+        else:
+            return coordsys.SquareGrid3D((x, y, z))
+
+    @classmethod
+    def coordinates_bordered(cls, m, n, offset=None):
         """MxN bordered polystick grid."""
         last_x = m - 1
         last_y = n - 1
@@ -77,18 +85,20 @@ class Polysticks(PuzzlePseudo3D):
                 for z in range(2):
                     if (z == 1 and y == last_y) or (z == 0 and x == last_x):
                         continue
-                    yield coordsys.SquareGrid3D((x, y, z))
+                    yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_unbordered(self, m, n):
+    @classmethod
+    def coordinates_unbordered(cls, m, n, offset=None):
         """MxN unbordered polystick grid."""
         for y in range(n - 1):
             for x in range(m - 1):
                 for z in range(2):
                     if (z == 1 and x == 0) or (z == 0 and y == 0):
                         continue
-                    yield coordsys.SquareGrid3D((x, y, z))
+                    yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_diamond_lattice(self, m, n):
+    @classmethod
+    def coordinates_diamond_lattice(cls, m, n, offset=None):
         """MxN polystick diamond lattice."""
         height = width = m + n
         sw = m - 2
@@ -99,7 +109,7 @@ class Polysticks(PuzzlePseudo3D):
             for x in range(width):
                 for z in range(2):
                     if nw < (x - y - z) < se and sw < (x + y) < ne:
-                        yield coordsys.SquareGrid3D((x, y, z))
+                        yield cls.coordinate_offset(x, y, z, offset)
 
     def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3)):
         aspects = set()
