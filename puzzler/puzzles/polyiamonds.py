@@ -65,6 +65,17 @@ class Polyiamonds(PuzzlePseudo3D):
             return coordsys.Triangular3D((x, y, z))
 
     @classmethod
+    def coordinates_hexagon(cls, side_length, offset=None):
+        bound = 2 * side_length
+        min_total = side_length
+        max_total = 3 * side_length - 1
+        for coord in cls.coordinates_parallelogram(bound, bound):
+            x, y, z = coord
+            total = x + y + z
+            if min_total <= total <= max_total:
+                yield cls.coordinate_offset(x, y, z, offset)
+
+    @classmethod
     def coordinates_hexagram(cls, side_length, offset=None):
         max_total = side_length * 5
         min_total = side_length * 3

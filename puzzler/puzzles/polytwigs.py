@@ -55,13 +55,15 @@ class Polytwigs(Polytrigs):
         """
         return self.coordinates_bordered(self.width - 1, self.height - 1)
 
-    def coordinate_offset(self, x, y, z, offset):
+    @classmethod
+    def coordinate_offset(cls, x, y, z, offset):
         if offset:
             return coordsys.HexagonalGrid3D((x, y, z)) + offset
         else:
             return coordsys.HexagonalGrid3D((x, y, z))
 
-    def coordinates_bordered(self, m, n, offset=None):
+    @classmethod
+    def coordinates_bordered(cls, m, n, offset=None):
         """
         Bordered parallelogram polytwig grid of side length M & N hexagons.
 
@@ -72,114 +74,122 @@ class Polytwigs(Polytrigs):
         last_y = n
         for y in range(n + 1):
             for x in range(m + 1):
-                for z in range(self.depth):
+                for z in range(cls.depth):
                     if z == 2 and y == 0 and x == 0:
                         continue
                     if (z == 1 and y == last_y) or (z == 0 and x == last_x):
                         continue
                     if x == last_x and y == last_y:
                         continue
-                    yield self.coordinate_offset(x, y, z, offset)
+                    yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_unbordered(self, m, n, offset=None):
+    @classmethod
+    def coordinates_unbordered(cls, m, n, offset=None):
         """
         Unbordered parallelogram polytwig grid of side length M & N hexagons.
         """
-        for coord in self.coordinates_bordered(m, n):
+        for coord in cls.coordinates_bordered(m, n):
             x, y, z = coord
             if (y == 0 and z != 1) or (x == 0 and z != 0) or y == n or x == m:
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_hexagon(self, side_length, offset=None):
+    @classmethod
+    def coordinates_hexagon(cls, side_length, offset=None):
         """Hexagonal bordered polytwig grid."""
         min_xy = side_length - 1
         max_xy = 3 * side_length - 2
         bound = 2 * side_length - 1
-        for coord in self.coordinates_bordered(bound, bound):
+        for coord in cls.coordinates_bordered(bound, bound):
             x, y, z = coord
             xy = x + y
             if (xy < min_xy) or ((xy == min_xy) and (z == 2)) or (xy > max_xy):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_hexagon_unbordered(self, side_length, offset=None):
+    @classmethod
+    def coordinates_hexagon_unbordered(cls, side_length, offset=None):
         min_xy = side_length - 1
         max_xy = 3 * side_length - 2
         bound = 2 * side_length - 1
-        for coord in self.coordinates_unbordered(bound, bound):
+        for coord in cls.coordinates_unbordered(bound, bound):
             x, y, z = coord
             xy = x + y
             if (xy <= min_xy) or (xy == max_xy and z != 2) or (xy > max_xy):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_elongated_hexagon(self, base_length, side_length,
+    @classmethod
+    def coordinates_elongated_hexagon(cls, base_length, side_length,
                                       offset=None):
         x_bound = side_length + base_length - 1
         y_bound = side_length * 2 - 1
         min_xy = side_length - 1
         max_xy = base_length + 2 * side_length - 2
-        for coord in self.coordinates_bordered(x_bound, y_bound):
+        for coord in cls.coordinates_bordered(x_bound, y_bound):
             x, y, z = coord
             xy = x + y
             if (xy < min_xy) or ((xy == min_xy) and (z == 2)) or (xy > max_xy):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
+    @classmethod
     def coordinates_elongated_hexagon_unbordered(
-            self, base_length, side_length, offset=None):
-        
+            cls, base_length, side_length, offset=None):
         x_bound = side_length + base_length - 1
         y_bound = side_length * 2 - 1
         min_xy = side_length - 1
         max_xy = base_length + 2 * side_length - 2
-        for coord in self.coordinates_unbordered(x_bound, y_bound):
+        for coord in cls.coordinates_unbordered(x_bound, y_bound):
             x, y, z = coord
             xy = x + y
             if (xy <= min_xy) or (xy > max_xy) or ((xy == max_xy) and (z != 2)):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_trapezoid(self, m, n, offset=None):
+    @classmethod
+    def coordinates_trapezoid(cls, m, n, offset=None):
         """
         Trapezoidal bordered polytwig grid of base length M & height N hexagons.
         """
         max_xy = m
-        for coord in self.coordinates_bordered(m, n):
+        for coord in cls.coordinates_bordered(m, n):
             x, y, z = coord
             xy = x + y
             if xy > max_xy:
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_trapezoid_unbordered(self, m, n, offset=None):
+    @classmethod
+    def coordinates_trapezoid_unbordered(cls, m, n, offset=None):
         """
         Trapezoidal unbordered polytwig grid of base length M & height N
         hexagons.
         """
         max_xy = m
-        for coord in self.coordinates_unbordered(m, n):
+        for coord in cls.coordinates_unbordered(m, n):
             x, y, z = coord
             xy = x + y
             if (xy > max_xy) or (xy == max_xy and z != 2):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_triangle(self, m, offset=None):
+    @classmethod
+    def coordinates_triangle(cls, m, offset=None):
         """
         Triangular bordered polytwig grid of side length M hexagons.
         """
-        return self.coordinates_trapezoid(m, m, offset)
+        return cls.coordinates_trapezoid(m, m, offset)
 
-    def coordinates_chevron(self, base, side, offset=None):
+    @classmethod
+    def coordinates_chevron(cls, base, side, offset=None):
         """
         Chevron-shaped bordered polytwig grid, (base, side) length in hexagons.
         """
         min_xy = side - 1
         max_xy = base + side - 1
         last_y = side * 2 - 1
-        for coord in self.coordinates_bordered(max_xy, last_y):
+        for coord in cls.coordinates_bordered(max_xy, last_y):
             x, y, z = coord
             xy = x + y
             if (xy < min_xy) or ((xy == min_xy) and (z == 2)):
@@ -190,9 +200,10 @@ class Polytwigs(Polytrigs):
                 continue
             if y == last_y and x == base and z == 2:
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_butterfly(self, base, side, offset=None):
+    @classmethod
+    def coordinates_butterfly(cls, base, side, offset=None):
         """
         Butterfly-shaped bordered polytwig grid, (base, side) length in
         hexagons.
@@ -201,7 +212,7 @@ class Polytwigs(Polytrigs):
         max_xy = base + side - 1
         last_y = side * 2 - 1
         first_x = side - 1
-        for coord in self.coordinates_bordered(max_xy, last_y):
+        for coord in cls.coordinates_bordered(max_xy, last_y):
             x, y, z = coord
             xy = x + y
             if (y >= side) and (((xy < min_xy) or ((xy == min_xy) and (z == 2)))
@@ -212,28 +223,30 @@ class Polytwigs(Polytrigs):
                 continue
             if y == last_y and x == base and z == 2:
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_vertically_staggered_rectangle(self, m, n, offset=None):
+    @classmethod
+    def coordinates_vertically_staggered_rectangle(cls, m, n, offset=None):
         last_x = m
         last_y = n
         min_x2y = int((m - 1) / 2) * 2
         max_x2y = min_x2y + 2 * n + 1
-        for coord in self.coordinates_bordered(m, n + int((m - 1) / 2)):
+        for coord in cls.coordinates_bordered(m, n + int((m - 1) / 2)):
             x, y, z = coord
             x2y = x + 2 * y
             if (  (x2y < min_x2y) or (x2y == min_x2y and not (x % 2) and z == 2)
                   or (x2y > max_x2y) or (x2y == max_x2y and (x % 2) and z == 1)
                   or (x == last_x and y == last_y and z == 2)):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_inset_rectangle(self, m, n, offset=None):
+    @classmethod
+    def coordinates_inset_rectangle(cls, m, n, offset=None):
         last_x = m
         last_y = n - 1
         min_x2y = int((m - 1) / 2) * 2
         max_x2y = min_x2y + 2 * n
-        for coord in self.coordinates_bordered(m, n + int((m - 1) / 2)):
+        for coord in cls.coordinates_bordered(m, n + int((m - 1) / 2)):
             x, y, z = coord
             x2y = x + 2 * y
             if (  (x2y < min_x2y) or (x2y == min_x2y and not (x % 2) and z == 2)
@@ -241,7 +254,7 @@ class Polytwigs(Polytrigs):
                   or (x2y == max_x2y and not (x % 2) and z == 1)
                   or (x == last_x and not (x % 2) and y == last_y and z == 2)):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
     def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3, 4, 5)):
         aspects = set()

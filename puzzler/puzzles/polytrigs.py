@@ -47,13 +47,15 @@ class Polytrigs(Polysticks):
         """
         return self.coordinates_bordered(self.width, self.height)
 
-    def coordinate_offset(self, x, y, z, offset):
+    @classmethod
+    def coordinate_offset(cls, x, y, z, offset):
         if offset:
             return coordsys.TriangularGrid3D((x, y, z)) + offset
         else:
             return coordsys.TriangularGrid3D((x, y, z))
 
-    def coordinates_bordered(self, m, n, offset=None):
+    @classmethod
+    def coordinates_bordered(cls, m, n, offset=None):
         """
         Bordered parallelogram polytrig grid of side length M & N.
 
@@ -64,109 +66,118 @@ class Polytrigs(Polysticks):
         last_y = n
         for y in range(n + 1):
             for x in range(m + 1):
-                for z in range(self.depth):
+                for z in range(cls.depth):
                     if (z != 0 and y == last_y) or (z == 0 and x == last_x):
                         continue
                     if z == 2 and x == 0:
                         continue
-                    yield self.coordinate_offset(x, y, z, offset)
+                    yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_unbordered(self, m, n, offset=None):
+    @classmethod
+    def coordinates_unbordered(cls, m, n, offset=None):
         """Unbordered parallelogram polytrig grid of side length M & N."""
         last_x = m
         last_y = n
         for y in range(n):
             for x in range(m + 1):
-                for z in range(self.depth):
+                for z in range(cls.depth):
                     if (not y and z == 0) or (x == last_x and z < 2):
                         continue
                     if x == 0 and z != 0:
                         continue
-                    yield self.coordinate_offset(x, y, z, offset)
+                    yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_triangle(self, side_length, offset=None):
+    @classmethod
+    def coordinates_triangle(cls, side_length, offset=None):
         """Triangular bordered polytrig grid."""
-        for coord in self.coordinates_bordered(side_length, side_length):
+        for coord in cls.coordinates_bordered(side_length, side_length):
             x, y, z = coord
             xy = x + y
             if (xy > side_length) or ((xy == side_length) and (z != 2)):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_triangle_unbordered(self, side_length, offset=None):
+    @classmethod
+    def coordinates_triangle_unbordered(cls, side_length, offset=None):
         """Triangular unbordered polytrig grid."""
-        for coord in self.coordinates_unbordered(side_length, side_length):
+        for coord in cls.coordinates_unbordered(side_length, side_length):
             x, y, z = coord
             xy = x + y
             if xy >= side_length:
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_hexagon(self, side_length, offset=None):
+    @classmethod
+    def coordinates_hexagon(cls, side_length, offset=None):
         """Hexagonal bordered polytrig grid."""
         min_xy = side_length
         max_xy = 3 * side_length
         bound = 2 * side_length
-        for coord in self.coordinates_bordered(bound, bound):
+        for coord in cls.coordinates_bordered(bound, bound):
             x, y, z = coord
             xy = x + y
             if (xy < min_xy) or (xy > max_xy) or ((xy == max_xy) and (z != 2)):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_hexagon_unbordered(self, side_length, offset=None):
+    @classmethod
+    def coordinates_hexagon_unbordered(cls, side_length, offset=None):
         """Hexagonal unbordered polytrig grid."""
         min_xy = side_length
         max_xy = 3 * side_length
         bound = 2 * side_length
-        for coord in self.coordinates_unbordered(bound, bound):
+        for coord in cls.coordinates_unbordered(bound, bound):
             x, y, z = coord
             xy = x + y
             if (xy < min_xy) or (xy == min_xy and z == 2) or (xy >= max_xy):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_semiregular_hexagon(self, side_a, side_b, offset=None):
+    @classmethod
+    def coordinates_semiregular_hexagon(cls, side_a, side_b, offset=None):
         """Semi-regular hexagonal bordered polytrig grid."""
         if side_a < side_b:
             side_a, side_b = side_b, side_a
         min_xy = side_b
         max_xy = side_a + 2 * side_b
         bound = side_a + side_b
-        for coord in self.coordinates_bordered(bound, bound):
+        for coord in cls.coordinates_bordered(bound, bound):
             x, y, z = coord
             xy = x + y
             if (xy < min_xy) or (xy > max_xy) or ((xy == max_xy) and (z != 2)):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_elongated_hexagon(self, base_length, side_length,
+    @classmethod
+    def coordinates_elongated_hexagon(cls, base_length, side_length,
                                       offset=None):
         """Elongated hexagonal bordered polytrig grid."""
         min_xy = side_length
         max_xy = base_length + side_length * 2
         x_bound = side_length + base_length
         y_bound = side_length * 2
-        for coord in self.coordinates_bordered(x_bound, y_bound):
+        for coord in cls.coordinates_bordered(x_bound, y_bound):
             x, y, z = coord
             xy = x + y
             if (xy < min_xy) or (xy > max_xy) or ((xy == max_xy) and (z != 2)):
                 continue
-            yield self.coordinate_offset(x, y, z, offset)
+            yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_trapezoid(self, width, height, offset=None):
+    @classmethod
+    def coordinates_trapezoid(cls, width, height, offset=None):
         max_xy = width
-        for coord in self.coordinates_bordered(width, height):
+        for coord in cls.coordinates_bordered(width, height):
             x, y, z = coord
             xy = x + y
             if (xy < max_xy) or (xy == max_xy and z == 2):
-                yield self.coordinate_offset(x, y, z, offset)
+                yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_butterfly(self, base_length, side_length, offset=None):
+    @classmethod
+    def coordinates_butterfly(cls, base_length, side_length, offset=None):
         """Butterfly-shaped bordered polytrig grid."""
         x_bound = max_xy = base_length + side_length
         y_bound = min_xy = side_length * 2
-        for coord in self.coordinates_bordered(x_bound, y_bound):
+        for coord in cls.coordinates_bordered(x_bound, y_bound):
             x, y, z = coord
             xy = x + y
             xz = x - z / 2
@@ -174,13 +185,14 @@ class Polytrigs(Polysticks):
                   or (x == base_length and z != 0)
                   or (min_xy <= xy < max_xy)
                   or (xy == max_xy and z == 2)):
-                yield self.coordinate_offset(x, y, z, offset)
+                yield cls.coordinate_offset(x, y, z, offset)
 
-    def coordinates_chevron(self, base_length, side_length, offset=None):
+    @classmethod
+    def coordinates_chevron(cls, base_length, side_length, offset=None):
         x_bound = base_length + side_length
         y_bound = min_xy = side_length * 2
         max_xy = base_length + side_length * 2
-        for coord in self.coordinates_bordered(x_bound, y_bound):
+        for coord in cls.coordinates_bordered(x_bound, y_bound):
             x, y, z = coord
             xy = x + y
             if (  ((y < side_length)
@@ -188,7 +200,7 @@ class Polytrigs(Polysticks):
                   or ((y >= side_length)
                       and ((min_xy <= xy < max_xy)
                            or (xy == max_xy and z == 2)))):
-                yield self.coordinate_offset(x, y, z, offset)
+                yield cls.coordinate_offset(x, y, z, offset)
 
     def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3, 4, 5)):
         aspects = set()

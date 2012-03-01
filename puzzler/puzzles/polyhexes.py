@@ -110,7 +110,7 @@ class Polyhexes(Puzzle2D):
         for coord in cls.coordinates_parallelogram(x_bound, y_bound):
             x, y = coord
             xy = x + y
-            if ((xy >= min_xy) or (y >= min_y)) and ((xy <= max_xy) or (y <= max_y)):
+            if (xy >= min_xy or y >= min_y) and (xy <= max_xy or y <= max_y):
                 yield cls.coordinate_offset(x, y, offset)
 
     def make_aspects(self, units, flips=(False, True),
