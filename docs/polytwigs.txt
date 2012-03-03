@@ -592,4 +592,18 @@ on the hexagonal grid.
   .. image:: images/hexatwigs-elongated-hexagon-ring.png
 
 
+One-Sided Hexatwigs
+===================
+
+These puzzles use the 49 one-sided hexatwigs, for a total of 294 line
+segments on the hexagonal grid.
+
+* Hexagon ring: `solutions incomplete
+  <../solutions/one-sided-hexatwigs-hexagon-ring.txt>`__
+
+  .. image:: images/one-sided-hexatwigs-hexagon-ring.png
+
+  This solution was first found by Peter F. Esser.
+
+
 .. |c| unicode:: U+00A9 .. copyright sign

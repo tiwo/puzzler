@@ -105,10 +105,15 @@ class HexatwigsElongatedHexagonRing(Hexatwigs):
 
 class OneSidedHexatwigsHexagonRing(OneSidedHexatwigs):
 
-    """ solutions"""
+    """
+    many solutions
 
-    height = 16
-    width = 16
+    First solution discovered by Peter F. Esser, replicated in
+    ``_find_all_solutions = False`` case below.
+    """
+
+    height = 12
+    width = 12
 
     svg_rotation = 0
 
@@ -118,15 +123,51 @@ class OneSidedHexatwigsHexagonRing(OneSidedHexatwigs):
             if coord not in hole:
                 yield coord
 
-    def customize_piece_data(self):
-        OneSidedHexatwigs.customize_piece_data(self)
-        self.piece_data['R06'][-1]['rotations'] = None
+    _find_known_solution = False
+
+    if _find_known_solution:
+        # Find a known solution (first found by Peter F. Esser).
+        # Fix pieces in known positions:
+        restrictions = {
+            'O06': [(0, (5,10,0))],
+            'I06': [(2, (11,1,0))],
+            'U06': [(1, (9,2,0))],
+            'V06': [(0, (9,3,0))],
+            'M06': [(4, (1,3,0))],
+            'Y06': [(1, (7,4,0))],
+            'y06': [(0, (6,7,0))],
+            'S06': [(0, (5,0,0))],
+            's06': [(5, (8,6,0))],
+            'l06': [(0, (0,5,0))],
+            'L06': [(1, (4,8,0))],
+            'J06': [(5, (9,5,0))],
+            'j06': [(0, (0,10,0))],
+            'H06': [(0, (2,4,0))],
+            'h06': [(0, (3,9,0))],
+            'R06': [(3, (2,8,0))],
+            'r06': [(4, (1,9,0))],}
+
+        def build_matrix(self):
+            keys = sorted(self.pieces.keys())
+            for key, details in sorted(self.restrictions.items()):
+                for aspect_index, offset in details:
+                    coords, aspect = self.pieces[key][aspect_index]
+                    translated = aspect.translate(offset)
+                    self.build_matrix_row(key, translated)
+                    keys.remove(key)
+            self.build_regular_matrix(keys)
+
+    else:
+        # General case
+        def customize_piece_data(self):
+            OneSidedHexatwigs.customize_piece_data(self)
+            self.piece_data['R06'][-1]['rotations'] = None
 
 
 class OneSidedHexatwigsElongatedHexagon26x2(OneSidedHexatwigs):
 
     """
-     solutions
+    many solutions
 
     Discovered by Peter F. Esser.
     """
@@ -137,7 +178,32 @@ class OneSidedHexatwigsElongatedHexagon26x2(OneSidedHexatwigs):
     def coordinates(self):
         return self.coordinates_elongated_hexagon(26, 2)
 
-    def customize_piece_data(self):
-        OneSidedHexatwigs.customize_piece_data(self)
-        self.piece_data['R06'][-1]['flips'] = None
-        self.piece_data['R06'][-1]['rotations'] = (0, 1, 2)
+    _find_known_solution = True
+
+    if _find_known_solution:
+        # Find a known solution (first found by Peter F. Esser).
+        # Fix pieces in known positions:
+        restrictions = {
+            'O06': [(0, (10,0,0))],
+            'I06': [(1, (14,0,0))],
+            'U06': [(1, (6,2,0))],
+            'V06': [(5, (6,1,0))],
+            'M06': [(5, (25,1,0))],
+            'Y06': [(1, (5,0,0))],
+            'y06': [(0, (7,0,0))],}
+
+        def build_matrix(self):
+            keys = sorted(self.pieces.keys())
+            for key, details in sorted(self.restrictions.items()):
+                for aspect_index, offset in details:
+                    coords, aspect = self.pieces[key][aspect_index]
+                    translated = aspect.translate(offset)
+                    self.build_matrix_row(key, translated)
+                    keys.remove(key)
+            self.build_regular_matrix(keys)
+
+    else:
+        # General case
+        def customize_piece_data(self):
+            OneSidedHexatwigs.customize_piece_data(self)
+            self.piece_data['R06'][-1]['rotations'] = (0, 1, 2)
