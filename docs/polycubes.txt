@@ -16,6 +16,7 @@
 
 .. sidebar:: Also see:
 
+   | `Notes on Polycubes <polycube-notes.html>`_
    | `Pentominoes: Puzzles & Solutions <pentominoes.html>`_
    | `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
    | `Pentacubes: Puzzles & Solutions <pentacubes.html>`_

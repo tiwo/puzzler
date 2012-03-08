@@ -53,6 +53,8 @@ viewing software.
             :target: pentominoes.html#one-sided-pentominoes
             :class: borderless
 
+  Also see `Notes on Polyominoes <polyomino-notes.html>`_.
+
 * `Polycubes <polycubes.html>`_ (incl. `solid pentominoes`_ & `pentacubes`_)
 
   .. list-table::
@@ -82,6 +84,11 @@ viewing software.
             :target: pentacubes.html
             :class: borderless
 
+  Also see:
+
+  * `Notes on Polycubes <polycube-notes.html>`_
+  * `Notes on Polyominoes <polyomino-notes.html>`_
+
 * Polyiamonds (`hexiamonds`_ & `heptiamonds`_)
 
   .. list-table::
@@ -98,6 +105,8 @@ viewing software.
          .. image:: images/heptiamonds-snowflake-2-small.png
             :target: heptiamonds.html
             :class: borderless
+
+  Also see `Notes on Polyiamonds <polyiamond-notes.html>`_.
 
 * `Polyhexes <polyhexes.html>`_ (& `pentahexes`_)
 
@@ -123,6 +132,8 @@ viewing software.
             :target: polyhexes.html#polyhexes-of-order-1-through-4
             :class: borderless
 
+  Also see `Notes on Polyhexes <polyhex-notes.html>`_.
+
 * `Polysticks <polysticks.html>`_
 
   .. list-table::
@@ -141,7 +152,10 @@ viewing software.
             :target: polysticks.html#polysticks-of-order-1-through-4
             :class: borderless
 
-  Also see `An Introduction to Polysticks <polysticks-intro.html>`_.
+  Also see:
+
+  * `An Introduction to Polysticks <polysticks-intro.html>`_
+  * `Notes on Polysticks <polystick-notes.html>`_
 
 * `Polytrigs (triangular-grid polysticks) <polytrigs.html>`_
 
@@ -161,7 +175,10 @@ viewing software.
             :target: polytrigs.html#polytrigs-of-order-1-through-3
             :class: borderless
 
-  Also see `An Introduction to Polytrigs <polytrigs-intro.html>`_.
+  Also see:
+
+  * `An Introduction to Polytrigs <polytrigs-intro.html>`_
+  * `Notes on Polytrigs <polytrig-notes.html>`_
 
 * `Polytwigs (hexagonal-grid polysticks) <polytwigs.html>`_
 
@@ -181,7 +198,11 @@ viewing software.
             :target: polytwigs.html#polytwigs-of-order-1-through-4
             :class: borderless
 
-  Also see `An Introduction to Polytwigs <polytwigs-intro.html>`_.
+  Also see:
+
+  * `An Introduction to Polytwigs <polytwigs-intro.html>`_
+  * `Notes on Polytwigs <polytwig-notes.html>`_
+
 
 .. |---| unicode:: U+2014  .. em dash
    :trim:

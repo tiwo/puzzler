@@ -281,7 +281,10 @@ ones.  Polyform families are given descriptive names:
 
      3 |x| 30 One-Sided Pentominoes (46 solutions)
 
-  **In Polyform Puzzler:** `Pentomino Puzzles & Solutions <pentominoes.html>`_
+  **In Polyform Puzzler:**
+
+  * `Pentomino Puzzles & Solutions <pentominoes.html>`_
+  * `Notes on Polyominoes <polyomino-notes.html>`_
 
 * Substituting a 3D cube for each 2D square in polyominoes results in
   "solid polyominoes" or "planar polycubes".  
@@ -290,8 +293,11 @@ ones.  Polyform families are given descriptive names:
 
      3 |x| 4 |x| 5 Solid Pentominoes (3940 solutions)
 
-  **In Polyform Puzzler:** `Solid Pentomino Puzzles & Solutions
-  <solid-pentominoes.html>`_
+  **In Polyform Puzzler:**
+
+  * `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`_
+  * `Notes on Polyominoes`_
+  * `Notes on Polycubes <polycube-notes.html>`_
 
 * Polyforms based on cubes extending into 3 (or more!) dimensions are
   called "polycubes_".  The polycubes that are flat (only one cube
@@ -316,6 +322,7 @@ ones.  Polyform families are given descriptive names:
 
   * `Pentacube Puzzles & Solutions <pentacubes.html>`_
   * `Polycube Puzzles & Solutions <polycubes.html>`_
+  * `Notes on Polycubes`_
 
 * Polyforms based on equilateral triangles are named "polyiamonds_"
   (from the "diamond", which is two triangles joined).
@@ -328,6 +335,7 @@ ones.  Polyform families are given descriptive names:
 
   * `Hexiamond Puzzles & Solutions <hexiamonds.html>`_
   * `Heptiamond Puzzles & Solutions <hexiamonds.html>`_
+  * `Notes on Polyiamonds <polyiamond-notes.html>`_
 
 * Polyforms based on regular hexagons are named "polyhexes_" (there's
   no clever etymology here).
@@ -340,6 +348,7 @@ ones.  Polyform families are given descriptive names:
 
   * `Pentahex Puzzles & Solutions <pentahexes.html>`_
   * `Polyhex Puzzles & Solutions <polyhexes.html>`_
+  * `Notes on Polyhexes <polyhex-notes.html>`_
 
 * Polyforms based on unit line segments joined end-to-end on a square
   grid are called "polysticks" [#polysticks]_ (a.k.a. "polyedges" or
@@ -354,8 +363,9 @@ ones.  Polyform families are given descriptive names:
 
   **In Polyform Puzzler:**
 
-  * `An Introduction to Polysticks <polysticks-intro.html>`_
   * `Polystick Puzzles & Solutions <polysticks.html>`_
+  * `An Introduction to Polysticks <polysticks-intro.html>`_
+  * `Notes on Polysticks <polystick-notes.html>`_
 
 * Polyforms based on unit line segments joined end-to-end on a
   triangular grid are called "polytrigs" (a.k.a. "triangular-grid
@@ -370,8 +380,9 @@ ones.  Polyform families are given descriptive names:
 
   **In Polyform Puzzler:**
 
-  * `An Introduction to Polytrigs <polytrigs-intro.html>`_
   * `Polytrig Puzzles & Solutions <polytrigs.html>`_
+  * `An Introduction to Polytrigs <polytrigs-intro.html>`_
+  * `Notes on Polytrigs <polytrig-notes.html>`_
 
 * Polyforms based on unit line segments joined end-to-end on a
   hexagonal grid are called "polytwigs" (a.k.a. "hexagonal-grid
@@ -386,8 +397,9 @@ ones.  Polyform families are given descriptive names:
 
   **In Polyform Puzzler:**
 
-  * `An Introduction to Polytwigs <polytwigs-intro.html>`_
   * `Polytwig Puzzles & Solutions <polytwigs.html>`_
+  * `An Introduction to Polytwigs <polytwigs-intro.html>`_
+  * `Notes on Polytwigs <polytwig-notes.html>`_
 
 .. [#polysticks] Brian R. Barwell, "Polysticks," `Journal of
    Recreational Mathematics` volume 22 issue 3 (1990), p.165-175
@@ -434,6 +446,7 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   * `Pentomino Puzzles & Solutions`_
   * `Solid Pentomino Puzzles & Solutions`_
+  * `Notes on Polyominoes`_
 
   .. _A000105: http://oeis.org/A000105
   .. _A000988: http://oeis.org/A000988
@@ -460,6 +473,7 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   * `Hexiamond Puzzles & Solutions`_
   * `Heptiamond Puzzles & Solutions`_
+  * `Notes on Polyiamonds`_
 
   .. _A000577: http://oeis.org/A000577
   .. _A006534: http://oeis.org/A006534
@@ -488,6 +502,7 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   * `Pentahex Puzzles & Solutions`_
   * `Polyhex Puzzles & Solutions`_
+  * `Notes on Polyhexes`_
 
   .. _A000228: http://oeis.org/A000228
   .. _A006535: http://oeis.org/A006535
@@ -516,6 +531,7 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   * `Pentacube Puzzles & Solutions`_
   * `Polycube Puzzles & Solutions`_
+  * `Notes on Polycubes`_
 
   .. _A000162: http://oeis.org/A000162
 
@@ -537,8 +553,9 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   **In Polyform Puzzler:**
 
-  * `An Introduction to Polysticks`_
   * `Polystick Puzzles & Solutions`_
+  * `An Introduction to Polysticks`_
+  * `Notes on Polysticks`_
 
   .. _A019988: http://oeis.org/A019988
   .. _A151537: http://oeis.org/A151537
@@ -560,8 +577,9 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   **In Polyform Puzzler:**
 
-  * `An Introduction to Polytrigs`_
   * `Polytrig Puzzles & Solutions`_
+  * `An Introduction to Polytrigs`_
+  * `Notes on Polytrigs`_
 
   .. _A159867: http://oeis.org/A159867
   .. _A151539: http://oeis.org/A151539
@@ -583,8 +601,9 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   **In Polyform Puzzler:**
 
-  * `An Introduction to Polytwigs`_
   * `Polytwig Puzzles & Solutions`_
+  * `An Introduction to Polytwigs`_
+  * `Notes on Polytwigs`_
 
   .. _A197459: http://oeis.org/A197459
   .. _A197460: http://oeis.org/A197460
@@ -772,7 +791,10 @@ squares joined::
     V T T T X Y F F F L
     V V V Y Y Y Y F L L
 
-**In Polyform Puzzler:** `Pentomino Puzzles & Solutions`_
+**In Polyform Puzzler:**
+
+* `Pentomino Puzzles & Solutions`_
+* `Notes on Polyominoes`_
 
 
 How should polycube solution files be interpreted?
@@ -810,6 +832,8 @@ as the front wall.
 * `Solid Pentomino Puzzles & Solutions`_
 * `Pentacube Puzzles & Solutions`_
 * `Polycube Puzzles & Solutions`_
+* `Notes on Polycubes`_
+* `Notes on Polyominoes`_
 
 
 How should polyhex solution files be interpreted?
@@ -841,6 +865,7 @@ with the Y-axis vertical and the X-axis sloping up::
 
 * `Pentahex Puzzles & Solutions`_
 * `Polyhex Puzzles & Solutions`_
+* `Notes on Polyhexes`_
 
 
 How should polyiamond solution files be interpreted?
@@ -871,6 +896,7 @@ with the X-axis horizontal and the Y-axis sloping to the right::
 
 * `Hexiamond Puzzles & Solutions`_
 * `Heptiamond Puzzles & Solutions`_
+* `Notes on Polyiamonds`_
 
 
 How should polystick solution files be interpreted?
@@ -912,8 +938,9 @@ earlier versions of Polyform Puzzler).
 
 **In Polyform Puzzler:**
 
-* `An Introduction to Polysticks`_
 * `Polystick Puzzles & Solutions`_
+* `An Introduction to Polysticks`_
+* `Notes on Polysticks`_
 
 
 How should polytrig solution files be interpreted?
@@ -944,8 +971,9 @@ in an ASCII-art drawing of the triangular 2-D grid.  Example::
 
 **In Polyform Puzzler:**
 
-* `An Introduction to Polytrigs`_
 * `Polytrig Puzzles & Solutions`_
+* `An Introduction to Polytrigs`_
+* `Notes on Polytrigs`_
 
 
 How should polytwig solution files be interpreted?
@@ -976,8 +1004,9 @@ in an ASCII-art drawing of the hexagonal 2-D grid.  Example::
 
 **In Polyform Puzzler:**
 
-* `An Introduction to Polytwigs`_
 * `Polytwig Puzzles & Solutions`_
+* `An Introduction to Polytwigs`_
+* `Notes on Polytwigs`_
 
 
 The Code

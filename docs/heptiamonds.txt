@@ -16,6 +16,7 @@
 
 .. sidebar:: Also see:
 
+   | `Notes on Polyiamonds <polyiamond-notes.html>`_
    | `Hexiamonds: Puzzles & Solutions <hexiamonds.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_

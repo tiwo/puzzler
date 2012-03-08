@@ -16,6 +16,7 @@
 
 .. sidebar:: Also see:
 
+   | `Notes on Polyhexes <polyhex-notes.html>`_
    | `Pentahexes: Puzzles & Solutions <pentahexes.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_

@@ -16,6 +16,7 @@
 
 .. sidebar:: Also see:
 
+   | `Notes on Polyominoes <polyomino-notes.html>`_
    | `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
    | `Pentacubes: Puzzles & Solutions <pentacubes.html>`_
    | `Polycubes: Puzzles & Solutions <polycubes.html>`_
@@ -24,9 +25,6 @@
    |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
        `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
        `interpreting solution files <FAQ.html#how-should-polyomino-solution-files-be-interpreted>`__)
-   |
-   | `Gerard Putter's Polyomino Solver page
-     <http://gp.home.xs4all.nl/Site/Polyomino_Solver.html>`__
 
 .. contents::
 

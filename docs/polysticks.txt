@@ -17,6 +17,7 @@
 .. sidebar:: Also see:
 
    | `An Introduction to Polysticks <polysticks-intro.html>`_
+   | `Notes on Polysticks <polystick-notes.html>`_
    | `Polytrigs (Triangular-Grid Polysticks): Puzzles & Solutions <polytrigs.html>`_
    | `An Introduction to Polytrigs (Triangular-Grid Polysticks) <polytrigs-intro.html>`_
    | `Polytwigs (Hexagonal-Grid Polysticks): Puzzles & Solutions <polytwigs.html>`_

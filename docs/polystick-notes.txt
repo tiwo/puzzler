@@ -1,0 +1,237 @@
+.. -*- coding: utf-8 -*-
+
+=====================
+ Notes on Polysticks
+=====================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: © 1998-2012 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. sidebar:: Also see:
+
+   | `Polystick Puzzles & Solutions <polysticks.html>`_
+   | `An Introduction to Polysticks <polysticks-intro.html>`_
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
+   |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+       `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+       `interpreting solution files <FAQ.html#how-should-polystick-solution-files-be-interpreted>`__)
+
+.. contents::
+
+
+Polyform Counts
+===============
+
+Units are unit line segments on the square grid.
+
+=====  ==========  ======  ======  ======  =========  ======  ======
+Order  Name        Free    Units   Sum     One-sided  Units   Sum
+=====  ==========  ======  ======  ======  =========  ======  ======
+1      monostick     1       1       1        1         1       1
+2      distick       2       4       5        2         4       5
+3      tristick      5      15      20        7        21      26
+4      tetrastick   16      64      84       25       100     126
+5      pentastick   55     275     359       99       495     621
+6*     hexastick   222                      416
+7*     heptastick  950                     1854
+=====  ==========  ======  ======  ======  =========  ======  ======
+
+"*" above means that pieces with enclosed holes exist.
+
+
+Shapes
+======
+
+Holes (denoted by a "*" in the function name) consist of internal
+segments only, no circumference segments.
+
+Grid size definitions are OK (instead of side length), as long as it's
+clearly noted.
+
+Rectangular MxN grid (bordered)::
+
+    R(m,n) = m * (n - 1) + n * (m - 1)
+
+===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
+R    m=2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
+===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
+n=2    4    7   10   13   16   19   22   25   28   31   34   37   40   43   46
+  3  ...   12   17   22   27   32   37   42   47   52   57   62   67   72   77
+  4  ...  ...   24   31   38   45   52   59   66   73   80   87   94  101  108
+  5  ...  ...  ...   40   49   58   67   76   85   94  103  112  121  130  139
+  6  ...  ...  ...  ...   60   71   82   93  104  115  126  137  148  159  170
+  7  ...  ...  ...  ...  ...   84   97  110  123  136  149  162  175  188  201
+  8  ...  ...  ...  ...  ...  ...  112  127  142  157  172  187  202  217  232
+  9  ...  ...  ...  ...  ...  ...  ...  144  161  178  195  212  229  246  263
+ 10  ...  ...  ...  ...  ...  ...  ...  ...  180  199  218  237  256  275  294
+ 11  ...  ...  ...  ...  ...  ...  ...  ...  ...  220  241  262  283  304  325
+ 12  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  264  287  310  333  356
+ 13  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  312  337  362  387
+ 14  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  364  391  418
+ 15  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  420  449
+ 16  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  480
+===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
+
+Rectangular MxN grid (unbordered)::
+
+    R*(m,n) = (m - 2) * (n - 1) + (m - 1) * (n - 2)
+
+===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
+R*   m=2    3    4    5    6    7    8    9   10   11   12   13   14   15   16
+===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
+n=2    0    1    2    3    4    5    6    7    8    9   10   11   12   13   14
+  3  ...    4    7   10   13   16   19   22   25   28   31   34   37   40   43
+  4  ...  ...   12   17   22   27   32   37   42   47   52   57   62   67   72
+  5  ...  ...  ...   24   31   38   45   52   59   66   73   80   87   94  101
+  6  ...  ...  ...  ...   40   49   58   67   76   85   94  103  112  121  130
+  7  ...  ...  ...  ...  ...   60   71   82   93  104  115  126  137  148  159
+  8  ...  ...  ...  ...  ...  ...   84   97  110  123  136  149  162  175  188
+  9  ...  ...  ...  ...  ...  ...  ...  112  127  142  157  172  187  202  217
+ 10  ...  ...  ...  ...  ...  ...  ...  ...  144  161  178  195  212  229  246
+ 11  ...  ...  ...  ...  ...  ...  ...  ...  ...  180  199  218  237  256  275
+ 12  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  220  241  262  283  304
+ 13  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  264  287  310  333
+ 14  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  312  337  362
+ 15  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  364  391
+ 16  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  420
+===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
+
+MxN diamond lattice::
+
+    D(m,n) = m * n * 4
+
+===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
+D    m=1    2    3    4    5    6    7    8    9   10   11   12   13   14   15
+===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
+n=1    4    8   12   16   20   24   28   32   36   40   44   48   52   56   60
+  2  ...   16   24   32   40   48   56   64   72   80   88   96  104  112  120
+  3  ...  ...   36   48   60   72   84   96  108  120  132  144  156  168  180
+  4  ...  ...  ...   64   80   96  112  128  144  160  176  192  208  224  240
+  5  ...  ...  ...  ...  100  120  140  160  180  200  220  240  260  280  300
+  6  ...  ...  ...  ...  ...  144  168  192  216  240  264  288  312  336  360
+  7  ...  ...  ...  ...  ...  ...  196  224  252  280  308  336  364  392  420
+  8  ...  ...  ...  ...  ...  ...  ...  256  288  320  352  384  416  448  480
+  9  ...  ...  ...  ...  ...  ...  ...  ...  324  360  396  432  468  504  540
+ 10  ...  ...  ...  ...  ...  ...  ...  ...  ...  400  440  480  520  560  600
+ 11  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  484  528  572  616  660
+ 12  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  576  624  672  720
+ 13  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  676  728  780
+ 14  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  784  840
+ 15  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  ...  900
+===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
+
+Triangles (n == height)::
+
+    T(n) = n(n + 3)
+
+Double Triangles (n == height)::
+
+    DT(n) = 2n² +3n - 1
+
+Aztec Diamonds (n == side length or height of quadrant; _A134582)::
+
+    A(n) = 4(n + 1)² - 4
+         = 4n(n + 2)
+
+.. _A134582: http://oeis.org/A134582
+
+==  ===  ===  ====
+n   T    DT   A   
+==  ===  ===  ====
+ 1    4    4    12
+ 2   10   13    32
+ 3   18   26    60
+ 4   28   43    96
+ 5   40   64   140
+ 6   54   89   192
+ 7   70  118   252
+ 8   88  151   320
+ 9  108  188   396
+10  130  229   480
+11  154  274   572
+12  180  323   672
+13  208  376   780
+14  238  433   896
+15  270  494  1020
+==  ===  ===  ====
+
+
+Potential Puzzles
+=================
+
+*Puzzles not otherwise noted below have not been implemented or solved.*
+
+*Initial numbers are the counts of unit line segments in the puzzles.*
+
+15: tristicks
+
+20: polysticks of order 1 to 3
+
+21: one-sided tristicks
+
+26: one-sided polysticks of order 1 to 3
+
+* DT(3)
+* T(4) - 2 segments (= trapezoid)
+
+40: one-sided welded tetrasticks
+
+* No solutions:
+
+  * R*(6,6)
+  * D(5,2)
+
+60: 15/16 tetrasticks
+
+* No solutions:
+
+  * 5x3 diamond lattice
+  * R*(7,7)
+
+64: tetrasticks
+
+* No solutions:
+
+  * 4x4 diamond lattice -- no solutions, due to parity
+
+84: polysticks of order 1 to 4
+
+* R*(8,8) (probably no solutions)
+* D(5,5) - D(2,2) (5x5 diamond lattice ring; probably no solutions)
+
+100: one-sided tetrasticks
+
+126: one-sided polysticks of order 1 to 4
+
+* R(12,6)
+* R*(13,7)
+* R(9,8) - 1 segment
+
+
+Misc
+====
+
+* Tetrasticks horizontal/vertical imbalance (abs(vertical - horizontal))::
+
+      I L Y V T X U N J H F Z R W P O
+      4 2 2 0 0 0 0 2 2 2 0 0 0 0 0 0
+
+  Total minimum imbalance = 2, therefore for symmetrical puzzles one
+  of HJLNY must be omitted.
+
+
+Links
+=====
+
+* The `"Nexos" board game`__, designed by the designer of the "Blokus"
+  games, uses the 24 polysticks of order 1-4.
+
+  __ http://boardgamegeek.com/boardgame/84453/nexos

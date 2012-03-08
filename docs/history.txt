@@ -20,6 +20,32 @@ Changes Since Release 1
 **Polyform Puzzler now requires Python 2.5 or later.** Python 2.7.2 or
 later is recommended.
 
+* Added docs:
+
+  - `Polytwigs: Puzzles & Solutions <polytwigs.html>`__
+
+  - `An Introduction to Polytwigs <polytwigs-intro.html>`__
+
+  - `Polytrigs: Puzzles & Solutions <polytrigs.html>`__
+
+  - `An Introduction to Polytrigs <polytrigs-intro.html>`__
+
+  - `An Introduction to Polysticks <polysticks-intro.html>`__
+
+  - `Notes on Polyominoes <polyomino-notes.html>`__
+
+  - `Notes on Polyiamonds <polyiamond-notes.html>`__
+
+  - `Notes on Polyhexes <polyhex-notes.html>`__
+
+  - `Notes on Polycubes <polycube-notes.html>`__
+
+  - `Notes on Polysticks <polystick-notes.html>`__
+
+  - `Notes on Polytrigs <polytrig-notes.html>`__
+
+  - `Notes on Polytwigs <polytwig-notes.html>`__
+
 * Added lots of puzzles, many (but not all; I lost track) listed
   below:
 
