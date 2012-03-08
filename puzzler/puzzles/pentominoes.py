@@ -424,7 +424,7 @@ class PentominoesTrapezoid(Pentominoes):
         self.piece_data['P'][-1]['flips'] = None
 
 
-class PentominoesTrapezoid2(Pentominoes):
+class PentominoesTrapezoid_X1(Pentominoes):
 
     """
     0 solutions
