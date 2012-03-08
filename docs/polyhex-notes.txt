@@ -628,8 +628,22 @@ Potential Puzzles
 * Tr(22,14)
 * B(22,6)
 
+492: hexahexes
+
+* T(31) - 4 units (3 corner tips & 1 central)
+
+882: one-sided hexahexes
+
+* 7(H(7) - 1 central unit); see `Hexhexes (by Peter F. Esser)`_
+
 
 Links
 =====
 
-* !!! `Kadon's Hexnut <http://gamepuzzles.com/esspoly2.htm>`__
+* `Kadon's Hexnut <http://gamepuzzles.com/esspoly2.htm#HN>`__
+
+* `The Poly Pages
+  <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyhexes.html>`__
+
+* `Hexhexes (by Peter F. Esser)
+  <http://www.polyforms.eu/100plus/hexhexes.html>`_

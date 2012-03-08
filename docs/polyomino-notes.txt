@@ -313,12 +313,15 @@ Potential Puzzles
 Links
 =====
 
+* `The Poly Pages
+  <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyominoes.html>`__
+
 * `Gerard Putter's Polyomino Solver page
   <http://gp.home.xs4all.nl/Site/Polyomino_Solver.html>`__
 
 * `More about Polyominoes and Polycubes
   <http://www.gamepuzzles.com/polyintr.htm>`__
 
-* !!! Quintillions
+* `Kadon's Quintillions <http://www.gamepuzzles.com/polycube.htm#Q>`__
 
-* !!! Poly-5
+* `Kadon's Poly-5 <http://www.gamepuzzles.com/polycub2.htm#P5>`__

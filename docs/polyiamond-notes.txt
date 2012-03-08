@@ -357,3 +357,8 @@ Links
 =====
 
 * `MathPuzzle.com <http://www.mathpuzzle.com/iamond.htm>`_
+
+* `The Poly Pages
+  <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyiamonds.htm>`__
+
+* `Kadon's Iamond Ring <http://www.gamepuzzles.com/esspoly.htm#IR>`__

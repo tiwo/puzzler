@@ -231,6 +231,9 @@ Misc
 Links
 =====
 
+* `The Poly Pages
+  <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polycubes.html>`__
+
 * `More about Polyominoes and Polycubes
   <http://www.gamepuzzles.com/polyintr.htm>`__
 
