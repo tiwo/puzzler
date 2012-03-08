@@ -623,8 +623,8 @@ a few good places to start:
 * `MathPuzzle.com <http://www.mathpuzzle.com/polyom.htm>`__
 * `The Geometry Junkyard
   <http://www.ics.uci.edu/~eppstein/junkyard/polyomino.html>`__
-* `Pentamini pentaminos pentominoes
-  <http://www.geocities.com/liviozuc/>`__
+* `mirror of Livio Zucca's pages (Remembrance of Software Past)
+  <http://www.iread.it/lz/>`__
 * `More about polyforms <http://www.gamepuzzles.com/morepoly.htm>`__
   (`Kadon Enterprises`_)
 * `More about Polyominoes and Polycubes
