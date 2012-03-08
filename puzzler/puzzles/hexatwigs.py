@@ -108,8 +108,8 @@ class OneSidedHexatwigsHexagonRing(OneSidedHexatwigs):
     """
     many solutions
 
-    First solution discovered by Peter F. Esser, replicated in
-    ``_find_all_solutions = False`` case below.
+    First solution discovered by Peter F. Esser, replicated in the
+    ``_find_known_solution = True`` case below.
     """
 
     height = 12
