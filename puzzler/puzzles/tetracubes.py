@@ -24,9 +24,9 @@ class Tetracubes2x4x4(Tetracubes):
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
     def customize_piece_data(self):
-        self.piece_data['V2'][-1]['rotations'] = None
-        self.piece_data['V2'][-1]['flips'] = None
-        self.piece_data['V2'][-1]['axes'] = None
+        self.piece_data['P4'][-1]['rotations'] = None
+        self.piece_data['P4'][-1]['flips'] = None
+        self.piece_data['P4'][-1]['axes'] = None
 
 
 class Tetracubes2x2x8(Tetracubes):
@@ -38,6 +38,6 @@ class Tetracubes2x2x8(Tetracubes):
     depth = 2
 
     def customize_piece_data(self):
-        self.piece_data['V2'][-1]['rotations'] = None
-        self.piece_data['V2'][-1]['flips'] = None
-        self.piece_data['V2'][-1]['axes'] = None
+        self.piece_data['P4'][-1]['rotations'] = None
+        self.piece_data['P4'][-1]['flips'] = None
+        self.piece_data['P4'][-1]['axes'] = None

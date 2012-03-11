@@ -148,7 +148,7 @@ class PentacubesCornerCrystal(Pentacubes):
         """
         Pentacubes.customize_piece_data(self)
         self.piece_data['o'] = ((), {})
-        self.piece_data['X'][-1]['axes'] = None
+        self.piece_data['X5'][-1]['axes'] = None
         self.piece_colors['o'] = 'white'
 
     def build_matrix(self):
@@ -414,7 +414,7 @@ class Pentacubes2x13x13DiamondFrame(Pentacubes):
 
     def customize_piece_data(self):
         Pentacubes.customize_piece_data(self)
-        self.piece_data['F'][-1]['rotations'] = None
+        self.piece_data['F5'][-1]['rotations'] = None
 
     def coordinates(self):
         for z in range(self.depth):
