@@ -89,7 +89,7 @@ def process_command_line():
                  % (algorithm_choices[0], '", "'.join(algorithm_choices[1:])))))
     parser.add_option(
         '-n', '--stop-after', type='int', metavar='N',
-        help='Stop processing after generating N solutions.')
+        help='Stop processing after generating N solution(s).')
     parser.add_option(
         '-r', '--read-solution', metavar='FILE',
         help='Read a solution record from FILE for further processing '
@@ -149,8 +149,10 @@ def report_search_state(puzzle_class, output_stream, settings):
     solution = solver.full_solution()
     if state.num_searches:
         print >>output_stream, (
-            '\nSession report: %s solutions, %s searches.\n'
-            % (thousands(state.num_solutions), thousands(state.num_searches)))
+            '\nSession report: %s solution%s, %s searches.\n'
+            % (thousands(state.num_solutions),
+               ('' if state.num_solutions == 1 else 's'),
+               thousands(state.num_searches)))
         output_stream.flush()
     puzzle.record_solution(
         solution, solver, stream=output_stream)
@@ -171,8 +173,10 @@ def solve(puzzle_class, output_stream, settings):
     solver = exact_cover_modules[settings.algorithm].ExactCover(state=state)
     if state.num_searches:
         print >>output_stream, (
-            '\nResuming session (%s solutions, %s searches).\n'
-            % (thousands(state.num_solutions), thousands(state.num_searches)))
+            '\nResuming session (%s solution%s, %s searches).\n'
+            % (thousands(state.num_solutions),
+               ('' if state.num_solutions == 1 else 's'),
+               thousands(state.num_searches)))
         output_stream.flush()
     starting_solutions = state.num_solutions
     matrices = []
@@ -228,14 +232,18 @@ def solve(puzzle_class, output_stream, settings):
         end = datetime.now()
         duration = end - start
         print >>output_stream, (
-            '%s solutions, %s searches, duration %s'
-            % (thousands(solver.num_solutions), thousands(solver.num_searches),
+            '%s solution%s, %s searches, duration %s'
+            % (thousands(solver.num_solutions),
+               ('' if solver.num_solutions == 1 else 's'),
+               thousands(solver.num_searches),
                duration))
         if len(stats) > 1:
             for i, (solutions, searches) in enumerate(stats):
                 print >>output_stream, (
-                    '(%s: %s solutions, %s searches)'
-                    % (puzzles[i].__class__.__name__, thousands(solutions),
+                    '(%s: %s solution%s, %s searches)'
+                    % (puzzles[i].__class__.__name__,
+                       thousands(solutions),
+                       ('' if solutions == 1 else 's'),
                        thousands(searches)))
         output_stream.flush()
     state.cleanup()
