@@ -246,6 +246,22 @@ of 60 line segments on the hexagonal grid.
 
   .. image:: images/pentatwigs-5x3.png
 
+* 4x4 parallelograms:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentatwigs-4x4-1.png
+
+            `1 solution
+            <../solutions/pentatwigs-4x4-1.txt>`__
+            (discovered by Colin F. Brown)
+
+       - .. figure:: images/pentatwigs-4x4-2.png
+
+            `8 solutions
+            <../solutions/pentatwigs-4x4-2.txt>`__
+
 * 6x3 trapezoid: `solutions incomplete
   <../solutions/pentatwigs-trapezoid-6x3.txt>`__
 
@@ -255,6 +271,12 @@ of 60 line segments on the hexagonal grid.
   <../solutions/pentatwigs-staggered-rectangle-5x3.txt>`__
 
   .. image:: images/pentatwigs-staggered-rectangle-5x3.png
+
+* 5x3 wave-staggered rectangle (puzzle design by Colin F. Brown): `202
+  solutions
+  <../solutions/pentatwigs-wave-staggered-rectangle-5x3.txt>`__
+
+  .. image:: images/pentatwigs-wave-staggered-rectangle-5x3.png
 
 * 3x3 chevron: `solutions incomplete
   <../solutions/pentatwigs-chevron-3x3.txt>`__

@@ -149,6 +149,35 @@ class PentatwigsStaggeredRectangle5x3(Pentatwigs):
         self.piece_data['R5'][-1]['flips'] = None
 
 
+class PentatwigsWaveStaggeredRectangle5x3(Pentatwigs):
+
+    """
+    202 solutions
+
+    Puzzle design by Colin F. Brown.
+    """
+
+    height = 6
+    width = 6
+
+    holes = set(((3,4,0), (3,4,2), (4,3,1)))
+
+    extras = set(((3,0,0), (3,0,1), (4,0,2)))
+
+    svg_rotation = 0
+
+    def coordinates(self):
+        coords = set(self.coordinates_vertically_staggered_rectangle(5, 3))
+        coords.difference_update(self.holes)
+        coords.update(
+            set(self.coordinate_offset(*coord, offset=None)
+                for coord in self.extras))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R5'][-1]['rotations'] = (0, 1, 2)
+
+
 class PentatwigsButterfly1(Pentatwigs):
 
     """8 solutions"""
@@ -269,6 +298,38 @@ class PentatwigsMobiusStrip1(Pentatwigs):
         for coord in self.coordinates_bordered(8, 2):
             if coord not in self.holes:
                 yield coord
+
+
+class Pentatwigs4x4_1(Pentatwigs):
+
+    """
+    1 solution
+
+    Discovered by Colin F. Brown.
+    """
+
+    width = 5
+    height = 5
+
+    holes = set(((1,3,2), (2,2,2), (3,1,2)))
+
+    svg_rotation = 60
+
+    def coordinates(self):
+        for coord in self.coordinates_bordered(4, 4):
+            if coord not in self.holes:
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['R5'][-1]['flips'] = None
+        self.piece_data['R5'][-1]['rotations'] = (0, 1, 2)
+
+
+class Pentatwigs4x4_2(Pentatwigs4x4_1):
+
+    """8 solutions"""
+
+    holes = set(((1,1,2), (2,2,2), (3,3,2)))
 
 
 class OneSidedPentatwigsTrapezoid12x2(OneSidedPentatwigs):
