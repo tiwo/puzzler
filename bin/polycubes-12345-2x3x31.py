@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-""" solutions"""
+"""many solutions"""
 
 import puzzler
 from puzzler.puzzles.polycubes12345 import Polycubes12345_2x3x31
