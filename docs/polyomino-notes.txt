@@ -231,6 +231,10 @@ Potential Puzzles
 
 29: polyominoes of order 1 - 4
 
+* S(5) + 4 squares (Kate Jones)
+* S(5) - 4 corners + 4 2x1 arms (like a starburst or astroid, Kate
+  Jones)
+
 36: one-sided polyominoes of order 2 - 4
 
 * S(6)
