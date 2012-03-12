@@ -194,6 +194,32 @@ seven tetrahexes.
             `6,645 solutions
             <../solutions/polyhexes-1234-hexagon-ring-2.txt>`__
 
+* Staggered rectangles:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polyhexes-1234-staggered-rectangle-8x5.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-staggered-rectangle-8x5.txt>`__
+            (discovered by Dan Klarskov)
+
+       - .. figure:: images/polyhexes-1234-staggered-rectangle-10x4.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-staggered-rectangle-10x4.txt>`__
+
+     * - .. figure:: images/polyhexes-1234-staggered-rectangle-5x8.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-staggered-rectangle-5x8.txt>`__
+
+       - .. figure:: images/polyhexes-1234-staggered-rectangle-4x10.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-staggered-rectangle-4x10.txt>`__
+
 
 Polyhexes of Order 1 Through 5
 ==============================

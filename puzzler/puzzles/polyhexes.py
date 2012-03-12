@@ -48,6 +48,13 @@ class Polyhexes(Puzzle2D):
             return coordsys.Hexagonal2D((x, y))
 
     @classmethod
+    def coordinates_staggered_rectangle(cls, width, height, offset=None):
+        for x in range(width):
+            y_offset = int((width - x - 1) / 2)
+            for y in range(height):
+                yield cls.coordinate_offset(x, y + y_offset, offset)
+
+    @classmethod
     def coordinates_hexagon(cls, side_length, offset=None):
         bound = side_length * 2 - 1
         min_xy = side_length - 1

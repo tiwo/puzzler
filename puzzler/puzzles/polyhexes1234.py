@@ -315,3 +315,79 @@ class Polyhexes1234HexagonRing2(Polyhexes1234HexagonRing1):
     holes = (
         set(Polyhex1234.coordinates_hexagon(3, offset=(2,2)))
         .union(((1,4), (7,4))))
+
+
+class Polyhexes1234StaggeredRectangle8x5(Polyhex1234):
+
+    """
+    many solutions
+
+    Discovered by Dan Klarskov.
+    """
+
+    width = 8
+    height = 8
+
+    svg_rotation = -30
+
+    def coordinates(self):
+        return self.coordinates_staggered_rectangle(8, 5)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['rotations'] = (0,1,2)
+
+
+class Polyhexes1234StaggeredRectangle10x4(Polyhex1234):
+
+    """
+    many solutions
+    """
+
+    width = 10
+    height = 8
+
+    svg_rotation = -30
+
+    def coordinates(self):
+        return self.coordinates_staggered_rectangle(10, 4)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['rotations'] = (0,1,2)
+
+
+class Polyhexes1234StaggeredRectangle5x8(Polyhex1234):
+
+    """
+    many solutions
+
+    Discovered by Dan Klarskov.
+    """
+
+    width = 5
+    height = 10
+
+    svg_rotation = -30
+
+    def coordinates(self):
+        return self.coordinates_staggered_rectangle(5, 8)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+
+
+class Polyhexes1234StaggeredRectangle4x10(Polyhex1234):
+
+    """
+    many solutions
+    """
+
+    width = 4
+    height = 11
+
+    svg_rotation = -30
+
+    def coordinates(self):
+        return self.coordinates_staggered_rectangle(4, 10)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['rotations'] = (0,1,2)
