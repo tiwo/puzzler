@@ -257,15 +257,17 @@ class SessionState(object):
     save_interval = 60                 # seconds, for thread
 
     def __init__(self, path=None):
-        self.init_runtime(path)
         self.solution = []
         self.num_solutions = 0
         self.num_searches = 0
         self.last_solutions = 0
         self.last_searches = 0
         self.completed_components = set()
+        self.lock = threading.Lock()
+        self.state_file = None
+        self.init_state_file(path)
 
-    def init_runtime(self, path):
+    def init_state_file(self, path):
         if path:
             if os.path.exists(path):
                 self.state_file = open(path, 'r+b')
@@ -273,7 +275,6 @@ class SessionState(object):
                 self.state_file = open(path, 'wb')
         else:
             self.state_file = None
-        self.lock = threading.Lock()
 
     def init_periodic_save(self, solver):
         if self.state_file:
@@ -326,7 +327,7 @@ class SessionState(object):
                 state = pickle.load(state_file)
                 state_file.close()
                 if not read_only:
-                    state.init_runtime(path)
+                    state.init_state_file(path)
                 return state
             elif read_only:
                 print >>sys.stderr, (
