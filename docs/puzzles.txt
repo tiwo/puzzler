@@ -89,7 +89,7 @@ viewing software.
   * `Notes on Polycubes <polycube-notes.html>`_
   * `Notes on Polyominoes <polyomino-notes.html>`_
 
-* Polyiamonds (`hexiamonds`_ & `heptiamonds`_)
+* Polyiamonds_ (`hexiamonds`_ & `heptiamonds`_)
 
   .. list-table::
      :class: borderless
@@ -105,6 +105,14 @@ viewing software.
          .. image:: images/heptiamonds-snowflake-2-small.png
             :target: heptiamonds.html
             :class: borderless
+
+     * - `Polyiamonds <polyiamonds.html>`_
+
+         .. image:: images/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2-small.png.png
+            :target: hexiamonds.html
+            :class: borderless
+
+       -
 
   Also see `Notes on Polyiamonds <polyiamond-notes.html>`_.
 

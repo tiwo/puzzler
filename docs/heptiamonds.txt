@@ -18,6 +18,7 @@
 
    | `Notes on Polyiamonds <polyiamond-notes.html>`_
    | `Hexiamonds: Puzzles & Solutions <hexiamonds.html>`_
+   | `Polyiamonds: Puzzles & Solutions <polyiamonds.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
    |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,

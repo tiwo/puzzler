@@ -1,0 +1,59 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="110.000" height="69.282"
+     viewBox="0 0 110.000 69.282"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g>
+<polygon fill="brown" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="45.000,51.962 50.000,60.622 60.000,60.622 65.000,51.962 60.000,43.301 55.000,51.962">
+<desc>C4</desc>
+</polygon>
+<polygon fill="steelblue" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="30.000,43.301 35.000,51.962 40.000,43.301 35.000,34.641">
+<desc>D2</desc>
+</polygon>
+<polygon fill="tomato" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="35.000,51.962 55.000,51.962 45.000,34.641">
+<desc>T4</desc>
+</polygon>
+<polygon fill="gray" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="50.000,43.301 55.000,51.962 60.000,43.301">
+<desc>T1</desc>
+</polygon>
+<polygon fill="olive" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="60.000,43.301 65.000,51.962 75.000,51.962 80.000,43.301 75.000,34.641 70.000,43.301 65.000,34.641">
+<desc>C5</desc>
+</polygon>
+<polygon fill="plum" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="35.000,34.641 40.000,43.301 45.000,34.641 35.000,17.321 30.000,25.981">
+<desc>I4</desc>
+</polygon>
+<polygon fill="darkseagreen" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="65.000,34.641 70.000,43.301 80.000,25.981 75.000,17.321 65.000,17.321 70.000,25.981">
+<desc>L5</desc>
+</polygon>
+<polygon fill="indigo" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="40.000,25.981 45.000,34.641 55.000,17.321 50.000,8.660 45.000,17.321 35.000,17.321">
+<desc>P5</desc>
+</polygon>
+<polygon fill="teal" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="45.000,34.641 65.000,34.641 60.000,25.981 50.000,25.981">
+<desc>I3</desc>
+</polygon>
+<polygon fill="orangered" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="60.000,25.981 65.000,34.641 70.000,25.981 60.000,8.660 50.000,8.660">
+<desc>I5</desc>
+</polygon>
+</g>
+</svg>

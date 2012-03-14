@@ -696,7 +696,7 @@ class HexiamondsV_9x9(Hexiamonds):
 class HexiamondsTenyo(Hexiamonds):
 
     """
-     solutions.
+    4968 solutions.
 
     This is the puzzle that is sold by Tenyo Inc., Japan, in their `"PlaPuzzle"
     line`__ (`details`__).
@@ -724,6 +724,23 @@ class HexiamondsTenyo(Hexiamonds):
 
     def customize_piece_data(self):
         self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsTwoTriangles(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 6
+    width = 7
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        for coord in self.coordinates_parallelogram(7, 6):
+            x, y, z = coord
+            total = x + y + z
+            if total <= 5 or total >= 7:
+                yield coord
 
 
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):

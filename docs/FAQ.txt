@@ -335,6 +335,7 @@ ones.  Polyform families are given descriptive names:
 
   * `Hexiamond Puzzles & Solutions <hexiamonds.html>`_
   * `Heptiamond Puzzles & Solutions <hexiamonds.html>`_
+  * `Polyiamond Puzzles & Solutions <polyiamonds.html>`_
   * `Notes on Polyiamonds <polyiamond-notes.html>`_
 
 * Polyforms based on regular hexagons are named "polyhexes_" (there's
@@ -473,6 +474,7 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   * `Hexiamond Puzzles & Solutions`_
   * `Heptiamond Puzzles & Solutions`_
+  * `Polyiamond Puzzles & Solutions`_
   * `Notes on Polyiamonds`_
 
   .. _A000577: http://oeis.org/A000577
@@ -896,6 +898,7 @@ with the X-axis horizontal and the Y-axis sloping to the right::
 
 * `Hexiamond Puzzles & Solutions`_
 * `Heptiamond Puzzles & Solutions`_
+* `Polyiamond Puzzles & Solutions`_
 * `Notes on Polyiamonds`_
 
 

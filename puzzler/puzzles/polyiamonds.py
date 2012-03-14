@@ -31,8 +31,6 @@ class Polyiamonds(PuzzlePseudo3D):
     # triangle orientation (up=0, down=1):
     depth = 2
 
-    check_for_duplicates = True
-
     # override Puzzle3D's 0.5px strokes:
     svg_stroke_width = Puzzle.svg_stroke_width
 
@@ -66,10 +64,29 @@ class Polyiamonds(PuzzlePseudo3D):
 
     @classmethod
     def coordinates_hexagon(cls, side_length, offset=None):
-        bound = 2 * side_length
+        return cls.coordinates_semiregular_hexagon(
+            side_length, side_length, offset)
+
+    @classmethod
+    def coordinates_semiregular_hexagon(cls, base_length, side_length,
+                                        offset=None):
+        bound = base_length + side_length
         min_total = side_length
-        max_total = 3 * side_length - 1
+        max_total = 2 * side_length + base_length - 1
         for coord in cls.coordinates_parallelogram(bound, bound):
+            x, y, z = coord
+            total = x + y + z
+            if min_total <= total <= max_total:
+                yield cls.coordinate_offset(x, y, z, offset)
+
+    @classmethod
+    def coordinates_elongated_hexagon(cls, base_length, side_length,
+                                      offset=None):
+        x_bound = base_length + side_length
+        y_bound = 2 * side_length
+        min_total = side_length
+        max_total = 2 * side_length + base_length - 1
+        for coord in cls.coordinates_parallelogram(x_bound, y_bound):
             x, y, z = coord
             total = x + y + z
             if min_total <= total <= max_total:
@@ -103,6 +120,15 @@ class Polyiamonds(PuzzlePseudo3D):
                   or (x >= base_length and total >= max_total)):
                 continue
             yield cls.coordinate_offset(x, y, z, offset)
+
+    @classmethod
+    def coordinates_trapezoid(cls, base_length, side_length, offset=None):
+        max_total = base_length - 1
+        for coord in cls.coordinates_parallelogram(base_length, side_length):
+            x, y, z = coord
+            total = x + y + z
+            if total <= max_total:
+                yield cls.coordinate_offset(x, y, z, offset)
 
     def make_aspects(self, units, flips=(False, True),
                      rotations=(0, 1, 2, 3, 4, 5)):
@@ -257,7 +283,7 @@ class Polyiamonds(PuzzlePseudo3D):
                 line = (''.join(line) + right).rstrip()
                 output.append(line)
                 left_margin = min(left_margin, len(line) - len(line.lstrip()))
-        return '\n'.join(line[left_margin:] for line in output) + '\n'
+        return '\n'.join(line[left_margin:] for line in output)
 
     def format_svg_shapes(self, s_matrix):
         polygons = []
@@ -513,6 +539,8 @@ class OneSidedPolyiamonds12345(OneSidedLowercaseMixin, Polyiamonds12345):
 
 class Hexiamonds(Polyiamonds):
 
+    check_for_duplicates = True
+
     piece_data = {
         'I6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 2, 0, 1)),
                {}),                     # Rhomboid or Bar
@@ -586,6 +614,8 @@ class OneSidedPolyiamonds123456(OneSidedLowercaseMixin, Polyiamonds123456):
 
 
 class Heptiamonds(Polyiamonds):
+
+    check_for_duplicates = True
 
     piece_data = {
         'I7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 2, 0, 1),
