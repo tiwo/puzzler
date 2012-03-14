@@ -108,7 +108,7 @@ viewing software.
 
      * - `Polyiamonds <polyiamonds.html>`_
 
-         .. image:: images/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2-small.png.png
+         .. image:: images/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2-small.png
             :target: hexiamonds.html
             :class: borderless
 

@@ -111,10 +111,10 @@ These puzzles use the 1 moniamond, 1 diamond, 1 triamond, 3
 tetriamonds, 4 pentiamonds, and 12 hexiamonds, for a total of 110
 equilateral triangles.
 
-* 3x5 semi-regular hexagon: `solutions incomplete
-  <../solutions/polyiamonds-123456-semi-regular-hexagon-3x5.txt>`__
+* 3x5 elongated hexagon: `solutions incomplete
+  <../solutions/polyiamonds-123456-elongated-hexagon-3x5.txt>`__
 
-  .. image:: images/polyiamonds-123456-semi-regular-hexagon-3x5.png
+  .. image:: images/polyiamonds-123456-elongated-hexagon-3x5.png
 
 
 One-Sided Polyiamonds of Order 1 Through 6
