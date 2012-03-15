@@ -403,6 +403,20 @@ class Puzzle2D(Puzzle):
             for x in range(width):
                 yield cls.coordinate_offset(x, y, offset)
 
+    @classmethod
+    def coordinates_diamond(cls, side_length, offset=None):
+        bound = 2 * side_length - 1
+        min_xy = side_length - 1
+        max_xy = 3 * (side_length - 1)
+        max_x_y = side_length - 1
+        min_x_y = - max_x_y
+        for coord in cls.coordinates_rectangle(bound, bound):
+            x, y = coord
+            xy = x + y
+            x_y = x - y
+            if (min_xy <= xy <= max_xy) and (min_x_y <= x_y <= max_x_y):
+                yield cls.coordinate_offset(x, y, offset)
+
     def make_aspects(self, units, flips=(False, True), rotations=(0, 1, 2, 3)):
         aspects = set()
         coord_list = ((0, 0),) + units
@@ -450,8 +464,8 @@ class Puzzle2D(Puzzle):
         y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
         s_matrix = self.build_solution_matrix(solution)
         formatted= '\n'.join(
-            ''.join('%-2s' % name for name in x_reversed_fn(s_matrix[y])
-                    ).rstrip()
+            ''.join('%-*s' % (self.piece_width, name)
+                    for name in x_reversed_fn(s_matrix[y])).rstrip()
             for y in y_reversed_fn(range(self.height)))
         omitted = '\n'.join(
             '(%s omitted)' % row[-1] for row in solution if row[0] == '!')

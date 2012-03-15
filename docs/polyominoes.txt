@@ -1,0 +1,87 @@
+.. -*- coding: utf-8 -*-
+
+==================================
+ Polyominoes: Puzzles & Solutions
+==================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: © 1998-2012 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. sidebar:: Also see:
+
+   | `Notes on Polyominoes <polyomino-notes.html>`_
+   | `Pentomino Puzzles & Solutions <pentominoes.html>`_
+   | `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`_
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
+   |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+       `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+       `interpreting solution files <FAQ.html#how-should-polyomino-solution-files-be-interpreted>`__)
+
+.. contents::
+
+
+Polyominoes of Order 1 Through 4
+================================
+
+These puzzles use the 1 monomino, 1 domino, 2 trominoes, and 5
+tetrominoes, for a total of 29 squares.
+
+* Square-plus (design from Kadon / Kate Jones): `563 solutions
+  <../solutions/polyominoes-1234-square-plus.txt>`__
+
+  .. image:: images/polyominoes-1234-square-plus.png
+
+* Astroid (design from Kadon / Kate Jones): `18 solutions
+  <../solutions/polyominoes-1234-astroid.txt>`__
+
+  .. image:: images/polyominoes-1234-astroid.png
+
+
+One-Sided Polyominoes of Order 2 Through 4
+==========================================
+
+These puzzles use the 1 domino, 2 trominoes, and 7 tetrominoes, for a
+total of 36 squares.
+
+* Square: `solutions incomplete
+  <../solutions/one-sided-polyominoes-234-square.txt>`__
+
+  .. image:: images/one-sided-polyominoes-234-square.png
+
+* Octagon: `solutions incomplete
+  <../solutions/one-sided-polyominoes-234-octagon.txt>`__
+
+  .. image:: images/one-sided-polyominoes-234-octagon.png
+
+
+One-Sided Polyominoes of Order 2 Through 4
+==========================================
+
+These puzzles use the 1 monomino, 1 domino, 2 trominoes, and 7
+tetrominoes, for a total of 37 squares.
+
+* Octagon: `solutions incomplete
+  <../solutions/one-sided-polyominoes-1234-octagon.txt>`__
+
+  .. image:: images/one-sided-polyominoes-1234-octagon.png
+
+
+Polyominoes of Order 1 Through 5
+================================
+
+These puzzles use the 1 monomino, 1 domino, 2 trominoes, 5
+tetrominoes, and 12 pentominoes, for a total of 89 squares.
+
+* Diamond (a.k.a. `Kadon's "Poly-5"
+  <http://www.gamepuzzles.com/polycub2.htm#P5>`_): `solutions
+  incomplete <../solutions/polyominoes-12345-diamond.txt>`__
+
+  .. image:: images/polyominoes-12345-diamond.png

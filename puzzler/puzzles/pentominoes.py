@@ -938,7 +938,60 @@ class PentominoesArch3(PentominoesArch1):
         (12,3), (12,4), (12,5), (12,6), (11,5), (11,6), (10,6), (9,6)))
 
 
+class PentominoesSkewed20x3(Pentominoes):
+
+    """2 solutions"""
+
+    height = 3
+    width = 22
+
+    def coordinates(self):
+        max_xy = self.width - self.height
+        for coord in Pentominoes.coordinates(self):
+            x, y = coord
+            xy = x - y
+            if 0 <= xy <= max_xy:
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = (0,1)
+
+
+class PentominoesSkewed15x4(PentominoesSkewed20x3):
+
+    """138 solutions"""
+
+    height = 4
+    width = 18
+
+
+class PentominoesSkewed12x5(PentominoesSkewed20x3):
+
+    """233 solutions"""
+
+    height = 5
+    width = 16
+
+
+class PentominoesSkewed10x6(PentominoesSkewed20x3):
+
+    """156 solutions"""
+
+    height = 6
+    width = 15
+
+
+class PentominoesSkewed_x1(PentominoesSkewed20x3):
+
+    """0 solutions"""
+
+    height = 10
+    width = 15
+
+
 class OneSidedPentominoes3x30(OneSidedPentominoes):
+
+    """46 solutions"""
 
     height = 3
     width = 30
@@ -952,17 +1005,23 @@ class OneSidedPentominoes3x30(OneSidedPentominoes):
 
 class OneSidedPentominoes5x18(OneSidedPentominoes3x30):
 
+    """686,628 solutions"""
+
     height = 5
     width = 18
 
 
 class OneSidedPentominoes6x15(OneSidedPentominoes3x30):
 
+    """2,567,183 solutions"""
+
     height = 6
     width = 15
 
 
 class OneSidedPentominoes9x10(OneSidedPentominoes3x30):
+
+    """10,440,433 solutions"""
 
     height = 9
     width = 10

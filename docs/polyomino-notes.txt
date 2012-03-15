@@ -16,6 +16,7 @@
 
 .. sidebar:: Also see:
 
+   | `Polyomino Puzzles & Solutions <polyominoes.html>`_
    | `Pentomino Puzzles & Solutions <pentominoes.html>`_
    | `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
@@ -41,10 +42,10 @@ Order  Name        Free    Units   Sum     One-sided  Units   Sum
 4      tetromino   5       20      29      7          28      37
 5      pentomino   12      60      89      18         90      127
 6      hexomino    35      210     299     60         360     487
-7*     heptomino   108                     196
-8*     octomino    369                     704
-9*     enneomino   1285                    2500
-10*    decomino    4655                    9189
+7*     heptomino   108     756*    1055    196        1014*   1501
+8*     octomino    369     2952*   4007    704        4928*   6429
+9*     enneomino   1285    11565*          2500       22500*
+10*    decomino    4655    46550*          9189       91890*
 =====  ==========  ======  ======  ======  =========  ======  ======
 
 "*" indicates that pieces with holes exist.
@@ -231,26 +232,15 @@ Potential Puzzles
 
 29: polyominoes of order 1 - 4
 
-* S(5) + 4 squares (Kate Jones)
-* S(5) - 4 corners + 4 2x1 arms (like a starburst or astroid, Kate
-  Jones)
-
 36: one-sided polyominoes of order 2 - 4
 
-* S(6)
-* D(5) - 5 squares (== S(7) - 13 squares)
-
 37: one-sided polyominoes of order 1 - 4
-
-* D(5) - 4 squares (== S(7) - 12 squares) at corners
 
 60 unit squares: pentominoes
 
 * Potential:
 
   * D(7) - D(4)
-  * 10x6 skew (10 columns of 6 rows each, offset by one each, like a
-    staircase)
   * heart shape?
 
 * No solutions:
@@ -261,6 +251,8 @@ Potential Puzzles
   * RR(9,5) crossed - 5 units in "X" (= PentominoesCross_X4)
   * T(14) - T(9) (= PentominoesTrapezoid_X1)
   * staircase chevron (= PentominoesChevron_X)
+  * 10x6 skew (10 columns of 6 rows each, offset by one each, like a
+    staircase; = PentominoesSkew1)
 
 61: pentominoes + monomino
 
@@ -283,8 +275,6 @@ Potential Puzzles
 
 89: polyominoes of order 1 - 5
 
-* D(7) + 4 squares (== Kadon "Poly-5")
-
 90: one-sided pentominoes
 
 126: one-sided polyominoes of order 2 - 5
@@ -306,6 +296,9 @@ Potential Puzzles
 298: polyominoes of order 2 - 6
 
 299: polyominoes of order 1 - 6
+
+* "polystar" (gamepuzzles.com/polystar.htm, solution by Darian
+  Jenkins, suggested by Dan Klarskov, email 2012-03-14)
 
 360: one-sided hexominoes
 

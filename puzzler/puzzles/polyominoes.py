@@ -22,6 +22,9 @@ class Polyominoes(Puzzle2D):
     asymmetric_pieces = []
     """Pieces without reflexive symmetry, different from their mirror images."""
 
+    # for format_solution:
+    piece_width = 3
+
     def format_solution(self, solution,  normalized=True, **kwargs):
         """Convert solutions to uppercase to avoid duplicates."""
         formatted = Puzzle2D.format_solution(
@@ -142,6 +145,9 @@ class Pentominoes(Polyominoes):
         '0': 'gray',
         '1': 'black'}
 
+    # for format_solution:
+    piece_width = 2
+
 
 class OneSidedPentominoes(OneSidedLowercaseMixin, Pentominoes):
 
@@ -226,6 +232,11 @@ class Polyominoes234(Polyominoes1234):
     symmetric_pieces = Polyominoes1234.symmetric_pieces[1:]
     piece_colors = copy.deepcopy(Polyominoes1234.piece_colors)
     del piece_colors['O1']
+
+
+class OneSidedPolyominoes234(OneSidedLowercaseMixin, Polyominoes234):
+
+    pass
 
 
 class Polyominoes12345(Polyominoes1234):

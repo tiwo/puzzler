@@ -56,6 +56,36 @@ Rectangles
   .. image:: images/pentominoes-6x10.png
 
 
+Skewed Rectangles
+-----------------
+
+- 20x3: `2 solutions
+  <../solutions/pentominoes-skewed-20x3.txt>`__
+
+  .. image:: images/pentominoes-skewed-20x3.png
+
+  These are the same two solutions as the 3x20 rectangle above, just
+  cut at the W pentomino and rearranged.
+
+- 15x4: `138 solutions
+  <../solutions/pentominoes-skewed-15x4.txt>`__
+
+  .. image:: images/pentominoes-skewed-15x4.png
+
+- 12x5: `233 solutions
+  <../solutions/pentominoes-skewed-12x5.txt>`__
+
+  .. image:: images/pentominoes-skewed-12x5.png
+
+  This solution can be easily rearranged into a solution to the 5x12
+  rectangle above, but not all solutions share this property.
+
+- 10x6: `156 solutions
+  <../solutions/pentominoes-skewed-10x6.txt>`__
+
+  .. image:: images/pentominoes-skewed-10x6.png
+
+
 Misc
 ----
 

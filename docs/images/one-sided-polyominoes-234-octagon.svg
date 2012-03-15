@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="90.000" height="90.000"
+     viewBox="0 0 90.000 90.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g>
+<polygon fill="plum" stroke="white" stroke-width="1"
+         points="30.000,80.000 50.000,80.000 50.000,60.000 30.000,60.000">
+<desc>O4</desc>
+</polygon>
+<polygon fill="red" stroke="white" stroke-width="1"
+         points="50.000,80.000 60.000,80.000 60.000,60.000 50.000,60.000">
+<desc>I2</desc>
+</polygon>
+<polygon fill="green" stroke="white" stroke-width="1"
+         points="20.000,70.000 30.000,70.000 30.000,40.000 20.000,40.000">
+<desc>I3</desc>
+</polygon>
+<polygon fill="maroon" stroke="white" stroke-width="1"
+         points="60.000,70.000 70.000,70.000 70.000,50.000 60.000,50.000 60.000,40.000 50.000,40.000 50.000,60.000 60.000,60.000">
+<desc>z4</desc>
+</polygon>
+<polygon fill="lime" stroke="white" stroke-width="1"
+         points="10.000,60.000 20.000,60.000 20.000,40.000 30.000,40.000 30.000,30.000 10.000,30.000">
+<desc>l4</desc>
+</polygon>
+<polygon fill="lime" stroke="white" stroke-width="1"
+         points="30.000,60.000 50.000,60.000 50.000,50.000 40.000,50.000 40.000,30.000 30.000,30.000">
+<desc>L4</desc>
+</polygon>
+<polygon fill="darkorange" stroke="white" stroke-width="1"
+         points="70.000,60.000 80.000,60.000 80.000,40.000 60.000,40.000 60.000,50.000 70.000,50.000">
+<desc>V3</desc>
+</polygon>
+<polygon fill="magenta" stroke="white" stroke-width="1"
+         points="40.000,40.000 80.000,40.000 80.000,30.000 40.000,30.000">
+<desc>I4</desc>
+</polygon>
+<polygon fill="blueviolet" stroke="white" stroke-width="1"
+         points="20.000,30.000 50.000,30.000 50.000,20.000 40.000,20.000 40.000,10.000 30.000,10.000 30.000,20.000 20.000,20.000">
+<desc>T4</desc>
+</polygon>
+<polygon fill="maroon" stroke="white" stroke-width="1"
+         points="50.000,30.000 70.000,30.000 70.000,20.000 60.000,20.000 60.000,10.000 40.000,10.000 40.000,20.000 50.000,20.000">
+<desc>Z4</desc>
+</polygon>
+</g>
+</svg>

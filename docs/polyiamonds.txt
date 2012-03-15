@@ -17,8 +17,8 @@
 .. sidebar:: Also see:
 
    | `Notes on Polyiamonds <polyiamond-notes.html>`_
-   | `Hexiamonds: Puzzles & Solutions <hexiamonds.html>`_
-   | `Heptiamonds: Puzzles & Solutions <heptiamonds.html>`_
+   | `Hexiamond Puzzles & Solutions <hexiamonds.html>`_
+   | `Heptiamond Puzzles & Solutions <heptiamonds.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
    |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
@@ -50,12 +50,13 @@ triangles.
 
   .. image:: images/polyiamonds-12345-trapezoid-1.png
 
-* Irregular hexagon: `solutions incomplete
+* Irregular hexagon (suggested by Dan Klarskov): `solutions incomplete
   <../solutions/polyiamonds-12345-irregular-hexagon-1.txt>`__
 
   .. image:: images/polyiamonds-12345-irregular-hexagon-1.png
 
-* Peanut (2x3 elongated hexagon with side corners omitted): `362,047 solutions
+* Peanut (2x3 elongated hexagon with side corners omitted; suggested
+  by Dan Klarskov): `362,047 solutions
   <../solutions/polyiamonds-12345-peanut.txt>`__
 
   .. image:: images/polyiamonds-12345-peanut.png
@@ -69,6 +70,7 @@ triangles.
 
             `solutions incomplete
             <../solutions/polyiamonds-12345-snowflake-1.txt>`__
+            (suggested by Dan Klarskov)
 
        - .. figure:: images/polyiamonds-12345-snowflake-2.png
 
