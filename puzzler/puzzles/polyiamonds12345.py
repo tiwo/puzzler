@@ -28,6 +28,66 @@ class Polyiamonds12345ElongatedHexagon9x1(Polyiamonds12345):
         self.piece_data['P5'][-1]['rotations'] = (0,1,2)
 
 
+class Polyiamonds12345ElongatedHexagon5x2Ring(Polyiamonds12345):
+
+    """10,254 solutions"""
+
+    height = 4
+    width = 7
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_elongated_hexagon(5, 2))
+            - set(self.coordinates_elongated_hexagon(2, 1, offset=(2,1,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+        self.piece_data['P5'][-1]['rotations'] = (0,1,2)
+
+
+class Polyiamonds12345StackedElongatedHexagons5x1_1(Polyiamonds12345):
+
+    """1,145 solutions"""
+
+    height = 4
+    width = 7
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_elongated_hexagon(5, 1, offset=(1,0,0)))
+                + list(self.coordinates_elongated_hexagon(5, 1,
+                                                          offset=(0,2,0))))
+            - set(self.coordinates_butterfly(2, 1, offset=(2,1,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+        self.piece_data['P5'][-1]['rotations'] = (0,1,2)
+
+
+class Polyiamonds12345StackedElongatedHexagons5x1_2(Polyiamonds12345):
+
+    """1,217 solutions"""
+
+    height = 4
+    width = 7
+
+    holes = set(((2,1,1), (2,2,0), (3,1,1), (3,2,0), (4,1,1), (4,2,0)))
+    
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_elongated_hexagon(5, 1, offset=(1,0,0)))
+                + list(self.coordinates_elongated_hexagon(5, 1,
+                                                          offset=(0,2,0))))
+            - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+        self.piece_data['P5'][-1]['rotations'] = (0,1,2)
+
+
 class Polyiamonds12345Butterfly10x1(Polyiamonds12345):
 
     """2,906 solutions"""

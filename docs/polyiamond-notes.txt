@@ -272,9 +272,6 @@ puzzles.*
 
 38: polyiamonds of order 1 to 5
 
-* He(5,2) - He(2,1) (suggested by Dan Klarskov, email 2012-03-14)
-* 2He(5,1) - 2Tr(2,1) (suggested by Dan Klarskov, email 2012-03-14)
-
 52: one-sided polyiamonds of order 1 to 5
 
 * P(13,2)
