@@ -34,31 +34,29 @@ General
   file?  I.e. use the last solution in the solution file to simulate a
   saved state file.
 
+* Add multiprocessing support.
+
 
 Puzzles
 =======
 
-To implement:
+See the "Potential Puzzles" sections of the Notes for each polyform
+family:
 
-* pentominoes:
+- `Notes on Polyominoes <polyomino-notes.html#potential-puzzles>`__
 
-  - ring/tube versions of 3x20, 4x15, 5x12, 6x10 (joined at short or
-    long edges)
-  - toroidal versions of 3x20, 4x15, 5x12, 6x10
-  - Möbius strip versions of 3x20, 4x15, 5x12, 6x10 (joined at short
-    or long edges)
-  - Klein bottle?
+- `Notes on Polyiamonds <polyiamond-notes.html#potential-puzzles>`__
 
-* polyiamonds:
+- `Notes on Polyhexes <polyhex-notes.html#potential-puzzles#potential-puzzles>`__
 
-  - Octiamonds
+- `Notes on Polycubes <polycube-notes.html#potential-puzzles>`__
 
-* polyhexes
+- `Notes on Polysticks <polystick-notes.html#potential-puzzles>`__
 
-  - Hexahexes (e.g. `Kadon's Hexnut II
-    <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__)?
+- `Notes on Polytrigs <polytrig-notes.html#potential-puzzles>`__
 
-* polysticks of order 1-4: unbordered 8x8 grid
+- `Notes on Polytwigs <polytwig-notes.html#potential-puzzles>`__
+
 
 .. |---| unicode:: U+2014  .. em dash
    :trim:

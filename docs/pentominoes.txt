@@ -272,6 +272,11 @@ Pentominoes Plus the Square Tetromino
          <../solutions/pentominoes-plus-square-tetromino-cross-4.txt>`__
          (designed by Dan Klarskov)
 
+* Diamond: `22 solutions
+  <../solutions/pentominoes-plus-square-tetromino-diamond-1.txt>`__
+
+  .. image:: images/pentominoes-plus-square-tetromino-diamond-1.png
+
 
 Pentominoes Plus the Monomino
 =============================

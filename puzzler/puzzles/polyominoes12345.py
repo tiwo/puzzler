@@ -17,7 +17,7 @@ from puzzler.puzzles.polyominoes import (
 class Polyominoes12345Diamond(Polyominoes12345):
 
     """
-     solutions
+    many solutions
 
     Puzzle design from Kadon's 'Poly-5' (gamepuzzles.com/polycub2.htm#P5).
     """

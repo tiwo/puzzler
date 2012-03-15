@@ -106,7 +106,7 @@ Double-Triangles (n == height; base = 2n-1)::
     #####
 
 ==  ====  ===  ====  ====
-n   S     T    D     A   
+n   S     T    D     A
 ==  ====  ===  ====  ====
  1     1    1     1     4
  2     4    3     5    12
@@ -240,34 +240,36 @@ Potential Puzzles
 
 * Potential:
 
-  * D(7) - D(4)
   * heart shape?
+  * ring/tube versions of 3x20, 4x15, 5x12, 6x10 (joined at short or
+    long edges)
+  * toroidal versions of 3x20, 4x15, 5x12, 6x10
+  * Möbius strip versions of 3x20, 4x15, 5x12, 6x10 (joined at short
+    or long edges)
+  * Klein bottle?
 
 * No solutions:
 
   * 2R(10,4) crossed - S(2) (= PentominoesCross_X1)
   * 2R(12,2) crossed + 2R(8,4) crossed overlayed - S(2) (= PentominoesCross_X2)
   * 2R(10,4) crossed - 4 units (= PentominoesCross_X3)
-  * RR(9,5) crossed - 5 units in "X" (= PentominoesCross_X4)
+  * 2R(9,5) crossed - 5 units in "X" (= PentominoesCross_X4)
   * T(14) - T(9) (= PentominoesTrapezoid_X1)
   * staircase chevron (= PentominoesChevron_X)
   * 10x6 skew (10 columns of 6 rows each, offset by one each, like a
-    staircase; = PentominoesSkew1)
+    staircase; = PentominoesSkewed_x1)
+  * D(7) - D(4) (= PentominoesDiamondV_x)
 
 61: pentominoes + monomino
 
-64: pentominoes + 1 tetromino
+64: pentominoes + 1 tetromino (square)
 
 * No solutions:
 
-  * [0] D(6) + 3 squares
+  * D(6) + R(1,3) (as a "lollipop stick"; =
+    PentominoesPlusSquareTetrominoDiamond_x1)
 
-80: tetrominoes + pentominoes
-
-* R(10,8)
-* R(16,5)
-* R(20,4)
-* A(6) - S(2)
+80: polyominoes of order 4 & 5 -- tetrominoes + pentominoes
 
 88: polyominoes of order 2 - 5
 

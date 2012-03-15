@@ -417,6 +417,20 @@ class Puzzle2D(Puzzle):
             if (min_xy <= xy <= max_xy) and (min_x_y <= x_y <= max_x_y):
                 yield cls.coordinate_offset(x, y, offset)
 
+    @classmethod
+    def coordinates_aztec_diamond(cls, side_length, offset=None):
+        bound = 2 * side_length
+        min_xy = side_length - 1
+        max_xy = 3 * side_length - 1
+        max_x_y = side_length
+        min_x_y = - side_length
+        for coord in cls.coordinates_rectangle(bound, bound):
+            x, y = coord
+            xy = x + y
+            x_y = x - y
+            if (min_xy <= xy <= max_xy) and (min_x_y <= x_y <= max_x_y):
+                yield cls.coordinate_offset(x, y, offset)
+
     def make_aspects(self, units, flips=(False, True), rotations=(0, 1, 2, 3)):
         aspects = set()
         coord_list = ((0, 0),) + units

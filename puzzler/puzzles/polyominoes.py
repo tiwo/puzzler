@@ -265,6 +265,11 @@ class Polyominoes2345(Polyominoes12345):
     del piece_colors['O1']
 
 
+class OneSidedPolyominoes2345(OneSidedLowercaseMixin, Polyominoes2345):
+
+    pass
+
+
 class Polyominoes45(Polyominoes):
 
     piece_data = copy.deepcopy(Tetrominoes.piece_data)
@@ -275,3 +280,8 @@ class Polyominoes45(Polyominoes):
         Tetrominoes.asymmetric_pieces + Pentominoes.asymmetric_pieces)
     piece_colors = copy.deepcopy(Tetrominoes.piece_colors)
     piece_colors.update(Pentominoes.piece_colors)
+
+
+class OneSidedPolyominoes45(OneSidedLowercaseMixin, Polyominoes45):
+
+    pass

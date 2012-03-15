@@ -638,6 +638,8 @@ Potential Puzzles
 492: hexahexes
 
 * T(31) - 4 units (3 corner tips & 1 central)
+* H(14) - H(5) + 6 units (central O06) (`Kadon's Hexnut II
+  <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__)
 
 882: one-sided hexahexes
 

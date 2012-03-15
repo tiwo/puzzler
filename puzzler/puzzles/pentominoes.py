@@ -382,6 +382,20 @@ class PentominoesDiamond(Pentominoes):
         self.piece_data['P'][-1]['flips'] = None
 
 
+class PentominoesDiamondV_x(Pentominoes):
+
+    """0 solutions"""
+
+    height = 9
+    width = 13
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_diamond(7))
+            - set(self.coordinates_diamond(4, offset=(3,6))))
+        return sorted(coords)
+
+
 class PentominoesPlusMonominoDiamond(PentominoesPlusMonomino):
 
     """10 solutions"""
@@ -400,6 +414,41 @@ class PentominoesPlusMonominoDiamond(PentominoesPlusMonomino):
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['rotations'] = None
+
+
+class PentominoesPlusSquareTetrominoDiamond1(PentominoesPlusSquareTetromino):
+
+    """22 solutions"""
+
+    height = 12
+    width = 13
+
+    extras = set(((0,6), (6,0), (12,6)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_diamond(6, offset=(1,1)))
+        for x, y in self.extras:
+            coords.add(self.coordinate_offset(x, y, offset=None))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+
+
+class PentominoesPlusSquareTetrominoDiamond_x1(PentominoesPlusSquareTetromino):
+
+    """0 solutions"""
+
+    height = 14
+    width = 11
+
+    extras = set(((5,0), (5,1), (5,2)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_diamond(6, offset=(0,3)))
+        for x, y in self.extras:
+            coords.add(self.coordinate_offset(x, y, offset=None))
+        return sorted(coords)
 
 
 class PentominoesTrapezoid(Pentominoes):

@@ -74,6 +74,50 @@ tetrominoes, for a total of 37 squares.
   .. image:: images/one-sided-polyominoes-1234-octagon.png
 
 
+Polyominoes of Order 4 & 5 (Tetrominoes & Pentominoes)
+======================================================
+
+These puzzles use the 5 tetrominoes and 12 pentominoes, for a total of
+80 squares.
+
+Rectangles
+----------
+
+* 8x10: `solutions incomplete
+  <../solutions/polyominoes-45-8x10.txt>`__
+
+  .. image:: images/polyominoes-45-8x10.png
+
+* 5x16: `solutions incomplete
+  <../solutions/polyominoes-45-5x16.txt>`__
+
+  .. image:: images/polyominoes-45-5x16.png
+
+* 4x20: `solutions incomplete
+  <../solutions/polyominoes-45-4x20.txt>`__
+
+  .. image:: images/polyominoes-45-4x20.png
+
+* 9x9 Square (with a hole in the middle): `solutions incomplete
+  <../solutions/polyominoes-45-square.txt>`__
+
+  .. image:: images/polyominoes-45-square.png
+
+
+Miscellaneous
+-------------
+
+* Diamond: `7,302 solutions
+  <../solutions/polyominoes-45-diamond.txt>`__
+
+  .. image:: images/polyominoes-45-diamond.png
+
+* Aztec Diamond: `11,162 solutions
+  <../solutions/polyominoes-45-aztec-diamond.txt>`__
+
+  .. image:: images/polyominoes-45-aztec-diamond.png
+
+
 Polyominoes of Order 1 Through 5
 ================================
 

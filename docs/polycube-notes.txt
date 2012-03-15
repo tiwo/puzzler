@@ -202,8 +202,6 @@ Potential Puzzles
 
 186: Polycubes of order 1 - 5
 
-* 2x3x31
-
 190: Polycubes of order 2 - 5 (Pentacubes Plus)
 
 191: Polycubes of order 1 - 5 (Pentacubes Plus)
