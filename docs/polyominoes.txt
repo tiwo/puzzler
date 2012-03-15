@@ -62,7 +62,7 @@ total of 36 squares.
   .. image:: images/one-sided-polyominoes-234-octagon.png
 
 
-One-Sided Polyominoes of Order 2 Through 4
+One-Sided Polyominoes of Order 1 Through 4
 ==========================================
 
 These puzzles use the 1 monomino, 1 domino, 2 trominoes, and 7

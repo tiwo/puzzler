@@ -36,7 +36,7 @@ viewing software.
 .. _Polyform Puzzler FAQ: FAQ.html
 
 
-* Polyominoes (pentominoes_ & variations)
+* Polyominoes_ (pentominoes_ & variations)
 
   .. list-table::
      :class: borderless
@@ -51,6 +51,12 @@ viewing software.
 
          .. image:: images/one-sided-pentominoes-6x15-small.png
             :target: pentominoes.html#one-sided-pentominoes
+            :class: borderless
+
+       - `Polyominoes <polyominoes.html>`_
+
+         .. image:: images/one-sided-polyominoes-1234-octagon-small.png
+            :target: pentominoes.html
             :class: borderless
 
   Also see `Notes on Polyominoes <polyomino-notes.html>`_.
@@ -106,13 +112,11 @@ viewing software.
             :target: heptiamonds.html
             :class: borderless
 
-     * - `Polyiamonds <polyiamonds.html>`_
+       - `Polyiamonds <polyiamonds.html>`_
 
          .. image:: images/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2-small.png
             :target: hexiamonds.html
             :class: borderless
-
-       -
 
   Also see `Notes on Polyiamonds <polyiamond-notes.html>`_.
 
