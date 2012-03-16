@@ -30,6 +30,8 @@
 Tetrahexes
 ==========
 
+The 7 tetrahexes total 28 hexagons.
+
 * 4x7 parallelogram: `9 solutions
   <../solutions/tetrahex-4x7.txt>`__
 
@@ -50,10 +52,10 @@ Tetrahexes
 Trihexes & Tetrahexes: Polyhexes of Order 3 & 4
 ===============================================
 
-These puzzles use the three trihexes and the seven tetrahexes.  This
-combination was featured in `The Puzzling World of Polyhedral
-Dissections, by Stewart T. Coffin`__ and produced as the `Snowflake
-puzzle`_.
+These puzzles use the three trihexes and the seven tetrahexes, for a
+total of 37 hexagons.  This combination was featured in `The Puzzling
+World of Polyhedral Dissections, by Stewart T. Coffin`__ and produced
+as the `Snowflake puzzle`_.
 
 __ http://www.johnrausch.com/PuzzlingWorld/chap02g.htm
 .. _Snowflake puzzle: http://www.johnrausch.com/PuzzleWorld/puz/snowflake.htm
@@ -88,7 +90,7 @@ Polyhexes of Order 1 Through 4
 ==============================
 
 These puzzles use the monohex, the dihex, the three trihexes, and the
-seven tetrahexes.
+seven tetrahexes, for a total of 40 hexagons.
 
 * 4x10 parallelogram: `3,665,348 solutions
   <../solutions/polyhex-4x10.txt>`__
@@ -109,6 +111,11 @@ seven tetrahexes.
   <../solutions/polyhexes-1234-elongated-hexagon-13x2.txt>`__
 
   .. image:: images/polyhexes-1234-elongated-hexagon-13x2.png
+
+* 3x5 elongated hexagon: `solutions incomplete
+  <../solutions/polyhexes-1234-elongated-hexagon-3x5.txt>`__
+
+  .. image:: images/polyhexes-1234-elongated-hexagon-3x5.png
 
 * Irregular hexagons:
 
@@ -160,6 +167,50 @@ seven tetrahexes.
   solutions <../solutions/polyhexes-1234-trilobed-crown.txt>`__
 
   .. image:: images/polyhexes-1234-trilobed-crown.png
+
+* Jagged hexagons:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polyhexes-1234-jagged-hexagon-1.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-jagged-hexagon-1.txt>`__
+            (design by Dan Klarskov)
+
+       - .. figure:: images/polyhexes-1234-jagged-hexagon-2.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-jagged-hexagon-2.txt>`__
+            (discovered by Kate Jones)
+
+       - .. figure:: images/polyhexes-1234-jagged-hexagon-3.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-jagged-hexagon-3.txt>`__
+            (discovered by Kate Jones)
+
+* Knobbed hexagons:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polyhexes-1234-knobbed-hexagon-1.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-knobbed-hexagon-1.txt>`__
+            (design by Dan Klarskov)
+
+       - .. figure:: images/polyhexes-1234-knobbed-hexagon-2.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-knobbed-hexagon-2.txt>`__
+
+       - .. figure:: images/polyhexes-1234-knobbed-hexagon-3.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-knobbed-hexagon-3.txt>`__
 
 * 2x6 elongated hexagon ring (discovered by Dan Klarskov): `659,517
   solutions
@@ -225,7 +276,7 @@ Polyhexes of Order 1 Through 5
 ==============================
 
 These puzzles uses the monohex, the dihex, the three trihexes, the
-seven tetrahexes, and the 22 pentahexes.
+seven tetrahexes, and the 22 pentahexes, for a total of 150 hexagons.
 
 * 5x30 parallelogram: `solutions incomplete
   <../solutions/polyhex-5x30.txt>`__
@@ -252,5 +303,6 @@ seven tetrahexes, and the 22 pentahexes.
   <../solutions/polyhexes-12345-hexagon-ring-1.txt>`__
 
   .. image:: images/polyhexes-12345-hexagon-ring-1.png
+
 
 .. |c| unicode:: U+00A9 .. copyright sign

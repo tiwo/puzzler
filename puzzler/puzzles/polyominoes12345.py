@@ -36,3 +36,45 @@ class Polyominoes12345Diamond(Polyominoes12345):
     def customize_piece_data(self):
         self.piece_data['P'][-1]['rotations'] = None
         self.piece_data['P'][-1]['flips'] = None
+
+
+class Polyominoes12345Cross1(Polyominoes12345):
+
+    """
+    many solutions
+
+    Puzzle design by Kadon.
+    """
+
+    width = 11
+    height = 11
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_rectangle(7, 7, offset=(2,2)))
+            + list(self.coordinates_rectangle(11, 5, offset=(0,3))) 
+            + list(self.coordinates_rectangle(5, 11, offset=(3,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = None
+        self.piece_data['P'][-1]['flips'] = None
+
+
+class Polyominoes12345Cross2(Polyominoes12345):
+
+    """many solutions"""
+
+    width = 13
+    height = 13
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_rectangle(9, 9, offset=(2,2)))
+            + list(self.coordinates_rectangle(13, 1, offset=(0,6))) 
+            + list(self.coordinates_rectangle(1, 13, offset=(6,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = None
+        self.piece_data['P'][-1]['flips'] = None

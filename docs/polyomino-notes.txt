@@ -232,6 +232,10 @@ Potential Puzzles
 
 29: polyominoes of order 1 - 4
 
+* No solutions:
+
+  - R(5,5) + R(9,1) + R(1,9) - 4 squares (= Polyominoes1234Cross_x)
+
 36: one-sided polyominoes of order 2 - 4
 
 37: one-sided polyominoes of order 1 - 4

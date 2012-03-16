@@ -73,6 +73,25 @@ class Polyhexes1234ElongatedHexagon13x2(Polyhex1234):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
 
 
+class Polyhexes1234ElongatedHexagon3x5(Polyhex1234):
+
+    """ solutions"""
+
+    height = 9
+    width = 7
+
+    holes = set(((2,5), (3,3), (4,4)))
+
+    svg_rotation = 90
+
+    def coordinates(self):
+        coords = set(self.coordinates_elongated_hexagon(3, 5)) - self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+
+
 class Polyhexes1234IrregularHexagon1(Polyhex1234):
 
     """
@@ -178,6 +197,95 @@ class Polyhexes1234TrilobedCrown(Polyhex1234):
     def customize_piece_data(self):
         self.piece_data['P4'][-1]['flips'] = None
         self.piece_data['P4'][-1]['rotations'] = (0, 1)
+
+
+class Polyhexes1234JaggedHexagon1(Polyhex1234):
+
+    """
+    many solutions
+
+    Design by Dan Klarskov.
+    """
+
+    height = 9
+    width = 9
+
+    holes = set(((3,5), (4,3), (5,4)))
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_hexagram(3))
+                + list(self.coordinates_hexagon(4, offset=(1,1))))
+            - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+        self.piece_data['P4'][-1]['rotations'] = (0, 1)
+
+
+class Polyhexes1234JaggedHexagon2(Polyhexes1234JaggedHexagon1):
+
+    """
+    many solutions
+
+    Discovered by Kate Jones.
+    """
+
+    holes = set(((3,6), (3,3), (6,3)))
+
+
+class Polyhexes1234JaggedHexagon3(Polyhexes1234JaggedHexagon1):
+
+    """
+    many solutions
+
+    Discovered by Kate Jones.
+    """
+
+    holes = set(((2,4), (4,6), (6,2)))
+
+
+class Polyhexes1234KnobbedHexagon1(Polyhex1234):
+
+    """
+    many solutions
+
+    Design by Dan Klarskov.
+    """
+
+    height = 9
+    width = 9
+
+    holes = set(((3,5), (4,3), (5,4)))
+
+    extras = ((0,4), (0,8), (4,0), (4,8), (8,0), (8,4))
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_hexagon(4, offset=(1,1)))
+            - self.holes)
+        for x, y in self.extras:
+            coords.add(self.coordinate_offset(x, y, None))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+        self.piece_data['P4'][-1]['rotations'] = (0, 1)
+
+
+class Polyhexes1234KnobbedHexagon2(Polyhexes1234KnobbedHexagon1):
+
+    """many solutions"""
+
+    holes = set(((3,6), (3,3), (6,3)))
+
+
+class Polyhexes1234KnobbedHexagon3(Polyhexes1234KnobbedHexagon1):
+
+    """many solutions"""
+
+    holes = set(((2,4), (4,6), (6,2)))
 
 
 class Polyhexes1234IrregularHexagon3(Polyhex1234):
@@ -339,9 +447,7 @@ class Polyhexes1234StaggeredRectangle8x5(Polyhex1234):
 
 class Polyhexes1234StaggeredRectangle10x4(Polyhex1234):
 
-    """
-    many solutions
-    """
+    """many solutions"""
 
     width = 10
     height = 8
@@ -377,9 +483,7 @@ class Polyhexes1234StaggeredRectangle5x8(Polyhex1234):
 
 class Polyhexes1234StaggeredRectangle4x10(Polyhex1234):
 
-    """
-    many solutions
-    """
+    """many solutions"""
 
     width = 4
     height = 11

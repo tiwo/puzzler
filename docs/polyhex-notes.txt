@@ -551,17 +551,9 @@ Potential Puzzles
 * T(10) - 2T(3) - T(2) "tree" (discovered by Dan Klarskov, email 2012-02-20)
 * He(3,5) - 3 units (2 corners & center, discovered by Dan Klarskov,
   email 2012-02-20)
-* He(3,5) - 3 units (centered, discovered by Dan Klarskov, email
-  2012-02-27)
 * Ri(9,5) - 1 unit (discovered by Dan Klarskov, email 2012-02-20)
 * Ri(5,5) + 2Tr(4,3) - 1 unit "eye" (discovered by Dan Klarskov, email
   2012-02-20)
-* H(4) + 6 units (centers of sides) - 3 units (in various
-  configurations -- near center [discovered by Dan Klarskov], outside
-  of those, adjacent to both sets [Kate Jones]; email from Dan,
-  2012-02-27)
-* H(4) + 6 units (corners) - 3 units (near center [discovered by Dan],
-  others possible, as above?; email from Dan Klarskov 2012-03-05)
 * "Snowflake ring" (email from Dan Klarskov, 2012-02-27)
 
 40: one-sided tetrahexes

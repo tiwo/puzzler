@@ -129,3 +129,19 @@ tetrominoes, and 12 pentominoes, for a total of 89 squares.
   incomplete <../solutions/polyominoes-12345-diamond.txt>`__
 
   .. image:: images/polyominoes-12345-diamond.png
+
+* Crosses:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polyominoes-12345-cross-1.png
+
+         `solutions incomplete
+         <../solutions/polyominoes-12345-cross-1.txt>`__
+         (design by Kadon)
+
+       - .. figure:: images/polyominoes-12345-cross-2.png
+
+         `solutions incomplete
+         <../solutions/polyominoes-12345-cross-2.txt>`__
