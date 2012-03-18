@@ -85,7 +85,7 @@ segments on the hexagonal grid.
             `1 solution
             <../solutions/one-sided-tetratwigs-triangle-4.txt>`__
 
-* Arches with 3 line segments omitted in various positions:
+* Arches with 2 line segments omitted in various positions:
 
   .. list-table::
      :class: borderless
@@ -321,6 +321,26 @@ of 60 line segments on the hexagonal grid.
   piece cannot begin at the right edge and continue (through the join)
   to the left edge.  There may be many more solutions with such a
   wrap-around configuration.
+
+* Elongated rounded rectangle (designed by Colin F. Brown): `21
+  solutions  <../solutions/pentatwigs-elongated-rounded-rectangle-1.txt>`__
+
+  .. image:: images/pentatwigs-elongated-rounded-rectangle-1.png
+
+* Rosette clusters (designed by Colin F. Brown):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentatwigs-rosette-cluster-1.png
+
+            `9 solutions
+            <../solutions/pentatwigs-rosette-cluster-1.txt>`__
+
+       - .. figure:: images/pentatwigs-rosette-cluster-2.png
+
+            `11 solutions
+            <../solutions/pentatwigs-rosette-cluster-2.txt>`__
 
 
 One-Sided Pentatwigs

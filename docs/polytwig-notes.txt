@@ -469,6 +469,7 @@ Potential Puzzles
 * No solutions:
 
   * H(3) - H*(2)
+  * 2H(2) (= PentatwigsTwoHexagons)
 
 88: polytwigs order 1-5
 

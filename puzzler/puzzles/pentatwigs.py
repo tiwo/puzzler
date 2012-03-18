@@ -332,6 +332,89 @@ class Pentatwigs4x4_2(Pentatwigs4x4_1):
     holes = set(((1,1,2), (2,2,2), (3,3,2)))
 
 
+class PentatwigsElongatedRoundedRectangle1(Pentatwigs):
+
+    """
+    21 solutions
+
+    Design by Colin F. Brown.
+    """
+
+    width = 11
+    height = 6
+
+    extras = ((0,5,0), (10,0,0))
+
+    svg_rotation = 0
+
+    def coordinates(self):
+        coords = set(self.coordinates_rounded_rectangle(9, 2, offset=(1,0,0)))
+        for x, y, z in self.extras:
+            coords.add(self.coordinate_offset(x, y, z, None))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R5'][-1]['flips'] = None
+        self.piece_data['R5'][-1]['rotations'] = (0, 1, 2)
+
+
+class PentatwigsRosetteCluster1(Pentatwigs):
+
+    """
+    9 solutions
+
+    Design by Colin F. Brown.
+    """
+
+    width = 8
+    height = 6
+
+    extras = ((3,2,0), (3,3,0))
+    holes = set(((2,3,0), (4,2,0)))
+
+    svg_rotation = 0
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_hexagon(2, offset=(0,2,0)))
+                + list(self.coordinates_hexagon(2, offset=(4,0,0))))
+            - self.holes)
+        for x, y, z in self.extras:
+            coords.add(self.coordinate_offset(x, y, z, None))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R5'][-1]['flips'] = None
+        self.piece_data['R5'][-1]['rotations'] = (0, 1, 2)
+
+
+class PentatwigsRosetteCluster2(PentatwigsRosetteCluster1):
+
+    """
+    11 solutions
+
+    Design by Colin F. Brown.
+    """
+
+    holes = set(((0,4,0), (6,1,0)))
+
+
+class PentatwigsTwoHexagons(Pentatwigs):
+
+    """0 solutions"""
+
+    width = 8
+    height = 6
+
+    svg_rotation = 0
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_hexagon(2, offset=(0,2,0)))
+                + list(self.coordinates_hexagon(2, offset=(4,0,0)))))
+        return sorted(coords)
+
+
 class OneSidedPentatwigsTrapezoid12x2(OneSidedPentatwigs):
 
     """many solutions"""

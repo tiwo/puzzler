@@ -75,7 +75,11 @@ class Polyhexes1234ElongatedHexagon13x2(Polyhex1234):
 
 class Polyhexes1234ElongatedHexagon3x5(Polyhex1234):
 
-    """ solutions"""
+    """
+    many solutions
+
+    Discovered by Dan Klarskov.
+    """
 
     height = 9
     width = 7

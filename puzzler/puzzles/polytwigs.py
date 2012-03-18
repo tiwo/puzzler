@@ -256,6 +256,23 @@ class Polytwigs(Polytrigs):
                 continue
             yield cls.coordinate_offset(x, y, z, offset)
 
+    @classmethod
+    def coordinates_rounded_rectangle(cls, m, n, offset=None):
+        last_x = m
+        last_y = n - 1
+        min_x2y = m - 1 - (m % 2)
+        max_x2y = min_x2y + 2 * n
+        for coord in cls.coordinates_bordered(m, n + int((m - 1) / 2)):
+            x, y, z = coord
+            x2y = x + 2 * y
+            x2y_a = x2y - (x + 1) % 2
+            x2y_b = x2y + (x + 1) % 2
+            if (min_x2y <= x2y <= max_x2y and
+                not ((x2y_a == min_x2y and z == 2 and (x == 0 or x % 2))
+                     or (x2y_b == max_x2y and z == 1 and (x == 0 or x % 2))
+                     or (x == last_x and y == last_y and z == 2 and x % 2))):
+                yield cls.coordinate_offset(x, y, z, offset)
+
     def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3, 4, 5)):
         aspects = set()
         for flip in flips or (0,):

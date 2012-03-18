@@ -112,7 +112,8 @@ seven tetrahexes, for a total of 40 hexagons.
 
   .. image:: images/polyhexes-1234-elongated-hexagon-13x2.png
 
-* 3x5 elongated hexagon: `solutions incomplete
+* 3x5 elongated hexagon (discovered by Dan Klarskov): `solutions
+  incomplete
   <../solutions/polyhexes-1234-elongated-hexagon-3x5.txt>`__
 
   .. image:: images/polyhexes-1234-elongated-hexagon-3x5.png
