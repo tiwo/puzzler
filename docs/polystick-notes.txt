@@ -32,19 +32,34 @@ Polyform Counts
 
 Units are unit line segments on the square grid.
 
+The polysticks (fully-connected):
+
 =====  ==========  ======  ======  ======  =========  ======  ======
 Order  Name        Free    Units   Sum     One-sided  Units   Sum
 =====  ==========  ======  ======  ======  =========  ======  ======
-1      monostick     1       1       1        1         1       1
-2      distick       2       4       5        2         4       5
-3      tristick      5      15      20        7        21      26
-4      tetrastick   16      64      84       25       100     126
-5      pentastick   55     275     359       99       495     621
-6*     hexastick   222                      416
-7*     heptastick  950                     1854
+1      monostick       1       1       1        1         1       1
+2      distick         2       4       5        2         4       5
+3      tristick        5      15      20        7        21      26
+4      tetrastick     16      64      84       25       100     126
+5      pentastick     55     275     359       99       495     621
+6*     hexastick     222                      416
+7*     heptastick    950                     1854
 =====  ==========  ======  ======  ======  =========  ======  ======
 
 "*" above means that pieces with enclosed holes exist.
+
+The quasi-polysticks (includes disconnected forms that have gaps of
+maximum length 1):
+
+=====  ================  ======  ======  ======  =========  ======  ======
+Order  Name              Free    Units   Sum     One-sided  Units   Sum
+=====  ================  ======  ======  ======  =========  ======  ======
+1      quasi-monostick       1       1       1       1          1       1
+2      quasi-distick         6      12      13       8         16      17
+3      quasi-tristick       46     138     151      80        240     257
+4      quasi-tetrastick    603                    1151
+5      quasi-pentastick                               
+=====  ================  ======  ======  ======  =========  ======  ======
 
 
 Shapes

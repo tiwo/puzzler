@@ -32,6 +32,8 @@ Polyform Counts
 
 Units are unit line segments on the triangular grid.
 
+The polytrigs (fully-connected):
+
 =====  ==========  ======  ======  ======  =========  ======  ======
 Order  Name        Free    Units   Sum     One-sided  Units   Sum
 =====  ==========  ======  ======  ======  =========  ======  ======
@@ -43,6 +45,19 @@ Order  Name        Free    Units   Sum     One-sided  Units   Sum
 =====  ==========  ======  ======  ======  =========  ======  ======
 
 "*" above means that pieces with enclosed holes exist.
+
+The quasi-polytrigs (includes disconnected forms that have gaps of
+maximum length 1):
+
+=====  ================  ======  ======  ======  =========  ======  ======
+Order  Name              Free    Units   Sum     One-sided  Units   Sum
+=====  ================  ======  ======  ======  =========  ======  ======
+1      quasi-monotrig        1       1       1       1          1       1
+2      quasi-ditrig          9      18      19      13         26      27
+3      quasi-tritrig       140     420     439     259        777     804
+4      quasi-tetratrig    3377                    6639
+5      quasi-pentatrig
+=====  ================  ======  ======  ======  =========  ======  ======
 
 
 Shapes
@@ -456,6 +471,27 @@ Potential Puzzles
 
 7: polytrigs O(1) + O(2)
 
+18: quasi-ditrigs
+
+* T(3) (email from Colin Brown, 2012-03-16)
+* T*(4)
+* B(2,2) (diabolo, email from Colin Brown, 2012-03-16)
+* 2T(2) (adjacent upright, not B(2,2))
+* H(1) + 6x1 rays (star, email from Colin Brown, 2012-03-16)
+* H(1) + 3x2 rays (satellite, email from Colin Brown, 2012-03-16)
+* Hg(1) - 6 units
+* He(2,1) - 1 unit
+* 2P(2,1) (= Tr(5,1) - 1 unit)
+* B(3,1) - 2 units
+
+19: quasi-polytrigs O(1) + O(2)
+
+* He(2,1)
+* Tr(5,1)
+* Tr(4,2) - 4 units
+* C(3,1) - 4 units
+* B(3,1) - 1 unit
+
 24: snake tritrigs
 
 27: unwelded tritrigs
@@ -543,6 +579,10 @@ O4 filled by I1)
 * P*(15,9) - Hg*(1)
 * P*(15,9) - Tr*(7,1)
 * Hs*(8,6)
+
+420: quasi-tritrigs
+
+439: quasi-polytrigs O(1) + O(2) + O(3)
 
 480: one-sided polytrigs O(1) + O(2) + O(3) + O(4) (hole in O4
 filled by I1)

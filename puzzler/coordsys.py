@@ -448,6 +448,66 @@ class SquareGrid3DView(SquareGrid3DCoordSetMixin, CartesianPseudo3DView):
     pass
 
 
+class QuasiSquareGrid3D(SquareGrid3D):
+
+    """
+    Same as SquareGrid3D, except that calls to .neighbors() also return
+    disconnected quasi-neighbors.
+    """
+
+    def neighbors(self):
+        """Return a list of adjacent and quasi-adjacent cells."""
+        adjacent = SquareGrid3D.neighbors(self)
+        x, y, z = self.coords
+        # counterclockwise from right
+        if z == 0:
+            return adjacent + (
+                self.__class__((x    , y + 1, 0)),
+                self.__class__((x    , y + 1, 1)),
+                self.__class__((x - 1, y + 1, 0)),
+                self.__class__((x - 1, y    , 1)),
+                self.__class__((x - 2, y    , 0)),
+                self.__class__((x - 1, y - 1, 1)),
+                self.__class__((x - 1, y - 1, 0)),
+                self.__class__((x    , y - 2, 1)),
+                self.__class__((x    , y - 1, 0)),
+                self.__class__((x + 1, y - 2, 1)),
+                self.__class__((x + 1, y - 1, 0)),
+                self.__class__((x + 2, y - 1, 1)),
+                self.__class__((x + 2, y    , 0)),
+                self.__class__((x + 2, y    , 1)),
+                self.__class__((x + 1, y + 1, 0)),
+                self.__class__((x + 1, y + 1, 1)),)
+        else:
+            return adjacent + (
+                self.__class__((x - 1, y    , 1)),
+                self.__class__((x - 2, y    , 0)),
+                self.__class__((x - 1, y - 1, 1)),
+                self.__class__((x - 1, y - 1, 0)),
+                self.__class__((x    , y - 2, 1)),
+                self.__class__((x    , y - 1, 0)),
+                self.__class__((x + 1, y - 1, 1)),
+                self.__class__((x + 1, y    , 0)),
+                self.__class__((x + 1, y    , 1)),
+                self.__class__((x + 1, y + 1, 0)),
+                self.__class__((x + 1, y + 1, 1)),
+                self.__class__((x    , y + 2, 0)),
+                self.__class__((x    , y + 2, 1)),
+                self.__class__((x - 1, y + 2, 0)),
+                self.__class__((x - 1, y + 1, 1)),
+                self.__class__((x - 2, y + 1, 0)),)
+
+
+class QuasiSquareGrid3DCoordSet(SquareGrid3DCoordSet):
+
+    coord_class = QuasiSquareGrid3D
+
+
+class QuasiSquareGrid3DView(SquareGrid3DView):
+
+    coord_class = QuasiSquareGrid3D
+
+
 class Hexagonal2D(Cartesian2D):
 
     """
@@ -899,7 +959,8 @@ class TriangularGrid3DCoordSet(TriangularGrid3DCoordSetMixin,
     pass
 
 
-class TriangularGrid3DView(TriangularGrid3DCoordSetMixin, CartesianPseudo3DView):
+class TriangularGrid3DView(TriangularGrid3DCoordSetMixin,
+                           CartesianPseudo3DView):
 
     """
     Pseudo-3-dimensional (+x,+y)-quadrant triangular grid coordinate set with
@@ -917,6 +978,128 @@ class TriangularGrid3DView(TriangularGrid3DCoordSetMixin, CartesianPseudo3DView)
         maxvals = self.coord_class((max(xs), max(ys), max(zs)))
         bounds = maxvals - offset
         return offset, bounds
+
+
+class QuasiTriangularGrid3D(TriangularGrid3D):
+
+    """
+    Same as TriangularGrid3D, except that calls to .neighbors() also return
+    disconnected quasi-neighbors.
+    """
+
+    def neighbors(self):
+        """
+        Return a list of adjacent cells, counterclockwise from segment, first
+        around the origin point then around the endpoint.
+        """
+        adjacent = TriangularGrid3D.neighbors(self)
+        x, y, z = self.coords
+        if z == 0:
+            return adjacent + (
+                self.__class__((x    , y + 1, 0)),
+                self.__class__((x    , y + 1, 1)),
+                self.__class__((x    , y + 1, 2)),
+                self.__class__((x - 1, y + 1, 0)),
+                self.__class__((x - 1, y + 1, 1)),
+                self.__class__((x - 1, y + 1, 2)),
+                self.__class__((x - 2, y + 1, 0)),
+                self.__class__((x - 1, y    , 1)),
+                self.__class__((x - 1, y    , 2)),
+                self.__class__((x - 2, y    , 0)),
+                self.__class__((x - 1, y - 1, 1)),
+                self.__class__((x    , y - 1, 2)),
+                self.__class__((x - 1, y - 1, 0)),
+                self.__class__((x    , y - 2, 1)),
+                self.__class__((x + 1, y - 2, 2)),
+                self.__class__((x    , y - 1, 0)),
+                self.__class__((x + 1, y - 2, 1)),
+                self.__class__((x + 2, y - 2, 2)),
+                self.__class__((x + 1, y - 1, 0)),
+                self.__class__((x + 2, y - 2, 1)),
+                self.__class__((x + 3, y - 2, 2)),
+                self.__class__((x + 2, y - 1, 0)),
+                self.__class__((x + 2, y - 1, 1)),
+                self.__class__((x + 3, y - 1, 2)),
+                self.__class__((x + 2, y    , 0)),
+                self.__class__((x + 2, y    , 1)),
+                self.__class__((x + 2, y    , 2)),
+                self.__class__((x + 1, y + 1, 0)),
+                self.__class__((x + 1, y + 1, 1)),
+                self.__class__((x + 1, y + 1, 2)),)
+        elif z == 1:
+            return adjacent + (
+                self.__class__((x - 1, y + 1, 1)),
+                self.__class__((x - 1, y + 1, 2)),
+                self.__class__((x - 2, y + 1, 0)),
+                self.__class__((x - 1, y    , 1)),
+                self.__class__((x - 1, y    , 2)),
+                self.__class__((x - 2, y    , 0)),
+                self.__class__((x - 1, y - 1, 1)),
+                self.__class__((x    , y - 1, 2)),
+                self.__class__((x - 1, y - 1, 0)),
+                self.__class__((x    , y - 2, 1)),
+                self.__class__((x + 1, y - 2, 2)),
+                self.__class__((x    , y - 1, 0)),
+                self.__class__((x + 1, y - 2, 1)),
+                self.__class__((x + 2, y - 2, 2)),
+                self.__class__((x + 1, y - 1, 0)),
+                self.__class__((x + 1, y - 1, 1)),
+                self.__class__((x + 2, y - 1, 2)),
+                self.__class__((x + 1, y    , 0)),
+                self.__class__((x + 1, y    , 1)),
+                self.__class__((x + 2, y    , 2)),
+                self.__class__((x + 1, y + 1, 0)),
+                self.__class__((x + 1, y + 1, 1)),
+                self.__class__((x + 1, y + 1, 2)),
+                self.__class__((x    , y + 2, 0)),
+                self.__class__((x    , y + 2, 1)),
+                self.__class__((x    , y + 2, 2)),
+                self.__class__((x - 1, y + 2, 0)),
+                self.__class__((x - 1, y + 2, 1)),
+                self.__class__((x - 1, y + 2, 2)),
+                self.__class__((x - 2, y + 2, 0)),)
+        elif z == 2:
+            return adjacent + (
+                self.__class__((x - 1, y    , 2)),
+                self.__class__((x - 2, y    , 0)),
+                self.__class__((x - 1, y - 1, 1)),
+                self.__class__((x    , y - 1, 2)),
+                self.__class__((x - 1, y - 1, 0)),
+                self.__class__((x    , y - 2, 1)),
+                self.__class__((x + 1, y - 2, 2)),
+                self.__class__((x    , y - 1, 0)),
+                self.__class__((x + 1, y - 2, 1)),
+                self.__class__((x + 2, y - 2, 2)),
+                self.__class__((x + 1, y - 1, 0)),
+                self.__class__((x + 1, y - 1, 1)),
+                self.__class__((x + 2, y - 1, 2)),
+                self.__class__((x + 1, y    , 0)),
+                self.__class__((x + 1, y    , 1)),
+                self.__class__((x + 1, y    , 2)),
+                self.__class__((x    , y + 1, 0)),
+                self.__class__((x    , y + 1, 1)),
+                self.__class__((x    , y + 1, 2)),
+                self.__class__((x - 1, y + 2, 0)),
+                self.__class__((x - 1, y + 2, 1)),
+                self.__class__((x - 1, y + 2, 2)),
+                self.__class__((x - 2, y + 2, 0)),
+                self.__class__((x - 2, y + 2, 1)),
+                self.__class__((x - 2, y + 2, 2)),
+                self.__class__((x - 3, y + 2, 0)),
+                self.__class__((x - 2, y + 1, 1)),
+                self.__class__((x - 2, y + 1, 2)),
+                self.__class__((x - 3, y + 1, 0)),
+                self.__class__((x - 2, y    , 1)),)
+
+
+class QuasiTriangularGrid3DCoordSet(TriangularGrid3DCoordSet):
+
+    coord_class = QuasiTriangularGrid3D
+
+
+class QuasiTriangularGrid3DView(TriangularGrid3DView):
+
+    coord_class = QuasiTriangularGrid3D
 
 
 class HexagonalGrid3D(Cartesian3D):
@@ -1044,6 +1227,62 @@ class HexagonalGrid3DView(CartesianPseudo3DView):
         maxvals = self.coord_class((max(xs), max(ys), max(zs)))
         bounds = maxvals - offset
         return offset, bounds
+
+
+class QuasiHexagonalGrid3D(HexagonalGrid3D):
+
+    """
+    Same as HexagonalGrid3D, except that calls to .neighbors() also return
+    disconnected quasi-neighbors.
+    """
+
+    def neighbors(self):
+        """
+        Return a list of adjacent and quasi-adjacent cells, counterclockwise
+        from segment, first around the origin point then around the endpoint.
+        """
+        adjacent = HexagonalGrid3D.neighbors(self)
+        x, y, z = self.coords
+        if z == 0:
+            return adjacent + (
+                self.__class__((x    , y + 1, 2)),
+                self.__class__((x - 1, y + 1, 0)),
+                self.__class__((x - 1, y    , 0)),
+                self.__class__((x    , y - 1, 1)),
+                self.__class__((x + 1, y - 1, 2)),
+                self.__class__((x + 1, y - 1, 0)),
+                self.__class__((x + 1, y    , 0)),
+                self.__class__((x + 1, y    , 1)),)
+        elif z == 1:
+            return adjacent + (
+                self.__class__((x - 1, y    , 0)),
+                self.__class__((x    , y - 1, 1)),
+                self.__class__((x + 1, y - 1, 1)),
+                self.__class__((x + 1, y    , 2)),
+                self.__class__((x    , y + 1, 0)),
+                self.__class__((x    , y + 1, 1)),
+                self.__class__((x - 1, y + 1, 1)),
+                self.__class__((x - 1, y + 1, 2)),)
+        elif z == 2:
+            return adjacent + (
+                self.__class__((x + 1, y - 1, 1)),
+                self.__class__((x + 1, y    , 2)),
+                self.__class__((x    , y + 1, 2)),
+                self.__class__((x - 1, y + 1, 0)),
+                self.__class__((x - 1, y    , 1)),
+                self.__class__((x - 1, y    , 2)),
+                self.__class__((x    , y - 1, 2)),
+                self.__class__((x    , y - 1, 0)),)
+
+
+class QuasiHexagonalGrid3DCoordSet(HexagonalGrid3DCoordSet):
+
+    coord_class = QuasiHexagonalGrid3D
+
+
+class QuasiHexagonalGrid3DView(HexagonalGrid3DView):
+
+    coord_class = QuasiHexagonalGrid3D
 
 
 def sign(num):

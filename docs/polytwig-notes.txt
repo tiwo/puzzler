@@ -32,6 +32,8 @@ Polyform Counts
 
 Units are unit line segments on the hexagonal grid.
 
+The polytwigs (fully-connected):
+
 =====  ==========  ======  ======  ======  =========  ======  ======
 Order  Name        Free    Units   Sum     One-sided  Units   Sum
 =====  ==========  ======  ======  ======  =========  ======  ======
@@ -43,6 +45,19 @@ Order  Name        Free    Units   Sum     One-sided  Units   Sum
 6      hexatwig    27      162     250      49         294     428
 7      heptatwig   78      546     796     143        1001    1429
 =====  ==========  ======  ======  ======  =========  ======  ======
+
+The quasi-polytwigs (includes disconnected forms that have gaps of
+maximum length 1):
+
+=====  ================  ======  ======  ======  =========  ======  ======
+Order  Name              Free    Units   Sum     One-sided  Units   Sum
+=====  ================  ======  ======  ======  =========  ======  ======
+1      quasi-monotwig        1       1       1       1          1       1
+2      quasi-ditwig          3       6       7       4          8       9
+3      quasi-tritwig        17      51      58      28         84      93
+4      quasi-tetratwig     114     456     514     214        856     949
+5      quasi-pentatwig     966                    1885
+=====  ================  ======  ======  ======  =========  ======  ======
 
 
 Shapes
@@ -464,6 +479,19 @@ Potential Puzzles
 
 * T(4) - 3 segs
 
+51: quasi-tritwigs
+
+* P(10,1) (email from Colin Brown, 2012-02-15)
+* P(6,2)
+* 3 odd shapes, (email from Colin Brown, 2012-02-15)
+* H(2) + 6H(1) attached - 3 units
+* T(5) - T*(3)
+* Hg(2) - T*(2)
+
+58: quasi-polytwigs order 1-3
+
+* T(5) - 2 units
+
 60: pentatwigs (polytwigs order 5)
 
 * No solutions:
@@ -471,7 +499,11 @@ Potential Puzzles
   * H(3) - H*(2)
   * 2H(2) (= PentatwigsTwoHexagons)
 
+84: one-sided quasi-tritwigs
+
 88: polytwigs order 1-5
+
+93: one-sided quasi-polytwigs order 1-3
 
 95: one-sided pentatwigs (polytwigs order 5)
 

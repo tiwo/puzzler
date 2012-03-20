@@ -824,3 +824,94 @@ class Polytwigs123456(Polytwigs12345):
 class OneSidedPolytwigs123456(OneSidedLowercaseMixin, Polytwigs123456):
 
     pass
+
+
+class QuasiDitwigsData(object):
+
+    piece_data = {
+        'L2': (((0,0,0), (0,0,1)), {}),}
+        'S2': (((0,0,0), (1,0,0)), {}),
+        'C2': (((0,0,0), (1,0,1)), {}),}
+
+    symmetric_pieces = ['L2', 'C2']
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = ['S2']
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+    piece_colors = {
+        'L2': 'khaki',
+        'C2': 'darkblue',
+        'S2': 'darkred',}
+
+
+class QuasiTritwigsData(object):
+
+    piece_data = {
+        'C03': (((0, 0, 0), (0, 0, 1), (0, 1, 2)), {}),
+        'S03': (((0, 1, 0), (1, 0, 0), (1, 0, 1)), {}),
+        'Y03': (((0, 0, 0), (0, 0, 1), (0, 0, 2)), {}),
+        'C13': (((0, 0, 0), (0, 0, 1), (0, 1, 0)), {}),
+        'C23': (((0, 0, 0), (0, 1, 2), (1, 0, 1)), {}),
+        'H13': (((0, 0, 0), (1, 0, 0), (1, 1, 2)), {}),
+        'I13': (((0, 2, 0), (1, 1, 0), (2, 0, 0)), {}),
+        'P13': (((0, 1, 2), (1, 0, 0), (1, 0, 1)), {}),
+        'P23': (((0, 0, 0), (0, 0, 1), (0, 1, 1)), {}),
+        'P33': (((0, 0, 0), (0, 1, 2), (1, 0, 0)), {}),
+        'S13': (((0, 1, 0), (0, 2, 2), (1, 0, 2)), {}),
+        'T13': (((0, 0, 1), (0, 1, 0), (0, 2, 2)), {}),
+        'U13': (((0, 1, 0), (1, 0, 0), (2, 0, 0)), {}),
+        'W13': (((0, 1, 1), (1, 0, 0), (1, 0, 1)), {}),
+        'W23': (((0, 1, 0), (0, 2, 2), (1, 0, 0)), {}),
+        'Y13': (((0, 0, 1), (0, 1, 0), (0, 1, 1)), {}),
+        'Y23': (((0, 0, 0), (0, 1, 0), (1, 0, 0)), {}),}
+
+    symmetric_pieces = ['C03', 'C23', 'T13', 'U13', 'Y03', 'Y23']
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = [
+        'C13', 'H13', 'I13', 'P13', 'P23', 'P33', 'S03', 'S13', 'Y13',
+        'W13', 'W23']
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+    piece_colors = {
+        'C03': 'cyan',
+        'S03': 'magenta',
+        'Y03': 'lime',
+        'C13': 'darkorange',
+        'C23': 'blue',
+        'H13': 'red',
+        'I13': 'green',
+        'P13': 'blueviolet',
+        'P23': 'peru',
+        'P33': 'navy',
+        'S13': 'turquoise',
+        'T13': 'brown',
+        'U13': 'maroon',
+        'W13': 'teal',
+        'W23': 'plum',
+        'Y13': 'darkgreen',
+        'Y23': 'olive',
+        '0': 'gray',
+        '1': 'black'}
+
+
+class QuasiTritwigs(QuasiTritwigsData, Polytwigs):
+
+    pass
+
+
+class QuasiPolytwigs123(Polytwigs):
+
+    piece_data = copy.deepcopy(MonotwigsData.piece_data)
+    piece_data.update(copy.deepcopy(QuasiDitwigsData.piece_data))
+    piece_data.update(copy.deepcopy(QuasiTritwigsData.piece_data))
+    symmetric_pieces = (
+        MonotwigsData.symmetric_pieces + DitwigsData.symmetric_pieces
+        + TritwigsData.symmetric_pieces)
+    symmetric_pieces = (
+        MonotwigsData.asymmetric_pieces + DitwigsData.asymmetric_pieces
+        + TritwigsData.asymmetric_pieces)
+    piece_colors = copy.deepcopy(MonotwigsData.piece_colors)
+    piece_colors.update(QuasiDitwigsData.piece_colors)
+    piece_colors.update(QuasiTritwigsData.piece_colors)
