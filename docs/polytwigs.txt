@@ -715,6 +715,9 @@ Introduction to Polytwigs`_.
 
 * 2x3 elongated hexagons:
 
+  .. list-table::
+     :class: borderless
+
      * - .. figure:: images/quasi-tritwigs-elongated-hexagon-2x3-1.png
 
             `solutions incomplete
