@@ -123,7 +123,7 @@ class Polyiamonds12345Peanut(Polyiamonds12345):
 
 class Polyiamonds12345Trapezoid1(Polyiamonds12345):
 
-    """many solutions"""
+    """126,151 solutions"""
 
     height = 4
     width = 7
@@ -140,7 +140,7 @@ class Polyiamonds12345Trapezoid1(Polyiamonds12345):
 
 class Polyiamonds12345IrregularHexagon1(Polyiamonds12345Trapezoid1):
 
-    """many solutions"""
+    """878,738 solutions"""
 
     width = 6
 

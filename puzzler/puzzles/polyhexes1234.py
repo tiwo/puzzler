@@ -206,7 +206,7 @@ class Polyhexes1234TrilobedCrown(Polyhex1234):
 class Polyhexes1234JaggedHexagon1(Polyhex1234):
 
     """
-    many solutions
+    213,477 solutions
 
     Design by Dan Klarskov.
     """
@@ -231,7 +231,7 @@ class Polyhexes1234JaggedHexagon1(Polyhex1234):
 class Polyhexes1234JaggedHexagon2(Polyhexes1234JaggedHexagon1):
 
     """
-    many solutions
+    70,634 solutions
 
     Discovered by Kate Jones.
     """
@@ -242,7 +242,7 @@ class Polyhexes1234JaggedHexagon2(Polyhexes1234JaggedHexagon1):
 class Polyhexes1234JaggedHexagon3(Polyhexes1234JaggedHexagon1):
 
     """
-    many solutions
+    247,392 solutions
 
     Discovered by Kate Jones.
     """
@@ -253,7 +253,7 @@ class Polyhexes1234JaggedHexagon3(Polyhexes1234JaggedHexagon1):
 class Polyhexes1234KnobbedHexagon1(Polyhex1234):
 
     """
-    many solutions
+    17,683 solutions
 
     Design by Dan Klarskov.
     """
@@ -280,14 +280,14 @@ class Polyhexes1234KnobbedHexagon1(Polyhex1234):
 
 class Polyhexes1234KnobbedHexagon2(Polyhexes1234KnobbedHexagon1):
 
-    """many solutions"""
+    """9,398 solutions"""
 
     holes = set(((3,6), (3,3), (6,3)))
 
 
 class Polyhexes1234KnobbedHexagon3(Polyhexes1234KnobbedHexagon1):
 
-    """many solutions"""
+    """12,714 solutions"""
 
     holes = set(((2,4), (4,6), (6,2)))
 

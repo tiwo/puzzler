@@ -176,19 +176,19 @@ seven tetrahexes, for a total of 40 hexagons.
 
      * - .. figure:: images/polyhexes-1234-jagged-hexagon-1.png
 
-            `solutions incomplete
+            `213,477 solutions
             <../solutions/polyhexes-1234-jagged-hexagon-1.txt>`__
             (design by Dan Klarskov)
 
        - .. figure:: images/polyhexes-1234-jagged-hexagon-2.png
 
-            `solutions incomplete
+            `70,634 solutions
             <../solutions/polyhexes-1234-jagged-hexagon-2.txt>`__
             (discovered by Kate Jones)
 
        - .. figure:: images/polyhexes-1234-jagged-hexagon-3.png
 
-            `solutions incomplete
+            `247,392 solutions
             <../solutions/polyhexes-1234-jagged-hexagon-3.txt>`__
             (discovered by Kate Jones)
 
@@ -199,18 +199,18 @@ seven tetrahexes, for a total of 40 hexagons.
 
      * - .. figure:: images/polyhexes-1234-knobbed-hexagon-1.png
 
-            `solutions incomplete
+            `17,683 solutions
             <../solutions/polyhexes-1234-knobbed-hexagon-1.txt>`__
             (design by Dan Klarskov)
 
        - .. figure:: images/polyhexes-1234-knobbed-hexagon-2.png
 
-            `solutions incomplete
+            `9,398 solutions
             <../solutions/polyhexes-1234-knobbed-hexagon-2.txt>`__
 
        - .. figure:: images/polyhexes-1234-knobbed-hexagon-3.png
 
-            `solutions incomplete
+            `12,714 solutions
             <../solutions/polyhexes-1234-knobbed-hexagon-3.txt>`__
 
 * 2x6 elongated hexagon ring (discovered by Dan Klarskov): `659,517

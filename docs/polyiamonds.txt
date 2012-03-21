@@ -68,12 +68,12 @@ triangles.
 
   .. image:: images/polyiamonds-12345-butterfly-10x1.png
 
-* Trapezoid: `solutions incomplete
+* Trapezoid: `126,151 solutions
   <../solutions/polyiamonds-12345-trapezoid-1.txt>`__
 
   .. image:: images/polyiamonds-12345-trapezoid-1.png
 
-* Irregular hexagon (discovered by Dan Klarskov): `solutions incomplete
+* Irregular hexagon (discovered by Dan Klarskov): `878,738 solutions
   <../solutions/polyiamonds-12345-irregular-hexagon-1.txt>`__
 
   .. image:: images/polyiamonds-12345-irregular-hexagon-1.png

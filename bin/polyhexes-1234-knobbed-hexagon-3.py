@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-"""many solutions"""
+"""12,714 solutions"""
 
 import puzzler
 from puzzler.puzzles.polyhexes1234 import Polyhexes1234KnobbedHexagon3

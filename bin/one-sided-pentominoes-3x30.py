@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-""" solutions"""
+"""46 solutions"""
 
 import puzzler
 from puzzler.puzzles.pentominoes import OneSidedPentominoes3x30

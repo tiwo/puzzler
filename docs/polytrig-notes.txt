@@ -44,8 +44,6 @@ Order  Name        Free    Units   Sum     One-sided  Units   Sum
 5*     pentatrig   375     1875            719        3595
 =====  ==========  ======  ======  ======  =========  ======  ======
 
-"*" above means that pieces with enclosed holes exist.
-
 The quasi-polytrigs (includes disconnected forms that have gaps of
 maximum length 1):
 
@@ -55,9 +53,10 @@ Order  Name              Free    Units   Sum     One-sided  Units   Sum
 1      quasi-monotrig        1       1       1       1          1       1
 2      quasi-ditrig          9      18      19      13         26      27
 3      quasi-tritrig       140     420     439     259        777     804
-4      quasi-tetratrig    3377                    6639
-5      quasi-pentatrig
+4*     quasi-tetratrig    3377                    6639
 =====  ================  ======  ======  ======  =========  ======  ======
+
+"*" above means that pieces with enclosed holes exist.
 
 
 Shapes

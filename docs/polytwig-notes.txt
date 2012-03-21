@@ -481,12 +481,13 @@ Potential Puzzles
 
 51: quasi-tritwigs
 
-* P(10,1) (email from Colin Brown, 2012-02-15)
-* P(6,2)
 * 3 odd shapes, (email from Colin Brown, 2012-02-15)
-* H(2) + 6H(1) attached - 3 units
-* T(5) - T*(3)
-* Hg(2) - T*(2)
+* He(4,2) - 1 unit
+* lots of trefoil shapes (paper note, 2012-03-20)
+* Tr(5,4) - 5 units
+* Tr(7,2) - 4 units
+* Ri(5,3) - 3 units
+* Ri(4,4) - 5 units
 
 58: quasi-polytwigs order 1-3
 

@@ -182,6 +182,48 @@ class Polytwigs(Polytrigs):
         return cls.coordinates_trapezoid(m, m, offset)
 
     @classmethod
+    def coordinates_triangle_unbordered(cls, m, offset=None):
+        """
+        Triangular unbordered polytwig grid of side length M hexagons.
+        """
+        return cls.coordinates_trapezoid_unbordered(m, m, offset)
+
+    @classmethod
+    def coordinates_inverted_triangle(cls, m, offset=None):
+        """
+        Inverted (down-pointing) triangular bordered polytwig grid of side
+        length M hexagons.
+        """
+        min_xy = m - 1
+        for coord in cls.coordinates_bordered(m, m):
+            x, y, z = coord
+            xy = x + y
+            if xy > min_xy or (xy == min_xy and z != 2):
+                yield cls.coordinate_offset(x, y, z, offset)
+
+    @classmethod
+    def coordinates_inverted_triangle_unbordered(cls, m, offset=None):
+        """
+        Inverted (down-pointing) triangular unbordered polytwig grid of side
+        length M hexagons.
+        """
+        min_xy = m
+        for coord in cls.coordinates_unbordered(m, m):
+            x, y, z = coord
+            xy = x + y
+            if xy >= min_xy:
+                yield cls.coordinate_offset(x, y, z, offset)
+
+    @classmethod
+    def coordinates_hexagram(cls, side_length, offset=None):
+        """Hexagram bordered polytwig grid."""
+        s = side_length
+        coords = (
+            list(set(cls.coordinates_triangle(s * 3 - 2, offset=(s-1,s-1,0))))
+            + list(set(cls.coordinates_inverted_triangle(s * 3 - 2))))
+        return sorted(coords)
+
+    @classmethod
     def coordinates_chevron(cls, base, side, offset=None):
         """
         Chevron-shaped bordered polytwig grid, (base, side) length in hexagons.
@@ -829,7 +871,7 @@ class OneSidedPolytwigs123456(OneSidedLowercaseMixin, Polytwigs123456):
 class QuasiDitwigsData(object):
 
     piece_data = {
-        'L2': (((0,0,0), (0,0,1)), {}),}
+        'L2': (((0,0,0), (0,0,1)), {}),
         'S2': (((0,0,0), (1,0,0)), {}),
         'C2': (((0,0,0), (1,0,1)), {}),}
 
@@ -887,7 +929,7 @@ class QuasiTritwigsData(object):
         'P33': 'navy',
         'S13': 'turquoise',
         'T13': 'brown',
-        'U13': 'maroon',
+        'U13': 'cadetblue',
         'W13': 'teal',
         'W23': 'plum',
         'Y13': 'darkgreen',
@@ -901,17 +943,27 @@ class QuasiTritwigs(QuasiTritwigsData, Polytwigs):
     pass
 
 
+class OneSidedQuasiTritwigs(OneSidedLowercaseMixin, QuasiTritwigs):
+
+    pass
+
+
 class QuasiPolytwigs123(Polytwigs):
 
     piece_data = copy.deepcopy(MonotwigsData.piece_data)
     piece_data.update(copy.deepcopy(QuasiDitwigsData.piece_data))
     piece_data.update(copy.deepcopy(QuasiTritwigsData.piece_data))
     symmetric_pieces = (
-        MonotwigsData.symmetric_pieces + DitwigsData.symmetric_pieces
-        + TritwigsData.symmetric_pieces)
-    symmetric_pieces = (
-        MonotwigsData.asymmetric_pieces + DitwigsData.asymmetric_pieces
-        + TritwigsData.asymmetric_pieces)
+        MonotwigsData.symmetric_pieces + QuasiDitwigsData.symmetric_pieces
+        + QuasiTritwigsData.symmetric_pieces)
+    asymmetric_pieces = (
+        MonotwigsData.asymmetric_pieces + QuasiDitwigsData.asymmetric_pieces
+        + QuasiTritwigsData.asymmetric_pieces)
     piece_colors = copy.deepcopy(MonotwigsData.piece_colors)
     piece_colors.update(QuasiDitwigsData.piece_colors)
     piece_colors.update(QuasiTritwigsData.piece_colors)
+
+
+class OneSidedQuasiPolytwigs123(OneSidedLowercaseMixin, QuasiPolytwigs123):
+
+    pass

@@ -649,4 +649,101 @@ segments on the hexagonal grid.
   This solution was first found by Peter F. Esser.
 
 
+Quasi-Tritwigs
+==============
+
+These puzzles use the 17 quasi-tritwigs, for a total of 51 line
+segments on the hexagonal grid.  See `Quasi-Polyforms`_ in `An
+Introduction to Polytwigs`_.
+
+.. _Quasi-Polyforms: polytwigs-intro.html#quasi-polyforms
+
+* 10x1 parallelogram (discovered by Colin F. Brown): `solutions
+  incomplete <../solutions/quasi-tritwigs-10x1.txt>`__
+
+  .. image:: images/quasi-tritwigs-10x1.png
+
+* 6x2 parallelogram: `solutions incomplete
+  <../solutions/quasi-tritwigs-6x2.txt>`__
+
+  .. image:: images/quasi-tritwigs-6x2.png
+
+* Triangles:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/quasi-tritwigs-triangle-1.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-triangle-1.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-triangle-2.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-triangle-2.txt>`__
+
+     * - .. figure:: images/quasi-tritwigs-triangle-3.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-triangle-3.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-triangle-4.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-triangle-4.txt>`__
+
+* Snowflakes:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/quasi-tritwigs-snowflake-1.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-snowflake-1.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-snowflake-2.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-snowflake-2.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-snowflake-3.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-snowflake-3.txt>`__
+
+* 2x3 elongated hexagons:
+
+     * - .. figure:: images/quasi-tritwigs-elongated-hexagon-2x3-1.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-elongated-hexagon-2x3-1.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-elongated-hexagon-2x3-2.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-elongated-hexagon-2x3-2.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-elongated-hexagon-2x3-3.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-elongated-hexagon-2x3-3.txt>`__
+
+     * - .. figure:: images/quasi-tritwigs-elongated-hexagon-2x3-4.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-elongated-hexagon-2x3-4.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-elongated-hexagon-2x3-5.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-elongated-hexagon-2x3-5.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-elongated-hexagon-2x3-6.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-elongated-hexagon-2x3-6.txt>`__
+
+
 .. |c| unicode:: U+00A9 .. copyright sign
