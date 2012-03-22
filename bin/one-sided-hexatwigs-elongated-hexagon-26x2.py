@@ -2,7 +2,7 @@
 # $Id$
 
 """
- solutions
+many solutions
 
 Discovered by Peter F. Esser.
 """

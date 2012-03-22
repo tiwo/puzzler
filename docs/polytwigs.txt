@@ -648,6 +648,11 @@ segments on the hexagonal grid.
 
   This solution was first found by Peter F. Esser.
 
+* 26x2 elongated hexagon (discovered by Peter F. Esser): `solutions
+  incomplete <../solutions/one-sided-hexatwigs-elongated-hexagon-26x2.txt>`__
+
+  .. image:: images/one-sided-hexatwigs-elongated-hexagon-26x2.png
+
 
 Quasi-Tritwigs
 ==============
