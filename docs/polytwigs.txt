@@ -753,5 +753,52 @@ Introduction to Polytwigs`_.
             `solutions incomplete
             <../solutions/quasi-tritwigs-elongated-hexagon-2x3-6.txt>`__
 
+* Trefoils:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/quasi-tritwigs-trefoil-1.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-trefoil-1.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-trefoil-2.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-trefoil-2.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-trefoil-3.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-trefoil-3.txt>`__
+
+     * - .. figure:: images/quasi-tritwigs-trefoil-4.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-trefoil-4.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-trefoil-5.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-trefoil-5.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-trefoil-6.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-trefoil-6.txt>`__
+
+     * - .. figure:: images/quasi-tritwigs-trefoil-7.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-trefoil-7.txt>`__
+
+       - .. figure:: images/quasi-tritwigs-trefoil-8.png
+
+            `solutions incomplete
+            <../solutions/quasi-tritwigs-trefoil-8.txt>`__
+
+       -
+
 
 .. |c| unicode:: U+00A9 .. copyright sign

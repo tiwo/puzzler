@@ -158,7 +158,7 @@ class QuasiTritwigsElongatedHexagon2x3_1(QuasiTritwigs):
 
     def customize_piece_data(self):
         self.piece_data['P13'][-1]['flips'] = None
-        self.piece_data['P13'][-1]['rotations'] = (0, 1, 3)
+        self.piece_data['P13'][-1]['rotations'] = (0, 1, 2)
 
 
 class QuasiTritwigsElongatedHexagon2x3_2(QuasiTritwigsElongatedHexagon2x3_1):
@@ -194,3 +194,149 @@ class QuasiTritwigsElongatedHexagon2x3_6(QuasiTritwigsElongatedHexagon2x3_1):
     """many solutions"""
 
     holes = set(((1,2,0), (1,3,2), (2,3,0), (3,2,2)))
+
+
+class QuasiTritwigsTrefoil1(QuasiTritwigs):
+
+    """many solutions"""
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_bordered(4, 1, offset=(0,3,0)))
+            + list(self.coordinates_bordered(1, 4, offset=(3,3,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(4,2,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(5,1,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(6,0,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P13'][-1]['flips'] = None
+        self.piece_data['P13'][-1]['rotations'] = (0, 1)
+
+
+class QuasiTritwigsTrefoil2(QuasiTritwigsTrefoil1):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_bordered(1, 3, offset=(1,0,0)))
+            + list(self.coordinates_bordered(3, 1, offset=(3,1,0)))
+            + list(self.coordinates_bordered(1, 2, offset=(2,2,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(0,5,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(1,4,0))))
+        return sorted(coords)
+
+
+class QuasiTritwigsTrefoil3(QuasiTritwigsTrefoil1):
+
+    """many solutions"""
+
+    width = 6
+    height = 6
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_bordered(1, 2, offset=(0,2,0)))
+            + list(self.coordinates_bordered(1, 2, offset=(2,1,0)))
+            + list(self.coordinates_bordered(1, 2, offset=(3,2,0)))
+            + list(self.coordinates_bordered(2, 1, offset=(3,0,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(1,3,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(2,4,0))))
+        return sorted(coords)
+
+
+class QuasiTritwigsTrefoil4(QuasiTritwigsTrefoil1):
+
+    """many solutions"""
+
+    width = 6
+    height = 6
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_triangle(2))
+                + list(self.coordinates_triangle(2, offset=(0,3,0)))
+                + list(self.coordinates_triangle(2, offset=(1,1,0)))
+                + list(self.coordinates_triangle(2, offset=(3,0,0))))
+            - set(self.coordinates_triangle_unbordered(2, offset=(1,1,0))))
+        return sorted(coords)
+
+
+class QuasiTritwigsTrefoil5(QuasiTritwigsTrefoil1):
+
+    """many solutions"""
+
+    width = 6
+    height = 6
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_triangle(2, offset=(0,3,0)))
+                + list(self.coordinates_triangle(2, offset=(2,2,0)))
+                + list(self.coordinates_triangle(2, offset=(3,0,0)))
+                + list(self.coordinates_triangle(2, offset=(3,3,0))))
+            - set(self.coordinates_triangle_unbordered(2, offset=(2,2,0))))
+        return sorted(coords)
+
+
+class QuasiTritwigsTrefoil6(QuasiTritwigsTrefoil1):
+
+    """many solutions"""
+
+    width = 6
+    height = 6
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_bordered(2, 1, offset=(0,3,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(1,4,0)))
+            + list(self.coordinates_bordered(2, 1, offset=(1,1,0)))
+            + list(self.coordinates_bordered(2, 1, offset=(2,2,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(3,0,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(3,3,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(4,1,0))))
+        return sorted(coords)
+
+
+class QuasiTritwigsTrefoil7(QuasiTritwigsTrefoil1):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_bordered(1, 2, offset=(0,1,0)))
+            + list(self.coordinates_bordered(2, 1, offset=(1,2,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(1,5,0)))
+            + list(self.coordinates_bordered(1, 2, offset=(2,3,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(3,1,0)))
+            + list(self.coordinates_bordered(2, 1, offset=(4,0,0))))
+        return sorted(coords)
+
+
+class QuasiTritwigsTrefoil8(QuasiTritwigsTrefoil1):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_bordered(1, 2, offset=(0,2,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(1,3,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(2,5,0)))
+            + list(self.coordinates_bordered(1, 2, offset=(3,3,0)))
+            + list(self.coordinates_bordered(1, 1, offset=(3,1,0)))
+            + list(self.coordinates_bordered(2, 1, offset=(4,0,0)))
+            + list(self.coordinates_triangle_unbordered(2, offset=(2,2,0))))
+        return sorted(coords)
