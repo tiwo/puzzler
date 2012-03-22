@@ -294,8 +294,8 @@ If a puzzle takes only a short time to run, there's no need to expend
 the time and effort to choose the most run-time efficient approach
 (the run-time gain is not worth the thinking and programming time).
 However, many puzzles can take significant amounts of time to run
-(days, weeks, or longer); for these puzzles, careful programming pays
-dividends.
+(hours, days, weeks, or longer); for these puzzles, careful
+programming pays dividends.
 
 
 Check for Duplicates
@@ -305,6 +305,14 @@ This approach is typically the slowest to run, but is the easiest and
 fastest to code.  It is slow because it only suppresses duplicate
 solutions, all of which are still calculated, rather than preventing
 duplicates in the first place (which is what the other approaches do).
+
+The "check for duplicates" approach can also eat up memory for puzzles
+with many solutions.  A copy is kept in memory for each solution in
+every equivalent orientation (flipped, rotated, etc.).  Therefore this
+approach is not recommended for puzzles with many solutions (the
+definition of "many" depends on your system's resources and your
+willingness to do the extra work required by the other approaches; it
+could be millions of solutions or it could be thousands).
 
 To check for duplicates, add this code to the beginning of the
 MyPuzzle class (above the "coordinates" method)::
@@ -336,8 +344,8 @@ duplicate suppression code, remove it now), or use
 only 6 solutions, all unique.
 
 
-Customize Piece Data
---------------------
+Customize Piece Aspects
+-----------------------
 
 This approach can be significantly faster than checking for
 duplicates, since it reduces the scope of a puzzle, preventing rather
@@ -358,7 +366,7 @@ piece to a single aspect (no rotations or flips allowed).  The
 
 (This code is actually modifying a dictionary of aspect restrictions.
 The restrictions dictionary is passed as keyword arguments to the
-puzzles "make_aspects" method.  Individual restrictions vary between
+puzzle's "make_aspects" method.  Individual restrictions vary between
 polyform types.  See the code of the "make_aspects" method for
 details.)
 
@@ -442,7 +450,7 @@ Extract the second set of coordinates and its aspect object for the
 The "I" pentomino has two aspects: horizontal and vertical.  The first
 aspect will be vertical because its coordinates sort first, so we take
 the second, horizontal aspect.  We could also ensure that only one
-aspect exists using the technique from `Customize Piece Data`_.
+aspect exists using the technique from `Customize Piece Aspects`_.
 
 Since the "X" piece is fixed, the "I" piece cannot overlap it, so
 we'll start just to the right of "X", and end at the right end of the
@@ -524,7 +532,7 @@ This sub-puzzle has no symmetry issues::
 
 The second sub-puzzle places "X" in the center, touching the bottom,
 using the `Restrict Piece Placement`_ approach.  But there is still
-horizontal symmetry to handle.  So we use the `Customize Piece Data`_
+horizontal symmetry to handle.  So we use the `Customize Piece Aspects`_
 approach to restrict the aspects of an asymmetrical piece, the "P"
 pentomino in this example; we prevent it from flipping.  That takes
 care of the horizontal symmetry::
@@ -549,7 +557,7 @@ care of the horizontal symmetry::
  Modify an Existing Polyform
 -----------------------------
 
-Customize Piece Data
+Customize Piece Aspects
 
 TBD
 

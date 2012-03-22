@@ -120,12 +120,12 @@ equilateral triangles.
 
      * - .. figure:: images/one-sided-polyiamonds-12345-hexagon-1.png
 
-            `solutions incomplete
+            `3,710,485 solutions
             <../solutions/one-sided-polyiamonds-12345-hexagon-1.txt>`__
 
        - .. figure:: images/one-sided-polyiamonds-12345-hexagon-2.png
 
-            `solutions incomplete
+            `4,833,439 solutions
             <../solutions/one-sided-polyiamonds-12345-hexagon-2.txt>`__
 
 
