@@ -191,23 +191,40 @@ class Polyiamonds12345Snowflake_x1(Polyiamonds12345Snowflake2):
 
 class OneSidedPolyiamonds12345Hexagon1(OneSidedPolyiamonds12345):
 
-    """many solutions"""
+    """3,710,485 solutions"""
+    # w/o duplicate control: 15,256,848 (103,760,913 searches)
 
     height = 6
     width = 6
 
     holes = set(((3,2,0), (2,3,1)))
 
+    t4_offsets = (
+        (0,3,0), (0,4,0), (1,2,0), (1,3,0), (1,4,0), (2,1,0), (3,0,0))
+
     def coordinates(self):
         coords = set(self.coordinates_hexagon(3)) - self.holes
         return sorted(coords)
 
+    def build_matrix(self):
+        keys = sorted(self.pieces.keys())
+        t_coords, t_aspect = self.pieces['T4'][0]
+        for offset in self.t4_offsets:
+            translated = t_aspect.translate(offset)
+            self.build_matrix_row('T4', translated)
+        keys.remove('T4')
+        self.build_regular_matrix(keys)
+
 
 class OneSidedPolyiamonds12345Hexagon2(OneSidedPolyiamonds12345Hexagon1):
 
-    """many solutions"""
+    """4,833,439 solutions"""
+    # w/o duplicate control: 19,221,672 (152,631,658 searches)
 
     holes = set(((3,1,1), (2,4,0)))
+
+    t4_offsets = (
+        (0,3,0), (0,4,0), (1,2,0), (1,3,0), (2,1,0), (2,2,0), (3,0,0))
 
 
 class OneSidedPolyiamonds12345SemiRegularHexagon4x2(OneSidedPolyiamonds12345):
