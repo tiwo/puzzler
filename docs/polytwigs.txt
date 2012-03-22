@@ -801,4 +801,52 @@ Introduction to Polytwigs`_.
        -
 
 
+Quasi-Polytwigs of Order 1 Through 3
+====================================
+
+These puzzles use the monotwig, the 3 quasi-ditwigs, 17
+quasi-tritwigs, for a total of 58 line segments on the hexagonal grid.
+See `Quasi-Polyforms`_ in `An Introduction to Polytwigs`_.
+
+* 9x2 rounded rectangle: `solutions incomplete
+  <../solutions/quasi-polytwigs-123-rounded-rectangle-9x2.txt>`__
+
+  .. image:: images/quasi-polytwigs-123-rounded-rectangle-9x2.png
+
+* Hexagon rings:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/quasi-polytwigs-123-hexagon-ring-1.png
+
+            `solutions incomplete
+            <../solutions/quasi-polytwigs-123-hexagon-ring-1.txt>`__
+
+       - .. figure:: images/quasi-polytwigs-123-hexagon-ring-2.png
+
+            `solutions incomplete
+            <../solutions/quasi-polytwigs-123-hexagon-ring-2.txt>`__
+
+     * - .. figure:: images/quasi-polytwigs-123-hexagon-ring-3.png
+
+            `solutions incomplete
+            <../solutions/quasi-polytwigs-123-hexagon-ring-3.txt>`__
+
+       - .. figure:: images/quasi-polytwigs-123-hexagon-ring-4.png
+
+            `solutions incomplete
+            <../solutions/quasi-polytwigs-123-hexagon-ring-4.txt>`__
+
+* 5x3 parallelogram ring: `solutions incomplete
+  <../solutions/quasi-polytwigs-123-5x3-parallelogram-ring.txt>`__
+
+  .. image:: images/quasi-polytwigs-123-5x3-parallelogram-ring.png
+
+* 6x3 parallelogram ring: `solutions incomplete
+  <../solutions/quasi-polytwigs-123-6x3-trapezoid-ring.txt>`__
+
+  .. image:: images/quasi-polytwigs-123-6x3-trapezoid-ring.png
+
+
 .. |c| unicode:: U+00A9 .. copyright sign
