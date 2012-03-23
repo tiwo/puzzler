@@ -26,8 +26,10 @@ same (versatile!) engine.
 Quick-Start
 ===========
 
-This section is for those who want to get up & running quickly.  Read on for
-complete details.
+This section is for those who understand computers well and who want
+to get up & running quickly.  If you don't know what a "shell" is, or
+if you don't understand any of the following steps, go to
+"Installation_" below.  Full details are in the following sections.
 
 1. Get and install the latest release of Python, available from
 
@@ -42,11 +44,18 @@ complete details.
 
    See Snapshots_ below for details.
 
-3. In a shell, unpack the snapshot tarball in a temporary directory
-   (**not** directly in Python's ``site-packages``) and move into it.
-   For example::
+3. Unpack the snapshot tarball (archive file) in a temporary directory
+   (**not** directly in Python's ``site-packages``).
+
+   For example, on Unix, GNU/Linux, or Mac OS X, in a shell type::::
 
        tar xzf puzzler-snapshot.tgz
+
+   On Windows, use the WinZip program (or equivalent) to unpack the
+   archive file.
+
+4. In a shell/terminal, move (``cd``) into the temporary directory::
+
        cd puzzler
 
 There are two ways to proceed from here: `install it`_, or `just run
@@ -59,7 +68,7 @@ Install It
 This option installs the Polyform Puzzler library into Python's
 system-wide standard library.
 
-4. Run ``install.py`` with admin rights.  On Windows systems it may be
+5. Run ``install.py`` with admin rights.  On Windows systems it may be
    sufficient to double-click ``install.py``.  On Unix, GNU/Linux, or
    Mac OS X, type::
 
@@ -69,7 +78,7 @@ system-wide standard library.
 
    See Installation_ below for details.
 
-5. Use a front-end application from the "bin" subdirectory.  For
+6. Use a front-end application from the "bin" subdirectory.  For
    example::
 
        cd bin
@@ -88,7 +97,7 @@ package from one location (where you unpacked it, not from arbitrary
 locations on your system), unless you `install it`_, or you set your
 ``PYTHONPATH`` environment variable.
 
-4. In the top-level directory (containing the "puzzler", "docs", and
+5. In the top-level directory (containing the "puzzler", "docs", and
    "bin" directories), you can run the various front-ends.
 
    See Usage_ below for details.
@@ -283,12 +292,20 @@ to solve the 3x20 pentominoes puzzle::
     cd <archive_directory_path>
     python bin\pentominoes-3x20.py
 
+If you just double-click on the puzzle application, it will run, but
+the output window will disappear as soon as the puzzle finishes.
+
+You may want to redirect the output to a file, since the Windows
+command prompt limits the number of output lines it remembers.  Do
+this::
+
+    python bin\pentominoes-3x20.py > output.txt
+
+(Choose any name you like for your output file.)
+
 Alternatively, right-click on the puzzle application file, choose
 "Edit with IDLE", then choose "Run script" from the "Edit" menu (or
 hit Ctrl+F5).
-
-(If you just double-click on the puzzle application, it will run, but
-the output window will disappear as soon as the puzzle finishes.)
 
 
 Sudoku

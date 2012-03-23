@@ -37,6 +37,7 @@ import cPickle as pickle
 from datetime import datetime, timedelta
 from puzzler import exact_cover_dlx
 from puzzler import exact_cover_x2
+from puzzler import info
 from puzzler.utils import thousands
 
 try:
@@ -47,6 +48,11 @@ except:
 
 
 __version__ = '1+SVN'
+
+version_template = (
+    '%%prog\nPolyform Puzzler version %s [%s], Python %s, on %s'
+    % (__version__, info.revision,
+       sys.version.split()[0], sys.platform))
 
 exact_cover_modules = {
     'dlx': exact_cover_dlx,
@@ -116,6 +122,11 @@ def process_command_line():
         help=('Report on the current search state (partial solution), '
               'useful for long-running puzzles. Use -S/--search-state-file '
               'to read a search state file other than the default.'))
+    parser.add_option(
+        '-V', '--version',
+        help="Show Polyform Puzzler's version information and exit.",
+        action='version')
+    parser.version = version_template
     parser.add_option(
         '-h', '--help', help='Show this help message and exit.', action='help')
     settings, args = parser.parse_args()
