@@ -76,7 +76,11 @@ __ http://www.iread.it/lz/index.html
 In January 2012 I received email from Leslie E. Shader (Ph.D.,
 Professor Emeritus, Mathematics, University of Wyoming), who shared
 the results of his unpublished work on triangular-grid polysticks from
-around 1993.
+around 1993.  Colin F. Brown, in addition to his work on `polytwigs
+(hexagonal-grid polysticks)`__, has also done some work on the
+quasi-polytrigs; see "`Quasi-Polyforms`_" below.
+
+__ polytwigs-intro.html
 
 If you know of any other work on this type of puzzle, please let me
 know!
@@ -119,6 +123,8 @@ represents the polyform order (how many line segments are in the
 polytrig).  There are more tetratrigs than letters in the alphabet, so
 their names have an extra middle digit (numbered from 0) to
 differentiate the variations.
+
+.. _table legend:
 
 In the tables below, "Aspects" refers to the number of unique
 orientations that a polyform may take (different rotations, flipped or
@@ -568,6 +574,103 @@ tetratrigs:
 
    * - Z04
      - .. image:: images/pieces/polytrigs/Z04.png
+     - 6
+     - yes
+
+
+Quasi-Polyforms
+===============
+
+Quasi-polyforms are polyforms where the requirement that all unit
+shapes be connected has been removed.  In other words, quasi-polyforms
+are polyforms where some or all unit shapes may be separate from the
+others.
+
+Without limits on the distance between unit shapes there would be an
+infinite number of quasi-polyforms (for orders 2 and above).  We will
+limit the quasi-polyforms we consider to those with length-1 gaps
+between segments.
+
+The number and names of the various orders of quasi-polytrigs are as
+follows:
+
+=====  ================  ===========  ===========
+Order  | Polyform        | Free       | One-Sided
+       | Name            | Polytrigs  | Polytrigs
+=====  ================  ===========  ===========
+1      monotrig [*]_     1            1
+2      quasi-ditrig      9            13
+3      quasi-tritrigs    140          259
+4      quasi-tetratrigs  3377         6639          
+=====  ================  ===========  ===========
+
+.. [*] With only 1 line segment, there can be no disconnected
+       quasi-monotrig.  The set of the regular (fully-connected)
+       monotrigs is identical to the set of quasi-monotrigs, and
+       consists of one piece: the "I1" monotrig.
+
+Examples of the quasi-polytrigs of order 2 (quasi-ditrigs) are given
+in the table below.  See the `table legend`_ above for column
+descriptions.
+
+
+Quasi-Ditrigs
+-------------
+
+There are 9 free quasi-ditrigs (order-2 quasi-polytrigs) and 13
+one-sided quasi-ditrigs:
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - C12
+     - .. image:: images/pieces/quasi-polytrigs/C12.png
+     - 6
+     -
+
+   * - I02
+     - .. image:: images/pieces/quasi-polytrigs/I02.png
+     - 3
+     -
+
+   * - I12
+     - .. image:: images/pieces/quasi-polytrigs/I12.png
+     - 3
+     -
+
+   * - L02
+     - .. image:: images/pieces/quasi-polytrigs/L02.png
+     - 6
+     -
+
+   * - L12
+     - .. image:: images/pieces/quasi-polytrigs/L12.png
+     - 12
+     - yes
+
+   * - P12
+     - .. image:: images/pieces/quasi-polytrigs/P12.png
+     - 12
+     - yes
+
+   * - S12
+     - .. image:: images/pieces/quasi-polytrigs/S12.png
+     - 6
+     - yes
+
+   * - V02
+     - .. image:: images/pieces/quasi-polytrigs/V02.png
+     - 6
+     -
+
+   * - Z12
+     - .. image:: images/pieces/quasi-polytrigs/Z12.png
      - 6
      - yes
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="90.000" height="90.000"
+     viewBox="0 0 90.000 90.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="matrix(1,0,0,-1,0,25.981) translate(45.000,-22.500) rotate(90)">
+<path stroke="black" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 23.700,19.399 l -2.400,-4.157 M 7.600,21.651 l 4.800,0.000">
+<desc>P12</desc>
+</path>
+</g>
+</svg>

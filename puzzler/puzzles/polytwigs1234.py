@@ -196,3 +196,37 @@ class OneSidedPolytwigs1234ElongatedHexagon3x2_8(
     """many solutions"""
 
     holes = set(((0,2,0), (3,2,2)))
+
+
+class OneSidedPolytwigs1234Triangle1(OneSidedPolytwigs1234):
+
+    """many solutions"""
+
+    height = 5
+    width = 5
+
+    holes = set(((1,1,2), (1,2,1), (2,1,0)))
+
+    def coordinates(self):
+        return sorted(set(self.coordinates_triangle(4)) - self.holes)
+
+
+class OneSidedPolytwigs1234Triangle2(OneSidedPolytwigs1234Triangle1):
+
+    """many solutions"""
+
+    holes = set(((0,2,0), (2,0,1), (2,2,2)))
+
+
+class OneSidedPolytwigs1234Triangle3(OneSidedPolytwigs1234Triangle1):
+
+    """many solutions"""
+
+    holes = set(((0,3,0), (1,2,1), (1,3,2)))
+
+
+class OneSidedPolytwigs1234Triangle4(OneSidedPolytwigs1234Triangle1):
+
+    """many solutions"""
+
+    holes = set(((1,2,0), (1,2,1), (1,2,2)))

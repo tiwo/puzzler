@@ -215,6 +215,31 @@ hexagonal grid.
             `solutions incomplete
             <../solutions/one-sided-polytwigs-1234-elongated-hexagon-3x2-8.txt>`__
 
+* Triangles:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-polytwigs-1234-triangle-1.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-triangle-1.txt>`__
+
+       - .. figure:: images/one-sided-polytwigs-1234-triangle-2.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-triangle-2.txt>`__
+
+       - .. figure:: images/one-sided-polytwigs-1234-triangle-3.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-triangle-3.txt>`__
+
+       - .. figure:: images/one-sided-polytwigs-1234-triangle-4.png
+
+            `solutions incomplete
+            <../solutions/one-sided-polytwigs-1234-triangle-4.txt>`__
+
 
 Pentatwigs
 ==========
@@ -603,7 +628,7 @@ on the hexagonal grid.
 
   .. image:: images/hexatwigs-triangle.png
 
-* Hexagon rings
+* Hexagon rings:
 
   .. list-table::
      :class: borderless

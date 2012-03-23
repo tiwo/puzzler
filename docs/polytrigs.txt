@@ -395,4 +395,73 @@ tritrigs, for a total of 64 line segments on the triangular grid.
   .. image:: images/one-sided-polytrigs-123-chevron-9x1.png
 
 
+Quasi-Ditrigs
+=============
+
+These puzzles use the 9 quasi-ditrigs, for a total of 18 line
+segments on the triangular grid.  See `Quasi-Polyforms`_ in `An
+Introduction to Polytrigs`_.
+
+.. _Quasi-Polyforms: polytrigs-intro.html#quasi-polyforms
+
+* Triangle (discovered by Colin F. Brown): `266 solutions
+  <../solutions/quasi-ditrigs-triangle.txt>`__
+
+  .. image:: images/quasi-ditrigs-triangle.png
+
+* Triangle stack: `63 solutions
+  <../solutions/quasi-ditrigs-triangle-stack.txt>`__
+
+  .. image:: images/quasi-ditrigs-triangle-stack.png
+
+* Two triangles:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/quasi-ditrigs-two-triangles-1.png
+
+            `8 solutions
+            <../solutions/quasi-ditrigs-two-triangles-1.txt>`__
+            (discovered by Colin F. Brown, as "diabolo")
+
+       - .. figure:: images/quasi-ditrigs-two-triangles-2.png
+
+            `48 solutions
+            <../solutions/quasi-ditrigs-two-triangles-2.txt>`__
+
+       - .. figure:: images/quasi-ditrigs-two-triangles-3.png
+
+            `7 solutions
+            <../solutions/quasi-ditrigs-two-triangles-3.txt>`__
+
+* Starburst (discovered by Colin F. Brown): `298 solutions
+  <../solutions/quasi-ditrigs-starburst.txt>`__
+
+  .. image:: images/quasi-ditrigs-starburst.png
+
+* Satellite (discovered by Colin F. Brown): `24 solutions
+  <../solutions/quasi-ditrigs-satellite.txt>`__
+
+  .. image:: images/quasi-ditrigs-satellite.png
+
+
+Quasi-Polytrigs of Order 1 and 2
+================================
+
+These puzzles use the monotrig and the 9 quasi-ditrigs, for a total of
+19 line segments on the triangular grid.  See `Quasi-Polyforms`_ in
+`An Introduction to Polytrigs`_.
+
+* Elongated Hexagon 2x1: `542 solutions
+  <../solutions/quasi-polytrigs-12-elongated-hexagon-2x1.txt>`__
+
+  .. image:: images/quasi-polytrigs-12-elongated-hexagon-2x1.png
+
+* Trapezoid 5x1: `358 solutions
+  <../solutions/quasi-polytrigs-12-trapezoid-5x1.txt>`__
+
+  .. image:: images/quasi-polytrigs-12-trapezoid-5x1.png
+
+
 .. |c| unicode:: U+00A9 .. copyright sign

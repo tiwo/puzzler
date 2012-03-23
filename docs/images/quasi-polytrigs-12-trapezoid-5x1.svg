@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="65.000" height="25.981"
+     viewBox="0 0 65.000 25.981"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g>
+<path stroke="yellowgreen" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 23.700,19.399 l -2.400,-4.157 M 36.300,19.399 l 2.400,-4.157">
+<desc>C12</desc>
+</path>
+<path stroke="red" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 37.600,21.651 l 7.400,0.000 M 45.000,21.651 l 7.400,0.000">
+<desc>I02</desc>
+</path>
+<path stroke="steelblue" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 16.300,19.399 l 2.400,-4.157">
+<desc>I1</desc>
+</path>
+<path stroke="cyan" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 27.600,21.651 l 4.800,0.000 M 7.600,21.651 l 4.800,0.000">
+<desc>I12</desc>
+</path>
+<path stroke="orange" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 13.200,12.990 l 4.200,0.000 M 6.300,19.399 l 2.100,-3.637 M 8.400,15.762 a 5.543,5.543 0 0,1 4.800,-2.771">
+<desc>L02</desc>
+</path>
+<path stroke="green" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 26.300,19.399 l 2.400,-4.157 M 42.600,12.990 l 4.800,0.000">
+<desc>L12</desc>
+</path>
+<path stroke="magenta" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 13.700,19.399 l -2.400,-4.157 M 22.600,12.990 l 4.800,0.000">
+<desc>P12</desc>
+</path>
+<path stroke="blueviolet" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 17.600,21.651 l 4.800,0.000 M 32.600,12.990 l 4.800,0.000">
+<desc>S12</desc>
+</path>
+<path stroke="lightcoral" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 46.300,19.399 l 2.200,-3.811 M 48.500,15.588 a 1.732,1.732 0 0,1 3.000,0.000 M 53.700,19.399 l -2.200,-3.811">
+<desc>V02</desc>
+</path>
+<path stroke="plum" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 33.700,19.399 l -2.400,-4.157 M 43.700,19.399 l -2.400,-4.157">
+<desc>Z12</desc>
+</path>
+</g>
+</svg>

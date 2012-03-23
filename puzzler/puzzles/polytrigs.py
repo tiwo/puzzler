@@ -108,6 +108,15 @@ class Polytrigs(Polysticks):
             yield cls.coordinate_offset(x, y, z, offset)
 
     @classmethod
+    def coordinates_inverted_triangle(cls, side_length, offset=None):
+        """Inverted triangular bordered polytrig grid."""
+        for coord in cls.coordinates_bordered(side_length, side_length):
+            x, y, z = coord
+            xy = x + y
+            if (xy >= side_length):
+                yield cls.coordinate_offset(x, y, z, offset)
+
+    @classmethod
     def coordinates_hexagon(cls, side_length, offset=None):
         """Hexagonal bordered polytrig grid."""
         min_xy = side_length
@@ -164,6 +173,15 @@ class Polytrigs(Polysticks):
             yield cls.coordinate_offset(x, y, z, offset)
 
     @classmethod
+    def coordinates_hexagram(cls, side_length, offset=None):
+        """Hexagram bordered polytrig grid."""
+        coords = set(
+            list(cls.coordinates_triangle(3 * side_length,
+                                          offset=(side_length,side_length,0)))
+            + list(cls.coordinates_inverted_triangle(3 * side_length)))
+        return sorted(coords)
+
+    @classmethod
     def coordinates_trapezoid(cls, width, height, offset=None):
         max_xy = width
         for coord in cls.coordinates_bordered(width, height):
@@ -181,11 +199,14 @@ class Polytrigs(Polysticks):
             x, y, z = coord
             xy = x + y
             xz = x - z / 2
-            if (  (side_length <= xz < base_length)
-                  or (x == base_length and z != 0)
-                  or (min_xy <= xy < max_xy)
-                  or (xy == max_xy and z == 2)):
-                yield cls.coordinate_offset(x, y, z, offset)
+            if y < side_length:
+                if not ((x > side_length or (x == side_length and z != 2))
+                        and (xy < max_xy or (xy == max_xy and z == 2))):
+                    continue
+            elif not (xy >= min_xy
+                      and (x < base_length or (x == base_length and z != 0))):
+                continue
+            yield cls.coordinate_offset(x, y, z, offset)
 
     @classmethod
     def coordinates_chevron(cls, base_length, side_length, offset=None):
@@ -787,3 +808,61 @@ class Polytrigs1234(Polytrigs123):
         Polytrigs123.asymmetric_pieces + TetratrigsData.asymmetric_pieces)
     piece_colors = copy.deepcopy(Polytrigs123.piece_colors)
     piece_colors.update(TetratrigsData.piece_colors)
+
+
+class QuasiDitrigsData(object):
+
+    piece_data = {
+        'I02': (((0,0,0), (1,0,0)), {}),
+        'L02': (((0,0,0), (1,0,1)), {}),
+        'V02': (((0,0,0), (1,0,2)), {}),
+        'C12': (((0,0,0), (1,1,2)), {}),
+        'I12': (((0,0,0), (2,0,0)), {}),
+        'L12': (((0,0,0), (2,0,1)), {}),
+        'P12': (((0,0,0), (2,0,2)), {}),
+        'S12': (((0,0,0), (1,1,0)), {}),
+        'Z12': (((0,0,0), (0,1,0)), {}),}
+
+    symmetric_pieces = ['C12', 'I02', 'I12', 'L02', 'V02']
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = ['L12', 'P12', 'S12', 'Z12']
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+    piece_colors = {
+        'I02': 'red',
+        'L02': 'orange',
+        'V02': 'lightcoral',
+        'I12': 'cyan',
+        'L12': 'green',
+        'S12': 'blueviolet',
+        'P12': 'magenta',
+        'C12': 'yellowgreen',
+        'Z12': 'plum',}        
+
+
+class QuasiDitrigs(QuasiDitrigsData, Polytrigs):
+
+    pass
+
+
+class OneSidedQuasiDitrigs(OneSidedLowercaseMixin, QuasiDitrigs):
+
+    pass
+
+
+class QuasiPolytrigs12(Polytrigs):
+
+    piece_data = copy.deepcopy(MonotrigsData.piece_data)
+    piece_data.update(copy.deepcopy(QuasiDitrigsData.piece_data))
+    symmetric_pieces = (
+        MonotrigsData.symmetric_pieces + QuasiDitrigsData.symmetric_pieces)
+    asymmetric_pieces = (
+        MonotrigsData.asymmetric_pieces + QuasiDitrigsData.asymmetric_pieces)
+    piece_colors = copy.deepcopy(MonotrigsData.piece_colors)
+    piece_colors.update(QuasiDitrigsData.piece_colors)
+
+
+class OneSidedQuasiPolytrigs12(OneSidedLowercaseMixin, QuasiPolytrigs12):
+
+    pass

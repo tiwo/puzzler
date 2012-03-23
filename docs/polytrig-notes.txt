@@ -472,21 +472,18 @@ Potential Puzzles
 
 18: quasi-ditrigs
 
-* T(3) (email from Colin Brown, 2012-03-16)
-* T*(4)
-* B(2,2) (diabolo, email from Colin Brown, 2012-03-16)
-* 2T(2) (adjacent upright, not B(2,2))
-* H(1) + 6x1 rays (star, email from Colin Brown, 2012-03-16)
-* H(1) + 3x2 rays (satellite, email from Colin Brown, 2012-03-16)
-* Hg(1) - 6 units
-* He(2,1) - 1 unit
-* 2P(2,1) (= Tr(5,1) - 1 unit)
-* B(3,1) - 2 units
+* Potential:
+
+  * He(2,1) - 1 unit
+  * 2P(2,1) (= Tr(5,1) - 1 unit)
+  * B(3,1) - 2 units
+
+* No solutions:
+
+  * Hg(1) - 6 units (= QuasiDitrigsHexagram)
 
 19: quasi-polytrigs O(1) + O(2)
 
-* He(2,1)
-* Tr(5,1)
 * Tr(4,2) - 4 units
 * C(3,1) - 4 units
 * B(3,1) - 1 unit

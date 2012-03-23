@@ -415,6 +415,23 @@ class PentatwigsTwoHexagons(Pentatwigs):
         return sorted(coords)
 
 
+class PentatwigsSnowflake(Pentatwigs):
+
+    """0 solutions"""
+
+    width = 6
+    height = 6
+
+    hex_offsets = ((0,2,0), (0,4,0), (2,0,0), (2,4,0), (4,0,0), (4,2,0))
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(2, offset=(1,1,0)))
+        for offset in self.hex_offsets:
+            for coord in self.coordinates_bordered(1, 1, offset=offset):
+                coords.add(coord)
+        return sorted(coords)
+
+
 class OneSidedPentatwigsTrapezoid12x2(OneSidedPentatwigs):
 
     """many solutions"""

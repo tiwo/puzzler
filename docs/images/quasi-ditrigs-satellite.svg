@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="95.000" height="60.622"
+     viewBox="0 0 95.000 60.622"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g>
+<path stroke="yellowgreen" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 47.600,21.651 l 4.800,0.000 M 56.300,36.719 l 2.400,-4.157">
+<desc>C12</desc>
+</path>
+<path stroke="red" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 56.300,19.399 l 3.700,-6.409 M 60.000,12.990 l 3.700,-6.409">
+<desc>I02</desc>
+</path>
+<path stroke="cyan" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 22.600,30.311 l 4.800,0.000 M 42.600,30.311 l 4.800,0.000">
+<desc>I12</desc>
+</path>
+<path stroke="orange" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 51.600,27.540 l 2.100,-3.637 M 51.600,33.082 a 5.543,5.543 0 0,1 0.000,-5.543 M 53.700,36.719 l -2.100,-3.637">
+<desc>L02</desc>
+</path>
+<path stroke="green" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 47.600,38.971 l 4.800,0.000 M 63.700,54.040 l -2.400,-4.157">
+<desc>L12</desc>
+</path>
+<path stroke="magenta" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 32.600,30.311 l 4.800,0.000 M 48.700,28.059 l -2.400,-4.157">
+<desc>P12</desc>
+</path>
+<path stroke="blueviolet" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 43.700,36.719 l -2.400,-4.157 M 58.700,45.380 l -2.400,-4.157">
+<desc>S12</desc>
+</path>
+<path stroke="lightcoral" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 52.600,30.311 l 4.400,0.000 M 58.500,27.713 a 1.732,1.732 0 0,1 -1.500,2.598 M 58.500,27.713 l -2.200,-3.811">
+<desc>V02</desc>
+</path>
+<path stroke="plum" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 41.300,28.059 l 2.400,-4.157 M 46.300,36.719 l 2.400,-4.157">
+<desc>Z12</desc>
+</path>
+</g>
+</svg>

@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="50.000" height="34.641"
+     viewBox="0 0 50.000 34.641"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g>
+<path stroke="yellowgreen" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 13.700,28.059 l -2.400,-4.157 M 26.300,28.059 l 2.400,-4.157">
+<desc>C12</desc>
+</path>
+<path stroke="red" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 17.600,30.311 l 7.400,0.000 M 25.000,30.311 l 7.400,0.000">
+<desc>I02</desc>
+</path>
+<path stroke="steelblue" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 36.300,28.059 l 2.400,-4.157">
+<desc>I1</desc>
+</path>
+<path stroke="cyan" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 12.600,21.651 l 4.800,0.000 M 32.600,21.651 l 4.800,0.000">
+<desc>I12</desc>
+</path>
+<path stroke="orange" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 17.600,12.990 l 4.200,0.000 M 21.800,12.990 a 5.543,5.543 0 0,1 4.800,2.771 M 28.700,19.399 l -2.100,-3.637">
+<desc>L02</desc>
+</path>
+<path stroke="green" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 11.300,19.399 l 2.400,-4.157 M 27.600,12.990 l 4.800,0.000">
+<desc>L12</desc>
+</path>
+<path stroke="magenta" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 22.600,21.651 l 4.800,0.000 M 38.700,19.399 l -2.400,-4.157">
+<desc>P12</desc>
+</path>
+<path stroke="blueviolet" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 16.300,28.059 l 2.400,-4.157 M 31.300,19.399 l 2.400,-4.157">
+<desc>S12</desc>
+</path>
+<path stroke="lightcoral" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 18.500,19.053 l -2.200,-3.811 M 21.500,19.053 a 1.732,1.732 0 0,1 -3.000,0.000 M 21.500,19.053 l 2.200,-3.811">
+<desc>V02</desc>
+</path>
+<path stroke="plum" stroke-width="1.6" stroke-linecap="round"
+      fill="none" d="M 23.700,28.059 l -2.400,-4.157 M 33.700,28.059 l -2.400,-4.157">
+<desc>Z12</desc>
+</path>
+</g>
+</svg>

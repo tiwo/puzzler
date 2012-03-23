@@ -522,12 +522,13 @@ Quasi-Polyforms
 
 Quasi-polyforms are polyforms where the requirement that all unit
 shapes be connected has been removed.  In other words, quasi-polyforms
-are polyforms that are not required to be fully connected; some or all
-unit shapes may be separate from the others.
+are polyforms where some or all unit shapes may be separate from the
+others.
 
-Without limits on the distance between units there would be an
-infinite number of quasi-polyforms for orders 2 and above.  We will
-retain this limit here.
+Without limits on the distance between unit shapes there would be an
+infinite number of quasi-polyforms (for orders 2 and above).  We will
+limit the quasi-polyforms we consider to those with length-1 gaps
+between segments.
 
 The number and names of the various orders of quasi-polytwigs are as
 follows:
