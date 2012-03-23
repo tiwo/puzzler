@@ -91,14 +91,19 @@ triangles.
 
      * - .. figure:: images/polyiamonds-12345-snowflake-1.png
 
-            `solutions incomplete
+            `9,930 solutions
             <../solutions/polyiamonds-12345-snowflake-1.txt>`__
             (discovered by Dan Klarskov)
 
        - .. figure:: images/polyiamonds-12345-snowflake-2.png
 
-            `solutions incomplete
+            `1,788 solutions
             <../solutions/polyiamonds-12345-snowflake-2.txt>`__
+
+       - .. figure:: images/polyiamonds-12345-snowflake-3.png
+
+            `670 solutions
+            <../solutions/polyiamonds-12345-snowflake-3.txt>`__
 
 
 One-Sided Polyiamonds of Order 1 Through 5

@@ -180,6 +180,15 @@ class Polyiamonds12345Snowflake2(Polyiamonds12345Snowflake1):
         self.piece_data['P5'][-1]['rotations'] = (0,1,2)
 
 
+class Polyiamonds12345Snowflake3(Polyiamonds12345Snowflake2):
+
+    """670 solutions"""
+
+    holes = set((
+        (-1,4,1), (1,1,0), (1,6,0), (4,-1,1), (4,4,1), (6,1,0),
+        (3,1,1), (3,2,0), (2,3,1), (2,4,0)))
+
+
 class Polyiamonds12345Snowflake_x1(Polyiamonds12345Snowflake2):
 
     """0 solutions"""
