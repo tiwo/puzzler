@@ -287,7 +287,7 @@ ones.  Polyform families are given descriptive names:
   * `Notes on Polyominoes <polyomino-notes.html>`_
 
 * Substituting a 3D cube for each 2D square in polyominoes results in
-  "solid polyominoes" or "planar polycubes".  
+  "solid polyominoes" or "planar polycubes".
 
   .. figure:: images/solid-pentominoes-3x4x5.png
 
@@ -784,14 +784,19 @@ Polyominoes use a 2-dimensional X,Y cartesian coordinate system.
 
 The visual representation consists of piece names (letters) in a 2-D
 grid.  Imagine each letter as a square, with adjacent like-labelled
-squares joined::
+squares joined.  Example (with the x- and y-coordinates also shown)::
 
-    N Z I I I I I U U U
-    N Z Z Z P P P U W U
-    N N T Z X P P W W L
-    V N T X X X W W F L
-    V T T T X Y F F F L
-    V V V Y Y Y Y F L L
+      5   N Z I I I I I U U U
+      4   N Z Z Z P P P U W U
+      3   N N T Z X P P W W L
+      2   V N T X X X W W F L
+      1   V T T T X Y F F F L
+    y=0   V V V Y Y Y Y F L L
+
+        x=0 1 2 3 4 5 6 7 8 9
+
+In the solution above, the V piece is at coordinates (0,0), (0,1),
+(0,2), (1,0), and (2,0).
 
 **In Polyform Puzzler:**
 
@@ -808,12 +813,14 @@ cartesian coordinate system.
 The visual representation consists of piece names (letters) in
 multiple layers, each a 2-D slice of a 3-D space.  Imagine the layers
 stacked up from left to right, with each letter as a cube, with
-adjacent like-labelled cubes joined::
+adjacent like-labelled cubes joined (z-coordinates of layers shown)::
 
     U V V V N    U W T T T    U W Z L Y
     U W Z V N    X W Z T Y    U F Z L Y
     X W Z V N    X P P T N    X F F L Y
     I I I I I    X P P P N    F F L L Y
+
+    z=0          z=1          z=2
 
 Some polycube puzzles, like the solid pentomino ring puzzles, are
 equivalent to a 2-dimensional puzzle folded into 3 dimensions.  These
@@ -845,23 +852,26 @@ Polyhexes use a 2-dimensional X,Y, skewed cartesian coordinate system.
 The X and Y axes are 60° apart instead of 90°.
 
 The visual representation is an ASCII-art drawing of the solution,
-with the Y-axis vertical and the X-axis sloping up::
+with the Y-axis vertical and the X-axis sloping up.  Example (with
+coordinates)::
 
-                       __
-                    __/  \
-                 __/  \  /
-              __/   __/  \
-           __/     /   __/
-        __/  \__   \  /  \
-     __/   __   \__/  \  /
-    /  \  /  \__/  \__/  \
-    \  /  \__    __/   __/
-    /  \__/  \  /   __/
-    \  /     /  \__/
-    /  \     \__/
-    \  /   __/
-    /  \__/
-    \__/
+                            __   3
+                         __/  \
+                      __/  \  /  2
+                   __/   __/  \
+                __/     /   __/  1
+             __/  \__   \  /  \
+          __/   __   \__/  \  /  y=0
+         /  \  /  \__/  \__/  \
+      3  \  /  \__    __/   __/
+         /  \__/  \  /   __/
+      2  \  /     /  \__/    6
+         /  \     \__/    5
+      1  \  /   __/    4
+         /  \__/    3
+    y=0  \__/    2
+              1
+         x=0
 
 **In Polyform Puzzler:**
 
@@ -882,17 +892,21 @@ the Z dimension is used to represent the orientation of triangles::
     z=0/__\  z=1\/
 
 The visual representation is an ASCII-art drawing of the solution,
-with the X-axis horizontal and the Y-axis sloping to the right::
+with the X-axis horizontal and the Y-axis sloping to the right.
+Example (with coordinates)::
 
-            ____________________________________
-           /   /           /    \      /       /
-          /   /___________/   ___\    /       /
-         /       /    \      /   /    \  /\  /
-        /_______/      \____/   /______\/  \/
-       /       /\      /   /\       \      /
-      /   ____/  \____/   /  \_______\    /
-     /   /        \       \          /   /
-    /___/__________\_______\________/___/
+                  x=0  1   2   3   4   5   6   7   8
+                 ____________________________________
+                /   /           /    \      /       /
+            3  /   /___________/   ___\    /       /
+              /       /    \      /   /    \  /\  /
+          2  /_______/      \____/   /______\/  \/
+            /       /\      /   /\       \      /
+        1  /   ____/  \____/   /  \_______\    /
+          /   /        \       \          /   /
+    y=0  /___/__________\_______\________/___/
+
+         x=0  1   2   3   4   5   6   7   8
 
 **In Polyform Puzzler:**
 
@@ -918,21 +932,25 @@ intersections (where grid lines cross) were also shown (in the form
 
 The visual representation consists of piece names (letters) in an
 ASCII-art drawing of the 2-D grid.  Imagine that all adjacent line
-segments with the same labels are joined::
+segments with the same labels are joined.  Example (with
+coordinates)::
 
-     -R-- -T-- -T-- -r--
-    y    R    T    r    Y
-    |    |    |    |    |
-     -y-- -R-- -r-- -Y--
-    y    R    T    r    Y
-    |    |    |    |    |
-     -H-- -H-- -h-- -h--
-    y    H    X    h    Y
-    |    |    |    |    |
-     -H-- -X-- -X-- -h--
-    F    F    X    f    f
-    |    |    |    |    |
-     -F-- -F-- -f-- -f--
+      4 ->   -R-- -T-- -T-- -r--
+            y    R    T    r    Y
+            |    |    |    |    |
+      3 ->   -y-- -R-- -r-- -Y--     ---- z=0
+            y    R    T    r    Y
+            |    |    |    |    |       |
+      2 ->   -H-- -H-- -h-- -h--        | z=1
+            y    H    X    h    Y
+            |    |    |    |    |
+      1 ->   -H-- -X-- -X-- -h--
+            F    F    X    f    f
+            |    |    |    |    |
+    y=0 ->   -F-- -F-- -f-- -f--
+
+            ^    ^    ^    ^    ^
+          x=0    1    2    3    4
 
 The solution above is from the 5x5 welded one-sided tetrasticks
 puzzle.  Lowercase piece names indicate flipped pieces in one-sided
@@ -956,21 +974,26 @@ counter-clockwise, up and to the right; 2 = 120° counter-clockwise, up
 and to the left.
 
 The visual representation consists of piece names (letters & numbers)
-in an ASCII-art drawing of the triangular 2-D grid.  Example::
+in an ASCII-art drawing of the triangular 2-D grid.  Example (with
+coordinates)::
 
-             __U3__
-            /U3   /U3
-          T3  \ Y3  \
-          /_Y3_\/_L3_\
-         /T3   /Y3   /L3
-       T3  \ I3  \ P3  \
-       /_Z3_\/    \/_J3_\
-      /Z3   /      P3   /L3
-    C3  \ I3        \ J3  \
-    /_Z3_\/_S3____P3_\/_O3_\
-    C3   /E3   /S3   /O3   /
-     \ I3  \ E3  \ J3  \ O3
-      \/_C3_\/_E3_\/_S3_\/
+                      x=0     1     2     3     4
+
+                  4   __U3__
+                     /U3   /U3
+                   T3  \ Y3  \                    z=2  z=1
+               3   /_Y3_\/_L3_\                     \  /
+                  /T3   /Y3   /L3                    \/___ z=0
+                T3  \ I3  \ P3  \                   (x,y)
+            2   /_Z3_\/    \/_J3_\
+               /Z3   /      P3   /L3
+             C3  \ I3        \ J3  \
+         1   /_Z3_\/_S3____P3_\/_O3_\
+             C3   /E3   /S3   /O3   /
+              \ I3  \ E3  \ J3  \ O3
+    y=0        \/_C3_\/_E3_\/_S3_\/
+
+      x=0     1     2     3     4
 
 **In Polyform Puzzler:**
 
@@ -989,21 +1012,44 @@ the direction of line segments: 0 = 0° horizontal to the right; 1 =
 counter-clockwise, down and to the left.
 
 The visual representation consists of piece names (letters & numbers)
-in an ASCII-art drawing of the hexagonal 2-D grid.  Example::
+in an ASCII-art drawing of the hexagonal 2-D grid.  Example (with
+coordinates)::
 
-            _L2_
-           Y3   L2
-      _Y3_/      \_C4_
-     W4   Y3     C4   C4
-    /      \    /      \
-    W4     Y4   I1     C4
-     \_Y4_/      \_P4_/
-     W4   Y4     P4   C3
-    /      \    /      \
-    W4     Y4   P4     C3
-     \_S3_/      \_C3_/
-          S3     P4
-           \_S3_/
+             z=1                               \__  y=5
+               \                               /
+           (x,y)\____z=0                 \__
+                /                        /
+               /                   \__         \__  4
+             z=2                   /           /
+                             \__         \__
+                             /           /
+                       \__         \__         \__  3
+                       /           /           /
+                  _P5_       \__         \__
+             5   P5   P5     /           /
+                /      \_U5_       \__         \__  2
+                P5     U5   U5     /           /
+                 \_U5_/      \_U5_       \__
+             4   P5   X5     X5   L5     /
+                /      \_X5_/      \_L5_       \__  1
+                I5     X5   X5     L5   R5     /
+                 \_T5_/      \_L5_/      \_R5_
+             3   I5   T5     L5   W5     R5   R5
+                /      \_T5_/      \_Y5_/      \    y=0
+                I5     T5   T5     W5   Y5     R5
+                 \_H5_/      \_S5_/      \_Y5_/
+             2   I5   H5     S5   W5     Y5
+                /      \_H5_/      \_Y5_/       5
+                I5     H5   S5     W5
+                 \_C5_/      \_W5_/       4
+             1   C5   H5     S5
+                /      \_S5_/       3
+                C5     C5
+                 \_C5_/       2
+           y=0
+                        1
+
+               x=0
 
 **In Polyform Puzzler:**
 
@@ -1134,7 +1180,7 @@ exactly once.  We have four sets of constraints:
    all combinations of rows & columns::
 
        0,0 1,0 2,0 3,0 0,1 1,1 2,1 3,1 0,2 1,2 2,2 3,2 0,3 1,3 2,3 3,3
-   
+
 Altogether there are 4 sets of constraints, each with 16 (4 * 4)
 elements, for a total of 64 columns in the exact cover matrix.  For a
 9x9 puzzle, we will have 4 times (9 squared) = 324 columns.

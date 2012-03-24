@@ -540,6 +540,13 @@ Potential Puzzles
 
 37: trihexes + tetrahexes
 
+* He(12,2)
+* Rr(15,3)
+* Ri(15,3) - 1 unit
+* Rr(11,4) - 1 unit
+* Rr(7,6) - 1 unit
+* Tr(11,4) - 1 unit
+
 40: polyhexes of order 1 to 4
 
 * Ri(16,3)
