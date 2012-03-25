@@ -31,52 +31,52 @@ Parallelograms
 ==============
 
 * 10x11 parallelogram: `solutions incomplete
-  <../solutions/pentahex-10x11.txt>`__
+  <../solutions/pentahexes-10x11.txt>`__
 
-  .. image:: images/pentahex-10x11.png
+  .. image:: images/pentahexes-10x11.png
 
 * 5x22 parallelogram: `solutions incomplete
-  <../solutions/pentahex-5x22.txt>`__
+  <../solutions/pentahexes-5x22.txt>`__
 
-  .. image:: images/pentahex-5x22.png
+  .. image:: images/pentahexes-5x22.png
 
 
 Trapezia
 ========
 
 * 15x11 trapezium: `solutions incomplete
-  <../solutions/pentahex-15x11-trapezium.txt>`__
+  <../solutions/pentahexes-15x11-trapezium.txt>`__
 
-  .. image:: images/pentahex-15x11-trapezium.png
+  .. image:: images/pentahexes-15x11-trapezium.png
 
 * 5x24 trapezium: `solutions incomplete
-  <../solutions/pentahex-5x24-trapezium.txt>`__
+  <../solutions/pentahexes-5x24-trapezium.txt>`__
 
-  .. image:: images/pentahex-5x24-trapezium.png
+  .. image:: images/pentahexes-5x24-trapezium.png
 
 
 Hexagons
 ========
 
 - Hexagon 1: `solutions incomplete
-  <../solutions/pentahex-hexagon-1.txt>`__
+  <../solutions/pentahexes-hexagon-1.txt>`__
 
-  .. image:: images/pentahex-hexagon-1.png
+  .. image:: images/pentahexes-hexagon-1.png
 
 - Hexagon 2: `solutions incomplete
-  <../solutions/pentahex-hexagon-2.txt>`__
+  <../solutions/pentahexes-hexagon-2.txt>`__
 
-  .. image:: images/pentahex-hexagon-2.png
+  .. image:: images/pentahexes-hexagon-2.png
 
 - Hexagon 3: `solutions incomplete
-  <../solutions/pentahex-hexagon-3.txt>`__
+  <../solutions/pentahexes-hexagon-3.txt>`__
 
-  .. image:: images/pentahex-hexagon-3.png
+  .. image:: images/pentahexes-hexagon-3.png
 
 - Hexagon 4: `solutions incomplete
-  <../solutions/pentahex-hexagon-4.txt>`__
+  <../solutions/pentahexes-hexagon-4.txt>`__
 
-  .. image:: images/pentahex-hexagon-4.png
+  .. image:: images/pentahexes-hexagon-4.png
 
 
 Triangles
@@ -87,34 +87,34 @@ A minimal triangle is 120 units, 10 units too large.  But
 with centered 4-unit triangular holes and one with a different hole:
 
 - Triangle 1: `solutions incomplete
-  <../solutions/pentahex-triangle-1.txt>`__
+  <../solutions/pentahexes-triangle-1.txt>`__
 
-  .. image:: images/pentahex-triangle-1.png
+  .. image:: images/pentahexes-triangle-1.png
 
 - Triangle 2: `solutions incomplete
-  <../solutions/pentahex-triangle-2.txt>`__
+  <../solutions/pentahexes-triangle-2.txt>`__
 
-  .. image:: images/pentahex-triangle-2.png
+  .. image:: images/pentahexes-triangle-2.png
 
 - Triangle 3: `solutions incomplete
-  <../solutions/pentahex-triangle-3.txt>`__
+  <../solutions/pentahexes-triangle-3.txt>`__
 
-  .. image:: images/pentahex-triangle-3.png
+  .. image:: images/pentahexes-triangle-3.png
 
 - Triangle 4: `solutions incomplete
-  <../solutions/pentahex-triangle-4.txt>`__
+  <../solutions/pentahexes-triangle-4.txt>`__
 
-  .. image:: images/pentahex-triangle-4.png
+  .. image:: images/pentahexes-triangle-4.png
 
 - Triangle 5: `solutions incomplete
-  <../solutions/pentahex-triangle-5.txt>`__
+  <../solutions/pentahexes-triangle-5.txt>`__
 
-  .. image:: images/pentahex-triangle-5.png
+  .. image:: images/pentahexes-triangle-5.png
 
 - Triangle 6: `solutions incomplete
-  <../solutions/pentahex-triangle-6.txt>`__
+  <../solutions/pentahexes-triangle-6.txt>`__
 
-  .. image:: images/pentahex-triangle-6.png
+  .. image:: images/pentahexes-triangle-6.png
 
 
 Hexagrams
@@ -124,39 +124,39 @@ A minimal hexagram is 121 units, 11 units too large.  These are
 variations with centered, symmetrical 11-unit holes:
 
 - Hexagram 1: `solutions incomplete
-  <../solutions/pentahex-hexagram-1.txt>`__
+  <../solutions/pentahexes-hexagram-1.txt>`__
 
-  .. image:: images/pentahex-hexagram-1.png
+  .. image:: images/pentahexes-hexagram-1.png
 
 - Hexagram 2: `solutions incomplete
-  <../solutions/pentahex-hexagram-2.txt>`__
+  <../solutions/pentahexes-hexagram-2.txt>`__
 
-  .. image:: images/pentahex-hexagram-2.png
+  .. image:: images/pentahexes-hexagram-2.png
 
 - Hexagram 3: `solutions incomplete
-  <../solutions/pentahex-hexagram-3.txt>`__
+  <../solutions/pentahexes-hexagram-3.txt>`__
 
-  .. image:: images/pentahex-hexagram-3.png
+  .. image:: images/pentahexes-hexagram-3.png
 
 - Hexagram 4: `solutions incomplete
-  <../solutions/pentahex-hexagram-4.txt>`__
+  <../solutions/pentahexes-hexagram-4.txt>`__
 
-  .. image:: images/pentahex-hexagram-4.png
+  .. image:: images/pentahexes-hexagram-4.png
 
 - Hexagram 5: `solutions incomplete
-  <../solutions/pentahex-hexagram-5.txt>`__
+  <../solutions/pentahexes-hexagram-5.txt>`__
 
-  .. image:: images/pentahex-hexagram-5.png
+  .. image:: images/pentahexes-hexagram-5.png
 
 - Hexagram 6: `solutions incomplete
-  <../solutions/pentahex-hexagram-6.txt>`__
+  <../solutions/pentahexes-hexagram-6.txt>`__
 
-  .. image:: images/pentahex-hexagram-6.png
+  .. image:: images/pentahexes-hexagram-6.png
 
 - Hexagram 7: `solutions incomplete
-  <../solutions/pentahex-hexagram-7.txt>`__
+  <../solutions/pentahexes-hexagram-7.txt>`__
 
-  .. image:: images/pentahex-hexagram-7.png
+  .. image:: images/pentahexes-hexagram-7.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

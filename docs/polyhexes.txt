@@ -33,20 +33,20 @@ Tetrahexes
 The 7 tetrahexes total 28 hexagons.
 
 * 4x7 parallelogram: `9 solutions
-  <../solutions/tetrahex-4x7.txt>`__
+  <../solutions/tetrahexes-4x7.txt>`__
 
-  .. image:: images/tetrahex-4x7.png
+  .. image:: images/tetrahexes-4x7.png
 
 * 3x10 parallelogram with corners clipped (centered rows of length 9,
   10, 9; alternately, a 9x2 elongated hexagon): `2 solutions
-  <../solutions/tetrahex-3x10-clipped.txt>`__
+  <../solutions/tetrahexes-3x10-clipped.txt>`__
 
-  .. image:: images/tetrahex-3x10-clipped.png
+  .. image:: images/tetrahexes-3x10-clipped.png
 
 * 5x7 "coin" (elongated hexagon with central hole): `4 solutions
-  <../solutions/tetrahex-coin.txt>`__
+  <../solutions/tetrahexes-coin.txt>`__
 
-  .. image:: images/tetrahex-coin.png
+  .. image:: images/tetrahexes-coin.png
 
 
 Trihexes & Tetrahexes: Polyhexes of Order 3 & 4
@@ -93,19 +93,19 @@ These puzzles use the monohex, the dihex, the three trihexes, and the
 seven tetrahexes, for a total of 40 hexagons.
 
 * 4x10 parallelogram: `3,665,348 solutions
-  <../solutions/polyhex-4x10.txt>`__
+  <../solutions/polyhexes-4x10.txt>`__
 
-  .. image:: images/polyhex-4x10.png
+  .. image:: images/polyhexes-4x10.png
 
 * 5x8 parallelogram: `7,578,295 solutions
-  <../solutions/polyhex-5x8.txt>`__
+  <../solutions/polyhexes-5x8.txt>`__
 
-  .. image:: images/polyhex-5x8.png
+  .. image:: images/polyhexes-5x8.png
 
 * 6x7 parallelogram with hole (discovered by Dan Klarskov): `3,832,702
-  solutions <../solutions/polyhex-1234-6x7.txt>`__
+  solutions <../solutions/polyhexes-1234-6x7.txt>`__
 
-  .. image:: images/polyhex-1234-6x7.png
+  .. image:: images/polyhexes-1234-6x7.png
 
 * 13x2 elongated hexagon: `1,389,980 solutions
   <../solutions/polyhexes-1234-elongated-hexagon-13x2.txt>`__
@@ -279,19 +279,19 @@ These puzzles uses the monohex, the dihex, the three trihexes, the
 seven tetrahexes, and the 22 pentahexes, for a total of 150 hexagons.
 
 * 5x30 parallelogram: `solutions incomplete
-  <../solutions/polyhex-5x30.txt>`__
+  <../solutions/polyhexes-5x30.txt>`__
 
-  .. image:: images/polyhex-5x30.png
+  .. image:: images/polyhexes-5x30.png
 
 * 6x25 parallelogram: `solutions incomplete
-  <../solutions/polyhex-6x25.txt>`__
+  <../solutions/polyhexes-6x25.txt>`__
 
-  .. image:: images/polyhex-6x25.png
+  .. image:: images/polyhexes-6x25.png
 
 * 10x15 parallelogram: `solutions incomplete
-  <../solutions/polyhex-10x15.txt>`__
+  <../solutions/polyhexes-10x15.txt>`__
 
-  .. image:: images/polyhex-10x15.png
+  .. image:: images/polyhexes-10x15.png
 
 * .. _full Hexnut puzzle:
 
