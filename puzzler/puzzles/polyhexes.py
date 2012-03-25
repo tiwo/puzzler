@@ -355,6 +355,11 @@ class Polyhexes34(Tetrahexes):
     piece_colors.update(Trihexes.piece_colors)
 
 
+class OneSidedPolyhexes34(OneSidedLowercaseMixin, Polyhexes34):
+
+    pass
+
+
 class Polyhexes1234(Polyhexes34):
 
     piece_data = copy.deepcopy(Polyhexes34.piece_data)

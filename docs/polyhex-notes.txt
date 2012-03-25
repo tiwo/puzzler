@@ -569,6 +569,18 @@ Potential Puzzles
 * P(8,5) & Rs
 * and everything under polyhexes of order 1 to 4
 
+49: one-sided trihexes + tetrahexes
+
+* P(7,7) & Rs
+* T(10) - 6 units
+* Ri(14,4)
+* Rr(11,5)
+* Rr(9,6)
+* Tr(10,7)
+* He(16,2)
+* He(9,3)
+* C(7,4)
+
 52: one-sided polyhexes of order 1 to 4
 
 * P(13,4) & Rs
