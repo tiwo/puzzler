@@ -30,7 +30,11 @@ class Polyiamonds12345ElongatedHexagon9x1(Polyiamonds12345):
 
 class Polyiamonds12345ElongatedHexagon5x2Ring(Polyiamonds12345):
 
-    """10,254 solutions"""
+    """
+    10,254 solutions
+
+    Discovered by Dan Klarskov
+    """
 
     height = 4
     width = 7
@@ -105,7 +109,11 @@ class Polyiamonds12345Butterfly10x1(Polyiamonds12345):
 
 class Polyiamonds12345Peanut(Polyiamonds12345):
 
-    """362,047 solutions"""
+    """
+    362,047 solutions
+
+    Discovered by Dan Klarskov
+    """
 
     height = 6
     width = 5
@@ -140,7 +148,11 @@ class Polyiamonds12345Trapezoid1(Polyiamonds12345):
 
 class Polyiamonds12345IrregularHexagon1(Polyiamonds12345Trapezoid1):
 
-    """878,738 solutions"""
+    """
+    878,738 solutions
+
+    Discovered by Dan Klarskov
+    """
 
     width = 6
 
@@ -149,7 +161,11 @@ class Polyiamonds12345IrregularHexagon1(Polyiamonds12345Trapezoid1):
 
 class Polyiamonds12345Snowflake1(Polyiamonds12345):
 
-    """9,930 solutions"""
+    """
+    9,930 solutions
+
+    Discovered by Dan Klarskov
+    """
 
     height = 6
     width = 6
@@ -196,6 +212,31 @@ class Polyiamonds12345Snowflake_x1(Polyiamonds12345Snowflake2):
     holes = set((
         (-1,4,1), (1,1,0), (1,6,0), (4,-1,1), (4,4,1), (6,1,0),
         (2,2,0), (1,3,1), (4,2,0), (3,3,1)))
+
+
+class Polyiamonds12345Bat(Polyiamonds12345):
+
+    """
+    92,778 solutions
+
+    Discovered by Dan Klarskov
+    """
+
+    height = 5
+    width = 5
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_parallelogram(3, 3))
+            + list(self.coordinates_parallelogram(3, 3, offset=(1,1,0)))
+            + list(self.coordinates_parallelogram(3, 3, offset=(2,2,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
 
 
 class OneSidedPolyiamonds12345Hexagon1(OneSidedPolyiamonds12345):

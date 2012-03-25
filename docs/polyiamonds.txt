@@ -105,6 +105,11 @@ triangles.
             `670 solutions
             <../solutions/polyiamonds-12345-snowflake-3.txt>`__
 
+* Bat (discovered by Dan Klarskov): `92,778 solutions
+  <../solutions/polyiamonds-12345-bat.txt>`__
+
+  .. image:: images/polyiamonds-12345-bat.png
+
 
 One-Sided Polyiamonds of Order 1 Through 5
 ==========================================

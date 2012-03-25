@@ -167,3 +167,24 @@ class QuasiDitrigsSatellite(QuasiDitrigsStarburst):
     def customize_piece_data(self):
         self.piece_data['P12'][-1]['flips'] = None
         self.piece_data['P12'][-1]['rotations'] = (0, 1)
+
+
+class QuasiDitrigsJaggedTriangle(QuasiDitrigs):
+
+    """ solutions"""
+
+    width = 4
+    height = 3
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_triangle(4))
+            - set(self.coordinates_triangle(1))
+            - set(self.coordinates_triangle(1, offset=(0,3,0)))
+            - set(self.coordinates_triangle(1, offset=(3,0,0)))
+            - set(self.coordinates_triangle(1, offset=(1,1,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P12'][-1]['flips'] = None
+        self.piece_data['P12'][-1]['rotations'] = (0, 1)

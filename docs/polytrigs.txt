@@ -414,6 +414,11 @@ Introduction to Polytrigs`_.
 
   .. image:: images/quasi-ditrigs-triangle-stack.png
 
+* Jagged triangle: `87 solutions
+  <../solutions/quasi-ditrigs-jagged-triangle.txt>`__
+
+  .. image:: images/quasi-ditrigs-jagged-triangle.png
+
 * Two triangles:
 
   .. list-table::
