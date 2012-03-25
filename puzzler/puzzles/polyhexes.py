@@ -23,10 +23,6 @@ class Polyhexes(Puzzle2D):
     The `width` and `height` attributes define the maximum bounds only.
     """
 
-    check_for_duplicates = True
-
-    duplicate_conditions = ()
-
     svg_unit_height = Puzzle2D.svg_unit_length * math.sqrt(3) / 2
 
     coord_class = coordsys.Hexagonal2D
@@ -349,38 +345,36 @@ class Polyhexes34(Tetrahexes):
     piece_data = copy.deepcopy(Tetrahexes.piece_data)
     piece_data.update(copy.deepcopy(Trihexes.piece_data))
 
-    symmetric_pieces = (Trihexes.symmetric_pieces
-                        + Tetrahexes.symmetric_pieces)
+    symmetric_pieces = (
+        Trihexes.symmetric_pieces + Tetrahexes.symmetric_pieces)
 
-    asymmetric_pieces = (Trihexes.asymmetric_pieces
-                         + Tetrahexes.asymmetric_pieces)
+    asymmetric_pieces = (
+        Trihexes.asymmetric_pieces + Tetrahexes.asymmetric_pieces)
 
     piece_colors = copy.deepcopy(Tetrahexes.piece_colors)
     piece_colors.update(Trihexes.piece_colors)
 
-    check_for_duplicates = False
 
-
-class Polyhex1234(Polyhexes34):
+class Polyhexes1234(Polyhexes34):
 
     piece_data = copy.deepcopy(Polyhexes34.piece_data)
     piece_data.update(copy.deepcopy(Monohex.piece_data))
     piece_data.update(copy.deepcopy(Dihex.piece_data))
 
-    symmetric_pieces = (Monohex.symmetric_pieces + Dihex.symmetric_pieces
-                        + Polyhexes34.symmetric_pieces)
+    symmetric_pieces = (
+        Monohex.symmetric_pieces + Dihex.symmetric_pieces
+        + Polyhexes34.symmetric_pieces)
 
-    asymmetric_pieces = (Monohex.asymmetric_pieces + Dihex.asymmetric_pieces
-                         + Polyhexes34.asymmetric_pieces)
+    asymmetric_pieces = (
+        Monohex.asymmetric_pieces + Dihex.asymmetric_pieces
+        + Polyhexes34.asymmetric_pieces)
 
     piece_colors = copy.deepcopy(Polyhexes34.piece_colors)
     piece_colors.update(Monohex.piece_colors)
     piece_colors.update(Dihex.piece_colors)
 
-    check_for_duplicates = False
 
-
-class OneSidedPolyhexes1234(OneSidedLowercaseMixin, Polyhex1234):
+class OneSidedPolyhexes1234(OneSidedLowercaseMixin, Polyhexes1234):
 
     pass
 
@@ -388,73 +382,83 @@ class OneSidedPolyhexes1234(OneSidedLowercaseMixin, Polyhex1234):
 class Pentahexes(Polyhexes):
 
     piece_data = {
+        'A5': ((( 1, 0), ( 2, 0), ( 1, 1), ( 2,-1)), {}),
+        'B5': ((( 1, 0), ( 2, 0), ( 1, 1), ( 2, 1)), {}),
+        'C5': ((( 1, 0), ( 2, 0), ( 2, 1), (-1, 1)), {}),
+        'D5': ((( 1, 0), ( 2, 0), ( 0, 1), ( 1, 1)), {}),
+        'E5': ((( 1, 0), ( 1, 1), ( 2, 0), ( 3, 0)), {}),
+        'F5': ((( 1, 0), ( 2, 0), ( 0, 1), ( 2, 1)), {}),
+        'G5': ((( 1, 0), ( 1, 1), ( 2, 1), ( 3, 0)), {}),
+        'H5': ((( 1, 0), ( 1, 1), ( 0, 2), ( 2, 1)), {}),
         'I5': ((( 1, 0), ( 2, 0), ( 3, 0), ( 4, 0)), {}),
         'J5': ((( 1, 0), ( 2, 0), ( 3, 0), ( 3, 1)), {}),
-        'P5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3, 0)), {}),
-        'E5': ((( 1, 0), ( 1, 1), ( 2, 0), ( 3, 0)), {}),
-        'N5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3, 1)), {}),
         'L5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 2, 2)), {}),
-        'r5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 1, 2)), {}),
-        'p5': ((( 1, 0), ( 2, 0), ( 1, 1), ( 2, 1)), {}),
-        'u5': ((( 1, 0), ( 2, 0), ( 0, 1), ( 2, 1)), {}),
-        'C5': ((( 1, 0), ( 2, 0), ( 2, 1), (-1, 1)), {}),
+        'N5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3, 1)), {}),
+        'P5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3, 0)), {}),
+        'Q5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 1,-1)), {}),
+        'R5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 1, 2)), {}),
         'S5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 0,-1)), {}),
-        'q5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 1,-1)), {}),
         'T5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 2,-1)), {}),
-        'Y5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3,-1)), {}),
-        'D5': ((( 1, 0), ( 2, 0), ( 0, 1), ( 1, 1)), {}),
-        'X5': ((( 1, 0), ( 2, 0), ( 0, 1), ( 2,-1)), {}),
-        'A5': ((( 1, 0), ( 2, 0), ( 1, 1), ( 2,-1)), {}),
-        'V5': ((( 1, 0), ( 2, 0), ( 0, 1), ( 0, 2)), {}),
         'U5': ((( 1, 0), ( 1, 1), (-1, 1), (-1, 2)), {}),
-        'y5': ((( 1, 0), ( 1, 1), ( 0, 2), ( 2, 1)), {}),
-        'G5': ((( 1, 0), ( 1, 1), ( 2, 1), ( 3, 0)), {}),
-        'W5': ((( 1, 0), ( 1, 1), ( 2, 1), ( 2, 2)), {}),}
+        'V5': ((( 1, 0), ( 2, 0), ( 0, 1), ( 0, 2)), {}),
+        'W5': ((( 1, 0), ( 1, 1), ( 2, 1), ( 2, 2)), {}),
+        'X5': ((( 1, 0), ( 2, 0), ( 0, 1), ( 2,-1)), {}),
+        'Y5': ((( 1, 0), ( 2, 0), ( 2, 1), ( 3,-1)), {}),}
     """(0,0) is implied."""
 
     symmetric_pieces = 'I5 E5 L5 C5 Y5 D5 X5 A5 V5 U5 W5'.split()
     """Pieces with reflexive symmetry, identical to their mirror images."""
 
-    asymmetric_pieces = 'J5 P5 N5 r5 p5 u5 S5 q5 T5 y5 G5'.split()
+    asymmetric_pieces = 'J5 P5 N5 R5 B5 F5 S5 Q5 T5 H5 G5'.split()
     """Pieces without reflexive symmetry, different from their mirror images."""
 
     piece_colors = {
-        'I5': 'blue',
-        'X5': 'red',
-        'D5': 'green',
+        'A5': 'maroon',
+        'B5': 'steelblue',
         'C5': 'lime',
+        'D5': 'green',
+        'E5': 'magenta',
+        'F5': 'lightcoral',
+        'G5': 'indigo',
+        'H5': 'tan',
+        'I5': 'blue',
+        'J5': 'darkseagreen',
+        'L5': 'darkorange',
+        'N5': 'plum',
+        'P5': 'peru',
+        'Q5': 'olive',
+        'R5': 'yellow',
+        'S5': 'gray',
+        'T5': 'teal',
+        'U5': 'navy',
         'V5': 'blueviolet',
         'W5': 'gold',
-        'U5': 'navy',
-        'E5': 'magenta',
-        'L5': 'darkorange',
+        'X5': 'red',
         'Y5': 'turquoise',
-        'A5': 'maroon',
-        'J5': 'darkseagreen',
-        'P5': 'peru',
-        'N5': 'plum',
-        'r5': 'yellow',
-        'p5': 'steelblue',
-        'S5': 'gray',
-        'u5': 'lightcoral',
-        'q5': 'olive',
-        'T5': 'teal',
-        'y5': 'tan',
-        'G5': 'indigo',
         '0': 'gray',
         '1': 'black'}
 
 
-class Polyhex12345(Polyhex1234, Pentahexes):
+class OneSidedPentahexes(OneSidedLowercaseMixin, Pentahexes):
+
+    pass
+
+
+class Polyhexes12345(Polyhexes1234, Pentahexes):
 
     piece_data = copy.deepcopy(Pentahexes.piece_data)
-    piece_data.update(copy.deepcopy(Polyhex1234.piece_data))
+    piece_data.update(copy.deepcopy(Polyhexes1234.piece_data))
 
-    symmetric_pieces = (Polyhex1234.symmetric_pieces
-                        + Pentahexes.symmetric_pieces)
+    symmetric_pieces = (
+        Polyhexes1234.symmetric_pieces + Pentahexes.symmetric_pieces)
 
-    asymmetric_pieces = (Polyhex1234.asymmetric_pieces
-                         + Pentahexes.asymmetric_pieces)
+    asymmetric_pieces = (
+        Polyhexes1234.asymmetric_pieces + Pentahexes.asymmetric_pieces)
 
     piece_colors = copy.deepcopy(Pentahexes.piece_colors)
-    piece_colors.update(Polyhex1234.piece_colors)
+    piece_colors.update(Polyhexes1234.piece_colors)
+
+
+class OneSidedPolyhexes12345(OneSidedLowercaseMixin, Polyhexes12345):
+
+    pass

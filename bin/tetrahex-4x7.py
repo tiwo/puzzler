@@ -4,6 +4,6 @@
 """9 solutions"""
 
 import puzzler
-from puzzler.puzzles.tetrahexes import Tetrahex4x7
+from puzzler.puzzles.tetrahexes import Tetrahexes4x7
 
-puzzler.run(Tetrahex4x7)
+puzzler.run(Tetrahexes4x7)

@@ -4,6 +4,6 @@
 """2 solutions"""
 
 import puzzler
-from puzzler.puzzles.tetrahexes import Tetrahex3x10Clipped
+from puzzler.puzzles.tetrahexes import Tetrahexes3x10Clipped
 
-puzzler.run(Tetrahex3x10Clipped)
+puzzler.run(Tetrahexes3x10Clipped)

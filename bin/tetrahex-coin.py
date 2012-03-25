@@ -4,6 +4,6 @@
 """4 solutions"""
 
 import puzzler
-from puzzler.puzzles.tetrahexes import TetrahexCoin
+from puzzler.puzzles.tetrahexes import TetrahexesCoin
 
-puzzler.run(TetrahexCoin)
+puzzler.run(TetrahexesCoin)

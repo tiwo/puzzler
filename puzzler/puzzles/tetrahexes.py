@@ -12,17 +12,18 @@ Concrete tetrahex puzzles.
 from puzzler.puzzles.polyhexes import Tetrahexes
 
 
-class Tetrahex4x7(Tetrahexes):
+class Tetrahexes4x7(Tetrahexes):
 
     """9 solutions"""
 
     height = 4
     width = 7
 
-    duplicate_conditions = ({'rotate_180': True},)
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['rotations'] = (0, 1, 2)
+        
 
-
-class Tetrahex7x7Triangle(Tetrahexes):
+class Tetrahexes7x7Triangle(Tetrahexes):
 
     """0 solutions"""
 
@@ -36,16 +37,12 @@ class Tetrahex7x7Triangle(Tetrahexes):
                     yield (x, y)
 
 
-class Tetrahex3x10Clipped(Tetrahexes):
+class Tetrahexes3x10Clipped(Tetrahexes):
 
     """2 solutions"""
 
     height = 3
     width = 10
-
-    duplicate_conditions = ({'row_reversed': True},
-                            {'rotate_180': True},
-                            {'row_reversed': True, 'rotate_180': True},)
 
     def coordinates(self):
         max = self.width + self.height - 2
@@ -54,17 +51,17 @@ class Tetrahex3x10Clipped(Tetrahexes):
                 if (x + y != 0) and (x + y != max):
                     yield (x, y)
 
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+        self.piece_data['P4'][-1]['rotations'] = (0, 1, 2)
 
-class TetrahexCoin(Tetrahexes):
+
+class TetrahexesCoin(Tetrahexes):
 
     """4 solutions"""
 
     height = 5
     width = 7
-
-    duplicate_conditions = ({'row_reversed': True},
-                            {'rotate_180': True},
-                            {'row_reversed': True, 'rotate_180': True},)
 
     def coordinates(self):
         max = self.width + self.height - 3
@@ -72,3 +69,7 @@ class TetrahexCoin(Tetrahexes):
             for x in range(self.width):
                 if (x + y > 1) and (x + y < max) and not (x == 3 and y == 2):
                     yield (x, y)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+        self.piece_data['P4'][-1]['rotations'] = (0, 1, 2)

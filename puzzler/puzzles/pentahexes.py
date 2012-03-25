@@ -12,27 +12,29 @@ Concrete pentahex puzzles.
 from puzzler.puzzles.polyhexes import Pentahexes
 
 
-class Pentahex10x11(Pentahexes):
+class Pentahexes10x11(Pentahexes):
 
     """? (many) solutions"""
 
     height = 10
     width = 11
 
-    duplicate_conditions = ({'rotate_180': True},)
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
 
 
-class Pentahex5x22(Pentahexes):
+class Pentahexes5x22(Pentahexes):
 
     """? (many) solutions"""
 
     height = 5
     width = 22
 
-    duplicate_conditions = ({'rotate_180': True},)
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
 
 
-class Pentahex15x11Trapezium(Pentahexes):
+class Pentahexes15x11Trapezoid(Pentahexes):
 
     height = 11
     width = 15
@@ -43,21 +45,22 @@ class Pentahex15x11Trapezium(Pentahexes):
                 if x + y < self.width:
                     yield (x, y)
 
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
 
-class Pentahex5x24Trapezium(Pentahex15x11Trapezium):
+
+class Pentahexes5x24Trapezoid(Pentahexes15x11Trapezoid):
 
     height = 5
     width = 24
 
 
-class PentahexHexagon1(Pentahexes):
+class PentahexesHexagon1(Pentahexes):
 
     """ solutions"""
 
     height = 13
     width = 13
-
-    duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
         hole = set()
@@ -72,15 +75,17 @@ class PentahexHexagon1(Pentahexes):
                 if 5 < x + y < 19 and (x,y) not in hole:
                     yield (x, y)
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexHexagon2(Pentahexes):
+
+class PentahexesHexagon2(Pentahexes):
 
     """ solutions"""
 
     height = 13
     width = 13
-
-    duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
         hole = set()
@@ -95,15 +100,17 @@ class PentahexHexagon2(Pentahexes):
                 if 5 < x + y < 19 and (x,y) not in hole:
                     yield (x, y)
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexHexagon3(Pentahexes):
+
+class PentahexesHexagon3(Pentahexes):
 
     """ solutions"""
 
     height = 15
     width = 15
-
-    duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
         hole = set()
@@ -118,15 +125,17 @@ class PentahexHexagon3(Pentahexes):
                 if 6 < x + y < 22 and (x,y) not in hole:
                     yield (x, y)
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexHexagon4(Pentahexes):
+
+class PentahexesHexagon4(Pentahexes):
 
     """ solutions"""
 
     height = 15
     width = 15
-
-    duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
         hole = set()
@@ -141,8 +150,12 @@ class PentahexHexagon4(Pentahexes):
                 if 6 < x + y < 22 and (x,y) not in hole:
                     yield (x, y)
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexTriangle1(Pentahexes):
+
+class PentahexesTriangle1(Pentahexes):
 
     height = 15
     width = 15
@@ -158,8 +171,11 @@ class PentahexTriangle1(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexTriangle2(Pentahexes):
+
+class PentahexesTriangle2(Pentahexes):
 
     height = 15
     width = 15
@@ -175,8 +191,11 @@ class PentahexTriangle2(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexTriangle3(Pentahexes):
+
+class PentahexesTriangle3(Pentahexes):
 
     height = 15
     width = 15
@@ -192,8 +211,11 @@ class PentahexTriangle3(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexTriangle4(Pentahexes):
+
+class PentahexesTriangle4(Pentahexes):
 
     height = 15
     width = 15
@@ -209,8 +231,11 @@ class PentahexTriangle4(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexTriangle5(Pentahexes):
+
+class PentahexesTriangle5(Pentahexes):
 
     height = 15
     width = 15
@@ -226,8 +251,11 @@ class PentahexTriangle5(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexTriangle6(Pentahexes):
+
+class PentahexesTriangle6(Pentahexes):
 
     height = 15
     width = 15
@@ -243,8 +271,11 @@ class PentahexTriangle6(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexHexagram1(Pentahexes):
+
+class PentahexesHexagram1(Pentahexes):
 
     height = 17
     width = 17
@@ -267,8 +298,12 @@ class PentahexHexagram1(Pentahexes):
                     (7,8), (8,8), (9,8),
                     (6,9), (7,9), (8,9), (9,9)))
 
+   def customize_piece_data(self):
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P5'][-1]['flips'] = None
 
-class PentahexHexagram2(PentahexHexagram1):
+
+class PentahexesHexagram2(PentahexesHexagram1):
 
     def hole_coordinates(self):
         return set(((8,6), (10,6),
@@ -278,7 +313,7 @@ class PentahexHexagram2(PentahexHexagram1):
                     (6,10), (8,10)))
 
 
-class PentahexHexagram3(PentahexHexagram1):
+class PentahexesHexagram3(PentahexesHexagram1):
 
     def hole_coordinates(self):
         return set(((9,6),
@@ -288,7 +323,7 @@ class PentahexHexagram3(PentahexHexagram1):
                     (7,10)))
 
 
-class PentahexHexagram4(PentahexHexagram1):
+class PentahexesHexagram4(PentahexesHexagram1):
 
     def hole_coordinates(self):
         return set(((8,6), (9,6), (10,6),
@@ -298,7 +333,7 @@ class PentahexHexagram4(PentahexHexagram1):
                     (6,10), (7,10), (8,10)))
 
 
-class PentahexHexagram5(PentahexHexagram1):
+class PentahexesHexagram5(PentahexesHexagram1):
 
     def hole_coordinates(self):
         return set(((9,6),
@@ -308,7 +343,7 @@ class PentahexHexagram5(PentahexHexagram1):
                     (7,10)))
 
 
-class PentahexHexagram6(PentahexHexagram1):
+class PentahexesHexagram6(PentahexesHexagram1):
 
     def hole_coordinates(self):
         return set(((8,7), (9,7),
@@ -316,7 +351,7 @@ class PentahexHexagram6(PentahexHexagram1):
                     (7,9), (8,9)))
 
 
-class PentahexHexagram7(PentahexHexagram1):
+class PentahexesHexagram7(PentahexesHexagram1):
 
     def hole_coordinates(self):
         return set(((9,5), (10,5),

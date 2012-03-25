@@ -4,6 +4,6 @@
 """ solutions"""
 
 import puzzler
-from puzzler.puzzles.pentahexes import PentahexTriangle3
+from puzzler.puzzles.pentahexes import PentahexesTriangle3
 
-puzzler.run(PentahexTriangle3)
+puzzler.run(PentahexesTriangle3)

@@ -4,6 +4,6 @@
 """ solutions"""
 
 import puzzler
-from puzzler.puzzles.pentahexes import Pentahex5x22
+from puzzler.puzzles.pentahexes import Pentahexes5x22
 
-puzzler.run(Pentahex5x22)
+puzzler.run(Pentahexes5x22)

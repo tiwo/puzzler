@@ -4,6 +4,6 @@
 """ solutions"""
 
 import puzzler
-from puzzler.puzzles.pentahexes import Pentahex15x11Trapezium
+from puzzler.puzzles.pentahexes import Pentahexes15x11Trapezoid
 
-puzzler.run(Pentahex15x11Trapezium)
+puzzler.run(Pentahexes15x11Trapezoid)
