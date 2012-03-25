@@ -41,18 +41,18 @@ Parallelograms
   .. image:: images/pentahexes-5x22.png
 
 
-Trapezia
-========
+Trapezoids
+==========
 
-* 15x11 trapezium: `solutions incomplete
-  <../solutions/pentahexes-15x11-trapezium.txt>`__
+* 15x11 trapezoid: `solutions incomplete
+  <../solutions/pentahexes-15x11-trapezoid.txt>`__
 
-  .. image:: images/pentahexes-15x11-trapezium.png
+  .. image:: images/pentahexes-15x11-trapezoid.png
 
-* 5x24 trapezium: `solutions incomplete
-  <../solutions/pentahexes-5x24-trapezium.txt>`__
+* 5x24 trapezoid: `solutions incomplete
+  <../solutions/pentahexes-5x24-trapezoid.txt>`__
 
-  .. image:: images/pentahexes-5x24-trapezium.png
+  .. image:: images/pentahexes-5x24-trapezoid.png
 
 
 Hexagons

@@ -93,14 +93,14 @@ These puzzles use the monohex, the dihex, the three trihexes, and the
 seven tetrahexes, for a total of 40 hexagons.
 
 * 4x10 parallelogram: `3,665,348 solutions
-  <../solutions/polyhexes-4x10.txt>`__
+  <../solutions/polyhexes-1234-4x10.txt>`__
 
-  .. image:: images/polyhexes-4x10.png
+  .. image:: images/polyhexes-1234-4x10.png
 
 * 5x8 parallelogram: `7,578,295 solutions
-  <../solutions/polyhexes-5x8.txt>`__
+  <../solutions/polyhexes-1234-5x8.txt>`__
 
-  .. image:: images/polyhexes-5x8.png
+  .. image:: images/polyhexes-1234-5x8.png
 
 * 6x7 parallelogram with hole (discovered by Dan Klarskov): `3,832,702
   solutions <../solutions/polyhexes-1234-6x7.txt>`__
@@ -279,19 +279,19 @@ These puzzles uses the monohex, the dihex, the three trihexes, the
 seven tetrahexes, and the 22 pentahexes, for a total of 150 hexagons.
 
 * 5x30 parallelogram: `solutions incomplete
-  <../solutions/polyhexes-5x30.txt>`__
+  <../solutions/polyhexes-12345-5x30.txt>`__
 
-  .. image:: images/polyhexes-5x30.png
+  .. image:: images/polyhexes-12345-5x30.png
 
 * 6x25 parallelogram: `solutions incomplete
-  <../solutions/polyhexes-6x25.txt>`__
+  <../solutions/polyhexes-12345-6x25.txt>`__
 
-  .. image:: images/polyhexes-6x25.png
+  .. image:: images/polyhexes-12345-6x25.png
 
 * 10x15 parallelogram: `solutions incomplete
-  <../solutions/polyhexes-10x15.txt>`__
+  <../solutions/polyhexes-12345-10x15.txt>`__
 
-  .. image:: images/polyhexes-10x15.png
+  .. image:: images/polyhexes-12345-10x15.png
 
 * .. _full Hexnut puzzle:
 
