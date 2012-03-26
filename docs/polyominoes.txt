@@ -51,12 +51,12 @@ One-Sided Polyominoes of Order 2 Through 4
 These puzzles use the 1 domino, 2 trominoes, and 7 tetrominoes, for a
 total of 36 squares.
 
-* Square: `solutions incomplete
+* Square: `7,252 solutions
   <../solutions/one-sided-polyominoes-234-square.txt>`__
 
   .. image:: images/one-sided-polyominoes-234-square.png
 
-* Octagon: `solutions incomplete
+* Octagon: `1,023 solutions
   <../solutions/one-sided-polyominoes-234-octagon.txt>`__
 
   .. image:: images/one-sided-polyominoes-234-octagon.png

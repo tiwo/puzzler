@@ -232,6 +232,13 @@ Potential Puzzles
 
 29: polyominoes of order 1 - 4
 
+* Potential:
+
+  - R(5,5) + R(9,1) centered (discovered by Dan Klarskov, email
+    2012-03-25)
+  - R(3,9) + R(11,1) centered (discovered by Dan Klarskov, email
+    2012-03-25)
+
 * No solutions:
 
   - R(5,5) + R(9,1) + R(1,9) - 4 squares (= Polyominoes1234Cross_x)

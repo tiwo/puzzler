@@ -6,4 +6,4 @@
 import puzzler
 from puzzler.puzzles.polyominoes234 import OneSidedPolyominoes234Octagon
 
-puzzler.run(OneSidedPolyominoes234)
+puzzler.run(OneSidedPolyominoes234Octagon)
