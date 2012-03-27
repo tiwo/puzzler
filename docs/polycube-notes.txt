@@ -190,7 +190,11 @@ Potential Puzzles
 
 *Initial numbers are the counts of unit cubes in the puzzles.*
 
+32: Tetracubes
+
 140: Non-convex pentacubes
+
+145: Pentacubes
 
 150: Pentacubes Plus (= Kadon's Super Deluxe Quintillions)
 

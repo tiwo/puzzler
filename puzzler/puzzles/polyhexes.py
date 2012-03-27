@@ -73,6 +73,17 @@ class Polyhexes(Puzzle2D):
                 yield cls.coordinate_offset(x, y, offset)
 
     @classmethod
+    def coordinates_semi_regular_hexagon(cls, base_length, side_length,
+                                         offset=None):
+        bound =  base_length + side_length - 1
+        min_xy = side_length - 1
+        max_xy = base_length + 2 * side_length - 3
+        for coord in cls.coordinates_parallelogram(bound, bound):
+            x, y = coord
+            if min_xy <= (x + y) <= max_xy:
+                yield cls.coordinate_offset(x, y, offset)
+
+    @classmethod
     def coordinates_hexagram(cls, side_length, offset=None):
         bound = (side_length - 1) * 4 + 1
         min_x = min_y = side_length - 1

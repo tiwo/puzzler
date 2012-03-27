@@ -304,5 +304,30 @@ seven tetrahexes, and the 22 pentahexes, for a total of 150 hexagons.
 
   .. image:: images/polyhexes-12345-hexagon-ring-1.png
 
+* 15x2 semi-regular hexagon: `solutions incomplete
+  <../solutions/polyhexes-12345-semi-regular-hexagon-15x2.txt>`__
+
+  .. image:: images/polyhexes-12345-semi-regular-hexagon-15x2.png
+
+* Triangle: `solutions incomplete
+  <../solutions/polyhexes-12345-triangle.txt>`__
+
+  .. image:: images/polyhexes-12345-triangle.png
+
+* 17x15 trapezoid: `solutions incomplete
+  <../solutions/polyhexes-12345-trapezoid-17x15.txt>`__
+
+  .. image:: images/polyhexes-12345-trapezoid-17x15.png
+
+* 18x12 trapezoid: `solutions incomplete
+  <../solutions/polyhexes-12345-trapezoid-18x12.txt>`__
+
+  .. image:: images/polyhexes-12345-trapezoid-18x12.png
+
+* 32x5 trapezoid: `solutions incomplete
+  <../solutions/polyhexes-12345-trapezoid-32x5.txt>`__
+
+  .. image:: images/polyhexes-12345-trapezoid-32x5.png
+
 
 .. |c| unicode:: U+00A9 .. copyright sign

@@ -10,10 +10,10 @@ Concrete polyhex (order 1 through 5) puzzles.
 """
 
 from puzzler.puzzles import polyhexes
-from puzzler.puzzles.polyhexes import Polyhex12345
+from puzzler.puzzles.polyhexes import Polyhexes12345
 
 
-class Polyhex12345_3x50(Polyhex12345):
+class Polyhexes12345_3x50(Polyhexes12345):
 
     """0 solutions?"""
 
@@ -25,7 +25,7 @@ class Polyhex12345_3x50(Polyhex12345):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
 
 
-class Polyhex12345_5x30(Polyhex12345_3x50):
+class Polyhexes12345_5x30(Polyhexes12345_3x50):
 
     """? solutions"""
 
@@ -33,7 +33,7 @@ class Polyhex12345_5x30(Polyhex12345_3x50):
     width = 30
 
 
-class Polyhex12345_6x25(Polyhex12345_3x50):
+class Polyhexes12345_6x25(Polyhexes12345_3x50):
 
     """? solutions"""
 
@@ -41,7 +41,7 @@ class Polyhex12345_6x25(Polyhex12345_3x50):
     width = 25
 
 
-class Polyhex12345_10x15(Polyhex12345_3x50):
+class Polyhexes12345_10x15(Polyhexes12345_3x50):
 
     """? solutions"""
 
@@ -49,7 +49,7 @@ class Polyhex12345_10x15(Polyhex12345_3x50):
     width = 15
 
 
-class Polyhexes12345HexagonRing1(Polyhex12345):
+class Polyhexes12345HexagonRing1(Polyhexes12345):
 
     """
     many solutions
@@ -64,7 +64,7 @@ class Polyhexes12345HexagonRing1(Polyhex12345):
     height = 15
     width = 15
 
-    hole = set(Polyhex12345.coordinates_hexagon(3, offset=(5,5)))
+    hole = set(Polyhexes12345.coordinates_hexagon(3, offset=(5,5)))
 
     def coordinates(self):
         coords = set(self.coordinates_hexagon(8)) - self.hole
@@ -162,3 +162,65 @@ class Polyhexes12345HexagonRing_X2(Polyhexes12345HexagonRing1):
         self.build_regular_matrix(
             sorted(polyhexes.Pentahexes.piece_data.keys()),
             self.pentahex_coords)
+
+
+class Polyhexes12345SemiRegularHexagon15x2(Polyhexes12345):
+
+    """many solutions"""
+
+    height = 16
+    width = 16
+
+    def coordinates(self):
+        return self.coordinates_semi_regular_hexagon(15, 2)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+        self.piece_data['P4'][-1]['rotations'] = (0, 1)
+
+
+class Polyhexes12345Triangle(Polyhexes12345):
+
+    """many solutions"""
+
+    height = 17
+    width = 17
+
+    def coordinates(self):
+        return sorted(
+            set(self.coordinates_triangle(17))
+            - set(self.coordinates_triangle(2, offset=(5,5))))
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+        self.piece_data['P4'][-1]['rotations'] = (0, 1)
+
+
+class Polyhexes12345Trapezoid17x15(Polyhexes12345):
+
+    """many solutions"""
+
+    width = 17
+    height = 15
+
+    def coordinates(self):
+        return self.coordinates_trapezoid(self.width, self.height)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+
+
+class Polyhexes12345Trapezoid18x12(Polyhexes12345Trapezoid17x15):
+
+    """many solutions"""
+
+    width = 18
+    height = 12
+
+
+class Polyhexes12345Trapezoid32x5(Polyhexes12345Trapezoid17x15):
+
+    """many solutions"""
+
+    width = 32
+    height = 5

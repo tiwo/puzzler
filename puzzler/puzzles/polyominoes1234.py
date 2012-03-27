@@ -63,22 +63,6 @@ class Polyominoes1234Astroid(Polyominoes1234):
         self.piece_data['L4'][-1]['flips'] = None
 
 
-class OneSidedPolyominoes1234Octagon(OneSidedPolyominoes1234):
-
-    """many solutions"""
-
-    width = 7
-    height = 7
-
-    holes = set(((-1,3), (3,-1), (3,7), (7,3)))
-
-    def coordinates(self):
-        coords = (
-            set(self.coordinates_diamond(5, offset=(-1,-1)))
-            - self.holes)
-        return sorted(coords)
-
-
 class Polyominoes1234Cross_x(Polyominoes1234):
 
     """0 solutions"""
@@ -95,5 +79,83 @@ class Polyominoes1234Cross_x(Polyominoes1234):
             set(list(self.coordinates_rectangle(5, 5, offset=(2,2)))
                + list(self.coordinates_rectangle(9, 1, offset=(0,4)))
                + list(self.coordinates_rectangle(1, 9, offset=(4,0))))
+            - self.holes)
+        return sorted(coords)
+
+
+class Polyominoes1234SkeweredSquare(Polyominoes1234):
+
+    """
+    1,320 solutions
+
+    Puzzle design by Dan Klarskov.
+    """
+
+    width = 9
+    height = 5
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_rectangle(5, 5, offset=(2,0)))
+            + list(self.coordinates_rectangle(9, 1, offset=(0,2))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['L4'][-1]['rotations'] = (0, 1)
+        self.piece_data['L4'][-1]['flips'] = None
+
+
+class Polyominoes1234Skewered9x3(Polyominoes1234):
+
+    """
+    5,249 solutions
+
+    Puzzle design by Dan Klarskov.
+    """
+
+    width = 11
+    height = 3
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_rectangle(9, 3, offset=(1,0)))
+            + list(self.coordinates_rectangle(11, 1, offset=(0,1))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['L4'][-1]['rotations'] = (0, 1)
+        self.piece_data['L4'][-1]['flips'] = None
+
+
+class Polyominoes1234Skewered7x3(Polyominoes1234):
+
+    """ solutions"""
+
+    width = 15
+    height = 3
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_rectangle(7, 3, offset=(4,0)))
+            + list(self.coordinates_rectangle(15, 1, offset=(0,1))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['L4'][-1]['rotations'] = (0, 1)
+        self.piece_data['L4'][-1]['flips'] = None
+
+
+class OneSidedPolyominoes1234Octagon(OneSidedPolyominoes1234):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+
+    holes = set(((-1,3), (3,-1), (3,7), (7,3)))
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_diamond(5, offset=(-1,-1)))
             - self.holes)
         return sorted(coords)

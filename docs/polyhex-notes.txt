@@ -595,8 +595,10 @@ Potential Puzzles
 110: pentahexes
 
 * Rs(11,10)
-* Rs()
+* Rs(22,5)
+* Ri(20,6)
 * Rr(13,9)
+* Rr(17,7)
 * Tr(15,11)
 * Tr(29,4)
 * Tr(24,5)
@@ -613,10 +615,6 @@ Potential Puzzles
   * Rs(25,6)
   * Rs(15,10)
   * Ri(13,12)
-  * Tr(17,15)
-  * Tr(32,5)
-  * Tr(18,12)
-  * Hs(15,2)
   * C(10,8)
   * C(6,13)
 
@@ -632,11 +630,8 @@ Potential Puzzles
 * Hs(10,6)
 * C(15,6)
 * C(11,8)
-* Tr(30,6)
-* Tr(21,10)
-* Tr(20,11)
-* Tr(18,15)
 * H(8) - 4 units
+* Hg(6) - 16 units
 
 217: one-sided polyhexes of order 1 to 5
 

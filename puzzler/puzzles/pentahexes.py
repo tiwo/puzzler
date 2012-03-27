@@ -9,7 +9,7 @@
 Concrete pentahex puzzles.
 """
 
-from puzzler.puzzles.polyhexes import Pentahexes
+from puzzler.puzzles.polyhexes import Pentahexes, OneSidedPentahexes
 
 
 class Pentahexes10x11(Pentahexes):
@@ -75,7 +75,7 @@ class PentahexesHexagon1(Pentahexes):
                 if 5 < x + y < 19 and (x,y) not in hole:
                     yield (x, y)
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['P5'][-1]['flips'] = None
 
@@ -100,7 +100,7 @@ class PentahexesHexagon2(Pentahexes):
                 if 5 < x + y < 19 and (x,y) not in hole:
                     yield (x, y)
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['P5'][-1]['flips'] = None
 
@@ -125,7 +125,7 @@ class PentahexesHexagon3(Pentahexes):
                 if 6 < x + y < 22 and (x,y) not in hole:
                     yield (x, y)
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['P5'][-1]['flips'] = None
 
@@ -150,7 +150,7 @@ class PentahexesHexagon4(Pentahexes):
                 if 6 < x + y < 22 and (x,y) not in hole:
                     yield (x, y)
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['P5'][-1]['flips'] = None
 
@@ -171,7 +171,7 @@ class PentahexesTriangle1(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['flips'] = None
 
 
@@ -191,7 +191,7 @@ class PentahexesTriangle2(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['flips'] = None
 
 
@@ -211,7 +211,7 @@ class PentahexesTriangle3(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['flips'] = None
 
 
@@ -231,7 +231,7 @@ class PentahexesTriangle4(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['flips'] = None
 
 
@@ -251,7 +251,7 @@ class PentahexesTriangle5(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['flips'] = None
 
 
@@ -271,7 +271,7 @@ class PentahexesTriangle6(Pentahexes):
                 if x + y < self.width and (x,y) not in hole:
                     yield (x, y)
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['flips'] = None
 
 
@@ -298,7 +298,7 @@ class PentahexesHexagram1(Pentahexes):
                     (7,8), (8,8), (9,8),
                     (6,9), (7,9), (8,9), (9,9)))
 
-   def customize_piece_data(self):
+    def customize_piece_data(self):
         self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['P5'][-1]['flips'] = None
 
@@ -361,3 +361,51 @@ class PentahexesHexagram7(PentahexesHexagram1):
                     (7,9), (8,9),
                     (7,10),
                     (6,11), (7,11)))
+
+
+class OneSidedPentahexesTriangle1(OneSidedPentahexes):
+
+    """many solutions"""
+
+    width = 18
+    height = 18
+
+    def coordinates(self):
+        return sorted(
+            set(self.coordinates_triangle(18))
+            - set(self.coordinates_triangle(3, offset=(5,5))))
+
+
+class OneSidedPentahexesTrapezoid18x15(OneSidedPentahexes):
+
+    """many solutions"""
+
+    width = 18
+    height = 15
+
+    def coordinates(self):
+        return self.coordinates_trapezoid(self.width, self.height)
+
+
+class OneSidedPentahexesTrapezoid20x11(OneSidedPentahexesTrapezoid18x15):
+
+    """many solutions"""
+
+    width = 20
+    height = 11
+
+
+class OneSidedPentahexesTrapezoid21x10(OneSidedPentahexesTrapezoid18x15):
+
+    """many solutions"""
+
+    width = 21
+    height = 10
+
+
+class OneSidedPentahexesTrapezoid30x6(OneSidedPentahexesTrapezoid18x15):
+
+    """many solutions"""
+
+    width = 30
+    height = 6

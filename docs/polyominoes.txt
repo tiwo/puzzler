@@ -39,6 +39,21 @@ tetrominoes, for a total of 29 squares.
 
   .. image:: images/polyominoes-1234-square-plus.png
 
+* Skewered square (design by Dan Klarskov): `1,320 solutions
+  <../solutions/polyominoes-1234-skewered-square.txt>`__
+
+  .. image:: images/polyominoes-1234-skewered-square.png
+
+* Skewered 9x3 rectangle (design by Dan Klarskov): `5,249 solutions
+  <../solutions/polyominoes-1234-skewered-9x3.txt>`__
+
+  .. image:: images/polyominoes-1234-skewered-9x3.png
+
+* Skewered 7x3 rectangle: `747 solutions
+  <../solutions/polyominoes-1234-skewered-7x3.txt>`__
+
+  .. image:: images/polyominoes-1234-skewered-7x3.png
+
 * Astroid (design from Kadon / Kate Jones): `18 solutions
   <../solutions/polyominoes-1234-astroid.txt>`__
 

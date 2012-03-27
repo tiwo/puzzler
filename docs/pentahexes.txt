@@ -27,6 +27,10 @@
 .. contents::
 
 
+------------
+ Pentahexes
+------------
+
 Parallelograms
 ==============
 
@@ -157,6 +161,36 @@ variations with centered, symmetrical 11-unit holes:
   <../solutions/pentahexes-hexagram-7.txt>`__
 
   .. image:: images/pentahexes-hexagram-7.png
+
+
+----------------------
+ One-Sided Pentahexes
+----------------------
+
+* Triangle: `solutions incomplete
+  <../solutions/one-sided-pentahexes-triangle-1.txt>`__
+
+  .. image:: images/one-sided-pentahexes-triangle-1.png
+
+* 18x15 trapezoid: `solutions incomplete
+  <../solutions/one-sided-pentahexes-trapezoid-18x15.txt>`__
+
+  .. image:: images/one-sided-pentahexes-trapezoid-18x15.png
+
+* 20x11 trapezoid: `solutions incomplete
+  <../solutions/one-sided-pentahexes-trapezoid-20x11.txt>`__
+
+  .. image:: images/one-sided-pentahexes-trapezoid-20x11.png
+
+* 21x10 trapezoid: `solutions incomplete
+  <../solutions/one-sided-pentahexes-trapezoid-21x10.txt>`__
+
+  .. image:: images/one-sided-pentahexes-trapezoid-21x10.png
+
+* 30x6 trapezoid: `solutions incomplete
+  <../solutions/one-sided-pentahexes-trapezoid-30x6.txt>`__
+
+  .. image:: images/one-sided-pentahexes-trapezoid-30x6.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

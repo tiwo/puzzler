@@ -234,11 +234,6 @@ Potential Puzzles
 
 * Potential:
 
-  - R(5,5) + R(9,1) centered (discovered by Dan Klarskov, email
-    2012-03-25)
-  - R(3,9) + R(11,1) centered (discovered by Dan Klarskov, email
-    2012-03-25)
-
 * No solutions:
 
   - R(5,5) + R(9,1) + R(1,9) - 4 squares (= Polyominoes1234Cross_x)
@@ -310,7 +305,7 @@ Potential Puzzles
 
 299: polyominoes of order 1 - 6
 
-* "polystar" (gamepuzzles.com/polystar.htm, solution by Darian
+* "polystar" (http://gamepuzzles.com/polystar.htm, solution by Darian
   Jenkins, suggested by Dan Klarskov, email 2012-03-14)
 
 360: one-sided hexominoes
