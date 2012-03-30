@@ -500,3 +500,74 @@ class SolidPentominoes7x7x7Crystal(SolidPentominoes):
                         yield (x, y, z)
         for x, y, z in ((0,0,6), (0,6,0), (6,0,0), (2,2,2)):
             yield (x, y, z)
+
+
+class SolidPentominoesTower1(SolidPentominoes):
+
+    """
+    27 solutions
+
+    Design by David Klarner 
+    """
+
+    width = 3
+    height = 8
+    depth = 3
+
+    extras = ((0,7,1), (1,7,0), (1,7,2), (2,7,1))
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_cuboid(3, 7, 3))
+            - set(self.coordinates_cuboid(1, 7, 1, offset=(1,0,1))))
+        coords.update(set(self.coordinate_offset(x, y, z, None)
+                          for x, y, z in self.extras))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['F'][-1]['flips'] = None
+        self.piece_data['F'][-1]['axes'] = None
+
+    def build_matrix(self):
+        keys = sorted(self.pieces.keys())
+        for coords, aspect in self.pieces['F']:
+            for y in range(6):
+                translated = aspect.translate((0, y, 0))
+                if translated.issubset(self.solution_coords):
+                    self.build_matrix_row('F', translated)
+        keys.remove('F')
+        self.build_regular_matrix(keys)
+
+
+class SolidPentominoesTower2(SolidPentominoesTower1):
+
+    """
+    10 solutions
+
+    Design by David Klarner 
+    """
+
+    extras = ((0,7,0), (0,7,2), (2,7,0), (2,7,2))
+
+
+class SolidPentominoesTower3(SolidPentominoesTower1):
+
+    """
+    many solutions
+
+    Design by Leslie Young via Kadon's Quintillions booklet 
+    """
+
+    extras = ((0,6,1), (1,6,0), (1,6,1), (1,6,2), (2,6,1), (1,7,1))
+
+    def coordinates(self):
+        coords = set(self.coordinates_cuboid(3, 6, 3))
+        coords.update(set(self.coordinate_offset(x, y, z, None)
+                          for x, y, z in self.extras))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        pass
+
+    def build_matrix(self):
+        SolidPentominoes.build_matrix(self)

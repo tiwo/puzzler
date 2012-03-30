@@ -145,5 +145,28 @@ Misc
 
   .. image:: images/solid-pentominoes-3x5x7-slope.png
 
+* Towers:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/solid-pentominoes-tower-1.png
+
+            `27 solutions
+            <../solutions/solid-pentominoes-tower-1.txt>`__
+            (core hollow; design by David Klarner)
+
+       - .. figure:: images/solid-pentominoes-tower-2.png
+
+            `10 solution
+            <../solutions/solid-pentominoes-tower-2.txt>`__
+            (core hollow; design by David Klarner)
+
+       - .. figure:: images/solid-pentominoes-tower-3.png
+
+            `many solutions
+            <../solutions/solid-pentominoes-tower-3.txt>`__
+            (design by Leslie Young via Kadon's Quintillions booklet)
+
 
 .. |c| unicode:: U+00A9 .. copyright sign

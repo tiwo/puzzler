@@ -135,17 +135,12 @@ How can others contribute?
 
 **Anyone**
     Do you enjoy Polyform Puzzler and want to say thanks?  Is there a
-    feature you'd like to see implemented?  (Yes, I *can* be bribed!)
-    Well, I love real-world, physical polyform puzzles too, and I'd
-    love to receive some!  Here's my _`wish list`:
-
-    * Kadon's `Super Deluxe Quintillions
-      <http://www.gamepuzzles.com/polycube.htm#SQd>`__ and `Poly-4
-      Supplement <http://www.gamepuzzles.com/poly4.htm>`__
+    puzzle or a feature you'd like to see implemented?  (Yes, I *can*
+    be bribed!)  Well, I love real-world, physical polyform puzzles
+    too, and I'd love to receive some!  Here's my _`wish list`:
 
     * Kadon's `Iamond Hex
-      <http://www.gamepuzzles.com/esspoly.htm#IH>`__, `Iamond Ring
-      <http://www.gamepuzzles.com/esspoly.htm#IR>`__, and `Octiamond
+      <http://www.gamepuzzles.com/esspoly.htm#IH>`__, and `Octiamond
       Ring <http://www.gamepuzzles.com/esspoly.htm#OR>`__
 
     * Kadon's `Hexnut Jr.
