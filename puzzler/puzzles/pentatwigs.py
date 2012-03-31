@@ -432,6 +432,18 @@ class PentatwigsSnowflake(Pentatwigs):
         return sorted(coords)
 
 
+class PentatwigsX1(PentatwigsButterfly1):
+
+    """32 solutions"""
+
+    hole = set(((1,5,0), (1,5,2), (2,4,1), (2,5,0), (2,5,2)))
+
+    svg_rotation = 30
+
+    def customize_piece_data(self):
+        self.piece_data['R5'][-1]['flips'] = None
+
+
 class OneSidedPentatwigsTrapezoid12x2(OneSidedPentatwigs):
 
     """many solutions"""

@@ -455,6 +455,37 @@ class OneSidedTetrasticks6x10ClippedCorners3(OneSidedTetrasticks):
                 yield coord
 
 
+class OneSidedTetrasticksX1(OneSidedTetrasticks):
+
+    """many solutions"""
+
+    height = 10
+    width = 10
+
+    holes = set((
+        (3,4,0), (3,5,0), (4,3,1), (4,5,1), (5,3,1), (5,4,0), (5,5,0), (5,5,1)))
+
+    svg_rotation = 45
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_bordered(10, 4, offset=(0,3,0)))
+            + list(self.coordinates_bordered(4, 10, offset=(3,0,0))))
+        coords.difference_update(self.holes)
+        return sorted(coords)
+
+
+class OneSidedTetrasticksX2(OneSidedTetrasticksX1):
+
+    """many solutions"""
+
+    height = 10
+    width = 10
+
+    holes = set((
+        (3,5,0), (4,4,0), (4,4,1), (4,5,0), (4,5,1), (5,3,1), (5,4,0), (5,4,1)))
+
+
 class OneSidedWeldedTetrasticks5x5(OneSidedTetrasticks):
 
     """

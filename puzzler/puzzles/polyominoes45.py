@@ -93,3 +93,21 @@ class Polyominoes45AztecDiamond(Polyominoes45):
     def customize_piece_data(self):
         self.piece_data['P'][-1]['rotations'] = None
         self.piece_data['P'][-1]['flips'] = None
+
+
+class Polyominoes45X_x1(Polyominoes45):
+
+    """0 solutions"""
+
+    height = 14
+    width = 14
+
+    holes = set(Polyominoes45.coordinates_rectangle(4, 4, offset=(5,5)))
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_rectangle(14, 4, offset=(0,5)))
+            + list(self.coordinates_rectangle(4, 14, offset=(5,0))))
+        for coord in sorted(coords):
+            if coord not in self.holes:
+                yield coord

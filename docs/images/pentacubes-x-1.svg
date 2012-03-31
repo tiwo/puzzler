@@ -1,0 +1,1883 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="131.000"
+   height="143.000"
+   viewBox="0 0 131.000 143.000"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="pentacubes-x-1.svg"
+   inkscape:export-filename="/home/david/bin/puzzles/g4g/images/pentacubes-x-1.png"
+   inkscape:export-xdpi="180"
+   inkscape:export-ydpi="180">
+  <metadata
+     id="metadata517">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     id="namedview515"
+     showgrid="false"
+     inkscape:zoom="9.7341107"
+     inkscape:cx="71.499998"
+     inkscape:cy="74.500004"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <symbol
+       id="cube0">
+      <polygon
+         fill="gray"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon7" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon9" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon11" />
+    </symbol>
+    <symbol
+       id="cube1">
+      <polygon
+         fill="black"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon14" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon16" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon18" />
+    </symbol>
+    <symbol
+       id="cubeA">
+      <polygon
+         fill="cadetblue"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon21" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon23" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon25" />
+    </symbol>
+    <symbol
+       id="cubeF">
+      <polygon
+         fill="green"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon28" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon30" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon32" />
+    </symbol>
+    <symbol
+       id="cubeI">
+      <polygon
+         fill="blue"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon35" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon37" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon39" />
+    </symbol>
+    <symbol
+       id="cubeJ1">
+      <polygon
+         fill="steelblue"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon42" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon44" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon46" />
+    </symbol>
+    <symbol
+       id="cubeJ2">
+      <polygon
+         fill="gray"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon49" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon51" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon53" />
+    </symbol>
+    <symbol
+       id="cubeJ4">
+      <polygon
+         fill="lightcoral"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon56" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon58" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon60" />
+    </symbol>
+    <symbol
+       id="cubeL">
+      <polygon
+         fill="lime"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon63" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon65" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon67" />
+    </symbol>
+    <symbol
+       id="cubeL1">
+      <polygon
+         fill="darkseagreen"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon70" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon72" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon74" />
+    </symbol>
+    <symbol
+       id="cubeL2">
+      <polygon
+         fill="peru"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon77" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon79" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon81" />
+    </symbol>
+    <symbol
+       id="cubeL3">
+      <polygon
+         fill="rosybrown"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon84" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon86" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon88" />
+    </symbol>
+    <symbol
+       id="cubeL4">
+      <polygon
+         fill="yellowgreen"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon91" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon93" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon95" />
+    </symbol>
+    <symbol
+       id="cubeN">
+      <polygon
+         fill="navy"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon98" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon100" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon102" />
+    </symbol>
+    <symbol
+       id="cubeN1">
+      <polygon
+         fill="olive"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon105" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon107" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon109" />
+    </symbol>
+    <symbol
+       id="cubeN2">
+      <polygon
+         fill="teal"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon112" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon114" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon116" />
+    </symbol>
+    <symbol
+       id="cubeP">
+      <polygon
+         fill="magenta"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon119" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon121" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon123" />
+    </symbol>
+    <symbol
+       id="cubeQ">
+      <polygon
+         fill="thistle"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon126" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon128" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon130" />
+    </symbol>
+    <symbol
+       id="cubeS1">
+      <polygon
+         fill="tan"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon133" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon135" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon137" />
+    </symbol>
+    <symbol
+       id="cubeS2">
+      <polygon
+         fill="indigo"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon140" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon142" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon144" />
+    </symbol>
+    <symbol
+       id="cubeT">
+      <polygon
+         fill="darkorange"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon147" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon149" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon151" />
+    </symbol>
+    <symbol
+       id="cubeT1">
+      <polygon
+         fill="yellow"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon154" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon156" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon158" />
+    </symbol>
+    <symbol
+       id="cubeT2">
+      <polygon
+         fill="orangered"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon161" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon163" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon165" />
+    </symbol>
+    <symbol
+       id="cubeU">
+      <polygon
+         fill="turquoise"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon168" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon170" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon172" />
+    </symbol>
+    <symbol
+       id="cubeV">
+      <polygon
+         fill="blueviolet"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon175" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon177" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon179" />
+    </symbol>
+    <symbol
+       id="cubeV1">
+      <polygon
+         fill="darkorchid"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon182" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon184" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon186" />
+    </symbol>
+    <symbol
+       id="cubeV2">
+      <polygon
+         fill="tomato"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon189" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon191" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon193" />
+    </symbol>
+    <symbol
+       id="cubeW">
+      <polygon
+         fill="maroon"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon196" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon198" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon200" />
+    </symbol>
+    <symbol
+       id="cubeX">
+      <polygon
+         fill="red"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon203" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon205" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon207" />
+    </symbol>
+    <symbol
+       id="cubeY">
+      <polygon
+         fill="gold"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon210" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon212" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon214" />
+    </symbol>
+    <symbol
+       id="cubeZ">
+      <polygon
+         fill="plum"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3"
+         id="polygon217" />
+      <polygon
+         fill="black"
+         fill-opacity="0.25"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5"
+         id="polygon219" />
+      <polygon
+         fill="white"
+         fill-opacity="0.30"
+         stroke="white"
+         stroke-width="0.5"
+         stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0"
+         id="polygon221" />
+    </symbol>
+  </defs>
+  <g
+     id="g223"
+     transform="matrix(0.74786611,0.66384959,-0.66384959,0.74786611,63.501268,-30.194078)">
+    <use
+       xlink:href="#cubeF"
+       x="61"
+       y="96"
+       id="use225"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeF"
+       x="70"
+       y="98"
+       id="use227"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ1"
+       x="79"
+       y="100"
+       id="use229"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeX"
+       x="61"
+       y="86"
+       id="use231"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeF"
+       x="70"
+       y="88"
+       id="use233"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeF"
+       x="79"
+       y="90"
+       id="use235"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL"
+       x="61"
+       y="76"
+       id="use237"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeF"
+       x="70"
+       y="78"
+       id="use239"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ4"
+       x="79"
+       y="80"
+       id="use241"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeP"
+       x="34"
+       y="60"
+       id="use243"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL2"
+       x="43"
+       y="62"
+       id="use245"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeW"
+       x="52"
+       y="64"
+       id="use247"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL"
+       x="61"
+       y="66"
+       id="use249"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL1"
+       x="70"
+       y="68"
+       id="use251"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ4"
+       x="79"
+       y="70"
+       id="use253"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV"
+       x="88"
+       y="72"
+       id="use255"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV"
+       x="97"
+       y="74"
+       id="use257"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV"
+       x="106"
+       y="76"
+       id="use259"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeP"
+       x="34"
+       y="50"
+       id="use261"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeW"
+       x="43"
+       y="52"
+       id="use263"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeW"
+       x="52"
+       y="54"
+       id="use265"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL"
+       x="61"
+       y="56"
+       id="use267"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeI"
+       x="70"
+       y="58"
+       id="use269"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ4"
+       x="79"
+       y="60"
+       id="use271"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ4"
+       x="88"
+       y="62"
+       id="use273"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV1"
+       x="97"
+       y="64"
+       id="use275"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV"
+       x="106"
+       y="66"
+       id="use277"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeW"
+       x="34"
+       y="40"
+       id="use279"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeW"
+       x="43"
+       y="42"
+       id="use281"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeZ"
+       x="52"
+       y="44"
+       id="use283"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL"
+       x="61"
+       y="46"
+       id="use285"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeY"
+       x="70"
+       y="48"
+       id="use287"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeY"
+       x="79"
+       y="50"
+       id="use289"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeY"
+       x="88"
+       y="52"
+       id="use291"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeY"
+       x="97"
+       y="54"
+       id="use293"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV"
+       x="106"
+       y="56"
+       id="use295"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN2"
+       x="61"
+       y="36"
+       id="use297"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeS2"
+       x="70"
+       y="38"
+       id="use299"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeY"
+       x="79"
+       y="40"
+       id="use301"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN2"
+       x="61"
+       y="26"
+       id="use303"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN2"
+       x="70"
+       y="28"
+       id="use305"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeS1"
+       x="79"
+       y="30"
+       id="use307"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT"
+       x="61"
+       y="16"
+       id="use309"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN2"
+       x="70"
+       y="18"
+       id="use311"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeS1"
+       x="79"
+       y="20"
+       id="use313"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeX"
+       x="55"
+       y="99"
+       id="use315"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ2"
+       x="64"
+       y="101"
+       id="use317"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ1"
+       x="73"
+       y="103"
+       id="use319"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeX"
+       x="55"
+       y="89"
+       id="use321"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN1"
+       x="64"
+       y="91"
+       id="use323"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ1"
+       x="73"
+       y="93"
+       id="use325"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeX"
+       x="55"
+       y="79"
+       id="use327"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ1"
+       x="64"
+       y="81"
+       id="use329"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ1"
+       x="73"
+       y="83"
+       id="use331"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeP"
+       x="28"
+       y="63"
+       id="use333"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL2"
+       x="37"
+       y="65"
+       id="use335"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL1"
+       x="46"
+       y="67"
+       id="use337"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL1"
+       x="55"
+       y="69"
+       id="use339"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL1"
+       x="64"
+       y="71"
+       id="use341"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL3"
+       x="73"
+       y="73"
+       id="use343"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeU"
+       x="82"
+       y="75"
+       id="use345"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeU"
+       x="91"
+       y="77"
+       id="use347"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeU"
+       x="100"
+       y="79"
+       id="use349"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeP"
+       x="28"
+       y="53"
+       id="use351"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL2"
+       x="37"
+       y="55"
+       id="use353"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL1"
+       x="46"
+       y="57"
+       id="use355"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL4"
+       x="55"
+       y="59"
+       id="use357"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeI"
+       x="64"
+       y="61"
+       id="use359"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL3"
+       x="73"
+       y="63"
+       id="use361"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ4"
+       x="82"
+       y="65"
+       id="use363"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV1"
+       x="91"
+       y="67"
+       id="use365"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT2"
+       x="100"
+       y="69"
+       id="use367"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeZ"
+       x="28"
+       y="43"
+       id="use369"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeZ"
+       x="37"
+       y="45"
+       id="use371"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeZ"
+       x="46"
+       y="47"
+       id="use373"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL"
+       x="55"
+       y="49"
+       id="use375"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeS2"
+       x="64"
+       y="51"
+       id="use377"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL3"
+       x="73"
+       y="53"
+       id="use379"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL3"
+       x="82"
+       y="55"
+       id="use381"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV1"
+       x="91"
+       y="57"
+       id="use383"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV1"
+       x="100"
+       y="59"
+       id="use385"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT"
+       x="55"
+       y="39"
+       id="use387"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeS2"
+       x="64"
+       y="41"
+       id="use389"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeS2"
+       x="73"
+       y="43"
+       id="use391"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT"
+       x="55"
+       y="29"
+       id="use393"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN2"
+       x="64"
+       y="31"
+       id="use395"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT1"
+       x="73"
+       y="33"
+       id="use397"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT"
+       x="55"
+       y="19"
+       id="use399"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeS1"
+       x="64"
+       y="21"
+       id="use401"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeS1"
+       x="73"
+       y="23"
+       id="use403"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ2"
+       x="49"
+       y="102"
+       id="use405"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ2"
+       x="58"
+       y="104"
+       id="use407"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ2"
+       x="67"
+       y="106"
+       id="use409"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeX"
+       x="49"
+       y="92"
+       id="use411"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN1"
+       x="58"
+       y="94"
+       id="use413"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeJ2"
+       x="67"
+       y="96"
+       id="use415"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN1"
+       x="49"
+       y="82"
+       id="use417"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN1"
+       x="58"
+       y="84"
+       id="use419"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeA"
+       x="67"
+       y="86"
+       id="use421"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeP"
+       x="22"
+       y="66"
+       id="use423"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL2"
+       x="31"
+       y="68"
+       id="use425"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL2"
+       x="40"
+       y="70"
+       id="use427"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN1"
+       x="49"
+       y="72"
+       id="use429"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeA"
+       x="58"
+       y="74"
+       id="use431"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeA"
+       x="67"
+       y="76"
+       id="use433"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeU"
+       x="76"
+       y="78"
+       id="use435"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT2"
+       x="85"
+       y="80"
+       id="use437"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeU"
+       x="94"
+       y="82"
+       id="use439"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN"
+       x="22"
+       y="56"
+       id="use441"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN"
+       x="31"
+       y="58"
+       id="use443"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN"
+       x="40"
+       y="60"
+       id="use445"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL4"
+       x="49"
+       y="62"
+       id="use447"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeI"
+       x="58"
+       y="64"
+       id="use449"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeQ"
+       x="67"
+       y="66"
+       id="use451"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeQ"
+       x="76"
+       y="68"
+       id="use453"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT2"
+       x="85"
+       y="70"
+       id="use455"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT2"
+       x="94"
+       y="72"
+       id="use457"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeZ"
+       x="22"
+       y="46"
+       id="use459"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL4"
+       x="31"
+       y="48"
+       id="use461"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL4"
+       x="40"
+       y="50"
+       id="use463"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL4"
+       x="49"
+       y="52"
+       id="use465"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeS2"
+       x="58"
+       y="54"
+       id="use467"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeL3"
+       x="67"
+       y="56"
+       id="use469"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeQ"
+       x="76"
+       y="58"
+       id="use471"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT2"
+       x="85"
+       y="60"
+       id="use473"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV1"
+       x="94"
+       y="62"
+       id="use475"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV2"
+       x="49"
+       y="42"
+       id="use477"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV2"
+       x="58"
+       y="44"
+       id="use479"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT1"
+       x="67"
+       y="46"
+       id="use481"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV2"
+       x="49"
+       y="32"
+       id="use483"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT1"
+       x="58"
+       y="34"
+       id="use485"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT1"
+       x="67"
+       y="36"
+       id="use487"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT"
+       x="49"
+       y="22"
+       id="use489"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeS1"
+       x="58"
+       y="24"
+       id="use491"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeT1"
+       x="67"
+       y="26"
+       id="use493"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeA"
+       x="52"
+       y="87"
+       id="use495"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeA"
+       x="52"
+       y="77"
+       id="use497"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN"
+       x="34"
+       y="63"
+       id="use499"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeN"
+       x="43"
+       y="65"
+       id="use501"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeI"
+       x="52"
+       y="67"
+       id="use503"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeQ"
+       x="61"
+       y="69"
+       id="use505"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeQ"
+       x="70"
+       y="71"
+       id="use507"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV2"
+       x="52"
+       y="57"
+       id="use509"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeV2"
+       x="52"
+       y="47"
+       id="use511"
+       width="131"
+       height="143" />
+    <use
+       xlink:href="#cubeI"
+       x="46"
+       y="70"
+       id="use513"
+       width="131"
+       height="143" />
+  </g>
+</svg>

@@ -743,6 +743,58 @@ class HexiamondsTwoTriangles(Hexiamonds):
                 yield coord
 
 
+class HexiamondsX1(Hexiamonds):
+
+    """many solutions"""
+
+    height = 8
+    width = 11
+
+    holes = set((
+        (3,7,1), (5,4,0), (5,3,1), (7,0,0),
+        (0,7,1), (6,7,1), (4,0,0), (10,0,0)))
+
+    def coordinates(self):
+        for coord in self.coordinates_butterfly(7, 4):
+            if coord not in self.holes:
+                yield coord
+
+
+class HexiamondsX_x1(HexiamondsX1):
+
+    """
+    0 solutions:
+
+    holes = set(
+        tuple(Hexiamonds.coordinates_butterfly(2, 1, offset=(4,3,0)))
+        + ((3,7,1), (7,0,0)))
+
+    holes = set((
+        (3,7,1), (4,6,0), (4,5,1), (5,4,0), (5,3,1), (6,2,0), (6,1,1), (7,0,0)))
+
+    holes = set((
+        (3,7,1), (5,4,0), (5,3,1), (7,0,0), (2,6,1), (5,6,1), (5,1,0), (8,1,0)))
+    """
+
+
+class HexiamondsX_x2(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 10
+    width = 15
+
+    holes = set((
+        (2,9,1), (3,8,1), (3,9,0), (3,9,1), (4,7,1), (4,8,0),
+        (4,8,1), (4,9,0), (4,9,1), (7,0,0), (7,0,1), (7,1,0),
+        (7,1,1), (7,2,0), (8,0,0), (8,0,1), (8,1,0), (9,0,0)))
+
+    def coordinates(self):
+        for coord in self.coordinates_butterfly(7, 5):
+            if coord not in self.holes:
+                yield coord
+
+
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
 
     """

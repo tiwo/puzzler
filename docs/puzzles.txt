@@ -215,6 +215,10 @@ viewing software.
   * `An Introduction to Polytwigs <polytwigs-intro.html>`_
   * `Notes on Polytwigs <polytwig-notes.html>`_
 
+* Special collections:
+
+  * `X's from G4GX: Gathering for Gardner 10 <g4gX.html>`_
+
 
 .. |---| unicode:: U+2014  .. em dash
    :trim:

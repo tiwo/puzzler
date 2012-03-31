@@ -239,6 +239,21 @@ class Polyiamonds12345Bat(Polyiamonds12345):
         self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
 
 
+class Polyiamonds12345X1(Polyiamonds12345):
+
+    """many solutions"""
+
+    height = 6
+    width = 8
+
+    holes = set(((2,5,1), (3,3,1), (4,2,0), (5,0,0)))
+
+    def coordinates(self):
+        for coord in self.coordinates_butterfly(5, 3):
+            if coord not in self.holes:
+                yield coord
+
+
 class OneSidedPolyiamonds12345Hexagon1(OneSidedPolyiamonds12345):
 
     """3,710,485 solutions"""
@@ -286,3 +301,21 @@ class OneSidedPolyiamonds12345SemiRegularHexagon4x2(OneSidedPolyiamonds12345):
 
     def coordinates(self):
         return self.coordinates_semiregular_hexagon(4, 2)
+
+
+class OneSidedPolyiamonds12345X1(OneSidedPolyiamonds12345):
+
+    """many solutions"""
+
+    height = 8
+    width = 8
+
+    holes = set((
+        (-1,7,1), (3,0,0), (4,7,1), (8,0,0),
+        (1,7,1), (2,6,1), (2,7,0), (2,7,1),
+        (5,0,0), (5,0,1), (5,1,0), (6,0,0)))
+
+    def coordinates(self):
+        for coord in self.coordinates_butterfly(6, 4, offset=(-1,0,0)):
+            if coord not in self.holes:
+                yield coord

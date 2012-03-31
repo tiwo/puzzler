@@ -683,3 +683,22 @@ class PentacubesDiagonalWall(NonConvexPentacubes):
                         yield (x, y, z)
 
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesX1(Pentacubes):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    svg_rotation = 41.5
+
+    def coordinates(self):
+        coords = set(self.coordinates_cuboid(9, 3, 3, offset=(0,3,0)))
+        coords.update(self.coordinates_cuboid(3, 9, 3, offset=(3,0,0)))
+        coords.update(self.coordinates_cuboid(5, 1, 1, offset=(2,4,3)))
+        coords.update(self.coordinates_cuboid(1, 5, 1, offset=(4,2,3)))
+        coords.add(self.coordinate_offset(4, 4, 4, None))
+        return sorted(coords)

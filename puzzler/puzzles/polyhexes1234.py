@@ -499,3 +499,26 @@ class Polyhexes1234StaggeredRectangle4x10(Polyhex1234):
 
     def customize_piece_data(self):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
+
+
+class OneSidedPolyhexes1234X1(OneSidedPolyhexes1234):
+
+    """many solutions"""
+
+    height = 13
+    width = 11
+
+    holes = set(
+        tuple(OneSidedPolyhexes1234.coordinates_butterfly(2, 2, offset=(4,5)))
+        + ((0,8), (0,9), (1,8), (9,4), (10,3), (10,4)))
+
+    svg_rotation = 60
+
+    def coordinates(self):
+        for coord in self.coordinates_butterfly(8, 6):
+            if coord not in self.holes:
+                yield coord
+
+    def customize_piece_data(self):
+        OneSidedPolyhexes1234.customize_piece_data(self)
+        self.piece_data['P4'][-1]['rotations'] = (0,1,2)

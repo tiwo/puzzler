@@ -110,6 +110,11 @@ triangles.
 
   .. image:: images/polyiamonds-12345-bat.png
 
+* X (`from G4GX <g4gX.html>`_): `solutions incomplete
+  <../solutions/polyiamonds-12345-x-1.txt>`__
+
+  .. image:: images/polyiamonds-12345-x-1.png
+
 
 One-Sided Polyiamonds of Order 1 Through 5
 ==========================================
@@ -137,6 +142,11 @@ equilateral triangles.
 
             `5,163,782 solutions
             <../solutions/one-sided-polyiamonds-12345-hexagon-2.txt>`__
+
+* X (`from G4GX`_): `solutions incomplete
+  <../solutions/one-sided-polyiamonds-12345-x-1.txt>`__
+
+  .. image:: images/one-sided-polyiamonds-12345-x-1.png
 
 
 Polyiamonds of Order 1 Through 6

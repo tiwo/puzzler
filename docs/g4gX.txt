@@ -1,0 +1,211 @@
+.. -*- coding: utf-8 -*-
+
+=========================================
+ X’s from G4GX: Gathering for Gardner 10
+=========================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: © 1998-2012 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+
+I was honoured to be invited to the `10th Gathering for Gardner
+<http://g4g10.com>`_, a biennial conference for recreational
+mathematics, magic, puzzles, and philosophy, which took place from
+March 28 to April 1, 2012.  I gave a talk entitled “Polyform Puzzler,
+New Polyforms, and Recent Results” (which I will soon publish here), a
+whirlwind introduction to this project, two new polyforms, and some
+new puzzles designed specially for this event.  The theme of the event
+was “10” and “X”, so I designed X-shaped puzzles for each of the
+polyform families supported by Polyform Puzzler.
+
+.. sidebar:: Also see:
+
+   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   | `Polyform Puzzler FAQ <FAQ.html>`_
+
+.. contents::
+
+
+Polyominoes
+===========
+
+Also see:
+    * `Polyomino Puzzles & Solutions <polyominoes.html>`__
+    * `Pentomino Puzzles & Solutions <pentominoes.html>`_
+    * `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`__
+
+* Polyominoes of order 2 through 4: `some solutions
+  <../solutions/polyominoes-2345-x-1.txt>`__
+
+  .. image:: images/polyominoes-2345-x-1.png
+
+
+Polyiamonds
+===========
+
+Also see:
+    * `Polyiamond Puzzles & Solutions <polyiamonds.html>`__
+    * `Hexiamond Puzzles & Solutions <hexiamonds.html>`_
+    * `Heptiamond Puzzles & Solutions <hexiamonds.html>`__
+
+* Polyiamonds of order 1 through 5: `some solutions
+  <../solutions/polyiamonds-12345-x-1.txt>`__
+
+  .. image:: images/polyiamonds-12345-x-1.png
+
+* One-sided polyiamonds of order 1 through 5: `some solutions
+  <../solutions/one-sided-polyiamonds-12345-x-1.txt>`__
+
+  .. image:: images/one-sided-polyiamonds-12345-x-1.png
+
+* Hexiamonds: `some solutions <../solutions/hexiamonds-x-1.txt>`__
+
+  .. image:: images/hexiamonds-x-1.png
+
+
+Polyhexes
+=========
+
+Also see:
+    * `Polyhex Puzzles & Solutions <polyhexes.html>`__
+    * `Pentahex Puzzles & Solutions <pentahexes.html>`__
+
+* One-sided polyhexes of order 1 through 4: `some solutions
+  <../solutions/one-sided-polyhexes-1234-x-1.txt>`__
+
+  .. image:: images/one-sided-polyhexes-1234-x-1.png
+
+
+Polycubes
+=========
+
+Also see:
+    * `Polycube Puzzles & Solutions <polycubes.html>`__
+    * `Pentacube Puzzles & Solutions <hexcubes.html>`_
+    * `Polyomino Puzzles & Solutions <polyominoes.html>`_
+    * `Pentomino Puzzles & Solutions <pentominoes.html>`_
+
+* Pentacubes: `some solutions
+  <../solutions/pentacubes-x-1.txt>`__
+
+  .. image:: images/pentacubes-x-1.png
+
+* Polycubes of order 1 through 5:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-12345-x-1.png
+
+            `1: some solutions
+            <../solutions/polycubes-12345-x-1.txt>`__
+
+       - .. figure:: images/polycubes-12345-x-2.png
+
+            `2: some solutions
+            <../solutions/polycubes-12345-x-2.txt>`__
+
+       - .. figure:: images/polycubes-12345-x-3.png
+
+            `3: some solutions
+            <../solutions/polycubes-12345-x-3.txt>`__
+
+     * - .. figure:: images/polycubes-12345-x-4.png
+
+            `4: some solutions
+            <../solutions/polycubes-12345-x-4.txt>`__
+
+       - .. figure:: images/polycubes-12345-x-5.png
+
+            `5: some solutions
+            <../solutions/polycubes-12345-x-5.txt>`__
+
+       -
+
+
+Polysticks
+==========
+
+Also see:
+    * `Polystick Puzzles & Solutions <polysticks.html>`__
+
+* One-sided tetrasticks:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-tetrasticks-x-1.png
+
+            `1: some solutions
+            <../solutions/one-sided-tetrasticks-x-1.txt>`__
+
+       - .. figure:: images/one-sided-tetrasticks-x-2.png
+
+            `2: some solutions
+            <../solutions/one-sided-tetrasticks-x-2.txt>`__
+
+
+Polytrigs
+=========
+
+Also see:
+    * `Polytrig Puzzles & Solutions <polytrigs.html>`__
+
+* One-sided polytrigs of order 1 through 3: `some solutions
+  <../solutions/one-sided-polytrigs-123-x-1.txt>`__
+
+  .. image:: images/one-sided-polytrigs-123-x-1.png
+
+
+Polytwigs
+=========
+
+Also see:
+    * `Polytwig Puzzles & Solutions <polytwigs.html>`__
+
+* Pentatwigs: `32 solutions
+  <../solutions/pentatwigs-x-1.txt>`__
+
+  .. image:: images/pentatwigs-x-1.png
+
+* Hexatwigs:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexatwigs-x-1.png
+
+            `1: some solutions
+            <../solutions/hexatwigs-x-1.txt>`__
+
+       - .. figure:: images/hexatwigs-x-2.png
+
+            `2: some solutions
+            <../solutions/hexatwigs-x-2.txt>`__
+
+     * - .. figure:: images/hexatwigs-x-3.png
+
+            `3: some solutions
+            <../solutions/hexatwigs-x-3.txt>`__
+
+       - .. figure:: images/hexatwigs-x-4.png
+
+            `4: some solutions
+            <../solutions/hexatwigs-x-4.txt>`__
+
+     * - .. figure:: images/hexatwigs-x-5.png
+
+            `5: some solutions
+            <../solutions/hexatwigs-x-5.txt>`__
+
+       - .. figure:: images/hexatwigs-x-6.png
+
+            `6: some solutions
+            <../solutions/hexatwigs-x-6.txt>`__

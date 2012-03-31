@@ -367,6 +367,11 @@ of 60 line segments on the hexagonal grid.
             `11 solutions
             <../solutions/pentatwigs-rosette-cluster-2.txt>`__
 
+* X (`from G4GX <g4gX.html>`_): `32 solutions
+  <../solutions/pentatwigs-x-1.txt>`__
+
+  .. image:: images/pentatwigs-x-1.png
+
 
 One-Sided Pentatwigs
 ====================
@@ -658,6 +663,41 @@ on the hexagonal grid.
   incomplete <../solutions/hexatwigs-elongated-hexagon-ring.txt>`__
 
   .. image:: images/hexatwigs-elongated-hexagon-ring.png
+
+* X (`from G4GX`_):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexatwigs-x-1.png
+
+            `1: solutions incomplete
+            <../solutions/hexatwigs-x-1.txt>`__
+
+       - .. figure:: images/hexatwigs-x-2.png
+
+            `2: solutions incomplete
+            <../solutions/hexatwigs-x-2.txt>`__
+
+     * - .. figure:: images/hexatwigs-x-3.png
+
+            `3: solutions incomplete
+            <../solutions/hexatwigs-x-3.txt>`__
+
+       - .. figure:: images/hexatwigs-x-4.png
+
+            `4: solutions incomplete
+            <../solutions/hexatwigs-x-4.txt>`__
+
+     * - .. figure:: images/hexatwigs-x-5.png
+
+            `5: solutions incomplete
+            <../solutions/hexatwigs-x-5.txt>`__
+
+       - .. figure:: images/hexatwigs-x-6.png
+
+            `6: solutions incomplete
+            <../solutions/hexatwigs-x-6.txt>`__
 
 
 One-Sided Hexatwigs

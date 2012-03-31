@@ -76,6 +76,11 @@ total of 36 squares.
 
   .. image:: images/one-sided-polyominoes-234-octagon.png
 
+* X (`from G4GX <g4gX.html>`_): `solutions incomplete
+  <../solutions/polyominoes-2345-x-1.txt>`__
+
+  .. image:: images/polyominoes-2345-x-1.png
+
 
 One-Sided Polyominoes of Order 1 Through 4
 ==========================================

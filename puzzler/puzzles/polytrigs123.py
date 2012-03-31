@@ -383,3 +383,24 @@ class OneSidedPolytrigs123Chevron9x1(OneSidedPolytrigs123):
         for coord in self.coordinates_chevron(9, 1):
             if coord not in self.hole:
                 yield coord
+
+
+class OneSidedPolytrigs123X1(OneSidedPolytrigs123):
+
+    """many solutions"""
+
+    height = 7
+    width = 9
+
+    holes = set((
+        (2,6,0), (5,0,0), (3,3,0), (3,4,0), (4,2,0), (4,2,1),
+        (4,3,0), (4,3,1), (4,3,2), (5,2,2)))
+
+    def coordinates(self):
+        for coord in self.coordinates_butterfly(5,3):
+            if coord not in self.holes:
+                yield coord
+
+    def customize_piece_data(self):
+        OneSidedPolytrigs123.customize_piece_data(self)
+        self.piece_data['P3'][-1]['rotations'] = (0,1,2)

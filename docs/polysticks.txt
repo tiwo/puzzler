@@ -173,6 +173,21 @@ one-sided tetrasticks.
 
   .. image:: images/one-sided-tetrasticks-8x8-clipped-corners-1.png
 
+* X (`from G4GX <g4gX.html>`_):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-tetrasticks-x-1.png
+
+            `1: solutions incomplete
+            <../solutions/one-sided-tetrasticks-x-1.txt>`__
+
+       - .. figure:: images/one-sided-tetrasticks-x-2.png
+
+            `2: solutions incomplete
+            <../solutions/one-sided-tetrasticks-x-2.txt>`__
+
 
 Polysticks of Order 1 Through 4
 ===============================

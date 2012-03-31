@@ -272,6 +272,18 @@ seven tetrahexes, for a total of 40 hexagons.
             <../solutions/polyhexes-1234-staggered-rectangle-4x10.txt>`__
 
 
+One-Sided Polyhexes of Order 1 Through 4
+========================================
+
+These puzzles use the monohex, the dihex, the three trihexes, and the
+ten tetrahexes, for a total of 52 hexagons.
+
+* X (`from G4GX <g4gX.html>`_): `solutions incomplete
+  <../solutions/one-sided-polyhexes-1234-x-1.txt>`__
+
+  .. image:: images/one-sided-polyhexes-1234-x-1.png
+
+
 Polyhexes of Order 1 Through 5
 ==============================
 
