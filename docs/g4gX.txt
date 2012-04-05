@@ -1,8 +1,8 @@
 .. -*- coding: utf-8 -*-
 
-=========================================
- X’s from G4GX: Gathering for Gardner 10
-=========================================
+==========================================
+ X’s from G4G10: Gathering for Gardner 10
+==========================================
 
 :Author: David Goodger <goodger@python.org>
 :Date: $Date$
@@ -18,15 +18,18 @@
 I was honoured to be invited to the `10th Gathering for Gardner
 <http://g4g10.com>`_, a biennial conference for recreational
 mathematics, magic, puzzles, and philosophy, which took place from
-March 28 to April 1, 2012.  I gave a talk entitled “Polyform Puzzler,
-New Polyforms, and Recent Results” (which I will soon publish here), a
-whirlwind introduction to this project, two new polyforms, and some
-new puzzles designed specially for this event.  The theme of the event
-was “10” and “X”, so I designed X-shaped puzzles for each of the
-polyform families supported by Polyform Puzzler.
+March 28 to April 1, 2012.  I gave a talk entitled “`Polyform Puzzler,
+New Polyforms, and Recent Results`_”, a whirlwind introduction to this
+project, two new polyforms, and some new puzzles designed specially
+for this event.  The theme of the event was “10” and “X”, so I
+designed X-shaped puzzles for each of the polyform families supported
+by Polyform Puzzler.
+
 
 .. sidebar:: Also see:
 
+   | `Polyform Puzzler, New Polyforms, and Recent Results
+     <g4g10-talk.html>`_ (my talk from G4G10)
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
 
