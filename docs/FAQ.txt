@@ -682,28 +682,67 @@ I know of:
 .. _Amazon Japan: http://amazon.co.jp/gp/aag/main?seller=A3HSPHRGB3HM3O
 
 
+Why do I like polyforms so much?
+--------------------------------
+
+I love challenges.  I love solving puzzles.  Be it a Rubik's Cube or a
+logic puzzle or a wire puzzle, I find puzzles hard to resist.
+
+I also love geometrical forms: polygons (especially regular polygons
+and polygons that tile the plane), polyhedra (especially Platonic and
+Archimedean solids, and space-filling solids), geometrical sculpture,
+and more.
+
+Polyforms combine the challenge of puzzles with the beauty of
+geometrical forms.  Polyforms are constructed by joining together
+identical basic geometrical units.  The various unit shapes make sets
+of polyforms that are delightful to me, and the various sets of
+polyforms make puzzles that are beautiful.
+
+The fact that all 12 possible forms constructed from 5 squares joined
+at their edges (the pentominoes) can fill a 6×10 rectangle, is a
+wonder of nature to me.  That there are 2,339 unique solutions is a
+delight.  The 12 solid pentomines (pentominoes 1 unit thick) can form
+a 3×4×5 solid (consecutive numbers!  Pythagorean triangle lengths!) in
+3,940 unique ways — but it's a real challenge to find just one.
+
+I love polyforms because their beauty delights me.  It's the delight
+in the inner workings of mathematics and geometry, and the beauty of
+the natural world.  I get the same delight from polyforms as I get
+from fractals.  The beauty of polyforms is similar to the beauty of
+crystals, flowers, and galaxies.
+
+
 Polyform Puzzles & Solutions
 ============================
 
 What polyform puzzles are supported?
 ------------------------------------
 
-Many polyomino, polyiamond, polyhex, polycube, and polystick puzzles
-are supported.  For a full list, see the `Puzzles & Solutions`_
-document.  More polyforms are to come:
+Many polyomino, polyiamond, polyhex, polycube, polystick, polytrig,
+and polytwig puzzles are supported.  For a full list, see the `Puzzles
+& Solutions`_ document.  My bias is for regular unit shapes and
+symmetrical puzzles.  More polyform puzzles are to come:
 
-* other polyominoes
-* other polycubes
-* other polyiamonds
-* other polyhexes
-* other polysticks
-* other polytrigs
-* other polytwigs
-* and other polyforms!
+* other polyominoes (`notes
+  <polyomino-notes.html#potential-puzzles>`__)
 
-See the `to do list`__ for details.
+* other polycubes (`notes <polycube-notes.html#potential-puzzles>`__)
 
-__ todo.html#puzzles
+* other polyiamonds (`notes
+  <polyiamond-notes.html#potential-puzzles>`__)
+
+* other polyhexes (`notes
+  <polyhex-notes.html#potential-puzzles#potential-puzzles>`__)
+
+* other polysticks (`notes
+  <polystick-notes.html#potential-puzzles>`__)
+
+* other polytrigs (`notes <polytrig-notes.html#potential-puzzles>`__)
+
+* other polytwigs (`notes <polytwig-notes.html#potential-puzzles>`__)
+
+* and puzzles of new polyforms!
 
 
 How should the solution files be interpreted?
@@ -741,9 +780,13 @@ one piece per line, with the piece name last::
     7,1 7,2 8,0 8,1 9,0 W
     8,2 8,3 8,4 9,1 9,2 N
 
+The interpretation of coordinates varies by polyform family.  See the
+section below for the specific polyform family you're interested in.
+
 In some puzzles, like the 6x6 tetrasticks, one or more pieces are
-omitted from each solution.  Such omitted pieces are listed with "!"
-in place of the coordinates list::
+either omitted from each solution (old style) or placed adjacent to
+the solution (new style).  In old-style solutions such omitted pieces
+are listed with "!"  in place of the coordinates list::
 
     ! H
 
@@ -772,7 +815,11 @@ execution) are listed::
 How should polyomino solution files be interpreted?
 ---------------------------------------------------
 
-Polyominoes use a 2-dimensional X,Y cartesian coordinate system.
+See "`How should the solution files be interpreted?`_" above for an
+overview of solution files.
+
+Polyominoes use a 2-dimensional X,Y `cartesian coordinate system
+<https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`_.
 
 The visual representation consists of piece names (letters) in a 2-D
 grid.  Imagine each letter as a square, with adjacent like-labelled
@@ -787,8 +834,11 @@ squares joined.  Example (with the x- and y-coordinates also shown)::
 
         x=0 1 2 3 4 5 6 7 8 9
 
-In the solution above, the V piece is at coordinates (0,0), (0,1),
-(0,2), (1,0), and (2,0).
+In the solution above, the V piece is at (x,y) coordinates (0,0),
+(0,1), (0,2), (1,0), and (2,0).  Its corresponding coordinate line
+is::
+
+    0,0 0,1 0,2 1,0 2,0 V
 
 **In Polyform Puzzler:**
 
@@ -799,13 +849,18 @@ In the solution above, the V piece is at coordinates (0,0), (0,1),
 How should polycube solution files be interpreted?
 --------------------------------------------------
 
+See "`How should the solution files be interpreted?`_" above for an
+overview of solution files.
+
 Polycubes (solid pentominoes, Soma cubes) use a 3-dimensional X,Y,Z
 cartesian coordinate system.
 
 The visual representation consists of piece names (letters) in
-multiple layers, each a 2-D slice of a 3-D space.  Imagine the layers
-stacked up from left to right, with each letter as a cube, with
-adjacent like-labelled cubes joined (z-coordinates of layers shown)::
+multiple layers, each a 2-D slice of a 3-D space.  (See "`How should
+polyomino solution files be interpreted?`_" above to interpret the X &
+Y coordinates of each slice.)  Imagine the layers stacked up from left
+to right, with each letter as a cube, with adjacent like-labelled
+cubes joined (z-coordinates of layers shown)::
 
     U V V V N    U W T T T    U W Z L Y
     U W Z V N    X W Z T Y    U F Z L Y
@@ -813,6 +868,12 @@ adjacent like-labelled cubes joined (z-coordinates of layers shown)::
     I I I I I    X P P P N    F F L L Y
 
     z=0          z=1          z=2
+
+In the solution above, the U piece is at (x,y,z) coordinates (0,2,0),
+(0,3,0), (0,3,1), (0,2,2), and (0,3,2).  Its corresponding coordinate
+line is::
+
+    0,2,0 0,2,2 0,3,0 0,3,1 0,3,2 U
 
 Some polycube puzzles, like the solid pentomino ring puzzles, are
 equivalent to a 2-dimensional puzzle folded into 3 dimensions.  These
@@ -840,8 +901,11 @@ as the front wall.
 How should polyhex solution files be interpreted?
 -------------------------------------------------
 
-Polyhexes use a 2-dimensional X,Y, skewed cartesian coordinate system.
-The X and Y axes are 60° apart instead of 90°.
+See "`How should the solution files be interpreted?`_" above for an
+overview of solution files.
+
+Polyhexes use a 2-dimensional skewed (X,Y) cartesian coordinate
+system.  The X and Y axes are 60° apart instead of 90°.
 
 The visual representation is an ASCII-art drawing of the solution,
 with the Y-axis vertical and the X-axis sloping up.  Example (with
@@ -875,7 +939,10 @@ coordinates)::
 How should polyiamond solution files be interpreted?
 ----------------------------------------------------
 
-Polyiamonds use a pseudo-3-dimensional X,Y,Z, skewed cartesian
+See "`How should the solution files be interpreted?`_" above for an
+overview of solution files.
+
+Polyiamonds use a pseudo-3-dimensional skewed (X,Y,Z) cartesian
 coordinate system.  The X and Y axes are 60° apart instead of 90°, and
 the Z dimension is used to represent the orientation of triangles::
 
@@ -911,7 +978,10 @@ Example (with coordinates)::
 How should polystick solution files be interpreted?
 ---------------------------------------------------
 
-Polysticks use a pseudo-3-dimensional X,Y,Z cartesian coordinate
+See "`How should the solution files be interpreted?`_" above for an
+overview of solution files.
+
+Polysticks use a pseudo-3-dimensional (X,Y,Z) cartesian coordinate
 system, but the line segments of the grid are significant, not the
 squares.  The Z dimension is used to represent the direction of line
 segments: 0=horizontal, 1=vertical.  Horizontal line segments "x,y,0"
@@ -959,6 +1029,9 @@ earlier versions of Polyform Puzzler).
 How should polytrig solution files be interpreted?
 ---------------------------------------------------
 
+See "`How should the solution files be interpreted?`_" above for an
+overview of solution files.
+
 Polytrig solutions are similar to polystick solutions, except on a
 triangular grid like polyiamonds.  The Z dimension is used to
 represent the direction of line segments: 0 = 0° horizontal; 1 = 60°
@@ -996,6 +1069,9 @@ coordinates)::
 
 How should polytwig solution files be interpreted?
 ---------------------------------------------------
+
+See "`How should the solution files be interpreted?`_" above for an
+overview of solution files.
 
 Polytwig solutions are similar to polystick solutions, except on a
 hexagonal grid like polyhexes.  The Z dimension is used to represent
