@@ -76,14 +76,84 @@ __ http://www.iread.it/lz/index.html
 In January 2012 I received email from Leslie E. Shader (Ph.D.,
 Professor Emeritus, Mathematics, University of Wyoming), who shared
 the results of his unpublished work on triangular-grid polysticks from
-around 1993.  Colin F. Brown, in addition to his work on `polytwigs
-(hexagonal-grid polysticks)`__, has also done some work on the
-quasi-polytrigs; see "`Quasi-Polyforms`_" below.
+around 1993.
+
+Colin F. Brown, in addition to his work on `polytwigs (hexagonal-grid
+polysticks)`__, has also done some work on the quasi-polytrigs; see
+"`Quasi-Polyforms`_" below.
 
 __ polytwigs-intro.html
 
+At the Gathering for Gardner 10 (G4G10, 2012), Les Shader gave me a
+copy of his gift exchange paper from the Gathering for Gardner 2 or 3
+(1996 or 1998), reproduced below, with permission.
+
 If you know of any other work on this type of puzzle, please let me
 know!
+
+
+3-Trees and a Triangle
+----------------------
+
+by Leslie E. Shader, Ph.D.
+
+*[A paper from the Gathering for Gardner 2 or 3 (1996 or 1998).]*
+
+In a paper, “Polysticks”, J. Recreatinal Mathematics, vol. 22(3) 1990,
+Brian Barwell introduced a new type of puzzle.  Instead of tiling a
+region in the plane or packing a region in 3-space, Barwell considered
+a rectangular lattice (graph paper) and used “Polysticks” to cover
+certain subsets of the lattice.  There has also been a puzzle called
+“845”, I believe produced by International Puzzles and Games in
+Taiwan.  This used 10 polysticks each with 4 unit lengths.  (A
+polystick of length n, is a set of n unit segments joined at the ends
+at an angle of 90, 180, or 270 degrees.)  The “845” puzzle did not
+allow the pieces to cross.
+
+For “3-Trees and a Triangle” we will use 3 unit lengths joined at the
+ends at angles of 60, 120, 180, 240, or 300 degrees.  There are
+exactly 12 such pieces.  In the language of mathematics (graph
+theory), each of the pieces is either a “tree” or a “triangle”.
+Actually we should say Euclidean Tree since angles as well as length
+are important.  Since we wish a physical model of this puzzle we will
+not allow crossings.  The pieces may be rotated or turned over.
+
+The pieces are: [sketch of the 12 tritrigs_, which see]
+
+I am including with my submission, a list of more than 300 different
+lattices that can be covered by subsets of the set of all pieces
+above.  I also have included a set of solutions for each of these.
+But the solutions are sealed!  Please try some of the puzzles before
+looking at the solutions.  I have included a smaller set of my
+favorite puzzles.  Those puzzles with 6 or fewer pieces are relatively
+easy.  I classify the puzzles using 7-9 pieces as [moderately]
+difficult, and if the puzzle requires 10-12 pieces the puzzle is
+difficult.  Some of the 10-12 pieces have taken me up to 20 hours to
+solve by hand.  Of course, I didn’t now if a solution existed or not,
+which means an exhaustive search had to be done.  Within the sealed
+envelope marked “solutions”, there is also a set of six puzzles that
+cannot be solved.  I am sure there are other interesting puzzles that
+I have not included inthe set that I am submitting to you.
+
+Some thoughts on the technical aspects of the puzzles.  I think that
+the unit length should be either 7/8 in. or 1 in., the individual
+pieces should be injection molded with width 1/8 in and 1/2 in. deep.
+Care must be given to fit at the vertices where more than 1 piece come
+together.  Several rough sketches are included.  I prefer rounded
+corners to sharp corners.  A universal base can also be injection
+molded and should be large enough to make most of the puzzles I have
+included.  There should be raised traingles (corners rounded) to hold
+the pieces in position.  The “845” puzzle used circles but I think the
+triangles would be better.
+
+Finally, although the use of the trees and triangle looks entirely
+new, the pieces can be “fleshed out” allowing an isoceles triangle,
+base angle 30 degrees, to “grow” on each edge.  I have included a page
+with two examples.  Actually, we are now very close to Damert’s “Bees”
+puzzle except that crossings are still not allowed.  Perhaps the idea
+of joining pieces at the vertex and not the edge (two dimensional) or
+at an edge and not a face (three dimensional) is an idea whose time
+has come.  Have you seen the Rubik’s Blocks puzzle?
 
 
 Polyforms
