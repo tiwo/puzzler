@@ -61,40 +61,6 @@ viewing software.
 
   Also see `Notes on Polyominoes <polyomino-notes.html>`_.
 
-* `Polycubes <polycubes.html>`_ (incl. `solid pentominoes`_ & `pentacubes`_)
-
-  .. list-table::
-     :class: borderless
-
-     * - `Tetracubes <polycubes.html#tetracubes>`_
-
-         .. image:: images/tetracubes-2x4x4-small.png
-            :target: polycubes.html#tetracubes
-            :class: borderless
-
-       - `Soma Cubes <polycubes.html#soma-cubes>`_
-
-         .. image:: images/soma-crystal-small.png
-            :target: polycubes.html#soma-cubes
-            :class: borderless
-
-     * - `Solid Pentominoes <solid-pentominoes.html>`_
-
-         .. image:: images/solid-pentominoes-6x6x6-crystal-1-small.png
-            :target: solid-pentominoes.html
-            :class: borderless
-
-       - `Pentacubes <pentacubes.html>`_
-
-         .. image:: images/pentacubes-great-wall-small.png
-            :target: pentacubes.html
-            :class: borderless
-
-  Also see:
-
-  * `Notes on Polycubes <polycube-notes.html>`_
-  * `Notes on Polyominoes <polyomino-notes.html>`_
-
 * Polyiamonds_ (`hexiamonds`_ & `heptiamonds`_)
 
   .. list-table::
@@ -145,6 +111,40 @@ viewing software.
             :class: borderless
 
   Also see `Notes on Polyhexes <polyhex-notes.html>`_.
+
+* `Polycubes <polycubes.html>`_ (incl. `solid pentominoes`_ & `pentacubes`_)
+
+  .. list-table::
+     :class: borderless
+
+     * - `Tetracubes <polycubes.html#tetracubes>`_
+
+         .. image:: images/tetracubes-2x4x4-small.png
+            :target: polycubes.html#tetracubes
+            :class: borderless
+
+       - `Soma Cubes <polycubes.html#soma-cubes>`_
+
+         .. image:: images/soma-crystal-small.png
+            :target: polycubes.html#soma-cubes
+            :class: borderless
+
+     * - `Solid Pentominoes <solid-pentominoes.html>`_
+
+         .. image:: images/solid-pentominoes-6x6x6-crystal-1-small.png
+            :target: solid-pentominoes.html
+            :class: borderless
+
+       - `Pentacubes <pentacubes.html>`_
+
+         .. image:: images/pentacubes-great-wall-small.png
+            :target: pentacubes.html
+            :class: borderless
+
+  Also see:
+
+  * `Notes on Polycubes <polycube-notes.html>`_
+  * `Notes on Polyominoes <polyomino-notes.html>`_
 
 * `Polysticks <polysticks.html>`_
 
@@ -218,6 +218,10 @@ viewing software.
 * Special collections:
 
   * `X's from G4GX: Gathering for Gardner 10 <g4gX.html>`_
+
+    .. image:: images/one-sided-polytrigs-123-x-1-small.png
+       :target: g4gX.html
+       :class: borderless
 
 
 .. |---| unicode:: U+2014  .. em dash
