@@ -908,7 +908,7 @@ See `Quasi-Polyforms`_ in `An Introduction to Polytwigs`_.
 
   .. image:: images/quasi-polytwigs-123-5x3-parallelogram-ring.png
 
-* 6x3 parallelogram ring: `solutions incomplete
+* 6x3 trapezoid ring: `solutions incomplete
   <../solutions/quasi-polytwigs-123-6x3-trapezoid-ring.txt>`__
 
   .. image:: images/quasi-polytwigs-123-6x3-trapezoid-ring.png

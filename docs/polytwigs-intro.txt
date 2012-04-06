@@ -101,6 +101,14 @@ __ http://en.wikipedia.org/wiki/Sponge_spicule
 Mr. Brown also explored the quasi-tritwigs with gaps between segments
 limited to length-1; see `Quasi-Polyforms`_ below.
 
+At the Gathering for Gardner 10 (G4G10, 2012), Les Shader gave me a
+copy of a page from a Russian journal "Charade" ("ШАРАДА"), N6(6),
+December 1993.  It featured a solution to the "Hexonet" puzzle
+("ГЕКСОСЕТИ"), exactly the `pentatwigs triangle`__ (side length 5).
+Thanks to Tanya Khovanova of MIT for translating.
+
+__ polytwigs.html#pentatwigs
+
 If you know of any other work on this type of puzzle, please let me
 know!
 
