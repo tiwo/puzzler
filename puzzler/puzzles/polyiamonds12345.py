@@ -239,9 +239,83 @@ class Polyiamonds12345Bat(Polyiamonds12345):
         self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
 
 
+class Polyiamonds12345Snake(Polyiamonds12345):
+
+    """
+    3,344 solutions
+
+    Discovered by Dan Klarskov
+    """
+
+    width = 14
+    height = 7
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = set()
+        for i in range(6):
+            coords.update(self.coordinates_parallelogram(2, 2, offset=(i,i,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
+
+
+class Polyiamonds12345Bird1(Polyiamonds12345):
+
+    """
+    62,775 solutions
+
+    Discovered by Dan Klarskov
+    """
+
+    width = 6
+    height = 6
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_parallelogram(4, 2, offset=(0,1,0)))
+            + list(self.coordinates_parallelogram(2, 2, offset=(3,4,0)))
+            + list(self.coordinates_elongated_hexagon(3, 1, offset=(2,2,0)))
+            + list(self.coordinates_hexagon(1, offset=(2,0,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+
+
+class Polyiamonds12345Crab(Polyiamonds12345):
+
+    """
+    14,362 solutions
+
+    Discovered by Dan Klarskov
+    """
+
+    width = 8
+    height = 6
+
+    holes = set(((2,0,0), (7,0,0)))
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_semiregular_hexagon(1, 2))
+            + list(self.coordinates_semiregular_hexagon(1, 2, offset=(5,0,0)))
+            + list(self.coordinates_triangle(4, offset=(2,2,0))))
+        coords -= self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+
+
 class Polyiamonds12345X1(Polyiamonds12345):
 
-    """many solutions"""
+    """1,857 solutions"""
 
     height = 6
     width = 8
@@ -252,6 +326,10 @@ class Polyiamonds12345X1(Polyiamonds12345):
         for coord in self.coordinates_butterfly(5, 3):
             if coord not in self.holes:
                 yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
 
 
 class OneSidedPolyiamonds12345Hexagon1(OneSidedPolyiamonds12345):

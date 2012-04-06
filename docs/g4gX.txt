@@ -21,9 +21,11 @@ mathematics, magic, puzzles, and philosophy, which took place from
 March 28 to April 1, 2012.  I gave a talk entitled “`Polyform Puzzler,
 New Polyforms, and Recent Results`_”, a whirlwind introduction to this
 project, two new polyforms, and some new puzzles designed specially
-for this event.  The theme of the event was “10” and “X”, so I
-designed X-shaped puzzles for each of the polyform families supported
-by Polyform Puzzler.
+for the event.
+
+The theme of the event was “10” and “X”, so I designed X-shaped
+puzzles for each of the polyform families supported by Polyform
+Puzzler.
 
 
 .. sidebar:: Also see:
@@ -44,7 +46,7 @@ Also see:
     * `Pentomino Puzzles & Solutions <pentominoes.html>`_
     * `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`__
 
-* Polyominoes of order 2 through 4: `some solutions
+* Polyominoes of order 2 through 5: `solutions incomplete
   <../solutions/polyominoes-2345-x-1.txt>`__
 
   .. image:: images/polyominoes-2345-x-1.png
@@ -58,17 +60,17 @@ Also see:
     * `Hexiamond Puzzles & Solutions <hexiamonds.html>`_
     * `Heptiamond Puzzles & Solutions <hexiamonds.html>`__
 
-* Polyiamonds of order 1 through 5: `some solutions
+* Polyiamonds of order 1 through 5: `1,857 solutions
   <../solutions/polyiamonds-12345-x-1.txt>`__
 
   .. image:: images/polyiamonds-12345-x-1.png
 
-* One-sided polyiamonds of order 1 through 5: `some solutions
+* One-sided polyiamonds of order 1 through 5: `solutions incomplete
   <../solutions/one-sided-polyiamonds-12345-x-1.txt>`__
 
   .. image:: images/one-sided-polyiamonds-12345-x-1.png
 
-* Hexiamonds: `some solutions <../solutions/hexiamonds-x-1.txt>`__
+* Hexiamonds: `solutions incomplete <../solutions/hexiamonds-x-1.txt>`__
 
   .. image:: images/hexiamonds-x-1.png
 
@@ -80,7 +82,7 @@ Also see:
     * `Polyhex Puzzles & Solutions <polyhexes.html>`__
     * `Pentahex Puzzles & Solutions <pentahexes.html>`__
 
-* One-sided polyhexes of order 1 through 4: `some solutions
+* One-sided polyhexes of order 1 through 4: `solutions incomplete
   <../solutions/one-sided-polyhexes-1234-x-1.txt>`__
 
   .. image:: images/one-sided-polyhexes-1234-x-1.png
@@ -95,7 +97,7 @@ Also see:
     * `Polyomino Puzzles & Solutions <polyominoes.html>`_
     * `Pentomino Puzzles & Solutions <pentominoes.html>`_
 
-* Pentacubes: `some solutions
+* Pentacubes: `solutions incomplete
   <../solutions/pentacubes-x-1.txt>`__
 
   .. image:: images/pentacubes-x-1.png
@@ -107,27 +109,27 @@ Also see:
 
      * - .. figure:: images/polycubes-12345-x-1.png
 
-            `1: some solutions
+            `1: solutions incomplete
             <../solutions/polycubes-12345-x-1.txt>`__
 
        - .. figure:: images/polycubes-12345-x-2.png
 
-            `2: some solutions
+            `2: solutions incomplete
             <../solutions/polycubes-12345-x-2.txt>`__
 
        - .. figure:: images/polycubes-12345-x-3.png
 
-            `3: some solutions
+            `3: solutions incomplete
             <../solutions/polycubes-12345-x-3.txt>`__
 
      * - .. figure:: images/polycubes-12345-x-4.png
 
-            `4: some solutions
+            `4: solutions incomplete
             <../solutions/polycubes-12345-x-4.txt>`__
 
        - .. figure:: images/polycubes-12345-x-5.png
 
-            `5: some solutions
+            `5: solutions incomplete
             <../solutions/polycubes-12345-x-5.txt>`__
 
        -
@@ -146,12 +148,12 @@ Also see:
 
      * - .. figure:: images/one-sided-tetrasticks-x-1.png
 
-            `1: some solutions
+            `1: solutions incomplete
             <../solutions/one-sided-tetrasticks-x-1.txt>`__
 
        - .. figure:: images/one-sided-tetrasticks-x-2.png
 
-            `2: some solutions
+            `2: solutions incomplete
             <../solutions/one-sided-tetrasticks-x-2.txt>`__
 
 
@@ -161,7 +163,7 @@ Polytrigs
 Also see:
     * `Polytrig Puzzles & Solutions <polytrigs.html>`__
 
-* One-sided polytrigs of order 1 through 3: `some solutions
+* One-sided polytrigs of order 1 through 3: `solutions incomplete
   <../solutions/one-sided-polytrigs-123-x-1.txt>`__
 
   .. image:: images/one-sided-polytrigs-123-x-1.png
@@ -185,30 +187,30 @@ Also see:
 
      * - .. figure:: images/hexatwigs-x-1.png
 
-            `1: some solutions
+            `1: solutions incomplete
             <../solutions/hexatwigs-x-1.txt>`__
 
        - .. figure:: images/hexatwigs-x-2.png
 
-            `2: some solutions
+            `2: solutions incomplete
             <../solutions/hexatwigs-x-2.txt>`__
 
      * - .. figure:: images/hexatwigs-x-3.png
 
-            `3: some solutions
+            `3: solutions incomplete
             <../solutions/hexatwigs-x-3.txt>`__
 
        - .. figure:: images/hexatwigs-x-4.png
 
-            `4: some solutions
+            `4: solutions incomplete
             <../solutions/hexatwigs-x-4.txt>`__
 
      * - .. figure:: images/hexatwigs-x-5.png
 
-            `5: some solutions
+            `5: solutions incomplete
             <../solutions/hexatwigs-x-5.txt>`__
 
        - .. figure:: images/hexatwigs-x-6.png
 
-            `6: some solutions
+            `6: solutions incomplete
             <../solutions/hexatwigs-x-6.txt>`__

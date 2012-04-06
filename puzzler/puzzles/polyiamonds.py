@@ -130,6 +130,10 @@ class Polyiamonds(PuzzlePseudo3D):
             if total <= max_total:
                 yield cls.coordinate_offset(x, y, z, offset)
 
+    @classmethod
+    def coordinates_triangle(cls, side_length, offset=None):
+        return cls.coordinates_trapezoid(side_length, side_length, offset)
+
     def make_aspects(self, units, flips=(False, True),
                      rotations=(0, 1, 2, 3, 4, 5)):
         aspects = set()

@@ -394,7 +394,7 @@ tritrigs, for a total of 64 line segments on the triangular grid.
 
   .. image:: images/one-sided-polytrigs-123-chevron-9x1.png
 
-* X (`from G4GX <g4gX.html>`_): `solutions incomplete
+* X (`designed for G4G10 <g4gX.html>`_): `solutions incomplete
   <../solutions/one-sided-polytrigs-123-x-1.txt>`__
 
   .. image:: images/one-sided-polytrigs-123-x-1.png

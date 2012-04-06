@@ -367,7 +367,7 @@ of 60 line segments on the hexagonal grid.
             `11 solutions
             <../solutions/pentatwigs-rosette-cluster-2.txt>`__
 
-* X (`from G4GX <g4gX.html>`_): `32 solutions
+* X (`designed for G4G10 <g4gX.html>`_): `32 solutions
   <../solutions/pentatwigs-x-1.txt>`__
 
   .. image:: images/pentatwigs-x-1.png
@@ -664,7 +664,7 @@ on the hexagonal grid.
 
   .. image:: images/hexatwigs-elongated-hexagon-ring.png
 
-* X (`from G4GX`_):
+* X (`designed for G4G10`_):
 
   .. list-table::
      :class: borderless

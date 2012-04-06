@@ -180,7 +180,7 @@ Misc
 
   .. image:: images/hexiamonds-tenyo.png
 
-* X (`from G4GX <g4gX.html>`_): `solutions incomplete
+* X (`designed for G4G10 <g4gX.html>`_): `solutions incomplete
   <../solutions/hexiamonds-x-1.txt>`__
 
   .. image:: images/hexiamonds-x-1.png

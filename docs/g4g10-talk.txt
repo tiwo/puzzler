@@ -3,9 +3,9 @@
 =====================================================
  Polyform Puzzler, New Polyforms, and Recent Results
 =====================================================
----------------------------------------------------
- A Talk from G4G10: The 10th Gathering for Gardner
----------------------------------------------------
+----------------------------------------------------------------
+ A Talk from G4G10: The 10th Gathering for Gardner (2012-03-31)
+----------------------------------------------------------------
 
 :Author: David Goodger <goodger@python.org>
 :Date: $Date$
@@ -25,12 +25,14 @@
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
 
-.. contents
+.. contents::
 
 
-I presented this whirlwind 5 minute introduction to the Polyform
+I presented this as a whirlwind 5 minute introduction to the Polyform
 Puzzler software project at the `10th Gathering for Gardner
-<http://g4g10.com>`_, Atlanta, Georgia, USA, 2012-03-31.
+<http://g4g10.com>`_, Atlanta, Georgia, USA, 2012-03-31.  This version
+is updated and contains some extra content that had to be omitted from
+the talk for time.
 
 
 Introduction
@@ -76,12 +78,12 @@ in the field, Martin Gardner and Solomon W. Golomb.
 As a teenager I read some of Martin Gardner’s books, and later, thanks
 to my university’s library archives, I was able to read many of his
 original `Scientific American` articles.  What a font of knowledge!
+The world is a richer place for Martin Gardner having been in it.
 
 Eventually I got my hands on a copy of Golomb’s `Polyominoes`, which
 was hard to find in the pre-Amazon.com days.  I now have both
-editions.
-
-I was delighted to have been able to meet Professor Golomb at G4G10.
+editions.  I was delighted to have been able to meet Professor Golomb
+at G4G10.
 
 
 Early Attempts
@@ -110,8 +112,9 @@ Knuth Opened My Eyes
 
 Then in the summer of 2006 I learned of a new approach for solving
 polyform puzzles, in Donald Knuth’s “Dancing Links” paper. This
-approach re-frames puzzles as “exact cover” problems, much more suited
-to solution by computer. My old itch resurfaced.
+approach re-frames puzzles as “exact cover” problems, represented by a
+sparse matrix of 0s and 1s and solvable by Knuth’s “Algorithm X”.
+Much more suited to solution by computer. My old itch resurfaced.
 
 
 Success!
@@ -144,13 +147,13 @@ a Sudoku solver.
 
 .. figure:: images/solid-pentominoes-3x4x5.png
 
-   solid pentominoes 3x4x5
+   solid pentominoes 3×4×5
 
 .. figure:: images/one-sided-tetrasticks-5x5-diamond-lattice.png
 
-   one-sided tetrasticks 5x5 diamond lattice
+   one-sided tetrasticks 5×5 diamond lattice
 
-.. figure:: images/sudoku.png
+.. figure:: images/g4g10/sudoku.png
 
    sudoku
 
@@ -158,16 +161,16 @@ a Sudoku solver.
 Correspondence
 ==============
 
-.. image:: images/pentacubes-corner-crystal.png
-
 Polyform Puzzler went live on the Internet in 2006, and since then
 several puzzle enthusiasts around the world have shared their ideas
 with me.
 
-For example, Nick Maeder of New Zealand devised this pentacubes
-puzzle, “corner crystal”, around 1984.  He had tried to solve it
-manually off and on for *22 years*, coming within **one piece** of a
-solution. Polyform Puzzler was able to find a solution after only a
+.. image:: images/pentacubes-corner-crystal.png
+
+For example, Nick Maeder of New Zealand devised the pentacubes puzzle
+above, “corner crystal”, around 1984.  He had tried to solve it
+manually off and on for *22 years*, coming within *one piece* of a
+solution.  Polyform Puzzler was able to find a solution after only a
 few hours of computer time – now down to just a few minutes, with
 faster computers and a much more efficient core solving engine.
 
@@ -178,9 +181,9 @@ Itch: Scratched?
 .. image:: images/g4g10/dog-scratching.jpg
 
 Finally I had implemented all the existing polyforms that interested
-me – I’m biased toward regular unit shapes &amp; symmetrical
-puzzles. I had scratched my own itch, and I didn’t give the project
-much attention for a while.
+me – I’m biased toward regular unit shapes & symmetrical puzzles.  I
+had scratched my own itch, and I didn’t give the project much
+attention for a while.
 
 But does this kind of itch ever really go away? Apparently not. About
 a year ago I started experiencing flare-ups, so I devised some new
@@ -195,7 +198,7 @@ Polytrigs
 First I implemented triangular-grid polysticks, or “polytrigs” as I
 called them.  I found only a few references; this form doesn’t seem to
 have been explored much before this.  *[Above is the one-sided
-tritrigs 4 |x| 1 semi-regular hexagon.]*
+tritrigs 4×1 semi-regular hexagon.]*
 
 Recently I heard from Les Shader, who shared the results of his
 unpublished work on triangular-grid polysticks from the early 1990s.
@@ -320,7 +323,7 @@ And finally, the one-sided polytrigs of order 1 through 3:
 Conclusion
 ==========
 
-I’d love to have more correspondents!  If you have polyform puzzle
+I would love to have more correspondents!  If you have polyform puzzle
 ideas you’d like to share with the world, `please write to me
 <mailto:goodger@python.org>`__.
 
@@ -328,7 +331,3 @@ Thanks for reading about one of my obsessions.
 
 | David Goodger
 | goodger@python.org
-
-
-.. |x| unicode:: U+00D7 .. multiplication sign
-   :trim:

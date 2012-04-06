@@ -37,6 +37,49 @@ class Polyominoes1234SquarePlus(Polyominoes1234):
         self.piece_data['L4'][-1]['flips'] = None
 
 
+class Polyominoes1234_7x3Plus(Polyominoes1234):
+
+    """
+    17 solutions
+
+    Discovered by Dan Klarskov.
+    """
+
+    width = 11
+    height = 7
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_rectangle(7, 3, offset=(2,2)))
+            + list(self.coordinates_rectangle(11, 1, offset=(0,3)))
+            + list(self.coordinates_rectangle(1, 7, offset=(5,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['L4'][-1]['rotations'] = (0, 1)
+        self.piece_data['L4'][-1]['flips'] = None
+
+class Polyominoes1234_7x4PlusOne(Polyominoes1234):
+
+    """
+    1,522 solutions
+
+    Discovered by Dan Klarskov.
+    """
+
+    width = 7
+    height = 6
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(7, 4))
+        coords.add(self.coordinate_offset(3, 5, None))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['L4'][-1]['rotations'] = (0, 1)
+        self.piece_data['L4'][-1]['flips'] = None
+
+
 class Polyominoes1234Astroid(Polyominoes1234):
 
     """
@@ -129,7 +172,7 @@ class Polyominoes1234Skewered9x3(Polyominoes1234):
 
 class Polyominoes1234Skewered7x3(Polyominoes1234):
 
-    """ solutions"""
+    """747 solutions"""
 
     width = 15
     height = 3
@@ -138,6 +181,28 @@ class Polyominoes1234Skewered7x3(Polyominoes1234):
         coords = set(
             list(self.coordinates_rectangle(7, 3, offset=(4,0)))
             + list(self.coordinates_rectangle(15, 1, offset=(0,1))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['L4'][-1]['rotations'] = (0, 1)
+        self.piece_data['L4'][-1]['flips'] = None
+
+
+class Polyominoes1234_7x5CrossHole(Polyominoes1234):
+
+    """
+    19 solutions
+
+    Puzzle design by Dan Klarskov.
+    """
+
+    width = 7
+    height = 5
+
+    holes = set(((1,2), (2,2), (3,1), (3,3), (4,2), (5,2)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_rectangle(7, 5)) - self.holes
         return sorted(coords)
 
     def customize_piece_data(self):

@@ -196,7 +196,7 @@ and 29 pentacubes, for a total of 186 unit cubes.
 
   .. image:: images/polycubes-12345-2x3x31.png
 
-* X (`from G4GX <g4gX.html>`_):
+* X (`designed for G4G10 <g4gX.html>`_):
 
   .. list-table::
      :class: borderless

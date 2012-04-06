@@ -173,7 +173,7 @@ one-sided tetrasticks.
 
   .. image:: images/one-sided-tetrasticks-8x8-clipped-corners-1.png
 
-* X (`from G4GX <g4gX.html>`_):
+* X (`designed for G4G10 <g4gX.html>`_):
 
   .. list-table::
      :class: borderless

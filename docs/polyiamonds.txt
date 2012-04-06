@@ -105,12 +105,32 @@ triangles.
             `670 solutions
             <../solutions/polyiamonds-12345-snowflake-3.txt>`__
 
-* Bat (discovered by Dan Klarskov): `92,778 solutions
-  <../solutions/polyiamonds-12345-bat.txt>`__
+* Dan's menagerie (animals discovered by Dan Klarskov)
 
-  .. image:: images/polyiamonds-12345-bat.png
+  .. list-table::
+     :class: borderless
 
-* X (`from G4GX <g4gX.html>`_): `solutions incomplete
+     * - .. figure:: images/polyiamonds-12345-bat.png
+
+            Bat: `92,778 solutions
+            <../solutions/polyiamonds-12345-bat.txt>`__
+
+       - .. figure:: images/polyiamonds-12345-snake.png
+
+            Snake: `3,344 solutions
+            <../solutions/polyiamonds-12345-snake.txt>`__
+
+     * - .. figure:: images/polyiamonds-12345-bird-1.png
+
+            Bird: `62,775 solutions
+            <../solutions/polyiamonds-12345-bird-1.txt>`__
+
+       - .. figure:: images/polyiamonds-12345-crab.png
+
+            Crab: `14,362 solutions
+            <../solutions/polyiamonds-12345-crab.txt>`__
+
+* X (`designed for G4G10 <g4gX.html>`_): `1,857 solutions
   <../solutions/polyiamonds-12345-x-1.txt>`__
 
   .. image:: images/polyiamonds-12345-x-1.png
@@ -143,7 +163,7 @@ equilateral triangles.
             `5,163,782 solutions
             <../solutions/one-sided-polyiamonds-12345-hexagon-2.txt>`__
 
-* X (`from G4GX`_): `solutions incomplete
+* X (`designed for G4G10`_): `solutions incomplete
   <../solutions/one-sided-polyiamonds-12345-x-1.txt>`__
 
   .. image:: images/one-sided-polyiamonds-12345-x-1.png

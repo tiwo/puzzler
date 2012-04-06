@@ -202,8 +202,7 @@ Misc
 
   .. image:: images/pentacubes-7x7x5-block.png
 
-
-* X (`from G4GX <g4gX.html>`_): `solutions incomplete
+* X (`designed for G4G10 <g4gX.html>`_): `solutions incomplete
   <../solutions/pentacubes-x-1.txt>`__
 
   .. image:: images/pentacubes-x-1.png

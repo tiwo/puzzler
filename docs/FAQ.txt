@@ -682,35 +682,38 @@ I know of:
 .. _Amazon Japan: http://amazon.co.jp/gp/aag/main?seller=A3HSPHRGB3HM3O
 
 
-Why do I like polyforms so much?
---------------------------------
+Why do you like polyforms so much?
+----------------------------------
 
 I love challenges.  I love solving puzzles.  Be it a Rubik's Cube or a
 logic puzzle or a wire puzzle, I find puzzles hard to resist.
 
 I also love geometrical forms: polygons (especially regular polygons
 and polygons that tile the plane), polyhedra (especially Platonic and
-Archimedean solids, and space-filling solids), geometrical sculpture,
-and more.
+Archimedean solids, space-filling solids, and stellations),
+geometrical sculpture, and more.
 
 Polyforms combine the challenge of puzzles with the beauty of
 geometrical forms.  Polyforms are constructed by joining together
-identical basic geometrical units.  The various unit shapes make sets
-of polyforms that are delightful to me, and the various sets of
-polyforms make puzzles that are beautiful.
+identical basic geometrical units.  That the complete sets of various
+polyforms make beautiful, challenging puzzles is a delight to me.
 
 The fact that all 12 possible forms constructed from 5 squares joined
-at their edges (the pentominoes) can fill a 6×10 rectangle, is a
-wonder of nature to me.  That there are 2,339 unique solutions is a
+at their edges (the pentominoes) can fill a 6×10 rectangle, is simply
+a wonder of nature.  That there are 2,339 unique solutions is a
 delight.  The 12 solid pentomines (pentominoes 1 unit thick) can form
 a 3×4×5 solid (consecutive numbers!  Pythagorean triangle lengths!) in
 3,940 unique ways — but it's a real challenge to find just one.
 
-I love polyforms because their beauty delights me.  It's the delight
-in the inner workings of mathematics and geometry, and the beauty of
-the natural world.  I get the same delight from polyforms as I get
-from fractals.  The beauty of polyforms is similar to the beauty of
+I love polyforms because of their beauty.  It's the beauty of the
+inner workings of mathematics and geometry, the beauty of the natural
+world.  I get the same delight from polyforms as I get from fractals
+and snowflakes.  The beauty of polyforms is similar to the beauty of
 crystals, flowers, and galaxies.
+
+.. figure:: images/heptiamonds-snowflake-2.png
+
+   Heptiamonds snowflake — a beautiful, delightful challenge
 
 
 Polyform Puzzles & Solutions

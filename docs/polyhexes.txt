@@ -278,7 +278,7 @@ One-Sided Polyhexes of Order 1 Through 4
 These puzzles use the monohex, the dihex, the three trihexes, and the
 ten tetrahexes, for a total of 52 hexagons.
 
-* X (`from G4GX <g4gX.html>`_): `solutions incomplete
+* X (`designed for G4G10 <g4gX.html>`_): `solutions incomplete
   <../solutions/one-sided-polyhexes-1234-x-1.txt>`__
 
   .. image:: images/one-sided-polyhexes-1234-x-1.png

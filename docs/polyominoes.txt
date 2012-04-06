@@ -39,6 +39,11 @@ tetrominoes, for a total of 29 squares.
 
   .. image:: images/polyominoes-1234-square-plus.png
 
+* 7x3-plus (design by Dan Klarskov): `17 solutions
+  <../solutions/polyominoes-1234-7x3-plus.txt>`__
+
+  .. image:: images/polyominoes-1234-7x3-plus.png
+
 * Skewered square (design by Dan Klarskov): `1,320 solutions
   <../solutions/polyominoes-1234-skewered-square.txt>`__
 
@@ -59,27 +64,18 @@ tetrominoes, for a total of 29 squares.
 
   .. image:: images/polyominoes-1234-astroid.png
 
+* 7x5 with cross-shaped hole (design by Dan Klarskov): `19 solutions
+  <../solutions/polyominoes-1234-7x5-cross-hole.txt>`__
 
-One-Sided Polyominoes of Order 2 Through 4
-==========================================
+  .. image:: images/polyominoes-1234-7x5-cross-hole.png
 
-These puzzles use the 1 domino, 2 trominoes, and 7 tetrominoes, for a
-total of 36 squares.
+* 7x4 plus one (discovered by Dan Klarskov): `1,522 solutions
+  <../solutions/polyominoes-1234-7x4-plus-one.txt>`__
 
-* Square: `7,252 solutions
-  <../solutions/one-sided-polyominoes-234-square.txt>`__
+  .. image:: images/polyominoes-1234-7x4-plus-one.png
 
-  .. image:: images/one-sided-polyominoes-234-square.png
-
-* Octagon: `1,023 solutions
-  <../solutions/one-sided-polyominoes-234-octagon.txt>`__
-
-  .. image:: images/one-sided-polyominoes-234-octagon.png
-
-* X (`from G4GX <g4gX.html>`_): `solutions incomplete
-  <../solutions/polyominoes-2345-x-1.txt>`__
-
-  .. image:: images/polyominoes-2345-x-1.png
+  This is just a 7x4 rectangle using the polyominoes of order 2
+  through 4, plus the monomino separately.  I thought it was cute.
 
 
 One-Sided Polyominoes of Order 1 Through 4
@@ -136,6 +132,35 @@ Miscellaneous
   <../solutions/polyominoes-45-aztec-diamond.txt>`__
 
   .. image:: images/polyominoes-45-aztec-diamond.png
+
+
+Polyominoes of Order 2 Through 5
+================================
+
+These puzzles use the 1 domino, 2 trominoes, 5 tetrominoes, and 12
+pentominoes, for a total of 88 squares.
+
+* X (`designed for G4G10 <g4gX.html>`_): `solutions incomplete
+  <../solutions/polyominoes-2345-x-1.txt>`__
+
+  .. image:: images/polyominoes-2345-x-1.png
+
+
+One-Sided Polyominoes of Order 2 Through 5
+==========================================
+
+These puzzles use the 1 domino, 2 trominoes, and 7 tetrominoes, for a
+total of 36 squares.
+
+* Square: `7,252 solutions
+  <../solutions/one-sided-polyominoes-234-square.txt>`__
+
+  .. image:: images/one-sided-polyominoes-234-square.png
+
+* Octagon: `1,023 solutions
+  <../solutions/one-sided-polyominoes-234-octagon.txt>`__
+
+  .. image:: images/one-sided-polyominoes-234-octagon.png
 
 
 Polyominoes of Order 1 Through 5
