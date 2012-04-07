@@ -313,6 +313,36 @@ class Polyiamonds12345Crab(Polyiamonds12345):
         self.piece_data['P5'][-1]['flips'] = None
 
 
+class Polyiamonds12345Dog1(Polyiamonds12345):
+
+    """
+    43,875 solutions
+
+    Inspired by a design by Dan Klarskov
+    """
+
+    width = 6
+    height = 6
+
+    holes = set(((2,4,0), (3,1,1)))
+
+    extras = ((0,5,1), (3,0,0))
+
+    svg_rotation = 90
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_elongated_hexagon(1, 3, offset=(1,0,0)))
+            + list(self.coordinates_hexagon(2, offset=(2,1,0)))
+            + [self.coordinate_offset(x, y, z, None)
+               for x, y, z in self.extras])
+        coords -= self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+
+
 class Polyiamonds12345X1(Polyiamonds12345):
 
     """1,857 solutions"""

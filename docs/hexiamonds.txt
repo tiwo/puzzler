@@ -88,13 +88,8 @@ Chevrons
   .. image:: images/hexiamonds-stacked-chevrons-12x3-3.png
 
 
-Misc
-----
-
-* 4x11 trapezium: `76 solutions
-  <../solutions/hexiamonds-4x11-trapezium.txt>`__
-
-  .. image:: images/hexiamonds-4x11-trapezium.png
+Hexagons & Variants
+-------------------
 
 * 4x10 elongated hexagon (clipped parallelogram): `856 solutions
   <../solutions/hexiamonds-4x10-long-hex.txt>`__
@@ -111,6 +106,72 @@ Misc
 
   .. image:: images/hexiamonds-4x12-stacked-hexagons.png
 
+* Snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
+  "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`__): `55
+  solutions
+  <../solutions/hexiamonds-snowflake.txt>`__
+
+  .. image:: images/hexiamonds-snowflake.png
+
+* Ring 2 (4-unit side-length hexagon with 2-unit hexagonal hole offset
+  one unit from the center): `11 solutions
+  <../solutions/hexiamonds-ring-2.txt>`__ (no
+  solutions for the ring with a centered hole)
+
+  .. image:: images/hexiamonds-ring-2.png
+
+* Crescents (4-unit side length hexagons with 2-unit hexagonal bites
+  removed):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexiamonds-crescent.png
+
+            `87 solutions
+            <../solutions/hexiamonds-crescent.txt>`__
+
+       - .. figure:: images/hexiamonds-crescent-2.png
+
+            `2 solutions
+            <../solutions/hexiamonds-crescent-2.txt>`__
+
+* 6x8 "coin" (5x3 elongated hexagon with central hexagonal hole): `304
+  solutions <../solutions/hexiamonds-coin.txt>`__
+
+  .. image:: images/hexiamonds-coin.png
+
+* Irregular hexagon 7x8: `5885 solutions
+  <../solutions/hexiamonds-irregular-hexagon-7x8.txt>`__
+
+  Suggested by Dan Klarskov of Denmark, under the name "hexui".
+
+  .. image:: images/hexiamonds-irregular-hexagon-7x8.png
+
+* Spiked hexagon (design from `Andrew Clarke's Poly Pages`__): `4
+  solutions <../solutions/hexiamonds-spiked-hexagon-1.txt>`__
+
+  .. image:: images/hexiamonds-spiked-hexagon-1.png
+
+  __ http://recmath.org/PolyPages/PolyPages/index.htm?Polyiamonds.htm
+
+* 4x3 semiregular hexagon with a 1-unit hole (design from `Wolfram
+  Mathworld`__): `710 solutions
+  <../solutions/hexiamonds-semiregular-hexagon-4x3.txt>`__
+
+  .. image:: images/hexiamonds-semiregular-hexagon-4x3.png
+
+  __ http://mathworld.wolfram.com/HexiamondTiling.html
+
+
+Misc
+----
+
+* 4x11 trapezium: `76 solutions
+  <../solutions/hexiamonds-4x11-trapezium.txt>`__
+
+  .. image:: images/hexiamonds-4x11-trapezium.png
+
 * 5x8 stacked long butterflies: `290 solutions
   <../solutions/hexiamonds-5x8-stacked-long-butterflies.txt>`__
 
@@ -125,49 +186,10 @@ Misc
 
   .. image:: images/hexiamonds-4x12-stacked-butterflies.png
 
-* Snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
-  "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`__): `55
-  solutions
-  <../solutions/hexiamonds-snowflake.txt>`__
-
-  .. image:: images/hexiamonds-snowflake.png
-
-* Ring 2 (8-unit hexagon with 4-unit hexagonal hole offset one unit
-  from the center): `11 solutions
-  <../solutions/hexiamonds-ring-2.txt>`__ (no
-  solutions for the ring with a centered hole)
-
-  .. image:: images/hexiamonds-ring-2.png
-
-* Crescent (8-unit hexagon with a 4-unit hexagonal bite removed from
-  one corner): `87 solutions
-  <../solutions/hexiamonds-crescent.txt>`__
-
-  .. image:: images/hexiamonds-crescent.png
-
-* Crescent 2 (8-unit hexagon with a 4-unit hexagonal bite removed from
-  one side): `2 solutions
-  <../solutions/hexiamonds-crescent-2.txt>`__
-
-  .. image:: images/hexiamonds-crescent-2.png
-
-* 6x8 "coin" (elongated hexagon with central hexagonal hole):
-  `304 solutions
-  <../solutions/hexiamonds-coin.txt>`__
-
-  .. image:: images/hexiamonds-coin.png
-
 * Trefoil (3 joined hexagons): `640 solutions
   <../solutions/hexiamonds-trefoil.txt>`__
 
   .. image:: images/hexiamonds-trefoil.png
-
-* Irregular hexagon 7x8: `5885 solutions
-  <../solutions/hexiamonds-irregular-hexagon-7x8.txt>`__
-
-  Suggested by Dan Klarskov of Denmark, under the name "hexui".
-
-  .. image:: images/hexiamonds-irregular-hexagon-7x8.png
 
 * Tenyo's puzzle: `4968 solutions
   <../solutions/hexiamonds-tenyo.txt>`__
@@ -184,13 +206,6 @@ Misc
   <../solutions/hexiamonds-x-1.txt>`__
 
   .. image:: images/hexiamonds-x-1.png
-
-* Spiked hexagon (Design from `Andrew Clarke's Poly Pages`__): `4
-  solutions <../solutions/hexiamonds-spiked-hexagon-1.txt>`__
-
-  .. image:: images/hexiamonds-spiked-hexagon-1.png
-
-  __ http://recmath.org/PolyPages/PolyPages/index.htm?Polyiamonds.htm
 
 
 One-Sided Hexiamonds

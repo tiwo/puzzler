@@ -865,6 +865,29 @@ class HexiamondsSpikedHexagon_x2(Hexiamonds):
         return sorted(coords)
 
 
+class Hexiamonds4x3SemiregularHexagon(Hexiamonds):
+
+    """
+    710 solutions
+
+    Design from `Wolfram Mathworld
+    <http://mathworld.wolfram.com/HexiamondTiling.html>`__.
+    """
+
+    width = 7
+    height = 7
+
+    holes = set(((3,3,0),))
+
+    def coordinates(self):
+        coords = set(self.coordinates_semiregular_hexagon(4, 3)) - self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+        self.piece_data['P6'][-1]['flips'] = None
+
+
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
 
     """

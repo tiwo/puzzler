@@ -130,6 +130,13 @@ triangles.
             Crab: `14,362 solutions
             <../solutions/polyiamonds-12345-crab.txt>`__
 
+     * - .. figure:: images/polyiamonds-12345-dog-1.png
+
+            Dog: `43,875 solutions
+            <../solutions/polyiamonds-12345-dog-1.txt>`__
+
+       -
+
 * X (`designed for G4G10 <g4gX.html>`_): `1,857 solutions
   <../solutions/polyiamonds-12345-x-1.txt>`__
 
