@@ -332,6 +332,38 @@ class Polyiamonds12345X1(Polyiamonds12345):
         self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
 
 
+class Polyiamonds12345ElongatedHexOnHex1(Polyiamonds12345):
+
+    """
+    4,299 solutions
+
+    Discovered by Dan Klarskov
+    """
+
+    width = 8
+    height = 4
+
+    holes = set(((4,1,0), (3,2,1)))
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_elongated_hexagon(7, 1, offset=(0,1,0)))
+            + list(self.coordinates_hexagon(2, offset=(2,0,0))))
+        coords -= self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
+
+
+class Polyiamonds12345ElongatedHexOnHex2(Polyiamonds12345ElongatedHexOnHex1):
+
+    """492 solutions"""
+
+    holes = set(((4,0,1), (3,3,0)))
+
+
 class OneSidedPolyiamonds12345Hexagon1(OneSidedPolyiamonds12345):
 
     """3,710,485 solutions"""

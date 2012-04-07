@@ -135,6 +135,22 @@ triangles.
 
   .. image:: images/polyiamonds-12345-x-1.png
 
+* Elongated hexagons on hexagons:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polyiamonds-12345-elonaged-hex-on-hex-1.png
+
+            `4,299 solutions
+            <../solutions/polyiamonds-12345-elonaged-hex-on-hex-1.txt>`__
+            (discovered by Dan Klarskov)
+
+       - .. figure:: images/polyiamonds-12345-elonaged-hex-on-hex-2.png
+
+            `492 solutions
+            <../solutions/polyiamonds-12345-elonaged-hex-on-hex-2.txt>`__
+
 
 One-Sided Polyiamonds of Order 1 Through 5
 ==========================================

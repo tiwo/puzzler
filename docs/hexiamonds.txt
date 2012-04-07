@@ -185,6 +185,13 @@ Misc
 
   .. image:: images/hexiamonds-x-1.png
 
+* Spiked hexagon (Design from `Andrew Clarke's Poly Pages`__): `4
+  solutions <../solutions/hexiamonds-spiked-hexagon-1.txt>`__
+
+  .. image:: images/hexiamonds-spiked-hexagon-1.png
+
+  __ http://recmath.org/PolyPages/PolyPages/index.htm?Polyiamonds.htm
+
 
 One-Sided Hexiamonds
 ====================
@@ -198,10 +205,12 @@ One-Sided Hexiamonds
   agrees with what is reported in `Dancing Links`_ by Donald E. Knuth.
   The puzzle and its history is briefly described in Knuth's paper,
   and is described in depth in "O’Beirne’s Hexiamond" by Richard
-  K. Guy (a chapter in the book `The Mathemagician and Pied Puzzler: A
-  Collection in Tribute to Martin Gardner`).
+  K. Guy (a chapter in the book "`The Mathemagician and Pied Puzzler: A
+  Collection in Tribute to Martin Gardner`__").
 
   .. _Dancing Links: http://arxiv.org/abs/cs/0011047
+
+  __ http://www.g4g4.com/contentsmmpp.html
 
   .. image:: images/one-sided-hexiamonds-obeirnes-hexagon.png
 

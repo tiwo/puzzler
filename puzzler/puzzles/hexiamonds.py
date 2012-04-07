@@ -10,6 +10,7 @@ Concrete hexiamonds puzzles.
 """
 
 from puzzler.puzzles.polyiamonds import Hexiamonds, OneSidedHexiamonds
+from puzzler.coordsys import Triangular3DCoordSet
 
 
 class Hexiamonds3x12(Hexiamonds):
@@ -793,6 +794,75 @@ class HexiamondsX_x2(Hexiamonds):
         for coord in self.coordinates_butterfly(7, 5):
             if coord not in self.holes:
                 yield coord
+
+
+class HexiamondsSpikedHexagon1(Hexiamonds):
+
+    """
+    4 solutions
+
+    Design from Andrew Clarke's Poly Pages:
+    http://recmath.org/PolyPages/PolyPages/index.htm?Polyiamonds.htm
+    """
+
+    width = 10
+    height = 10
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        x = Triangular3DCoordSet(self.coordinates_butterfly(2, 1))
+        coords = set(
+            list(self.coordinates_hexagon(3, offset=(2,2,0)))
+            + list(x.translate((0,4,0)))
+            + list(x.rotate0(1).translate((6,6,0)))
+            + list(x.rotate0(2).translate((11,0,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+        self.piece_data['P6'][-1]['flips'] = None
+
+
+class HexiamondsSpikedHexagon_x1(Hexiamonds):
+
+    """0 solutions"""
+
+    width = 8
+    height = 8
+
+    check_for_duplicates = False
+
+    offsets = ((3,7,0), (1,6,0), (2,3,0), (5,1,0), (7,2,0), (6,5,0),)
+
+    offsets = ((5,0,0), (8,1,0), (7,5,0), (3,8,0), (0,7,0), (1,3,0))
+
+    def coordinates(self):
+        spike = Triangular3DCoordSet(self.coordinates_trapezoid(2, 1))
+        coords = set(self.coordinates_hexagon(3, offset=(1,1,0)))
+        for steps, offset in enumerate(self.offsets):
+            coords.update(spike.rotate0(steps).translate(offset))
+        return sorted(coords)
+
+
+class HexiamondsSpikedHexagon_x2(Hexiamonds):
+
+    """0 solutions"""
+
+    width = 8
+    height = 8
+
+    check_for_duplicates = False
+
+    offsets = ((1,7,0), (1,4,0), (4,1,0), (7,1,0), (7,4,0), (4,7,0),)
+
+    def coordinates(self):
+        spike = Triangular3DCoordSet(
+            self.coordinate_offset(x, 0, 0, None) for x in range(3))
+        coords = set(self.coordinates_hexagon(3, offset=(1,1,0)))
+        for steps, offset in enumerate(self.offsets):
+            coords.update(spike.rotate0(steps).translate(offset))
+        return sorted(coords)
 
 
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
