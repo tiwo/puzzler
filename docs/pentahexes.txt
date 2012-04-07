@@ -16,8 +16,8 @@
 
 .. sidebar:: Also see:
 
-   | `Notes on Polyhexes <polyhex-notes.html>`_
    | `Polyhexes: Puzzles & Solutions <polyhexes.html>`_
+   | `Notes on Polyhexes <polyhex-notes.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
    |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
