@@ -597,11 +597,10 @@ Quasi-Tritwigs
 --------------
 
 In his `prior research`_, Colin F. Brown showed that in addition to
-the 3 free connected tritwigs (order-3 quasi-polytwigs), there are 5
-semi-connected (one gap) quasi-tritwigs and 9 disconnected (two gaps)
-quasi-tritrigs, for a total of 17 free quasi-tritwigs.  There are 28
-one-sided quasi-tritwigs:
-
+the 3 free connected tritwigs, there are 5 semi-connected (one gap)
+quasi-tritwigs and 9 disconnected (two gaps) quasi-tritrigs, for a
+total of 17 free quasi-tritwigs (order-3 quasi-polytwigs).  There are
+28 one-sided quasi-tritwigs.
 
 .. list-table::
    :widths: 20 20 20 20
