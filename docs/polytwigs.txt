@@ -372,6 +372,12 @@ of 60 line segments on the hexagonal grid.
 
   .. image:: images/pentatwigs-x-1.png
 
+* 5x2 elongated hexagon (with holes; puzzle design by Colin F. Brown):
+  `2 solutions
+  <../solutions/pentatwigs-elongated-hexagon-5x2-1.txt>`__
+
+  .. image:: images/pentatwigs-elongated-hexagon-5x2-1.png
+
 
 One-Sided Pentatwigs
 ====================

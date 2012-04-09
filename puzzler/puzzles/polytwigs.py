@@ -148,6 +148,19 @@ class Polytwigs(Polytrigs):
             yield cls.coordinate_offset(x, y, z, offset)
 
     @classmethod
+    def coordinates_semiregular_hexagon(cls, base_length, side_length,
+                                        offset=None):
+        x_bound = y_bound = side_length + base_length - 1
+        min_xy = side_length - 1
+        max_xy = base_length + 2 * side_length - 2
+        for coord in cls.coordinates_bordered(x_bound, y_bound):
+            x, y, z = coord
+            xy = x + y
+            if (xy < min_xy) or ((xy == min_xy) and (z == 2)) or (xy > max_xy):
+                continue
+            yield cls.coordinate_offset(x, y, z, offset)
+
+    @classmethod
     def coordinates_trapezoid(cls, m, n, offset=None):
         """
         Trapezoidal bordered polytwig grid of base length M & height N hexagons.
@@ -218,9 +231,11 @@ class Polytwigs(Polytrigs):
     def coordinates_hexagram(cls, side_length, offset=None):
         """Hexagram bordered polytwig grid."""
         s = side_length
+        x, y, z = offset
+        offset1 = (x + s - 1, y + s - 1, z)
         coords = (
-            list(set(cls.coordinates_triangle(s * 3 - 2, offset=(s-1,s-1,0))))
-            + list(set(cls.coordinates_inverted_triangle(s * 3 - 2))))
+            list(set(cls.coordinates_triangle(s * 3 - 2, offset=offset1)))
+            + list(set(cls.coordinates_inverted_triangle(s * 3 - 2, offset))))
         return sorted(coords)
 
     @classmethod

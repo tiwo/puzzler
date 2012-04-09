@@ -271,7 +271,7 @@ class Pentatwigs3Congruent1(Pentatwigs):
         self.piece_data['R5'][-1]['rotations'] = (0, 1)
 
 
-class PentatwigsTrefoil_X(PentatwigsTrefoil):
+class PentatwigsTrefoil_x1(PentatwigsTrefoil):
 
     """0 solutions"""
 
@@ -279,6 +279,42 @@ class PentatwigsTrefoil_X(PentatwigsTrefoil):
         (2,0,0), (2,0,1), (3,0,2), (2,2,0),
         (0,4,1), (0,5,0), (0,5,2), (2,3,2),
         (3,2,1), (4,3,0), (5,2,1), (5,2,2)))
+
+
+class PentatwigsTrefoil_x2(Pentatwigs):
+
+    """0 solutions (design by Colin F. Brown)"""
+
+    height = 6
+    width = 6
+
+    holes = set(((1,2,1), (2,4,0), (4,1,2)))
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_hexagon(2, offset=(0,1,0)))
+            + list(self.coordinates_hexagon(2, offset=(1,2,0)))
+            + list(self.coordinates_hexagon(2, offset=(2,0,0))))
+        coords -= self.holes
+        return sorted(coords)
+
+
+class PentatwigsTrefoilRing_x(Pentatwigs):
+
+    """0 solutions (design by Colin F. Brown)"""
+
+    height = 6
+    width = 6
+
+    holes = set(((2,2,1), (2,3,0), (3,2,2)))
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_hexagon(2, offset=(0,1,0)))
+            + list(self.coordinates_hexagon(2, offset=(1,2,0)))
+            + list(self.coordinates_hexagon(2, offset=(2,0,0))))
+        coords -= self.holes
+        return sorted(coords)
 
 
 class PentatwigsMobiusStrip1(Pentatwigs):
@@ -444,7 +480,69 @@ class PentatwigsX1(PentatwigsButterfly1):
         self.piece_data['R5'][-1]['flips'] = None
 
 
-class OneSidedPentatwigsTrapezoid12x2(OneSidedPentatwigs):
+class PentatwigsSemiregularHexagonRing_x(Pentatwigs):
+
+    """0 solutions (design by Colin F. Brown)"""
+
+    height = 6
+    width = 6
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_semiregular_hexagon(4, 2))
+            - set(self.coordinates_triangle_unbordered(3, offset=(1,1,0))))
+        return sorted(coords)
+
+
+class PentatwigsElongatedHexagonRing_x(Pentatwigs):
+
+    """0 solutions (design by Colin F. Brown)"""
+
+    width = 7
+    height = 4
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_elongated_hexagon(5, 2))
+            - set(self.coordinates_unbordered(4, 1, offset=(1,1,0))))
+        return sorted(coords)
+
+
+class PentatwigsElongatedHexagon5x2_1(Pentatwigs):
+
+    """2 solutions (design by Colin F. Brown)"""
+
+    width = 7
+    height = 4
+
+    holes = set(((1,1,1), (3,1,1), (5,1,1)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_elongated_hexagon(5, 2)) - self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R5'][-1]['flips'] = None
+        self.piece_data['R5'][-1]['rotations'] = (0, 1, 2)
+ 
+
+class PentatwigsHexagram_x(Pentatwigs):
+
+    """0 solutions (design by Colin F. Brown)"""
+
+    width = 7
+    height = 7
+
+    extras = ((0,5,0), (2,2,2), (2,6,1), (5,0,1), (5,5,2), (6,2,0))
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagram(2, offset=(1,1,0)))
+        coords.update(
+            [self.coordinate_offset(x, y, z, None) for x, y, z in self.extras])
+        return sorted(coords)
+
+
+ class OneSidedPentatwigsTrapezoid12x2(OneSidedPentatwigs):
 
     """many solutions"""
 

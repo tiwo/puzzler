@@ -262,6 +262,7 @@ puzzles.*
 * P(3,3)
 * He(4,1)
 * B(5,1)
+* polyhex T(2) = 3H(1)
 
 22: one-sided polyiamonds of order 1 to 4
 
@@ -281,6 +282,14 @@ puzzles.*
 72: Hexiamonds
 
 * Potential:
+
+  * polyhex Hs(3,2)
+  * polyhex P(6,2)
+  * polyhex P(4,3)
+  * polyhex Ri(8,2)
+  * polyhex Rr(5,3)
+  * polyhex Tr(5,3)
+  * polyhex C(4,2)
 
 * No solutions:
 
@@ -314,6 +323,10 @@ puzzles.*
   * Tr(13,6) - H(1)
   * P(15,4)/P(12,5)/P(10,6) - H(1)
   * instead of H(1), B(2,1)
+  * polyhex He(6,2)
+  * polyhex Rr(13,2)
+  * polyhex Tr(19,2)
+  * polyhex B(4,4)
 
 * No solutions:
 
@@ -324,6 +337,13 @@ puzzles.*
 168: Heptiamonds
 
 * B(10,6)
+* polyhex P(7,4)
+* polyhex P(14,2)
+* polyhex Ri(11,3)
+* polyhex Ri(8,4)
+* polyhex He(9,2)
+* polyhex C(4,4)
+* polyhex He(5,3) - 1 unit
 
 278: polyiamonds of order 1 to 7
 
