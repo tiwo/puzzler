@@ -527,7 +527,6 @@ Potential Puzzles
 
 * Potential:
 
-  * P(14,2) & Rs
   * P(7,4) & Rs
   * Ri(11,3)
   * Ri(8,4)
@@ -537,6 +536,7 @@ Potential Puzzles
 * No solutions:
 
   * T(7) (= Tetrahex7x7Triangle)
+  * P(14,2) & Rs (not possible)
 
 37: trihexes + tetrahexes
 
