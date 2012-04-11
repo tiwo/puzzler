@@ -24,6 +24,10 @@
    | `X’s from G4G10: Gathering for Gardner 10 <g4gX.html>`_
    | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    | `Polyform Puzzler FAQ <FAQ.html>`_
+   |
+   | Off-site:
+   |     `My account of G4G10 (blog article)
+         <http://www.artima.com/weblogs/viewpost.jsp?thread=341893>`_
 
 .. contents::
 
