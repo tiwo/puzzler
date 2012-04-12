@@ -140,7 +140,7 @@ Polyominoes of Order 2 Through 5
 These puzzles use the 1 domino, 2 trominoes, 5 tetrominoes, and 12
 pentominoes, for a total of 88 squares.
 
-* X (`designed for G4G10 <g4gX.html>`_): `solutions incomplete
+* X (`designed for G4G10 <g4gX.html>`_): `178,355,676 solutions
   <../solutions/polyominoes-2345-x-1.txt>`__
 
   .. image:: images/polyominoes-2345-x-1.png

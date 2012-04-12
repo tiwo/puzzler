@@ -65,10 +65,9 @@ Chevrons
 
   .. image:: images/hexiamonds-chevron-4x9.png
 
-* Stacked chevrons 6x6: `933 solutions
+* Stacked chevrons 6x6 (suggested by Dan Klarskov, under the name
+  "polyam2"): `933 solutions
   <../solutions/hexiamonds-stacked-chevrons-6x6.txt>`__
-
-  Suggested by Dan Klarskov of Denmark, under the name "polyam2".
 
   .. image:: images/hexiamonds-stacked-chevrons-6x6.png
 
@@ -141,10 +140,9 @@ Hexagons & Variants
 
   .. image:: images/hexiamonds-coin.png
 
-* Irregular hexagon 7x8: `5885 solutions
+* Irregular hexagon 7x8 (suggested by Dan Klarskov, under the name
+  "hexui"): `5885 solutions
   <../solutions/hexiamonds-irregular-hexagon-7x8.txt>`__
-
-  Suggested by Dan Klarskov of Denmark, under the name "hexui".
 
   .. image:: images/hexiamonds-irregular-hexagon-7x8.png
 
@@ -202,10 +200,15 @@ Misc
 
   .. image:: images/hexiamonds-tenyo.png
 
-* X (`designed for G4G10 <g4gX.html>`_): `solutions incomplete
+* X (`designed for G4G10 <g4gX.html>`_): `11 solutions
   <../solutions/hexiamonds-x-1.txt>`__
 
   .. image:: images/hexiamonds-x-1.png
+
+* Heart (designed by Dan Klarskov): `4,154 solutions
+  <../solutions/hexiamonds-heart.txt>`__
+
+  .. image:: images/hexiamonds-heart.png
 
 
 One-Sided Hexiamonds

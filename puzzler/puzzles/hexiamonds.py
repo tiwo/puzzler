@@ -502,7 +502,7 @@ class HexiamondsIrregularHexagon7x8(Hexiamonds):
     """
     5885 solutions.
 
-    Suggested by Dan Klarskov, Denmark, under the name 'hexui'.
+    Suggested by Dan Klarskov, under the name 'hexui'.
     """
 
     height = 8
@@ -526,7 +526,7 @@ class HexiamondsStackedChevrons_6x6(Hexiamonds):
     """
     933 solutions.
 
-    Suggested by Dan Klarskov, Denmark, under the name 'polyam2'.
+    Suggested by Dan Klarskov, under the name 'polyam2'.
     """
 
     height = 6
@@ -746,7 +746,7 @@ class HexiamondsTwoTriangles(Hexiamonds):
 
 class HexiamondsX1(Hexiamonds):
 
-    """many solutions"""
+    """11 solutions"""
 
     height = 8
     width = 11
@@ -759,6 +759,10 @@ class HexiamondsX1(Hexiamonds):
         for coord in self.coordinates_butterfly(7, 4):
             if coord not in self.holes:
                 yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P6'][-1]['flips'] = None
 
 
 class HexiamondsX_x1(HexiamondsX1):
@@ -886,6 +890,31 @@ class Hexiamonds4x3SemiregularHexagon(Hexiamonds):
     def customize_piece_data(self):
         self.piece_data['P6'][-1]['rotations'] = (0, 1)
         self.piece_data['P6'][-1]['flips'] = None
+
+
+class HexiamondsHeart(Hexiamonds):
+
+    """
+    4,154 solutions
+
+    Designed by Dan Klarskov
+    """
+
+    width = 7
+    height = 8
+
+    check_for_duplicates = False
+
+    svg_rotation = -90
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_elongated_hexagon(3, 4))
+            - set(self.coordinates_hexagon(2, offset=(5,2,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
 
 
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):

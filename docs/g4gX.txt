@@ -50,7 +50,7 @@ Also see:
     * `Pentomino Puzzles & Solutions <pentominoes.html>`_
     * `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`__
 
-* Polyominoes of order 2 through 5: `solutions incomplete
+* Polyominoes of order 2 through 5: `178,355,676 solutions
   <../solutions/polyominoes-2345-x-1.txt>`__
 
   .. image:: images/polyominoes-2345-x-1.png
@@ -74,7 +74,7 @@ Also see:
 
   .. image:: images/one-sided-polyiamonds-12345-x-1.png
 
-* Hexiamonds: `solutions incomplete <../solutions/hexiamonds-x-1.txt>`__
+* Hexiamonds: `11 solutions <../solutions/hexiamonds-x-1.txt>`__
 
   .. image:: images/hexiamonds-x-1.png
 

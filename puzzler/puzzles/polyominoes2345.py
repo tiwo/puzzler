@@ -15,7 +15,7 @@ from puzzler.puzzles.polyominoes import Polyominoes2345, OneSidedPolyominoes2345
 
 class Polyominoes2345X1(Polyominoes2345):
 
-    """many solutions"""
+    """178,355,676 solutions"""
 
     height = 14
     width = 14

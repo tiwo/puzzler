@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-"""many solutions"""
+"""178,355,676 solutions"""
 
 import puzzler
 from puzzler.puzzles.polyominoes2345 import Polyominoes2345X1
