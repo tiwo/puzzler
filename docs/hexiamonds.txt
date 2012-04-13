@@ -146,10 +146,23 @@ Hexagons & Variants
 
   .. image:: images/hexiamonds-irregular-hexagon-7x8.png
 
-* Spiked hexagon (design from `Andrew Clarke's Poly Pages`__): `4
-  solutions <../solutions/hexiamonds-spiked-hexagon-1.txt>`__
+* Spiked hexagons:
 
-  .. image:: images/hexiamonds-spiked-hexagon-1.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexiamonds-spiked-hexagon-1.png
+
+            `4 solutions
+            <../solutions/hexiamonds-spiked-hexagon-1.txt>`__
+            (design from `Andrew Clarke's Poly Pages`__)
+
+       - .. figure:: images/hexiamonds-spiked-hexagon-2.png
+
+            `3 solutions
+            <../solutions/hexiamonds-spiked-hexagon-2.txt>`__
+
+  .. 
 
   __ http://recmath.org/PolyPages/PolyPages/index.htm?Polyiamonds.htm
 
@@ -209,6 +222,11 @@ Misc
   <../solutions/hexiamonds-heart.txt>`__
 
   .. image:: images/hexiamonds-heart.png
+
+* Spinner: `751 solutions
+  <../solutions/hexiamonds-spinner-1.txt>`__
+
+  .. image:: images/hexiamonds-spinner-1.png
 
 
 One-Sided Hexiamonds

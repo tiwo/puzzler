@@ -694,6 +694,19 @@ class HexiamondsV_9x9(Hexiamonds):
                         yield (x, y, z)
 
 
+class HexiamondsTriangleRing_x(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 9
+    width = 9
+
+    def coordinates(self):
+        return sorted(
+            set(self.coordinates_triangle(9))
+            - set(self.coordinates_triangle(3, offset=(2,2,0))))
+
+
 class HexiamondsTenyo(Hexiamonds):
 
     """
@@ -828,6 +841,31 @@ class HexiamondsSpikedHexagon1(Hexiamonds):
         self.piece_data['P6'][-1]['flips'] = None
 
 
+class HexiamondsSpikedHexagon2(Hexiamonds):
+
+    """3 solutions"""
+
+    width = 8
+    height = 8
+
+    check_for_duplicates = False
+
+    svg_rotation = -30
+
+    def coordinates(self):
+        x = Triangular3DCoordSet(self.coordinates_parallelogram(2, 2))
+        coords = set(
+            list(self.coordinates_hexagon(3, offset=(1,1,0)))
+            + list(x.translate((6,0,0)))
+            + list(x.rotate0(1).translate((2,2,0)))
+            + list(x.rotate0(2).translate((6,6,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+        self.piece_data['P6'][-1]['flips'] = None
+
+
 class HexiamondsSpikedHexagon_x1(Hexiamonds):
 
     """0 solutions"""
@@ -915,6 +953,82 @@ class HexiamondsHeart(Hexiamonds):
 
     def customize_piece_data(self):
         self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsSpinner1(Hexiamonds):
+
+    """751 solutions"""
+
+    width = 8
+    height = 8
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        x = Triangular3DCoordSet(self.coordinates_parallelogram(3, 1))
+        coords = set(
+            list(self.coordinates_hexagon(3, offset=(1,1,0)))
+            + list(x.translate((4,0,0)))
+            + list(x.rotate0(2).translate((8,4,0)))
+            + list(x.rotate0(4).translate((0,8,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+
+
+class HexiamondsSpinner_x1(Hexiamonds):
+
+    """0 solutions"""
+
+    width = 12
+    height = 12
+
+    def coordinates(self):
+        x = Triangular3DCoordSet(self.coordinates_parallelogram(4, 2))
+        coords = set(
+            list(self.coordinates_hexagon(2, offset=(4,4,0)))
+            + list(x.translate((8,4,0)))
+            + list(x.rotate0(2).translate((6,8,0)))
+            + list(x.rotate0(4).translate((4,6,0))))
+        return sorted(coords)
+
+
+class HexiamondsSpinner_x2(Hexiamonds):
+
+    """0 solutions"""
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        x = Triangular3DCoordSet(self.coordinates_parallelogram(2, 2))
+        coords = set(
+            list(self.coordinates_hexagon(2, offset=(2,2,0)))
+            + list(x.translate((6,2,0)))
+            + list(x.rotate0(1).translate((6,4,0)))
+            + list(x.rotate0(2).translate((4,6,0)))
+            + list(x.rotate0(3).translate((2,6,0)))
+            + list(x.rotate0(4).translate((2,4,0)))
+            + list(x.rotate0(5).translate((4,2,0))))
+        return sorted(coords)
+
+
+class HexiamondsSpinner_x3(Hexiamonds):
+
+    """0 solutions"""
+
+    width = 10
+    height = 10
+
+    def coordinates(self):
+        x = Triangular3DCoordSet(self.coordinates_parallelogram(3, 2))
+        coords = set(
+            list(self.coordinates_triangle(6, offset=(2,2,0)))
+            + list(x.translate((2,0,0)))
+            + list(x.rotate0(2).translate((10,2,0)))
+            + list(x.rotate0(4).translate((0,10,0))))
+        return sorted(coords)
 
 
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):

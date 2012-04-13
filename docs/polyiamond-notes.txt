@@ -290,6 +290,9 @@ puzzles.*
   * polyhex Rr(5,3)
   * polyhex Tr(5,3)
   * polyhex C(4,2)
+  * polyhex T(5) - T(2)
+  * polyhex H(3) - H(2)
+  * polyhex Hg(2) - H(1)
 
 * No solutions:
 
@@ -302,8 +305,11 @@ puzzles.*
   * H(4) - pinwheel-3 hole (= HexiamondsHexagon5)
   * H(4) - trefoil hole (3C(2,1); = HexiamondsHexagon6)
   * H(2) * 3 (= Hexiamonds3Hexagons)
-  * T(9) - T(3) (= HexiamondsV_9x9)
+  * T(9) - T(3) (= HexiamondsTriangleRing_x, HexiamondsV_9x9)
   * T(6) * 2 (= HexiamondsTwoTriangles)
+  * H(2) + 3P(4,2) (= HexiamondsSpinner_x1)
+  * H(2) + 6P(2,2) (= HexiamondsSpinner_x2)
+  * T(6) + 3P(3,2) (= HexiamondsSpinner_x3)
 
 110: polyiamonds of order 1 to 6
 
@@ -337,13 +343,15 @@ puzzles.*
 168: Heptiamonds
 
 * B(10,6)
+* H(4) + 3C(2,3)
 * polyhex P(7,4)
 * polyhex P(14,2)
 * polyhex Ri(11,3)
 * polyhex Ri(8,4)
 * polyhex He(9,2)
 * polyhex C(4,4)
-* polyhex He(5,3) - 1 unit
+* polyhex He(5,3) - 1 hex
+* polyhex T(7) - 4 hexes
 
 278: polyiamonds of order 1 to 7
 

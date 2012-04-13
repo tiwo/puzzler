@@ -9,8 +9,8 @@
 Concrete heptiamonds puzzles.
 """
 
-from puzzler import coordsys
 from puzzler.puzzles.polyiamonds import Heptiamonds
+from puzzler.coordsys import Triangular3DCoordSet, Triangular3D
 
 
 class Heptiamonds3x28(Heptiamonds):
@@ -172,7 +172,7 @@ class Heptiamonds4x23Trapezium(Heptiamonds12x13Trapezium):
 class HeptiamondsHexagram(Heptiamonds):
 
     """
-     solutions
+    many solutions
 
     16-unit-high hexagram with central 4-unit hexagonal hole
     """
@@ -713,7 +713,7 @@ class HeptiamondsChevron(Heptiamonds):
 
 class Heptiamonds4x21Chevron(HeptiamondsChevron):
 
-    """ solutions."""
+    """many solutions."""
 
     height = 4
     width = 23
@@ -721,7 +721,7 @@ class Heptiamonds4x21Chevron(HeptiamondsChevron):
 
 class Heptiamonds6x14Chevron(HeptiamondsChevron):
 
-    """ solutions."""
+    """many solutions."""
 
     height = 6
     width = 17
@@ -729,7 +729,7 @@ class Heptiamonds6x14Chevron(HeptiamondsChevron):
 
 class Heptiamonds12x7Chevron(HeptiamondsChevron):
 
-    """ solutions."""
+    """many solutions."""
 
     height = 12
     width = 13
@@ -737,7 +737,7 @@ class Heptiamonds12x7Chevron(HeptiamondsChevron):
 
 class Heptiamonds14x6Chevron(HeptiamondsChevron):
 
-    """ solutions."""
+    """many solutions."""
 
     height = 14
     width = 13
@@ -747,7 +747,7 @@ class Heptiamonds14x6Chevron(HeptiamondsChevron):
 
 class Heptiamonds28x3Chevron(HeptiamondsChevron):
 
-    """ solutions."""
+    """many solutions."""
 
     height = 28
     width = 17
@@ -778,11 +778,15 @@ class HeptiamondsStack(Heptiamonds):
 
 class Heptiamonds11x8Stack(HeptiamondsStack):
 
+    """many solutions"""
+
     height = 8
     width = 14
 
 
 class Heptiamonds4x24Stack(HeptiamondsStack):
+
+    """many solutions"""
 
     height = 24
     width = 15
@@ -897,7 +901,7 @@ class HeptiamondsHexagons2x3_1(Heptiamonds):
                 for x in range(5):
                     total = x + y + z
                     if 2 < total < 8:
-                        yield coordsys.Triangular3D((x, y, z))
+                        yield Triangular3D((x, y, z))
 
 
 class HeptiamondsHexagons2x3_2(HeptiamondsHexagons2x3_1):
@@ -977,7 +981,7 @@ class HeptiamondsHexagons2x3_7(HeptiamondsHexagons2x3_1):
     """
     Four 2x3 hexagons adjacent horizontally, with corners touching.
 
-     solutions.
+    many solutions.
     """
 
     height = 6
@@ -1032,3 +1036,75 @@ class HeptiamondsSemiregularHexagons6x2(Heptiamonds):
                     else:
                         continue
                     yield (x, y, z)
+
+
+class HeptiamondsTrefoil1(Heptiamonds):
+
+    """
+    many solutions
+
+    design from Kadon's Iamond Ring booklet
+    """
+
+    height = 16
+    width = 16
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        h = Triangular3DCoordSet(self.coordinates_elongated_hexagon(6, 2))
+        coords = set(
+            list(h.translate((8,6,0)))
+            + list(h.rotate0(1).translate((10,-2,0)))
+            + list(h.rotate0(2).translate((10,8,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsTrefoil2(Heptiamonds):
+
+    """many solutions"""
+
+    height = 12
+    width = 12
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        h = Triangular3DCoordSet(self.coordinates_hexagon(3))
+        coords = set(
+            list(self.coordinates_hexagon(4, offset=(2,2,0)))
+            + list(h.translate((0,6,0)))
+            + list(h.translate((3,0,0)))
+            + list(h.translate((6,3,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsTrefoil3(Heptiamonds):
+
+    """many solutions"""
+
+    height = 14
+    width = 14
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        h = Triangular3DCoordSet(self.coordinates_elongated_hexagon(3, 2))
+        coords = set(
+            list(self.coordinates_hexagon(4, offset=(3,3,0)))
+            + list(h.translate((9,5,0)))
+            + list(h.rotate0(1).translate((9,-2,0)))
+            + list(h.rotate0(2).translate((7,9,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+        self.piece_data['P7'][-1]['flips'] = None

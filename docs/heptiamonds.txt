@@ -325,5 +325,25 @@ Misc
 
   .. image:: images/heptiamonds-semiregular-hexagons-6x2.png
 
+* Trefoils:
+
+  .. figure:: images/heptiamonds-trefoil-1.png
+
+     `solutions incomplete
+     <../solutions/heptiamonds-trefoil-1.txt>`__
+     (design from `Kadon's Iamond Ring`_ booklet)
+
+  .. figure:: images/heptiamonds-trefoil-2.png
+
+     `solutions incomplete
+     <../solutions/heptiamonds-trefoil-2.txt>`__
+
+  .. figure:: images/heptiamonds-trefoil-3.png
+
+     `solutions incomplete
+     <../solutions/heptiamonds-trefoil-3.txt>`__
+
+.. _Kadon's Iamond Ring: http://gamepuzzles.com/esspoly.htm#IR
+
 
 .. |c| unicode:: U+00A9 .. copyright sign

@@ -240,6 +240,35 @@ class TritrigsTriangle2(TritrigsTriangle1):
             set(self.coordinates_hexagon_unbordered(1, offset=(1, 0, 0))))
         return hole
 
+
+class TritrigsTriangle3(TritrigsTriangle1):
+
+    """6 solutions."""
+
+    def coordinates_hole(self):
+        hole = set(((1,1,1), (2,1,0), (2,2,2), (0,3,0), (2,0,2), (3,1,1)))
+        hole.update(
+            set(self.coordinates_triangle_unbordered(2, offset=(1, 1, 0))))
+        return hole
+
+    def customize_piece_data(self):
+        self.piece_data['I3'][-1]['flips'] = None
+        self.piece_data['I3'][-1]['rotations'] = None
+
+
+class TritrigsTriangle4(TritrigsTriangle3):
+
+    """1 solution."""
+
+    def coordinates_hole(self):
+        hole = set(((1,1,1), (2,1,0), (2,2,2), (0,1,0), (1,3,1), (4,0,2)))
+        hole.update(
+            set(self.coordinates_triangle_unbordered(2, offset=(1, 1, 0))))
+        return hole
+
+
+class TritrigsTriangle_x(TritrigsTriangle1):
+
     """
     0 solutions for each set of hole coordinates:
 
@@ -274,35 +303,13 @@ class TritrigsTriangle2(TritrigsTriangle1):
     """
 
 
-class TritrigsTriangle3(TritrigsTriangle1):
-
-    """6 solutions."""
-
-    def coordinates_hole(self):
-        hole = set(((1,1,1), (2,1,0), (2,2,2), (0,3,0), (2,0,2), (3,1,1)))
-        hole.update(
-            set(self.coordinates_triangle_unbordered(2, offset=(1, 1, 0))))
-        return hole
-
-    def customize_piece_data(self):
-        self.piece_data['I3'][-1]['flips'] = None
-        self.piece_data['I3'][-1]['rotations'] = None
-
-
-class TritrigsTriangle4(TritrigsTriangle3):
-
-    """1 solution."""
-
-    def coordinates_hole(self):
-        hole = set(((1,1,1), (2,1,0), (2,2,2), (0,1,0), (1,3,1), (4,0,2)))
-        hole.update(
-            set(self.coordinates_triangle_unbordered(2, offset=(1, 1, 0))))
-        return hole
-
-
 class TritrigsHeart1(Tritrigs):
 
-    """50 solutions."""
+    """
+    50 solutions
+
+    Designed by Leslie E. Shader
+    """
 
     width = 5
     height = 5
@@ -324,7 +331,11 @@ class TritrigsHeart1(Tritrigs):
 
 class TritrigsHeart2(TritrigsHeart1):
 
-    """52 solutions."""
+    """
+    52 solutions
+
+    Designed by Leslie E. Shader
+    """
 
     hole = set(((2,2,1), (1,2,0), (3,1,2)))
 
@@ -353,19 +364,6 @@ class TritrigsSpinner(Tritrigs):
               (4,0,0), (4,0,1), (4,0,2), (5,0,2),
               (2,4,0), (2,4,1), (3,3,1), (3,4,2))
     """
-
-
-class TritrigsThreeHexes(Tritrigs):
-
-    """0 solutions."""
-
-    width = 5
-    height = 5
-
-    def coordinates(self):
-        for offset in (None, (2,0,0), (0,2,0)):
-            for coord in self.coordinates_hexagon(1, offset=offset):
-                yield coord
 
 
 class TritrigsHexagon1(Tritrigs):
@@ -593,10 +591,12 @@ class OneSidedTritrigsTrilobedCuboid(OneSidedTritrigs):
         keys.remove('I3')
         self.build_regular_matrix(keys)
 
-    """
-    0 solutions.
 
-    no place for O3 piece:
+class OneSidedTritrigsTrilobedCuboid_x(OneSidedTritrigsTrilobedCuboid):
+
+    """0 solutions"""
+
+    #no place for O3 piece:
     holes = set((
         (0,3,1), (1,2,2), (2,6,0), (4,5,2), (5,0,0), (6,0,1),
         (0,3,0), (0,4,0), (0,5,0), (1,2,0), (1,3,0), (1,4,0),
@@ -605,4 +605,3 @@ class OneSidedTritrigsTrilobedCuboid(OneSidedTritrigs):
         (3,3,1), (4,3,1), (5,3,1),
         (4,0,2), (4,1,2), (4,2,2), (5,0,2), (5,1,2), (5,2,2),
         (6,0,2), (6,1,2), (6,2,2),))
-    """
