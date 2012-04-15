@@ -171,11 +171,7 @@ class Puzzle(object):
 
     def init_puzzle(self):
         """Initialize the puzzle pieces and matrix."""
-        for name, (data, kwargs) in self.piece_data.items():
-            self.aspects[name] = self.make_aspects(data, **kwargs)
-        for name, aspects in self.aspects.items():
-            self.pieces[name] = tuple(sorted((tuple(sorted(aspect)), aspect)
-                                             for aspect in aspects))
+        self.build_aspects()
         self.build_matrix_header()
         self.build_matrix()
 
@@ -195,6 +191,22 @@ class Puzzle(object):
         Override in subclasses.
         """
         pass
+
+    def build_aspects(self):
+        """Populate `self.aspects` and `self.pieces`."""
+        self.build_regular_aspects(sorted(self.piece_data.keys()))
+
+    def build_regular_aspects(self, names):
+        """
+        Populate `self.aspects` from the puzzle pieces listed in `names`,
+        and populate `self.pieces` from aspects in `self.aspects`.
+        """
+        for name in names:
+            data, kwargs = self.piece_data[name]
+            self.aspects[name] = self.make_aspects(data, **kwargs)
+        for name, aspects in self.aspects.items():
+            self.pieces[name] = tuple(
+                sorted((tuple(sorted(aspect)), aspect) for aspect in aspects))
 
     def make_aspects(self, data, **kwargs):
         """
