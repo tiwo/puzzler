@@ -333,7 +333,7 @@ ones.  Polyform families are given descriptive names:
 * Polyforms based on regular hexagons are named "polyhexes_" (there's
   no clever etymology here).
 
-  .. figure:: images/tetrahex-coin.png
+  .. figure:: images/tetrahexes-coin.png
 
      5 |x| 7 Tetrahex "Coin" (4 solutions)
 

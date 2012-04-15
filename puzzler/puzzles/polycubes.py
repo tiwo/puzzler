@@ -184,7 +184,7 @@ class Pentacubes(Polycubes):
         'N25': 'teal',
         'S15': 'tan',
         'S25': 'indigo',
-        'T15': 'yellow',
+        'T15': 'darkkhaki',
         'T25': 'orangered',
         'V15': 'darkorchid',
         'V25': 'tomato',

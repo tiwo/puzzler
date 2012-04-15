@@ -226,6 +226,16 @@ and 29 pentacubes, for a total of 186 unit cubes.
             `5: solutions incomplete
             <../solutions/polycubes-12345-x-5.txt>`__
 
-       -
+       - .. figure:: images/polycubes-12345-x-5-small.jpg
+            :target: images/polycubes-12345-x-5.jpg
+
+            Built with `Kadon's Super Deluxe Quintillions`_ and `Poly-4
+            Supplement`_.  Click for the full-size image.
+
+.. _Kadon's Super Deluxe Quintillions:
+   http://gamepuzzles.com/polycube.htm#SQd
+
+.. _Poly-4 Supplement: http://www.gamepuzzles.com/poly4.htm
+
 
 .. |c| unicode:: U+00A9 .. copyright sign

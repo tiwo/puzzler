@@ -9,14 +9,14 @@
 Concrete pentacube puzzles.
 """
 
-from puzzler.puzzles import Puzzle3D
+from puzzler.puzzles import Puzzle3D, Puzzle2D
 from puzzler.puzzles.polycubes import (
      SolidPentominoes, Pentacubes, PentacubesPlus, NonConvexPentacubes)
 
 
 class Pentacubes5x7x7OpenBox(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 7
     height = 7
@@ -35,7 +35,7 @@ class Pentacubes5x7x7OpenBox(Pentacubes):
 
 class Pentacubes3x9x9OpenBox(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 9
     height = 9
@@ -54,7 +54,7 @@ class Pentacubes3x9x9OpenBox(Pentacubes):
 
 class Pentacubes2x11x11Frame(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 11
     height = 11
@@ -75,7 +75,7 @@ class Pentacubes2x11x11Frame(Pentacubes):
 
 class Pentacubes5x5x6Tower1(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 5
     height = 6
@@ -92,7 +92,7 @@ class Pentacubes5x5x6Tower1(Pentacubes):
 
 class Pentacubes5x5x6Tower2(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 5
     height = 6
@@ -109,7 +109,7 @@ class Pentacubes5x5x6Tower2(Pentacubes):
 
 class Pentacubes5x5x6Tower3(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 5
     height = 6
@@ -126,7 +126,7 @@ class Pentacubes5x5x6Tower3(Pentacubes):
 
 class PentacubesCornerCrystal(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 10
     height = 10
@@ -164,7 +164,7 @@ class PentacubesCornerCrystal(Pentacubes):
 
 class PentacubesNineSlices(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 9
     height = 9
@@ -183,7 +183,7 @@ class PentacubesNineSlices(Pentacubes):
 
 class PentacubesGreatWall(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 15
     height = 15
@@ -204,7 +204,7 @@ class PentacubesGreatWall(Pentacubes):
 
 class Pentacubes3x3x20Tower1(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 3
     height = 20
@@ -225,7 +225,7 @@ class Pentacubes3x3x20Tower1(Pentacubes):
 
 class Pentacubes3x3x20Tower2(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 3
     height = 20
@@ -249,7 +249,7 @@ class Pentacubes3x3x20Tower2(Pentacubes):
 
 class Pentacubes3x3x17Tower(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 3
     height = 17
@@ -265,7 +265,7 @@ class Pentacubes3x3x17Tower(Pentacubes):
 
 class Pentacubes3x3x19CrystalTower(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 3
     height = 19
@@ -282,7 +282,7 @@ class Pentacubes3x3x19CrystalTower(Pentacubes):
 
 class Pentacubes5x9x9Fortress(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 9
     height = 9
@@ -306,7 +306,7 @@ class Pentacubes5x9x9Fortress(Pentacubes):
 
 class Pentacubes3x9x9Mound(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 9
     height = 9
@@ -362,7 +362,7 @@ class Pentacubes11x11x6Pyramid(Pentacubes):
 
 class Pentacubes11x11x5Pyramid(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 11
     height = 11
@@ -384,7 +384,7 @@ class Pentacubes11x11x5Pyramid(Pentacubes):
 class Pentacubes9x9x9OctahedralPlanes(Pentacubes):
 
     """
-     solutions
+    0 solutions?
 
     Even/odd imbalance: 23.
     """
@@ -406,7 +406,7 @@ class Pentacubes9x9x9OctahedralPlanes(Pentacubes):
 
 class Pentacubes2x13x13DiamondFrame(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 13
     height = 13
@@ -476,7 +476,7 @@ class %s(Pentacubes2x3x2Chair):
 
 class Pentacubes5x7x5Cubbyholes(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 5
     height = 7
@@ -492,7 +492,7 @@ class Pentacubes5x7x5Cubbyholes(Pentacubes):
 
 class Pentacubes9x9x5Cubbyholes(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 9
     height = 9
@@ -508,7 +508,7 @@ class Pentacubes9x9x5Cubbyholes(Pentacubes):
 
 class Pentacubes7x7x5Block(Pentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 7
     height = 7
@@ -524,9 +524,77 @@ class Pentacubes7x7x5Block(Pentacubes):
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
+class PentacubesPointyDiamondBlock(Pentacubes):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(9, 1, 5, offset=(0,4,0)))
+            + list(self.coordinates_cuboid(1, 9, 5, offset=(4,0,0))))
+        for x, y in Puzzle2D.coordinates_diamond(4, offset=(1,1)):
+            for z in range(5):
+                coords.add(self.coordinate_offset(x, y, z, None))
+        return sorted(coords)
+
+
+class PentacubesDiamondWall(Pentacubes):
+
+    """
+    many solutions
+
+    design by Nick Maeder
+    """
+
+    width = 9
+    height = 9
+    depth = 5
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_diamond(5))
+            - (set(Puzzle2D.coordinates_diamond(3, offset=(2,2)))
+               - set(((4,4),))))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(5))
+        return sorted(coords)
+
+
+class PentacubesRibbedWall(Pentacubes):
+
+    """
+    0 solutions?
+
+    design by Nick Maeder
+    """
+
+    width = 7
+    height = 7
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_rectangle(5, 5, offset=(1,1)))
+            - (set(Puzzle2D.coordinates_rectangle(3, 3, offset=(2,2)))
+               - set(((3,3),))))
+        for i in (1, 3, 5):
+            layer.update(((0,i), (i,0), (6,i), (i,6)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(5))
+        return sorted(coords)
+
+
 class PentacubesPlus2x5x15(PentacubesPlus):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 15
     height = 5
@@ -537,7 +605,7 @@ class PentacubesPlus2x5x15(PentacubesPlus):
 
 class PentacubesPlus2x3x25(PentacubesPlus):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 25
     height = 3
@@ -548,7 +616,7 @@ class PentacubesPlus2x3x25(PentacubesPlus):
 
 class PentacubesPlus3x5x10(PentacubesPlus):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 10
     height = 5
@@ -559,7 +627,7 @@ class PentacubesPlus3x5x10(PentacubesPlus):
 
 class PentacubesPlus5x5x6(PentacubesPlus):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 5
     height = 6
@@ -569,7 +637,7 @@ class PentacubesPlus5x5x6(PentacubesPlus):
 class PentacubesPlus11x11x11OctahedralPlanes(PentacubesPlus):
 
     """
-     solutions
+    0 solutions?
 
     Even/odd imbalance: 30.
     """
@@ -593,7 +661,7 @@ class PentacubesPlus11x11x11OctahedralPlanes(PentacubesPlus):
 
 class NonConvexPentacubes2x5x14(NonConvexPentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 14
     height = 5
@@ -604,7 +672,7 @@ class NonConvexPentacubes2x5x14(NonConvexPentacubes):
 
 class NonConvexPentacubes2x7x10(NonConvexPentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 10
     height = 7
@@ -615,7 +683,7 @@ class NonConvexPentacubes2x7x10(NonConvexPentacubes):
 
 class NonConvexPentacubes4x5x7(NonConvexPentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 7
     height = 5
@@ -626,7 +694,7 @@ class NonConvexPentacubes4x5x7(NonConvexPentacubes):
 
 class PentacubesZigZag1(NonConvexPentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 18
     height = 19
@@ -644,7 +712,7 @@ class PentacubesZigZag1(NonConvexPentacubes):
 
 class PentacubesZigZag2(NonConvexPentacubes):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 20
     height = 18
@@ -669,7 +737,7 @@ class PentacubesZigZag2(NonConvexPentacubes):
 
 class PentacubesDiagonalWall(NonConvexPentacubes):
 
-    """0? solutions"""
+    """many solutions"""
 
     width = 19
     height = 19

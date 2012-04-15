@@ -173,7 +173,19 @@ Polyform Puzzler went live on the Internet in 2006, and since then
 several puzzle enthusiasts around the world have shared their ideas
 with me.
 
-.. image:: images/pentacubes-corner-crystal.png
+.. list-table::
+   :class: borderless
+
+   * - .. image:: images/pentacubes-corner-crystal.png
+
+     - .. figure:: images/pentacubes-corner-crystal-small.jpg
+          :target: images/pentacubes-corner-crystal.jpg
+
+          Built with `Kadon's Super Deluxe Quintillions`_.
+          Click for the full-size image. 
+
+.. _Kadon's Super Deluxe Quintillions:
+   http://gamepuzzles.com/polycube.htm#SQd
 
 For example, Nick Maeder of New Zealand devised the pentacubes puzzle
 above, “corner crystal”, around 1984.  He had tried to solve it
@@ -313,7 +325,18 @@ The one-sided polyhexes of order 1 through 4:
 The polycubes of order 1 through 5 (featuring a script “x” on the
 face):
 
-.. image:: images/polycubes-12345-x-5.png
+.. list-table::
+   :class: borderless
+
+   * - .. image:: images/polycubes-12345-x-5.png
+
+     - .. figure:: images/polycubes-12345-x-5-small.jpg
+          :target: images/polycubes-12345-x-5.jpg
+
+          Built with `Kadon's Super Deluxe Quintillions`_ and `Poly-4
+          Supplement`_.  Click for the full-size image.
+
+.. _Poly-4 Supplement: http://www.gamepuzzles.com/poly4.htm
 
 The one-sided tetrasticks:
 

@@ -90,13 +90,13 @@ Highrise Towers
 
    * - .. figure:: images/pentacubes-3x3x20-tower-1.png
 
-          3x3x20 Tower 1 (suggested by Nick Maeder): `solutions incomplete
+          3x3x20 Tower 1 (design by Nick Maeder): `solutions incomplete
           <../solutions/pentacubes-3x3x20-tower-1.txt>`__
           (`X3D model <images/pentacubes-3x3x20-tower-1.x3d>`__)
 
      - .. figure:: images/pentacubes-3x3x20-tower-2.png
 
-          3x3x20 Tower 2 (suggested by Nick Maeder): `solutions incomplete
+          3x3x20 Tower 2 (design by Nick Maeder): `solutions incomplete
           <../solutions/pentacubes-3x3x20-tower-2.txt>`__
           (`X3D model <images/pentacubes-3x3x20-tower-2.x3d>`__)
 
@@ -140,11 +140,23 @@ Misc
   .. image:: images/pentacubes-2x11x11-frame.png
 
 * Corner crystal (one empty cube is hidden in the corner; puzzle
-  suggested by Nick Maeder): `solutions incomplete
+  design by Nick Maeder): `solutions incomplete
   <../solutions/pentacubes-corner-crystal.txt>`__
   (`X3D model <images/pentacubes-corner-crystal.x3d>`__)
 
-  .. image:: images/pentacubes-corner-crystal.png
+  .. list-table::
+     :class: borderless
+
+     * - .. image:: images/pentacubes-corner-crystal.png
+
+       - .. figure:: images/pentacubes-corner-crystal-small.jpg
+            :target: images/pentacubes-corner-crystal.jpg
+
+            Built with `Kadon's Super Deluxe Quintillions`_.
+            Click for the full-size image. 
+
+  .. _Kadon's Super Deluxe Quintillions:
+     http://gamepuzzles.com/polycube.htm#SQd
 
 * Nine slices: `solutions incomplete
   <../solutions/pentacubes-nine-slices.txt>`__
@@ -158,7 +170,7 @@ Misc
 
   .. image:: images/pentacubes-great-wall.png
 
-* 5x9x9 fortress (suggestion by & solutions from Nick Maeder):
+* 5x9x9 fortress (design by & solutions from Nick Maeder):
   `solutions incomplete
   <../solutions/pentacubes-5x9x9-fortress.txt>`__
   (`X3D model <images/pentacubes-5x9x9-fortress.x3d>`__)
@@ -206,6 +218,18 @@ Misc
   <../solutions/pentacubes-x-1.txt>`__
 
   .. image:: images/pentacubes-x-1.png
+
+* Pointy diamond block: `solutions incomplete
+  <../solutions/pentacubes-pointy-diamond-block.txt>`__
+  (`X3D model <images/pentacubes-pointy-diamond-block.x3d>`__)
+
+  .. image:: images/pentacubes-pointy-diamond-block.png
+
+* Diamond wall (design by Nick Maeder): `solutions incomplete
+  <../solutions/pentacubes-diamond-wall.txt>`__
+  (`X3D model <images/pentacubes-diamond-wall.x3d>`__)
+
+  .. image:: images/pentacubes-diamond-wall.png
 
 
 Pentacubes Plus
@@ -293,7 +317,7 @@ Solids
 Misc
 ----
 
-- Zigzag 1 (suggested by Robert Trietsch): `solutions incomplete
+- Zigzag 1 (design by Robert Trietsch): `solutions incomplete
   <../solutions/pentacubes-zigzag-1.txt>`__
   (`X3D model <images/pentacubes-zigzag-1.x3d>`__)
 
@@ -305,5 +329,12 @@ Misc
   model <images/pentacubes-zigzag-2.x3d>`__)
 
   .. image:: images/pentacubes-zigzag-2.png
+
+- Diagonal wall: `solutions incomplete
+  <../solutions/pentacubes-diagonal-wall.txt>`__
+  (`X3D model <images/pentacubes-diagonal-wall.x3d>`__)
+
+  .. image:: images/pentacubes-diagonal-wall.png
+
 
 .. |c| unicode:: U+00A9 .. copyright sign
