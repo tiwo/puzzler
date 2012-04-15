@@ -571,3 +571,167 @@ class SolidPentominoesTower3(SolidPentominoesTower1):
 
     def build_matrix(self):
         SolidPentominoes.build_matrix(self)
+
+
+class SolidPentominoesOhnosBlock(SolidPentominoes):
+
+    """
+    1 solution
+
+    Design by Yoshio Ohno, from Kadon's Quintillions booklet
+    (title: 'A Gift From Japan') 
+    """
+
+    width = 6
+    height = 6
+    depth = 3
+
+    extras = ((0,2), (2,5), (3,0), (5,3))
+
+    def coordinates(self):
+        coords = set(self.coordinates_cuboid(4, 4, 3, offset=(1,1,0)))
+        coords.update(set(self.coordinate_offset(x, y, z, None)
+                          for x, y in self.extras for z in range(3)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['L'][-1]['rotations'] = None
+        self.piece_data['L'][-1]['flips'] = None
+
+
+class SolidPentominoesSpinnerBlock(SolidPentominoesOhnosBlock):
+
+    """42 solutions"""
+
+    extras = ((0,1), (1,5), (4,0), (5,4))
+
+    def customize_piece_data(self):
+        pass
+
+    check_for_duplicates = True
+    duplicate_conditions = ({'z_reversed': True},)
+
+    def build_aspects(self):
+        names = sorted(self.piece_data.keys())
+        data, kwargs = self.piece_data['L']
+        self.aspects['L'] = self.make_aspects(
+            data, flips=None, axes=None, rotations=None)
+        self.aspects['L'].update(self.make_aspects(
+            data, flips=None, axes=(1,), rotations=None))
+        names.remove('L')
+        self.build_regular_aspects(names)
+
+
+class SolidPentominoesCornerWalls(SolidPentominoes):
+
+    """253 solutions"""
+
+    width = 5
+    height = 5
+    depth = 5
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_cuboid(5, 5, 5))
+            - set(self.coordinates_cuboid(4, 4, 4, offset=(1,1,1)))
+            - set(((0,0,0),)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['F'][-1]['axes'] = None
+        self.piece_data['F'][-1]['flips'] = None
+
+
+class SolidPentominoesCornerPiece(SolidPentominoes):
+
+    """
+    70 solutions
+
+    Design from Kadon's Quintillions booklet
+    """
+
+    width = 5
+    height = 6
+    depth = 5
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(5, 6, 1))
+            + list(self.coordinates_cuboid(1, 6, 5))
+            + list(self.coordinates_cuboid(1, 6, 1, offset=(1,0,1))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['F'][-1]['rotations'] = (0, 1)
+        self.piece_data['F'][-1]['flips'] = None
+
+
+class SolidPentominoesThreeWalls(SolidPentominoes):
+
+    """
+    90 solutions
+
+    Design from Kadon's Quintillions booklet
+    """
+
+    width = 7
+    height = 6
+    depth = 4
+
+    check_for_duplicates = True
+    duplicate_conditions = ({'y_reversed': True},)
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(7, 6, 1))
+            + list(self.coordinates_cuboid(1, 6, 3, offset=(3,0,1))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['F'][-1]['rotations'] = (0, 1)
+        self.piece_data['F'][-1]['flips'] = None
+
+
+class SolidPentominoesEmptyBottle(SolidPentominoes):
+
+    """
+    49 solutions
+
+    Design from Kadon's Quintillions booklet
+    """
+
+    width = 3
+    height = 9
+    depth = 3
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_cuboid(3, 7, 3))
+                + list(self.coordinates_cuboid(1, 2, 1, offset=(1,7,1))))
+            - set(self.coordinates_cuboid(1, 5, 1, offset=(1,1,1))))
+        return sorted(coords)
+
+    def build_aspects(self):
+        names = sorted(self.piece_data.keys())
+        data, kwargs = self.piece_data['F']
+        self.aspects['F'] = self.make_aspects(
+            data, flips=None, axes=None)
+        self.aspects['F'].update(self.make_aspects(
+            data, flips=None, axes=(1,), rotations=None))
+        import sys
+        print >>sys.stderr, self.aspects['F']
+        names.remove('F')
+        self.build_regular_aspects(names)
+
+    def build_matrix(self):
+        keys = sorted(self.pieces.keys())
+        for coords, aspect in self.pieces['F']:
+            if aspect.bounds[-1]:       # the one in the XZ plane
+                translated = aspect.translate((0, 0, 0))
+                self.build_matrix_row('F', translated)
+            else:                       # the ones in the XY plane
+                for y in range(5):
+                    translated = aspect.translate((0, y, 0))
+                    self.build_matrix_row('F', translated)
+        keys.remove('F')
+        self.build_regular_matrix(keys)

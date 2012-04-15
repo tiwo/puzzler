@@ -165,8 +165,48 @@ Misc
        - .. figure:: images/solid-pentominoes-tower-3.png
 
             `many solutions
-            <../solutions/solid-pentominoes-tower-3.txt>`__
-            (design by Leslie Young via Kadon's Quintillions booklet)
+            <../solutions/solid-pentominoes-tower-3.txt>`__ (design by
+            Leslie Young, via `Kadon's Quintillions`_ booklet)
 
+* Ohno's block (design by Yoshio Ohno, via `Kadon's Quintillions`_
+  booklet, titled "A Gift From Japan"): `1 solution
+  <../solutions/solid-pentominoes-ohnos-block.txt>`__
+  (`X3D model <images/solid-pentominoes-ohnos-block.x3d>`__)
+
+  .. image:: images/solid-pentominoes-ohnos-block.png
+
+* Spinner block: `42 solutions
+  <../solutions/solid-pentominoes-spinner-block.txt>`__
+  (`X3D model <images/solid-pentominoes-spinner-block.x3d>`__)
+
+  .. image:: images/solid-pentominoes-spinner-block.png
+
+* Corner walls (the far corner cube is empty): `253 solutions
+  <../solutions/solid-pentominoes-corner-walls.txt>`__
+  (`X3D model <images/solid-pentominoes-corner-walls.x3d>`__)
+
+  .. image:: images/solid-pentominoes-corner-walls.png
+
+* Corner piece (design from `Kadon's Quintillions`_ booklet): `70
+  solutions <../solutions/solid-pentominoes-corner-piece.txt>`__ (`X3D
+  model <images/solid-pentominoes-corner-piece.x3d>`__)
+
+  .. image:: images/solid-pentominoes-corner-piece.png
+
+* Three walls (design from `Kadon's Quintillions`_ booklet): `90
+  solutions <../solutions/solid-pentominoes-three-walls.txt>`__ (`X3D
+  model <images/solid-pentominoes-three-walls.x3d>`__)
+
+  .. image:: images/solid-pentominoes-three-walls.png
+
+* Empty bottle (hollow central 1x1x5; design from `Kadon's
+  Quintillions`_ booklet): `49 solutions
+  <../solutions/solid-pentominoes-empty-bottle.txt>`__ (`X3D model
+  <images/solid-pentominoes-empty-bottle.x3d>`__)
+
+  .. image:: images/solid-pentominoes-empty-bottle.png
+
+
+.. _Kadon's Quintillions: http://gamepuzzles.com/polycube.htm#Q
 
 .. |c| unicode:: U+00A9 .. copyright sign
