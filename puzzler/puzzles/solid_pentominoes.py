@@ -735,3 +735,29 @@ class SolidPentominoesEmptyBottle(SolidPentominoes):
                     self.build_matrix_row('F', translated)
         keys.remove('F')
         self.build_regular_matrix(keys)
+
+
+class SolidPentominoesCondominiumB(SolidPentominoes):
+
+    """
+    1 solution
+
+    Design from Kadon's Quintillions booklet
+    """
+
+    width = 3
+    height = 9
+    depth = 4
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(1, 5, 4, offset=(0,4,0)))
+            + list(self.coordinates_cuboid(1, 5, 4, offset=(1,2,0)))
+            + list(self.coordinates_cuboid(1, 5, 4, offset=(2,0,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['F'][-1]['rotations'] = (0, 1)
+        self.piece_data['F'][-1]['flips'] = None

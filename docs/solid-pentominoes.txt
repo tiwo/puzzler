@@ -206,6 +206,12 @@ Misc
 
   .. image:: images/solid-pentominoes-empty-bottle.png
 
+* Condominium B (design from `Kadon's Quintillions`_ booklet): `1
+  solution <../solutions/solid-pentominoes-condominium-b.txt>`__ (`X3D
+  model <images/solid-pentominoes-condominium-b.x3d>`__)
+
+  .. image:: images/solid-pentominoes-condominium-b.png
+
 
 .. _Kadon's Quintillions: http://gamepuzzles.com/polycube.htm#Q
 

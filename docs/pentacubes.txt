@@ -81,6 +81,15 @@ Open Boxes
           <../solutions/pentacubes-3x9x9-open-box.txt>`__
           (`X3D model <images/pentacubes-3x9x9-open-box.x3d>`__)
 
+   * - .. figure:: images/pentacubes-18x3x3-open-box.png
+
+          18x3x3 Open Box: `solutions incomplete
+          <../solutions/pentacubes-18x3x3-open-box.txt>`__
+          (`X3D model <images/pentacubes-18x3x3-open-box.x3d>`__;
+          design from `Kadon's Super Quintillions`_ booklet)
+
+     -
+
 
 Highrise Towers
 ---------------
@@ -155,9 +164,6 @@ Misc
             Built with `Kadon's Super Deluxe Quintillions`_.
             Click for the full-size image. 
 
-  .. _Kadon's Super Deluxe Quintillions:
-     http://gamepuzzles.com/polycube.htm#SQd
-
 * Nine slices: `solutions incomplete
   <../solutions/pentacubes-nine-slices.txt>`__
   (`X3D model <images/pentacubes-nine-slices.x3d>`__)
@@ -219,17 +225,24 @@ Misc
 
   .. image:: images/pentacubes-x-1.png
 
-* Pointy diamond block: `solutions incomplete
-  <../solutions/pentacubes-pointy-diamond-block.txt>`__
-  (`X3D model <images/pentacubes-pointy-diamond-block.x3d>`__)
+* Astroid block: `solutions incomplete
+  <../solutions/pentacubes-astroid-block.txt>`__
+  (`X3D model <images/pentacubes-astroid-block.x3d>`__)
 
-  .. image:: images/pentacubes-pointy-diamond-block.png
+  .. image:: images/pentacubes-astroid-block.png
 
 * Diamond wall (design by Nick Maeder): `solutions incomplete
   <../solutions/pentacubes-diamond-wall.txt>`__
   (`X3D model <images/pentacubes-diamond-wall.x3d>`__)
 
   .. image:: images/pentacubes-diamond-wall.png
+
+* Grand Platform (design from `Kadon's Super Quintillions`_ booklet):
+  `solutions incomplete
+  <../solutions/pentacubes-grand-platform.txt>`__ (`X3D model
+  <images/pentacubes-grand-platform.x3d>`__)
+
+  .. image:: images/pentacubes-grand-platform.png
 
 
 Pentacubes Plus
@@ -336,5 +349,10 @@ Misc
 
   .. image:: images/pentacubes-diagonal-wall.png
 
+
+.. _Kadon's Super Deluxe Quintillions:
+   http://gamepuzzles.com/polycube.htm#SQd
+
+.. _Kadon's Super Quintillions: http://gamepuzzles.com/polycube.htm#SQ
 
 .. |c| unicode:: U+00A9 .. copyright sign
