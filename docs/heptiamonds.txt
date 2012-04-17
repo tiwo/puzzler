@@ -293,6 +293,35 @@ Side length 4 (overall height 16) hexagrams with various holes:
    .. image:: images/heptiamonds-hexagram-4.png
 
 
+Hexagon-Grid Shapes
+===================
+
+* Triangle: `solutions incomplete
+  <../solutions/heptiamonds-hexed-triangle.txt>`__
+
+  .. image:: images/heptiamonds-hexed-triangle.png
+
+* 7x4 parallelogram: `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-7x4.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-7x4.png
+
+* 14x2 parallelogram: `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-14x2.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-14x2.png
+
+* 9x2 elongated hexagon: `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-elongated-hexagon-9x2.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-elongated-hexagon-9x2.png
+
+* 5x3 elongated hexagon (with a hole): `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-elongated-hexagon-5x3.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-elongated-hexagon-5x3.png
+
+
 Misc
 ====
 
@@ -312,12 +341,6 @@ Misc
   <../solutions/heptiamonds-diamond-ring.txt>`__
 
   .. image:: images/heptiamonds-diamond-ring.png
-
-* Hexed triangle (triangle formed of 28 1-unit hexagons in a honeycomb
-  grid): `solutions incomplete
-  <../solutions/heptiamonds-hexed-triangle.txt>`__
-
-  .. image:: images/heptiamonds-hexed-triangle.png
 
 * Sets of two identical 6x2/8x8 semi-regular hexagons with triangular
   holes: `solutions incomplete
@@ -343,7 +366,7 @@ Misc
      `solutions incomplete
      <../solutions/heptiamonds-trefoil-3.txt>`__
 
-.. _Kadon's Iamond Ring: http://gamepuzzles.com/esspoly.htm#IR
 
+.. _Kadon's Iamond Ring: http://gamepuzzles.com/esspoly.htm#IR
 
 .. |c| unicode:: U+00A9 .. copyright sign

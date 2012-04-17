@@ -134,6 +134,30 @@ class Polyiamonds(PuzzlePseudo3D):
     def coordinates_triangle(cls, side_length, offset=None):
         return cls.coordinates_trapezoid(side_length, side_length, offset)
 
+    @classmethod
+    def coordinates_hexgrid(cls, coords, x_initial=None, offset=None):
+        """
+        Map hexagonal-grid `coords` to triangular-grid coordinates.
+
+        `x_initial` is the trigrid x coordinate of hexgrid (0,0), normally
+        (height(hexgrid `coords`) - 1).  If omitted, it is calculated from the
+        largest hexgrid y value.
+
+        Width_t = Width_h + Height_h
+
+        Height_h = 2Height_h + Width_h - 1
+        """
+        hex = coordsys.Triangular3DCoordSet(
+            cls.coordinates_hexagon(1, offset=offset))
+        tcoords = set()
+        if x_initial is None:
+            x_initial = max(yh for (xh, yh) in coords)
+        for xh, yh in coords:
+            xto = xh - yh + x_initial
+            yto = 2 * yh + xh
+            tcoords.update(hex.translate((xto, yto, 0)))
+        return sorted(tcoords)
+
     def make_aspects(self, units, flips=(False, True),
                      rotations=(0, 1, 2, 3, 4, 5)):
         aspects = set()
@@ -286,6 +310,11 @@ class Polyiamonds(PuzzlePseudo3D):
             for line in lines:
                 line = (''.join(line) + right).rstrip()
                 output.append(line)
+            while output and not output[0].strip():
+                del output[0]
+            while output and not output[-1].strip():
+                del output[-1]
+            for line in output:
                 left_margin = min(left_margin, len(line) - len(line.lstrip()))
         return '\n'.join(line[left_margin:] for line in output)
 

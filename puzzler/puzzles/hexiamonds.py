@@ -10,6 +10,7 @@ Concrete hexiamonds puzzles.
 """
 
 from puzzler.puzzles.polyiamonds import Hexiamonds, OneSidedHexiamonds
+from puzzler.puzzles.polyhexes import Polyhexes
 from puzzler.coordsys import Triangular3DCoordSet
 
 
@@ -1031,6 +1032,137 @@ class HexiamondsSpinner_x3(Hexiamonds):
         return sorted(coords)
 
 
+class HexiamondsHexgrid4x3(Hexiamonds):
+
+    """142 solutions"""
+
+    width = 7
+    height = 9
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_parallelogram(4, 3))
+        coords = self.coordinates_hexgrid(hcoords)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1, 2)
+
+
+class HexiamondsHexgridTrapezoid5x3(Hexiamonds):
+
+    """144 solutions"""
+
+    width = 8
+    height = 8
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_trapezoid(5, 3))
+        coords = self.coordinates_hexgrid(hcoords)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['flips'] = None
+
+
+class HexiamondsHexgridSemiregularHexagon3x2(Hexiamonds):
+
+    """103 solutions"""
+
+    width = 8
+    height = 8
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_semiregular_hexagon(3, 2))
+        coords = self.coordinates_hexgrid(hcoords, offset=(0,-1,0))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['flips'] = None
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+
+
+class HexiamondsHexgrid6x2_x(Hexiamonds):
+
+    """0 solutions"""
+
+    width = 8
+    height = 9
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_parallelogram(6, 2))
+        coords = self.coordinates_hexgrid(hcoords)
+        return sorted(coords)
+
+
+class HexiamondsHexgridHexagonRing_x(Hexiamonds):
+
+    """0 solutions"""
+
+    width = 10
+    height = 10
+
+    def coordinates(self):
+        hcoords = (
+            set(Polyhexes.coordinates_hexagon(3, offset=(0,-1)))
+            - set(Polyhexes.coordinates_hexagon(2, offset=(1,0))))
+        coords = self.coordinates_hexgrid(hcoords)
+        return sorted(coords)
+
+
+class HexiamondsHexgridHexagramRing_x(Hexiamonds):
+
+    """0 solutions"""
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        hcoords = (
+            set(Polyhexes.coordinates_hexagram(2, offset=(-1,-1)))
+            - set(Polyhexes.coordinates_hexagon(1, offset=(1,1))))
+        coords = self.coordinates_hexgrid(hcoords)
+        return sorted(coords)
+
+
+class HexiamondsHexgridTriangleRing_x1(Hexiamonds):
+
+    """0 solutions"""
+
+    width = 10
+    height = 10
+
+    def coordinates(self):
+        hcoords = (
+            set(Polyhexes.coordinates_triangle(5))
+            - set(Polyhexes.coordinates_triangle(2, offset=(1,1))))
+        coords = self.coordinates_hexgrid(hcoords)
+        return sorted(coords)
+
+
+class HexiamondsHexgridTriangleRing_x2(Hexiamonds):
+
+    """0 solutions"""
+
+    width = 10
+    height = 10
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_triangle(5))
+        hex = Triangular3DCoordSet(self.coordinates_hexagon(1))
+        coords = (
+            set(self.coordinates_hexgrid(hcoords))
+            - hex.translate((3,4,0))
+            - hex.translate((4,5,0))
+            - hex.translate((5,3,0)))
+        return sorted(coords)
+
+
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
 
     """
@@ -1040,7 +1172,8 @@ class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
     from the center of the puzzle.
 
     O'Beirne's Hexagon consists of 19 small 6-triangle hexagons, arranged in a
-    hexagon like a honeycomb (12 small hexagons around 6 around 1).
+    hexagon like a honeycomb (12 small hexagons around 6 around 1); equivalent
+    to Polyhexes.coordinates_hexagon(3).
     """
 
     height = 10
@@ -1234,3 +1367,46 @@ class OneSidedHexiamonds19x3(OneSidedHexiamonds):
 
     height = 3
     width = 19
+
+
+class OneSidedHexiamondsHexgridElongatedHexagon6x2(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    width = 10
+    height = 11
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_elongated_hexagon(6, 2))
+        coords = set(self.coordinates_hexgrid(hcoords, offset=(0,-1,0)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsHexgridTrapezoid10x2(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    width = 12
+    height = 12
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_trapezoid(10, 2))
+        coords = set(self.coordinates_hexgrid(hcoords))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsHexgridButterfly4x4(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    width = 14
+    height = 8
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_butterfly(4, 4))
+        coords = set(self.coordinates_hexgrid(hcoords, offset=(0,-6,0)))
+        return sorted(coords)

@@ -10,6 +10,7 @@ Concrete heptiamonds puzzles.
 """
 
 from puzzler.puzzles.polyiamonds import Heptiamonds
+from puzzler.puzzles.polyhexes import Polyhexes
 from puzzler.coordsys import Triangular3DCoordSet, Triangular3D
 
 
@@ -815,6 +816,90 @@ class HeptiamondsHexedTriangle(Heptiamonds):
                         yield (x, y, z)
 
 
+class HeptiamondsHexgridElongatedHexagon9x2(Heptiamonds):
+
+    """many solutions"""
+
+    width = 13
+    height = 13
+
+    check_for_duplicates = False
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_elongated_hexagon(9, 2))
+        coords = set(self.coordinates_hexgrid(hcoords, offset=(0,-1,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexgridElongatedHexagon5x3(Heptiamonds):
+
+    """many solutions"""
+
+    width = 12
+    height = 12
+
+    check_for_duplicates = False
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = (
+            set(Polyhexes.coordinates_elongated_hexagon(5, 3))
+            - set(Polyhexes.coordinates_hexagon(1, offset=(3,2))))
+        coords = set(self.coordinates_hexgrid(hcoords, offset=(0,-2,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexgrid7x4(Heptiamonds):
+
+    """many solutions"""
+
+    width = 11
+    height = 14
+
+    check_for_duplicates = False
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_parallelogram(7, 4))
+        coords = self.coordinates_hexgrid(hcoords)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2)
+
+
+class HeptiamondsHexgrid14x2(Heptiamonds):
+
+    """many solutions"""
+
+    width = 16
+    height = 17
+
+    check_for_duplicates = False
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_parallelogram(14, 2))
+        coords = self.coordinates_hexgrid(hcoords)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2)
+
+
 class HeptiamondsShortHexRing(Heptiamonds):
 
     """
@@ -1080,6 +1165,29 @@ class HeptiamondsTrefoil2(Heptiamonds):
             + list(h.translate((0,6,0)))
             + list(h.translate((3,0,0)))
             + list(h.translate((6,3,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsTrefoil3(Heptiamonds):
+
+    """many solutions"""
+
+    height = 14
+    width = 14
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        h = Triangular3DCoordSet(self.coordinates_elongated_hexagon(3, 2))
+        coords = set(
+            list(self.coordinates_hexagon(4, offset=(3,3,0)))
+            + list(h.translate((9,5,0)))
+            + list(h.rotate0(1).translate((9,-2,0)))
+            + list(h.rotate0(2).translate((7,9,0))))
         return sorted(coords)
 
     def customize_piece_data(self):

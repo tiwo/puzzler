@@ -175,6 +175,25 @@ Hexagons & Variants
   __ http://mathworld.wolfram.com/HexiamondTiling.html
 
 
+Hexagon-Grid Shapes
+-------------------
+
+* 4x3 parallelogram: `142 solutions
+  <../solutions/hexiamonds-hexgrid-4x3.txt>`__
+
+  .. image:: images/hexiamonds-hexgrid-4x3.png
+
+* 5x3 trapezoid: `144 solutions
+  <../solutions/hexiamonds-hexgrid-trapezoid-5x3.txt>`__
+
+  .. image:: images/hexiamonds-hexgrid-trapezoid-5x3.png
+
+* 3x2 semiregular hexagon: `103 solutions
+  <../solutions/hexiamonds-hexgrid-semiregular-hexagon-3x2.txt>`__
+
+  .. image:: images/hexiamonds-hexgrid-semiregular-hexagon-3x2.png
+
+
 Misc
 ----
 
@@ -232,6 +251,20 @@ Misc
 One-Sided Hexiamonds
 ====================
 
+* Long hexagon 8x3 [11x6]: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-long-hexagon-8x3.txt>`__
+
+  .. image:: images/one-sided-hexiamonds-long-hexagon-8x3.png
+
+* Butterfly 11x3 [11x6]: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-butterfly-11x3.txt>`__
+
+  .. image:: images/one-sided-hexiamonds-butterfly-11x3.png
+
+
+Hexagon-Grid Shapes
+-------------------
+
 * O'Beirne's hexiamond hexagon (19 small 6-triangle hexagons, arranged
   in a hexagon on a honeycomb grid: 1 hexagon surrounded by 6 hexagons
   surrounded by 12 in concentric rings): `124,519 solutions
@@ -250,15 +283,20 @@ One-Sided Hexiamonds
 
   .. image:: images/one-sided-hexiamonds-obeirnes-hexagon.png
 
-* Long hexagon 8x3 [11x6]: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-long-hexagon-8x3.txt>`__
+* 6x2 elongated hexagon: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-hexgrid-elongated-hexagon-6x2.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-long-hexagon-8x3.png
+  .. image:: images/one-sided-hexiamonds-hexgrid-elongated-hexagon-6x2.png
 
-* Butterfly 11x3 [11x6]: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-butterfly-11x3.txt>`__
+* 10x2 trapezoid: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-hexgrid-trapezoid-10x2.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-butterfly-11x3.png
+  .. image:: images/one-sided-hexiamonds-hexgrid-trapezoid-10x2.png
+
+* 4x4 butterfly: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-hexgrid-butterfly-4x4.txt>`__
+
+  .. image:: images/one-sided-hexiamonds-hexgrid-butterfly-4x4.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

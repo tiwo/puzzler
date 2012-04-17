@@ -262,7 +262,7 @@ puzzles.*
 * P(3,3)
 * He(4,1)
 * B(5,1)
-* polyhex T(2) = 3H(1)
+* hexgrid T(2) = 3H(1)
 
 22: one-sided polyiamonds of order 1 to 4
 
@@ -283,16 +283,9 @@ puzzles.*
 
 * Potential:
 
-  * polyhex Hs(3,2)
-  * polyhex P(6,2)
-  * polyhex P(4,3)
-  * polyhex Ri(8,2)
-  * polyhex Rr(5,3)
-  * polyhex Tr(5,3)
-  * polyhex C(4,2)
-  * polyhex T(5) - T(2)
-  * polyhex H(3) - H(2)
-  * polyhex Hg(2) - H(1)
+  * hexgrid Ri(8,2)
+  * hexgrid Rr(5,3)
+  * hexgrid C(4,2)
 
 * No solutions:
 
@@ -310,6 +303,10 @@ puzzles.*
   * H(2) + 3P(4,2) (= HexiamondsSpinner_x1)
   * H(2) + 6P(2,2) (= HexiamondsSpinner_x2)
   * T(6) + 3P(3,2) (= HexiamondsSpinner_x3)
+  * hexgrid H(3) - H(2) (= HexiamondsHexgridHexagonRing_x)
+  * hexgrid Hg(2) - H(1) (= HexiamondsHexgridHexagramRing_x)
+  * hexgrid T(5) - T(2) (= HexiamondsHexgridTriangleRing_x1 & _x2)
+  * hexgrid P(6,2) (= HexiamondsHexgrid6x2_x)
 
 110: polyiamonds of order 1 to 6
 
@@ -329,10 +326,9 @@ puzzles.*
   * Tr(13,6) - H(1)
   * P(15,4)/P(12,5)/P(10,6) - H(1)
   * instead of H(1), B(2,1)
-  * polyhex He(6,2)
-  * polyhex Rr(13,2)
-  * polyhex Tr(19,2)
-  * polyhex B(4,4)
+  * hexgrid Rr(13,2)
+  * hexgrid Rs(4,3)
+  * hexgrid Rs(6,2)
 
 * No solutions:
 
@@ -343,15 +339,11 @@ puzzles.*
 168: Heptiamonds
 
 * B(10,6)
-* H(4) + 3C(2,3)
-* polyhex P(7,4)
-* polyhex P(14,2)
-* polyhex Ri(11,3)
-* polyhex Ri(8,4)
-* polyhex He(9,2)
-* polyhex C(4,4)
-* polyhex He(5,3) - 1 hex
-* polyhex T(7) - 4 hexes
+* hexgrid Rs(7,4)
+* hexgrid Rs(14,2)
+* hexgrid Ri(11,3)
+* hexgrid Ri(8,4)
+* hexgrid C(4,4)
 
 278: polyiamonds of order 1 to 7
 
