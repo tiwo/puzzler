@@ -38,19 +38,19 @@ class Tetrahexes7x7Triangle(Tetrahexes):
                     yield (x, y)
 
 
-class Tetrahexes3x10Clipped(Tetrahexes):
+class TetrahexesElongatedHexagon9x2(Tetrahexes):
 
-    """2 solutions"""
+    """
+    2 solutions
 
-    height = 3
+    = 3x10 parallelogram with clipped corners (the old name)
+    """
+
     width = 10
+    height = 3
 
     def coordinates(self):
-        max = self.width + self.height - 2
-        for y in range(self.height):
-            for x in range(self.width):
-                if (x + y != 0) and (x + y != max):
-                    yield (x, y)
+        return self.coordinates_elongated_hexagon(9, 2)
 
     def customize_piece_data(self):
         self.piece_data['P4'][-1]['flips'] = None
@@ -160,21 +160,6 @@ class TetrahexesRosettes_x1(Tetrahexes):
             + list(self.coordinates_hexagon(2, offset=(3,0)))
             + list(self.coordinates_hexagon(2, offset=(4,2))))
         return sorted(coords)
-
-
-class TetrahexesElongatedHexagon9x2(Tetrahexes):
-
-    """2 solutions"""
-
-    width = 10
-    height = 3
-
-    def coordinates(self):
-        return self.coordinates_elongated_hexagon(9, 2)
-
-    def customize_piece_data(self):
-        self.piece_data['P4'][-1]['flips'] = None
-        self.piece_data['P4'][-1]['rotations'] = (0, 1, 2)
 
 
 class TetrahexesTrefoil_x1(Tetrahexes):

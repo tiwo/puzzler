@@ -37,21 +37,16 @@ The 7 tetrahexes total 28 hexagons.
 
   .. image:: images/tetrahexes-4x7.png
 
-* 3x10 parallelogram with corners clipped (centered rows of length 9,
-  10, 9; alternately, a 9x2 elongated hexagon): `2 solutions
-  <../solutions/tetrahexes-3x10-clipped.txt>`__
+* 9x2 elongated hexagon (= 3x10 parallelogram with corners clipped,
+  the old name): `2 solutions
+  <../solutions/tetrahexes-elongated-hexagon-9x2.txt>`__
 
-  .. image:: images/tetrahexes-3x10-clipped.png
+  .. image:: images/tetrahexes-elongated-hexagon-9x2.png
 
 * 5x7 "coin" (5x3 elongated hexagon with central hole): `4 solutions
   <../solutions/tetrahexes-coin.txt>`__
 
   .. image:: images/tetrahexes-coin.png
-
-* 9x2 elongated hexagon: `2 solutions
-  <../solutions/tetrahexes-elongated-hexagon-9x2.txt>`__
-
-  .. image:: images/tetrahexes-elongated-hexagon-9x2.png
 
 * Two intersecting diamonds:
 
