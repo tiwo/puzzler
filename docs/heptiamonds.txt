@@ -301,9 +301,9 @@ Hexagon-Grid Shapes
 
   .. image:: images/heptiamonds-hexed-triangle.png
 
-* Hexagon: `solutions incomplete <../solutions/hexiamonds-hexagon-1.txt>`__
+* Hexagon: `solutions incomplete <../solutions/heptiamonds-hexagon-1.txt>`__
 
-  .. image:: images/hexiamonds-hexgrid-hexagon-1.png
+  .. image:: images/heptiamonds-hexgrid-hexagon-1.png
 
 * 7x4 parallelogram: `solutions incomplete
   <../solutions/heptiamonds-hexgrid-7x4.txt>`__
@@ -330,25 +330,25 @@ Hexagon-Grid Shapes
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/hexiamonds-hexgrid-two-diamonds-1.png
+     * - .. figure:: images/heptiamonds-hexgrid-two-diamonds-1.png
 
             `solutions incomplete
-            <../solutions/hexiamonds-hexgrid-two-diamonds-1.txt>`__
+            <../solutions/heptiamonds-hexgrid-two-diamonds-1.txt>`__
 
-       - .. figure:: images/hexiamonds-hexgrid-two-diamonds-2.png
-
-            `solutions incomplete
-            <../solutions/hexiamonds-hexgrid-two-diamonds-2.txt>`__
-
-     * - .. figure:: images/hexiamonds-hexgrid-two-diamonds-3.png
+       - .. figure:: images/heptiamonds-hexgrid-two-diamonds-2.png
 
             `solutions incomplete
-            <../solutions/hexiamonds-hexgrid-two-diamonds-3.txt>`__
+            <../solutions/heptiamonds-hexgrid-two-diamonds-2.txt>`__
 
-       - .. figure:: images/hexiamonds-hexgrid-two-diamonds-4.png
+     * - .. figure:: images/heptiamonds-hexgrid-two-diamonds-3.png
 
             `solutions incomplete
-            <../solutions/hexiamonds-hexgrid-two-diamonds-4.txt>`__
+            <../solutions/heptiamonds-hexgrid-two-diamonds-3.txt>`__
+
+       - .. figure:: images/heptiamonds-hexgrid-two-diamonds-4.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-two-diamonds-4.txt>`__
 
 
 Misc
