@@ -1410,3 +1410,37 @@ class OneSidedHexiamondsHexgridButterfly4x4(OneSidedHexiamonds):
         hcoords = set(Polyhexes.coordinates_butterfly(4, 4))
         coords = set(self.coordinates_hexgrid(hcoords, offset=(0,-6,0)))
         return sorted(coords)
+
+
+class OneSidedHexiamondsHexgridTriangle1(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    width = 12
+    height = 12
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(
+            list(Polyhexes.coordinates_trapezoid(6, 4))
+            + [Polyhexes.coordinate_offset(0, 5, None)])
+        coords = self.coordinates_hexgrid(hcoords)
+        return sorted(coords)
+
+
+class OneSidedHexiamondsHexgridTwoTriangles(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    width = 20
+    height = 12
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(
+            list(Polyhexes.coordinates_triangle(4))
+            + list(Polyhexes.coordinates_triangle(4, offset=(3,0))))
+        coords = self.coordinates_hexgrid(hcoords)#, offset=(0,-1,0))
+        return sorted(coords)

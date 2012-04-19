@@ -301,6 +301,10 @@ Hexagon-Grid Shapes
 
   .. image:: images/heptiamonds-hexed-triangle.png
 
+* Hexagon: `solutions incomplete <../solutions/hexiamonds-hexagon-1.txt>`__
+
+  .. image:: images/hexiamonds-hexgrid-hexagon-1.png
+
 * 7x4 parallelogram: `solutions incomplete
   <../solutions/heptiamonds-hexgrid-7x4.txt>`__
 
@@ -320,6 +324,31 @@ Hexagon-Grid Shapes
   <../solutions/heptiamonds-hexgrid-elongated-hexagon-5x3.txt>`__
 
   .. image:: images/heptiamonds-hexgrid-elongated-hexagon-5x3.png
+
+* Two intersecting diamonds:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexiamonds-hexgrid-two-diamonds-1.png
+
+            `solutions incomplete
+            <../solutions/hexiamonds-hexgrid-two-diamonds-1.txt>`__
+
+       - .. figure:: images/hexiamonds-hexgrid-two-diamonds-2.png
+
+            `solutions incomplete
+            <../solutions/hexiamonds-hexgrid-two-diamonds-2.txt>`__
+
+     * - .. figure:: images/hexiamonds-hexgrid-two-diamonds-3.png
+
+            `solutions incomplete
+            <../solutions/hexiamonds-hexgrid-two-diamonds-3.txt>`__
+
+       - .. figure:: images/hexiamonds-hexgrid-two-diamonds-4.png
+
+            `solutions incomplete
+            <../solutions/hexiamonds-hexgrid-two-diamonds-4.txt>`__
 
 
 Misc

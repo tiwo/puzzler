@@ -5,9 +5,9 @@
    sections, so section/question numbers remain stable.
 
 
-===================================================
- Polyform Puzzler |---| Frequently Asked Questions
-===================================================
+===============================================
+ Polyform Puzzler — Frequently Asked Questions
+===============================================
 
 :Author: David Goodger <goodger@python.org>
 :Date: $Date$
@@ -1272,8 +1272,7 @@ used, the algorithm will eventually produce every possible Sudoku
 solution (all 6,670,903,752,021,072,936,960 of them), if you give it
 enough time.
 
-.. |---| unicode:: U+2014  .. em dash
-   :trim:
+
 .. |c| unicode:: U+00A9 .. copyright sign
 .. |x| unicode:: U+00D7 .. multiplication sign
    :trim:

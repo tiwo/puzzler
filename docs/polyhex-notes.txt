@@ -537,6 +537,11 @@ Potential Puzzles
 
   * T(7) (= Tetrahex7x7Triangle)
   * P(14,2) & Rs (not possible)
+  * H(4) - P(3,3) (= TetrahexesHexagon_x1)
+  * 2P(4,4) overlapping, - 3 units (= TetrahexesTwoDiamonds_x1)
+  * 4H(2) around 1 empty unit (= TetrahexesRosettes_x1)
+  * 4H(2) in symmetrical trefoil (not possible)
+  * 4H(2) in a row (not possible)
 
 37: trihexes + tetrahexes
 

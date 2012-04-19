@@ -298,5 +298,16 @@ Hexagon-Grid Shapes
 
   .. image:: images/one-sided-hexiamonds-hexgrid-butterfly-4x4.png
 
+* Triangle (there are 2 too many hexagons in a length-6 triangle;
+  I think this is the most elegant variation): `solutions incomplete
+  <../solutions/one-sided-hexiamonds-hexgrid-triangle-1.txt>`__
+
+  .. image:: images/one-sided-hexiamonds-hexgrid-triangle-1.png
+
+* Two triangles: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-hexgrid-two-triangles.txt>`__
+
+  .. image:: images/one-sided-hexiamonds-hexgrid-two-triangles.png
+
 
 .. |c| unicode:: U+00A9 .. copyright sign
