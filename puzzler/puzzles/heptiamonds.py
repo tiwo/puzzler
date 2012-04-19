@@ -1012,7 +1012,7 @@ class HeptiamondsHexgridTwoDiamonds4(Heptiamonds):
 
 class HeptiamondsHexgridTrefoil1(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 15
     height = 15
@@ -1021,21 +1021,20 @@ class HeptiamondsHexgridTrefoil1(Heptiamonds):
 
     def coordinates(self):
         hcoords = set(
-            list(Polyhexes.coordinates_hexagon(2, offset=(0,3)))
+            list(Polyhexes.coordinates_hexagon(2, offset=(0,5)))
             + list(Polyhexes.coordinates_hexagon(2, offset=(3,3)))
-            + list(Polyhexes.coordinates_hexagon(2, offset=(3,6)))
-            + list(Polyhexes.coordinates_hexagon(2, offset=(6,0))))
-        coords = self.coordinates_hexgrid(hcoords, offset=(-3,-7,0))
+            + list(Polyhexes.coordinates_hexagon(2, offset=(4,0)))
+            + list(Polyhexes.coordinates_hexagon(2, offset=(5,4))))
+        coords = self.coordinates_hexgrid(hcoords, offset=(0,-5,0))
         return sorted(coords)
 
     def customize_piece_data(self):
-        self.piece_data['P7'][-1]['flips'] = None
         self.piece_data['P7'][-1]['rotations'] = (0, 1)
 
 
 class HeptiamondsHexgridTrefoil2(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 14
     height = 14
@@ -1061,7 +1060,7 @@ class HeptiamondsHexgridTrefoil2(Heptiamonds):
 
 class HeptiamondsHexgridTrefoil3(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 13
     height = 13
@@ -1085,7 +1084,7 @@ class HeptiamondsHexgridTrefoil3(Heptiamonds):
 
 class HeptiamondsHexgridTrefoil4(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 13
     height = 13
@@ -1106,9 +1105,9 @@ class HeptiamondsHexgridTrefoil4(Heptiamonds):
         self.piece_data['P7'][-1]['rotations'] = (0, 1)
 
 
-class HeptiamondsHexgridTrefoil5(Heptiamonds):
+class HeptiamondsHexgridTrefoil_x1(Heptiamonds):
 
-    """ solutions"""
+    """0 solutions"""
 
     width = 15
     height = 15
@@ -1117,20 +1116,17 @@ class HeptiamondsHexgridTrefoil5(Heptiamonds):
 
     def coordinates(self):
         hcoords = set(
-            list(Polyhexes.coordinates_hexagon(2, offset=(0,5)))
+            list(Polyhexes.coordinates_hexagon(2, offset=(0,3)))
             + list(Polyhexes.coordinates_hexagon(2, offset=(3,3)))
-            + list(Polyhexes.coordinates_hexagon(2, offset=(4,0)))
-            + list(Polyhexes.coordinates_hexagon(2, offset=(5,4))))
-        coords = self.coordinates_hexgrid(hcoords, offset=(0,-5,0))
+            + list(Polyhexes.coordinates_hexagon(2, offset=(3,6)))
+            + list(Polyhexes.coordinates_hexagon(2, offset=(6,0))))
+        coords = self.coordinates_hexgrid(hcoords, offset=(-3,-7,0))
         return sorted(coords)
-
-    def customize_piece_data(self):
-        self.piece_data['P7'][-1]['rotations'] = (0, 1)
 
 
 class HeptiamondsHexgridBumpyTriangle(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 12
     height = 12
@@ -1153,7 +1149,7 @@ class HeptiamondsHexgridBumpyTriangle(Heptiamonds):
 
 class HeptiamondsHexgridStaggeredRectangle7x4(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 14
     height = 9
@@ -1171,7 +1167,7 @@ class HeptiamondsHexgridStaggeredRectangle7x4(Heptiamonds):
 
 class HeptiamondsHexgridRosettes1(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 12
     height = 12
@@ -1196,32 +1192,7 @@ class HeptiamondsHexgridRosettes1(Heptiamonds):
 
 class HeptiamondsHexgridRosettes2(Heptiamonds):
 
-    """ solutions"""
-
-    width = 15
-    height = 15
-
-    check_for_duplicates = False
-
-    svg_rotation = 30
-
-    def coordinates(self):
-        hcoords = set(
-            list(Polyhexes.coordinates_hexagon(2))
-            + list(Polyhexes.coordinates_hexagon(2, offset=(3,0)))
-            + list(Polyhexes.coordinates_hexagon(2, offset=(6,0)))
-            + list(Polyhexes.coordinates_hexagon(2, offset=(9,0))))
-        coords = self.coordinates_hexgrid(hcoords, offset=(0,-1,0))
-        return sorted(coords)
-
-    def customize_piece_data(self):
-        self.piece_data['P7'][-1]['flips'] = None
-        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2)
-
-
-class HeptiamondsHexgridRosettes3(Heptiamonds):
-
-    """ solutions"""
+    """many solutions"""
 
     width = 12
     height = 15
@@ -1244,9 +1215,34 @@ class HeptiamondsHexgridRosettes3(Heptiamonds):
         self.piece_data['P7'][-1]['rotations'] = (0, 1, 2)
 
 
+class HeptiamondsHexgridRosettes_x1(Heptiamonds):
+
+    """0 solutions"""
+
+    width = 15
+    height = 15
+
+    check_for_duplicates = False
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        hcoords = set(
+            list(Polyhexes.coordinates_hexagon(2))
+            + list(Polyhexes.coordinates_hexagon(2, offset=(3,0)))
+            + list(Polyhexes.coordinates_hexagon(2, offset=(6,0)))
+            + list(Polyhexes.coordinates_hexagon(2, offset=(9,0))))
+        coords = self.coordinates_hexgrid(hcoords, offset=(0,-1,0))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['flips'] = None
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2)
+
+
 class HeptiamondsHexgridFlower1(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 12
     height = 12
@@ -1268,6 +1264,8 @@ class HeptiamondsHexgridFlower1(Heptiamonds):
 
 
 class HeptiamondsHexgridFlower2(HeptiamondsHexgridFlower1):
+
+    """many solutions"""
 
     holes = set(((0,3), (0,6), (3,0), (3,6), (6,0), (6,3), (3,2), (2,4), (4,3)))
 

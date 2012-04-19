@@ -338,12 +338,19 @@ puzzles.*
 
 168: Heptiamonds
 
-* B(10,6)
-* hexgrid Rs(7,4)
-* hexgrid Rs(14,2)
-* hexgrid Ri(11,3)
-* hexgrid Ri(8,4)
-* hexgrid C(4,4)
+* Potential:
+
+  * B(10,6)
+  * hexgrid Rs(14,2)
+  * hexgrid Ri(11,3)
+  * hexgrid Ri(8,4)
+  * hexgrid C(4,4)
+
+* No solutions:
+
+  * H(4) - 9 units, spread out (= HeptiamondsHexgridHexagon_x1)
+  * 4H(2) trefoil (= HeptiamondsHexgridTrefoil_x1)
+  * 4H(2) in a row (= HeptiamondsHexgridRosettes_x1)
 
 278: polyiamonds of order 1 to 7
 

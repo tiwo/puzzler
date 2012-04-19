@@ -542,6 +542,7 @@ Potential Puzzles
   * 4H(2) around 1 empty unit (= TetrahexesRosettes_x1)
   * 4H(2) in symmetrical trefoil (not possible)
   * 4H(2) in a row (not possible)
+  * TetrahexesTrefoil_x1 ... _x4
 
 37: trihexes + tetrahexes
 
