@@ -296,10 +296,19 @@ Side length 4 (overall height 16) hexagrams with various holes:
 Hexagon-Grid Shapes
 ===================
 
+These shapes are all based on the hexagonal grid, made up of 28
+6-triangle hexagons.  In fact, many of these shapes are also `tetrahex
+puzzles <polyhexes.html#tetrahexes>`_.
+
 * Triangle: `solutions incomplete
   <../solutions/heptiamonds-hexed-triangle.txt>`__
 
   .. image:: images/heptiamonds-hexed-triangle.png
+
+* Bumpy triangle: `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-bumpy-triangle.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-bumpy-triangle.png
 
 * Hexagon: `solutions incomplete <../solutions/heptiamonds-hexagon-1.txt>`__
 
@@ -349,6 +358,66 @@ Hexagon-Grid Shapes
 
             `solutions incomplete
             <../solutions/heptiamonds-hexgrid-two-diamonds-4.txt>`__
+
+* Trefoils:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-hexgrid-trefoil-1.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-trefoil-1.txt>`__
+
+       - .. figure:: images/heptiamonds-hexgrid-trefoil-2.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-trefoil-2.txt>`__
+
+     * - .. figure:: images/heptiamonds-hexgrid-trefoil-3.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-trefoil-3.txt>`__
+
+       - .. figure:: images/heptiamonds-hexgrid-trefoil-4.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-trefoil-4.txt>`__
+
+* 7x4 staggered rectangle: `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-staggered-rectangle-7x4.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-staggered-rectangle-7x4.png
+
+* Rosettes:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-hexgrid-rosettes-1.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-rosettes-1.txt>`__
+
+       - .. figure:: images/heptiamonds-hexgrid-rosettes-2.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-rosettes-2.txt>`__
+
+* Flowers:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-hexgrid-flower-1.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-flower-1.txt>`__
+
+       - .. figure:: images/heptiamonds-hexgrid-flower-2.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-flower-2.txt>`__
 
 
 Misc

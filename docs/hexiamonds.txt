@@ -265,6 +265,9 @@ One-Sided Hexiamonds
 Hexagon-Grid Shapes
 -------------------
 
+These shapes are all based on the hexagonal grid, made up of 19
+6-triangle hexagons.
+
 * O'Beirne's hexiamond hexagon (19 small 6-triangle hexagons, arranged
   in a hexagon on a honeycomb grid: 1 hexagon surrounded by 6 hexagons
   surrounded by 12 in concentric rings): `124,519 solutions

@@ -552,6 +552,7 @@ Potential Puzzles
 * Rr(11,4) - 1 unit
 * Rr(7,6) - 1 unit
 * Tr(11,4) - 1 unit
+* 2H(3) overlapping (= He(7,3) - 2 units)
 
 40: polyhexes of order 1 to 4
 
@@ -568,6 +569,7 @@ Potential Puzzles
 * Ri(5,5) + 2Tr(4,3) - 1 unit "eye" (discovered by Dan Klarskov, email
   2012-02-20)
 * "Snowflake ring" (email from Dan Klarskov, 2012-02-27)
+* T(9) - Tr(3,2) near top (= Tr(9,6) + 1 unit [monohex])
 
 40: one-sided tetrahexes
 
