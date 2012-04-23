@@ -188,10 +188,20 @@ seven tetrahexes, for a total of 40 hexagons.
 
   .. image:: images/polyhexes-1234-trapezoid-9x8.png
 
-* Triangle: `427,731 solutions
-  <../solutions/polyhexes-1234-triangle.txt>`__
+* Triangles:
 
-  .. image:: images/polyhexes-1234-triangle.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polyhexes-1234-triangle.png
+
+            `427,731 solutions
+            <../solutions/polyhexes-1234-triangle.txt>`__
+
+       - .. figure:: images/polyhexes-1234-triangle-2.png
+
+            `851,458 solutions
+            <../solutions/polyhexes-1234-triangle-2.txt>`__
 
 * Tri-lobed Crown (inspired by the `Snowflake puzzle`_): `1,349,201
   solutions <../solutions/polyhexes-1234-trilobed-crown.txt>`__
@@ -306,7 +316,7 @@ One-Sided Polyhexes of Order 1 Through 4
 ========================================
 
 These puzzles use the monohex, the dihex, the three trihexes, and the
-ten tetrahexes, for a total of 52 hexagons.
+ten one-sided tetrahexes, for a total of 52 hexagons.
 
 * X (`designed for G4G10 <g4gX.html>`_): `solutions incomplete
   <../solutions/one-sided-polyhexes-1234-x-1.txt>`__
@@ -370,6 +380,29 @@ seven tetrahexes, and the 22 pentahexes, for a total of 150 hexagons.
   <../solutions/polyhexes-12345-trapezoid-32x5.txt>`__
 
   .. image:: images/polyhexes-12345-trapezoid-32x5.png
+
+
+One-Sided Polyhexes of Order 1 Through 5
+========================================
+
+These puzzles uses the monohex, the dihex, the three trihexes, the ten
+one-sided tetrahexes, and the 33 one-sided pentahexes, for a total of
+217 hexagons.
+
+* Hexagon: `solutions incomplete
+  <../solutions/one-sided-polyhexes-12345-hexagon.txt>`__
+
+  .. image:: images/one-sided-polyhexes-12345-hexagon.png
+
+* 31x7 parallelogram: `solutions incomplete
+  <../solutions/one-sided-polyhexes-12345-31x7.txt>`__
+
+  .. image:: images/one-sided-polyhexes-12345-31x7.png
+
+* 22x14 trapezoid: `solutions incomplete
+  <../solutions/one-sided-polyhexes-12345-trapezoid-22x14.txt>`__
+
+  .. image:: images/one-sided-polyhexes-12345-trapezoid-22x14.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

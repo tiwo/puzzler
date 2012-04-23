@@ -9,10 +9,10 @@
 Concrete polyhex (order 1 through 4) puzzles.
 """
 
-from puzzler.puzzles.polyhexes import Polyhex1234
+from puzzler.puzzles.polyhexes import Polyhexes1234, OneSidedPolyhexes1234
 
 
-class Polyhex1234_4x10(Polyhex1234):
+class Polyhexes1234_4x10(Polyhexes1234):
 
     """3,665,348 solutions"""
 
@@ -24,7 +24,7 @@ class Polyhex1234_4x10(Polyhex1234):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
 
 
-class Polyhex1234_5x8(Polyhex1234):
+class Polyhexes1234_5x8(Polyhexes1234):
 
     """7,578,295 solutions"""
 
@@ -36,7 +36,7 @@ class Polyhex1234_5x8(Polyhex1234):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
 
 
-class Polyhex1234_6x7(Polyhex1234):
+class Polyhexes1234_6x7(Polyhexes1234):
 
     """
     3,832,702 solutions
@@ -58,7 +58,7 @@ class Polyhex1234_6x7(Polyhex1234):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
 
 
-class Polyhexes1234ElongatedHexagon13x2(Polyhex1234):
+class Polyhexes1234ElongatedHexagon13x2(Polyhexes1234):
 
     """1,389,980 solutions"""
 
@@ -73,7 +73,7 @@ class Polyhexes1234ElongatedHexagon13x2(Polyhex1234):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
 
 
-class Polyhexes1234ElongatedHexagon3x5(Polyhex1234):
+class Polyhexes1234ElongatedHexagon3x5(Polyhexes1234):
 
     """
     many solutions
@@ -96,7 +96,7 @@ class Polyhexes1234ElongatedHexagon3x5(Polyhex1234):
         self.piece_data['P4'][-1]['flips'] = None
 
 
-class Polyhexes1234IrregularHexagon1(Polyhex1234):
+class Polyhexes1234IrregularHexagon1(Polyhexes1234):
 
     """
     37,293,445 solutions
@@ -118,7 +118,7 @@ class Polyhexes1234IrregularHexagon1(Polyhex1234):
         self.piece_data['P4'][-1]['flips'] = None
 
 
-class Polyhexes1234IrregularHexagon2(Polyhex1234):
+class Polyhexes1234IrregularHexagon2(Polyhexes1234):
 
     """14,211,672 solutions"""
 
@@ -136,7 +136,7 @@ class Polyhexes1234IrregularHexagon2(Polyhex1234):
         self.piece_data['P4'][-1]['flips'] = None
 
 
-class Polyhexes1234Trapezoid9x8(Polyhex1234):
+class Polyhexes1234Trapezoid9x8(Polyhexes1234):
 
     """
     1,310,969 many solutions
@@ -158,7 +158,7 @@ class Polyhexes1234Trapezoid9x8(Polyhex1234):
         self.piece_data['P4'][-1]['flips'] = None
 
 
-class Polyhexes1234Triangle(Polyhex1234):
+class Polyhexes1234Triangle(Polyhexes1234):
 
     """427,731 solutions"""
 
@@ -176,7 +176,24 @@ class Polyhexes1234Triangle(Polyhex1234):
         self.piece_data['P4'][-1]['flips'] = None
 
 
-class Polyhexes1234TrilobedCrown(Polyhex1234):
+class Polyhexes1234Triangle2(Polyhexes1234):
+
+    """851,458 solutions"""
+
+    height = 9
+    width = 9
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_triangle(9))
+            - set(self.coordinates_trapezoid(3, 2, offset=(0,6))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+
+
+class Polyhexes1234TrilobedCrown(Polyhexes1234):
 
     """
     1,349,201 solutions
@@ -203,7 +220,7 @@ class Polyhexes1234TrilobedCrown(Polyhex1234):
         self.piece_data['P4'][-1]['rotations'] = (0, 1)
 
 
-class Polyhexes1234JaggedHexagon1(Polyhex1234):
+class Polyhexes1234JaggedHexagon1(Polyhexes1234):
 
     """
     213,477 solutions
@@ -250,7 +267,7 @@ class Polyhexes1234JaggedHexagon3(Polyhexes1234JaggedHexagon1):
     holes = set(((2,4), (4,6), (6,2)))
 
 
-class Polyhexes1234KnobbedHexagon1(Polyhex1234):
+class Polyhexes1234KnobbedHexagon1(Polyhexes1234):
 
     """
     17,683 solutions
@@ -292,17 +309,17 @@ class Polyhexes1234KnobbedHexagon3(Polyhexes1234KnobbedHexagon1):
     holes = set(((2,4), (4,6), (6,2)))
 
 
-class Polyhexes1234IrregularHexagon3(Polyhex1234):
+class Polyhexes1234IrregularHexagon3(Polyhexes1234):
 
     """655,208 solutions"""
 
     height = 9
     width = 8
 
-    holes = set(Polyhex1234.coordinates_hexagon(2, offset=(2,2)))
+    holes = set(Polyhexes1234.coordinates_hexagon(2, offset=(2,2)))
     holes.add((2,5))
-    holes.update(Polyhex1234.coordinates_triangle(2))
-    holes.update(Polyhex1234.coordinates_triangle(2, offset=(8,0)))
+    holes.update(Polyhexes1234.coordinates_triangle(2))
+    holes.update(Polyhexes1234.coordinates_triangle(2, offset=(8,0)))
 
     def coordinates(self):
         for coord in self.coordinates_trapezoid(10,9):
@@ -313,14 +330,14 @@ class Polyhexes1234IrregularHexagon3(Polyhex1234):
         self.piece_data['P4'][-1]['flips'] = None
 
 
-class Polyhexes1234IrregularHexagon4(Polyhex1234):
+class Polyhexes1234IrregularHexagon4(Polyhexes1234):
 
     """1,361,945 solutions"""
 
     width = 9
     height = 7
 
-    holes = set(Polyhex1234.coordinates_hexagon(2, offset=(2,2)))
+    holes = set(Polyhexes1234.coordinates_hexagon(2, offset=(2,2)))
     holes.update(((0,0), (9,0)))
 
     def coordinates(self):
@@ -332,15 +349,15 @@ class Polyhexes1234IrregularHexagon4(Polyhex1234):
         self.piece_data['P4'][-1]['flips'] = None
 
 
-class Polyhexes1234IrregularHexagon5(Polyhex1234):
+class Polyhexes1234IrregularHexagon5(Polyhexes1234):
 
     """many solutions"""
 
     width = 7
     height = 8
 
-    holes = set(Polyhex1234.coordinates_triangle(3))
-    holes.update(Polyhex1234.coordinates_triangle(3, offset=(7,0)))
+    holes = set(Polyhexes1234.coordinates_triangle(3))
+    holes.update(Polyhexes1234.coordinates_triangle(3, offset=(7,0)))
 
     def coordinates(self):
         for coord in self.coordinates_trapezoid(10,8):
@@ -351,14 +368,14 @@ class Polyhexes1234IrregularHexagon5(Polyhex1234):
         self.piece_data['P4'][-1]['flips'] = None
 
 
-class Polyhexes1234ElongatedHexagon2x6Ring(Polyhex1234):
+class Polyhexes1234ElongatedHexagon2x6Ring(Polyhexes1234):
 
     """659,517 solutions"""
 
     width = 7
     height = 11
 
-    hole = set(Polyhex1234.coordinates_hexagon(2, offset=(2,4)))
+    hole = set(Polyhexes1234.coordinates_hexagon(2, offset=(2,4)))
 
     svg_rotation = 90
 
@@ -372,14 +389,14 @@ class Polyhexes1234ElongatedHexagon2x6Ring(Polyhex1234):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
 
 
-class Polyhexes1234DiamondRing(Polyhex1234):
+class Polyhexes1234DiamondRing(Polyhexes1234):
 
     """83,837 solutions"""
 
     width = 7
     height = 7
 
-    hole = set(Polyhex1234.coordinates_parallelogram(3, 3, offset=(2,2)))
+    hole = set(Polyhexes1234.coordinates_parallelogram(3, 3, offset=(2,2)))
 
     svg_rotation = 30
 
@@ -393,7 +410,7 @@ class Polyhexes1234DiamondRing(Polyhex1234):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
 
 
-class Polyhexes1234HexagonRing1(Polyhex1234):
+class Polyhexes1234HexagonRing1(Polyhexes1234):
 
     """
     11,417 solutions
@@ -407,7 +424,7 @@ class Polyhexes1234HexagonRing1(Polyhex1234):
     height = 9
 
     holes = (
-        set(Polyhex1234.coordinates_hexagon(3, offset=(2,2)))
+        set(Polyhexes1234.coordinates_hexagon(3, offset=(2,2)))
         .union(((0,4), (8,4))))
 
     def coordinates(self):
@@ -425,11 +442,11 @@ class Polyhexes1234HexagonRing2(Polyhexes1234HexagonRing1):
     """6,645 solutions"""
 
     holes = (
-        set(Polyhex1234.coordinates_hexagon(3, offset=(2,2)))
+        set(Polyhexes1234.coordinates_hexagon(3, offset=(2,2)))
         .union(((1,4), (7,4))))
 
 
-class Polyhexes1234StaggeredRectangle8x5(Polyhex1234):
+class Polyhexes1234StaggeredRectangle8x5(Polyhexes1234):
 
     """
     many solutions
@@ -449,7 +466,7 @@ class Polyhexes1234StaggeredRectangle8x5(Polyhex1234):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
 
 
-class Polyhexes1234StaggeredRectangle10x4(Polyhex1234):
+class Polyhexes1234StaggeredRectangle10x4(Polyhexes1234):
 
     """many solutions"""
 
@@ -465,7 +482,7 @@ class Polyhexes1234StaggeredRectangle10x4(Polyhex1234):
         self.piece_data['P4'][-1]['rotations'] = (0,1,2)
 
 
-class Polyhexes1234StaggeredRectangle5x8(Polyhex1234):
+class Polyhexes1234StaggeredRectangle5x8(Polyhexes1234):
 
     """
     many solutions
@@ -485,7 +502,7 @@ class Polyhexes1234StaggeredRectangle5x8(Polyhex1234):
         self.piece_data['P4'][-1]['flips'] = None
 
 
-class Polyhexes1234StaggeredRectangle4x10(Polyhex1234):
+class Polyhexes1234StaggeredRectangle4x10(Polyhexes1234):
 
     """many solutions"""
 

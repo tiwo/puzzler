@@ -10,7 +10,7 @@ Concrete polyhex (order 1 through 5) puzzles.
 """
 
 from puzzler.puzzles import polyhexes
-from puzzler.puzzles.polyhexes import Polyhexes12345
+from puzzler.puzzles.polyhexes import Polyhexes12345, OneSidedPolyhexes12345
 
 
 class Polyhexes12345_3x50(Polyhexes12345):
@@ -224,3 +224,33 @@ class Polyhexes12345Trapezoid32x5(Polyhexes12345Trapezoid17x15):
 
     width = 32
     height = 5
+
+
+class OneSidedPolyhexes12345Hexagon(OneSidedPolyhexes12345):
+
+    """many solutions"""
+
+    width = 17
+    height = 17
+
+    def coordinates(self):
+        return self.coordinates_hexagon(9)
+
+
+class OneSidedPolyhexes12345_31x7(OneSidedPolyhexes12345):
+
+    """many solutions"""
+
+    width = 31
+    height = 7
+
+
+class OneSidedPolyhexes12345Trapezoid22x14(OneSidedPolyhexes12345):
+
+    """many solutions"""
+
+    width = 22
+    height = 14
+
+    def coordinates(self):
+        return self.coordinates_trapezoid(self.width, self.height)

@@ -569,7 +569,6 @@ Potential Puzzles
 * Ri(5,5) + 2Tr(4,3) - 1 unit "eye" (discovered by Dan Klarskov, email
   2012-02-20)
 * "Snowflake ring" (email from Dan Klarskov, 2012-02-27)
-* T(9) - Tr(3,2) near top (= Tr(9,6) + 1 unit [monohex])
 
 40: one-sided tetrahexes
 
@@ -643,11 +642,12 @@ Potential Puzzles
 
 217: one-sided polyhexes of order 1 to 5
 
-* H(9)
 * Rr(15,15)
 * C(7,16)
-* Tr(22,14)
 * B(22,6)
+* T(22) - T(8)
+* T(21) - T(5) + 1 unit
+* T(22) - H(4) + 1 unit
 
 492: hexahexes
 
