@@ -90,6 +90,23 @@ tetrominoes, for a total of 37 squares.
   .. image:: images/one-sided-polyominoes-1234-octagon.png
 
 
+One-Sided Polyominoes of Order 2 Through 4
+==========================================
+
+These puzzles use the 1 domino, 2 trominoes, and 7 tetrominoes, for a
+total of 36 squares.
+
+* Square: `7,252 solutions
+  <../solutions/one-sided-polyominoes-234-square.txt>`__
+
+  .. image:: images/one-sided-polyominoes-234-square.png
+
+* Octagon: `1,023 solutions
+  <../solutions/one-sided-polyominoes-234-octagon.txt>`__
+
+  .. image:: images/one-sided-polyominoes-234-octagon.png
+
+
 Polyominoes of Order 4 & 5 (Tetrominoes & Pentominoes)
 ======================================================
 
@@ -144,23 +161,6 @@ pentominoes, for a total of 88 squares.
   <../solutions/polyominoes-2345-x-1.txt>`__
 
   .. image:: images/polyominoes-2345-x-1.png
-
-
-One-Sided Polyominoes of Order 2 Through 5
-==========================================
-
-These puzzles use the 1 domino, 2 trominoes, and 7 tetrominoes, for a
-total of 36 squares.
-
-* Square: `7,252 solutions
-  <../solutions/one-sided-polyominoes-234-square.txt>`__
-
-  .. image:: images/one-sided-polyominoes-234-square.png
-
-* Octagon: `1,023 solutions
-  <../solutions/one-sided-polyominoes-234-octagon.txt>`__
-
-  .. image:: images/one-sided-polyominoes-234-octagon.png
 
 
 Polyominoes of Order 1 Through 5
