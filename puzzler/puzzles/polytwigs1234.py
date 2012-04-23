@@ -85,7 +85,7 @@ class Polytwigs1234UnborderedTrapezoid5x4(Polytwigs1234):
 
 class Polytwigs1234InsetRectangle4x2(Polytwigs1234):
 
-    """many solutions"""
+    """5,755 solutions"""
 
     height = 4
     width = 5

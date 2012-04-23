@@ -60,7 +60,7 @@ class PentatwigsTriangle3(PentatwigsTriangle2):
 
 class Pentatwigs5x3(Pentatwigs):
 
-    """many solutions"""
+    """194 solutions"""
 
     height = 4
     width = 6
@@ -74,7 +74,7 @@ class Pentatwigs5x3(Pentatwigs):
 
 class PentatwigsChevron3x3(Pentatwigs):
 
-    """many solutions"""
+    """115 solutions"""
 
     height = 6
     width = 6
@@ -88,7 +88,7 @@ class PentatwigsChevron3x3(Pentatwigs):
 
 class PentatwigsChevron5x2(Pentatwigs):
 
-    """many solutions"""
+    """241 solutions"""
 
     height = 4
     width = 7
@@ -102,7 +102,7 @@ class PentatwigsChevron5x2(Pentatwigs):
 
 class PentatwigsTrapezoid6x3(Pentatwigs):
 
-    """many solutions"""
+    """184 solutions"""
 
     height = 4
     width = 7
@@ -542,7 +542,7 @@ class PentatwigsHexagram_x(Pentatwigs):
         return sorted(coords)
 
 
- class OneSidedPentatwigsTrapezoid12x2(OneSidedPentatwigs):
+class OneSidedPentatwigsTrapezoid12x2(OneSidedPentatwigs):
 
     """many solutions"""
 

@@ -152,7 +152,7 @@ tetratwigs, for a total of 28 line segments on the hexagonal grid.
             `962 solutions
             <../solutions/polytwigs-1234-hex-6.txt>`__
 
-* 4x2 inset rectangle: `solutions incomplete
+* 4x2 inset rectangle: `5,755 solutions
   <../solutions/polytwigs-1234-inset-rectangle-4x2.txt>`__
 
   .. image:: images/polytwigs-1234-inset-rectangle-4x2.png
@@ -266,7 +266,7 @@ of 60 line segments on the hexagonal grid.
             `2 solutions
             <../solutions/pentatwigs-triangle-3.txt>`__
 
-* 5x3 parallelogram: `solutions incomplete
+* 5x3 parallelogram: `194 solutions
   <../solutions/pentatwigs-5x3.txt>`__
 
   .. image:: images/pentatwigs-5x3.png
@@ -287,7 +287,7 @@ of 60 line segments on the hexagonal grid.
             `8 solutions
             <../solutions/pentatwigs-4x4-2.txt>`__
 
-* 6x3 trapezoid: `solutions incomplete
+* 6x3 trapezoid: `184 solutions
   <../solutions/pentatwigs-trapezoid-6x3.txt>`__
 
   .. image:: images/pentatwigs-trapezoid-6x3.png
@@ -303,12 +303,12 @@ of 60 line segments on the hexagonal grid.
 
   .. image:: images/pentatwigs-wave-staggered-rectangle-5x3.png
 
-* 3x3 chevron: `solutions incomplete
+* 3x3 chevron: `115 solutions
   <../solutions/pentatwigs-chevron-3x3.txt>`__
 
   .. image:: images/pentatwigs-chevron-3x3.png
 
-* 5x2 chevron: `solutions incomplete
+* 5x2 chevron: `241 solutions
   <../solutions/pentatwigs-chevron-5x2.txt>`__
 
   .. image:: images/pentatwigs-chevron-5x2.png
