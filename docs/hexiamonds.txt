@@ -174,6 +174,19 @@ Hexagons & Variants
 
   __ http://mathworld.wolfram.com/HexiamondTiling.html
 
+* .. _hexicator:
+
+  Hexicator__: `Col. George L. Sicherman's puzzle`__ consisting of 9
+  hexiamonds (the club/crook/J6, pistol/signpost/H6, and shoe/hook/G6
+  pieces are omitted) to be formed into a regular hexagon (side length
+  3).  `Try it`__ before you look at the `1 and only solution
+  <../solutions/hexiamonds-hexicator.txt>`__ (`picture here
+  <images/hexiamonds-hexicator.png>`__).
+
+  __
+  __
+  __ http://userpages.monmouth.com/~colonel/hexicator/hexicator.html
+
 
 Hexagon-Grid Shapes
 -------------------

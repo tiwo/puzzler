@@ -507,6 +507,13 @@ Potential Puzzles
   * T(5) - various holes (= TritrigsTriangle_x)
   * OneSidedTritrigsTrilobedCuboid_x
 
+42: ditrigs & tritrigs
+
+- 3 congruent groups? 1 ditrig & 4 tritrigs each
+
+* H(2)
+* T(5) - T*(2)
+
 42: one-sided snake tritrigs
 
 43: polytrigs O(1) + O(2) + O(3)

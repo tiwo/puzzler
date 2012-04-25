@@ -1163,6 +1163,33 @@ class HexiamondsHexgridTriangleRing_x2(Hexiamonds):
         return sorted(coords)
 
 
+class HexiamondsHexicator(Hexiamonds):
+
+    """
+    1 solution
+
+    Col. George Sicherman's 'Hexicator' puzzle
+    (http://userpages.monmouth.com/~colonel/hexicator/hexicator.html),
+    consisting of 9 hexiamonds to be formed into a regular hexagon (side
+    length 3).  The club/crook (J6), pistol/signpost (H6), and shoe/hook (G6)
+    pieces are omitted from the puzzle.
+    """
+
+    width = 6
+    height = 6
+
+    omit = ['J6', 'H6', 'G6']
+
+    def coordinates(self):
+        return self.coordinates_hexagon(3)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['flips'] = (1,) # per the original
+        self.piece_data['P6'][-1]['rotations'] = None
+        for name in self.omit:
+            del self.piece_data[name]
+
+
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
 
     """

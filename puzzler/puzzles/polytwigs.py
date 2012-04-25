@@ -283,6 +283,22 @@ class Polytwigs(Polytrigs):
             yield cls.coordinate_offset(x, y, z, offset)
 
     @classmethod
+    def coordinates_butterfly_unbordered(cls, base, side, offset=None):
+        """
+        Butterfly-shaped unbordered polytwig grid, (base, side) length in
+        hexagons.
+        """
+        bite = coordsys.HexagonalGrid3DCoordSet(
+            cls.coordinates_elongated_hexagon(1, side - 1))
+        coords = coordsys.HexagonalGrid3DCoordSet(
+            set(cls.coordinates_elongated_hexagon_unbordered(base, side))
+            - bite.translate((0, 1, 0))
+            - bite.translate((base, 1, 0)))
+        if offset:
+            coords = coords.translate(offset)
+        return sorted(coords)
+
+    @classmethod
     def coordinates_vertically_staggered_rectangle(cls, m, n, offset=None):
         last_x = m
         last_y = n
@@ -835,6 +851,23 @@ class Pentatwigs(PentatwigsData, Polytwigs):
 
 
 class OneSidedPentatwigs(OneSidedLowercaseMixin, Pentatwigs):
+
+    pass
+
+
+class Polytwigs45(Pentatwigs):
+
+    piece_data = copy.deepcopy(Pentatwigs.piece_data)
+    piece_data.update(copy.deepcopy(TetratwigsData.piece_data))
+    symmetric_pieces = (
+        Tetratwigs.symmetric_pieces + PentatwigsData.symmetric_pieces)
+    asymmetric_pieces = (
+        Tetratwigs.asymmetric_pieces + PentatwigsData.asymmetric_pieces)
+    piece_colors = copy.deepcopy(TetratwigsData.piece_colors)
+    piece_colors.update(PentatwigsData.piece_colors)
+
+
+class OneSidedPolytwigs45(OneSidedLowercaseMixin, Polytwigs45):
 
     pass
 
