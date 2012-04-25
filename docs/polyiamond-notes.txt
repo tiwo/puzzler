@@ -308,6 +308,11 @@ puzzles.*
   * hexgrid T(5) - T(2) (= HexiamondsHexgridTriangleRing_x1 & _x2)
   * hexgrid P(6,2) (= HexiamondsHexgrid6x2_x)
 
+92: pentiamonds & hexiamonds
+
+- 4 congruent groups (1 pentiamond & 3 hexiamonds each) -- combined in
+  a symmetrical shape?
+
 110: polyiamonds of order 1 to 6
 
 * P(11,5)

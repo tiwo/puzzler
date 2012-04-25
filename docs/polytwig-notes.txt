@@ -516,16 +516,10 @@ Potential Puzzles
 
 76: tetratwigs & pentatwigs (polytwigs order 4 & 5)
 
-- 4 congruent groups (1 tetratwig & 3 pentatwigs each; idea from Colin
-  Brown) -- combined in a symmetrical shape?
-
-* P(5,5) - 18 units (18 = P*(3,3) + 2)
 * P(15,1)
 * Ri(11,2)
 * H(3) + 4 units
 * T(5) + 16 units
-* T(6) - 5 units
-* P(5,5) - P*(3,3) - 2 units
 * Tr(6,5) - 1 unit
 * He(2,4) - 10 units
 * Hs(4,3) - Hs*(3,2) + 1 unit
