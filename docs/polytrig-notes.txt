@@ -140,7 +140,7 @@ Elongated hexagons & holes::
             = 3n² + 6mn + m + 2n
 
     He*(m,n) = He(m,n) - 2m - 4n
-             = 3n² + 6mn - m
+             = 3n² + 6mn - m - 2n
 
 When n==m::
 
