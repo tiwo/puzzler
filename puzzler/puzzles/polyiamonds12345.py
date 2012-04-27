@@ -33,7 +33,7 @@ class Polyiamonds12345ElongatedHexagon5x2Ring(Polyiamonds12345):
     """
     10,254 solutions
 
-    Discovered by Dan Klarskov
+    Design by Dan Klarskov
     """
 
     height = 4
@@ -112,7 +112,7 @@ class Polyiamonds12345Peanut(Polyiamonds12345):
     """
     362,047 solutions
 
-    Discovered by Dan Klarskov
+    Design by Dan Klarskov
     """
 
     height = 6
@@ -151,7 +151,7 @@ class Polyiamonds12345IrregularHexagon1(Polyiamonds12345Trapezoid1):
     """
     878,738 solutions
 
-    Discovered by Dan Klarskov
+    Design by Dan Klarskov
     """
 
     width = 6
@@ -164,7 +164,7 @@ class Polyiamonds12345Snowflake1(Polyiamonds12345):
     """
     9,930 solutions
 
-    Discovered by Dan Klarskov
+    Design by Dan Klarskov
     """
 
     height = 6
@@ -219,7 +219,7 @@ class Polyiamonds12345Bat(Polyiamonds12345):
     """
     92,778 solutions
 
-    Discovered by Dan Klarskov
+    Design by Dan Klarskov
     """
 
     height = 5
@@ -244,7 +244,7 @@ class Polyiamonds12345Snake(Polyiamonds12345):
     """
     3,344 solutions
 
-    Discovered by Dan Klarskov
+    Design by Dan Klarskov
     """
 
     width = 14
@@ -268,7 +268,7 @@ class Polyiamonds12345Bird1(Polyiamonds12345):
     """
     62,775 solutions
 
-    Discovered by Dan Klarskov
+    Design by Dan Klarskov
     """
 
     width = 6
@@ -293,7 +293,7 @@ class Polyiamonds12345Crab(Polyiamonds12345):
     """
     14,362 solutions
 
-    Discovered by Dan Klarskov
+    Design by Dan Klarskov
     """
 
     width = 8
@@ -367,7 +367,7 @@ class Polyiamonds12345ElongatedHexOnHex1(Polyiamonds12345):
     """
     4,299 solutions
 
-    Discovered by Dan Klarskov
+    Design by Dan Klarskov
     """
 
     width = 8

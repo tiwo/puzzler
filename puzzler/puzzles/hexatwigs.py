@@ -85,7 +85,7 @@ class HexatwigsElongatedHexagonRing(Hexatwigs):
     """
     many solutions
 
-    Discovered by Peter F. Esser.
+    Design by Peter F. Esser.
     """
 
     height = 10
@@ -235,7 +235,7 @@ class OneSidedHexatwigsElongatedHexagon26x2(OneSidedHexatwigs):
     """
     many solutions
 
-    Discovered by Peter F. Esser.
+    Design by Peter F. Esser.
     """
 
     height = 4

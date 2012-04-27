@@ -280,7 +280,7 @@ of 60 line segments on the hexagonal grid.
 
             `1 solution
             <../solutions/pentatwigs-4x4-1.txt>`__
-            (discovered by Colin F. Brown)
+            (design by Colin F. Brown)
 
        - .. figure:: images/pentatwigs-4x4-2.png
 
@@ -347,12 +347,12 @@ of 60 line segments on the hexagonal grid.
   to the left edge.  There may be many more solutions with such a
   wrap-around configuration.
 
-* Elongated rounded rectangle (designed by Colin F. Brown): `21
+* Elongated rounded rectangle (design by Colin F. Brown): `21
   solutions  <../solutions/pentatwigs-elongated-rounded-rectangle-1.txt>`__
 
   .. image:: images/pentatwigs-elongated-rounded-rectangle-1.png
 
-* Rosette clusters (designed by Colin F. Brown):
+* Rosette clusters (design by Colin F. Brown):
 
   .. list-table::
      :class: borderless
@@ -743,7 +743,7 @@ on the hexagonal grid.
             `solutions incomplete
             <../solutions/hexatwigs-hexagon-ring-4.txt>`__
 
-* Elongated hexagon ring (discovered by Peter F. Esser): `solutions
+* Elongated hexagon ring (design by Peter F. Esser): `solutions
   incomplete <../solutions/hexatwigs-elongated-hexagon-ring.txt>`__
 
   .. image:: images/hexatwigs-elongated-hexagon-ring.png
@@ -797,7 +797,7 @@ segments on the hexagonal grid.
 
   This solution was first found by Peter F. Esser.
 
-* 26x2 elongated hexagon (discovered by Peter F. Esser): `solutions
+* 26x2 elongated hexagon (design by Peter F. Esser): `solutions
   incomplete <../solutions/one-sided-hexatwigs-elongated-hexagon-26x2.txt>`__
 
   .. image:: images/one-sided-hexatwigs-elongated-hexagon-26x2.png
@@ -812,7 +812,7 @@ Introduction to Polytwigs`_.
 
 .. _Quasi-Polyforms: polytwigs-intro.html#quasi-polyforms
 
-* 10x1 parallelogram (discovered by Colin F. Brown): `solutions
+* 10x1 parallelogram (design by Colin F. Brown): `solutions
   incomplete <../solutions/quasi-tritwigs-10x1.txt>`__
 
   .. image:: images/quasi-tritwigs-10x1.png

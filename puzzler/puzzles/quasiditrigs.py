@@ -18,7 +18,7 @@ class QuasiDitrigsTriangle(QuasiDitrigs):
     """
     266 solutions
 
-    Discovered by Colin F. Brown
+    Design by Colin F. Brown
     """
 
     height = 3
@@ -52,7 +52,7 @@ class QuasiDitrigsTwoTriangles1(QuasiDitrigs):
     """
     8 solutions
 
-    Discovered by Colin F. Brown (as "diabolo")
+    Design by Colin F. Brown (as "diabolo")
     """
 
     height = 5
@@ -130,7 +130,7 @@ class QuasiDitrigsStarburst(QuasiDitrigs):
     """
     298 solutions
 
-    Discovered by Colin F. Brown
+    Design by Colin F. Brown
     """
 
     width = 5
@@ -155,7 +155,7 @@ class QuasiDitrigsSatellite(QuasiDitrigsStarburst):
     """
     24 solutions
 
-    Discovered by Colin F. Brown
+    Design by Colin F. Brown
     """
 
     width = 7

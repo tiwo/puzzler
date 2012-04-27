@@ -165,12 +165,12 @@ Misc
        - .. figure:: images/pentominoes-cross-2.png
 
          `84 solutions <../solutions/pentominoes-cross-2.txt>`__
-         (designed by Dan Klarskov)
+         (design by Dan Klarskov)
 
      * - .. figure:: images/pentominoes-cross-3.png
 
          `28 solutions <../solutions/pentominoes-cross-3.txt>`__
-         (designed by Dan Klarskov)
+         (design by Dan Klarskov)
 
        - .. figure:: images/pentominoes-cross-4.png
 
@@ -184,22 +184,22 @@ Misc
      * - .. figure:: images/pentominoes-flower-1.png
 
          `47 solutions <../solutions/pentominoes-flower-1.txt>`__
-         (designed by Dan Klarskov)
+         (design by Dan Klarskov)
 
        - .. figure:: images/pentominoes-flower-2.png
 
          `414 solutions <../solutions/pentominoes-flower-2.txt>`__
-         (designed by Dan Klarskov)
+         (design by Dan Klarskov)
 
      * - .. figure:: images/pentominoes-flower-3.png
 
          `15 solutions <../solutions/pentominoes-flower-3.txt>`__
-         (designed by Dan Klarskov)
+         (design by Dan Klarskov)
 
        - .. figure:: images/pentominoes-flower-4.png
 
          `57 solutions <../solutions/pentominoes-flower-4.txt>`__
-         (designed by Dan Klarskov)
+         (design by Dan Klarskov)
 
      * - .. figure:: images/pentominoes-flower-5.png
 
@@ -252,25 +252,25 @@ Pentominoes Plus the Square Tetromino
 
          `5380 solutions
          <../solutions/pentominoes-plus-square-tetromino-cross-1.txt>`__
-         (designed by Dan Klarskov)
+         (design by Dan Klarskov)
 
        - .. figure:: images/pentominoes-plus-square-tetromino-cross-2.png
 
          `2071 solutions
          <../solutions/pentominoes-plus-square-tetromino-cross-2.txt>`__
-         (designed by Dan Klarskov)
+         (design by Dan Klarskov)
 
      * - .. figure:: images/pentominoes-plus-square-tetromino-cross-3.png
 
          `177 solutions
          <../solutions/pentominoes-plus-square-tetromino-cross-3.txt>`__
-         (designed by Dan Klarskov)
+         (design by Dan Klarskov)
 
        - .. figure:: images/pentominoes-plus-square-tetromino-cross-4.png
 
          `2 solutions
          <../solutions/pentominoes-plus-square-tetromino-cross-4.txt>`__
-         (designed by Dan Klarskov)
+         (design by Dan Klarskov)
 
 * Diamond: `22 solutions
   <../solutions/pentominoes-plus-square-tetromino-diamond-1.txt>`__

@@ -69,7 +69,7 @@ tetrominoes, for a total of 29 squares.
 
   .. image:: images/polyominoes-1234-7x5-cross-hole.png
 
-* 7x4 plus one (discovered by Dan Klarskov): `1,522 solutions
+* 7x4 plus one (design by Dan Klarskov): `1,522 solutions
   <../solutions/polyominoes-1234-7x4-plus-one.txt>`__
 
   .. image:: images/polyominoes-1234-7x4-plus-one.png

@@ -96,7 +96,7 @@ the triangular grid.
             `1 solution
             <../solutions/tritrigs-triangle-4.txt>`__
 
-* Hearts (designed by Leslie E. Shader):
+* Hearts (design by Leslie E. Shader):
 
   .. list-table::
      :class: borderless
@@ -426,7 +426,7 @@ Introduction to Polytrigs`_.
 
 .. _Quasi-Polyforms: polytrigs-intro.html#quasi-polyforms
 
-* Triangle (discovered by Colin F. Brown): `266 solutions
+* Triangle (design by Colin F. Brown): `266 solutions
   <../solutions/quasi-ditrigs-triangle.txt>`__
 
   .. image:: images/quasi-ditrigs-triangle.png
@@ -450,7 +450,7 @@ Introduction to Polytrigs`_.
 
             `8 solutions
             <../solutions/quasi-ditrigs-two-triangles-1.txt>`__
-            (discovered by Colin F. Brown, as "diabolo")
+            (design by Colin F. Brown, as "diabolo")
 
        - .. figure:: images/quasi-ditrigs-two-triangles-2.png
 
@@ -462,12 +462,12 @@ Introduction to Polytrigs`_.
             `7 solutions
             <../solutions/quasi-ditrigs-two-triangles-3.txt>`__
 
-* Starburst (discovered by Colin F. Brown): `298 solutions
+* Starburst (design by Colin F. Brown): `298 solutions
   <../solutions/quasi-ditrigs-starburst.txt>`__
 
   .. image:: images/quasi-ditrigs-starburst.png
 
-* Satellite (discovered by Colin F. Brown): `24 solutions
+* Satellite (design by Colin F. Brown): `24 solutions
   <../solutions/quasi-ditrigs-satellite.txt>`__
 
   .. image:: images/quasi-ditrigs-satellite.png

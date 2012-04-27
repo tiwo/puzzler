@@ -132,7 +132,7 @@ seven tetrahexes, for a total of 40 hexagons.
 
   .. image:: images/polyhexes-1234-5x8.png
 
-* 6x7 parallelogram with hole (discovered by Dan Klarskov): `3,832,702
+* 6x7 parallelogram with hole (design by Dan Klarskov): `3,832,702
   solutions <../solutions/polyhexes-1234-6x7.txt>`__
 
   .. image:: images/polyhexes-1234-6x7.png
@@ -142,7 +142,7 @@ seven tetrahexes, for a total of 40 hexagons.
 
   .. image:: images/polyhexes-1234-elongated-hexagon-13x2.png
 
-* 3x5 elongated hexagon (discovered by Dan Klarskov): `6,175,571
+* 3x5 elongated hexagon (design by Dan Klarskov): `6,175,571
   solutions <../solutions/polyhexes-1234-elongated-hexagon-3x5.txt>`__
 
   .. image:: images/polyhexes-1234-elongated-hexagon-3x5.png
@@ -156,7 +156,7 @@ seven tetrahexes, for a total of 40 hexagons.
 
             `37,293,445 solutions
             <../solutions/polyhexes-1234-irregular-hexagon-1.txt>`__
-            (discovered by Dan Klarskov)
+            (design by Dan Klarskov)
 
        - .. figure:: images/polyhexes-1234-irregular-hexagon-2.png
 
@@ -167,23 +167,23 @@ seven tetrahexes, for a total of 40 hexagons.
 
             `655,208 solutions
             <../solutions/polyhexes-1234-irregular-hexagon-3.txt>`__
-            (discovered by Dan Klarskov)
+            (design by Dan Klarskov)
 
        - .. figure:: images/polyhexes-1234-irregular-hexagon-4.png
 
             `1,361,945 solutions
             <../solutions/polyhexes-1234-irregular-hexagon-4.txt>`__
-            (discovered by Dan Klarskov)
+            (design by Dan Klarskov)
 
      * - .. figure:: images/polyhexes-1234-irregular-hexagon-5.png
 
             `50,041,967 solutions
             <../solutions/polyhexes-1234-irregular-hexagon-5.txt>`__
-            (discovered by Kate Jones)
+            (design by Kate Jones)
 
        -
 
-* 9x8 trapezoid (discovered by Dan Klarskov): `1,310,969 solutions
+* 9x8 trapezoid (design by Dan Klarskov): `1,310,969 solutions
   <../solutions/polyhexes-1234-trapezoid-9x8.txt>`__
 
   .. image:: images/polyhexes-1234-trapezoid-9x8.png
@@ -223,13 +223,13 @@ seven tetrahexes, for a total of 40 hexagons.
 
             `70,634 solutions
             <../solutions/polyhexes-1234-jagged-hexagon-2.txt>`__
-            (discovered by Kate Jones)
+            (design by Kate Jones)
 
        - .. figure:: images/polyhexes-1234-jagged-hexagon-3.png
 
             `247,392 solutions
             <../solutions/polyhexes-1234-jagged-hexagon-3.txt>`__
-            (discovered by Kate Jones)
+            (design by Kate Jones)
 
 * Knobbed hexagons:
 
@@ -252,13 +252,13 @@ seven tetrahexes, for a total of 40 hexagons.
             `12,714 solutions
             <../solutions/polyhexes-1234-knobbed-hexagon-3.txt>`__
 
-* 2x6 elongated hexagon ring (discovered by Dan Klarskov): `659,517
+* 2x6 elongated hexagon ring (design by Dan Klarskov): `659,517
   solutions
   <../solutions/polyhexes-1234-elongated-hexagon-2x6-ring.txt>`__
 
   .. image:: images/polyhexes-1234-elongated-hexagon-2x6-ring.png
 
-* Diamond ring (discovered by Dan Klarskov): `83,837 solutions
+* Diamond ring (design by Dan Klarskov): `83,837 solutions
   <../solutions/polyhexes-1234-diamond-ring.txt>`__
 
   .. image:: images/polyhexes-1234-diamond-ring.png
@@ -294,7 +294,7 @@ seven tetrahexes, for a total of 40 hexagons.
 
             `solutions incomplete
             <../solutions/polyhexes-1234-staggered-rectangle-8x5.txt>`__
-            (discovered by Dan Klarskov)
+            (design by Dan Klarskov)
 
        - .. figure:: images/polyhexes-1234-staggered-rectangle-10x4.png
 

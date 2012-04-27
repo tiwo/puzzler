@@ -250,7 +250,7 @@ Misc
 
   .. image:: images/hexiamonds-x-1.png
 
-* Heart (designed by Dan Klarskov): `4,154 solutions
+* Heart (design by Dan Klarskov): `4,154 solutions
   <../solutions/hexiamonds-heart.txt>`__
 
   .. image:: images/hexiamonds-heart.png

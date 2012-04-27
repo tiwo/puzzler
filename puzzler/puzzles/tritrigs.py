@@ -308,7 +308,7 @@ class TritrigsHeart1(Tritrigs):
     """
     50 solutions
 
-    Designed by Leslie E. Shader
+    Design by Leslie E. Shader
     """
 
     width = 5
@@ -334,7 +334,7 @@ class TritrigsHeart2(TritrigsHeart1):
     """
     52 solutions
 
-    Designed by Leslie E. Shader
+    Design by Leslie E. Shader
     """
 
     hole = set(((2,2,1), (1,2,0), (3,1,2)))

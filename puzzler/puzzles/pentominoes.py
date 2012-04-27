@@ -598,7 +598,7 @@ class PentominoesPlusSquareTetrominoCross1(PentominoesPlusSquareTetromino):
     """
     5380 solutions
 
-    Designed by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 8
@@ -619,7 +619,7 @@ class PentominoesCross2(Pentominoes):
     """
     84 solutions
 
-    Designed by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 8
@@ -641,7 +641,7 @@ class PentominoesPlusSquareTetrominoCross2(PentominoesPlusSquareTetromino):
     """
     2071 solutions
 
-    Designed by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 9
@@ -663,7 +663,7 @@ class PentominoesCross3(Pentominoes):
     """
     28 solutions
 
-    Designed by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 9
@@ -687,7 +687,7 @@ class PentominoesPlusSquareTetrominoCross3(PentominoesPlusSquareTetromino):
     """
     177 solutions
 
-    Designed by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 10
@@ -790,7 +790,7 @@ class PentominoesPlusSquareTetrominoCross4(PentominoesPlusSquareTetromino):
     """
     2 solutions
 
-    Designed by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 12
@@ -813,7 +813,7 @@ class PentominoesFlower1(Pentominoes):
     """
     47 solutions
 
-    Designed by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 9
@@ -836,7 +836,7 @@ class PentominoesFlower2(Pentominoes):
     """
     414 solutions
 
-    Designed by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 7
@@ -859,7 +859,7 @@ class PentominoesFlower3(Pentominoes):
     """
     15 solutions
 
-    Designed by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 8
@@ -882,7 +882,7 @@ class PentominoesFlower4(Pentominoes):
     """
     57 solutions
 
-    Designed by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 9

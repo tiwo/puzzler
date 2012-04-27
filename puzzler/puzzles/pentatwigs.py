@@ -341,7 +341,7 @@ class Pentatwigs4x4_1(Pentatwigs):
     """
     1 solution
 
-    Discovered by Colin F. Brown.
+    Design by Colin F. Brown.
     """
 
     width = 5

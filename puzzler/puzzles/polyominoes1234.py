@@ -42,7 +42,7 @@ class Polyominoes1234_7x3Plus(Polyominoes1234):
     """
     17 solutions
 
-    Discovered by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     width = 11
@@ -64,7 +64,7 @@ class Polyominoes1234_7x4PlusOne(Polyominoes1234):
     """
     1,522 solutions
 
-    Discovered by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     width = 7

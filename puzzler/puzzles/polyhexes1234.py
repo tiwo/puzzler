@@ -41,7 +41,7 @@ class Polyhexes1234_6x7(Polyhexes1234):
     """
     3,832,702 solutions
 
-    Discovered by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 6
@@ -78,7 +78,7 @@ class Polyhexes1234ElongatedHexagon3x5(Polyhexes1234):
     """
     many solutions
 
-    Discovered by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 9
@@ -101,7 +101,7 @@ class Polyhexes1234IrregularHexagon1(Polyhexes1234):
     """
     37,293,445 solutions
 
-    Discovered by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     width = 8
@@ -141,7 +141,7 @@ class Polyhexes1234Trapezoid9x8(Polyhexes1234):
     """
     1,310,969 many solutions
 
-    Discovered by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     height = 8
@@ -250,7 +250,7 @@ class Polyhexes1234JaggedHexagon2(Polyhexes1234JaggedHexagon1):
     """
     70,634 solutions
 
-    Discovered by Kate Jones.
+    Design by Kate Jones.
     """
 
     holes = set(((3,6), (3,3), (6,3)))
@@ -261,7 +261,7 @@ class Polyhexes1234JaggedHexagon3(Polyhexes1234JaggedHexagon1):
     """
     247,392 solutions
 
-    Discovered by Kate Jones.
+    Design by Kate Jones.
     """
 
     holes = set(((2,4), (4,6), (6,2)))
@@ -451,7 +451,7 @@ class Polyhexes1234StaggeredRectangle8x5(Polyhexes1234):
     """
     many solutions
 
-    Discovered by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     width = 8
@@ -487,7 +487,7 @@ class Polyhexes1234StaggeredRectangle5x8(Polyhexes1234):
     """
     many solutions
 
-    Discovered by Dan Klarskov.
+    Design by Dan Klarskov.
     """
 
     width = 5

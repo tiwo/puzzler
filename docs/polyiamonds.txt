@@ -40,7 +40,7 @@ triangles.
 
   .. image:: images/polyiamonds-12345-elongated-hexagon-9x1.png
 
-* 5x2 elongated hexagon ring (discovered by Dan Klarskov): `10,254
+* 5x2 elongated hexagon ring (design by Dan Klarskov): `10,254
   solutions
   <../solutions/polyiamonds-12345-elongated-hexagon-5x2-ring.txt>`__
 
@@ -73,12 +73,12 @@ triangles.
 
   .. image:: images/polyiamonds-12345-trapezoid-1.png
 
-* Irregular hexagon (discovered by Dan Klarskov): `878,738 solutions
+* Irregular hexagon (design by Dan Klarskov): `878,738 solutions
   <../solutions/polyiamonds-12345-irregular-hexagon-1.txt>`__
 
   .. image:: images/polyiamonds-12345-irregular-hexagon-1.png
 
-* Peanut (2x3 elongated hexagon with side corners omitted; discovered
+* Peanut (2x3 elongated hexagon with side corners omitted; design
   by Dan Klarskov): `362,047 solutions
   <../solutions/polyiamonds-12345-peanut.txt>`__
 
@@ -93,7 +93,7 @@ triangles.
 
             `9,930 solutions
             <../solutions/polyiamonds-12345-snowflake-1.txt>`__
-            (discovered by Dan Klarskov)
+            (design by Dan Klarskov)
 
        - .. figure:: images/polyiamonds-12345-snowflake-2.png
 
@@ -105,7 +105,7 @@ triangles.
             `670 solutions
             <../solutions/polyiamonds-12345-snowflake-3.txt>`__
 
-* Dan's menagerie (animals discovered by Dan Klarskov)
+* Dan's menagerie (animals design by Dan Klarskov)
 
   .. list-table::
      :class: borderless
@@ -151,7 +151,7 @@ triangles.
 
             `4,299 solutions
             <../solutions/polyiamonds-12345-elonaged-hex-on-hex-1.txt>`__
-            (discovered by Dan Klarskov)
+            (design by Dan Klarskov)
 
        - .. figure:: images/polyiamonds-12345-elonaged-hex-on-hex-2.png
 

@@ -574,7 +574,7 @@ Potential Puzzles
 
 * H(8) - 6 segments 
   (e.g. set(((1,7,1), (1,14,2), (7,1,0), (7,14,0), (14,1,2), (14,7,1))) )
-* He(11,10) - He*(8,7) - 4 segs (discovered by Peter F. Esser, email 2012-02-21)
+* He(11,10) - He*(8,7) - 4 segs (design by Peter F. Esser, email 2012-02-21)
 
 
 Links

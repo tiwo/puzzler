@@ -936,7 +936,7 @@ class HexiamondsHeart(Hexiamonds):
     """
     4,154 solutions
 
-    Designed by Dan Klarskov
+    Design by Dan Klarskov
     """
 
     width = 7
