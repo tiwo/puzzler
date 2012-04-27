@@ -21,9 +21,9 @@
 
 .. sidebar:: Also see:
 
-   | `Puzzles & Solutions <puzzles.html>`_
-   | `How to Extend Polyform Puzzler <extend.html>`_
-   | `To do list <todo.html>`_
+   * `Puzzles & Solutions <puzzles.html>`_
+   * `How to Extend Polyform Puzzler <extend.html>`_
+   * `To do list <todo.html>`_
 
 .. sectnum::
 .. contents::

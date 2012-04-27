@@ -30,14 +30,15 @@ Puzzler.
 
 .. sidebar:: Also see:
 
-   | `Polyform Puzzler, New Polyforms, and Recent Results
+   * `Polyform Puzzler, New Polyforms, and Recent Results
      <g4g10-talk.html>`_ (my talk from G4G10)
-   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
-   | `Polyform Puzzler FAQ <FAQ.html>`_
-   |
-   | Off-site:
-   |     `My account of G4G10 (blog article)
-         <http://www.artima.com/weblogs/viewpost.jsp?thread=341893>`_
+   * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   * `Polyform Puzzler FAQ <FAQ.html>`_
+
+   Off-site:
+
+   * `My account of G4G10 (blog article)
+     <http://www.artima.com/weblogs/viewpost.jsp?thread=341893>`_
 
 .. contents::
 

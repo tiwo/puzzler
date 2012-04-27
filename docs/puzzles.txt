@@ -16,7 +16,7 @@
 
 .. sidebar:: Also see:
 
-   | `Polyform Puzzler FAQ <FAQ.html>`_
+   * `Polyform Puzzler FAQ <FAQ.html>`_
 
 Polyform Puzzler solves a variety of polyomino, polyiamond, polyhex,
 polycube, polystick, and polytrig puzzles.  Files containing solutions

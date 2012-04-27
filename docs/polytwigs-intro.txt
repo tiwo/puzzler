@@ -16,17 +16,17 @@
 
 .. sidebar:: Also see:
 
-   | `Polytwigs: Puzzles & Solutions <polytwigs.html>`_
-   | `Notes on Polytwigs <polytwig-notes.html>`_
-   | `Polysticks: Puzzles & Solutions <polysticks.html>`_
-   | `An Introduction to Polysticks <polysticks-intro.html>`_
-   | `Polytrigs (Triangular-Grid Polysticks): Puzzles & Solutions <polytrigs.html>`_
-   | `An Introduction to Polytrigs (Triangular-Grid Polysticks) <polytrigs-intro.html>`_
-   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
-   | `Polyform Puzzler FAQ <FAQ.html>`_
-   |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
-       `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
-       `interpreting solution files <FAQ.html#how-should-polytwig-solution-files-be-interpreted>`__)
+   * `Polytwigs: Puzzles & Solutions <polytwigs.html>`_
+   * `Notes on Polytwigs <polytwig-notes.html>`_
+   * `Polysticks: Puzzles & Solutions <polysticks.html>`_
+   * `An Introduction to Polysticks <polysticks-intro.html>`_
+   * `Polytrigs (Triangular-Grid Polysticks): Puzzles & Solutions <polytrigs.html>`_
+   * `An Introduction to Polytrigs (Triangular-Grid Polysticks) <polytrigs-intro.html>`_
+   * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   * `Polyform Puzzler FAQ <FAQ.html>`_
+     (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+     `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+     `interpreting solution files <FAQ.html#how-should-polytwig-solution-files-be-interpreted>`__)
 
 .. contents::
 

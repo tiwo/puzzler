@@ -16,13 +16,13 @@
 
 .. sidebar:: Also see:
 
-   | `Polytrig Puzzles & Solutions <polytrigs.html>`_
-   | `An Introduction to Polytrigs <polytrigs-intro.html>`_
-   | `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
-   | `Polyform Puzzler FAQ <FAQ.html>`_
-   |   (`polyform details <FAQ.html#what-polyforms-are-there>`__,
-       `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
-       `interpreting solution files <FAQ.html#how-should-polytrig-solution-files-be-interpreted>`__)
+   * `Polytrig Puzzles & Solutions <polytrigs.html>`_
+   * `An Introduction to Polytrigs <polytrigs-intro.html>`_
+   * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   * `Polyform Puzzler FAQ <FAQ.html>`_
+     (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+     `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+     `interpreting solution files <FAQ.html#how-should-polytrig-solution-files-be-interpreted>`__)
 
 .. contents::
 
