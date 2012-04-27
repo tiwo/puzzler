@@ -636,6 +636,22 @@ class OneSidedTritrigs(OneSidedLowercaseMixin, Tritrigs):
     pass
 
 
+class Polytrigs23(Polytrigs):
+
+    piece_data = copy.deepcopy(DitrigsData.piece_data)
+    piece_data.update(copy.deepcopy(TritrigsData.piece_data))
+    symmetric_pieces = (
+        DitrigsData.symmetric_pieces + TritrigsData.symmetric_pieces)
+    asymmetric_pieces = TritrigsData.asymmetric_pieces[:]
+    piece_colors = copy.deepcopy(DitrigsData.piece_colors)
+    piece_colors.update(TritrigsData.piece_colors)
+    
+
+class OneSidedPolytrigs23(OneSidedLowercaseMixin, Polytrigs23):
+
+    pass
+
+
 class Polytrigs123(Polytrigs12):
 
     piece_data = copy.deepcopy(Polytrigs12.piece_data)

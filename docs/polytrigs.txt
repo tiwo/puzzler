@@ -200,6 +200,23 @@ grid.
   .. image:: images/one-sided-tritrigs-trilobed-cuboid.png
 
 
+Polytrigs of Order 2 & 3
+========================
+
+These puzzles use the 3 ditrigs and 12 tritrigs, for a total of 42
+line segments on the triangular grid.
+
+* Hexagon: `1,118 solutions
+  <../solutions/polytrigs-23-hexagon.txt>`__
+
+  .. image:: images/polytrigs-23-hexagon.png
+
+* Triangle ring: `821 solutions
+  <../solutions/polytrigs-23-triangle-ring.txt>`__
+
+  .. image:: images/polytrigs-23-triangle-ring.png
+
+
 Polytrigs of Order 1 Through 3
 ==============================
 
