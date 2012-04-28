@@ -204,7 +204,11 @@ class Hexiamonds4x12StackedButterflies(Hexiamonds):
 
 class HexiamondsSnowflake(Hexiamonds):
 
-    """55 solutions"""
+    """
+    55 solutions
+
+    Same as `Kadon's Iamond Hex <http://gamepuzzles.com/esspoly.htm#IH>`__.
+    """
 
     height = 8
     width = 8
@@ -225,6 +229,102 @@ class HexiamondsSnowflake(Hexiamonds):
 
     def customize_piece_data(self):
         self.piece_data['J6'][-1]['rotations'] = None
+
+
+class HexiamondsIamondHexSeparatedColors(HexiamondsSnowflake):
+
+    """
+    Solves the separated colors challenge of
+    `Kadon's Iamond Hex <http://gamepuzzles.com/esspoly.htm#IH>`__.
+
+    I bought one at G4G10 in March 2012.  The pieces come in three different
+    colors.  An added challenge is to find solutions where no two pieces of
+    the same color make contact along their edges.
+    """
+
+    piece_colors = {
+        'H6': 'darkorange',
+        'I6': 'darkorange',
+        'S6': 'darkorange',
+        'X6': 'darkorange',
+        'C6': 'rgb(230,0,0)', # red
+        'F6': 'rgb(230,0,0)',
+        'G6': 'rgb(230,0,0)',
+        'V6': 'rgb(230,0,0)',
+        'E6': 'rgb(255,220,0)', # yellow
+        'J6': 'rgb(255,220,0)',
+        'O6': 'rgb(255,220,0)',
+        'P6': 'rgb(255,220,0)',
+        '0': 'gray',
+        '1': 'black'}
+
+    def record_solution(self, solution, *args, **kwargs):
+        shapes = {}
+        coordmap = {}
+        for row in solution:
+            name = row[-1]
+            coords = Triangular3DCoordSet(tuple(
+                int(c) for c in coordstr.split(',')) for coordstr in row[:-1])
+            shapes[name] = coords
+            for coord in coords:
+                coordmap[coord] = name
+        for name, coords in shapes.items():
+            color = self.piece_colors[name]
+            # find the neighbors of all coordinates in the shape:
+            neighbors = set()
+            for coord in coords:
+                neighbors.update(coord.neighbors())
+            # exclude the shape itself:
+            neighbors.difference_update(coords)
+            # restrict neighbors to coordinates inside the solution (tray):
+            neighbors.intersection_update(self.solution_coords)
+            for coord in neighbors:
+                if self.piece_colors[coordmap[coord]] == color:
+                    return False
+        return HexiamondsSnowflake.record_solution(
+            self, solution, *args, **kwargs)
+
+
+class HexiamondsIamondHexJoinedColors(HexiamondsIamondHexSeparatedColors):
+
+    """
+    Solves the joined colors challenge of
+    `Kadon's Iamond Hex <http://gamepuzzles.com/esspoly.htm#IH>`__.
+
+    I bought one at G4G10 in March 2012.  The pieces come in three different
+    colors.  An added challenge is to find solutions where all four pieces of
+    each color make contact along their edges.
+    """
+
+    def record_solution(self, solution, *args, **kwargs):
+        shapes = {}
+        coordmap = {}
+        for row in solution:
+            name = row[-1]
+            coords = Triangular3DCoordSet(tuple(
+                int(c) for c in coordstr.split(',')) for coordstr in row[:-1])
+            shapes[name] = coords
+            for coord in coords:
+                coordmap[coord] = name
+        for name, coords in shapes.items():
+            color = self.piece_colors[name]
+            # find the neighbors of all coordinates in the shape:
+            neighbors = set()
+            for coord in coords:
+                neighbors.update(coord.neighbors())
+            # exclude the shape itself:
+            neighbors.difference_update(coords)
+            # restrict neighbors to coordinates inside the solution (tray):
+            neighbors.intersection_update(self.solution_coords)
+            for coord in neighbors:
+                if self.piece_colors[coordmap[coord]] == color:
+                    break
+            else:
+                return False
+        # doesn't guarantee that *all 4* pieces are joined (could be two
+        # joined pairs), but good enough
+        return HexiamondsSnowflake.record_solution(
+            self, solution, *args, **kwargs)
 
 
 class HexiamondsRing(Hexiamonds):

@@ -244,6 +244,12 @@ Misc
 
   .. image:: images/pentacubes-grand-platform.png
 
+* Stepped pyramid: `solutions incomplete
+  <../solutions/pentacubes-stepped-pyramid-1.txt>`__ (`X3D model
+  <images/pentacubes-stepped-pyramid-1.x3d>`__)
+
+  .. image:: images/pentacubes-stepped-pyramid-1.png
+
 
 Pentacubes Plus
 ===============
@@ -348,6 +354,18 @@ Misc
   (`X3D model <images/pentacubes-diagonal-wall.x3d>`__)
 
   .. image:: images/pentacubes-diagonal-wall.png
+
+- Aztec pyramid (stacked Aztec diamonds): `solutions incomplete
+  <../solutions/pentacubes-aztec-pyramid.txt>`__
+  (`X3D model <images/pentacubes-aztec-pyramid.x3d>`__)
+
+  .. image:: images/pentacubes-aztec-pyramid.png
+
+- Stacked squares: `solutions incomplete
+  <../solutions/pentacubes-stacked-squares.txt>`__
+  (`X3D model <images/pentacubes-stacked-squares.x3d>`__)
+
+  .. image:: images/pentacubes-stacked-squares.png
 
 
 .. _Kadon's Super Deluxe Quintillions:

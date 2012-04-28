@@ -651,6 +651,34 @@ class PentacubesGrandPlatform(Pentacubes):
         return sorted(coords)
 
 
+class PentacubesSteppedPyramid1(Pentacubes):
+
+    """
+    many solutions
+
+    design from Kadon's Super Quintillions booklet
+    """
+
+    width = 9
+    height = 9
+    depth = 5
+
+    corner_offsets = ((0,0,0), (0,7,0), (7,0,0), (7,7,0))
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(5):
+            coords.update(set(
+                self.coordinates_cuboid(9 - 2 * i, 9 - 2 * i, 1,
+                                        offset=(i,i,i))))
+        for offset in self.corner_offsets:
+            coords.difference_update(set(
+                self.coordinates_cuboid(2, 2, 5, offset=offset)))
+        return sorted(coords)
+
+
 class PentacubesPlus2x5x15(PentacubesPlus):
 
     """many solutions"""
@@ -810,3 +838,35 @@ class PentacubesDiagonalWall(NonConvexPentacubes):
                         yield (x, y, z)
 
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesAztecPyramid(NonConvexPentacubes):
+
+    """many solutions"""
+
+    width = 10
+    height = 10
+    depth = 5
+
+    def coordinates(self):
+        return self.coordinates_aztec_pyramid(5)
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
+class PentacubesStackedSquares(NonConvexPentacubes):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+    depth = 7
+
+    def coordinates(self):
+        coords = set()
+        for i in range(7):
+            coords.update(set(
+                self.coordinates_cuboid(7 - i, 7 - i, 1, offset=(0,i,i))))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform

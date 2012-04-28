@@ -106,11 +106,26 @@ Hexagons & Variants
   .. image:: images/hexiamonds-4x12-stacked-hexagons.png
 
 * Snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
-  "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`__): `55
-  solutions
-  <../solutions/hexiamonds-snowflake.txt>`__
+  "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`_): `55
+  solutions <../solutions/hexiamonds-snowflake.txt>`__
 
   .. image:: images/hexiamonds-snowflake.png
+
+* `Kadon's "Iamond Hex"`_ challenges (pieces come in three different
+  colors):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexiamonds-iamond-hex-separated-colors.png
+
+            Separated colors (`1 solution
+            <../solutions/hexiamonds-iamond-hex-separated-colors.txt>`__)
+
+       - .. figure:: images/hexiamonds-iamond-hex-joined-colors.png
+
+            Joined colors (`1 solution
+            <../solutions/hexiamonds-iamond-hex-joined-colors.txt>`__)
 
 * Ring 2 (4-unit side-length hexagon with 2-unit hexagonal hole offset
   one unit from the center): `11 solutions
