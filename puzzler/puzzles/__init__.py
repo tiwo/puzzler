@@ -244,12 +244,12 @@ class Puzzle(object):
 
     def record_solution(self, solution, solver, stream=sys.stdout, dated=False):
         """
-        Output a formatted solution to `stream`.
+        Output a formatted solution to `stream`. Return True for valid solution.
         """
         formatted = self.format_solution(solution, normalized=True)
         if self.check_for_duplicates:
             if self.store_solutions(solution, formatted):
-                return
+                return False
         if dated:
             print >>stream, 'at %s,' % datetime.datetime.now(),
         print >>stream, solver.format_solution()
@@ -257,6 +257,7 @@ class Puzzle(object):
         print >>stream, self.format_solution(solution, normalized=False)
         print >>stream
         stream.flush()
+        return True
 
     def record_dated_solution(self, solution, solver, stream=sys.stdout):
         """A dated variant of `self.record_solution`."""
@@ -705,6 +706,16 @@ class Puzzle3D(Puzzle):
                 for x in range(width):
                     yield cls.coordinate_offset(x, y, z, offset)
 
+    @classmethod
+    def coordinates_aztec_pyramid(cls, side_length, offset=None):
+        coords = set()
+        for z in range(side_length):
+            layer =  Puzzle2D.coordinates_aztec_diamond(
+                (side_length - z), offset=(z, z))
+            for x, y in layer:
+                coords.add(cls.coordinate_offset(x, y, z, None))
+        return sorted(coords)
+               
     def make_aspects(self, units,
                      flips=(0, 1), axes=(0, 1, 2), rotations=(0, 1, 2, 3)):
         aspects = set()

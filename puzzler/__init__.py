@@ -212,8 +212,9 @@ def solve(puzzle_class, output_stream, settings):
                 solver.load_matrix(*matrices[i])
                 for solution in solver.solve():
                     state.save(solver)
-                    puzzle.record_solution(
-                        solution, solver, stream=output_stream)
+                    if not puzzle.record_solution(solution, solver,
+                                                  stream=output_stream):
+                        continue
                     if settings.svg:
                         puzzle.write_svg(settings.svg, solution)
                         settings.svg = False
