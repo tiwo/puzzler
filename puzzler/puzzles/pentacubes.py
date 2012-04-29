@@ -653,11 +653,7 @@ class PentacubesGrandPlatform(Pentacubes):
 
 class PentacubesSteppedPyramid1(Pentacubes):
 
-    """
-    many solutions
-
-    design from Kadon's Super Quintillions booklet
-    """
+    """many solutions"""
 
     width = 9
     height = 9
