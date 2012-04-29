@@ -12,7 +12,7 @@ Concrete pentacube puzzles.
 from puzzler.puzzles import Puzzle3D, Puzzle2D
 from puzzler.puzzles.polycubes import (
      SolidPentominoes, Pentacubes, PentacubesPlus, NonConvexPentacubes)
-
+from puzzler.coordsys import Cartesian3DCoordSet
 
 class Pentacubes5x7x7OpenBox(Pentacubes):
 
@@ -672,6 +672,33 @@ class PentacubesSteppedPyramid1(Pentacubes):
         for offset in self.corner_offsets:
             coords.difference_update(set(
                 self.coordinates_cuboid(2, 2, 5, offset=offset)))
+        return sorted(coords)
+
+
+class PentacubesSteppedPyramid2(Pentacubes):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    corner_offsets = ((2,2,0), (6,2,0), (6,6,0), (2,6,0))
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(5):
+            coords.update(set(
+                self.coordinates_cuboid(9 - 2 * i, 9 - 2 * i, 1,
+                                        offset=(i,i,i))))
+        hole = Cartesian3DCoordSet(
+            list(self.coordinates_cuboid(2, 2, 1))
+            + [self.coordinate_offset(1, 1, 1, None)])
+        for i, offset in enumerate(self.corner_offsets):
+            coords.difference_update(
+                hole.rotate0(i, 2).translate(offset))
         return sorted(coords)
 
 

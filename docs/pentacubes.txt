@@ -244,11 +244,22 @@ Misc
 
   .. image:: images/pentacubes-grand-platform.png
 
-* Stepped pyramid: `solutions incomplete
-  <../solutions/pentacubes-stepped-pyramid-1.txt>`__ (`X3D model
-  <images/pentacubes-stepped-pyramid-1.x3d>`__)
+* Stepped pyramids:
 
-  .. image:: images/pentacubes-stepped-pyramid-1.png
+.. list-table::
+   :class: borderless
+
+   * - .. figure:: images/pentacubes-stepped-pyramid-1.png
+
+          `solutions incomplete
+          <../solutions/pentacubes-stepped-pyramid-1.txt>`__
+          (`X3D model <images/pentacubes-stepped-pyramid-1.x3d>`__)
+
+     - .. figure:: images/pentacubes-stepped-pyramid-2.png
+
+          `solutions incomplete <../solutions/pentacubes-stepped-pyramid-2.txt>`__
+          (`X3D model <images/pentacubes-stepped-pyramid-2.x3d>`__; four hollows are
+          hidden in the base)
 
 
 Pentacubes Plus
