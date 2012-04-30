@@ -1038,6 +1038,17 @@ class PentominoesSkewed_x1(PentominoesSkewed20x3):
     width = 15
 
 
+class PentominoesAztecDiamond_x(Pentominoes):
+
+    """0 solutions"""
+
+    height = 10
+    width = 10
+
+    def coordinates(self):
+        return self.coordinates_aztec_diamond(5)
+
+
 class OneSidedPentominoes3x30(OneSidedPentominoes):
 
     """46 solutions"""

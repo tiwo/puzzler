@@ -246,20 +246,20 @@ Misc
 
 * Stepped pyramids:
 
-.. list-table::
-   :class: borderless
+  .. list-table::
+     :class: borderless
 
-   * - .. figure:: images/pentacubes-stepped-pyramid-1.png
+     * - .. figure:: images/pentacubes-stepped-pyramid-1.png
 
-          `solutions incomplete
-          <../solutions/pentacubes-stepped-pyramid-1.txt>`__
-          (`X3D model <images/pentacubes-stepped-pyramid-1.x3d>`__)
+            `solutions incomplete
+            <../solutions/pentacubes-stepped-pyramid-1.txt>`__
+            (`X3D model <images/pentacubes-stepped-pyramid-1.x3d>`__)
 
-     - .. figure:: images/pentacubes-stepped-pyramid-2.png
+       - .. figure:: images/pentacubes-stepped-pyramid-2.png
 
-          `solutions incomplete <../solutions/pentacubes-stepped-pyramid-2.txt>`__
-          (`X3D model <images/pentacubes-stepped-pyramid-2.x3d>`__; four hollows are
-          hidden in the base)
+            `solutions incomplete <../solutions/pentacubes-stepped-pyramid-2.txt>`__
+            (`X3D model <images/pentacubes-stepped-pyramid-2.x3d>`__; four hollows are
+            hidden in the base)
 
 
 Pentacubes Plus
@@ -310,6 +310,29 @@ Misc
   yet, and probably none exist due to extreme parity imbalances
 
   .. image:: images/pentacubes-plus-11x11x11-octahedral-planes.png
+
+* Diamond prism: `solutions incomplete
+  <../solutions/pentacubes-plus-diamond-prism.txt>`__
+  (`X3D model <images/pentacubes-plus-diamond-prism.x3d>`__)
+
+  .. image:: images/pentacubes-plus-diamond-prism.png
+
+* Diagonal walls:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentacubes-plus-diagonal-wall-1.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-plus-diagonal-wall-1.txt>`__
+            (`X3D model <images/pentacubes-plus-diagonal-wall-1.x3d>`__)
+
+       - .. figure:: images/pentacubes-plus-diagonal-wall-2.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-plus-diagonal-wall-2.txt>`__
+            (`X3D model <images/pentacubes-plus-diagonal-wall-2.x3d>`__)
 
 
 Non-Convex Pentacubes

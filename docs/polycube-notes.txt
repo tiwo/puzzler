@@ -252,6 +252,8 @@ Potential Puzzles
 
 32: Tetracubes
 
+60: Solid pentominoes
+
 140: Non-convex pentacubes
 
 * P_t(14, 4)
@@ -260,15 +262,15 @@ Potential Puzzles
 145: Pentacubes
 
 * Sp(9) - Sp(4)  (how?)
-* Sp(9) - 4Ss(2) hidden/internally?
 
 150: Pentacubes Plus (= Kadon's Super Deluxe Quintillions)
 
-* P_t(2, 15) - P_t(2, 9)
-* P_t(5, 8) - P_t(5, 3)
-* P_t(5, 10)
-* P_dt(6, 5)
-* P_d(6, 4)
+* Potential puzzles:
+
+  * P_t(5, 10)
+  * P_dt(6, 5)
+
+* No solutions:
 
 177: Tetracubes + Pentacubes
 

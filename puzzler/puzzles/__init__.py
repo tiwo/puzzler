@@ -417,6 +417,14 @@ class Puzzle2D(Puzzle):
                 yield cls.coordinate_offset(x, y, offset)
 
     @classmethod
+    def coordinates_triangle(cls, side_length, offset=None):
+        for coord in cls.coordinates_rectangle(side_length, side_length):
+            x, y = coord
+            xy = x + y
+            if xy < side_length:
+                yield cls.coordinate_offset(x, y, offset)
+
+    @classmethod
     def coordinates_diamond(cls, side_length, offset=None):
         bound = 2 * side_length - 1
         min_xy = side_length - 1

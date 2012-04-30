@@ -769,6 +769,61 @@ class PentacubesPlus11x11x11OctahedralPlanes(PentacubesPlus):
         return sorted(coords)
 
 
+class PentacubesPlusDiamondPrism(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+    depth = 6
+
+    def coordinates(self):
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in Puzzle2D.coordinates_diamond(4) for z in range(6))
+        return sorted(coords)
+
+
+class PentacubesPlusDiagonalWall1(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 15
+    height = 15
+    depth = 2
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(15))
+            - set(Puzzle2D.coordinates_triangle(9)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(2))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesPlusDiagonalWall2(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 8
+    height = 8
+    depth = 5
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(8))
+            - set(Puzzle2D.coordinates_triangle(3)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(5))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
 class NonConvexPentacubes2x5x14(NonConvexPentacubes):
 
     """many solutions"""

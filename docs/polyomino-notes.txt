@@ -265,6 +265,7 @@ Potential Puzzles
   * 10x6 skew (10 columns of 6 rows each, offset by one each, like a
     staircase; = PentominoesSkewed_x1)
   * D(7) - D(4) (= PentominoesDiamondV_x)
+  * A(5)
 
 61: pentominoes + monomino
 
