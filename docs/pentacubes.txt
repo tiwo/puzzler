@@ -347,6 +347,9 @@ Misc
 
 * Steps:
 
+  .. list-table::
+     :class: borderless
+
      * - .. figure:: images/pentacubes-plus-5x5x10-steps.png
 
             5x5x10: `solutions incomplete
