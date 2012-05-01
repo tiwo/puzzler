@@ -702,6 +702,20 @@ class PentacubesSteppedPyramid2(Pentacubes):
         return sorted(coords)
 
 
+class PentacubesSteppedPyramid3(PentacubesSteppedPyramid2):
+
+    """many solutions"""
+
+    corner_offsets = ((2,2,2), (6,2,2), (6,6,2), (2,6,2))
+
+
+class PentacubesSteppedPyramid4(PentacubesSteppedPyramid2):
+
+    """many solutions"""
+
+    corner_offsets = ((1,1,1), (7,1,1), (7,7,1), (1,7,1))
+
+
 class PentacubesPlus2x5x15(PentacubesPlus):
 
     """many solutions"""
@@ -822,6 +836,39 @@ class PentacubesPlusDiagonalWall2(PentacubesPlus):
         return sorted(coords)
 
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesPlus5x5x10Steps(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 10
+    height = 5
+    depth = 5
+
+    def coordinates(self):
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for y, z in Puzzle2D.coordinates_triangle(5) for x in range(10))
+        return sorted(coords)
+
+
+class PentacubesPlus9x5x6Steps(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 6
+    height = 9
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for y, z in Puzzle2D.coordinates_double_triangle(5)
+            for x in range(6))
+        return sorted(coords)
 
 
 class NonConvexPentacubes2x5x14(NonConvexPentacubes):
@@ -948,3 +995,33 @@ class PentacubesStackedSquares(NonConvexPentacubes):
         return sorted(coords)
 
     transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+
+class NonConvexPentacubes4x4x14Steps(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 14
+    height = 4
+    depth = 4
+
+    def coordinates(self):
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for y, z in Puzzle2D.coordinates_triangle(4) for x in range(14))
+        return sorted(coords)
+
+
+class NonConvexPentacubes7x7x5Steps(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 5
+    height = 7
+    depth = 7
+
+    def coordinates(self):
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for y, z in Puzzle2D.coordinates_triangle(7) for x in range(5))
+        return sorted(coords)

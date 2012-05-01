@@ -15,7 +15,7 @@ from puzzler.puzzles.polycubes import Polycubes12345
 
 class Polycubes12345_2x3x31(Polycubes12345):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 31
     height = 3
@@ -126,4 +126,21 @@ class Polycubes12345X5(Polycubes12345):
         coords.update(self.coordinates_cuboid(1, 7, 1, offset=(5,2,3)))
         coords.add(self.coordinate_offset(1, 4, 3, None))
         coords.add(self.coordinate_offset(9, 6, 3, None))
+        return sorted(coords)
+
+
+class Polycubes12345CubeCluster(Polycubes12345):
+
+    """ solutions"""
+
+    width = 9
+    height = 9
+    depth = 9
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(3, 3, 9, offset=(3,3,0)))
+            + list(self.coordinates_cuboid(3, 9, 3, offset=(3,0,3)))
+            + list(self.coordinates_cuboid(9, 3, 3, offset=(0,3,3))))
+        coords -= set(self.coordinates_cuboid(1, 3, 1, offset=(4,3,4)))
         return sorted(coords)

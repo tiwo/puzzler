@@ -212,6 +212,27 @@ Misc
 
   .. image:: images/solid-pentominoes-condominium-b.png
 
+* Cross blocks:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/solid-pentominoes-cross-block-1.png
+
+            `92 solutions
+            <../solutions/solid-pentominoes-cross-block-1.txt>`__
+
+       - .. figure:: images/solid-pentominoes-cross-block-2.png
+
+            `15 solutions
+            <../solutions/solid-pentominoes-cross-block-2.txt>`__
+
+     * - .. figure:: images/solid-pentominoes-cross-block-3.png
+
+            `10 solutions
+            <../solutions/solid-pentominoes-cross-block-3.txt>`__
+
+       -
 
 .. _Kadon's Quintillions: http://gamepuzzles.com/polycube.htm#Q
 

@@ -261,6 +261,17 @@ Misc
             (`X3D model <images/pentacubes-stepped-pyramid-2.x3d>`__; four hollows are
             hidden in the base)
 
+     * - .. figure:: images/pentacubes-stepped-pyramid-3.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-stepped-pyramid-3.txt>`__
+            (`X3D model <images/pentacubes-stepped-pyramid-3.x3d>`__)
+
+       - .. figure:: images/pentacubes-stepped-pyramid-4.png
+
+            `solutions incomplete <../solutions/pentacubes-stepped-pyramid-4.txt>`__
+            (`X3D model <images/pentacubes-stepped-pyramid-4.x3d>`__)
+
 
 Pentacubes Plus
 ===============
@@ -333,6 +344,20 @@ Misc
             `solutions incomplete
             <../solutions/pentacubes-plus-diagonal-wall-2.txt>`__
             (`X3D model <images/pentacubes-plus-diagonal-wall-2.x3d>`__)
+
+* Steps:
+
+     * - .. figure:: images/pentacubes-plus-5x5x10-steps.png
+
+            5x5x10: `solutions incomplete
+            <../solutions/pentacubes-plus-5x5x10-steps.txt>`__
+            (`X3D model <images/pentacubes-plus-5x5x10-steps.x3d>`__)
+
+       - .. figure:: images/pentacubes-plus-9x5x6-steps.png
+
+            9x5x6: `solutions incomplete
+            <../solutions/pentacubes-plus-9x5x6-steps.txt>`__
+            (`X3D model <images/pentacubes-plus-9x5x6-steps.x3d>`__)
 
 
 Non-Convex Pentacubes

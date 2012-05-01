@@ -232,10 +232,17 @@ and 29 pentacubes, for a total of 186 unit cubes.
             Built with `Kadon's Super Deluxe Quintillions`_ and `Poly-4
             Supplement`_.  Click for the full-size image.
 
+* Cube cluster (3 empty unit cubes in the middle; not
+  self-supporting): `solutions incomplete
+  <../solutions/polycubes-12345-cube-cluster.txt>`__ (`X3D model
+  <images/polycubes-12345-cube-cluster.x3d>`__)
+
+  .. image:: images/polycubes-12345-cube-cluster.png
+
+
 .. _Kadon's Super Deluxe Quintillions:
    http://gamepuzzles.com/polycube.htm#SQd
 
 .. _Poly-4 Supplement: http://www.gamepuzzles.com/poly4.htm
-
 
 .. |c| unicode:: U+00A9 .. copyright sign
