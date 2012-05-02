@@ -313,6 +313,13 @@ puzzles.*
 - 4 congruent groups (1 pentiamond & 3 hexiamonds each) -- combined in
   a symmetrical shape?
 
+  * H(4) - 4 units (e.g. 4 doubled hexiamonds less 1 unit each)
+  * T(10) - 8 units (e.g. 4(T(5) - 2))
+  * 4(H(2) - 1)
+  * P(7,7) - 6 units
+  * P(8,6) - 4 units (e.g. 4 doubled hexiamonds less 1 unit each;
+    4(P(4,3) - 1))
+
 110: polyiamonds of order 1 to 6
 
 * P(11,5)

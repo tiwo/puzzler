@@ -629,6 +629,18 @@ class OneSidedHexiamonds(OneSidedLowercaseMixin, Hexiamonds):
     pass
 
 
+class Polyiamonds56(Polyiamonds):
+
+    piece_data = copy.deepcopy(Pentiamonds.piece_data)
+    piece_data.update(copy.deepcopy(Hexiamonds.piece_data))
+    symmetric_pieces = (
+        Pentiamonds.symmetric_pieces + Hexiamonds.symmetric_pieces)
+    asymmetric_pieces = (
+        Pentiamonds.asymmetric_pieces + Hexiamonds.asymmetric_pieces)
+    piece_colors = copy.deepcopy(Pentiamonds.piece_colors)
+    piece_colors.update(copy.deepcopy(Hexiamonds.piece_colors))
+
+
 class Polyiamonds123456(Polyiamonds12345):
 
     piece_data = copy.deepcopy(Polyiamonds12345.piece_data)
