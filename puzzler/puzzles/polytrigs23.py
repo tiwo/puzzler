@@ -76,16 +76,122 @@ class Polytrigs23ThreeCongruent(Polytrigs23):
             sorted(polytrigs.TritrigsData.piece_data.keys()))
 
 
+class Polytrigs23ThreeCongruent1(Polytrigs23ThreeCongruent):
+
+    """
+    4 solutions::
+
+           ______
+          /\    /\
+         /  \  /  \
+        /____\/____\______
+        \    /\    /
+         \  /  \  /
+          \/____\/_____
+    """
+
+    width = 12
+    height = 3
+
+    extras = set(((2,0,0), (2,1,0)))
+
+    shape_pitch = 4
+
+    def coordinates_shape(self):
+        s = TriangularGrid3DCoordSet(
+            list(self.coordinates_hexagon(1))
+            + [self.coordinate_offset(x, y, z, None)
+               for x, y, z in self.extras])
+        return s
+
+
+class Polytrigs23ThreeCongruent1Combined1(Polytrigs23ThreeCongruent1):
+
+    """8 solutions"""
+
+    width = 6
+    height = 6
+
+    offsets = ((0,3,0), None, (5,0,0), None, (3,5,0))
+
+    def coordinates(self):
+        s = self.coordinates_shape()
+        coords = set()
+        self.shapes = []
+        for i, offset in enumerate(self.offsets):
+            if not offset:
+                continue
+            shape = s.rotate0(i).translate(offset)
+            coords.update(shape)
+            self.shapes.append(shape)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P3'][-1]['rotations'] = (0, 1)
+
+    def build_matrix(self):
+        pieces = sorted(
+            polytrigs.DitrigsData.piece_data.keys()
+            + polytrigs.TritrigsData.piece_data.keys())
+        for shape in self.shapes:
+            self.build_regular_matrix(pieces, shape)
+
+
+class Polytrigs23ThreeCongruent1Combined2(Polytrigs23ThreeCongruent1Combined1):
+
+    """8 solutions"""
+
+    width = 6
+    height = 6
+
+    offsets = ((0,3,0), None, (6,0,0), None, (3,6,0))
+
+#     def coordinates(self):
+#         s = self.coordinates_shape()
+#         coords = set()
+#         self.shapes = []
+#         for i, offset in enumerate(self.offsets):
+#             if not offset:
+#                 continue
+#             shape = s.rotate0(i).translate(offset)
+#             coords.update(shape)
+#             self.shapes.append(shape)
+#         return sorted(coords)
+
+#     def customize_piece_data(self):
+#         self.piece_data['P3'][-1]['rotations'] = (0, 1)
+
+#     def build_matrix(self):
+#         pieces = sorted(
+#             polytrigs.DitrigsData.piece_data.keys()
+#             + polytrigs.TritrigsData.piece_data.keys())
+#         for shape in self.shapes:
+#             self.build_regular_matrix(pieces, shape)
+
+
 class Polytrigs23ThreeCongruent_x1(Polytrigs23ThreeCongruent):
 
-    """0 solutions"""
+    """
+    0 solutions (impossible: I3)::
+
+             /\
+            /  \
+           /____\
+          /\    /\
+         /  \  /  \
+        /____\/____\
+        \    /\
+         \  /  \
+          \/____\
+           \
+            \
+             \
+    """
 
     width = 9
     height = 4
 
     holes = set(((2,0,1), (2,1,1)))
-
-    shape_pitch = 3
 
     def coordinates_shape(self):
         s = TriangularGrid3DCoordSet(
@@ -97,14 +203,25 @@ class Polytrigs23ThreeCongruent_x1(Polytrigs23ThreeCongruent):
 
 class Polytrigs23ThreeCongruent_x2(Polytrigs23ThreeCongruent):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+              ______
+             /\    /
+            /  \  /
+           /____\/_____
+          /\    /\
+         /  \  /  \
+        /____\/____\
+        \    /
+         \  /
+          \/
+    """
 
     width = 9
     height = 4
 
     holes = set(((0,0,0), (0,0,1), (2,1,1)))
-
-    shape_pitch = 3
 
     def coordinates_shape(self):
         s = TriangularGrid3DCoordSet(
@@ -116,14 +233,25 @@ class Polytrigs23ThreeCongruent_x2(Polytrigs23ThreeCongruent):
 
 class Polytrigs23ThreeCongruent_x3(Polytrigs23ThreeCongruent):
 
-    """0 solutions"""
+    """
+    0 solutions (impossible: I3)::
+
+              ______
+             /\
+            /  \
+           /____\
+          /\    /\
+         /  \  /  \
+        /____\/____\
+        \    /\
+         \  /  \
+          \/____\
+    """
 
     width = 9
     height = 4
 
     holes = set(((1,2,1), (2,0,1)))
-
-    shape_pitch = 3
 
     def coordinates_shape(self):
         s = TriangularGrid3DCoordSet(
@@ -135,7 +263,20 @@ class Polytrigs23ThreeCongruent_x3(Polytrigs23ThreeCongruent):
 
 class Polytrigs23ThreeCongruent_x4(Polytrigs23ThreeCongruent):
 
-    """0 solutions"""
+    """
+    0 solutions (impossible: I3)::
+
+              ______
+             /\    /\
+            /  \  /  \
+           /____\/____\
+          /\    /\
+         /  \  /  \
+        /____\/____\
+        \
+         \
+          \
+    """
 
     width = 9
     height = 4
@@ -150,7 +291,19 @@ class Polytrigs23ThreeCongruent_x4(Polytrigs23ThreeCongruent):
 
 class Polytrigs23ThreeCongruent_x5(Polytrigs23ThreeCongruent):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+                /\
+               /  \
+              /____\
+             /\    /
+            /  \  /
+           /____\/_____
+          /\    /\
+         /  \  /  \
+        /____\/____\
+    """
 
     width = 9
     height = 3
@@ -167,7 +320,19 @@ class Polytrigs23ThreeCongruent_x5(Polytrigs23ThreeCongruent):
 
 class Polytrigs23ThreeCongruent_x6(Polytrigs23ThreeCongruent):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+                /\    /
+               /  \  /
+              /____\/
+             /\    /
+            /  \  /
+           /____\/
+          /\    /\
+         /  \  /  \
+        /____\/____\
+    """
 
     width = 9
     height = 3
@@ -184,7 +349,19 @@ class Polytrigs23ThreeCongruent_x6(Polytrigs23ThreeCongruent):
 
 class Polytrigs23ThreeCongruent_x7(Polytrigs23ThreeCongruent):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+                /
+               /
+              /_____
+             /\    /
+            /  \  /
+           /____\/_____
+          /\    /\    /
+         /  \  /  \  /
+        /____\/____\/
+    """
 
     width = 9
     height = 3
@@ -199,7 +376,19 @@ class Polytrigs23ThreeCongruent_x7(Polytrigs23ThreeCongruent):
 
 class Polytrigs23ThreeCongruent_x8(Polytrigs23ThreeCongruent):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+              \    /
+               \  /
+           _____\/_____
+           \    /\    /
+            \  /  \  /
+        _____\/____\/_____
+             /\    /
+            /  \  /
+           /    \/
+    """
 
     width = 11
     height = 3
@@ -218,7 +407,19 @@ class Polytrigs23ThreeCongruent_x8(Polytrigs23ThreeCongruent):
 
 class Polytrigs23ThreeCongruent_x9(Polytrigs23ThreeCongruent):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+              \    /
+               \  /
+           _____\/_____
+           \    /\    /
+            \  /  \  /
+        _____\/____\/
+        \    /\    /
+         \  /  \  /
+          \/    \/
+    """
 
     width = 9
     height = 3
@@ -232,3 +433,123 @@ class Polytrigs23ThreeCongruent_x9(Polytrigs23ThreeCongruent):
             + [self.coordinate_offset(x, y, z, None)
                for x, y, z in self.extras])
         return s
+
+
+class Polytrigs23ThreeCongruent_x10(Polytrigs23ThreeCongruent1):
+
+    """
+    0 solutions::
+
+           ______
+          /\    /\
+         /  \  /  \
+        /____\/____\______
+        \    /\    /\
+         \  /  \  /  \
+          \/____\/    \
+    """
+
+    extras = set(((3,0,2), (2,1,0)))
+
+
+class Polytrigs23ThreeCongruent_x11(Polytrigs23ThreeCongruent1):
+
+    """
+    0 solutions (impossible: I3)::
+
+           ______
+          /\    /\
+         /  \  /  \
+        /____\/____\
+        \    /\    /\
+         \  /  \  /  \
+          \/____\/____\
+    """
+
+    extras = set(((2,0,0), (3,0,2)))
+
+
+class Polytrigs23ThreeCongruent_x12(Polytrigs23ThreeCongruent):
+
+    """
+    0 solutions::
+
+                 ______
+                /\    /\
+               /  \  /  \
+        ______/____\/____\______
+              \    /\    /
+               \  /  \  /
+                \/____\/
+    """
+
+    width = 15
+    height = 3
+
+    shape_pitch = 5
+
+    def coordinates_shape(self):
+        s = TriangularGrid3DCoordSet(
+            list(self.coordinates_hexagon(1, offset=(1,0,0)))
+            + list(self.coordinates_bordered(4, 0, offset=(0,1,0))))
+        return s
+
+
+class Polytrigs23ThreeCongruent_x13(Polytrigs23ThreeCongruent1):
+
+    """
+    0 solutions::
+
+         \
+          \
+           \______
+           /\    /\
+          /  \  /  \
+         /____\/____\______
+         \    /\    /
+          \  /  \  /
+           \/____\/
+    """
+
+    extras = set(((0,2,2), (2,1,0)))
+
+
+class Polytrigs23ThreeCongruent_x14(Polytrigs23ThreeCongruent1):
+
+    """
+    0 solutions::
+
+                    /
+                   /
+            ______/
+           /\    /\
+          /  \  /  \
+         /____\/____\______
+         \    /\    /
+          \  /  \  /
+           \/____\/
+    """
+
+    extras = set(((1,2,1), (2,1,0)))
+
+
+class Polytrigs23ThreeCongruent_x15(Polytrigs23ThreeCongruent1):
+
+    """
+    0 solutions::
+
+           ______               
+          /\    /\              
+         /  \  /  \             
+        /____\/____\____________
+        \    /\    /            
+         \  /  \  /             
+          \/____\/              
+    """
+
+    width = 14
+    height = 3
+
+    shape_pitch = 5
+
+    extras = set(((2,1,0), (3,1,0)))

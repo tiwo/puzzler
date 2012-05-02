@@ -381,7 +381,7 @@ class Polytrigs(Polysticks):
     def format_coords(self):
         s_matrix = self.empty_solution_matrix()
         for x, y, z in self.solution_coords:
-            s_matrix[z][y][x] = ''
+            s_matrix[z][y][x] = ['_', ' /', '\\'][z]
         return self.format_triangular_grid(s_matrix)
 
     def calculate_svg_dimensions(self):
