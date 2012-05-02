@@ -233,20 +233,25 @@ more symmetries the better.
 
   .. image:: images/polytrigs-23-three-congruent-1.png
 
-  The groups above combine as follows:
+  The groups above combine nicely:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polytrigs-23-three-congruent-1-combined-1
+     * - .. figure:: images/polytrigs-23-three-congruent-1-combined-1.png
 
             `8 solutions
             <../solutions/polytrigs-23-three-congruent-1-combined-1.txt>`__
 
-       - .. figure:: images/polytrigs-23-three-congruent-1-combined-2
+       - .. figure:: images/polytrigs-23-three-congruent-1-combined-2.png
 
             `8 solutions
             <../solutions/polytrigs-23-three-congruent-1-combined-2.txt>`__
+
+       - .. figure:: images/polytrigs-23-three-congruent-1-combined-3.png
+
+            `8 solutions
+            <../solutions/polytrigs-23-three-congruent-1-combined-3.txt>`__
 
 
 Polytrigs of Order 1 Through 3

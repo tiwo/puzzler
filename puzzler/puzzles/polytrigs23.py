@@ -146,27 +146,15 @@ class Polytrigs23ThreeCongruent1Combined2(Polytrigs23ThreeCongruent1Combined1):
 
     offsets = ((0,3,0), None, (6,0,0), None, (3,6,0))
 
-#     def coordinates(self):
-#         s = self.coordinates_shape()
-#         coords = set()
-#         self.shapes = []
-#         for i, offset in enumerate(self.offsets):
-#             if not offset:
-#                 continue
-#             shape = s.rotate0(i).translate(offset)
-#             coords.update(shape)
-#             self.shapes.append(shape)
-#         return sorted(coords)
 
-#     def customize_piece_data(self):
-#         self.piece_data['P3'][-1]['rotations'] = (0, 1)
+class Polytrigs23ThreeCongruent1Combined3(Polytrigs23ThreeCongruent1Combined1):
 
-#     def build_matrix(self):
-#         pieces = sorted(
-#             polytrigs.DitrigsData.piece_data.keys()
-#             + polytrigs.TritrigsData.piece_data.keys())
-#         for shape in self.shapes:
-#             self.build_regular_matrix(pieces, shape)
+    """8 solutions"""
+
+    width = 7
+    height = 7
+
+    offsets = ((0,3,0), None, (7,0,0), None, (3,7,0))
 
 
 class Polytrigs23ThreeCongruent_x1(Polytrigs23ThreeCongruent):
