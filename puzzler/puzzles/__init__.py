@@ -332,9 +332,10 @@ class Puzzle(object):
                 if not ((output_path == '-') or hasattr(output_path, 'write')):
                     x3d_file.close()
 
-    solution_header = re.compile(r'^solution (\d)+.*:$', re.IGNORECASE)
+    solution_header = re.compile(r'^solution (\d+)( .+)?:$', re.IGNORECASE)
 
-    def read_solution(self, input_path):
+    def read_solution(self, input_path, solution_number):
+        print solution_number
         if input_path == '-':
             input_file = sys.stdin
         elif hasattr(input_path, 'readline'):
@@ -345,8 +346,13 @@ class Puzzle(object):
             for line in input_file:
                 match = self.solution_header.match(line)
                 if match:
-                    #number = int(match.group(1))
-                    break
+                    if solution_number:
+                        number = int(match.group(1))
+                        print number
+                        if number == solution_number:
+                            break
+                    else:
+                        break
             else:
                 raise DataError('Input does not contain a solution record.')
             record = []

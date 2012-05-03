@@ -95,7 +95,8 @@ def process_command_line():
                  % (algorithm_choices[0], '", "'.join(algorithm_choices[1:])))))
     parser.add_option(
         '-n', '--stop-after', type='int', metavar='N',
-        help='Stop processing after generating N solution(s).')
+        help='Stop processing after generating N solution(s). '
+        'Or, combined with -r/--read-solution, read solution number N.')
     parser.add_option(
         '-r', '--read-solution', metavar='FILE',
         help='Read a solution record from FILE for further processing '
@@ -146,7 +147,8 @@ def search_state_default():
 def read_solution(puzzle_class, settings):
     """A solution record was supplied; just read & process it."""
     puzzle = puzzle_class.components()[0](init_puzzle=False)
-    s_matrix = puzzle.read_solution(settings.read_solution)
+    s_matrix = puzzle.read_solution(
+        settings.read_solution, solution_number=settings.stop_after)
     if settings.svg:
         puzzle.write_svg(settings.svg, s_matrix=copy.deepcopy(s_matrix))
     if settings.x3d:
