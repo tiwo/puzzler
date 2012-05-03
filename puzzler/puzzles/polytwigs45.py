@@ -27,7 +27,7 @@ class Polytwigs45Triangle1(Polytwigs45):
     def coordinates(self):
         coords = set(self.coordinates_triangle(6)) - self.holes
         return sorted(coords)
-            
+
     def customize_piece_data(self):
         self.piece_data['R5'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['R5'][-1]['flips'] = None
@@ -50,7 +50,7 @@ class Polytwigs45DiamondRing(Polytwigs45):
             - set(self.coordinates_unbordered(3, 3, offset=(1,1,0)))
             - self.holes)
         return sorted(coords)
-            
+
     def customize_piece_data(self):
         self.piece_data['R5'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['R5'][-1]['flips'] = None
@@ -68,7 +68,7 @@ class Polytwigs45ElongatedHexagon4x3Ring(Polytwigs45):
             set(self.coordinates_elongated_hexagon(4, 3))
             - set(self.coordinates_butterfly_unbordered(3, 2, offset=(1,1,0))))
         return sorted(coords)
-            
+
     def customize_piece_data(self):
         self.piece_data['R5'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['R5'][-1]['flips'] = None
@@ -86,7 +86,7 @@ class Polytwigs45Butterfly5x3Ring(Polytwigs45):
             set(self.coordinates_butterfly(5, 3))
             - set(self.coordinates_butterfly_unbordered(2, 2, offset=(2,1,0))))
         return sorted(coords)
-            
+
     def customize_piece_data(self):
         self.piece_data['R5'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['R5'][-1]['flips'] = None
@@ -106,7 +106,7 @@ class Polytwigs45InsetRectangle5x5Ring(Polytwigs45):
             set(self.coordinates_inset_rectangle(5, 5))
             - set(self.coordinates_hexagon_unbordered(2, offset=(1,2,0))))
         return sorted(coords)
-            
+
     def customize_piece_data(self):
         self.piece_data['R5'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['R5'][-1]['flips'] = None
@@ -114,7 +114,23 @@ class Polytwigs45InsetRectangle5x5Ring(Polytwigs45):
 
 class Polytwigs45FourCongruent1(Polytwigs45):
 
-    """19 solutions (but no overall symmetrical shape)"""
+    """
+    19 solutions (but no overall symmetrical shape)::
+
+              ____
+             /    \
+        ____/      \
+            \      /
+             \____/
+             /    \
+            /      \
+            \      /
+             \____/
+             /    \
+            /      \____
+            \      /    \
+             \____/      \
+    """
 
     width = 16
     height = 11
@@ -146,7 +162,24 @@ class Polytwigs45FourCongruent1(Polytwigs45):
 
 class Polytwigs45FourCongruent2(Polytwigs45FourCongruent1):
 
-    """38 solutions"""
+    """
+    38 solutions::
+
+               /
+          ____/
+         /    \
+        /      \
+        \      /
+         \____/
+         /    \
+        /      \
+        \      /
+         \____/
+         /    \
+        /      \____
+        \      /    \
+         \____/      \
+    """
 
     width = 15
     height = 11
@@ -169,7 +202,22 @@ class Polytwigs45FourCongruent2(Polytwigs45FourCongruent1):
 
 class Polytwigs45FourCongruent3(Polytwigs45FourCongruent1):
 
-    """2 solutions"""
+    """
+    2 solutions::
+
+         /
+        /
+        \
+         \____        ____
+         /    \      /
+        /      \____/
+        \      /    \
+         \____/      \
+         /    \      /
+        /      \____/
+        \      /
+         \____/
+    """
 
     width = 15
     height = 10
@@ -232,19 +280,25 @@ class Polytwigs45FourCongruent3Combined(Polytwigs45):
             self.build_regular_matrix(pieces, self.shapes[i])
 
 
-class Polytwigs45FourCongruent4(Polytwigs45FourCongruent3):
-
-    """ solutions"""
-
-    width = 15
-    height = 10
-
-    extras = ((0,2,1), (0,3,2), (1,2,2), (2,1,2))
-
-
 class Polytwigs45FourCongruent_x1(Polytwigs45FourCongruent1):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+          ____
+         /    \
+        /      \____
+        \      /
+         \____/
+         /    \
+        /      \
+        \      /
+         \____/
+         /    \      /
+        /      \____/
+        \      /
+         \____/
+    """
 
     width = 12
     height = 8
@@ -267,7 +321,27 @@ class Polytwigs45FourCongruent_x1(Polytwigs45FourCongruent1):
 
 class Polytwigs45FourCongruent_x2(Polytwigs45FourCongruent1):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+          ____
+         /
+        /
+        \
+         \____
+         /    \
+        /      \
+        \      /
+         \____/
+         /    \
+        /      \
+        \      /
+         \____/
+         /    \
+        /      \
+        \      /
+         \____/
+    """
 
     width = 8
     height = 8
@@ -290,7 +364,22 @@ class Polytwigs45FourCongruent_x2(Polytwigs45FourCongruent1):
 
 class Polytwigs45FourCongruent_x3(Polytwigs45FourCongruent1):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+              \      /
+               \____/
+               /    \
+              /      \
+              \      /
+               \____/
+        \      /    \
+         \____/      \
+         /    \      /
+        /      \____/
+        \      /
+         \____/
+    """
 
     width = 15
     height = 9
@@ -314,7 +403,22 @@ class Polytwigs45FourCongruent_x3(Polytwigs45FourCongruent1):
 
 class Polytwigs45FourCongruent_x4(Polytwigs45FourCongruent1):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+        \      /
+         \____/
+         /    \
+        /      \____
+        \      /    \
+         \____/      \____
+         /    \      /
+        /      \____/
+        \      /
+         \____/
+         /
+        /
+    """
 
     width = 15
     height = 9
@@ -337,9 +441,51 @@ class Polytwigs45FourCongruent_x4(Polytwigs45FourCongruent1):
 
 class Polytwigs45FourCongruent_x5(Polytwigs45FourCongruent_x4):
 
-    """0 solutions"""
+    """
+    0 solutions::
+
+         /
+        /
+        \
+         \____
+         /    \
+        /      \____
+        \      /    \
+         \____/      \____
+         /    \      /
+        /      \____/
+        \      /
+         \____/
+         /
+        /
+    """
 
     width = 15
     height = 10
 
     extras = ((0,0,2), (0,2,1), (0,3,2), (2,0,0))
+
+
+class Polytwigs45FourCongruent_x6(Polytwigs45FourCongruent3):
+
+    """
+    0 solutions::
+
+         /
+        /
+        \      /
+         \____/
+         /    \      /
+        /      \____/
+        \      /    \
+         \____/      \
+         /    \      /
+        /      \____/
+        \      /
+         \____/
+    """
+
+    width = 15
+    height = 10
+
+    extras = ((0,2,1), (0,3,2), (1,2,2), (2,1,2))

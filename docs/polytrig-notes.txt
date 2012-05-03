@@ -516,7 +516,15 @@ Potential Puzzles
 
 42: ditrigs & tritrigs
 
-- 3 congruent groups? 1 ditrig & 4 tritrigs each
+* Potential:
+
+  - more solutions to 3 congruent groups?
+
+* No solutions:
+
+  - many attempts to solve 3 congruent groups
+    (= Polytrigs23ThreeCongruent_x1, ...)
+  * Polytrigs23TriangleStack_x
 
 42: one-sided snake tritrigs
 

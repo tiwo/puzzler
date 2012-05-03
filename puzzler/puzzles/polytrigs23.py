@@ -141,9 +141,6 @@ class Polytrigs23ThreeCongruent1Combined2(Polytrigs23ThreeCongruent1Combined1):
 
     """8 solutions"""
 
-    width = 6
-    height = 6
-
     offsets = ((0,3,0), None, (6,0,0), None, (3,6,0))
 
 
@@ -155,6 +152,13 @@ class Polytrigs23ThreeCongruent1Combined3(Polytrigs23ThreeCongruent1Combined1):
     height = 7
 
     offsets = ((0,3,0), None, (7,0,0), None, (3,7,0))
+
+
+class Polytrigs23ThreeCongruent1Combined4(Polytrigs23ThreeCongruent1Combined3):
+
+    """8 solutions"""
+
+    offsets = ((0,2,0), None, (6,0,0), None, (2,6,0))
 
 
 class Polytrigs23ThreeCongruent_x1(Polytrigs23ThreeCongruent):
@@ -526,13 +530,13 @@ class Polytrigs23ThreeCongruent_x15(Polytrigs23ThreeCongruent1):
     """
     0 solutions::
 
-           ______               
-          /\    /\              
-         /  \  /  \             
+           ______
+          /\    /\
+         /  \  /  \
         /____\/____\____________
-        \    /\    /            
-         \  /  \  /             
-          \/____\/              
+        \    /\    /
+         \  /  \  /
+          \/____\/
     """
 
     width = 14
@@ -541,3 +545,47 @@ class Polytrigs23ThreeCongruent_x15(Polytrigs23ThreeCongruent1):
     shape_pitch = 5
 
     extras = set(((2,1,0), (3,1,0)))
+
+
+class Polytrigs23Trefoil1(Polytrigs23ThreeCongruent1Combined1):
+
+    """4,548 solutions"""
+
+    build_matrix = Polytrigs23.build_matrix
+
+
+class Polytrigs23Trefoil2(Polytrigs23ThreeCongruent1Combined2):
+
+    """70 solutions"""
+
+    build_matrix = Polytrigs23.build_matrix
+
+
+class Polytrigs23Trefoil3(Polytrigs23ThreeCongruent1Combined4):
+
+    """28 solutions"""
+
+    build_matrix = Polytrigs23.build_matrix
+
+
+class Polytrigs23Trefoil_x1(Polytrigs23ThreeCongruent1Combined1):
+
+    """0 solutions"""
+
+    extras = set(((2,0,0), (3,0,2)))
+
+    offsets = ((0,1,0), None, (6,0,0), None, (1,6,0))
+
+
+class Polytrigs23TriangleStack_x(Polytrigs23):
+
+    """0 solutions"""
+
+    width = 6
+    height = 5
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_triangle_unbordered(6))
+            - set(self.coordinates_inverted_triangle(1, offset=(0,4,0))))
+        return sorted(coords)

@@ -447,51 +447,48 @@ These puzzles use the 4 tetratwigs and 12 pentatwigs, for a total of
 
   .. image:: images/polytwigs-45-inset-rectangle-5x5-ring.png
 
+* _`Four congruent groups`:
 
-Four Congruent Groups
----------------------
+  Colin F. Brown posed this problem: divide the twelve pentatwigs into
+  four groups of three, add one of the tetratwigs to each group.  Now
+  find a 19-line region that each (equally divided) group will tile.
 
-Colin F. Brown posed this problem: divide the twelve pentatwigs into
-four groups of three, add one of the tetratwigs to each group.  Now
-find a 19-line region that each (equally divided) group will tile.
+  Mr. Brown provided one solution:
 
-Mr. Brown provided one solution:
+  .. figure:: images/polytwigs-45-four-congruent-1.png
 
-.. figure:: images/polytwigs-45-four-congruent-1.png
+     Example 1 of four congruent groups from the tetratwigs &
+     pentatwigs: `19 solutions
+     <../solutions/polytwigs-45-four-congruent-1.txt>`__.
 
-   Example 1 of four congruent groups from the tetratwigs &
-   pentatwigs: `19 solutions
-   <../solutions/polytwigs-45-four-congruent-1.txt>`__.
+  Others are possible:
 
-Others are possible:
+  .. figure:: images/polytwigs-45-four-congruent-2.png
 
-.. figure:: images/polytwigs-45-four-congruent-2.png
+     Example 2 of four congruent groups from the tetratwigs &
+     pentatwigs: `38 solutions
+     <../solutions/polytwigs-45-four-congruent-2.txt>`__.
 
-   Example 2 of four congruent groups from the tetratwigs &
-   pentatwigs: `38 solutions
-   <../solutions/polytwigs-45-four-congruent-2.txt>`__.
+  **Open Problem: Combined Symmetrical Shape**
 
+  Find a solution to the four congruent groups problem such that the
+  four groups can be combined into a symmetrical shape.  The more
+  symmetries the better.
 
-**Open Problem: Combined Symmetrical Shape**
+  The best case I have been able to come up with so far:
 
-Find a solution to the four congruent groups problem such that the
-four groups can be combined into a symmetrical shape.  The more
-symmetries the better.
+  .. figure:: images/polytwigs-45-four-congruent-3.png
 
-The best case I have been able to come up with so far:
+     Example 3 of four congruent groups from the tetratwigs &
+     pentatwigs: `2 solutions
+     <../solutions/polytwigs-45-four-congruent-3.txt>`__.
 
-.. figure:: images/polytwigs-45-four-congruent-3.png
+  .. figure:: images/polytwigs-45-four-congruent-3-combined.png
 
-   Example 3 of four congruent groups from the tetratwigs &
-   pentatwigs: `2 solutions
-   <../solutions/polytwigs-45-four-congruent-3.txt>`__.
-
-.. figure:: images/polytwigs-45-four-congruent-3-combined.png
-
-   Example 3, combined: one symmetry (180° rotational); `24 solutions
-   when restricted to combinations of the congruent shapes above
-   <../solutions/polytwigs-45-four-congruent-3-combined.txt>`__; many
-   solutions if unrestricted.
+     Example 3, combined: one symmetry (180° rotational); `24 solutions
+     when restricted to combinations of the congruent shapes above
+     <../solutions/polytwigs-45-four-congruent-3-combined.txt>`__; many
+     solutions if unrestricted.
 
 
 Polytwigs of Order 1 Through 5

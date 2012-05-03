@@ -216,42 +216,68 @@ line segments on the triangular grid.
 
   .. image:: images/polytrigs-23-triangle-ring.png
 
+* _`Three congruent groups`:
 
-Three Congruent Groups
-----------------------
+  First, divide the twelve tritrigs into three groups of four, and add
+  one of the ditrigs to each group.  Find a 14-line region that each
+  (equally divided) group will tile.
 
-First, divide the twelve tritrigs into three groups of four, and add
-one of the ditrigs to each group.  Find a 14-line region that each
-(equally divided) group will tile.
+  Finally, find a solution to the three congruent groups problem such
+  that the three groups can be combined into a symmetrical shape.  The
+  more symmetries the better.
 
-Finally, find a solution to the three congruent groups problem such
-that the three groups can be combined into a symmetrical shape.  The
-more symmetries the better.
+  * Example 1: `4 solutions
+    <../solutions/polytrigs-23-three-congruent-1.txt>`__.
 
-* Example 1: `4 solutions
-  <../solutions/polytrigs-23-three-congruent-1.txt>`__.
+    .. image:: images/polytrigs-23-three-congruent-1.png
 
-  .. image:: images/polytrigs-23-three-congruent-1.png
+    The groups above combine nicely in several ways (the numbers of
+    solutions given is when restricted to combinations of the
+    congruent groups above):
 
-  The groups above combine nicely:
+    .. list-table::
+       :class: borderless
+
+       * - .. figure:: images/polytrigs-23-three-congruent-1-combined-1.png
+
+              `8 solutions
+              <../solutions/polytrigs-23-three-congruent-1-combined-1.txt>`__
+
+         - .. figure:: images/polytrigs-23-three-congruent-1-combined-2.png
+
+              `8 solutions
+              <../solutions/polytrigs-23-three-congruent-1-combined-2.txt>`__
+
+       * - .. figure:: images/polytrigs-23-three-congruent-1-combined-3.png
+
+              `8 solutions
+              <../solutions/polytrigs-23-three-congruent-1-combined-3.txt>`__
+
+         - .. figure:: images/polytrigs-23-three-congruent-1-combined-4.png
+
+              `8 solutions
+              <../solutions/polytrigs-23-three-congruent-1-combined-4.txt>`__
+
+* Trefoils: these are the unrestricted versions of three of the
+  combined shapes of the `three congruent groups`_ puzzle, above.
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polytrigs-23-three-congruent-1-combined-1.png
+     * - .. figure:: images/polytrigs-23-trefoil-1.png
 
-            `8 solutions
-            <../solutions/polytrigs-23-three-congruent-1-combined-1.txt>`__
+            `4,548 solutions
+            <../solutions/polytrigs-23-trefoil-1.txt>`__
 
-       - .. figure:: images/polytrigs-23-three-congruent-1-combined-2.png
+       - .. figure:: images/polytrigs-23-trefoil-2.png
 
-            `8 solutions
-            <../solutions/polytrigs-23-three-congruent-1-combined-2.txt>`__
+            `70 solutions
+            <../solutions/polytrigs-23-trefoil-2.txt>`__
 
-       - .. figure:: images/polytrigs-23-three-congruent-1-combined-3.png
+       - .. figure:: images/polytrigs-23-trefoil-3.png
 
-            `8 solutions
-            <../solutions/polytrigs-23-three-congruent-1-combined-3.txt>`__
+            `28 solutions
+            <../solutions/polytrigs-23-trefoil-3.txt>`__
 
 
 Polytrigs of Order 1 Through 3

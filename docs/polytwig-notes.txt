@@ -526,6 +526,7 @@ Potential Puzzles
 * Hs(5,2) - 17 units
 * B(4,4) - 2 units
 * B(6,3) - 23 units
+* more solutions to four congruent groups?
 
 84: one-sided quasi-tritwigs
 
