@@ -999,7 +999,7 @@ class PentacubesStackedSquares(NonConvexPentacubes):
 
 class NonConvexPentacubes4x4x14Steps(PentacubesPlus):
 
-    """many solutions"""
+    """0? solutions"""
 
     width = 14
     height = 4
@@ -1014,7 +1014,7 @@ class NonConvexPentacubes4x4x14Steps(PentacubesPlus):
 
 class NonConvexPentacubes7x7x5Steps(PentacubesPlus):
 
-    """many solutions"""
+    """0? solutions"""
 
     width = 5
     height = 7

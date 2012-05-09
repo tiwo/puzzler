@@ -518,11 +518,11 @@ Potential Puzzles
 
 * Potential:
 
-  - more solutions to 3 congruent groups?
+  * more solutions to 3 congruent groups?
 
 * No solutions:
 
-  - many attempts to solve 3 congruent groups
+  * many attempts to solve 3 congruent groups
     (= Polytrigs23ThreeCongruent_x1, ...)
   * Polytrigs23TriangleStack_x
 

@@ -131,7 +131,7 @@ class Polycubes12345X5(Polycubes12345):
 
 class Polycubes12345CubeCluster(Polycubes12345):
 
-    """ solutions"""
+    """many solutions"""
 
     width = 9
     height = 9

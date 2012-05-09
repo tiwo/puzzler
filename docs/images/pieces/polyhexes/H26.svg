@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="170.000" height="170.000"
+     viewBox="0 0 170.000 170.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(85.000,42.500) rotate(90)">
+<polygon fill="black" stroke="white" stroke-width="1"
+         points="10.000,46.188 10.000,51.962 15.000,54.848 15.000,54.848 20.000,51.962 20.000,46.188 25.000,43.301 30.000,46.188 35.000,43.301 40.000,46.188 45.000,43.301 45.000,37.528 40.000,34.641 40.000,28.868 45.000,25.981 45.000,20.207 40.000,17.321 35.000,20.207 35.000,25.981 30.000,28.868 30.000,34.641 25.000,37.528 20.000,34.641 15.000,37.528 15.000,43.301">
+<desc>H26</desc>
+</polygon>
+</g>
+</svg>

@@ -12,7 +12,7 @@ puzzles.
 
 # Author: David Goodger <goodger@python.org>
 # Copyright: (C) 1998-2012 by David J. Goodger
-# License: 
+# License:
 #     This program is free software; you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License version 2
 #     as published by the Free Software Foundation.
@@ -305,12 +305,15 @@ class SessionState(object):
 
     def save(self, solver, final=False):
         if self.state_file and self.lock.acquire(final):
+            GIL_interval = sys.getcheckinterval()
+            sys.setcheckinterval(sys.maxint)
             self.num_solutions = solver.num_solutions
             self.num_searches = solver.num_searches
             self.state_file.seek(0)
             pickle.dump(self, self.state_file, 2)
             self.state_file.flush()
             self.state_file.truncate()
+            sys.setcheckinterval(GIL_interval)
             self.lock.release()
 
     def save_periodically(self, solver):

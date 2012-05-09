@@ -110,7 +110,10 @@ viewing software.
             :target: polyhexes.html#polyhexes-of-order-1-through-4
             :class: borderless
 
-  Also see `Notes on Polyhexes <polyhex-notes.html>`_.
+  Also see:
+
+  * `An Introduction to Polyhexes <polyhexes-intro.html>`_
+  * `Notes on Polyhexes <polyhex-notes.html>`_
 
 * `Polycubes <polycubes.html>`_ (incl. `solid pentominoes`_ & `pentacubes`_)
 

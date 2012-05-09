@@ -341,6 +341,7 @@ ones.  Polyform families are given descriptive names:
 
   * `Pentahex Puzzles & Solutions <pentahexes.html>`_
   * `Polyhex Puzzles & Solutions <polyhexes.html>`_
+  * `An Introduction to Polyhexes <polyhexes-intro.html>`_
   * `Notes on Polyhexes <polyhex-notes.html>`_
 
 * Polyforms based on unit line segments joined end-to-end on a square
@@ -496,6 +497,7 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   * `Pentahex Puzzles & Solutions`_
   * `Polyhex Puzzles & Solutions`_
+  * `An Introduction to Polyhexes`_
   * `Notes on Polyhexes`_
 
   .. _A000228: http://oeis.org/A000228
@@ -936,6 +938,7 @@ coordinates)::
 
 * `Pentahex Puzzles & Solutions`_
 * `Polyhex Puzzles & Solutions`_
+* `An Introduction to Polyhexes`_
 * `Notes on Polyhexes`_
 
 

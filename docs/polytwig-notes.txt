@@ -458,6 +458,10 @@ n=2    6   13   20   27   34   41   48   55   62   69   76   83   90   97  104
 Potential Puzzles
 =================
 
+*Puzzles not otherwise noted below have not been implemented or solved.*
+
+*Initial numbers are the counts of unit line segments in the puzzles.*
+
 16: tetratwigs (polytwigs order 4)
 
 * No solutions:
@@ -500,6 +504,26 @@ Potential Puzzles
 * Ri(6,3) - 3 units
 
 60: pentatwigs (polytwigs order 5)
+
+* Potential:
+
+  * Grid saturated with the 12 pentatwigs in a non-touching
+    configuration.  "Saturated" means that all vertices are occupied
+    with no vacancies, and since the pentatwigs are non-touching, each
+    vertex is occupied by exactly one polyform.
+
+    Colin Brown provided an example, "rosette clustered trefoil".
+    This configuration of pentatwigs exactly corresponds to the 12
+    hexiamonds.  The pentatwig line segments join the centers of the
+    hexiamonds' unit triangles, and the unoccupied hexagonal-grid line
+    segments correspond to the borders between hexiamonds.
+
+    The pentatwig nodes (end points of the line segments) can also be
+    transformed into hexagons, resulting in a subset of the hexahexes
+    (120° neighbors only) on a hexagonal tiling with regular sparse
+    holes (1/3 of all hexagons are holes).
+
+    See email from Colin F. Brown,  2012-04-29 & 2012-05-06.
 
 * No solutions:
 

@@ -242,6 +242,9 @@ n     1   2   3   4   5    6    7    8    9    10    11    12
 Ss    1   5   14  30  55   91   140  204  285  385   506   650
 ====  ==  ==  ==  ==  ===  ===  ===  ===  ===  ====  ====  ====
 
+Triangular Pyramids?
+Diamond Pyramids?
+
 
 Potential Puzzles
 =================
@@ -287,6 +290,12 @@ Potential Puzzles
 
 191: Polycubes of order 1 - 5 (Pentacubes Plus)
 
+210: solid hexominoes
+
+216: solid hexominoes + 1 duplicate == 6³ == Kadon "Sextillions"
+
+* S(6,6,6)
+
 996: Hexacubes
 
 * 10x10x10 - 4 cubes
@@ -305,6 +314,13 @@ Misc
   Maximum imbalance: 33
 
   For Pentacubes Plus or Non-Convex Pentacubes, minimum imbalance = 0.
+
+* Polycubes (order 1 - 4) checkerboard imbalance (abs(black - white))::
+
+      M  D  I3  V3  I4  L4  T4  S4  O4  A4  B4  P4
+      1  0  1   1   0   0   2   0   0   0   0   2
+
+  Maximum imbalance: 7
 
 
 Links

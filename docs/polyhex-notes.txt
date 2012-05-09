@@ -18,6 +18,7 @@
 
    * `Pentahex Puzzles & Solutions <pentahexes.html>`_
    * `Polyhex Puzzles & Solutions <polyhexes.html>`_
+   * `An Introduction to Polyhexes <polyhexes-intro.html>`_
    * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    * `Polyform Puzzler FAQ <FAQ.html>`_
      (`polyform details <FAQ.html#what-polyforms-are-there>`__,
@@ -657,12 +658,25 @@ Potential Puzzles
 492: hexahexes
 
 * T(31) - 4 units (3 corner tips & 1 central)
-* H(14) - H(5) + 6 units (central O06) (`Kadon's Hexnut II
+* H(14) - H(5) + 6 units (central O06: `Kadon's Hexnut II
   <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__)
+* Ri(24,21)
+* Tr(32,24)
+* 2Hs(15,5)
+* H(23) - H(19)
+* H(15) - H(7) - 12 units
+* H(16) - H(9) - 12 units
+* H(17) - H(11) + 6 units
+* Hg(10) - H(4) - 12 units
+* Hg(11) - H(8)
+
+642: polyhexes of order 1 to 6
 
 882: one-sided hexahexes
 
 * 7(H(7) - 1 central unit); see `Hexhexes (by Peter F. Esser)`_
+
+1099: one-sided polyhexes of order 1 to 6
 
 
 Links
