@@ -89,6 +89,13 @@ class Puzzle(object):
 </polygon>
 '''
 
+    svg_path = '''\
+<path fill="%(color)s" stroke="%(stroke)s" stroke-width="%(stroke_width)s"
+    d="%(path_data)s">
+<desc>%(name)s</desc>
+</path>
+'''
+
     svg_stroke = 'white'
     """Polygon outline color."""
 
@@ -570,20 +577,24 @@ class Puzzle2D(Puzzle):
             header, g_start, ''.join(shapes), self.svg_g_end, self.svg_footer)
 
     def format_svg_shapes(self, s_matrix):
-        polygons = []
+        shapes = []
         for y in range(1, self.height + 1):
             for x in range(1, self.width + 1):
                 if s_matrix[y][x] == self.empty_cell:
                     continue
-                polygons.append(self.build_polygon(s_matrix, x, y))
-        return polygons
+                shapes.append(self.build_svg_shape(s_matrix, x, y))
+        return shapes
 
     def calculate_svg_dimensions(self):
         height = (self.height + 2) * self.svg_unit_length
         width = (self.width + 2) * self.svg_unit_length
         return height, width
 
-    def build_polygon(self, s_matrix, x, y):
+    def build_svg_shape(self, s_matrix, x, y):
+        """
+        Return an SVG shape definition for the shape at (x,y), and erase the
+        shape from s_matrix.
+        """
         points = self.get_polygon_points(s_matrix, x, y)
         name = s_matrix[y][x]
         color = self.piece_colors[name]
@@ -613,6 +624,8 @@ class Puzzle2D(Puzzle):
     test) of 2-tuples: examination cell coordinate delta & new direction
     vector."""
 
+    # !!! This will not work for shapes with holes.
+    # See polyhexes.py for another approach.
     def get_polygon_points(self, s_matrix, x, y):
         """
         Return a list of coordinate tuples, the corner points of the polygon

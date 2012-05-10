@@ -11,6 +11,7 @@ Polyhex puzzle base classes.
 
 import copy
 import math
+import collections
 
 from puzzler import coordsys
 from puzzler.puzzles import Puzzle2D, OneSidedLowercaseMixin
@@ -232,14 +233,29 @@ class Polyhexes(Puzzle2D):
         width = (self.width + self.height / 2.0 + 2) * self.svg_unit_width
         return height, width
 
-    edge_trace = {0: ( 0, -1),
-                  1: (+1, -1),
-                  2: (+1,  0),
-                  3: ( 0, +1),
-                  4: (-1, +1),
-                  5: (-1,  0)}
-    """Mapping of counterclockwise edges to examination cell coordinate
-    delta."""
+    def build_svg_shape(self, s_matrix, x, y):
+        """
+        Return an SVG shape definition for the shape at (x,y), and erase the
+        shape from s_matrix.
+        """
+        name = s_matrix[y][x]
+        color = self.piece_colors[name]
+        cells = self.get_piece_cells(s_matrix, x, y)
+        path_points = self.get_path_points(cells)
+        # Erase cells of this piece:
+        for x, y in cells:
+            s_matrix[y][x] = self.empty_cell
+        path_strings = [
+            ('M %.3f,%.3f %s Z'
+             % (points[0][0], points[0][1],
+                ' '.join(('L %.3f,%.3f' % coord) for coord in points[1:])))
+            for points in path_points]
+        return self.svg_path % {
+            'color': color,
+            'stroke': self.svg_stroke,
+            'stroke_width': self.svg_stroke_width,
+            'path_data': ' '.join(path_strings),
+            'name': name}
 
     _sqrt3 = math.sqrt(3)
     corner_offsets = {0: (0.0, 1 / _sqrt3),
@@ -250,37 +266,74 @@ class Polyhexes(Puzzle2D):
                       5: (0.5, _sqrt3 / 2)}
     """Offset of corners from the lower left-hand corner of hexagon."""
 
-    def get_polygon_points(self, s_matrix, x, y):
+    def get_path_points(self, cells):
         """
-        Return a list of coordinate tuples, the corner points of the polygon
-        for the piece at (x,y).
+        Return a list of paths, each a list of closed path points.
+
+        The first path is the main shape outline, and subsequent subpaths (if
+        any) are holes.
         """
-        cell_content = s_matrix[y][x]
+        # This version allows for shapes with holes.  It works for polyhexes,
+        # but doesn't take into account multiple path choices that would occur
+        # for polyiamonds and polyominoes (e.g.  heptomino with a hole).
+        segments = set()
+        segment_starts = collections.defaultdict(set)
+        for cell in cells:
+            for segment in self.get_path_segments(cell):
+                start, end = segment
+                reverse = (end, start)
+                if reverse in segments:
+                    # two cells are adjacent; segments cancel each other out
+                    segments.remove(reverse)
+                    segment_starts[end].remove(start)
+                else:
+                    segments.add(segment)
+                    segment_starts[start].add(end)
+        # Join the remaining segments into (potentially multiple) paths.
+        paths = []
+        while segments:
+            # arbitrary starting point, should be outermost path:
+            segment = min(segments)
+            segments.remove(segment)
+            start, end = segment
+            path = [start, end]
+            # keep track of start point, to know when to stop:
+            first = start
+            while True:
+                start = end
+                # not true for polyominoes & polyiamonds with holes at edge:
+                assert len(segment_starts[start]) == 1
+                end = segment_starts[start].pop()
+                segment = (start, end)
+                segments.remove(segment)
+                if end == first:
+                    break
+                else:
+                    path.append(end)
+            paths.append(path)
+        return paths
+
+    def get_path_segments(self, cell):
+        """
+        Return a list of (start,end) pairs of coordinate tuples for edge
+        segments of the cell at (x,y), counterclockwise.
+        """
+        x, y = cell
         unit = self.svg_unit_length
         yunit = self.svg_unit_height
         height = (self.height + 2) * yunit
         base_x = (x + (y - 1) / 2.0) * unit
         base_y = height - y * yunit
-        # the first 2 edges (3 corners) are known:
-        points = [(base_x + self.corner_offsets[corner][0] * unit,
-                   base_y - self.corner_offsets[corner][1] * unit)
-                  for corner in range(3)]
-        corner = 2                   # right & up
-        start = (x, y, 0)
-        while (x, y, corner) != start:
-            delta = self.edge_trace[corner]
-            points.append((base_x + self.corner_offsets[corner][0] * unit,
-                           base_y - self.corner_offsets[corner][1] * unit))
-            if ( cell_content != '0'
-                 and s_matrix[y + delta[1]][x + delta[0]] == cell_content):
-                corner = (corner - 1) % 6
-                x += delta[0]
-                y += delta[1]
-                base_x = (x + (y - 1) / 2.0) * unit
-                base_y = height - y * yunit
-            else:
-                corner = (corner + 1) % 6
-        return points
+        corners = len(self.corner_offsets)
+        segments = []
+        start = None
+        for i in range(corners + 1):
+            end = (base_x + self.corner_offsets[i % corners][0] * unit,
+                   base_y - self.corner_offsets[i % corners][1] * unit)
+            if start:
+                segments.append((start, end))
+            start = end
+        return segments
 
 
 class Monohex(Polyhexes):
