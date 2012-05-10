@@ -69,7 +69,7 @@ class HexahexesHexagonRing1(Hexahexes):
         self.piece_data['P06'][-1]['flips'] = None
 
 
-class HexahexesHexagonRing_x1
+class HexahexesHexagonRing_x1(Hexahexes):
 
     """0 solutions: impossible, since O06 requires a hole"""
 
