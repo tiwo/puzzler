@@ -406,4 +406,16 @@ one-sided tetrahexes, and the 33 one-sided pentahexes, for a total of
   .. image:: images/one-sided-polyhexes-12345-trapezoid-22x14.png
 
 
+Hexahexes
+=========
+
+The 82 hexahexes total 492 hexagons.
+
+* Hexagon ring (design from `Kadon's Hexnut II
+  <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__): `solutions
+  incomplete <../solutions/hexahexes-hexagon-ring-1.txt>`__
+
+  .. image:: images/hexahexes-hexagon-ring-1.png
+
+
 .. |c| unicode:: U+00A9 .. copyright sign
