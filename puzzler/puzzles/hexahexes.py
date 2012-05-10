@@ -7,6 +7,9 @@
 
 """
 Concrete hexahex puzzles.
+
+All puzzles including the O06 piece must have at least one single-hexagon
+hole.
 """
 
 from puzzler.puzzles.polyhexes import Hexahexes, OneSidedHexahexes
@@ -44,7 +47,7 @@ class HexahexesTriangle2(HexahexesTriangle1):
 class HexahexesHexagonRing1(Hexahexes):
 
     """
-     solutions
+    many solutions
 
     Design from `Kadon's Hexnut II
     <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__
@@ -66,9 +69,9 @@ class HexahexesHexagonRing1(Hexahexes):
         self.piece_data['P06'][-1]['flips'] = None
 
 
-class HexahexesHexagonRing2(Hexahexes):
+class HexahexesHexagonRing_x1
 
-    """ solutions"""
+    """0 solutions: impossible, since O06 requires a hole"""
 
     width = 27
     height = 27
