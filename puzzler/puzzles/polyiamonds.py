@@ -319,21 +319,25 @@ class Polyiamonds(PuzzlePseudo3D):
         return '\n'.join(line[left_margin:] for line in output)
 
     def format_svg_shapes(self, s_matrix):
-        polygons = []
+        shapes = []
         for y in range(1, self.height + 1):
             for x in range(1, self.width + 1):
                 for z in range(self.depth):
                     if s_matrix[z][y][x] == self.empty_cell:
                         continue
-                    polygons.append(self.build_polygon(s_matrix, x, y, z))
-        return polygons
+                    shapes.append(self.build_svg_shape(s_matrix, x, y, z))
+        return shapes
 
     def calculate_svg_dimensions(self):
         height = (self.height + 2) * self.svg_unit_height
         width = (self.width + self.height / 2.0 + 2) * self.svg_unit_width
         return height, width
 
-    def build_polygon(self, s_matrix, x, y, z):
+    def build_svg_shape(self, s_matrix, x, y, z):
+        """
+        Return an SVG shape definition for the shape at (x,y), and erase the
+        shape from s_matrix.
+        """
         points = self.get_polygon_points(s_matrix, x, y, z)
         name = s_matrix[z][y][x]
         color = self.piece_colors[name]
