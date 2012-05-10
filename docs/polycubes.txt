@@ -205,26 +205,31 @@ and 29 pentacubes, for a total of 186 unit cubes.
 
             `1: solutions incomplete
             <../solutions/polycubes-12345-x-1.txt>`__
+            (`X3D model <images/polycubes-12345-x-1.x3d>`__)
 
        - .. figure:: images/polycubes-12345-x-2.png
 
             `2: solutions incomplete
             <../solutions/polycubes-12345-x-2.txt>`__
+            (`X3D model <images/polycubes-12345-x-2.x3d>`__)
 
        - .. figure:: images/polycubes-12345-x-3.png
 
             `3: solutions incomplete
             <../solutions/polycubes-12345-x-3.txt>`__
+            (`X3D model <images/polycubes-12345-x-3.x3d>`__)
 
      * - .. figure:: images/polycubes-12345-x-4.png
 
             `4: solutions incomplete
             <../solutions/polycubes-12345-x-4.txt>`__
+            (`X3D model <images/polycubes-12345-x-4.x3d>`__)
 
        - .. figure:: images/polycubes-12345-x-5.png
 
             `5: solutions incomplete
             <../solutions/polycubes-12345-x-5.txt>`__
+            (`X3D model <images/polycubes-12345-x-5.x3d>`__)
 
        - .. figure:: images/polycubes-12345-x-5-small.jpg
             :target: images/polycubes-12345-x-5.jpg
@@ -232,12 +237,35 @@ and 29 pentacubes, for a total of 186 unit cubes.
             Built with `Kadon's Super Deluxe Quintillions`_ and `Poly-4
             Supplement`_.  Click for the full-size image.
 
-* Cube cluster (3 empty unit cubes in the middle; not
-  self-supporting): `solutions incomplete
-  <../solutions/polycubes-12345-cube-cluster.txt>`__ (`X3D model
-  <images/polycubes-12345-cube-cluster.x3d>`__)
+* Cube clusters:
 
-  .. image:: images/polycubes-12345-cube-cluster.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-12345-cube-cluster.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-cube-cluster.txt>`__
+            (3 empty unit cubes in the middle; not self-supporting;
+            `X3D model <images/polycubes-12345-cube-cluster.x3d>`__)
+
+       - .. figure:: images/polycubes-12345-cube-cluster-2.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-cube-cluster-2.txt>`__
+            (`X3D model <images/polycubes-12345-cube-cluster-2.x3d>`__)
+
+       - .. figure:: images/polycubes-12345-cube-cluster-3.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-cube-cluster-3.txt>`__
+            (`X3D model <images/polycubes-12345-cube-cluster-3.x3d>`__)
+
+* Overlapping blocks: `solutions incomplete
+  <../solutions/polycubes-12345-overlapping-blocks-1.txt>`__ (`X3D
+  model <images/polycubes-12345-overlapping-blocks-1.x3d>`__)
+
+  .. image:: images/polycubes-12345-overlapping-blocks-1.png
 
 
 .. _Kadon's Super Deluxe Quintillions:

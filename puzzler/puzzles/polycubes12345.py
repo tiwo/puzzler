@@ -144,3 +144,59 @@ class Polycubes12345CubeCluster(Polycubes12345):
             + list(self.coordinates_cuboid(9, 3, 3, offset=(0,3,3))))
         coords -= set(self.coordinates_cuboid(1, 3, 1, offset=(4,3,4)))
         return sorted(coords)
+
+
+class Polycubes12345CubeCluster2(Polycubes12345):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 6
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(9, 3, 3, offset=(0,3,0)))
+            + list(self.coordinates_cuboid(3, 9, 3, offset=(3,0,0)))
+            + list(self.coordinates_cuboid(3, 3, 3, offset=(3,3,3)))
+            + list(self.coordinates_cuboid(5, 3, 1, offset=(2,3,3)))
+            + list(self.coordinates_cuboid(3, 5, 1, offset=(3,2,3)))
+            + list(self.coordinates_cuboid(5, 5, 3, offset=(2,2,0))))
+        return sorted(coords)
+
+
+class Polycubes12345CubeCluster3(Polycubes12345):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 3
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(6, 6, 3))
+            + list(self.coordinates_cuboid(6, 6, 3, offset=(3,3,0))))
+        coords -= set(self.coordinates_cuboid(1, 1, 3, offset=(4,4,0)))
+        return sorted(coords)
+
+
+class Polycubes12345OverlappingBlocks1(Polycubes12345):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+    depth = 6
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(4, 4, 6))
+            + list(self.coordinates_cuboid(4, 4, 6, offset=(3,3,0))))
+        return sorted(coords)
