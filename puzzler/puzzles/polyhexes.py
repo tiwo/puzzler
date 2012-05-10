@@ -328,8 +328,9 @@ class Polyhexes(Puzzle2D):
         segments = []
         start = None
         for i in range(corners + 1):
-            end = (base_x + self.corner_offsets[i % corners][0] * unit,
-                   base_y - self.corner_offsets[i % corners][1] * unit)
+            end = (
+                round(base_x + self.corner_offsets[i % corners][0] * unit, 6),
+                round(base_y - self.corner_offsets[i % corners][1] * unit, 6))
             if start:
                 segments.append((start, end))
             start = end
