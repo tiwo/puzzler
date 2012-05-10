@@ -904,7 +904,7 @@ class NonConvexPentacubes4x5x7(NonConvexPentacubes):
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
-class PentacubesZigZag1(NonConvexPentacubes):
+class NonConvexPentacubesZigZag1(NonConvexPentacubes):
 
     """many solutions"""
 
@@ -922,7 +922,7 @@ class PentacubesZigZag1(NonConvexPentacubes):
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
-class PentacubesZigZag2(NonConvexPentacubes):
+class NonConvexPentacubesZigZag2(NonConvexPentacubes):
 
     """many solutions"""
 
@@ -947,7 +947,7 @@ class PentacubesZigZag2(NonConvexPentacubes):
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
-class PentacubesDiagonalWall(NonConvexPentacubes):
+class NonConvexPentacubesDiagonalWall(NonConvexPentacubes):
 
     """many solutions"""
 
@@ -965,7 +965,7 @@ class PentacubesDiagonalWall(NonConvexPentacubes):
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
-class PentacubesAztecPyramid(NonConvexPentacubes):
+class NonConvexPentacubesAztecPyramid(NonConvexPentacubes):
 
     """many solutions"""
 
@@ -979,7 +979,7 @@ class PentacubesAztecPyramid(NonConvexPentacubes):
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
 
-class PentacubesStackedSquares(NonConvexPentacubes):
+class NonConvexPentacubesStackedSquares(NonConvexPentacubes):
 
     """many solutions"""
 
