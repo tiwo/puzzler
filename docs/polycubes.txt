@@ -261,11 +261,28 @@ and 29 pentacubes, for a total of 186 unit cubes.
             <../solutions/polycubes-12345-cube-cluster-3.txt>`__
             (`X3D model <images/polycubes-12345-cube-cluster-3.x3d>`__)
 
-* Overlapping blocks: `solutions incomplete
-  <../solutions/polycubes-12345-overlapping-blocks-1.txt>`__ (`X3D
-  model <images/polycubes-12345-overlapping-blocks-1.x3d>`__)
+* Overlapping blocks
 
-  .. image:: images/polycubes-12345-overlapping-blocks-1.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-12345-overlapping-blocks-1.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-overlapping-blocks-1.txt>`__
+            (`X3D model <images/polycubes-12345-overlapping-blocks-1.x3d>`__)
+
+       - .. figure:: images/polycubes-12345-overlapping-blocks-2.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-overlapping-blocks-2.txt>`__
+            (`X3D model <images/polycubes-12345-overlapping-blocks-2.x3d>`__)
+
+* Pyramid: `solutions incomplete
+  <../solutions/polycubes-12345-pyramid-1.txt>`__ (`X3D
+  model <images/polycubes-12345-pyramid-1.x3d>`__)
+
+  .. image:: images/polycubes-12345-pyramid-1.png
 
 
 .. _Kadon's Super Deluxe Quintillions:

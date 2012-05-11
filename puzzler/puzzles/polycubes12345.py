@@ -200,3 +200,48 @@ class Polycubes12345OverlappingBlocks1(Polycubes12345):
             list(self.coordinates_cuboid(4, 4, 6))
             + list(self.coordinates_cuboid(4, 4, 6, offset=(3,3,0))))
         return sorted(coords)
+
+
+class Polycubes12345OverlappingBlocks2(Polycubes12345):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 6
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(3, 3, 6))
+            + list(self.coordinates_cuboid(3, 3, 6, offset=(3,3,0))) 
+            + list(self.coordinates_cuboid(3, 3, 6, offset=(6,6,0)))
+            + list(self.coordinates_cuboid(2, 2, 6, offset=(2,2,0)))
+            + list(self.coordinates_cuboid(2, 2, 6, offset=(5,5,0))))
+        return sorted(coords)
+
+
+class Polycubes12345Pyramid1(Polycubes12345):
+
+    """many solutions"""
+
+    width = 11
+    height = 11
+    depth = 6
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(6):
+            coords.update(set(self.coordinates_cuboid(
+                11 - 2 * i, 11 - 2 * i, 1, offset=(i, i, i))))
+        for x in (0, 7):
+            for y in (0, 7):
+                coords.difference_update(set(self.coordinates_cuboid(
+                    4, 4, 6, offset=(x,y,0))))
+        for i in range(2):
+            coords.update(set(self.coordinates_cuboid(
+                7 - 2 * i, 7 - 2 * i, 1, offset=(2 + i, 2 + i, i))))
+        return sorted(coords)

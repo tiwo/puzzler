@@ -714,6 +714,28 @@ on the hexagonal grid.
 
   .. image:: images/hexatwigs-triangle.png
 
+* Triangle rings:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexatwigs-triangle-ring-1.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-triangle-ring-1.txt>`__
+            (design by Peter F. Esser)
+
+     * - .. figure:: images/hexatwigs-triangle-ring-2.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-triangle-ring-2.txt>`__
+            (design by Peter F. Esser)
+
+* 14x2 elongated hexagon: `solutions incomplete
+  <../solutions/hexatwigs-elongated-hexagon-14x2.txt>`__
+
+  .. image:: images/hexatwigs-elongated-hexagon-14x2.png
+
 * Hexagon rings:
 
   .. list-table::
@@ -780,6 +802,23 @@ on the hexagonal grid.
             `6: solutions incomplete
             <../solutions/hexatwigs-x-6.txt>`__
 
+* Trefoils:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexatwigs-trefoil-1.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-1.txt>`__
+            (design by Peter F. Esser)
+
+     * - .. figure:: images/hexatwigs-trefoil-2.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-2.txt>`__
+            (design by Peter F. Esser)
+
 
 One-Sided Hexatwigs
 ===================
@@ -798,6 +837,19 @@ segments on the hexagonal grid.
   incomplete <../solutions/one-sided-hexatwigs-elongated-hexagon-26x2.txt>`__
 
   .. image:: images/one-sided-hexatwigs-elongated-hexagon-26x2.png
+
+
+Polytwigs of Order 1 Through 6
+==============================
+
+These puzzles use the 1 monotwig, 1 ditwig, 3 tritwigs, 4 tetratwigs,
+12 pentatwigs, and 27 hexatwigs, for a total of 250 line segments on
+the hexagonal grid.
+
+* 22x2 elongated hexagon (design by Peter F. Esser): `solutions
+  incomplete <../solutions/polytwigs-123456-elongated-hexagon-22x2.txt>`__
+
+  .. image:: images/polytwigs-123456-elongated-hexagon-22x2.png
 
 
 Quasi-Tritwigs

@@ -11,6 +11,7 @@ Concrete hexatwig puzzles.
 """
 
 from puzzler.puzzles.polytwigs import Hexatwigs, OneSidedHexatwigs
+from puzzler.coordsys import HexagonalGrid3DCoordSet, HexagonalGrid3D
 
 
 class HexatwigsTriangle(Hexatwigs):
@@ -103,6 +104,21 @@ class HexatwigsElongatedHexagonRing(Hexatwigs):
         self.piece_data['R06'][-1]['rotations'] = (0, 1, 2)
 
 
+class HexatwigsElongatedHexagon14x2(Hexatwigs):
+
+    """many solutions"""
+
+    width = 16
+    height = 4
+
+    def coordinates(self):
+        return self.coordinates_elongated_hexagon(14, 2)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1, 2)
+
+
 class HexatwigsX1(Hexatwigs):
 
     """many solutions"""
@@ -167,6 +183,121 @@ class HexatwigsX6(HexatwigsX1):
     holes = set((
         (3,9,0), (3,9,2), (7,0,0), (8,0,2),
         (5,4,0), (5,5,0), (5,5,1), (5,5,2), (6,3,1), (6,4,2)))
+
+
+class HexatwigsSemiregularHexagon6x3(Hexatwigs):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+
+    def coordinates(self):
+        return self.coordinates_semiregular_hexagon(6, 3)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTriangleRing1(Hexatwigs):
+
+    """
+    many solutions
+
+    Design by Peter F. Esser.
+    """
+
+    width = 10
+    height = 10
+
+    holes = set(((2,2,2), (2,6,1), (6,2,0),))
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_semiregular_hexagon(8, 2))
+            - set(self.coordinates_triangle_unbordered(4, offset=(2,2,0)))
+            - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTriangleRing2(Hexatwigs):
+
+    """
+    many solutions
+
+    Design by Peter F. Esser.
+    """
+
+    width = 10
+    height = 10
+
+    holes = set(((1,5,0), (2,2,2), (2,7,1), (5,1,1), (5,5,2), (7,2,0),))
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_semiregular_hexagon(7, 3))
+            - set(self.coordinates_triangle_unbordered(5, offset=(2,2,0)))
+            - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil1(Hexatwigs):
+
+    """
+    many solutions
+
+    Design by Peter F. Esser.
+    """
+
+    width = 12
+    height = 12
+
+    svg_rotation = 0
+
+    def coordinates(self):
+        h = HexagonalGrid3DCoordSet(self.coordinates_elongated_hexagon(5, 2))
+        coords = set(
+            list(h.translate((5,4,0)))
+            + list(h.rotate0(1).translate((6,-1,0)))
+            + list(h.rotate0(2).translate((6,5,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil2(Hexatwigs):
+
+    """
+    many solutions
+
+    Design by Peter F. Esser.
+    """
+
+    width = 11
+    height = 11
+
+    def coordinates(self):
+        coords = set(self.coordinates_triangle(10))
+        for offset in ((-1,4,0), (4,-1,0), (4,4,0)):
+            coords -= set(
+                self.coordinates_triangle_unbordered(3, offset=offset))
+        coords -= set(self.coordinates_hexagon_unbordered(2, offset=(2,2,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
 
 
 class OneSidedHexatwigsHexagonRing(OneSidedHexatwigs):

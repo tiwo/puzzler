@@ -580,21 +580,12 @@ Potential Puzzles
 
 162: hexatwigs (polytwigs order 6)
 
-* Hs(6,3) (first solution from Peter F. Esser, email 2012-05-08 & -09:
-  n6_hexagon363636.txt)
 * P(9,5)
 * Rs(9,5)
 * Tr(11,5)
-* He(14,2) (first solution from Peter F. Esser, email 2012-05-08 & -09:
-  n6_strip14.txt)
 * C(9,3)
 * C(5,5)
 * H(4) + 30 segs (e.g. 6 x extra hexagons on corners)
-* Hs(7,3) - T*(5) - 6 segs (design by Peter F. Esser, email 2012-05-08 & -09)
-* Hs(8,2) - T*(4) - 3 segs (design by Peter F. Esser, email 2012-05-08 & -09)
-* 3He(6,2) - 2H(2) (trefoil, design by Peter F. Esser, email 2012-05-08 & -09)
-* 3P(4,4) overlapping - H*(2) (trefoil, design by Peter F. Esser,
-  email 2012-05-08 & -09)
 
 250: polytwigs order 1-6
 
@@ -602,7 +593,6 @@ Potential Puzzles
 * B(15,2) - 2 segs
 * Ri(11,7) - 1 seg
 * Ri(13,6) - 3 segs
-* He(22,2) (design by Peter F. Esser, email 2012-05-08 & -09: n1_6str26.txt)
 
 294: one-sided hexatwigs (polytwigs order 6)
 
