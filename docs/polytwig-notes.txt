@@ -585,7 +585,6 @@ Potential Puzzles
 * Tr(11,5)
 * C(9,3)
 * C(5,5)
-* H(4) + 30 segs (e.g. 6 x extra hexagons on corners)
 
 250: polytwigs order 1-6
 
@@ -608,7 +607,7 @@ Potential Puzzles
 * H(8) - 6 segments 
   (e.g. set(((1,7,1), (1,14,2), (7,1,0), (7,14,0), (14,1,2), (14,7,1))) )
 * He(11,10) - He*(8,7) - 4 segs (design by Peter F. Esser, email 2012-02-21)
-* 3(He(16,2) - 2) (design by Peter F. Esser, email 2012-05-05)
+* 3(He(16,2) - 2), separate strips (design by Peter F. Esser, email 2012-05-05)
 
 
 Links
