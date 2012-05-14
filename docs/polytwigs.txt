@@ -723,13 +723,13 @@ on the hexagonal grid.
 
             `solutions incomplete
             <../solutions/hexatwigs-triangle-ring-1.txt>`__
-            (design by Peter F. Esser)
+            (design by `Peter F. Esser`_)
 
      * - .. figure:: images/hexatwigs-triangle-ring-2.png
 
             `solutions incomplete
             <../solutions/hexatwigs-triangle-ring-2.txt>`__
-            (design by Peter F. Esser)
+            (design by `Peter F. Esser`_)
 
 * 14x2 elongated hexagon: `solutions incomplete
   <../solutions/hexatwigs-elongated-hexagon-14x2.txt>`__
@@ -745,7 +745,7 @@ on the hexagonal grid.
 
             `solutions incomplete
             <../solutions/hexatwigs-hexagon-ring-1.txt>`__
-            (design by Peter F. Esser)
+            (design by `Peter F. Esser`_)
 
      * - .. figure:: images/hexatwigs-hexagon-ring-2.png
 
@@ -762,10 +762,22 @@ on the hexagonal grid.
             `solutions incomplete
             <../solutions/hexatwigs-hexagon-ring-4.txt>`__
 
-* Elongated hexagon ring (design by Peter F. Esser): `solutions
+* Elongated hexagon ring (design by `Peter F. Esser`_): `solutions
   incomplete <../solutions/hexatwigs-elongated-hexagon-ring.txt>`__
 
   .. image:: images/hexatwigs-elongated-hexagon-ring.png
+
+* 6x3 semiregular hexagon: `solutions incomplete
+  <../solutions/hexatwigs-semiregular-hexagon-6x3.txt>`__
+
+  .. image:: images/hexatwigs-semiregular-hexagon-6x3.png
+
+  This solution was first found by `Peter F. Esser`_.
+
+* Knobbed hexagon: `solutions incomplete
+  <../solutions/hexatwigs-knobbed-hexagon.txt>`__
+
+  .. image:: images/hexatwigs-knobbed-hexagon.png
 
 * X (`designed for G4G10`_):
 
@@ -811,13 +823,13 @@ on the hexagonal grid.
 
             `solutions incomplete
             <../solutions/hexatwigs-trefoil-1.txt>`__
-            (design by Peter F. Esser)
+            (design by `Peter F. Esser`_)
 
      * - .. figure:: images/hexatwigs-trefoil-2.png
 
             `solutions incomplete
             <../solutions/hexatwigs-trefoil-2.txt>`__
-            (design by Peter F. Esser)
+            (design by `Peter F. Esser`_)
 
 
 One-Sided Hexatwigs
@@ -831,9 +843,9 @@ segments on the hexagonal grid.
 
   .. image:: images/one-sided-hexatwigs-hexagon-ring.png
 
-  This solution was first found by Peter F. Esser.
+  This solution was first found by `Peter F. Esser`_.
 
-* 26x2 elongated hexagon (design by Peter F. Esser): `solutions
+* 26x2 elongated hexagon (design by `Peter F. Esser`_): `solutions
   incomplete <../solutions/one-sided-hexatwigs-elongated-hexagon-26x2.txt>`__
 
   .. image:: images/one-sided-hexatwigs-elongated-hexagon-26x2.png
@@ -846,7 +858,7 @@ These puzzles use the 1 monotwig, 1 ditwig, 3 tritwigs, 4 tetratwigs,
 12 pentatwigs, and 27 hexatwigs, for a total of 250 line segments on
 the hexagonal grid.
 
-* 22x2 elongated hexagon (design by Peter F. Esser): `solutions
+* 22x2 elongated hexagon (design by `Peter F. Esser`_): `solutions
   incomplete <../solutions/polytwigs-123456-elongated-hexagon-22x2.txt>`__
 
   .. image:: images/polytwigs-123456-elongated-hexagon-22x2.png
@@ -1046,5 +1058,7 @@ See `Quasi-Polyforms`_ in `An Introduction to Polytwigs`_.
 
   .. image:: images/quasi-polytwigs-123-6x3-trapezoid-ring.png
 
+
+.. _Peter F. Esser: http://polyforms.eu/
 
 .. |c| unicode:: U+00A9 .. copyright sign

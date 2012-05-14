@@ -49,10 +49,11 @@ Soma Cubes
 ==========
 
 `Soma Cubes`__ include all non-convex polycubes of order 3 and 4.
-They were invented by Piet Hein in 1933.  Puzzles of various shapes
-have been implemented:
+They were invented by Piet Hein in 1933.  Many of the designs
+below are from the `Thinkfun Block By Block`__ challenge cards.
 
 __ http://en.wikipedia.org/wiki/Soma_cube
+__ http://www.thinkfun.com/blockbyblock
 
 .. list-table::
    :class: borderless
@@ -188,7 +189,9 @@ Polycubes of Order 1 Through 5
 ==============================
 
 These puzzles use the 1 monocube, 1 dicube, 2 tricubes, 8 tetracubes,
-and 29 pentacubes, for a total of 186 unit cubes.
+and 29 pentacubes, for a total of 186 unit cubes.  High-quality
+hardwood sets of these cubes are available from Kadon Enterprises:
+`Super Deluxe Quintillions`_ and `Poly-4 Supplement`_.
 
 * 2x3x31 solid: `solutions incomplete
   <../solutions/polycubes-12345-2x3x31.txt>`__ (`X3D model
@@ -234,8 +237,8 @@ and 29 pentacubes, for a total of 186 unit cubes.
        - .. figure:: images/polycubes-12345-x-5-small.jpg
             :target: images/polycubes-12345-x-5.jpg
 
-            Built with `Kadon's Super Deluxe Quintillions`_ and `Poly-4
-            Supplement`_.  Click for the full-size image.
+            Built with Kadon's `Super Deluxe Quintillions`_ and
+            `Poly-4 Supplement`_.  Click for the full-size image.
 
 * Cube clusters:
 
@@ -285,7 +288,7 @@ and 29 pentacubes, for a total of 186 unit cubes.
   .. image:: images/polycubes-12345-pyramid-1.png
 
 
-.. _Kadon's Super Deluxe Quintillions:
+.. _Super Deluxe Quintillions:
    http://gamepuzzles.com/polycube.htm#SQd
 
 .. _Poly-4 Supplement: http://www.gamepuzzles.com/poly4.htm

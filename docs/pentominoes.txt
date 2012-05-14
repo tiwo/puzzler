@@ -119,6 +119,11 @@ Misc
 
   .. image:: images/pentominoes-triangle.png
 
+* 15x8 triangle: `8 solutions
+  <../solutions/pentominoes-triangle-2.txt>`__
+
+  .. image:: images/pentominoes-triangle-2.png
+
 * Truncated triangle: `3626 solutions
   <../solutions/pentominoes-truncated-triangle.txt>`__
 
@@ -175,6 +180,14 @@ Misc
        - .. figure:: images/pentominoes-cross-4.png
 
          `21 solutions <../solutions/pentominoes-cross-4.txt>`__
+
+     * - .. figure:: images/pentominoes-cross-5.png
+
+         `4 solutions <../solutions/pentominoes-cross-3.txt>`__
+
+       - .. figure:: images/pentominoes-cross-6.png
+
+         `164 solutions <../solutions/pentominoes-cross-6.txt>`__
 
 * Flowers:
 

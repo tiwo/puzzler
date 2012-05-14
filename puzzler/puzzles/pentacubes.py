@@ -965,6 +965,30 @@ class NonConvexPentacubesDiagonalWall(NonConvexPentacubes):
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
+class NonConvexPentacubesDiagonalWall2(NonConvexPentacubes):
+
+    """
+    many solutions
+
+    P_t(4,9) - P_t(4,4)
+    """
+
+    width = 9
+    height = 9
+    depth = 4
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(9))
+            - set(Puzzle2D.coordinates_triangle(4)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(self.depth))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
 class NonConvexPentacubesAztecPyramid(NonConvexPentacubes):
 
     """many solutions"""

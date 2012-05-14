@@ -263,6 +263,10 @@ Potential Puzzles
 
 * P_t(14, 4)
 * P_t(5, 7)
+* P_t(4,9) - P_t(4,4)
+* P_t(7,6) - P_t(7,1)
+* P_t(4,8) - P_t(4,1)
+* P_t(13,2) - P_t(2,6)
 
 145: Pentacubes
 
@@ -271,6 +275,14 @@ Potential Puzzles
 150: Pentacubes Plus (= Kadon's Super Deluxe Quintillions)
 
 * Potential puzzles:
+
+  * P_t(3,12) - P_t(3,7)
+  * P_t(5,9) - P_t(5,5)
+  * P_t(5,11) - P_t(5,8)
+  * P_t(6,6) - P_t(6,2)
+  * P_t(2,12) - P_t(2,2)
+  * P_t(2,14) - 2P_t(2,5)
+  * P_t(10,6) - P_t(10,2)
 
 * No solutions:
 

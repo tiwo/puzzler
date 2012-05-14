@@ -359,6 +359,28 @@ class PentominoesTriangle(Pentominoes):
                             self.build_matrix_row(key, translated)
 
 
+class PentominoesTriangle2(Pentominoes):
+
+    """8 solutions"""
+
+    height = 8
+    width = 15
+
+    hole = set(((7,1), (7,2), (7,3), (7,4)))
+
+    def coordinates(self):
+        for coord in self.coordinates_rectangle(self.width, self.height):
+            x, y = coord
+            if (y <= x) and (y < (self.width - x)):
+                if (x,y) in self.hole:
+                    continue
+                else:
+                    yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+
+
 class PentominoesDiamond(Pentominoes):
 
     """
@@ -717,6 +739,37 @@ class PentominoesCross4(Pentominoes):
 
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
+
+
+class PentominoesCross5(Pentominoes):
+
+    """4 solutions"""
+
+    height = 7
+    width = 10
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_rectangle(10, 5, offset=(0,1)))
+            + list(self.coordinates_rectangle(8, 7, offset=(1,0))))
+        coords -= set(self.coordinates_rectangle(6, 1, offset=(2,3)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1,)
+
+
+class PentominoesCross6(PentominoesCross5):
+
+    """164 solutions"""
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_rectangle(10, 5, offset=(0,1)))
+            + list(self.coordinates_rectangle(8, 7, offset=(1,0))))
+        coords -= set(self.coordinates_rectangle(2, 3, offset=(4,2)))
+        return sorted(coords)
 
 
 class PentominoesCross_X1(Pentominoes):

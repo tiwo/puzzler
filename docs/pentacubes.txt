@@ -29,6 +29,17 @@
 .. contents::
 
 
+The pentacubes are named as per the pentominoes (planar), with the
+non-planar pentacubes following `Kadon's "Superquints" naming`__.
+High-quality hardwood sets of pentacubes are available from Kadon
+Enterprises as `Super Deluxe Quintillions`_ (equivalent to the
+`Pentacubes Plus`_ pieces below).  Add the `Poly-4 Supplement`_ to get
+all polycubes of order 1 through 4 as well (see `Polycubes: Puzzles &
+Solutions`_).
+
+__ http://www.gamepuzzles.com/sqnames.htm
+
+
 Pentacubes
 ==========
 
@@ -86,7 +97,7 @@ Open Boxes
           18x3x3 Open Box: `solutions incomplete
           <../solutions/pentacubes-18x3x3-open-box.txt>`__
           (`X3D model <images/pentacubes-18x3x3-open-box.x3d>`__;
-          design from `Kadon's Super Quintillions`_ booklet)
+          design from Kadon's `Super Quintillions`_ booklet)
 
      -
 
@@ -161,7 +172,7 @@ Misc
        - .. figure:: images/pentacubes-corner-crystal-small.jpg
             :target: images/pentacubes-corner-crystal.jpg
 
-            Built with `Kadon's Super Deluxe Quintillions`_.
+            Built with Kadon's `Super Deluxe Quintillions`_.
             Click for the full-size image. 
 
 * Nine slices: `solutions incomplete
@@ -237,7 +248,7 @@ Misc
 
   .. image:: images/pentacubes-diamond-wall.png
 
-* Grand Platform (design from `Kadon's Super Quintillions`_ booklet):
+* Grand Platform (design from Kadon's `Super Quintillions`_ booklet):
   `solutions incomplete
   <../solutions/pentacubes-grand-platform.txt>`__ (`X3D model
   <images/pentacubes-grand-platform.x3d>`__)
@@ -278,12 +289,7 @@ Pentacubes Plus
 
 Sold under the name "`Super Deluxe Quintillions`_" by Kadon, these 30
 pieces are the 29 pentacubes plus a second L3 piece (a.k.a. J3),
-allowing the construction of box shapes.  The Super Deluxe
-Quintillions pieces are named as per the pentominoes, with the
-non-planar "Superquints" named here:
-http://www.gamepuzzles.com/sqnames.htm.
-
-.. _Super Deluxe Quintillions: http://www.gamepuzzles.com/polycube.htm#SQd
+allowing the construction of box shapes.
 
 
 Solids
@@ -367,11 +373,11 @@ Non-Convex Pentacubes
 ===================== 
 
 There are 28 non-convex pentacubes: all of the pieces that have at
-least one inside corner.  These are the 29 regular pentacubes less the
-"I" (straight) pentacube, the only convex piece.  The advantage of
-this set is that, like the `Pentacubes Plus`_ set, box shapes can be
-formed.  Also, lacking the 5-cube-long "I" pentacube, more convoluted
-shapes can be formed.
+least one inside corner.  These are just the 29 regular pentacubes
+less the "I" (straight) pentacube, the only convex piece.  The
+advantage of this set is that, like the `Pentacubes Plus`_ set, box
+shapes can be formed.  Also, lacking the 5-cube-long "I" pentacube,
+more convoluted shapes can be formed.
 
 Solids
 ------
@@ -430,9 +436,11 @@ Misc
   .. image:: images/non-convex-pentacubes-stacked-squares.png
 
 
-.. _Kadon's Super Deluxe Quintillions:
+.. _Super Deluxe Quintillions:
    http://gamepuzzles.com/polycube.htm#SQd
 
-.. _Kadon's Super Quintillions: http://gamepuzzles.com/polycube.htm#SQ
+.. _Super Quintillions: http://gamepuzzles.com/polycube.htm#SQ
+
+.. _Poly-4 Supplement: http://www.gamepuzzles.com/poly4.htm
 
 .. |c| unicode:: U+00A9 .. copyright sign

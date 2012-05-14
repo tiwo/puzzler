@@ -195,9 +195,39 @@ class HexatwigsSemiregularHexagon6x3(Hexatwigs):
     def coordinates(self):
         return self.coordinates_semiregular_hexagon(6, 3)
 
-    def customize_piece_data(self):
-        self.piece_data['R06'][-1]['flips'] = None
-        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+    _find_known_solution = True
+
+    if _find_known_solution:
+        # Find a known solution (first found by Peter F. Esser).
+        # Fix pieces in known positions:
+        restrictions = {
+            #name: [(aspect, offset), ...],
+            'O06': [(0, (7,0,0))],
+            'M06': [(4, (0,1,0))],
+            'I06': [(3, (0,5,0))],
+            'U06': [(2, (5,1,0))],
+            'V06': [(5, (0,4,0))],
+            'Y06': [(1, (2,3,0))],
+            }
+
+        def build_matrix(self):
+            from pprint import pprint, pformat
+            keys = sorted(self.pieces.keys())
+            for key, details in sorted(self.restrictions.items()):
+                for aspect_index, offset in details:
+                    coords, aspect = self.pieces[key][aspect_index]
+                    translated = aspect.translate(offset)
+                    print key
+                    pprint(sorted(translated))
+                    self.build_matrix_row(key, translated)
+                    keys.remove(key)
+            self.build_regular_matrix(keys)
+
+    else:
+        # General case
+        def customize_piece_data(self):
+            self.piece_data['R06'][-1]['flips'] = None
+            self.piece_data['R06'][-1]['rotations'] = (0, 1,)
 
 
 class HexatwigsTriangleRing1(Hexatwigs):
@@ -298,6 +328,25 @@ class HexatwigsTrefoil2(Hexatwigs):
     def customize_piece_data(self):
         self.piece_data['R06'][-1]['flips'] = None
         self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsKnobbedHexagon(Hexatwigs):
+
+    """ solutions"""
+
+    width = 10
+    height = 10
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(4, offset=(1,1,0)))
+        for offset in ((0,4,0), (0,8,0), (4,0,0), (4,8,0), (8,0,0), (8,4,0)):
+            coords.update(set(
+                self.coordinates_hexagon(1, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = None
 
 
 class OneSidedHexatwigsHexagonRing(OneSidedHexatwigs):
