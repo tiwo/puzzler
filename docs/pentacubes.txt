@@ -417,11 +417,22 @@ Misc
 
   .. image:: images/non-convex-pentacubes-zigzag-2.png
 
-- Diagonal wall: `solutions incomplete
-  <../solutions/non-convex-pentacubes-diagonal-wall.txt>`__
-  (`X3D model <images/non-convex-pentacubes-diagonal-wall.x3d>`__)
+- Diagonal walls:
 
-  .. image:: images/non-convex-pentacubes-diagonal-wall.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/non-convex-pentacubes-diagonal-wall.png
+
+            `solutions incomplete
+            <../solutions/non-convex-pentacubes-diagonal-wall.txt>`__
+            (`X3D model <images/non-convex-pentacubes-diagonal-wall.x3d>`__)
+
+       - .. figure:: images/non-convex-pentacubes-diagonal-wall-2.png
+
+            `solutions incomplete
+            <../solutions/non-convex-pentacubes-diagonal-wall-2.txt>`__
+            (`X3D model <images/non-convex-pentacubes-diagonal-wall-2.x3d>`__)
 
 - Aztec pyramid (stacked Aztec diamonds): `solutions incomplete
   <../solutions/non-convex-pentacubes-aztec-pyramid.txt>`__
