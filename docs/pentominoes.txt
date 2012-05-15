@@ -16,6 +16,7 @@
 
 .. sidebar:: Also see:
 
+   * `Polyominoes: Puzzles & Solutions <polyominoes.html>`_
    * `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
    * `Pentacubes: Puzzles & Solutions <pentacubes.html>`_
    * `Polycubes: Puzzles & Solutions <polycubes.html>`_
