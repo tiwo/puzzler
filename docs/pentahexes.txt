@@ -32,6 +32,9 @@
  Pentahexes
 ------------
 
+There are 22 pentahexes totalling 110 unit hexagons.
+
+
 Parallelograms
 ==============
 
@@ -63,63 +66,83 @@ Trapezoids
 Hexagons
 ========
 
-- Hexagon 1: `solutions incomplete
-  <../solutions/pentahexes-hexagon-1.txt>`__
+A minimal regular hexagon comprises 127 unit hexagons, 17 units too
+large for the pentahexes, requiring holes:
 
-  .. image:: images/pentahexes-hexagon-1.png
+.. list-table::
+   :class: borderless
 
-- Hexagon 2: `solutions incomplete
-  <../solutions/pentahexes-hexagon-2.txt>`__
+   * - .. figure:: images/pentahexes-hexagon-1.png
 
-  .. image:: images/pentahexes-hexagon-2.png
+          `solutions incomplete
+          <../solutions/pentahexes-hexagon-1.txt>`__
 
-- Hexagon 3: `solutions incomplete
-  <../solutions/pentahexes-hexagon-3.txt>`__
+     - .. figure:: images/pentahexes-hexagon-2.png
 
-  .. image:: images/pentahexes-hexagon-3.png
+          `solutions incomplete
+          <../solutions/pentahexes-hexagon-2.txt>`__
 
-- Hexagon 4: `solutions incomplete
-  <../solutions/pentahexes-hexagon-4.txt>`__
+   * - .. figure:: images/pentahexes-hexagon-3.png
 
-  .. image:: images/pentahexes-hexagon-4.png
+          `solutions incomplete
+          <../solutions/pentahexes-hexagon-3.txt>`__
+
+     - .. figure:: images/pentahexes-hexagon-4.png
+
+          `solutions incomplete
+          <../solutions/pentahexes-hexagon-4.txt>`__
 
 
 Triangles
 =========
 
-A minimal triangle is 120 units, 10 units too large.  But
-10 units makes a 4-unit-side triangle, so here are five variations
-with centered 4-unit triangular holes and one with a different hole:
+* A minimal triangle is 120 units, 10 units too large.  But
+  10 units makes a 4-unit-side triangle, so here are five variations
+  with centered 4-unit triangular holes and one with a different hole:
 
-- Triangle 1: `solutions incomplete
-  <../solutions/pentahexes-triangle-1.txt>`__
+  .. list-table::
+     :class: borderless
 
-  .. image:: images/pentahexes-triangle-1.png
+     * - .. figure:: images/pentahexes-triangle-1.png
 
-- Triangle 2: `solutions incomplete
-  <../solutions/pentahexes-triangle-2.txt>`__
+            `solutions incomplete
+            <../solutions/pentahexes-triangle-1.txt>`__
 
-  .. image:: images/pentahexes-triangle-2.png
+       - .. figure:: images/pentahexes-triangle-2.png
 
-- Triangle 3: `solutions incomplete
-  <../solutions/pentahexes-triangle-3.txt>`__
+            `solutions incomplete
+            <../solutions/pentahexes-triangle-2.txt>`__
 
-  .. image:: images/pentahexes-triangle-3.png
+     * - .. figure:: images/pentahexes-triangle-3.png
 
-- Triangle 4: `solutions incomplete
-  <../solutions/pentahexes-triangle-4.txt>`__
+            `solutions incomplete
+            <../solutions/pentahexes-triangle-3.txt>`__
 
-  .. image:: images/pentahexes-triangle-4.png
+       - .. figure:: images/pentahexes-triangle-4.png
 
-- Triangle 5: `solutions incomplete
-  <../solutions/pentahexes-triangle-5.txt>`__
+            `solutions incomplete
+            <../solutions/pentahexes-triangle-4.txt>`__
 
-  .. image:: images/pentahexes-triangle-5.png
+     * - .. figure:: images/pentahexes-triangle-5.png
 
-- Triangle 6: `solutions incomplete
-  <../solutions/pentahexes-triangle-6.txt>`__
+            `solutions incomplete
+            <../solutions/pentahexes-triangle-5.txt>`__
 
-  .. image:: images/pentahexes-triangle-6.png
+       - .. figure:: images/pentahexes-triangle-6.png
+
+            `solutions incomplete
+            <../solutions/pentahexes-triangle-6.txt>`__
+
+* Two length-10 triangles add up to the right number of unit hexagons:
+  `solutions incomplete <../solutions/pentahexes-two-triangles.txt>`__
+
+  .. image:: images/pentahexes-two-triangles.png
+
+  If the two triangles are pushed together, solutions to this puzzle
+  are also solutions to the 10x11 parallelogram.
+
+  This design by Christoph M. Hoffman appeared in Martin Gardner's
+  "Mathematical Games" column, Scientific American, June 1967.
 
 
 Hexagrams
@@ -128,40 +151,45 @@ Hexagrams
 A minimal hexagram is 121 units, 11 units too large.  These are
 variations with centered, symmetrical 11-unit holes:
 
-- Hexagram 1: `solutions incomplete
-  <../solutions/pentahexes-hexagram-1.txt>`__
+.. list-table::
+   :class: borderless
 
-  .. image:: images/pentahexes-hexagram-1.png
+   * - .. figure:: images/pentahexes-hexagram-1.png
 
-- Hexagram 2: `solutions incomplete
-  <../solutions/pentahexes-hexagram-2.txt>`__
+          `solutions incomplete
+          <../solutions/pentahexes-hexagram-1.txt>`__
 
-  .. image:: images/pentahexes-hexagram-2.png
+     - .. figure:: images/pentahexes-hexagram-2.png
 
-- Hexagram 3: `solutions incomplete
-  <../solutions/pentahexes-hexagram-3.txt>`__
+          `solutions incomplete
+          <../solutions/pentahexes-hexagram-2.txt>`__
 
-  .. image:: images/pentahexes-hexagram-3.png
+   * - .. figure:: images/pentahexes-hexagram-3.png
 
-- Hexagram 4: `solutions incomplete
-  <../solutions/pentahexes-hexagram-4.txt>`__
+          `solutions incomplete
+          <../solutions/pentahexes-hexagram-3.txt>`__
 
-  .. image:: images/pentahexes-hexagram-4.png
+     - .. figure:: images/pentahexes-hexagram-4.png
 
-- Hexagram 5: `solutions incomplete
-  <../solutions/pentahexes-hexagram-5.txt>`__
+          `solutions incomplete
+          <../solutions/pentahexes-hexagram-4.txt>`__
 
-  .. image:: images/pentahexes-hexagram-5.png
+   * - .. figure:: images/pentahexes-hexagram-5.png
 
-- Hexagram 6: `solutions incomplete
-  <../solutions/pentahexes-hexagram-6.txt>`__
+          `solutions incomplete
+          <../solutions/pentahexes-hexagram-5.txt>`__
 
-  .. image:: images/pentahexes-hexagram-6.png
+     - .. figure:: images/pentahexes-hexagram-6.png
 
-- Hexagram 7: `solutions incomplete
-  <../solutions/pentahexes-hexagram-7.txt>`__
+          `solutions incomplete
+          <../solutions/pentahexes-hexagram-6.txt>`__
 
-  .. image:: images/pentahexes-hexagram-7.png
+   * - .. figure:: images/pentahexes-hexagram-7.png
+
+          `solutions incomplete
+          <../solutions/pentahexes-hexagram-7.txt>`__
+
+     -
 
 
 ----------------------

@@ -275,6 +275,30 @@ class PentahexesTriangle6(Pentahexes):
         self.piece_data['P5'][-1]['flips'] = None
 
 
+class PentahexesTwoTriangles(Pentahexes):
+
+    """many solutions"""
+
+    height = 10
+    width = 12
+
+    def coordinates(self):
+        self.triangle1 = set(self.coordinates_triangle(10))
+        self.triangle2 = set(
+            self.coordinates_inverted_triangle(10, offset=(1,0)))
+        coords = self.triangle1.union(self.triangle2)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['rotations'] = (0, 1,)
+
+    def build_matrix(self):
+        names = sorted(self.piece_data.keys())
+        self.build_regular_matrix(['P5'], self.triangle1)
+        names.remove('P5')
+        self.build_regular_matrix(names)
+
+
 class PentahexesHexagram1(Pentahexes):
 
     height = 17

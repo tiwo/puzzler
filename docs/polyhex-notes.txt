@@ -655,20 +655,39 @@ Potential Puzzles
 * T(21) - T(5) + 1 unit
 * T(22) - H(4) + 1 unit
 
-492: hexahexes
+486: hexahexes less the O06 piece (which has a hole)
 
-* T(31) - 4 units (3 corner tips & 1 central)
-* H(14) - H(5) + 6 units (central O06: `Kadon's Hexnut II
-  <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__)
-* Ri(24,21)
-* Tr(32,24)
-* 2Hs(15,5)
-* H(23) - H(19)
-* H(15) - H(7) - 12 units
-* H(16) - H(9) - 12 units
-* H(17) - H(11) + 6 units
-* Hg(10) - H(4) - 12 units
-* Hg(11) - H(8)
+* P(27,18)
+* Tr(31,27)
+* He(10,15)
+
+492: hexahexes, complete (all puzzles which include the O06 piece must
+have at least one single-hexagon hole)
+
+(Hexahexes on the Poly Pages:
+http://www.recmath.com/PolyPages/PolyPages/index.htm?6hexes.html)
+
+* Potential:
+
+  * T(31) - 4 units (1 central & 3 nearby = HexahexesTriangle1; 0
+    solutions?  or just too huge a solution space to search?)
+  * T(31) - 4 units (3 corner tips & 1 central = HexahexesTriangle2;
+    solutions exist, see Poly Pages)
+  * He(12,14) - 1 unit (from Poly Pages)
+  * H(15) - H(7) - 12 units
+  * H(16) - H(9) - 12 units
+  * H(17) - H(11) + 6 units
+  * Hg(10) - H(4) - 12 units
+
+* No solutions:
+
+  impossible since O06 needs a hole:
+
+  * H(23) - H(19)
+  * Ri(24,21)
+  * Tr(32,24)
+  * 2Hs(15,5)
+  * Hg(11) - H(8)
 
 642: polyhexes of order 1 to 6
 
@@ -682,7 +701,8 @@ Potential Puzzles
 Links
 =====
 
-* `Kadon's Hexnut <http://gamepuzzles.com/esspoly2.htm#HN>`__
+* Kadon's `Hexnut <http://gamepuzzles.com/esspoly2.htm#HN>`__ &
+  `Hexnut II <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__
 
 * `The Poly Pages
   <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyhexes.html>`__

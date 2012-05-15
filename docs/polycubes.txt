@@ -32,6 +32,8 @@
 Tetracubes
 ==========
 
+The 8 tetracubes are composed of 32 unit cubes.
+
 - 2x4x4 solid: `1390 solutions
   <../solutions/tetracubes-2x4x4.txt>`__
   (`X3D model <images/tetracubes-2x4x4.x3d>`__)
@@ -48,9 +50,10 @@ Tetracubes
 Soma Cubes
 ==========
 
-`Soma Cubes`__ include all non-convex polycubes of order 3 and 4.
-They were invented by Piet Hein in 1933.  Many of the designs
+`Soma Cubes`__ include all non-convex polycubes of order 3 (1) and 4
+(6).  They were invented by Piet Hein in 1933.  Many of the designs
 below are from the `Thinkfun Block By Block`__ challenge cards.
+The 7 Soma cubes are composed of 27 unit cubes.
 
 __ http://en.wikipedia.org/wiki/Soma_cube
 __ http://www.thinkfun.com/blockbyblock
@@ -155,8 +158,9 @@ Diabolical Cube
 The Diabolical Cube puzzle dates from the 19th century, published in
 `Puzzles Old and New` by Professor L. Hoffmann, London 1893.  The
 puzzle contains one piece from each of the solid polyominoes of orders
-2 through 7 (i.e one solid domino, ..., one solid heptomino).  More
-info in `The Puzzling World of Polyhedral Dissections
+2 through 7 (i.e one solid domino, ..., one solid heptomino), for a
+total of 27 unit cubes.  More info in `The Puzzling World of
+Polyhedral Dissections
 <http://www.johnrausch.com/PuzzlingWorld/chap03a.htm>`__.
 
 * Original: `13 solutions <../solutions/diabolical-cube.txt>`__
@@ -198,6 +202,23 @@ hardwood sets of these cubes are available from Kadon Enterprises:
   <images/polycubes-12345-2x3x31.x3d>`__)
 
   .. image:: images/polycubes-12345-2x3x31.png
+
+* 11x3x6 solids (with holes/bites):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-12345-11x3x6-1.png
+
+            `1: solutions incomplete
+            <../solutions/polycubes-12345-11x3x6-1.txt>`__
+            (`X3D model <images/polycubes-12345-11x3x6-1.x3d>`__)
+
+       - .. figure:: images/polycubes-12345-11x3x6-2.png
+
+            `2: solutions incomplete
+            <../solutions/polycubes-12345-11x3x6-2.txt>`__
+            (`X3D model <images/polycubes-12345-11x3x6-2.x3d>`__)
 
 * X (`designed for G4G10 <g4gX.html>`_):
 
@@ -281,11 +302,40 @@ hardwood sets of these cubes are available from Kadon Enterprises:
             <../solutions/polycubes-12345-overlapping-blocks-2.txt>`__
             (`X3D model <images/polycubes-12345-overlapping-blocks-2.x3d>`__)
 
+     * - .. figure:: images/polycubes-12345-overlapping-blocks-3.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-overlapping-blocks-3.txt>`__
+            (`X3D model <images/polycubes-12345-overlapping-blocks-3.x3d>`__)
+
+       - .. figure:: images/polycubes-12345-overlapping-blocks-4.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-overlapping-blocks-4.txt>`__
+            (`X3D model <images/polycubes-12345-overlapping-blocks-4.x3d>`__)
+
 * Pyramid: `solutions incomplete
   <../solutions/polycubes-12345-pyramid-1.txt>`__ (`X3D
   model <images/polycubes-12345-pyramid-1.x3d>`__)
 
   .. image:: images/polycubes-12345-pyramid-1.png
+
+* Cross blocks:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-12345-cross-block-1.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-cross-block-1.txt>`__
+            (`X3D model <images/polycubes-12345-cross-block-1.x3d>`__)
+
+       - .. figure:: images/polycubes-12345-cross-block-2.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-cross-block-2.txt>`__
+            (`X3D model <images/polycubes-12345-cross-block-2.x3d>`__)
 
 
 .. _Super Deluxe Quintillions:

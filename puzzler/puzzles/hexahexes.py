@@ -8,7 +8,7 @@
 """
 Concrete hexahex puzzles.
 
-All puzzles including the O06 piece must have at least one single-hexagon
+All puzzles which include the O06 piece must have at least one single-hexagon
 hole.
 """
 

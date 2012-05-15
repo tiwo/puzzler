@@ -351,6 +351,48 @@ Misc
             <../solutions/pentacubes-plus-diagonal-wall-2.txt>`__
             (`X3D model <images/pentacubes-plus-diagonal-wall-2.x3d>`__)
 
+     * - .. figure:: images/pentacubes-plus-diagonal-wall-3.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-plus-diagonal-wall-3.txt>`__
+            (`X3D model <images/pentacubes-plus-diagonal-wall-3.x3d>`__)
+
+       - .. figure:: images/pentacubes-plus-diagonal-wall-4.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-plus-diagonal-wall-4.txt>`__
+            (`X3D model <images/pentacubes-plus-diagonal-wall-4.x3d>`__)
+
+     * - .. figure:: images/pentacubes-plus-diagonal-wall-5.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-plus-diagonal-wall-5.txt>`__
+            (`X3D model <images/pentacubes-plus-diagonal-wall-5.x3d>`__)
+
+       - .. figure:: images/pentacubes-plus-diagonal-wall-6.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-plus-diagonal-wall-6.txt>`__
+            (`X3D model <images/pentacubes-plus-diagonal-wall-6.x3d>`__)
+
+     * - .. figure:: images/pentacubes-plus-diagonal-wall-7.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-plus-diagonal-wall-7.txt>`__
+            (`X3D model <images/pentacubes-plus-diagonal-wall-7.x3d>`__)
+
+       - .. figure:: images/pentacubes-plus-diagonal-wall-8.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-plus-diagonal-wall-8.txt>`__
+            (`X3D model <images/pentacubes-plus-diagonal-wall-8.x3d>`__)
+
+* Diagonal block: `solutions incomplete
+  <../solutions/pentacubes-plus-diagonal-block-1.txt>`__
+  (`X3D model <images/pentacubes-plus-diagonal-block-1.x3d>`__)
+
+  .. image:: images/pentacubes-plus-diagonal-block-1.png
+
 * Steps:
 
   .. list-table::
@@ -433,6 +475,26 @@ Misc
             `solutions incomplete
             <../solutions/non-convex-pentacubes-diagonal-wall-2.txt>`__
             (`X3D model <images/non-convex-pentacubes-diagonal-wall-2.x3d>`__)
+
+     * - .. figure:: images/non-convex-pentacubes-diagonal-wall-3.png
+
+            `solutions incomplete
+            <../solutions/non-convex-pentacubes-diagonal-wall-3.txt>`__
+            (`X3D model <images/non-convex-pentacubes-diagonal-wall-3.x3d>`__)
+
+       - .. figure:: images/non-convex-pentacubes-diagonal-wall-4.png
+
+            `solutions incomplete
+            <../solutions/non-convex-pentacubes-diagonal-wall-4.txt>`__
+            (`X3D model <images/non-convex-pentacubes-diagonal-wall-4.x3d>`__)
+
+     * - .. figure:: images/non-convex-pentacubes-diagonal-wall-5.png
+
+            `solutions incomplete
+            <../solutions/non-convex-pentacubes-diagonal-wall-5.txt>`__
+            (`X3D model <images/non-convex-pentacubes-diagonal-wall-5.x3d>`__)
+
+       -
 
 - Aztec pyramid (stacked Aztec diamonds): `solutions incomplete
   <../solutions/non-convex-pentacubes-aztec-pyramid.txt>`__

@@ -838,6 +838,126 @@ class PentacubesPlusDiagonalWall2(PentacubesPlus):
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
+class PentacubesPlusDiagonalWall3(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 12
+    height = 12
+    depth = 2
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(12))
+            - set(Puzzle2D.coordinates_triangle(2)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(2))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesPlusDiagonalWall4(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 12
+    height = 12
+    depth = 3
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(12))
+            - set(Puzzle2D.coordinates_triangle(7)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(self.depth))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesPlusDiagonalWall5(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(9))
+            - set(Puzzle2D.coordinates_triangle(5)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(self.depth))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesPlusDiagonalWall6(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 11
+    height = 11
+    depth = 5
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(11))
+            - set(Puzzle2D.coordinates_triangle(8)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(self.depth))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesPlusDiagonalWall7(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+    depth = 6
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(7))
+            - set(Puzzle2D.coordinates_triangle(2)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(self.depth))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class PentacubesPlusDiagonalWall8(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 6
+    height = 6
+    depth = 10
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(6))
+            - set(Puzzle2D.coordinates_triangle(3)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(self.depth))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
 class PentacubesPlus5x5x10Steps(PentacubesPlus):
 
     """many solutions"""
@@ -869,6 +989,26 @@ class PentacubesPlus9x5x6Steps(PentacubesPlus):
             for y, z in Puzzle2D.coordinates_double_triangle(5)
             for x in range(6))
         return sorted(coords)
+
+
+class PentacubesPlusDiagonalBlock1(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 2
+
+    def coordinates(self):
+        layer = set(
+            (x, y) for (x, y) in Puzzle2D.coordinates_triangle(14)
+            if x < self.width and y < self.height)
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(self.depth))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
 class NonConvexPentacubes2x5x14(NonConvexPentacubes):
@@ -967,11 +1107,7 @@ class NonConvexPentacubesDiagonalWall(NonConvexPentacubes):
 
 class NonConvexPentacubesDiagonalWall2(NonConvexPentacubes):
 
-    """
-    many solutions
-
-    P_t(4,9) - P_t(4,4)
-    """
+    """many solutions"""
 
     width = 9
     height = 9
@@ -981,6 +1117,66 @@ class NonConvexPentacubesDiagonalWall2(NonConvexPentacubes):
         layer = (
             set(Puzzle2D.coordinates_triangle(9))
             - set(Puzzle2D.coordinates_triangle(4)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(self.depth))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class NonConvexPentacubesDiagonalWall3(NonConvexPentacubes):
+
+    """many solutions"""
+
+    width = 13
+    height = 13
+    depth = 2
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(13))
+            - set(Puzzle2D.coordinates_triangle(6)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(self.depth))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class NonConvexPentacubesDiagonalWall4(NonConvexPentacubes):
+
+    """many solutions"""
+
+    width = 8
+    height = 8
+    depth = 4
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(8))
+            - set(((0,0),)))
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in layer for z in range(self.depth))
+        return sorted(coords)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class NonConvexPentacubesDiagonalWall5(NonConvexPentacubes):
+
+    """many solutions"""
+
+    width = 6
+    height = 6
+    depth = 7
+
+    def coordinates(self):
+        layer = (
+            set(Puzzle2D.coordinates_triangle(6))
+            - set(((0,0),)))
         coords = set(
             self.coordinate_offset(x, y, z, None)
             for x, y in layer for z in range(self.depth))

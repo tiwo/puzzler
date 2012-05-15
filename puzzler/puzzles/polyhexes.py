@@ -114,6 +114,13 @@ class Polyhexes(Puzzle2D):
         return cls.coordinates_trapezoid(side_length, side_length, offset)
 
     @classmethod
+    def coordinates_inverted_triangle(cls, side_length, offset=None):
+        coords = set(cls.coordinates_parallelogram(
+            side_length + 1, side_length, offset=offset))
+        coords -= set(cls.coordinates_triangle(side_length, offset=offset))
+        return sorted(coords)
+
+    @classmethod
     def coordinates_butterfly(cls, base_length, side_length, offset=None):
         """
         The base_length is actually the figure height (vertical length), and

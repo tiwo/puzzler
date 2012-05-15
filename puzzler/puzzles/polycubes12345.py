@@ -29,6 +29,34 @@ class Polycubes12345_2x3x31(Polycubes12345):
         self.piece_data['P4'][-1]['axes'] = None
 
 
+class Polycubes12345_11x3x6_1(Polycubes12345):
+
+    """many solutions"""
+
+    width = 3
+    height = 11
+    depth = 6
+
+    holes = ((1,3), (1,7))
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set(self.coordinates_cuboid(
+            self.width, self.height, self.depth))
+        for x, y in self.holes:
+            coords -= set(
+                self.coordinates_cuboid(1, 1, self.depth, offset=(x,y,0)))
+        return sorted(coords)
+
+
+class Polycubes12345_11x3x6_2(Polycubes12345_11x3x6_1):
+
+    """many solutions"""
+
+    holes = ((0,0), (2,10))
+
+
 class Polycubes12345X1(Polycubes12345):
 
     """many solutions"""
@@ -222,6 +250,49 @@ class Polycubes12345OverlappingBlocks2(Polycubes12345):
         return sorted(coords)
 
 
+class Polycubes12345OverlappingBlocks3(Polycubes12345):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 4
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(6, 6, 1))
+            + list(self.coordinates_cuboid(6, 6, 1, offset=(3,3,0)))
+            + list(self.coordinates_cuboid(5, 5, 4, offset=(2,2,0))))
+        for x in (1, 5):
+            for y in (1, 5):
+                coords.update(
+                    set(self.coordinates_cuboid(3, 3, 3, offset=(x,y,0))))
+        return sorted(coords)
+
+
+class Polycubes12345OverlappingBlocks4(Polycubes12345):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+    depth = 6
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(5, 5, 5, offset=(1,1,0)))
+            + [self.coordinate_offset(3, 3, 5, None)])
+        for x in (0, 4):
+            for y in (0, 4):
+                coords.update(
+                    set(self.coordinates_cuboid(3, 3, 3, offset=(x,y,0))))
+        return sorted(coords)
+
+
 class Polycubes12345Pyramid1(Polycubes12345):
 
     """many solutions"""
@@ -244,4 +315,40 @@ class Polycubes12345Pyramid1(Polycubes12345):
         for i in range(2):
             coords.update(set(self.coordinates_cuboid(
                 7 - 2 * i, 7 - 2 * i, 1, offset=(2 + i, 2 + i, i))))
+        return sorted(coords)
+
+
+class Polycubes12345CrossBlock1(Polycubes12345):
+
+    """many solutions"""
+
+    width = 7
+    height = 5
+    depth = 6
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(7, 3, 6, offset=(0,1,0)))
+            + list(self.coordinates_cuboid(5, 5, 6, offset=(1,0,0))))
+        return sorted(coords)
+
+
+class Polycubes12345CrossBlock2(Polycubes12345):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+    depth = 6
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(7, 3, 6, offset=(0,2,0)))
+            + list(self.coordinates_cuboid(3, 7, 6, offset=(2,0,0))))
+        coords -= set(self.coordinates_cuboid(1, 1, 6, offset=(2,2,0)))
+        coords -= set(self.coordinates_cuboid(1, 1, 6, offset=(4,4,0)))
         return sorted(coords)
