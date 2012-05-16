@@ -116,8 +116,8 @@ class Polyhexes(Puzzle2D):
     @classmethod
     def coordinates_inverted_triangle(cls, side_length, offset=None):
         coords = set(cls.coordinates_parallelogram(
-            side_length + 1, side_length, offset=offset))
-        coords -= set(cls.coordinates_triangle(side_length, offset=offset))
+            side_length, side_length, offset=offset))
+        coords -= set(cls.coordinates_triangle(side_length - 1, offset=offset))
         return sorted(coords)
 
     @classmethod
