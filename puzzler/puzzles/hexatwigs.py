@@ -211,17 +211,7 @@ class HexatwigsSemiregularHexagon6x3(Hexatwigs):
             }
 
         def build_matrix(self):
-            from pprint import pprint, pformat
-            keys = sorted(self.pieces.keys())
-            for key, details in sorted(self.restrictions.items()):
-                for aspect_index, offset in details:
-                    coords, aspect = self.pieces[key][aspect_index]
-                    translated = aspect.translate(offset)
-                    print key
-                    pprint(sorted(translated))
-                    self.build_matrix_row(key, translated)
-                    keys.remove(key)
-            self.build_regular_matrix(keys)
+            self.build_restricted_matrix()
 
     else:
         # General case
@@ -394,14 +384,7 @@ class OneSidedHexatwigsHexagonRing(OneSidedHexatwigs):
             'r06': [(4, (1,9,0))],}
 
         def build_matrix(self):
-            keys = sorted(self.pieces.keys())
-            for key, details in sorted(self.restrictions.items()):
-                for aspect_index, offset in details:
-                    coords, aspect = self.pieces[key][aspect_index]
-                    translated = aspect.translate(offset)
-                    self.build_matrix_row(key, translated)
-                    keys.remove(key)
-            self.build_regular_matrix(keys)
+            self.build_restricted_matrix()
 
     else:
         # General case
@@ -439,14 +422,7 @@ class OneSidedHexatwigsElongatedHexagon26x2(OneSidedHexatwigs):
             'y06': [(0, (7,0,0))],}
 
         def build_matrix(self):
-            keys = sorted(self.pieces.keys())
-            for key, details in sorted(self.restrictions.items()):
-                for aspect_index, offset in details:
-                    coords, aspect = self.pieces[key][aspect_index]
-                    translated = aspect.translate(offset)
-                    self.build_matrix_row(key, translated)
-                    keys.remove(key)
-            self.build_regular_matrix(keys)
+            self.build_restricted_matrix()
 
     else:
         # General case

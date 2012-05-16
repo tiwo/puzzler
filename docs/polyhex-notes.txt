@@ -704,7 +704,7 @@ Links
 * Kadon's `Hexnut <http://gamepuzzles.com/esspoly2.htm#HN>`__ &
   `Hexnut II <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__
 
-* `The Poly Pages
+* Andrew Clarke's `Poly Pages
   <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyhexes.html>`__
 
 * `Hexhexes (by Peter F. Esser)

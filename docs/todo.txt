@@ -58,10 +58,10 @@ family:
 - `Notes on Polytwigs <polytwig-notes.html#potential-puzzles>`__
 
 
-.. |---| unicode:: U+2014  .. em dash
+.. |---| unicode:: U+2014  .. em dash —
    :trim:
-.. |c| unicode:: U+00A9 .. copyright sign
-.. |x| unicode:: U+00D7 .. multiplication sign
+.. |c| unicode:: U+00A9 .. copyright sign ©
+.. |x| unicode:: U+00D7 .. multiplication sign ×
    :trim:
 
 
