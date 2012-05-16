@@ -285,12 +285,13 @@ class PentahexesTwoTriangles(Pentahexes):
     def coordinates(self):
         self.triangle1 = set(self.coordinates_triangle(10))
         self.triangle2 = set(
-            self.coordinates_inverted_triangle(10, offset=(1,0)))
+            self.coordinates_inverted_triangle(10, offset=(2,0)))
         coords = self.triangle1.union(self.triangle2)
         return sorted(coords)
 
     def customize_piece_data(self):
         self.piece_data['P5'][-1]['rotations'] = (0, 1,)
+        self.piece_data['P5'][-1]['flips'] = None
 
     def build_matrix(self):
         names = sorted(self.piece_data.keys())
