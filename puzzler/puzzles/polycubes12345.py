@@ -352,3 +352,22 @@ class Polycubes12345CrossBlock2(Polycubes12345):
         coords -= set(self.coordinates_cuboid(1, 1, 6, offset=(2,2,0)))
         coords -= set(self.coordinates_cuboid(1, 1, 6, offset=(4,4,0)))
         return sorted(coords)
+
+
+class Polycubes12345CrossBlock3(Polycubes12345):
+
+    """many solutions"""
+
+    width = 10
+    height = 10
+    depth = 3
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(10, 4, 3, offset=(0,3,0)))
+            + list(self.coordinates_cuboid(4, 10, 3, offset=(3,0,0))))
+        for offset in ((3,3,0), (6,6,0)):
+            coords -= set(self.coordinates_cuboid(1, 1, 3, offset=offset))
+        return sorted(coords)

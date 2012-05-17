@@ -338,6 +338,13 @@ hardwood sets of these cubes are available from Kadon Enterprises:
             <../solutions/polycubes-12345-cross-block-2.txt>`__
             (`X3D model <images/polycubes-12345-cross-block-2.x3d>`__)
 
+     * - .. figure:: images/polycubes-12345-cross-block-3.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-cross-block-3.txt>`__
+            (`X3D model <images/polycubes-12345-cross-block-3.x3d>`__)
+
+       -
 
 .. _Super Deluxe Quintillions:
    http://gamepuzzles.com/polycube.htm#SQd
