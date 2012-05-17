@@ -146,6 +146,7 @@ viewing software.
 
   Also see:
 
+  * `An Introduction to Polycubes <polycubes-intro.html>`_
   * `Notes on Polycubes <polycube-notes.html>`_
   * `Notes on Polyominoes <polyomino-notes.html>`_
 

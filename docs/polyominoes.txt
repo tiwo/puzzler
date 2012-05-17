@@ -16,8 +16,8 @@
 
 .. sidebar:: Also see:
 
-   * `Pentomino Puzzles & Solutions <pentominoes.html>`_
-   * `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`_
+   * `Pentominoes: Puzzles & Solutions <pentominoes.html>`_
+   * `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
    * `Notes on Polyominoes <polyomino-notes.html>`_
    * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    * `Polyform Puzzler FAQ <FAQ.html>`_

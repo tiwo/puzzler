@@ -288,6 +288,7 @@ ones.  Polyform families are given descriptive names:
   **In Polyform Puzzler:**
 
   * `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`_
+  * `An Introduction to Polycubes <polycubes-intro.html>`_
   * `Notes on Polyominoes`_
   * `Notes on Polycubes <polycube-notes.html>`_
 
@@ -314,6 +315,7 @@ ones.  Polyform families are given descriptive names:
 
   * `Pentacube Puzzles & Solutions <pentacubes.html>`_
   * `Polycube Puzzles & Solutions <polycubes.html>`_
+  * `An Introduction to Polycubes`_
   * `Notes on Polycubes`_
 
 * Polyforms based on equilateral triangles are named "polyiamonds_"
@@ -527,6 +529,7 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
 
   * `Pentacube Puzzles & Solutions`_
   * `Polycube Puzzles & Solutions`_
+  * `An Introduction to Polycubes`_
   * `Notes on Polycubes`_
 
   .. _A000162: http://oeis.org/A000162
@@ -899,6 +902,7 @@ as the front wall.
 * `Solid Pentomino Puzzles & Solutions`_
 * `Pentacube Puzzles & Solutions`_
 * `Polycube Puzzles & Solutions`_
+* `An Introduction to Polycubes`_
 * `Notes on Polycubes`_
 * `Notes on Polyominoes`_
 

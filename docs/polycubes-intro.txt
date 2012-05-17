@@ -1,0 +1,484 @@
+.. -*- coding: utf-8 -*-
+
+==============================
+ An Introduction to Polycubes
+==============================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2012 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. sidebar:: Also see:
+
+   * `Polycubes: Puzzles & Solutions <polycubes.html>`_
+   * `Pentacubes: Puzzles & Solutions <pentacubes.html>`_
+   * `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
+   * `Notes on Polycubes <polycube-notes.html>`_
+   * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   * `Polyform Puzzler FAQ <FAQ.html>`_
+     (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+     `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+     `interpreting solution files <FAQ.html#how-should-polycube-solution-files-be-interpreted>`__)
+
+.. contents::
+
+**Polycubes** are polyforms constructed from unit cubes joined
+face-to-face in regular three-dimensional Cartesian space.  The
+polycubes that are flat (only one cube thick) are known as "planar
+polycubes" or "solid polyominoes".
+
+Here is a puzzle containing all the polycubes of order 1 through 5:
+
+.. image:: images/polycubes-12345-overlapping-blocks-1.png
+
+See `Polycubes: Puzzles & Solutions`_, `Pentacubes: Puzzles &
+Solutions`_, and `Solid Pentominoes: Puzzles & Solutions`_ for many
+more puzzles.
+
+
+Polyforms
+=========
+
+The number and names of the various orders of polycubes are as
+follows:
+
+=====  ==========  ===========  ===========
+Order  | Polyform  Polycubes    | Planar
+       | Name                   | Polycubes
+=====  ==========  ===========  ===========
+1      monocube    1            1
+2      dicube      1            1
+3      tricubes    2            2
+4      tetracubes  8            5
+5      pentacubes  29           12
+6      hexacubes   166          35
+=====  ==========  ===========  ===========
+
+"*" above means that forms with enclosed holes exist.
+
+The numbers of polycubes can also be found in the following sequences
+from `The On-Line Encyclopedia of Integer Sequences
+<http://oeis.org>`_: A000162_ (3-D) and A000105_ (planar polycubes /
+solid polyominoes).
+
+.. _A000162: http://oeis.org/A000162
+.. _A000105: http://oeis.org/A000105
+
+Examples of the polycubes from order 1 (monocube) to order 5
+(pentacubes) are given in the tables below.
+
+The polycubes are named with letters (like the monocube "M") or a
+letter-number scheme (like the "I3" tricube, and the "F5" and "V15"
+pentacubes).  The names used by Polyform Puzzler are based on the
+traditional names for pentominoes, `Kadon's names for their
+Superquints`__ and `Poly-4 Supplement`_ sets, as well as `Thorleif
+Bundgård's names for Soma cubes`__.  Kadon also has `a naming system
+for hexacubes`__ (not covered here).
+
+__ http://www.gamepuzzles.com/sqnames.htm
+__ http://www.fam-bundgaard.dk/SOMA/FIGURES/NOTATION.HTM
+__ http://www.gamepuzzles.com/hxnames.htm
+
+The initial letter of each name is the letter of the alphabet that the
+polycube most closely resembles, or an initial.  In some cases, that
+resemblance is weak, and the letters are arbitrary.  The final digit
+of the number represents the polyform order (how many unit cubes are
+in the polycube).  There are more pentacubes than letters in the
+alphabet, so the names of many of the non-planar pieces have an
+extra middle digit to differentiate the variations.
+
+.. _table legend:
+
+In the tables below, "Aspects" refers to the number of unique
+orientations that a polyform may take (different rotations, flipped or
+not).  This varies with the symmetry of the polyform.
+
+The "Notes" column records which pieces are planar and non-planar, as
+well as chiral pairs (matching left-hand and right-hand mirror
+images).  The 3-D polycubes cannot be "flipped" into their mirror
+images (that would require access to a fourth physical dimension).
+
+Alternate names and name origins are noted in the "Name" column.
+
+
+Monocube
+--------
+
+There is only one monocube (order-1 polycube):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - Notes
+
+   * - | M
+       | (from "Monocube")
+     - .. image:: images/pieces/polycubes/M.png
+     - 1
+     - planar
+
+
+Dicube
+------
+
+There is only one dicube (order-2 polycube), also planar (a solid
+monomino):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - Notes
+
+   * - | D
+       | (from "Dicube")
+     - .. image:: images/pieces/polycubes/D.png
+     - 3
+     - planar
+
+
+Tricubes
+--------
+
+There are 2 tricubes (order-3 polycubes), also planar (a solid
+domino):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - Notes
+
+   * - I3
+     - .. image:: images/pieces/polycubes/I3.png
+     - 3
+     - planar
+
+   * - | V3
+       | (Soma "V")
+     - .. image:: images/pieces/polycubes/V3.png
+     - 12
+     - planar
+
+
+Tetracubes
+----------
+
+There are 8 tetracubes (order-4 polycubes), 5 of which are planar (solid
+tetrominoes):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - Notes
+
+   * - | A4
+       | (Soma "a"; Kadon "V3")
+     - .. image:: images/pieces/polycubes/A4.png
+     - 12
+     - non-planar; chiral pair with "B4"
+
+   * - | B4
+       | (Soma "b"; Kadon "V1")
+     - .. image:: images/pieces/polycubes/B4.png
+     - 12
+     - non-planar; chiral pair with "A4"
+
+   * - I4
+     - .. image:: images/pieces/polycubes/I4.png
+     - 3
+     - planar
+
+   * - L4
+     - .. image:: images/pieces/polycubes/L4.png
+     - 24
+     - planar
+
+   * - O4
+     - .. image:: images/pieces/polycubes/O4.png
+     - 3
+     - planar
+
+   * - | P4
+       | (Soma "p"; Kadon "V2")
+     - .. image:: images/pieces/polycubes/P4.png
+     - 8
+     - non-planar
+
+   * - | S4
+       | (Soma "Z")
+     - .. image:: images/pieces/polycubes/S4.png
+     - 12
+     - planar
+
+   * - T4
+     - .. image:: images/pieces/polycubes/T4.png
+     - 12
+     - planar
+
+
+Soma Cubes
+----------
+
+The Soma Cubes, invented by Piet Hein in 1933, consist of 7 pieces:
+all the non-convex polycubes of order 3 (1) and 4 (6).
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - Notes
+
+   * - | V
+       | (polycube "V3")
+     - .. image:: images/pieces/polycubes/V3.png
+     - 12
+     - planar; order 3
+
+   * - | L
+       | (polycube "L4")
+     - .. image:: images/pieces/polycubes/L4.png
+     - 24
+     - planar; order 4
+
+   * - | T
+       | (polycube "T4")
+     - .. image:: images/pieces/polycubes/T4.png
+     - 12
+     - planar; order 4
+
+   * - | Z
+       | (polycube "S4"; Kadon "S")
+     - .. image:: images/pieces/polycubes/S4.png
+     - 12
+     - planar; order 4
+
+   * - | a
+       | (polycube "A4"; Kadon "V3")
+     - .. image:: images/pieces/polycubes/A4.png
+     - 12
+     - non-planar; order 4; chiral pair with "b"
+
+   * - | b
+       | (polycube "B4"; Kadon "V1")
+     - .. image:: images/pieces/polycubes/B4.png
+     - 12
+     - non-planar; order 4; chiral pair with "a"
+
+   * - | p
+       | (polycube "P4"; Kadon "V2")
+     - .. image:: images/pieces/polycubes/P4.png
+     - 8
+     - non-planar; order 4
+
+
+Pentacubes
+----------
+
+There are 29 pentacubes (order-5 polycubes), 12 of which are planar
+(solid pentominoes):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - A5
+     - .. image:: images/pieces/polycubes/A5.png
+     - 24
+     - non-planar
+
+   * - F5
+     - .. image:: images/pieces/polycubes/F5.png
+     - 24
+     - planar
+
+   * - I5
+     - .. image:: images/pieces/polycubes/I5.png
+     - 3
+     - planar
+
+   * - J15
+     - .. image:: images/pieces/polycubes/J15.png
+     - 12
+     - non-planar; chiral pair with "L15"
+
+   * - J25
+     - .. image:: images/pieces/polycubes/J25.png
+     - 24
+     - non-planar; chiral pair with "L25"
+
+   * - J45
+     - .. image:: images/pieces/polycubes/J45.png
+     - 24
+     - non-planar; chiral pair with "L45"
+
+   * - L5
+     - .. image:: images/pieces/polycubes/L5.png
+     - 24
+     - planar
+
+   * - L15
+     - .. image:: images/pieces/polycubes/L15.png
+     - 12
+     - non-planar; chiral pair with "J15"
+
+   * - L25
+     - .. image:: images/pieces/polycubes/L25.png
+     - 24
+     - non-planar; chiral pair with "J25"
+
+   * - L35
+     - .. image:: images/pieces/polycubes/L35.png
+     - 24
+     - non-planar; Kadon's `Super Deluxe Quintillions`_ set includes a
+       second copy called "J35" (also adopted by Polyform Puzzler's
+       `Pentacubes Plus`_)
+
+   * - L45
+     - .. image:: images/pieces/polycubes/L45.png
+     - 24
+     - non-planar; chiral pair with "J45"
+
+   * - N5
+     - .. image:: images/pieces/polycubes/N5.png
+     - 24
+     - planar
+
+   * - N15
+     - .. image:: images/pieces/polycubes/N15.png
+     - 24
+     - non-planar; chiral pair with "S15"
+
+   * - N25
+     - .. image:: images/pieces/polycubes/N25.png
+     - 24
+     - non-planar; chiral pair with "S25"
+
+   * - P5
+     - .. image:: images/pieces/polycubes/P5.png
+     - 24
+     - planar
+
+   * - Q5
+     - .. image:: images/pieces/polycubes/Q5.png
+     - 24
+     - non-planar
+
+   * - S15
+     - .. image:: images/pieces/polycubes/S15.png
+     - 24
+     - non-planar; chiral pair with "N15"
+
+   * - S25
+     - .. image:: images/pieces/polycubes/S25.png
+     - 24
+     - non-planar; chiral pair with "N25"
+
+   * - T5
+     - .. image:: images/pieces/polycubes/T5.png
+     - 12
+     - planar
+
+   * - T15
+     - .. image:: images/pieces/polycubes/T15.png
+     - 12
+     - non-planar
+
+   * - T25
+     - .. image:: images/pieces/polycubes/T25.png
+     - 24
+     - non-planar
+
+   * - U5
+     - .. image:: images/pieces/polycubes/U5.png
+     - 12
+     - planar
+
+   * - V5
+     - .. image:: images/pieces/polycubes/V5.png
+     - 12
+     - planar
+
+   * - V15
+     - .. image:: images/pieces/polycubes/V15.png
+     - 12
+     - non-planar; chiral pair with "V25"
+
+   * - V25
+     - .. image:: images/pieces/polycubes/V25.png
+     - 12
+     - non-planar; chiral pair with "V15"
+
+   * - W5
+     - .. image:: images/pieces/polycubes/W5.png
+     - 12
+     - planar
+
+   * - X5
+     - .. image:: images/pieces/polycubes/X5.png
+     - 3
+     - planar
+
+   * - Y5
+     - .. image:: images/pieces/polycubes/Y5.png
+     - 24
+     - planar
+
+   * - Z5
+     - .. image:: images/pieces/polycubes/Z5.png
+     - 12
+     - planar
+
+
+Coordinate System
+=================
+
+Polycubes (including solid pentominoes and Soma cubes) use a
+3-dimensional *(x,y,z)* Cartesian coordinate system.
+
+Each unit cube has 6 immediate neighbors.  The neighbors of the
+cube at coordinates *(x, y, z)* are:
+
+    *{(x+1, y, z), (x-1, y, z), (x, y+1, z), (x, y-1, z), (x, y, z+1),
+    (x, y, z-1)}*
+
+`See the FAQ for more details.
+<FAQ.html#how-should-polycube-solution-files-be-interpreted>`__
+
+
+.. _Super Deluxe Quintillions:
+   http://gamepuzzles.com/polycube.htm#SQd
+
+.. _Poly-4 Supplement: http://www.gamepuzzles.com/poly4.htm
+
+.. _Pentacubes Plus: pentacubes.html#pentacubes-plus
+
+.. |c| unicode:: U+00A9 .. copyright sign
