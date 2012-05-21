@@ -9,7 +9,7 @@
 Concrete polycube (order 1 through 5) puzzles.
 """
 
-from puzzler.puzzles import Puzzle3D
+from puzzler.puzzles import Puzzle3D, Puzzle2D
 from puzzler.puzzles.polycubes import Polycubes12345
 
 
@@ -293,6 +293,24 @@ class Polycubes12345OverlappingBlocks4(Polycubes12345):
         return sorted(coords)
 
 
+class Polycubes12345OverlappingBlocks5(Polycubes12345):
+
+    """many solutions"""
+
+    width = 7
+    height = 7
+    depth = 6
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(5, 5, 6, offset=(1,1,0)))
+            + list(self.coordinates_cuboid(2, 2, 6))
+            + list(self.coordinates_cuboid(2, 2, 6, offset=(5,5,0))))
+        return sorted(coords)
+
+
 class Polycubes12345Pyramid1(Polycubes12345):
 
     """many solutions"""
@@ -370,4 +388,22 @@ class Polycubes12345CrossBlock3(Polycubes12345):
             + list(self.coordinates_cuboid(4, 10, 3, offset=(3,0,0))))
         for offset in ((3,3,0), (6,6,0)):
             coords -= set(self.coordinates_cuboid(1, 1, 3, offset=offset))
+        return sorted(coords)
+
+
+class Polycubes12345DiamondWall(Polycubes12345):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 6
+
+    def coordinates(self):
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in Puzzle2D.coordinates_diamond(5)
+            for z in range(self.depth))
+        coords -= set(self.coordinates_cuboid(3, 3, 6, offset=(3,3,0)))
+        coords -= set(self.coordinates_cuboid(5, 1, 3, offset=(2,4,3)))
         return sorted(coords)

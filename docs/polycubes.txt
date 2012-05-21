@@ -195,8 +195,9 @@ Polycubes of Order 1 Through 5
 
 These puzzles use the 1 monocube, 1 dicube, 2 tricubes, 8 tetracubes,
 and 29 pentacubes, for a total of 186 unit cubes.  High-quality
-hardwood sets of these cubes are available from Kadon Enterprises:
-`Super Deluxe Quintillions`_ and `Poly-4 Supplement`_.
+hardwood sets of these polycubes are available from Kadon Enterprises:
+`Super Deluxe Quintillions`_ (pentacubes) and `Poly-4 Supplement`_
+(polycubes 1-4).
 
 * 2x3x31 solid: `solutions incomplete
   <../solutions/polycubes-12345-2x3x31.txt>`__ (`X3D model
@@ -315,6 +316,14 @@ hardwood sets of these cubes are available from Kadon Enterprises:
             <../solutions/polycubes-12345-overlapping-blocks-4.txt>`__
             (`X3D model <images/polycubes-12345-overlapping-blocks-4.x3d>`__)
 
+     * - .. figure:: images/polycubes-12345-overlapping-blocks-5.png
+
+            `solutions incomplete
+            <../solutions/polycubes-12345-overlapping-blocks-5.txt>`__
+            (`X3D model <images/polycubes-12345-overlapping-blocks-5.x3d>`__)
+
+       -
+
 * Pyramid: `solutions incomplete
   <../solutions/polycubes-12345-pyramid-1.txt>`__ (`X3D
   model <images/polycubes-12345-pyramid-1.x3d>`__)
@@ -345,6 +354,13 @@ hardwood sets of these cubes are available from Kadon Enterprises:
             (`X3D model <images/polycubes-12345-cross-block-3.x3d>`__)
 
        -
+
+* Diamond wall: `solutions incomplete
+  <../solutions/polycubes-12345-diamond-wall.txt>`__
+  (`X3D model <images/polycubes-12345-diamond-wall.x3d>`__)
+
+  .. image:: images/polycubes-12345-diamond-wall.png
+
 
 .. _Super Deluxe Quintillions:
    http://gamepuzzles.com/polycube.htm#SQd

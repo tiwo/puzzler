@@ -14,6 +14,7 @@ from puzzler.puzzles.polycubes import (
      SolidPentominoes, Pentacubes, PentacubesPlus, NonConvexPentacubes)
 from puzzler.coordsys import Cartesian3DCoordSet
 
+
 class Pentacubes5x7x7OpenBox(Pentacubes):
 
     """many solutions"""
@@ -599,7 +600,7 @@ class PentacubesDiamondWall(Pentacubes):
                - set(((4,4),))))
         coords = set(
             self.coordinate_offset(x, y, z, None)
-            for x, y in layer for z in range(5))
+            for x, y in layer for z in range(self.depth))
         return sorted(coords)
 
 
@@ -714,6 +715,96 @@ class PentacubesSteppedPyramid4(PentacubesSteppedPyramid2):
     """many solutions"""
 
     corner_offsets = ((1,1,1), (7,1,1), (7,7,1), (1,7,1))
+
+
+class PentacubesCastle(Pentacubes):
+
+    """
+    many solutions
+
+    design from Andrew Clarke's Poly Pages:
+    http://www.recmath.com/PolyPages/PolyPages/index.htm?Polycubes.html#pentacubes
+    """
+
+    width = 7
+    height = 7
+    depth = 6
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(7, 7, 2))
+            + list(self.coordinates_cuboid(3, 3, 4, offset=(2,2,2))))
+        for i in (0, 2, 4, 6):
+            for j in (0, 6):
+                coords.add(self.coordinate_offset(i, j, 2, None))
+                coords.add(self.coordinate_offset(j, i, 2, None))
+        coords.remove(self.coordinate_offset(3, 3, 5, None))
+        return sorted(coords)
+
+
+class PentacubesSteppedPyramid11x7_1(Pentacubes):
+
+    """
+    many solutions
+
+    design from `Torsten Sillke's pages [Problems for pentacubes 1992]
+    <http://www.mathematik.uni-bielefeld.de/~sillke/CONTEST/pentaPRB>`_
+    """
+
+    width = 11
+    height = 7
+    depth = 4
+
+    holes = set(((4,3,0), (5,3,0), (6,3,0)))
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(self.depth):
+            coords.update(set(self.coordinates_cuboid(
+                self.width - 2 * i, self.height - 2 * i, 1, offset=(i,i,i))))
+        coords -= self.holes
+        return sorted(coords)
+
+
+class PentacubesSteppedPyramid11x7_2(PentacubesSteppedPyramid11x7_1):
+
+    """many solutions"""
+
+    holes = set(((4,3,3), (5,3,3), (6,3,3)))
+
+
+class PentacubesPanorama(Pentacubes):
+
+    """
+    many solutions
+
+    design from `Torsten Sillke's pages [CFF Contest 36]
+    <http://www.mathematik.uni-bielefeld.de/~sillke/CONTEST/cff-contest36>`_
+    """
+
+    width = 5
+    height = 13
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        part = set()
+        for i in range(self.depth):
+            part.update(set((x,y,i) for (x, y) in
+                Puzzle2D.coordinates_diamond(5 - i, offset=(i-2,i-2))))
+        part = Cartesian3DCoordSet(part)
+        part.intersection_update(set(self.coordinates_cuboid(5, 5, 5)))
+        coords = part.copy()
+        coords.update(part.translate((0,8,0)))
+        part.intersection_update(
+            set(self.coordinates_cuboid(3, 3, 3, offset=(1,1,2))))
+        coords.update(part.translate((0,4,-2)))
+        return sorted(coords)
 
 
 class PentacubesPlus2x5x15(PentacubesPlus):
@@ -1011,6 +1102,35 @@ class PentacubesPlusDiagonalBlock1(PentacubesPlus):
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
 
 
+class PentacubesPlusSteppedPyramid1(PentacubesPlus):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 3
+
+    holes = set(((4,4,2), (3,4,2), (4,3,2), (5,4,2), (4,5,2)))
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(3):
+            coords.update(set(
+                self.coordinates_cuboid(9 - 2 * i, 9 - 2 * i, 1,
+                                        offset=(i,i,i))))
+        coords -= self.holes
+        return sorted(coords)
+
+
+class PentacubesPlusSteppedPyramid2(PentacubesPlusSteppedPyramid1):
+
+    """many solutions"""
+
+    holes = set(((4,4,2), (2,2,2), (6,2,2), (2,6,2), (6,6,2)))
+
+
 class NonConvexPentacubes2x5x14(NonConvexPentacubes):
 
     """many solutions"""
@@ -1244,4 +1364,59 @@ class NonConvexPentacubes7x7x5Steps(PentacubesPlus):
         coords = set(
             self.coordinate_offset(x, y, z, None)
             for y, z in Puzzle2D.coordinates_triangle(7) for x in range(5))
+        return sorted(coords)
+
+
+class NonConvexPentacubesSteppedPyramid9x8(NonConvexPentacubes):
+
+    """many solutions"""
+
+    width = 9
+    height = 8
+    depth = 5
+
+    holes = set()
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(self.depth):
+            coords.update(set(self.coordinates_cuboid(
+                self.width - 2 * i, self.height - 2 * i, 1, offset=(i,i,i))))
+        coords -= self.holes
+        return sorted(coords)
+
+
+class NonConvexPentacubesSteppedPyramid13x6(
+    NonConvexPentacubesSteppedPyramid9x8):
+
+    """many solutions"""
+
+    width = 13
+    height = 6
+    depth = 3
+
+
+class NonConvexPentacubesDiamondPyramid1(NonConvexPentacubes):
+
+    """
+    many solutions
+
+
+    """
+
+    width = 13
+    height = 13
+    depth = 4
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(self.depth):
+            coords.update(set(
+                self.coordinate_offset(x, y, i, None)
+                for (x, y) in Puzzle2D.coordinates_diamond(
+                7 - 2 * i, offset=(2*i,2*i,i))))
         return sorted(coords)

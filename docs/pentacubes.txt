@@ -83,8 +83,10 @@ Open Boxes
 
    * - .. figure:: images/pentacubes-5x7x7-open-box.png
 
-          5x7x7 Open Box: `solutions incomplete
-          <../solutions/pentacubes-5x7x7-open-box.txt>`__
+          5x7x7 Open Box (design from `Torsten Sillke's pages
+          [10th Pentacube Contest, 1999]
+          <http://www.mathematik.uni-bielefeld.de/~sillke/CONTEST/penta-contest>`_):
+          `solutions incomplete <../solutions/pentacubes-5x7x7-open-box.txt>`__
           (`X3D model <images/pentacubes-5x7x7-open-box.x3d>`__)
 
      - .. figure:: images/pentacubes-3x9x9-open-box.png
@@ -95,10 +97,9 @@ Open Boxes
 
    * - .. figure:: images/pentacubes-18x3x3-open-box.png
 
-          18x3x3 Open Box: `solutions incomplete
-          <../solutions/pentacubes-18x3x3-open-box.txt>`__
-          (`X3D model <images/pentacubes-18x3x3-open-box.x3d>`__;
-          design from Kadon's `Super Quintillions`_ booklet)
+          18x3x3 Open Box (design from Kadon's `Super Quintillions`_ booklet:
+          `solutions incomplete <../solutions/pentacubes-18x3x3-open-box.txt>`__
+          (`X3D model <images/pentacubes-18x3x3-open-box.x3d>`__)
 
      -
 
@@ -137,13 +138,15 @@ Highrise Towers
 Cubbyholes
 ----------
 
-* 5x7x5 cubbyholes: `solutions incomplete
+* 5x7x5 cubbyholes (design from `Torsten Sillke's pages [1992]`_):
+  `solutions incomplete
   <../solutions/pentacubes-5x7x5-cubbyholes.txt>`__
   (`X3D model <images/pentacubes-5x7x5-cubbyholes.x3d>`__)
 
   .. image:: images/pentacubes-5x7x5-cubbyholes.png
 
-* 9x9x5 cubbyholes: `solutions incomplete
+* 9x9x5 cubbyholes (design from `Torsten Sillke's pages [1992]`_):
+  `solutions incomplete
   <../solutions/pentacubes-9x9x5-cubbyholes.txt>`__
   (`X3D model <images/pentacubes-9x9x5-cubbyholes.x3d>`__)
 
@@ -154,8 +157,9 @@ Misc
 ----
 
 * 2x11x11 frame (11x11 square bottom layer with 7x7 square frame on
-  top): `solutions incomplete
-  <../solutions/pentacubes-2x11x11-frame.txt>`__
+  top; design from `Torsten Sillke's pages
+  [10th Pentacube Contest, 1999]`_):
+  `solutions incomplete <../solutions/pentacubes-2x11x11-frame.txt>`__
   (`X3D model <images/pentacubes-2x11x11-frame.x3d>`__)
 
   .. image:: images/pentacubes-2x11x11-frame.png
@@ -174,16 +178,17 @@ Misc
             :target: images/pentacubes-corner-crystal.jpg
 
             Built with Kadon's `Super Deluxe Quintillions`_.
-            Click for the full-size image. 
+            Click for the full-size image.
 
-* Nine slices: `solutions incomplete
-  <../solutions/pentacubes-nine-slices.txt>`__
+* Nine slices (design from `Torsten Sillke's pages
+  [10th Pentacube Contest, 1999]`_):
+  `solutions incomplete <../solutions/pentacubes-nine-slices.txt>`__
   (`X3D model <images/pentacubes-nine-slices.x3d>`__)
 
   .. image:: images/pentacubes-nine-slices.png
 
-* Great wall: `solutions incomplete
-  <../solutions/pentacubes-great-wall.txt>`__
+* Great wall (design from `Torsten Sillke's pages [1992]`_):
+  `solutions incomplete <../solutions/pentacubes-great-wall.txt>`__
   (`X3D model <images/pentacubes-great-wall.x3d>`__)
 
   .. image:: images/pentacubes-great-wall.png
@@ -195,8 +200,9 @@ Misc
 
   .. image:: images/pentacubes-5x9x9-fortress.png
 
-* 3x9x9 mound: `solutions incomplete
-  <../solutions/pentacubes-3x9x9-mound.txt>`__
+* 3x9x9 mound (design from `Torsten Sillke's pages
+  [10th Pentacube Contest, 1999]`_):
+  `solutions incomplete <../solutions/pentacubes-3x9x9-mound.txt>`__
   (`X3D model <images/pentacubes-3x9x9-mound.x3d>`__)
 
   .. image:: images/pentacubes-3x9x9-mound.png
@@ -206,21 +212,24 @@ Misc
 
   .. image:: images/pentacubes-9x9x9-octahedral-planes.png
 
-* 2x13x13 diamond frame: `solutions incomplete
-  <../solutions/pentacubes-2x13x13-diamond-frame.txt>`__
+* 2x13x13 diamond frame (design from `Torsten Sillke's pages
+  [10th Pentacube Contest, 1999]`_):
+  `solutions incomplete <../solutions/pentacubes-2x13x13-diamond-frame.txt>`__
   (`X3D model <images/pentacubes-2x13x13-diamond-frame.x3d>`__)
 
   .. image:: images/pentacubes-2x13x13-diamond-frame.png
 
-* 2x3x2 chair (suggestion from Nick Maeder): `17 solutions
-  <../solutions/pentacubes-2x3x2-chair.txt>`__
-  (`X3D model <images/pentacubes-2x3x2-chair.x3d>`__).  Each solution
-  uses only two pentacubes out of 29, and only 17 combinations (out of
-  406) produce solutions.
+* 2x3x2 chair (suggestion from Nick Maeder):
+  `17 solutions <../solutions/pentacubes-2x3x2-chair.txt>`__
+  (`X3D model <images/pentacubes-2x3x2-chair.x3d>`__).
+  Each solution uses only two pentacubes out of 29, and only 17
+  combinations (out of 406) produce solutions.
 
   .. image:: images/pentacubes-2x3x2-chair.png
 
-* 11x11x5 pyramid with base: `solutions incomplete
+* 11x11x5 pyramid with base (design from `Torsten Sillke's pages [1992]
+  <http://www.mathematik.uni-bielefeld.de/~sillke/CONTEST/pentaPRB>`_):
+  `solutions incomplete
   <../solutions/pentacubes-11x11x5-pyramid.txt>`__
   (`X3D model <images/pentacubes-11x11x5-pyramid.x3d>`__)
 
@@ -283,6 +292,34 @@ Misc
 
             `solutions incomplete <../solutions/pentacubes-stepped-pyramid-4.txt>`__
             (`X3D model <images/pentacubes-stepped-pyramid-4.x3d>`__)
+
+     * - .. figure:: images/pentacubes-stepped-pyramid-11x7-1.png
+
+            11x7 (3x1x1 hole hidden in the base; design from
+            `Torsten Sillke's pages [10th Pentacube Contest, 1999]`_):
+            `solutions incomplete
+            <../solutions/pentacubes-stepped-pyramid-11x7-1.txt>`__
+            (`X3D model <images/pentacubes-stepped-pyramid-11x7-1.x3d>`__)
+
+       - .. figure:: images/pentacubes-stepped-pyramid-11x7-2.png
+
+            11x7: `solutions incomplete <../solutions/pentacubes-stepped-pyramid-11x7-2.txt>`__
+            (`X3D model <images/pentacubes-stepped-pyramid-11x7-2.x3d>`__)
+
+* Castle (design from `Andrew Clarke's Poly Pages
+  <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polycubes.html#pentacubes>`__;
+  center hole is one cube deep):
+  `solutions incomplete <../solutions/pentacubes-castle.txt>`__
+  (`X3D model <images/pentacubes-castle.x3d>`__)
+
+  .. image:: images/pentacubes-castle.png
+
+* Panorama (design from `Torsten Sillke's pages [CFF Contest 36]
+  <http://www.mathematik.uni-bielefeld.de/~sillke/CONTEST/cff-contest36>`_):
+  `solutions incomplete <../solutions/pentacubes-panorama.txt>`__
+  (`X3D model <images/pentacubes-panorama.x3d>`__)
+
+  .. image:: images/pentacubes-panorama.png
 
 
 Pentacubes Plus
@@ -411,9 +448,26 @@ Misc
             <../solutions/pentacubes-plus-9x5x6-steps.txt>`__
             (`X3D model <images/pentacubes-plus-9x5x6-steps.x3d>`__)
 
+* Stepped pyramids:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/pentacubes-plus-stepped-pyramid-1.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-plus-stepped-pyramid-1.txt>`__
+            (`X3D model <images/pentacubes-plus-stepped-pyramid-1.x3d>`__)
+
+       - .. figure:: images/pentacubes-plus-stepped-pyramid-2.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-plus-stepped-pyramid-2.txt>`__
+            (`X3D model <images/pentacubes-plus-stepped-pyramid-2.x3d>`__)
+
 
 Non-Convex Pentacubes
-===================== 
+=====================
 
 There are 28 non-convex pentacubes: all of the pieces that have at
 least one inside corner.  These are just the 29 regular pentacubes
@@ -425,19 +479,19 @@ more convoluted shapes can be formed.
 Solids
 ------
 
-- 2x5x14: `solutions incomplete
+* 2x5x14: `solutions incomplete
   <../solutions/non-convex-pentacubes-2x5x14.txt>`__
   (`X3D model <images/non-convex-pentacubes-2x5x14.x3d>`__)
 
   .. image:: images/non-convex-pentacubes-2x5x14.png
 
-- 2x7x10: `solutions incomplete
+* 2x7x10: `solutions incomplete
   <../solutions/non-convex-pentacubes-2x7x10.txt>`__
   (`X3D model <images/non-convex-pentacubes-2x7x10.x3d>`__)
 
   .. image:: images/non-convex-pentacubes-2x7x10.png
 
-- 4x5x7: `solutions incomplete
+* 4x5x7: `solutions incomplete
   <../solutions/non-convex-pentacubes-4x5x7.txt>`__
   (`X3D model <images/non-convex-pentacubes-4x5x7.x3d>`__)
 
@@ -447,20 +501,20 @@ Solids
 Misc
 ----
 
-- Zigzag 1 (design by Robert Trietsch): `solutions incomplete
+* Zigzag 1 (design by Robert Trietsch): `solutions incomplete
   <../solutions/non-convex-pentacubes-zigzag-1.txt>`__
   (`X3D model <images/non-convex-pentacubes-zigzag-1.x3d>`__)
 
   .. image:: images/non-convex-pentacubes-zigzag-1.png
 
-- Zigzag 2 (a symmetrical variation of zigzag 1 above): `solutions
+* Zigzag 2 (a symmetrical variation of zigzag 1 above): `solutions
   incomplete
   <../solutions/non-convex-pentacubes-zigzag-2.txt>`__ (`X3D
   model <images/non-convex-pentacubes-zigzag-2.x3d>`__)
 
   .. image:: images/non-convex-pentacubes-zigzag-2.png
 
-- Diagonal walls:
+* Diagonal walls:
 
   .. list-table::
      :class: borderless
@@ -497,17 +551,41 @@ Misc
 
        -
 
-- Aztec pyramid (stacked Aztec diamonds): `solutions incomplete
+* Aztec pyramid (stacked Aztec diamonds): `solutions incomplete
   <../solutions/non-convex-pentacubes-aztec-pyramid.txt>`__
   (`X3D model <images/non-convex-pentacubes-aztec-pyramid.x3d>`__)
 
   .. image:: images/non-convex-pentacubes-aztec-pyramid.png
 
-- Stacked squares: `solutions incomplete
+* Stacked squares: `solutions incomplete
   <../solutions/non-convex-pentacubes-stacked-squares.txt>`__
   (`X3D model <images/non-convex-pentacubes-stacked-squares.x3d>`__)
 
   .. image:: images/non-convex-pentacubes-stacked-squares.png
+
+* Stepped pyramids:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/non-convex-pentacubes-stepped-pyramid-9x8.png
+
+            9x8: `solutions incomplete
+            <../solutions/non-convex-pentacubes-stepped-pyramid-9x8.txt>`__
+            (`X3D model <images/non-convex-pentacubes-stepped-pyramid-9x8.x3d>`__)
+
+       - .. figure:: images/non-convex-pentacubes-stepped-pyramid-13x6.png
+
+            13x6: `solutions incomplete
+            <../solutions/non-convex-pentacubes-stepped-pyramid-13x6.txt>`__
+            (`X3D model <images/non-convex-pentacubes-stepped-pyramid-13x6.x3d>`__)
+
+* Diamond pyramid (design from `Torsten Sillke's pages [1992]`_):
+  `solutions incomplete
+  <../solutions/non-convex-pentacubes-diamond-pyramid-1.txt>`__
+  (`X3D model <images/non-convex-pentacubes-diamond-pyramid-1.x3d>`__)
+
+  .. image:: images/non-convex-pentacubes-diamond-pyramid-1.png
 
 
 .. _Super Deluxe Quintillions:
