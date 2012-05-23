@@ -32,6 +32,14 @@ later is recommended.
 
   - `An Introduction to Polysticks <polysticks-intro.html>`__
 
+  - `An Introduction to Polycubes <polycubes-intro.html>`__
+
+  - `An Introduction to Polyhexes <polyhexes-intro.html>`__
+
+  - `An Introduction to Polyominoes <polyominoes-intro.html>`__
+
+  - `An Introduction to Polyiamonds <polyiamonds-intro.html>`__
+
   - `Notes on Polyominoes <polyomino-notes.html>`__
 
   - `Notes on Polyiamonds <polyiamond-notes.html>`__
@@ -46,8 +54,7 @@ later is recommended.
 
   - `Notes on Polytwigs <polytwig-notes.html>`__
 
-* Added lots of puzzles, many (but not all; I lost track) listed
-  below:
+* Added lots of puzzles, many listed below (but not all; I lost track):
 
   - Polytwigs (hexagonal-grid polysticks): new puzzle type.  Added
     many puzzles.

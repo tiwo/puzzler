@@ -22,6 +22,7 @@
    * `Polyominoes: Puzzles & Solutions <polyominoes.html>`_
    * `An Introduction to Polycubes <polycubes-intro.html>`_
    * `Notes on Polycubes <polycube-notes.html>`_
+   * `An Introduction to Polyominoes <polyominoes-intro.html>`_
    * `Notes on Polyominoes <polyomino-notes.html>`_
    * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    * `Polyform Puzzler FAQ <FAQ.html>`_

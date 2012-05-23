@@ -1,0 +1,325 @@
+.. -*- coding: utf-8 -*-
+
+================================
+ An Introduction to Polyominoes
+================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2012 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. sidebar:: Also see:
+
+   * `Polyominoes: Puzzles & Solutions <polyominoes.html>`_
+   * `Pentominoes: Puzzles & Solutions <pentominoes.html>`_
+   * `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
+   * `Notes on Polyominoes <polyomino-notes.html>`_
+   * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   * `Polyform Puzzler FAQ <FAQ.html>`_
+     (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+     `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+     `interpreting solution files <FAQ.html#how-should-polyomino-solution-files-be-interpreted>`__)
+
+.. contents::
+
+**Polyominoes** are polyforms constructed from unit squares joined
+edge-to-edge on a regular two-dimensional Cartesian plane.  The name
+comes from dominoes; one domino is composed of two ("d-", short for
+"di-") unit squares ("-omino").
+
+Here is a puzzle containing all the polyominoes of order 1 through 5:
+
+.. image:: images/polyominoes-12345-cross-1.png
+
+See `Polyominoes: Puzzles & Solutions`_ and `Pentominoes: Puzzles &
+Solutions`_ for many more puzzles.
+
+Polyominoes were named and studied by Solomon Golomb and popularized
+by Martin Gardner in `Scientific American` magazine in the 1950's.
+Pentominoes may have been first featured in a puzzle in 1907
+(Dudeney's `The Canterbury Puzzles`), although the history of
+polyforms may go back much further.  The tetrominoes are well known
+from the video game "Tetris".
+
+`Kadon Enterprises`__, vendors of quality polyform puzzles in wood and
+acrylic, have `an excellent introduction to polyominoes on their
+site`__.
+
+__ http://www.gamepuzzles.com
+__ http://www.gamepuzzles.com/polyintr.htm
+
+When the polyominoes are formed from unit cubes intead of flat
+squares, they are called "solid polyominoes" or "planar polycubes".
+See `An Introduction to Polycubes <polycubes-intro.html>`_ for
+background, and `Polyominoes: Puzzles & Solutions`_ for many puzzles.
+
+
+Polyforms
+=========
+
+The number and names of the various orders of polyominoes are as
+follows:
+
+=====  ===========  =============  =============
+Order  | Polyform   | Free         | One-Sided
+       | Name       | Polyominoes  | Polyominoes
+=====  ===========  =============  =============
+1      monomino     1              1
+2      domino       1              1
+3      trominoes    2              2
+4      tetrominoes  5              7
+5      pentominoes  12             18
+6      hexominoes   35             60
+=====  ===========  =============  =============
+
+The numbers of polyominoes can also be found in the following sequences
+from `The On-Line Encyclopedia of Integer Sequences
+<http://oeis.org>`_: A000105_ (free) and A000988_ (one-sided).
+
+.. _A000105: http://oeis.org/A000105
+.. _A000988: http://oeis.org/A000988
+
+Examples of the polyominoes from order 1 (monomino) to order 5
+(pentominoes) are given in the tables below.
+
+The polyominoes are named with letters (like the pentomino "X") or a
+letter-number scheme (like the "I3" tromino).  The traditional names
+for the pentominoes are used by Polyform Puzzler, without a number
+suffix.  The rest of the polyomino names correspond loosely to Kadon's
+names for their `Poly-4 Supplement`_ set (exceptions noted in the
+tables below).  Kadon also has `a naming system for hexominoes`__ (not
+covered here).
+
+__ http://www.gamepuzzles.com/sxnames.htm
+
+The initial letter of each name is the letter of the alphabet that the
+polyomino most closely resembles, or an initial.  In some cases, that
+resemblance is weak, and the letters are arbitrary.  The final digit
+of the number represents the polyform order (how many unit squares are
+in the polyomino).
+
+.. _table legend:
+
+In the tables below, "Aspects" refers to the number of unique
+orientations that a polyform may take (different rotations, flipped or
+not).  This varies with the symmetry of the polyform.
+
+The "One-Sided" column identifies polyforms that are asymmetrical in
+reflection.  Treating the flipped and unflipped versions of
+asymmetrical polyominoes as distinct polyforms (and disallowing
+further reflection or "flipping"), results in "one-sided" polyominoes
+and puzzles.
+
+Alternate names and name origins are noted in the "Name" column.
+
+
+Monomino
+--------
+
+There is only one monomino (order-1 polyomino):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - | O1
+       | ("M", from "Monomino")
+     - .. image:: images/pieces/polyominoes/O1.png
+     - 1
+     -
+
+
+Domino
+------
+
+There is only one domino (order-2 polyomino):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - | I2
+       | ("D", from "Domino")
+     - .. image:: images/pieces/polyominoes/I2.png
+     - 2
+     -
+
+
+Tromino
+-------
+
+Sometimes called "triominoes", there are 2 trominoes (order-3
+polyominoes):
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - I3
+     - .. image:: images/pieces/polyominoes/I3.png
+     - 2
+     -
+
+   * - V3
+     - .. image:: images/pieces/polyominoes/V3.png
+     - 4
+     -
+
+
+Tetromino
+---------
+
+There are 5 free tetrominoes (order-4 polyominoes) and 7 one-sided
+tetrominoes:
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - I4
+     - .. image:: images/pieces/polyominoes/I4.png
+     - 2
+     -
+
+   * - L4
+     - .. image:: images/pieces/polyominoes/L4.png
+     - 8
+     - yes
+
+   * - O4
+     - .. image:: images/pieces/polyominoes/O4.png
+     - 1
+     -
+
+   * - T4
+     - .. image:: images/pieces/polyominoes/T4.png
+     - 4
+     -
+
+   * - | Z4
+       | ("S4")
+     - .. image:: images/pieces/polyominoes/Z4.png
+     - 4
+     - yes
+
+
+Pentominoes
+-----------
+
+There are 12 free pentominoes (order-5 polyomino) and 18 one-sided
+pentominoes:
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - F
+     - .. image:: images/pieces/polyominoes/F.png
+     - 8
+     - yes
+
+   * - I
+     - .. image:: images/pieces/polyominoes/I.png
+     - 2
+     -
+
+   * - L
+     - .. image:: images/pieces/polyominoes/L.png
+     - 8
+     - yes
+
+   * - N
+     - .. image:: images/pieces/polyominoes/N.png
+     - 8
+     - yes
+
+   * - P
+     - .. image:: images/pieces/polyominoes/P.png
+     - 8
+     - yes
+
+   * - T
+     - .. image:: images/pieces/polyominoes/T.png
+     - 4
+     -
+
+   * - U
+     - .. image:: images/pieces/polyominoes/U.png
+     - 4
+     -
+
+   * - V
+     - .. image:: images/pieces/polyominoes/V.png
+     - 4
+     -
+
+   * - W
+     - .. image:: images/pieces/polyominoes/W.png
+     - 4
+     -
+
+   * - X
+     - .. image:: images/pieces/polyominoes/X.png
+     - 1
+     -
+
+   * - Y
+     - .. image:: images/pieces/polyominoes/Y.png
+     - 8
+     - yes
+
+   * - Z
+     - .. image:: images/pieces/polyominoes/Z.png
+     - 4
+     - yes
+
+
+Coordinate System
+=================
+
+Polyominoes use a standard 2-dimensional *(x,y)* Cartesian coordinate
+system.
+
+Each unit square has 4 immediate neighbors.  The neighbors of the
+square at coordinates *(x, y)* are:
+
+    *{(x+1, y), (x-1, y), (x, y+1), (x, y-1)}*
+
+`See the FAQ for more details.
+<FAQ.html#how-should-polyomino-solution-files-be-interpreted>`__
+
+
+.. _Poly-4 Supplement: http://www.gamepuzzles.com/poly4.htm
+
+.. |c| unicode:: U+00A9 .. copyright sign

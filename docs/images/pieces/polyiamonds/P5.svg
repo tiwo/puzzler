@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="130.000" height="130.000"
+     viewBox="0 0 130.000 130.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(65.000,32.500) rotate(90)">
+<polygon fill="black" stroke="white"
+         stroke-width="0" stroke-linejoin="round"
+         points="10.000,34.641 30.000,34.641 35.000,25.981 25.000,25.981 20.000,17.321">
+<desc>P5</desc>
+</polygon>
+</g>
+</svg>

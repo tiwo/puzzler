@@ -20,6 +20,7 @@
    * `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
    * `Pentacubes: Puzzles & Solutions <pentacubes.html>`_
    * `Polycubes: Puzzles & Solutions <polycubes.html>`_
+   * `An Introduction to Polyominoes <polyominoes-intro.html>`_
    * `Notes on Polyominoes <polyomino-notes.html>`_
    * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
    * `Polyform Puzzler FAQ <FAQ.html>`_

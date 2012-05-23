@@ -59,7 +59,10 @@ viewing software.
             :target: pentominoes.html
             :class: borderless
 
-  Also see `Notes on Polyominoes <polyomino-notes.html>`_.
+  Also see:
+
+  * `An Introduction to Polyominoes <polyominoes-intro.html>`_
+  * `Notes on Polyominoes <polyomino-notes.html>`_
 
 * Polyiamonds_ (`hexiamonds`_ & `heptiamonds`_)
 
@@ -84,7 +87,10 @@ viewing software.
             :target: hexiamonds.html
             :class: borderless
 
-  Also see `Notes on Polyiamonds <polyiamond-notes.html>`_.
+  Also see:
+
+  * `An Introduction to Polyiamonds <polyiamonds-intro.html>`_
+  * `Notes on Polyiamonds <polyiamond-notes.html>`_
 
 * `Polyhexes <polyhexes.html>`_ (& `pentahexes`_)
 
@@ -148,6 +154,7 @@ viewing software.
 
   * `An Introduction to Polycubes <polycubes-intro.html>`_
   * `Notes on Polycubes <polycube-notes.html>`_
+  * `An Introduction to Polyominoes <polyominoes-intro.html>`_
   * `Notes on Polyominoes <polyomino-notes.html>`_
 
 * `Polysticks <polysticks.html>`_

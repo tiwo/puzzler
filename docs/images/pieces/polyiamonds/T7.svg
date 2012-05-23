@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="160.000" height="160.000"
+     viewBox="0 0 160.000 160.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="matrix(1,0,0,-1,0,51.962) translate(80.000,-40.000) rotate(-90)">
+<polygon fill="black" stroke="white"
+         stroke-width="0" stroke-linejoin="round"
+         points="15.000,34.641 20.000,43.301 25.000,34.641 45.000,34.641 40.000,25.981 30.000,25.981 25.000,17.321">
+<desc>T7</desc>
+</polygon>
+</g>
+</svg>

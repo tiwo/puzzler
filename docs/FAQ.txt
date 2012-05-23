@@ -276,6 +276,8 @@ ones.  Polyform families are given descriptive names:
   **In Polyform Puzzler:**
 
   * `Pentomino Puzzles & Solutions <pentominoes.html>`_
+  * `Polyomino Puzzles & Solutions <polyominoes.html>`_
+  * `An Introduction to Polyominoes <polyominoes-intro.html>`_
   * `Notes on Polyominoes <polyomino-notes.html>`_
 
 * Substituting a 3D cube for each 2D square in polyominoes results in
@@ -288,6 +290,7 @@ ones.  Polyform families are given descriptive names:
   **In Polyform Puzzler:**
 
   * `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`_
+  * `An Introduction to Polyominoes`_
   * `An Introduction to Polycubes <polycubes-intro.html>`_
   * `Notes on Polyominoes`_
   * `Notes on Polycubes <polycube-notes.html>`_
@@ -330,6 +333,7 @@ ones.  Polyform families are given descriptive names:
   * `Hexiamond Puzzles & Solutions <hexiamonds.html>`_
   * `Heptiamond Puzzles & Solutions <hexiamonds.html>`_
   * `Polyiamond Puzzles & Solutions <polyiamonds.html>`_
+  * `An Introduction to Polyiamonds <polyiamonds-intro.html>`_
   * `Notes on Polyiamonds <polyiamond-notes.html>`_
 
 * Polyforms based on regular hexagons are named "polyhexes_" (there's
@@ -441,7 +445,9 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   **In Polyform Puzzler:**
 
   * `Pentomino Puzzles & Solutions`_
+  * `Polyomino Puzzles & Solutions`_
   * `Solid Pentomino Puzzles & Solutions`_
+  * `An Introduction to Polyominoes`_
   * `Notes on Polyominoes`_
 
   .. _A000105: http://oeis.org/A000105
@@ -470,6 +476,7 @@ Encyclopedia of Integer Sequences <http://oeis.org/>`_.
   * `Hexiamond Puzzles & Solutions`_
   * `Heptiamond Puzzles & Solutions`_
   * `Polyiamond Puzzles & Solutions`_
+  * `An Introduction to Polyiamonds`_
   * `Notes on Polyiamonds`_
 
   .. _A000577: http://oeis.org/A000577
@@ -851,6 +858,8 @@ is::
 **In Polyform Puzzler:**
 
 * `Pentomino Puzzles & Solutions`_
+* `Polyomino Puzzles & Solutions`_
+* `An Introduction to Polyominoes`_
 * `Notes on Polyominoes`_
 
 
@@ -903,6 +912,7 @@ as the front wall.
 * `Pentacube Puzzles & Solutions`_
 * `Polycube Puzzles & Solutions`_
 * `An Introduction to Polycubes`_
+* `An Introduction to Polyominoes`_
 * `Notes on Polycubes`_
 * `Notes on Polyominoes`_
 
@@ -982,6 +992,7 @@ Example (with coordinates)::
 * `Hexiamond Puzzles & Solutions`_
 * `Heptiamond Puzzles & Solutions`_
 * `Polyiamond Puzzles & Solutions`_
+* `An Introduction to Polyiamonds`_
 * `Notes on Polyiamonds`_
 
 

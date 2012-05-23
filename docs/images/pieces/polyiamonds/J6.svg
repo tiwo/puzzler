@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="150.000" height="150.000"
+     viewBox="0 0 150.000 150.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="matrix(1,0,0,-1,0,43.301) translate(75.000,-37.500) rotate(90)">
+<polygon fill="black" stroke="white"
+         stroke-width="0" stroke-linejoin="round"
+         points="15.000,25.981 20.000,34.641 25.000,25.981 45.000,25.981 40.000,17.321 20.000,17.321">
+<desc>J6</desc>
+</polygon>
+</g>
+</svg>
