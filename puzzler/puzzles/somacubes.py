@@ -9,7 +9,7 @@
 Concrete Soma cube puzzles.
 """
 
-from puzzler.puzzles import Puzzle3D
+from puzzler.puzzles import Puzzle3D, Puzzle2D
 from puzzler.puzzles.polycubes import SomaCubes
 
 
@@ -380,3 +380,33 @@ class SomaClip(SomaCubes):
                         yield (x, y, z)
 
     transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+
+class SomaPyramid(SomaCubes):
+
+    """14 solutions."""
+
+    height = 5
+    width = 5
+    depth = 3
+
+    check_for_duplicates = True
+    duplicate_conditions = (
+        {'x_reversed': True, 'y_reversed': True},
+        {'xy_swapped': True},)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(5, 5, 1))
+            + [self.coordinate_offset(x+1, y+1, 1, None)
+               for (x, y) in Puzzle2D.coordinates_diamond(2)]
+            + [self.coordinate_offset(2, 2, 2, None)])
+        coords -= set(((0,0,0), (0,4,0), (4,0,0), (4,4,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['p'][-1]['flips'] = None
+        self.piece_data['p'][-1]['axes'] = None
+        self.piece_data['p'][-1]['rotations'] = None

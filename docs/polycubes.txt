@@ -52,9 +52,16 @@ Soma Cubes
 ==========
 
 `Soma Cubes`__ include all non-convex polycubes of order 3 (1) and 4
-(6).  They were invented by Piet Hein in 1933.  Many of the designs
-below are from the `Thinkfun Block By Block`__ challenge cards.
-The 7 Soma cubes are composed of 27 unit cubes.
+(6).  They were invented by Piet Hein in 1933.  The 7 Soma cubes are
+composed of 27 unit cubes.  Many of the designs below are from the
+`Thinkfun Block By Block`__ challenge cards.
+
+If we consider the "a" and "b" pieces (a chiral pair) to be
+interchangeable in reflection, there are exactly half as many
+solutions as shown for each of the puzzles below.  In other words, we
+can consider two solutions that are mirror reflections of each other
+to count as only one solution, but only if we allow pieces "a" and "b"
+to be exchanged (in the counts that follow, we don't allow this).
 
 __ http://en.wikipedia.org/wiki/Soma_cube
 __ http://www.thinkfun.com/blockbyblock
@@ -152,6 +159,15 @@ __ http://www.thinkfun.com/blockbyblock
           <../solutions/soma-clip.txt>`__
           (`X3D model <images/soma-clip.x3d>`__)
 
+   * - .. figure:: images/soma-pyramid.png
+
+          Pyramid: `14 solutions
+          <../solutions/soma-pyramid.txt>`__
+          (`X3D model <images/soma-pyramid.x3d>`__)
+
+     -
+     -
+
 
 Diabolical Cube
 ===============
@@ -212,13 +228,13 @@ hardwood sets of these polycubes are available from Kadon Enterprises:
 
      * - .. figure:: images/polycubes-12345-11x3x6-1.png
 
-            `1: solutions incomplete
+            `solutions incomplete
             <../solutions/polycubes-12345-11x3x6-1.txt>`__
             (`X3D model <images/polycubes-12345-11x3x6-1.x3d>`__)
 
        - .. figure:: images/polycubes-12345-11x3x6-2.png
 
-            `2: solutions incomplete
+            `solutions incomplete
             <../solutions/polycubes-12345-11x3x6-2.txt>`__
             (`X3D model <images/polycubes-12345-11x3x6-2.x3d>`__)
 
@@ -229,31 +245,31 @@ hardwood sets of these polycubes are available from Kadon Enterprises:
 
      * - .. figure:: images/polycubes-12345-x-1.png
 
-            `1: solutions incomplete
+            `solutions incomplete
             <../solutions/polycubes-12345-x-1.txt>`__
             (`X3D model <images/polycubes-12345-x-1.x3d>`__)
 
        - .. figure:: images/polycubes-12345-x-2.png
 
-            `2: solutions incomplete
+            `solutions incomplete
             <../solutions/polycubes-12345-x-2.txt>`__
             (`X3D model <images/polycubes-12345-x-2.x3d>`__)
 
        - .. figure:: images/polycubes-12345-x-3.png
 
-            `3: solutions incomplete
+            `solutions incomplete
             <../solutions/polycubes-12345-x-3.txt>`__
             (`X3D model <images/polycubes-12345-x-3.x3d>`__)
 
      * - .. figure:: images/polycubes-12345-x-4.png
 
-            `4: solutions incomplete
+            `solutions incomplete
             <../solutions/polycubes-12345-x-4.txt>`__
             (`X3D model <images/polycubes-12345-x-4.x3d>`__)
 
        - .. figure:: images/polycubes-12345-x-5.png
 
-            `5: solutions incomplete
+            `solutions incomplete
             <../solutions/polycubes-12345-x-5.txt>`__
             (`X3D model <images/polycubes-12345-x-5.x3d>`__)
 
