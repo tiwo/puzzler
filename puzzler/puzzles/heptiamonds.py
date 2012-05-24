@@ -57,7 +57,7 @@ class Heptiamonds7x12(Heptiamonds):
 
 class HeptiamondsSnowflake1(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     height = 12
     width = 12
@@ -80,9 +80,38 @@ class HeptiamondsSnowflake1(Heptiamonds):
         self.piece_data['W7'][-1]['flips'] = None
 
 
+class HeptiamondsSnowflake1Exploded(Heptiamonds):
+
+    """
+    many solutions
+
+    design from `Andrew Clarke's Poly Pages
+    <http://recmath.org/PolyPages/PolyPages/index.htm?Heptipatts.htm>`_
+    """
+
+    height = 14
+    width = 14
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        part = Triangular3DCoordSet(
+            list(self.coordinates_elongated_hexagon(4, 2, offset=(0,2,0)))
+            + list(self.coordinates_hexagon(2, offset=(4,0,0))))
+        coords = set(
+            list(part.translate((3,0,0)))
+            + list(part.rotate0(2).translate((18,3,0)))
+            + list(part.rotate0(4).translate((0,18,0)))
+            )
+        return sorted(coords)
+                                               
+    def customize_piece_data(self):
+        self.piece_data['W7'][-1]['flips'] = None
+
+
 class HeptiamondsSnowflake2(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     height = 16
     width = 16
@@ -120,7 +149,7 @@ class HeptiamondsSnowflake2(Heptiamonds):
 
 class HeptiamondsTriangle(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     height = 13
     width = 13
@@ -136,6 +165,54 @@ class HeptiamondsTriangle(Heptiamonds):
 
     def customize_piece_data(self):
         self.piece_data['I7'][-1]['rotations'] = None
+        self.piece_data['W7'][-1]['flips'] = None
+
+
+class HeptiamondsTrapezoidTriangle(Heptiamonds):
+
+    """many solutions"""
+
+    height = 14
+    width = 14
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        part = Triangular3DCoordSet(self.coordinates_trapezoid(9, 4))
+        coords = set()
+        coords.update(part)
+        coords.update(part.rotate0(2).translate((14,0,0)))
+        coords.update(part.rotate0(4).translate((0,14,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1,)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsSteppedObtuseTriangle(Heptiamonds):
+
+    """
+    many solutions
+
+    design by `Johannes H. Hindriks`_
+    """
+
+    height = 12
+    width = 12
+
+    check_for_duplicates = False
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = set()
+        for i in range(6):
+            coords.update(set(self.coordinates_parallelogram(
+                2, 2 * (6 - i), offset=(2*i,2*i,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
         self.piece_data['W7'][-1]['flips'] = None
 
 
@@ -625,6 +702,37 @@ class HeptiamondsHexagon11(Heptiamonds):
                         yield coord
 
 
+class HeptiamondsHexagon12(Heptiamonds):
+
+    """
+    many solutions.
+
+    12-unit-high hexagon with six gemstone holes & one hexagon hole.
+
+    design by `Johannes H. Hindriks`_
+    """
+
+    height = 12
+    width = 12
+
+    holes = set(((3,7,0), (4,4,1), (4,8,1), (7,3,0), (7,7,0), (8,4,1)))
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(6))
+        for offset in ((1,7,0), (3,3,0), (3,9,0), (5,5,0),
+                       (7,1,0), (7,7,0), (9,3,0)):
+            coords.difference_update(
+                set(self.coordinates_hexagon(1, offset=offset)))
+        coords -= self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['flips'] = None
+        self.piece_data['P7'][-1]['rotations'] = None
+
+
 class HeptiamondsDiamondRing(Heptiamonds):
 
     """
@@ -658,7 +766,7 @@ class HeptiamondsDiamondWindow(Heptiamonds):
 
     10-unit diamond with 4 2-unit diamond holes, like a window frame
 
-    design by `Johannes Hindriks <http://jhhindriks.info/37/index.htm>`_
+    design by `Johannes H. Hindriks <http://jhhindriks.info/37/index.htm>`_
     """
 
     height = 10
@@ -954,11 +1062,11 @@ class HeptiamondsHexgridHexagon1(Heptiamonds):
         self.piece_data['P7'][-1]['flips'] = None
 
 
-class HeptiamondsHexgridHexagon_x1(HeptiamondsHexgridHexagon1):
+class HeptiamondsHexgridHexagon2(HeptiamondsHexgridHexagon1):
 
-    """0 solutions"""
+    """many solutions"""
 
-    holes = set(((1,3), (1,5), (2,3), (3,1), (3,4), (3,5), (4,2), (5,1), (5,3)))
+    holes = set(((1,3), (2,2), (2,3), (2,5), (3,4), (3,5), (4,2), (5,1), (5,2)))
 
     def coordinates(self):
         hcoords = set(Polyhexes.coordinates_hexagon(4)) - self.holes
@@ -967,7 +1075,27 @@ class HeptiamondsHexgridHexagon_x1(HeptiamondsHexgridHexagon1):
 
     def customize_piece_data(self):
         self.piece_data['P7'][-1]['rotations'] = (0, 1)
-        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexgridHexagon_x1(HeptiamondsHexgridHexagon2):
+
+    """0 solutions"""
+
+    holes = set(((1,3), (1,5), (2,3), (3,1), (3,4), (3,5), (4,2), (5,1), (5,3)))
+
+
+class HeptiamondsHexgridHexagon_x2(HeptiamondsHexgridHexagon2):
+
+    """0 solutions"""
+
+    holes = set(((1,3), (1,5), (2,2), (2,5), (3,1), (3,5), (5,1), (5,2), (5,3)))
+
+
+class HeptiamondsHexgridHexagon_x3(HeptiamondsHexgridHexagon2):
+
+    """0 solutions"""
+
+    holes = set(((1,4), (1,5), (2,4), (2,5), (3,3), (4,1), (4,2), (5,1), (5,2)))
 
 
 class HeptiamondsHexgridTwoDiamonds1(Heptiamonds):
@@ -1346,6 +1474,60 @@ class HeptiamondsTriangleRing(Heptiamonds):
                         yield (x, y, z)
 
 
+class HeptiamondsTriangleRing2(Heptiamonds):
+
+    """
+    many solutions
+
+    design by `Johannes H. Hindriks`_
+    """
+
+    height = 14
+    width = 14
+
+    holes = set(((1,6,0), (6,1,0), (6,6,0)))
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_triangle(14))
+            - set(self.coordinates_triangle(5, offset=(3,3,0)))
+            - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsTriangleHexRing(Heptiamonds):
+
+    """
+    many solutions
+
+    design by `Johannes H. Hindriks`_
+    """
+
+    height = 15
+    width = 15
+
+    holes = set(((2,2,0), (2,10,0), (10,2,0)))
+
+    check_for_duplicates = False
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_triangle(15))
+            - set(self.coordinates_hexagon(3, offset=(2,2,0)))
+            - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
 class HeptiamondsSemiregularHexagon8x3(Heptiamonds):
 
     """many solutions"""
@@ -1597,24 +1779,108 @@ class HeptiamondsTrefoil3(Heptiamonds):
         self.piece_data['P7'][-1]['flips'] = None
 
 
-class HeptiamondsTrefoil3(Heptiamonds):
+class HeptiamondsTrefoil4(Heptiamonds):
 
-    """many solutions"""
+    """
+    many solutions
+  
+    design by `Johannes H. Hindriks`_
+    """
 
-    height = 14
-    width = 14
-
-    svg_rotation = 30
+    height = 12
+    width = 12
 
     def coordinates(self):
-        h = Triangular3DCoordSet(self.coordinates_elongated_hexagon(3, 2))
         coords = set(
-            list(self.coordinates_hexagon(4, offset=(3,3,0)))
-            + list(h.translate((9,5,0)))
-            + list(h.rotate0(1).translate((9,-2,0)))
-            + list(h.rotate0(2).translate((7,9,0))))
+            list(self.coordinates_hexagon(3))
+            + list(self.coordinates_hexagon(3, offset=(0,6,0)))
+            + list(self.coordinates_hexagon(3, offset=(6,0,0)))
+            + list(self.coordinates_hexagon(1, offset=(4,4,0))))
         return sorted(coords)
 
     def customize_piece_data(self):
         self.piece_data['P7'][-1]['rotations'] = (0, 1)
         self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsTrefoil5(Heptiamonds):
+
+    """many solutions"""
+
+    height = 12
+    width = 12
+
+    holes = set(((4,4,1), (4,5,1), (5,4,1),))
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_hexagon(3))
+            + list(self.coordinates_hexagon(3, offset=(0,6,0)))
+            + list(self.coordinates_hexagon(3, offset=(6,0,0)))
+            + list(self.coordinates_triangle(6, offset=(3,3,0))))
+        coords -= self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsTrefoil6(HeptiamondsTrefoil5):
+
+    """many solutions"""
+
+    holes = set(((4,5,0), (5,4,0), (5,5,0),))
+
+
+class HeptiamondsButterfly10x6(Heptiamonds):
+
+    """many solutions"""
+
+    width = 16
+    height = 12
+
+    svg_rotation = 90
+
+    def coordinates(self):
+        return self.coordinates_butterfly(10, 6)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2,)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsSemiregularHexagon7x4Ring(Heptiamonds):
+
+    """many solutions"""
+
+    width = 11
+    height = 11
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_semiregular_hexagon(7, 4))
+            - set(self.coordinates_triangle(3, offset=(4,4,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1,)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsParallelogramHexagon(Heptiamonds):
+
+    """many solutions"""
+
+    width = 12
+    height = 12
+
+    def coordinates(self):
+        part = Triangular3DCoordSet(self.coordinates_parallelogram(7, 4))
+        coords = set(part.translate((5,0,0)))
+        coords.update(part.rotate0(1).translate((4,0,0)))
+        coords.update(part.rotate0(2).translate((11,5,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2,)

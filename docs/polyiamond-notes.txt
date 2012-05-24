@@ -169,7 +169,7 @@ n=1    6   10   14   18   22   26   30   34   38    42    46    50    54    58
  15  510  570  630  690  750  810  870  930  990  1050  1110  1170  1230  1290
 ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ====  ====  ====  ====  ====
 
-Semi-regular hexagons::
+Semiregular hexagons::
 
     Hs(m,n) = T(m+2n) - 3T(n)
             = m² + 4mn + 4n² - 3n²
@@ -227,7 +227,7 @@ Butterflies::
 ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
 B    m=2    3    4    5    6    7    8    9   10   11   12   13   14   15
 ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
-  1    6   10   14   18   22   26   30   34   38   42   46   50   54   58
+n=1    6   10   14   18   22   26   30   34   38   42   46   50   54   58
   2  ...   16   24   32   40   48   56   64   72   80   88   96  104  112
   3  ...  ...   30   42   54   66   78   90  102  114  126  138  150  162
   4  ...  ...  ...   48   64   80   96  112  128  144  160  176  192  208
@@ -353,17 +353,10 @@ puzzles.*
 
 * Potential:
 
-  * B(10,6)
   * hexgrid Rs(14,2)
   * hexgrid Ri(11,3)
   * hexgrid Ri(8,4)
   * hexgrid C(4,4)
-  * 3 congruent hearts/cloverleafs (snowflake 1, cut from center to 3
-    inside corners & exploded;
-    http://recmath.org/PolyPages/PolyPages/index.htm?Heptipatts.htm)
-  * 3Tr(9,4) (arrange like a recycling triangle)
-  * several constructions from `Johannes Hindriks
-    <http://jhhindriks.info/37/index.htm>`_
 
 * No solutions:
 

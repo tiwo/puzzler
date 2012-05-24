@@ -26,6 +26,7 @@
      `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
      `interpreting solution files <FAQ.html#how-should-polyiamond-solution-files-be-interpreted>`__)
 
+
 .. contents::
 
 
@@ -129,6 +130,14 @@ Snowflakes
 
   .. image:: images/heptiamonds-snowflake-1.png
 
+* Exploded view of Snowflake 1 (split into three cloverleaf shapes;
+  design from `Andrew Clarke's Poly Pages
+  <http://recmath.org/PolyPages/PolyPages/index.htm?Heptipatts.htm>`_):
+  `solutions incomplete
+  <../solutions/heptiamonds-snowflake-1-exploded.txt>`__
+
+  .. image:: images/heptiamonds-snowflake-1-exploded.png
+
 * Snowflake 2: `solutions incomplete
   <../solutions/heptiamonds-snowflake-2.txt>`__
 
@@ -138,63 +147,72 @@ Snowflakes
 Hexagons
 ========
 
-Regular 12-unit-high (side length 6) hexagons with holes of various
-shapes & sizes:
+* Regular 12-unit-high (side length 6) hexagons with holes of various
+  shapes & sizes:
 
-1. `solutions incomplete
-   <../solutions/heptiamonds-hexagon-1.txt>`__
+  .. list-table::
+     :class: borderless
 
-   .. image:: images/heptiamonds-hexagon-1.png
+     * - .. figure:: images/heptiamonds-hexagon-1.png
 
-2. `solutions incomplete
-   <../solutions/heptiamonds-hexagon-2.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-1.txt>`__
 
-   .. image:: images/heptiamonds-hexagon-2.png
+       - .. figure:: images/heptiamonds-hexagon-2.png
 
-3. `solutions incomplete
-   <../solutions/heptiamonds-hexagon-3.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-2.txt>`__
 
-   .. image:: images/heptiamonds-hexagon-3.png
+     * - .. figure:: images/heptiamonds-hexagon-3.png
 
-4. `solutions incomplete
-   <../solutions/heptiamonds-hexagon-4.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-3.txt>`__
 
-   .. image:: images/heptiamonds-hexagon-4.png
+       - .. figure:: images/heptiamonds-hexagon-4.png
 
-5. `solutions incomplete
-   <../solutions/heptiamonds-hexagon-5.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-4.txt>`__
 
-   .. image:: images/heptiamonds-hexagon-5.png
+     * - .. figure:: images/heptiamonds-hexagon-5.png
 
-6. `solutions incomplete
-   <../solutions/heptiamonds-hexagon-6.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-5.txt>`__
 
-   .. image:: images/heptiamonds-hexagon-6.png
+       - .. figure:: images/heptiamonds-hexagon-6.png
 
-7. `solutions incomplete
-   <../solutions/heptiamonds-hexagon-7.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-6.txt>`__
 
-   .. image:: images/heptiamonds-hexagon-7.png
+     * - .. figure:: images/heptiamonds-hexagon-7.png
 
-8. `solutions incomplete
-   <../solutions/heptiamonds-hexagon-8.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-7.txt>`__
 
-   .. image:: images/heptiamonds-hexagon-8.png
+       - .. figure:: images/heptiamonds-hexagon-8.png
 
-9. `solutions incomplete
-   <../solutions/heptiamonds-hexagon-9.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-8.txt>`__
 
-   .. image:: images/heptiamonds-hexagon-9.png
+     * - .. figure:: images/heptiamonds-hexagon-9.png
 
-10. `solutions incomplete
-    <../solutions/heptiamonds-hexagon-10.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-9.txt>`__
 
-    .. image:: images/heptiamonds-hexagon-10.png
+       - .. figure:: images/heptiamonds-hexagon-10.png
 
-11. `solutions incomplete
-    <../solutions/heptiamonds-hexagon-11.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-10.txt>`__
 
-    .. image:: images/heptiamonds-hexagon-11.png
+     * - .. figure:: images/heptiamonds-hexagon-11.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-11.txt>`__
+
+       - .. figure:: images/heptiamonds-hexagon-12.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-12.txt>`__
+            (design by `Johannes H. Hindriks`_)
 
 
 Irregular Hexagons
@@ -220,78 +238,92 @@ Irregular Hexagons
 
   .. image:: images/heptiamonds-semiregular-hexagon-8x3.png
 
+- 7x4 semiregular hexagon ring: `solutions incomplete
+  <../solutions/heptiamonds-semiregular-hexagon-7x4-ring.txt>`__
+
+  .. image:: images/heptiamonds-semiregular-hexagon-7x4-ring.png
+
+- Semiregular hexagon formed from three 7x4 parallelograms (exploded
+  version of the 7x4 semiregular hexagon above): `solutions incomplete
+  <../solutions/heptiamonds-parallelogram-hexagon.txt>`__
+
+  .. image:: images/heptiamonds-parallelogram-hexagon.png
+
 
 Four 2x3 Hexagons
 =================
 
 In various configurations.
 
-1. Four 2x3 hexagons stacked vertically: `solutions incomplete
-   <../solutions/heptiamonds-hexagons-2x3-1.txt>`__
+* Four 2x3 hexagons stacked vertically: `solutions incomplete
+  <../solutions/heptiamonds-hexagons-2x3-1.txt>`__
 
-   .. image:: images/heptiamonds-hexagons-2x3-1.png
+  .. image:: images/heptiamonds-hexagons-2x3-1.png
 
-2. Two adjacent groups of two 2x3 hexagons stacked vertically:
-   `solutions incomplete
-   <../solutions/heptiamonds-hexagons-2x3-2.txt>`__
+* Two adjacent groups of two 2x3 hexagons stacked vertically:
+  `solutions incomplete
+  <../solutions/heptiamonds-hexagons-2x3-2.txt>`__
 
-   .. image:: images/heptiamonds-hexagons-2x3-2.png
+  .. image:: images/heptiamonds-hexagons-2x3-2.png
 
-3. Four 2x3 hexagons bunched together (one nestled on each side of a
-   central stack of two; similar to O4 tetrahex): `solutions incomplete
-   <../solutions/heptiamonds-hexagons-2x3-3.txt>`__
+* Four 2x3 hexagons bunched together (one nestled on each side of a
+  central stack of two; similar to O4 tetrahex): `solutions incomplete
+  <../solutions/heptiamonds-hexagons-2x3-3.txt>`__
 
-   .. image:: images/heptiamonds-hexagons-2x3-3.png
+  .. image:: images/heptiamonds-hexagons-2x3-3.png
 
-4. As in #3, but the two central hexagons are now two vertical units
-   apart: `solutions incomplete
-   <../solutions/heptiamonds-hexagons-2x3-4.txt>`__
+* As above, but the two central hexagons are now two vertical units
+  apart: `solutions incomplete
+  <../solutions/heptiamonds-hexagons-2x3-4.txt>`__
 
-   .. image:: images/heptiamonds-hexagons-2x3-4.png
+  .. image:: images/heptiamonds-hexagons-2x3-4.png
 
-5. As in #3, but the two central hexagons are now four vertical units
-   apart: `solutions incomplete
-   <../solutions/heptiamonds-hexagons-2x3-5.txt>`__
+* As above, but the two central hexagons are now four vertical units
+  apart: `solutions incomplete
+  <../solutions/heptiamonds-hexagons-2x3-5.txt>`__
 
-   .. image:: images/heptiamonds-hexagons-2x3-5.png
+  .. image:: images/heptiamonds-hexagons-2x3-5.png
 
-6. Four 2x3 hexagons arranged as a trefoil (similar to Y4 tetrahex):
-   `solutions incomplete
-   <../solutions/heptiamonds-hexagons-2x3-6.txt>`__
+* Four 2x3 hexagons arranged as a trefoil (similar to Y4 tetrahex):
+  `solutions incomplete
+  <../solutions/heptiamonds-hexagons-2x3-6.txt>`__
 
-   .. image:: images/heptiamonds-hexagons-2x3-6.png
+  .. image:: images/heptiamonds-hexagons-2x3-6.png
 
-7. Four 2x3 hexagons adjacent horizontally, with corners touching:
-   `solutions incomplete
-   <../solutions/heptiamonds-hexagons-2x3-7.txt>`__
+* Four separate 2x3 hexagons (proving that *any* configuration is possible!):
+  `solutions incomplete
+  <../solutions/heptiamonds-hexagons-2x3-7.txt>`__
 
-   .. image:: images/heptiamonds-hexagons-2x3-7.png
+  .. image:: images/heptiamonds-hexagons-2x3-7.png
 
 
 Hexagrams
 =========
 
-Side length 4 (overall height 16) hexagrams with various holes:
+* Side length 4 (overall height 16) hexagrams with various holes:
 
-1. `solutions incomplete
-   <../solutions/heptiamonds-hexagram.txt>`__
+  .. list-table::
+     :class: borderless
 
-   .. image:: images/heptiamonds-hexagram.png
+     * - .. figure:: images/heptiamonds-hexagram.png
 
-2. `solutions incomplete
-   <../solutions/heptiamonds-hexagram-2.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagram.txt>`__
 
-   .. image:: images/heptiamonds-hexagram-2.png
+       - .. figure:: images/heptiamonds-hexagram-2.png
 
-3. `solutions incomplete
-   <../solutions/heptiamonds-hexagram-3.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagram-2.txt>`__
 
-   .. image:: images/heptiamonds-hexagram-3.png
+     * - .. figure:: images/heptiamonds-hexagram-3.png
 
-4. `solutions incomplete
-   <../solutions/heptiamonds-hexagram-4.txt>`__
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagram-3.txt>`__
 
-   .. image:: images/heptiamonds-hexagram-4.png
+       - .. figure:: images/heptiamonds-hexagram-4.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagram-4.txt>`__
 
 
 Hexagon-Grid Shapes
@@ -311,9 +343,20 @@ puzzles <polyhexes.html#tetrahexes>`_.
 
   .. image:: images/heptiamonds-hexgrid-bumpy-triangle.png
 
-* Hexagon: `solutions incomplete <../solutions/heptiamonds-hexagon-1.txt>`__
+* Hexagons:
 
-  .. image:: images/heptiamonds-hexgrid-hexagon-1.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-hexgrid-hexagon-1.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-hexagon-1.txt>`__
+
+       - .. figure:: images/heptiamonds-hexgrid-hexagon-2.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-hexagon-2.txt>`__
 
 * 7x4 parallelogram: `solutions incomplete
   <../solutions/heptiamonds-hexgrid-7x4.txt>`__
@@ -429,11 +472,40 @@ Misc
 
   .. image:: images/heptiamonds-triangle.png
 
-* Triangle ring (14-unit triangle with points removed and central
-  5-unit triangle hole): `solutions incomplete
-  <../solutions/heptiamonds-triangle-ring.txt>`__
+* Trapezoid triangle (exploded version of the triangle above):
+  `solutions incomplete
+  <../solutions/heptiamonds-trapezoid-triangle.txt>`__
 
-  .. image:: images/heptiamonds-triangle-ring.png
+  .. image:: images/heptiamonds-trapezoid-triangle.png
+
+* Stepped obtuse triangle (design by `Johannes H. Hindriks`_):
+  `solutions incomplete
+  <../solutions/heptiamonds-stepped-obtuse-triangle.txt>`__
+
+  .. image:: images/heptiamonds-stepped-obtuse-triangle.png
+
+* Triangle rings:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-triangle-ring.png
+
+            14-unit triangle with points removed and central 5-unit
+            triangle hole: `solutions incomplete
+            <../solutions/heptiamonds-triangle-ring.txt>`__
+
+       - .. figure:: images/heptiamonds-triangle-ring-2.png
+
+            14-unit triangle with a central 5-unit triangle hole and 3
+            unit triangle holes (design by `Johannes H. Hindriks`_):
+            `solutions incomplete
+            <../solutions/heptiamonds-triangle-ring.txt>`__
+
+* Triangle hex ring (design by `Johannes H. Hindriks`_): `solutions
+  incomplete <../solutions/heptiamonds-triangle-hex-ring.txt>`__
+
+  .. image:: images/heptiamonds-triangle-hex-ring.png
 
 * Diamond ring (10-unit diamond with central 4-unit diamond hole):
   `solutions incomplete
@@ -441,9 +513,8 @@ Misc
 
   .. image:: images/heptiamonds-diamond-ring.png
 
-* Diamond window:
-  `solutions incomplete
-  <../solutions/heptiamonds-diamond-window.txt>`__
+* Diamond window (design by `Johannes H. Hindriks`_): `solutions
+  incomplete <../solutions/heptiamonds-diamond-window.txt>`__
 
   .. image:: images/heptiamonds-diamond-window.png
 
@@ -455,23 +526,49 @@ Misc
 
 * Trefoils:
 
-  .. figure:: images/heptiamonds-trefoil-1.png
+  .. list-table::
+     :class: borderless
 
-     `solutions incomplete
-     <../solutions/heptiamonds-trefoil-1.txt>`__
-     (design from `Kadon's Iamond Ring`_ booklet)
+     * - .. figure:: images/heptiamonds-trefoil-1.png
 
-  .. figure:: images/heptiamonds-trefoil-2.png
+            `solutions incomplete
+            <../solutions/heptiamonds-trefoil-1.txt>`__
+            (design from `Kadon's Iamond Ring`_ booklet)
 
-     `solutions incomplete
-     <../solutions/heptiamonds-trefoil-2.txt>`__
+       - .. figure:: images/heptiamonds-trefoil-2.png
 
-  .. figure:: images/heptiamonds-trefoil-3.png
+            `solutions incomplete
+            <../solutions/heptiamonds-trefoil-2.txt>`__
 
-     `solutions incomplete
-     <../solutions/heptiamonds-trefoil-3.txt>`__
+     * - .. figure:: images/heptiamonds-trefoil-3.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-trefoil-3.txt>`__
+
+       - .. figure:: images/heptiamonds-trefoil-4.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-trefoil-4.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+     * - .. figure:: images/heptiamonds-trefoil-5.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-trefoil-5.txt>`__
+
+       - .. figure:: images/heptiamonds-trefoil-6.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-trefoil-6.txt>`__
+
+* 10x6 butterfly: `solutions incomplete
+  <../solutions/heptiamonds-butterfly-10x6.txt>`__
+
+  .. image:: images/heptiamonds-butterfly-10x6.png
 
 
 .. _Kadon's Iamond Ring: http://gamepuzzles.com/esspoly.htm#IR
+.. _Johannes H. Hindriks: http://jhhindriks.info/37/index.htm
+
 
 .. |c| unicode:: U+00A9 .. copyright sign
