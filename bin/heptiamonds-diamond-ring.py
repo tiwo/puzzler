@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-""" solutions"""
+"""many solutions"""
 
 import puzzler
 from puzzler.puzzles.heptiamonds import HeptiamondsDiamondRing

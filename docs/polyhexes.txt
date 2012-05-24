@@ -253,6 +253,18 @@ seven tetrahexes, for a total of 40 hexagons.
             `12,714 solutions
             <../solutions/polyhexes-1234-knobbed-hexagon-3.txt>`__
 
+     * - .. figure:: images/polyhexes-1234-knobbed-hexagon-4.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-knobbed-hexagon-4.txt>`__
+
+       - .. figure:: images/polyhexes-1234-knobbed-hexagon-5.png
+
+            `solutions incomplete
+            <../solutions/polyhexes-1234-knobbed-hexagon-5.txt>`__
+
+       -
+
 * 2x6 elongated hexagon ring (design by Dan Klarskov): `659,517
   solutions
   <../solutions/polyhexes-1234-elongated-hexagon-2x6-ring.txt>`__

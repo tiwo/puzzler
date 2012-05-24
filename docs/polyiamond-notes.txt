@@ -358,6 +358,12 @@ puzzles.*
   * hexgrid Ri(11,3)
   * hexgrid Ri(8,4)
   * hexgrid C(4,4)
+  * 3 congruent hearts/cloverleafs (snowflake 1, cut from center to 3
+    inside corners & exploded;
+    http://recmath.org/PolyPages/PolyPages/index.htm?Heptipatts.htm)
+  * 3Tr(9,4) (arrange like a recycling triangle)
+  * several constructions from `Johannes Hindriks
+    <http://jhhindriks.info/37/index.htm>`_
 
 * No solutions:
 

@@ -309,6 +309,26 @@ class Polyhexes1234KnobbedHexagon3(Polyhexes1234KnobbedHexagon1):
     holes = set(((2,4), (4,6), (6,2)))
 
 
+class Polyhexes1234KnobbedHexagon4(Polyhexes1234KnobbedHexagon1):
+
+    """many solutions"""
+
+    holes = set()
+
+    extras = ((0,4), (4,8), (8,0),)
+
+    svg_rotation = -30
+
+
+class Polyhexes1234KnobbedHexagon5(Polyhexes1234KnobbedHexagon1):
+
+    """many solutions"""
+
+    holes = set()
+
+    extras = ((0,6), (6,0), (6,6),)
+
+
 class Polyhexes1234IrregularHexagon3(Polyhexes1234):
 
     """655,208 solutions"""

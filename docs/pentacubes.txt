@@ -321,6 +321,13 @@ Misc
 
   .. image:: images/pentacubes-panorama.png
 
+* Cooling fins (design from `Torsten Sillke's pages
+  [10th Pentacube Contest, 1999]`_):
+  `solutions incomplete <../solutions/pentacubes-cooling-fins.txt>`__
+  (`X3D model <images/pentacubes-cooling-fins.x3d>`__)
+
+  .. image:: images/pentacubes-cooling-fins.png
+
 
 Pentacubes Plus
 ===============
@@ -586,6 +593,13 @@ Misc
   (`X3D model <images/non-convex-pentacubes-diamond-pyramid-1.x3d>`__)
 
   .. image:: images/non-convex-pentacubes-diamond-pyramid-1.png
+
+* 5x5x8 crystal tower:
+  `solutions incomplete
+  <../solutions/non-convex-pentacubes-5x5x8-crystal-tower.txt>`__
+  (`X3D model <images/non-convex-pentacubes-5x5x8-crystal-tower.x3d>`__)
+
+  .. image:: images/non-convex-pentacubes-5x5x8-crystal-tower.png
 
 
 .. _Super Deluxe Quintillions:

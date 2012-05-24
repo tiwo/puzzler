@@ -628,7 +628,7 @@ class HeptiamondsHexagon11(Heptiamonds):
 class HeptiamondsDiamondRing(Heptiamonds):
 
     """
-     solutions
+    many solutions
 
     10-unit diamond with central 4-unit diamond hole
     """
@@ -649,6 +649,36 @@ class HeptiamondsDiamondRing(Heptiamonds):
 
     def customize_piece_data(self):
         self.piece_data['W7'][-1]['flips'] = None
+
+
+class HeptiamondsDiamondWindow(Heptiamonds):
+
+    """
+    many solutions
+
+    10-unit diamond with 4 2-unit diamond holes, like a window frame
+
+    design by `Johannes Hindriks <http://jhhindriks.info/37/index.htm>`_
+    """
+
+    height = 10
+    width = 10
+
+    check_for_duplicates = False
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = set(self.coordinates_parallelogram(10, 10))
+        for x in (2, 6):
+            for y in (2, 6):
+                coords -= set(
+                    self.coordinates_parallelogram(2, 2, offset=(x,y,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['flips'] = None
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2,)
 
 
 class Heptiamonds4x22LongHexagon(Heptiamonds):

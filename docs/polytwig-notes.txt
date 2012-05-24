@@ -531,9 +531,17 @@ Potential Puzzles
     The pentatwig nodes (end points of the line segments) can also be
     transformed into hexagons, resulting in a subset of the hexahexes
     (120° neighbors only) on a hexagonal tiling with regular sparse
-    holes (1/3 of all hexagons are holes).
+    holes (1/3 of all hexagons are holes).  (This is equivalent to the
+    hexiamonds with the tips of each unit triangle removed.)
 
-    See email from Colin F. Brown,  2012-04-29 & 2012-05-06.
+    See email from Colin F. Brown, 2012-04-29 & 2012-05-06.
+
+    Implementation idea: intersection points are primary columns, line
+    segments are secondary.  That's just another way of specifying
+    polyiamonds though, exactly equivalent.
+
+  * H(2) & T(3) + 3 spikes ["A simultaneous construction" in email
+    from Colin F. Brown, 2012-05-15].
 
 * No solutions:
 

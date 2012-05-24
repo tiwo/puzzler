@@ -807,6 +807,52 @@ class PentacubesPanorama(Pentacubes):
         return sorted(coords)
 
 
+class PentacubesCoolingFins(Pentacubes):
+
+    """
+    many solutions
+
+    design from `Torsten Sillke's pages [10th Pentacube Contest, 1999]
+    <http://www.mathematik.uni-bielefeld.de/~sillke/CONTEST/penta-contest>`_
+    """
+
+    width = 6
+    height = 15
+    depth = 2
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set(
+            self.coordinates_cuboid(self.width, self.height, self.depth))
+        for y in range(1, 14, 2):
+            coords -= set(self.coordinates_cuboid(5, 1, 1, offset=(1,y,1)))
+        return sorted(coords)
+
+
+class PentacubesDiamondTower(PentacubesPlus):
+
+    """0? solutions"""
+
+    width = 7
+    height = 7
+    depth = 9
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            self.coordinate_offset(x, y, z, None)
+            for x, y in Puzzle2D.coordinates_diamond(4) for z in range(5))
+        for i in range(3):
+            coords.update(set(
+                self.coordinate_offset(x, y, i+5, None)
+                for (x, y) in
+                Puzzle2D.coordinates_diamond(3 - i, offset=(i+1,i+1))))
+        coords.add(self.coordinate_offset(3, 3, 8, None))
+        return sorted(coords)
+
+
 class PentacubesPlus2x5x15(PentacubesPlus):
 
     """many solutions"""
@@ -1403,7 +1449,8 @@ class NonConvexPentacubesDiamondPyramid1(NonConvexPentacubes):
     """
     many solutions
 
-
+    design from `Torsten Sillke's pages [1992]
+    <http://www.mathematik.uni-bielefeld.de/~sillke/CONTEST/pentaPRB>`_
     """
 
     width = 13
@@ -1417,6 +1464,27 @@ class NonConvexPentacubesDiamondPyramid1(NonConvexPentacubes):
         for i in range(self.depth):
             coords.update(set(
                 self.coordinate_offset(x, y, i, None)
-                for (x, y) in Puzzle2D.coordinates_diamond(
-                7 - 2 * i, offset=(2*i,2*i,i))))
+                for (x, y) in
+                Puzzle2D.coordinates_diamond(7 - 2 * i, offset=(2*i,2*i))))
+        return sorted(coords)
+
+
+class NonConvexPentacubes5x5x8CrystalTower(NonConvexPentacubes):
+
+    """many solutions"""
+
+    width = 5
+    height = 5
+    depth = 8
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(self.coordinates_cuboid(5, 5, 4))
+        for i in range(4):
+            coords.update(set(
+                self.coordinate_offset(x, y, i+4, None)
+                for (x, y) in
+                Puzzle2D.coordinates_diamond(4 - i, offset=(i-1,i-1))))
+        coords.intersection_update(set(self.coordinates_cuboid(5, 5, 8)))
         return sorted(coords)
