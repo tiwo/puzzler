@@ -23,7 +23,8 @@
 
    * `Puzzles & Solutions <puzzles.html>`_
    * `How to Extend Polyform Puzzler <extend.html>`_
-   * `To do list <todo.html>`_
+   * `To Do List <todo.html>`_
+   * `Polyform Puzzler History <history.html>`_
 
 .. sectnum::
 .. contents::

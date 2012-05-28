@@ -717,6 +717,81 @@ class PentacubesSteppedPyramid4(PentacubesSteppedPyramid2):
     corner_offsets = ((1,1,1), (7,1,1), (7,7,1), (1,7,1))
 
 
+class PentacubesSteppedPyramid5(Pentacubes):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(5):
+            coords.update(set(
+                self.coordinates_cuboid(9 - 2 * i, 9 - 2 * i, 1,
+                                        offset=(i,i,i))))
+        coords.difference_update(set(
+            self.coordinates_cuboid(9, 1, 1, offset=(0,4,0))))
+        coords.difference_update(set(
+            self.coordinates_cuboid(1, 9, 1, offset=(4,0,0))))
+        coords.difference_update(set(
+            self.coordinates_cuboid(3, 3, 1, offset=(3,3,0))))
+        coords.add(self.coordinate_offset(4, 4, 0, None))
+        return sorted(coords)
+
+
+class PentacubesSteppedPyramid6(Pentacubes):
+
+    """0 solutions"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(5):
+            coords.update(set(
+                self.coordinates_cuboid(9 - 2 * i, 9 - 2 * i, 1,
+                                        offset=(i,i,i))))
+        for d in (0, 1, 2, 6, 7, 8):
+            for e in (0, 8):
+                coords.discard(
+                    self.coordinate_offset(e, d, 0, None))
+                coords.discard(
+                    self.coordinate_offset(d, e, 0, None))
+        return sorted(coords)
+
+
+class PentacubesSteppedPyramid_x1(Pentacubes):
+
+    """0 solutions (inpossible due to corners)"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(5):
+            coords.update(set(
+                self.coordinates_cuboid(9 - 2 * i, 9 - 2 * i, 1,
+                                        offset=(i,i,i))))
+        for d in (0, 8):
+            coords.difference_update(set(
+                self.coordinates_cuboid(5, 1, 1, offset=(2,d,0))))
+            coords.difference_update(set(
+                self.coordinates_cuboid(1, 5, 1, offset=(d,2,0))))
+        return sorted(coords)
+
+
 class PentacubesCastle(Pentacubes):
 
     """

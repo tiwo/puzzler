@@ -17,10 +17,13 @@
 .. sidebar:: Also see:
 
    * `Polyform Puzzler FAQ <FAQ.html>`_
+   * `How to Extend Polyform Puzzler <extend.html>`_
+   * `Polyform Puzzler History <history.html>`_
+   * `To Do List <todo.html>`_
 
 Polyform Puzzler solves a variety of polyomino, polyiamond, polyhex,
-polycube, polystick, and polytrig puzzles.  Files containing solutions
-of most puzzles are available at
+polycube, polystick, polytrig, and polytwig puzzles.  Files containing
+solutions of most puzzles are available at
 http://puzzler.sourceforge.net/solutions; direct links to individual
 solution files are provided.  The solution images below were generated
 by Polyform Puzzler itself, via the ``-s``/``--svg`` option, and SVG
@@ -233,6 +236,10 @@ viewing software.
     .. image:: images/one-sided-polytrigs-123-x-1-small.png
        :target: g4gX.html
        :class: borderless
+
+    Also, `my talk presented at G4G10 <g4g10-talk.html>`__ and `my
+    account of G4G10 (blog article, off-site)
+    <http://www.artima.com/weblogs/viewpost.jsp?thread=341893>`__.
 
 
 .. |---| unicode:: U+2014  .. em dash

@@ -293,6 +293,18 @@ Misc
             `solutions incomplete <../solutions/pentacubes-stepped-pyramid-4.txt>`__
             (`X3D model <images/pentacubes-stepped-pyramid-4.x3d>`__)
 
+     * - .. figure:: images/pentacubes-stepped-pyramid-5.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-stepped-pyramid-5.txt>`__
+            (`X3D model <images/pentacubes-stepped-pyramid-5.x3d>`__)
+
+       - .. figure:: images/pentacubes-stepped-pyramid-6.png
+
+            `solutions incomplete
+            <../solutions/pentacubes-stepped-pyramid-6.txt>`__
+            (`X3D model <images/pentacubes-stepped-pyramid-6.x3d>`__)
+
      * - .. figure:: images/pentacubes-stepped-pyramid-11x7-1.png
 
             11x7 (3x1x1 hole hidden in the base; design from

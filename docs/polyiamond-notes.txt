@@ -360,12 +360,13 @@ puzzles.*
 
 * No solutions:
 
-  * H(4) - 9 units, spread out (= HeptiamondsHexgridHexagon_x1)
-  * 4H(2) trefoil (= HeptiamondsHexgridTrefoil_x1)
-  * 4H(2) in a row (= HeptiamondsHexgridRosettes_x1)
+  * hexgrid H(4) - 9 units, spread out (= HeptiamondsHexgridHexagon_x1)
+  * hexgrid 4H(2) trefoil (= HeptiamondsHexgridTrefoil_x1)
+  * hexgrid 4H(2) in a row (= HeptiamondsHexgridRosettes_x1)
 
 278: polyiamonds of order 1 to 7
 
+* H(7) - T(4)
 * P(14,10) - 2 units
 * He(2,10) - 2 units
 * {C(14,5), C(10,7), C(7,10), C(5,14)} - 2 units
