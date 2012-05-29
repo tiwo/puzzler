@@ -38,7 +38,7 @@ from datetime import datetime, timedelta
 from puzzler import exact_cover_dlx
 from puzzler import exact_cover_x2
 from puzzler import info
-from puzzler.utils import thousands
+from puzzler.utils import thousands, plural_s
 
 try:
     import locale
@@ -164,7 +164,7 @@ def report_search_state(puzzle_class, output_stream, settings):
         print >>output_stream, (
             '\nSession report: %s solution%s, %s searches.\n'
             % (thousands(state.num_solutions),
-               ('' if state.num_solutions == 1 else 's'),
+               plural_s(state.num_solutions),
                thousands(state.num_searches)))
         output_stream.flush()
     puzzle.record_solution(
@@ -188,7 +188,7 @@ def solve(puzzle_class, output_stream, settings):
         print >>output_stream, (
             '\nResuming session (%s solution%s, %s searches).\n'
             % (thousands(state.num_solutions),
-               ('' if state.num_solutions == 1 else 's'),
+               plural_s(state.num_solutions),
                thousands(state.num_searches)))
         output_stream.flush()
     starting_solutions = state.num_solutions
@@ -199,8 +199,8 @@ def solve(puzzle_class, output_stream, settings):
         try:
             for component in puzzle_class.components():
                 if component.__name__ not in state.completed_components:
-                    # !!! instantiate inside the loop instead?
-                    # will save time initially with multi-part puzzles
+                    # !!! instantiate inside the loop instead?  will save time
+                    # initially (and memory) with multi-part puzzles
                     puzzles.append(component())
             for puzzle in puzzles:
                 matrices.append((puzzle.matrix, puzzle.secondary_columns))
@@ -248,7 +248,7 @@ def solve(puzzle_class, output_stream, settings):
         print >>output_stream, (
             '%s solution%s, %s searches, duration %s'
             % (thousands(solver.num_solutions),
-               ('' if solver.num_solutions == 1 else 's'),
+               plural_s(solver.num_solutions),
                thousands(solver.num_searches),
                duration))
         if len(stats) > 1:
@@ -257,7 +257,7 @@ def solve(puzzle_class, output_stream, settings):
                     '(%s: %s solution%s, %s searches)'
                     % (puzzles[i].__class__.__name__,
                        thousands(solutions),
-                       ('' if solutions == 1 else 's'),
+                       plural_s(solutions),
                        thousands(searches)))
         output_stream.flush()
     state.cleanup()
@@ -305,15 +305,18 @@ class SessionState(object):
 
     def save(self, solver, final=False):
         if self.state_file and self.lock.acquire(final):
-            GIL_interval = sys.getcheckinterval()
-            sys.setcheckinterval(sys.maxint)
+            # GIL check interval hack (r512, to prevent corrupted state
+            # results) doesn't work, see
+            # http://dr-josiah.blogspot.ca/2011/07/neat-python-hack-no-broken-code.html
+            #GIL_interval = sys.getcheckinterval()
+            #sys.setcheckinterval(sys.maxint)
             self.num_solutions = solver.num_solutions
             self.num_searches = solver.num_searches
             self.state_file.seek(0)
             pickle.dump(self, self.state_file, 2)
             self.state_file.flush()
             self.state_file.truncate()
-            sys.setcheckinterval(GIL_interval)
+            #sys.setcheckinterval(GIL_interval)
             self.lock.release()
 
     def save_periodically(self, solver):

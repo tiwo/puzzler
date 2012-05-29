@@ -14,3 +14,9 @@ import locale
 
 def thousands(number):
     return locale.format('%d', number, grouping=True)
+
+def plural_s(number):
+    if number == 1:
+        return ''
+    else:
+        return 's'
