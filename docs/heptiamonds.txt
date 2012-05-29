@@ -502,10 +502,21 @@ Misc
             `solutions incomplete
             <../solutions/heptiamonds-triangle-ring.txt>`__
 
-* Triangle hex ring (design by `Johannes H. Hindriks`_): `solutions
-  incomplete <../solutions/heptiamonds-triangle-hex-ring.txt>`__
+* Triangle hex rings:
 
-  .. image:: images/heptiamonds-triangle-hex-ring.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-triangle-hex-ring.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-triangle-hex-ring.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+       - .. figure:: images/heptiamonds-triangle-hex-ring-2.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-triangle-hex-ring.txt>`__
 
 * Diamond ring (10-unit diamond with central 4-unit diamond hole):
   `solutions incomplete

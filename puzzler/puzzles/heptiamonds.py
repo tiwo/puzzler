@@ -1528,6 +1528,16 @@ class HeptiamondsTriangleHexRing(Heptiamonds):
         self.piece_data['P7'][-1]['flips'] = None
 
 
+class HeptiamondsTriangleHexRing2(HeptiamondsTriangleHexRing):
+
+    """many solutions"""
+
+    height = 14
+    width = 14
+
+    holes = set(((0,0,0), (0,14,0), (14,0,0)))
+
+
 class HeptiamondsSemiregularHexagon8x3(Heptiamonds):
 
     """many solutions"""

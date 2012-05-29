@@ -48,6 +48,66 @@ class Polysticks1234_3x7DiamondLattice(Polysticks1234):
         return self.coordinates_diamond_lattice(7, 3)
 
 
+class Polysticks1234TruncatedDiamondLattice6x4(Polysticks1234):
+
+    """many solutions"""
+
+    width = 8
+    height = 8
+
+    svg_rotation = -45
+
+    def coordinates(self):
+        coords = set(self.coordinates_diamond_lattice(4, 4))
+        for offset in ((0,4,0), (1,5,0), (4,0,0), (5,1,0)):
+            coords.update(set(self.coordinates_bordered(3, 3, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0,1)
+
+
+class Polysticks1234TruncatedDiamondLattice8x3(Polysticks1234):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+
+    svg_rotation = -45
+
+    def coordinates(self):
+        coords = set(self.coordinates_diamond_lattice(6, 3))
+        for offset in ((0,6,0), (6,0,0)):
+            coords.update(set(self.coordinates_bordered(3, 3, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0,1)
+
+
+class Polysticks1234TruncatedDiamondLattice12x2(Polysticks1234):
+
+    """many solutions"""
+
+    width = 12
+    height = 12
+
+    svg_rotation = -45
+
+    def coordinates(self):
+        coords = set(self.coordinates_diamond_lattice(10, 2))
+        for offset in ((0,9,0), (9,0,0)):
+            coords.update(set(self.coordinates_bordered(3, 3, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0,1)
+
+
 class Polysticks1234_8x8Unbordered(Polysticks1234):
 
     """

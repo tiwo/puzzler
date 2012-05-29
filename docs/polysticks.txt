@@ -193,7 +193,7 @@ Polysticks of Order 1 Through 4
 ===============================
 
 This puzzle uses the 1 monostick, 2 disticks, 5 tristicks, and 16
-tetrasticks.
+tetrasticks, for a total of 84 line segments.
 
 * 7x7 grid: `solutions incomplete
   <../solutions/polysticks-7x7.txt>`__
@@ -204,6 +204,23 @@ tetrasticks.
   <../solutions/polysticks-3x7-diamond-lattice.txt>`__
 
   .. image:: images/polysticks-3x7-diamond-lattice.png
+
+* Truncated diamond lattices:
+
+  - 6x4: `solutions incomplete
+    <../solutions/polysticks-1234-truncated-diamond-lattice-6x4.txt>`__
+
+    .. image:: images/polysticks-1234-truncated-diamond-lattice-6x4.png
+
+  - 8x3: `solutions incomplete
+    <../solutions/polysticks-1234-truncated-diamond-lattice-8x3.txt>`__
+
+    .. image:: images/polysticks-1234-truncated-diamond-lattice-8x3.png
+
+  - 12x2: `solutions incomplete
+    <../solutions/polysticks-1234-truncated-diamond-lattice-12x2.txt>`__
+
+    .. image:: images/polysticks-1234-truncated-diamond-lattice-12x2.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign
