@@ -326,12 +326,15 @@ Hexagrams
             <../solutions/heptiamonds-hexagram-4.txt>`__
 
 
-Hexagon-Grid Shapes
-===================
+Hexagonal-Grid Shapes
+=====================
 
 These shapes are all based on the hexagonal grid, made up of 28
 6-triangle hexagons.  In fact, many of these shapes are also `tetrahex
 puzzles <polyhexes.html#tetrahexes>`_.
+
+Some shapes have hexagonal-grid holes, others have triangular-grid
+holes.
 
 * Triangle: `solutions incomplete
   <../solutions/heptiamonds-hexed-triangle.txt>`__
@@ -357,6 +360,16 @@ puzzles <polyhexes.html#tetrahexes>`_.
 
             `solutions incomplete
             <../solutions/heptiamonds-hexgrid-hexagon-2.txt>`__
+
+     * - .. figure:: images/heptiamonds-hexgrid-hexagon-3.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-hexagon-3.txt>`__
+
+       - .. figure:: images/heptiamonds-hexgrid-hexagon-4.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-hexagon-4.txt>`__
 
 * 7x4 parallelogram: `solutions incomplete
   <../solutions/heptiamonds-hexgrid-7x4.txt>`__
@@ -464,6 +477,14 @@ puzzles <polyhexes.html#tetrahexes>`_.
             <../solutions/heptiamonds-hexgrid-flower-2.txt>`__
 
 
+H(2) Hexagonal-Grid Shapes
+==========================
+
+These shapes are all based on the hexagonal grid, made up of 7
+24-triangle hexagons (side length 2).
+
+
+
 Misc
 ====
 
@@ -483,6 +504,12 @@ Misc
   <../solutions/heptiamonds-stepped-obtuse-triangle.txt>`__
 
   .. image:: images/heptiamonds-stepped-obtuse-triangle.png
+
+* Sawtooth triangle (design by `Johannes H. Hindriks`_):
+  `solutions incomplete
+  <../solutions/heptiamonds-sawtooth-triangle.txt>`__
+
+  .. image:: images/heptiamonds-sawtooth-triangle.png
 
 * Triangle rings:
 

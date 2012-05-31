@@ -145,7 +145,7 @@ class Polyiamonds(PuzzlePseudo3D):
     @classmethod
     def coordinates_hexgrid(cls, coords, x_initial=None, offset=None):
         """
-        Map hexagonal-grid `coords` to triangular-grid coordinates.
+        Map H(1) hexagonal-grid `coords` to triangular-grid coordinates.
 
         `x_initial` is the trigrid x coordinate of hexgrid (0,0), normally
         (height(hexgrid `coords`) - 1).  If omitted, it is calculated from the
@@ -671,8 +671,6 @@ class OneSidedPolyiamonds123456(OneSidedLowercaseMixin, Polyiamonds123456):
 
 
 class Heptiamonds(Polyiamonds):
-
-    check_for_duplicates = True
 
     piece_data = {
         'I7': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 2, 0, 1),

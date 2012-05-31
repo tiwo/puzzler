@@ -29,6 +29,26 @@ class Polysticks1234_7x7(Polysticks1234):
         self.piece_data['P'][-1]['rotations'] = None
 
 
+class Polysticks1234_10x5(Polysticks1234):
+
+    """many solutions"""
+
+    width = 10
+    height = 5
+
+    holes = set(((4,2,0),))
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_bordered(self.width, self.height))
+            - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
 class Polysticks1234_3x7DiamondLattice(Polysticks1234):
 
     """
@@ -106,6 +126,88 @@ class Polysticks1234TruncatedDiamondLattice12x2(Polysticks1234):
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['rotations'] = (0,1)
+
+
+class Polysticks1234Octagon1(Polysticks1234):
+
+    """many solutions"""
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_bordered(4, 8, offset=(2,0,0)))
+            + list(self.coordinates_bordered(8, 4, offset=(0,2,0)))
+            + list(self.coordinates_bordered(6, 6, offset=(1,1,0))))
+        coords -= set(self.coordinates_bordered(2, 2, offset=(3,3,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
+class Polysticks1234Octagon2(Polysticks1234):
+
+    """many solutions"""
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_bordered(4, 8, offset=(2,0,0)))
+            + list(self.coordinates_bordered(8, 4, offset=(0,2,0)))
+            + list(self.coordinates_bordered(6, 6, offset=(1,1,0))))
+        coords -= set(self.coordinates_unbordered(6, 2, offset=(1,3,0)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1,)
+
+
+class Polysticks1234FourSquares1(Polysticks1234):
+
+    """many solutions"""
+
+    width = 10
+    height = 10
+
+    svg_rotation = 45
+
+    def coordinates(self):
+        coords = set()
+        for i in range(4):
+            coords.update(
+                set(self.coordinates_bordered(4, 4, offset=(i*2,i*2,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1,)
+
+
+class Polysticks1234ThreeSquares1(Polysticks1234):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+
+    svg_rotation = 45
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_bordered(5, 5))
+            + list(self.coordinates_bordered(5, 5, offset=(4,4,0)))
+            + list(self.coordinates_bordered(3, 3, offset=(3,3,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1,)
 
 
 class Polysticks1234_8x8Unbordered(Polysticks1234):

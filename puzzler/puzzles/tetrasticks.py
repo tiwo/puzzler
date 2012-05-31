@@ -7,6 +7,10 @@
 
 """
 Concrete tetrastick puzzles.
+
+Puzzles that use all 16 free tetrasticks must have a parity imbalance of 2, 6,
+10, or 14.  Fully symmetrical puzzles (imbalance = 0) are not possible without
+omitting at least one piece.
 """
 
 import copy
@@ -169,6 +173,20 @@ class Tetrasticks3x5DiamondLattice(Tetrasticks):
 
     def coordinates(self):
         return self.coordinates_diamond_lattice(5, 3)
+
+
+class TetrasticksParallelogram5x5(Tetrasticks):
+
+    """0 solutions -- impossible due to parity (imbalance = 4)"""
+
+    width = 10
+    height = 6
+
+    def coordinates(self):
+        return self.coordinates_parallelogram(5, 5)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = (0,1)
 
 
 class OneSidedTetrasticks5x5DiamondLattice(OneSidedTetrasticks):
@@ -484,6 +502,32 @@ class OneSidedTetrasticksX2(OneSidedTetrasticksX1):
 
     holes = set((
         (3,5,0), (4,4,0), (4,4,1), (4,5,0), (4,5,1), (5,3,1), (5,4,0), (5,4,1)))
+
+
+class OneSidedTetrasticksTrapezoid10x5(OneSidedTetrasticks):
+
+    """many solutions"""
+
+    height = 11
+    width = 11
+
+    svg_rotation = 135
+
+    def coordinates(self):
+        return self.coordinates_trapezoid(10, 5)
+
+
+class OneSidedTetrasticksParallelogram5x8(OneSidedTetrasticks):
+
+    """many solutions"""
+
+    height = 9
+    width = 13
+
+    svg_rotation = -45
+
+    def coordinates(self):
+        return self.coordinates_parallelogram(5, 8)
 
 
 class OneSidedWeldedTetrasticks5x5(OneSidedTetrasticks):

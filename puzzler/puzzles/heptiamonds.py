@@ -22,6 +22,7 @@ class Heptiamonds3x28(Heptiamonds):
     height = 3
     width = 28
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
 
@@ -32,6 +33,7 @@ class Heptiamonds4x21(Heptiamonds):
     height = 4
     width = 21
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
 
@@ -42,6 +44,7 @@ class Heptiamonds6x14(Heptiamonds):
     height = 6
     width = 14
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
 
@@ -52,6 +55,7 @@ class Heptiamonds7x12(Heptiamonds):
     height = 7
     width = 12
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
 
@@ -61,8 +65,6 @@ class HeptiamondsSnowflake1(Heptiamonds):
 
     height = 12
     width = 12
-
-    check_for_duplicates = False
 
     def coordinates(self):
         for z in range(self.depth):
@@ -92,8 +94,6 @@ class HeptiamondsSnowflake1Exploded(Heptiamonds):
     height = 14
     width = 14
 
-    check_for_duplicates = False
-
     def coordinates(self):
         part = Triangular3DCoordSet(
             list(self.coordinates_elongated_hexagon(4, 2, offset=(0,2,0)))
@@ -115,8 +115,6 @@ class HeptiamondsSnowflake2(Heptiamonds):
 
     height = 16
     width = 16
-
-    check_for_duplicates = False
 
     def coordinates(self):
         holes = set(((7,4,0),(7,4,1),(8,4,0),(8,3,1),
@@ -154,8 +152,6 @@ class HeptiamondsTriangle(Heptiamonds):
     height = 13
     width = 13
 
-    check_for_duplicates = False
-
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -174,8 +170,6 @@ class HeptiamondsTrapezoidTriangle(Heptiamonds):
 
     height = 14
     width = 14
-
-    check_for_duplicates = False
 
     def coordinates(self):
         part = Triangular3DCoordSet(self.coordinates_trapezoid(9, 4))
@@ -201,8 +195,6 @@ class HeptiamondsSteppedObtuseTriangle(Heptiamonds):
     height = 12
     width = 12
 
-    check_for_duplicates = False
-
     svg_rotation = 30
 
     def coordinates(self):
@@ -216,14 +208,34 @@ class HeptiamondsSteppedObtuseTriangle(Heptiamonds):
         self.piece_data['W7'][-1]['flips'] = None
 
 
+class HeptiamondsSawtoothTriangle(Heptiamonds):
+
+    """
+    many solutions
+
+    design by `Johannes H. Hindriks`_
+    """
+
+    width = 12
+    height = 14
+
+    def coordinates(self):
+        coords = set(self.coordinates_triangle(12, offset=(0,2,0)))
+        for i in range(6):
+            coords.update(set(self.coordinates_inverted_triangle(
+                2, offset=(2*i,0,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['W7'][-1]['flips'] = None
+
+
 class Heptiamonds12x13Trapezium(Heptiamonds):
 
     """ solutions"""
 
     height = 12
     width = 13
-
-    check_for_duplicates = False
 
     def coordinates(self):
         for z in range(self.depth):
@@ -344,6 +356,7 @@ class HeptiamondsHexagon1(Heptiamonds):
     height = 12
     width = 12
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -381,6 +394,7 @@ class HeptiamondsHexagon2(Heptiamonds):
     height = 12
     width = 12
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -418,6 +432,7 @@ class HeptiamondsHexagon3(Heptiamonds):
     height = 12
     width = 12
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -454,6 +469,7 @@ class HeptiamondsHexagon4(Heptiamonds):
     height = 12
     width = 12
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -490,6 +506,7 @@ class HeptiamondsHexagon5(Heptiamonds):
     height = 12
     width = 12
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -525,6 +542,7 @@ class HeptiamondsHexagon6(Heptiamonds):
     height = 12
     width = 12
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -717,8 +735,6 @@ class HeptiamondsHexagon12(Heptiamonds):
 
     holes = set(((3,7,0), (4,4,1), (4,8,1), (7,3,0), (7,7,0), (8,4,1)))
 
-    check_for_duplicates = False
-
     def coordinates(self):
         coords = set(self.coordinates_hexagon(6))
         for offset in ((1,7,0), (3,3,0), (3,9,0), (5,5,0),
@@ -744,6 +760,7 @@ class HeptiamondsDiamondRing(Heptiamonds):
     height = 10
     width = 10
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     svg_rotation = 30
@@ -772,8 +789,6 @@ class HeptiamondsDiamondWindow(Heptiamonds):
     height = 10
     width = 10
 
-    check_for_duplicates = False
-
     svg_rotation = 30
 
     def coordinates(self):
@@ -800,6 +815,7 @@ class Heptiamonds4x22LongHexagon(Heptiamonds):
     height = 4
     width = 22
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -903,6 +919,7 @@ class HeptiamondsStack(Heptiamonds):
     Width of solution space is (apparent width) + (height / 2) - 1.
     """
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -941,8 +958,6 @@ class HeptiamondsHexedTriangle(Heptiamonds):
     height = 14
     width = 14
 
-    check_for_duplicates = False
-
     svg_rotation = -30
 
     def coordinates(self):
@@ -962,8 +977,6 @@ class HeptiamondsHexgridElongatedHexagon9x2(Heptiamonds):
     width = 13
     height = 13
 
-    check_for_duplicates = False
-
     svg_rotation = 30
 
     def coordinates(self):
@@ -982,8 +995,6 @@ class HeptiamondsHexgridElongatedHexagon5x3(Heptiamonds):
 
     width = 12
     height = 12
-
-    check_for_duplicates = False
 
     svg_rotation = 30
 
@@ -1006,8 +1017,6 @@ class HeptiamondsHexgrid7x4(Heptiamonds):
     width = 11
     height = 14
 
-    check_for_duplicates = False
-
     svg_rotation = 30
 
     def coordinates(self):
@@ -1026,8 +1035,6 @@ class HeptiamondsHexgrid14x2(Heptiamonds):
     width = 16
     height = 17
 
-    check_for_duplicates = False
-
     svg_rotation = 30
 
     def coordinates(self):
@@ -1045,8 +1052,6 @@ class HeptiamondsHexgridHexagon1(Heptiamonds):
 
     width = 14
     height = 14
-
-    check_for_duplicates = False
 
     svg_rotation = -30
 
@@ -1075,6 +1080,55 @@ class HeptiamondsHexgridHexagon2(HeptiamondsHexgridHexagon1):
 
     def customize_piece_data(self):
         self.piece_data['P7'][-1]['rotations'] = (0, 1)
+
+
+class HeptiamondsHexgridHexagon3(Heptiamonds):
+
+    """
+    many solutions
+
+    design by `Johannes H. Hindriks`_
+    """
+
+    width = 14
+    height = 14
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_hexagon(4))
+        coords = (
+            set(self.coordinates_hexgrid(hcoords, offset=(0,-3,0)))
+            - set(self.coordinates_hexagon(3, offset=(4,4,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = None
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexgridHexagon4(Heptiamonds):
+
+    """
+    many solutions
+
+    design by `Johannes H. Hindriks`_
+    """
+
+    width = 14
+    height = 14
+
+    def coordinates(self):
+        hcoords = set(Polyhexes.coordinates_hexagon(4))
+        hole = Triangular3DCoordSet(self.coordinates_parallelogram(3, 3))
+        coords = (
+            set(self.coordinates_hexgrid(hcoords, offset=(0,-3,0)))
+            - set(hole.translate((4,4,0)))
+            - set(hole.rotate0(1).translate((7,7,0)))
+            - set(hole.rotate0(2).translate((13,4,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1,)
+        self.piece_data['P7'][-1]['flips'] = None
 
 
 class HeptiamondsHexgridHexagon_x1(HeptiamondsHexgridHexagon2):
@@ -1107,8 +1161,6 @@ class HeptiamondsHexgridTwoDiamonds1(Heptiamonds):
 
     holes = set(((0,4), (0,5), (1,4), (3,2), (3,3), (3,4), (5,2), (6,1), (6,2)))
 
-    check_for_duplicates = False
-
     def coordinates(self):
         hcoords = set(Polyhexes.coordinates_hexagon(4)) - self.holes
         coords = self.coordinates_hexgrid(hcoords, offset=(0,-3,0))
@@ -1133,8 +1185,6 @@ class HeptiamondsHexgridTwoDiamonds3(Heptiamonds):
     width = 17
     height = 8
 
-    check_for_duplicates = False
-
     def coordinates(self):
         d = Hexagonal2DCoordSet(Polyhexes.coordinates_parallelogram(4, 4))
         d = d.rotate(5, (3,0))
@@ -1153,8 +1203,6 @@ class HeptiamondsHexgridTwoDiamonds4(Heptiamonds):
 
     width = 13
     height = 12
-
-    check_for_duplicates = False
 
     def coordinates(self):
         d = Hexagonal2DCoordSet(Polyhexes.coordinates_parallelogram(4, 4))
@@ -1175,8 +1223,6 @@ class HeptiamondsHexgridTrefoil1(Heptiamonds):
     width = 15
     height = 15
 
-    check_for_duplicates = False
-
     def coordinates(self):
         hcoords = set(
             list(Polyhexes.coordinates_hexagon(2, offset=(0,5)))
@@ -1196,8 +1242,6 @@ class HeptiamondsHexgridTrefoil2(Heptiamonds):
 
     width = 14
     height = 14
-
-    check_for_duplicates = False
 
     svg_rotation = 30
 
@@ -1223,8 +1267,6 @@ class HeptiamondsHexgridTrefoil3(Heptiamonds):
     width = 13
     height = 13
 
-    check_for_duplicates = False
-
     def coordinates(self):
         t = Hexagonal2DCoordSet(Polyhexes.coordinates_parallelogram(3, 1))
         hcoords = (
@@ -1247,8 +1289,6 @@ class HeptiamondsHexgridTrefoil4(Heptiamonds):
     width = 13
     height = 13
 
-    check_for_duplicates = False
-
     def coordinates(self):
         t = Hexagonal2DCoordSet(Polyhexes.coordinates_triangle(2))
         hcoords = (
@@ -1270,8 +1310,6 @@ class HeptiamondsHexgridTrefoil_x1(Heptiamonds):
     width = 15
     height = 15
 
-    check_for_duplicates = False
-
     def coordinates(self):
         hcoords = set(
             list(Polyhexes.coordinates_hexagon(2, offset=(0,3)))
@@ -1288,8 +1326,6 @@ class HeptiamondsHexgridBumpyTriangle(Heptiamonds):
 
     width = 12
     height = 12
-
-    check_for_duplicates = False
 
     def coordinates(self):
         hcoords = set(
@@ -1312,8 +1348,6 @@ class HeptiamondsHexgridStaggeredRectangle7x4(Heptiamonds):
     width = 14
     height = 9
 
-    check_for_duplicates = False
-
     def coordinates(self):
         hcoords = list(Polyhexes.coordinates_staggered_rectangle(7, 4))
         coords = self.coordinates_hexgrid(hcoords, offset=(0,-5,0))
@@ -1329,8 +1363,6 @@ class HeptiamondsHexgridRosettes1(Heptiamonds):
 
     width = 12
     height = 12
-
-    check_for_duplicates = False
 
     svg_rotation = 30
 
@@ -1355,8 +1387,6 @@ class HeptiamondsHexgridRosettes2(Heptiamonds):
     width = 12
     height = 15
 
-    check_for_duplicates = False
-
     svg_rotation = 60
 
     def coordinates(self):
@@ -1379,8 +1409,6 @@ class HeptiamondsHexgridRosettes_x1(Heptiamonds):
 
     width = 15
     height = 15
-
-    check_for_duplicates = False
 
     svg_rotation = 30
 
@@ -1405,8 +1433,6 @@ class HeptiamondsHexgridFlower1(Heptiamonds):
     width = 12
     height = 12
 
-    check_for_duplicates = False
-
     svg_rotation = 30
 
     holes = set(((0,3), (0,6), (3,0), (3,6), (6,0), (6,3), (2,2), (2,5), (5,2)))
@@ -1430,6 +1456,25 @@ class HeptiamondsHexgridFlower2(HeptiamondsHexgridFlower1):
     svg_rotation = 0
 
 
+class HeptiamondsHexgrid2Hexagon(Heptiamonds):
+
+    """many solutions"""
+
+    width = 16
+    height = 16
+
+    def coordinates(self):
+        coords = set()
+        for offset in ((2,2,0), (6,0,0), (0,6,0), (4,4,0), (8,2,0),
+                       (2,8,0), (6,6,0)):
+            coords.update(set(self.coordinates_hexagon(2, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = None
+        self.piece_data['P7'][-1]['flips'] = None
+
+
 class HeptiamondsShortHexRing(Heptiamonds):
 
     """
@@ -1441,6 +1486,7 @@ class HeptiamondsShortHexRing(Heptiamonds):
     height = 10
     width = 10
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     svg_rotation = 30
@@ -1463,8 +1509,6 @@ class HeptiamondsTriangleRing(Heptiamonds):
     height = 13
     width = 13
 
-    check_for_duplicates = False
-
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -1486,8 +1530,6 @@ class HeptiamondsTriangleRing2(Heptiamonds):
     width = 14
 
     holes = set(((1,6,0), (6,1,0), (6,6,0)))
-
-    check_for_duplicates = False
 
     def coordinates(self):
         coords = (
@@ -1513,8 +1555,6 @@ class HeptiamondsTriangleHexRing(Heptiamonds):
     width = 15
 
     holes = set(((2,2,0), (2,10,0), (10,2,0)))
-
-    check_for_duplicates = False
 
     def coordinates(self):
         coords = (
@@ -1544,8 +1584,6 @@ class HeptiamondsSemiregularHexagon8x3(Heptiamonds):
 
     height = 11
     width = 11
-
-    check_for_duplicates = False
 
     def coordinates(self):
         for z in range(self.depth):
@@ -1894,3 +1932,25 @@ class HeptiamondsParallelogramHexagon(Heptiamonds):
 
     def customize_piece_data(self):
         self.piece_data['P7'][-1]['rotations'] = (0, 1, 2,)
+
+
+class HeptiamondsElongatedHexagonRing11x5(Heptiamonds):
+
+    """
+    many solutions
+
+    design by `Johannes H. Hindriks`_
+    """
+
+    width = 16
+    height = 10
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_elongated_hexagon(11, 5))
+            - set(self.coordinates_elongated_hexagon(7, 3, offset=(3,2,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2,)
+        self.piece_data['P7'][-1]['flips'] = None

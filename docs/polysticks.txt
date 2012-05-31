@@ -180,12 +180,12 @@ one-sided tetrasticks.
 
      * - .. figure:: images/one-sided-tetrasticks-x-1.png
 
-            `1: solutions incomplete
+            `solutions incomplete
             <../solutions/one-sided-tetrasticks-x-1.txt>`__
 
        - .. figure:: images/one-sided-tetrasticks-x-2.png
 
-            `2: solutions incomplete
+            `solutions incomplete
             <../solutions/one-sided-tetrasticks-x-2.txt>`__
 
 
@@ -199,6 +199,11 @@ tetrasticks, for a total of 84 line segments.
   <../solutions/polysticks-7x7.txt>`__
 
   .. image:: images/polysticks-7x7.png
+
+* 10x5 grid (with a hole): `solutions incomplete
+  <../solutions/polysticks-1234-10x5.txt>`__
+
+  .. image:: images/polysticks-1234-10x5.png
 
 * 3x7 diamond lattice: `solutions incomplete
   <../solutions/polysticks-3x7-diamond-lattice.txt>`__
@@ -221,6 +226,31 @@ tetrasticks, for a total of 84 line segments.
     <../solutions/polysticks-1234-truncated-diamond-lattice-12x2.txt>`__
 
     .. image:: images/polysticks-1234-truncated-diamond-lattice-12x2.png
+
+* Octagons:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polysticks-1234-octagon-1.png
+
+            `solutions incomplete
+            <../solutions/polysticks-1234-octagon-1.txt>`__
+
+       - .. figure:: images/polysticks-1234-octagon-2.png
+
+            `solutions incomplete
+            <../solutions/polysticks-1234-octagon-2.txt>`__
+
+* Four overlapping squares: `solutions incomplete
+  <../solutions/polysticks-1234-four-squares-1.txt>`__
+
+  .. image:: images/polysticks-1234-four-squares-1.png
+
+* Three overlapping squares: `solutions incomplete
+  <../solutions/polysticks-1234-three-squares-1.txt>`__
+
+  .. image:: images/polysticks-1234-three-squares-1.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

@@ -111,6 +111,35 @@ class Polysticks(PuzzlePseudo3D):
                     if nw < (x - y - z) < se and sw < (x + y) < ne:
                         yield cls.coordinate_offset(x, y, z, offset)
 
+    @classmethod
+    def coordinates_triangle(cls, m, offset=None):
+        """Side-length M triangular bordered polystick grid."""
+        for (x, y, z) in cls.coordinates_bordered(m + 1, m + 1):
+            if x + y <= m:
+                yield cls.coordinate_offset(x, y, z, offset)
+
+    @classmethod
+    def coordinates_trapezoid(cls, m, n, offset=None):
+        """
+        Base-length (hypotenuse) M x side-length N trapezoidal bordered
+        polystick grid.
+        """
+        min_xy = m - n
+        for (x, y, z) in cls.coordinates_bordered(m + 1, m + 1):
+            if min_xy <= x + y <= m:
+                yield cls.coordinate_offset(x, y, z, offset)
+
+    @classmethod
+    def coordinates_parallelogram(cls, m, n, offset=None):
+        """
+        Base-length M x side-length N parallelogram bordered polystick grid.
+        """
+        min_xy = n - 1
+        max_xy = m + n - 1
+        for (x, y, z) in cls.coordinates_bordered(m + n, n + 1):
+            if min_xy <= x + y <= max_xy:
+                yield cls.coordinate_offset(x, y, z, offset)
+
     def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3)):
         aspects = set()
         for flip in flips or (0,):
