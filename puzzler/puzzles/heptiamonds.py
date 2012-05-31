@@ -1456,25 +1456,6 @@ class HeptiamondsHexgridFlower2(HeptiamondsHexgridFlower1):
     svg_rotation = 0
 
 
-class HeptiamondsHexgrid2Hexagon(Heptiamonds):
-
-    """many solutions"""
-
-    width = 16
-    height = 16
-
-    def coordinates(self):
-        coords = set()
-        for offset in ((2,2,0), (6,0,0), (0,6,0), (4,4,0), (8,2,0),
-                       (2,8,0), (6,6,0)):
-            coords.update(set(self.coordinates_hexagon(2, offset=offset)))
-        return sorted(coords)
-
-    def customize_piece_data(self):
-        self.piece_data['P7'][-1]['rotations'] = None
-        self.piece_data['P7'][-1]['flips'] = None
-
-
 class HeptiamondsShortHexRing(Heptiamonds):
 
     """
