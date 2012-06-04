@@ -415,6 +415,73 @@ segments on the hexagonal grid.
             `solutions incomplete
             <../solutions/one-sided-pentatwigs-inset-rectangle-7x4-4.txt>`__
 
+* 8x2 elongated hexagons (with holes):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-pentatwigs-elongated-hexagon-8x2-1.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-elongated-hexagon-8x2-1.txt>`__
+
+       - .. figure:: images/one-sided-pentatwigs-elongated-hexagon-8x2-2.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-elongated-hexagon-8x2-2.txt>`__
+
+* 3x4 elongated hexagons (with holes):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-pentatwigs-elongated-hexagon-3x4-1.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-elongated-hexagon-3x4-1.txt>`__
+
+       - .. figure:: images/one-sided-pentatwigs-elongated-hexagon-3x4-2.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-elongated-hexagon-3x4-2.txt>`__
+
+* String of rosettes (design by `Peter F. Esser`_): `solutions
+  incomplete <../solutions/one-sided-pentatwigs-rosettes-1.txt>`__
+
+  .. image:: images/one-sided-pentatwigs-rosettes-1.png
+
+* Cross (design by `Peter F. Esser`_):
+  `solutions incomplete
+  <../solutions/one-sided-pentatwigs-cross-1.txt>`__
+
+  .. image:: images/one-sided-pentatwigs-cross-1.png
+
+* Peanuts:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-pentatwigs-peanut-1.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-peanut-1.txt>`__
+            (design by `Peter F. Esser`_)
+
+       - .. figure:: images/one-sided-pentatwigs-peanut-2.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-peanut-2.txt>`__
+
+     * - .. figure:: images/one-sided-pentatwigs-peanut-3.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-peanut-3.txt>`__
+
+       - .. figure:: images/one-sided-pentatwigs-peanut-4.png
+
+            `solutions incomplete
+            <../solutions/one-sided-pentatwigs-peanut-4.txt>`__
+
 
 Polytwigs of Order 4 & 5
 ========================

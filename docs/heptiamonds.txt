@@ -29,6 +29,9 @@
 
 .. contents::
 
+The heptiamonds consist of 24 7-triangle polyforms, for a total of 168
+unit triangles.
+
 
 Parallelograms
 ==============
@@ -52,6 +55,67 @@ Parallelograms
   <../solutions/heptiamonds-3x28.txt>`__
 
   .. image:: images/heptiamonds-3x28.png
+
+
+Triangles
+=========
+
+* 13-unit triangle with central 1-unit hole: `solutions incomplete
+  <../solutions/heptiamonds-triangle.txt>`__
+
+  .. image:: images/heptiamonds-triangle.png
+
+* Trapezoid triangle (exploded version of the triangle above):
+  `solutions incomplete
+  <../solutions/heptiamonds-trapezoid-triangle.txt>`__
+
+  .. image:: images/heptiamonds-trapezoid-triangle.png
+
+* Triangle rings:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-triangle-ring.png
+
+            14-unit triangle with points removed and central 5-unit
+            triangle hole: `solutions incomplete
+            <../solutions/heptiamonds-triangle-ring.txt>`__
+
+       - .. figure:: images/heptiamonds-triangle-ring-2.png
+
+            14-unit triangle with a central 5-unit triangle hole and 3
+            unit triangle holes (design by `Johannes H. Hindriks`_):
+            `solutions incomplete
+            <../solutions/heptiamonds-triangle-ring.txt>`__
+
+* Triangle hex rings:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-triangle-hex-ring.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-triangle-hex-ring.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+       - .. figure:: images/heptiamonds-triangle-hex-ring-2.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-triangle-hex-ring.txt>`__
+
+* Stepped obtuse triangle (design by `Johannes H. Hindriks`_):
+  `solutions incomplete
+  <../solutions/heptiamonds-stepped-obtuse-triangle.txt>`__
+
+  .. image:: images/heptiamonds-stepped-obtuse-triangle.png
+
+* Sawtooth triangle (design by `Johannes H. Hindriks`_):
+  `solutions incomplete
+  <../solutions/heptiamonds-sawtooth-triangle.txt>`__
+
+  .. image:: images/heptiamonds-sawtooth-triangle.png
 
 
 Trapezia
@@ -214,6 +278,37 @@ Hexagons
             <../solutions/heptiamonds-hexagon-12.txt>`__
             (design by `Johannes H. Hindriks`_)
 
+     * - .. figure:: images/heptiamonds-hexagon-13.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-13.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+       - .. figure:: images/heptiamonds-hexagon-14.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-14.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+     * - .. figure:: images/heptiamonds-hexagon-15.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-15.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+       - .. figure:: images/heptiamonds-hexagon-16.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-16.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+     * - .. figure:: images/heptiamonds-hexagon-17.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-17.txt>`__
+
+       -
+
 
 Irregular Hexagons
 ==================
@@ -248,6 +343,12 @@ Irregular Hexagons
   <../solutions/heptiamonds-parallelogram-hexagon.txt>`__
 
   .. image:: images/heptiamonds-parallelogram-hexagon.png
+
+- 11x5 elongated hexagon ring (design by `Johannes H. Hindriks`_):
+  `solutions incomplete
+  <../solutions/heptiamonds-elongated-hexagon-ring-11x5.txt>`__
+
+  .. image:: images/heptiamonds-elongated-hexagon-ring-11x5.png
 
 
 Four 2x3 Hexagons
@@ -326,12 +427,12 @@ Hexagrams
             <../solutions/heptiamonds-hexagram-4.txt>`__
 
 
-Hexagonal-Grid Shapes
-=====================
+H(1) Hexagonal-Grid Shapes
+==========================
 
 These shapes are all based on the hexagonal grid, made up of 28
-6-triangle hexagons.  In fact, many of these shapes are also `tetrahex
-puzzles <polyhexes.html#tetrahexes>`_.
+6-triangle hexagons (side length 1).  In fact, many of these shapes
+are also `tetrahex puzzles <polyhexes.html#tetrahexes>`_.
 
 Some shapes have hexagonal-grid holes, others have triangular-grid
 holes.
@@ -340,6 +441,12 @@ holes.
   <../solutions/heptiamonds-hexed-triangle.txt>`__
 
   .. image:: images/heptiamonds-hexed-triangle.png
+
+* Triangle hexagram ring (design by `Johannes H. Hindriks`_):
+  `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-triangle-hexagram-ring.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-triangle-hexagram-ring.png
 
 * Bumpy triangle: `solutions incomplete
   <../solutions/heptiamonds-hexgrid-bumpy-triangle.txt>`__
@@ -365,11 +472,13 @@ holes.
 
             `solutions incomplete
             <../solutions/heptiamonds-hexgrid-hexagon-3.txt>`__
+            (design by `Johannes H. Hindriks`_)
 
        - .. figure:: images/heptiamonds-hexgrid-hexagon-4.png
 
             `solutions incomplete
             <../solutions/heptiamonds-hexgrid-hexagon-4.txt>`__
+            (design by `Johannes H. Hindriks`_)
 
 * 7x4 parallelogram: `solutions incomplete
   <../solutions/heptiamonds-hexgrid-7x4.txt>`__
@@ -483,67 +592,93 @@ H(2) Hexagonal-Grid Shapes
 These shapes are all based on the hexagonal grid, made up of 7
 24-triangle hexagons (side length 2).
 
+* 7x1 bar: `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-2-7x1.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-2-7x1.png
+
+* 4x2 trapezoid: `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-2-trapezoid-4x2.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-2-trapezoid-4x2.png
+
+* Trefoils:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-hexgrid-2-trefoil-1.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-2-trefoil-1.txt>`__
+
+       - .. figure:: images/heptiamonds-hexgrid-2-trefoil-2.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexgrid-2-trefoil-2.txt>`__
+
+* Dumbbell: `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-2-dumbbell.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-2-dumbbell.png
+
+* Bone: `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-2-bone.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-2-bone.png
+
+* Spiral: `solutions incomplete
+  <../solutions/heptiamonds-hexgrid-2-spiral-1.txt>`__
+
+  .. image:: images/heptiamonds-hexgrid-2-spiral-1.png
+
+
+Quintuple Heptiamonds
+=====================
+
+The heptiamonds consist of 24 7-triangle polyforms, totalling 168 unit
+triangles.  Take a heptiamond, replace each unit triangle with an
+order-5 triangle, and the total is 175 unit triangles.  Remove 7
+excess unit triangles (say, a hole the shape of the heptiamond we are
+replicating), and the designs below are the result.
+
+For another way to accomplish this replication, see `Miroslav Vicher's
+Puzzle Pages
+<http://www.vicher.cz/puzzle/polyform/iamond/exphept.htm>`_.
+
+* Trefoil (W7): `solutions incomplete
+  <../solutions/heptiamonds-quintuple-trefoil.txt>`__
+
+  .. image:: images/heptiamonds-quintuple-trefoil.png
+
+* Trapezoid (I7): `solutions incomplete
+  <../solutions/heptiamonds-quintuple-trapezoid.txt>`__
+
+  .. image:: images/heptiamonds-quintuple-trapezoid.png
+
+* Jewel (D7): `solutions incomplete
+  <../solutions/heptiamonds-quintuple-jewel.txt>`__
+
+  .. image:: images/heptiamonds-quintuple-jewel.png
+
+* C7: `solutions incomplete
+  <../solutions/heptiamonds-quintuple-C7.txt>`__
+
+  .. image:: images/heptiamonds-quintuple-C7.png
+
+* M7: `solutions incomplete
+  <../solutions/heptiamonds-quintuple-M7.txt>`__
+
+  .. image:: images/heptiamonds-quintuple-M7.png
+
+* V7: `solutions incomplete
+  <../solutions/heptiamonds-quintuple-V7.txt>`__
+
+  .. image:: images/heptiamonds-quintuple-V7.png
 
 
 Misc
 ====
-
-* 13-unit triangle with central 1-unit hole: `solutions incomplete
-  <../solutions/heptiamonds-triangle.txt>`__
-
-  .. image:: images/heptiamonds-triangle.png
-
-* Trapezoid triangle (exploded version of the triangle above):
-  `solutions incomplete
-  <../solutions/heptiamonds-trapezoid-triangle.txt>`__
-
-  .. image:: images/heptiamonds-trapezoid-triangle.png
-
-* Stepped obtuse triangle (design by `Johannes H. Hindriks`_):
-  `solutions incomplete
-  <../solutions/heptiamonds-stepped-obtuse-triangle.txt>`__
-
-  .. image:: images/heptiamonds-stepped-obtuse-triangle.png
-
-* Sawtooth triangle (design by `Johannes H. Hindriks`_):
-  `solutions incomplete
-  <../solutions/heptiamonds-sawtooth-triangle.txt>`__
-
-  .. image:: images/heptiamonds-sawtooth-triangle.png
-
-* Triangle rings:
-
-  .. list-table::
-     :class: borderless
-
-     * - .. figure:: images/heptiamonds-triangle-ring.png
-
-            14-unit triangle with points removed and central 5-unit
-            triangle hole: `solutions incomplete
-            <../solutions/heptiamonds-triangle-ring.txt>`__
-
-       - .. figure:: images/heptiamonds-triangle-ring-2.png
-
-            14-unit triangle with a central 5-unit triangle hole and 3
-            unit triangle holes (design by `Johannes H. Hindriks`_):
-            `solutions incomplete
-            <../solutions/heptiamonds-triangle-ring.txt>`__
-
-* Triangle hex rings:
-
-  .. list-table::
-     :class: borderless
-
-     * - .. figure:: images/heptiamonds-triangle-hex-ring.png
-
-            `solutions incomplete
-            <../solutions/heptiamonds-triangle-hex-ring.txt>`__
-            (design by `Johannes H. Hindriks`_)
-
-       - .. figure:: images/heptiamonds-triangle-hex-ring-2.png
-
-            `solutions incomplete
-            <../solutions/heptiamonds-triangle-hex-ring.txt>`__
 
 * Diamond ring (10-unit diamond with central 4-unit diamond hole):
   `solutions incomplete
@@ -599,10 +734,28 @@ Misc
             `solutions incomplete
             <../solutions/heptiamonds-trefoil-6.txt>`__
 
+     * - .. figure:: images/heptiamonds-trefoil-7.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-trefoil-7.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+       - .. figure:: images/heptiamonds-trefoil-8.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-trefoil-8.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
 * 10x6 butterfly: `solutions incomplete
   <../solutions/heptiamonds-butterfly-10x6.txt>`__
 
   .. image:: images/heptiamonds-butterfly-10x6.png
+
+* Hexagon hexagram diamond ring (design by `Johannes H. Hindriks`_):
+  `solutions incomplete
+  <../solutions/heptiamonds-hexagon-hexagram-diamond-ring.txt>`__
+
+  .. image:: images/heptiamonds-hexagon-hexagram-diamond-ring.png
 
 
 .. _Kadon's Iamond Ring: http://gamepuzzles.com/esspoly.htm#IR

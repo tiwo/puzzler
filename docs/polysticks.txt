@@ -188,6 +188,12 @@ one-sided tetrasticks.
             `solutions incomplete
             <../solutions/one-sided-tetrasticks-x-2.txt>`__
 
+* 10x5 trapezoid: `solutions incomplete
+  <../solutions/one-sided-tetrasticks-trapezoid-10x5.txt>`__
+
+  .. image:: images/one-sided-tetrasticks-trapezoid-10x5.png
+
+
 
 Polysticks of Order 1 Through 4
 ===============================

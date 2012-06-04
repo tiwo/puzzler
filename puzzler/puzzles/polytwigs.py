@@ -188,6 +188,20 @@ class Polytwigs(Polytrigs):
             yield cls.coordinate_offset(x, y, z, offset)
 
     @classmethod
+    def coordinates_inverted_trapezoid_unbordered(cls, m, n, offset=None):
+        """
+        Inverted trapezoidal unbordered polytwig grid of base length M &
+        height N hexagons.
+        """
+        min_xy = n
+        for coord in cls.coordinates_unbordered(m, n):
+            x, y, z = coord
+            xy = x + y
+            if (xy < min_xy):
+                continue
+            yield cls.coordinate_offset(x, y, z, offset)
+
+    @classmethod
     def coordinates_triangle(cls, m, offset=None):
         """
         Triangular bordered polytwig grid of side length M hexagons.

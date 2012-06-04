@@ -357,6 +357,7 @@ puzzles.*
   * hexgrid Ri(11,3)
   * hexgrid Ri(8,4)
   * hexgrid C(4,4)
+  * many designs from Johannes H. Hindriks (see email 2012-05-30)
 
 * No solutions:
 

@@ -1,0 +1,129 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="260.000" height="155.885"
+     viewBox="0 0 260.000 155.885"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g>
+<polygon fill="green" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="25.000,138.564 30.000,147.224 40.000,147.224 45.000,138.564 40.000,129.904 20.000,129.904">
+<desc>D7</desc>
+</polygon>
+<polygon fill="darkorange" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="40.000,147.224 50.000,147.224 65.000,121.244 55.000,121.244 50.000,129.904 40.000,129.904 45.000,138.564">
+<desc>E7</desc>
+</polygon>
+<polygon fill="yellow" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="145.000,138.564 150.000,147.224 170.000,147.224 175.000,138.564 165.000,138.564 170.000,129.904 160.000,129.904 155.000,138.564">
+<desc>Y7</desc>
+</polygon>
+<polygon fill="orangered" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="140.000,129.904 145.000,138.564 155.000,138.564 160.000,129.904 170.000,129.904 165.000,121.244 145.000,121.244 150.000,129.904">
+<desc>Z7</desc>
+</polygon>
+<polygon fill="lime" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="165.000,138.564 175.000,138.564 180.000,129.904 170.000,112.583 160.000,112.583 155.000,121.244 165.000,121.244 170.000,129.904">
+<desc>C7</desc>
+</polygon>
+<polygon fill="magenta" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="20.000,129.904 50.000,129.904 55.000,121.244 35.000,121.244 30.000,112.583">
+<desc>P7</desc>
+</polygon>
+<polygon fill="tan" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="60.000,129.904 80.000,129.904 90.000,112.583 80.000,112.583 75.000,121.244 70.000,112.583">
+<desc>U7</desc>
+</polygon>
+<polygon fill="teal" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="115.000,121.244 120.000,129.904 140.000,129.904 135.000,121.244 140.000,112.583 135.000,103.923 125.000,121.244">
+<desc>T7</desc>
+</polygon>
+<polygon fill="peru" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="135.000,121.244 140.000,129.904 150.000,129.904 145.000,121.244 155.000,121.244 160.000,112.583 150.000,112.583 145.000,103.923">
+<desc>A7</desc>
+</polygon>
+<polygon fill="blue" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="30.000,112.583 35.000,121.244 65.000,121.244 70.000,112.583">
+<desc>I7</desc>
+</polygon>
+<polygon fill="lightcoral" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="70.000,112.583 75.000,121.244 80.000,112.583 75.000,103.923 65.000,103.923 60.000,95.263 50.000,112.583">
+<desc>Q7</desc>
+</polygon>
+<polygon fill="indigo" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="110.000,112.583 115.000,121.244 125.000,121.244 120.000,112.583 125.000,103.923 115.000,103.923 110.000,95.263 100.000,112.583">
+<desc>X7</desc>
+</polygon>
+<polygon fill="yellowgreen" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="120.000,112.583 125.000,121.244 135.000,103.923 140.000,112.583 145.000,103.923 140.000,95.263 130.000,95.263">
+<desc>J7</desc>
+</polygon>
+<polygon fill="gray" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="75.000,103.923 80.000,112.583 90.000,112.583 95.000,103.923 85.000,103.923 80.000,95.263 60.000,95.263 65.000,103.923">
+<desc>N7</desc>
+</polygon>
+<polygon fill="maroon" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="90.000,112.583 100.000,112.583 110.000,95.263 80.000,95.263 85.000,103.923 95.000,103.923">
+<desc>G7</desc>
+</polygon>
+<polygon fill="steelblue" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="110.000,95.263 115.000,103.923 125.000,103.923 130.000,95.263 120.000,95.263 110.000,77.942 100.000,77.942">
+<desc>L7</desc>
+</polygon>
+<polygon fill="red" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="80.000,95.263 110.000,95.263 100.000,77.942 95.000,86.603 90.000,77.942">
+<desc>M7</desc>
+</polygon>
+<polygon fill="blueviolet" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="90.000,77.942 95.000,86.603 100.000,77.942 110.000,77.942 115.000,69.282 105.000,69.282 100.000,60.622 90.000,60.622 95.000,69.282">
+<desc>W7</desc>
+</polygon>
+<polygon fill="olive" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="85.000,69.282 90.000,77.942 95.000,69.282 90.000,60.622 100.000,43.301 90.000,43.301 80.000,60.622">
+<desc>R7</desc>
+</polygon>
+<polygon fill="navy" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="100.000,60.622 105.000,69.282 115.000,69.282 120.000,60.622 115.000,51.962 110.000,60.622 105.000,51.962 95.000,51.962 90.000,60.622">
+<desc>S7</desc>
+</polygon>
+<polygon fill="turquoise" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="105.000,51.962 110.000,60.622 115.000,51.962 110.000,43.301 115.000,34.641 110.000,25.981 95.000,51.962">
+<desc>H7</desc>
+</polygon>
+<polygon fill="gold" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="85.000,34.641 90.000,43.301 100.000,43.301 110.000,25.981 100.000,25.981 95.000,34.641 90.000,25.981 80.000,25.981">
+<desc>V7</desc>
+</polygon>
+<polygon fill="plum" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="90.000,25.981 95.000,34.641 105.000,17.321 95.000,17.321 100.000,8.660 90.000,8.660 80.000,25.981">
+<desc>B7</desc>
+</polygon>
+<polygon fill="darkseagreen" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="110.000,25.981 115.000,34.641 120.000,25.981 110.000,8.660 100.000,8.660 95.000,17.321 105.000,17.321 100.000,25.981">
+<desc>F7</desc>
+</polygon>
+</g>
+</svg>

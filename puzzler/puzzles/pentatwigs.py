@@ -596,3 +596,149 @@ class OneSidedPentatwigsInsetRectangle7x4_4(
     """many solutions"""
 
     hole = (2,4,0)
+
+
+class OneSidedPentatwigsElongatedHexagon8x2_1(OneSidedPentatwigs):
+
+    """many solutions"""
+
+    width = 10
+    height = 4
+
+    hole = set(((4,2,1),))
+
+    def coordinates(self):
+        coords = set(self.coordinates_elongated_hexagon(8, 2))
+        coords -= self.hole
+        return sorted(coords)
+
+
+class OneSidedPentatwigsElongatedHexagon8x2_2(
+    OneSidedPentatwigsElongatedHexagon8x2_1):
+
+    """many solutions"""
+
+    hole = set(((1,1,1),))
+
+
+class OneSidedPentatwigsElongatedHexagon3x4_1(OneSidedPentatwigs):
+
+    """many solutions"""
+
+    width = 7
+    height = 8
+
+    def coordinates(self):
+        coords = set(self.coordinates_elongated_hexagon(3, 4))
+        coords -= set(self.coordinates_trapezoid_unbordered(
+            3, 2, offset=(1,4,0))) 
+        coords -= set(self.coordinates_inverted_trapezoid_unbordered(
+            3, 2, offset=(2,1,0)))
+        return sorted(coords)
+
+
+class OneSidedPentatwigsElongatedHexagon3x4_2(OneSidedPentatwigs):
+
+    """many solutions"""
+
+    width = 7
+    height = 8
+
+    def coordinates(self):
+        coords = set(self.coordinates_elongated_hexagon(3, 4))
+        coords -= set(self.coordinates_trapezoid_unbordered(
+            3, 2, offset=(3,0,0))) 
+        coords -= set(self.coordinates_inverted_trapezoid_unbordered(
+            3, 2, offset=(0,5,0)))
+        return sorted(coords)
+
+
+class OneSidedPentatwigsRosettes1(OneSidedPentatwigs):
+
+    """
+    many solutions
+
+    design by `Peter F. Esser <http://polyforms.eu/>`_
+    """
+
+    width = 11
+    height = 11
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_hexagon(2, offset=(2,0,0)))
+            + list(self.coordinates_hexagon(2, offset=(5,0,0))))
+        coords.update(set(
+            self.coordinates_hexagon(2, offset=(-1,0,0))).intersection(
+            self.coordinates_hexagon(2)))
+        coords.update(set(
+            self.coordinates_hexagon(2, offset=(7,0,0))).intersection(
+            self.coordinates_hexagon(2, offset=(8,0,0))))
+        return sorted(coords)
+
+
+class OneSidedPentatwigsCross1(OneSidedPentatwigs):
+
+    """
+    many solutions
+
+    design by `Peter F. Esser <http://polyforms.eu/>`_
+    """
+
+    width = 8
+    height = 7
+
+    svg_rotation = 0
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_inset_rectangle(7, 3))
+            + list(self.coordinates_inset_rectangle(3, 5, offset=(2,0,0))))
+        return sorted(coords)
+
+
+class OneSidedPentatwigsPeanut1(OneSidedPentatwigs):
+
+    """
+    many solutions
+
+    design by `Peter F. Esser <http://polyforms.eu/>`_
+    """
+
+    width = 10
+    height = 7
+
+    hex_offsets = (
+        (0,3,0), (1,2,0), (1,3,0), (2,2,0), (5,0,0), (5,1,0), (6,0,0))
+
+    holes = set(((0,5,0), (2,4,0), (6,2,0), (8,1,0)))
+
+    svg_rotation = 0
+
+    def coordinates(self):
+        coords = set()
+        for offset in self.hex_offsets:
+            coords.update(set(self.coordinates_hexagon(2, offset=offset)))
+        coords -= self.holes
+        return sorted(coords)
+
+
+class OneSidedPentatwigsPeanut2(OneSidedPentatwigsPeanut1):
+
+    """many solutions"""
+
+    holes = set(((2,3,0), (2,5,0), (6,1,0), (6,3,0)))
+
+
+class OneSidedPentatwigsPeanut3(OneSidedPentatwigsPeanut1):
+
+    """many solutions"""
+
+    holes = set(((3,3,0), (3,4,0), (5,2,0), (5,3,0)))
+
+
+class OneSidedPentatwigsPeanut4(OneSidedPentatwigsPeanut1):
+
+    """many solutions"""
+
+    holes = set(((1,4,0), (1,5,0), (7,1,0), (7,2,0)))
