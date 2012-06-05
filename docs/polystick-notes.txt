@@ -274,11 +274,16 @@ Potential Puzzles
 
 84: polysticks of order 1 to 4
 
-* T(8) - 4 segments
-* T(9) - R*(5,5)
-* R*(8,8) (probably no solutions; = Polysticks1234_8x8Unbordered)
-* D(5,5) - D(2,2) (5x5 diamond lattice ring; probably no solutions;
-  = Polysticks1234_5x5DiamondLatticeRing)
+* Potential:
+
+  * T(8) - 4 segments
+  * T(9) - R*(5,5)
+  * R*(8,8) (probably no solutions; = Polysticks1234_8x8Unbordered)
+
+* No solutions:
+
+  * D(5,5) - D(2,2) (5x5 diamond lattice ring;
+    = Polysticks1234_5x5DiamondLatticeRing)
 
 100: one-sided tetrasticks
 

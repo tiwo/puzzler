@@ -746,17 +746,45 @@ Misc
             <../solutions/heptiamonds-trefoil-8.txt>`__
             (design by `Johannes H. Hindriks`_)
 
+     * - .. figure:: images/heptiamonds-trefoil-9.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-trefoil-9.txt>`__
+
+       -
+
 * 10x6 butterfly: `solutions incomplete
   <../solutions/heptiamonds-butterfly-10x6.txt>`__
 
   .. image:: images/heptiamonds-butterfly-10x6.png
 
-* Hexagon hexagram diamond ring (design by `Johannes H. Hindriks`_):
+* Hexagon-hexagram diamond ring (design by `Johannes H. Hindriks`_):
   `solutions incomplete
   <../solutions/heptiamonds-hexagon-hexagram-diamond-ring.txt>`__
 
   .. image:: images/heptiamonds-hexagon-hexagram-diamond-ring.png
 
+* Hexagon-hexagram gaskets:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-hexagon-hexagram-gasket-1.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-hexagram-gasket-1.txt>`__
+
+       - .. figure:: images/heptiamonds-hexagon-hexagram-gasket-2.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-hexagram-gasket-2.txt>`__
+
+     * - .. figure:: images/heptiamonds-hexagon-hexagram-gasket-3.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-hexagon-hexagram-gasket-3.txt>`__
+
+       -
 
 .. _Kadon's Iamond Ring: http://gamepuzzles.com/esspoly.htm#IR
 .. _Johannes H. Hindriks: http://jhhindriks.info/37/index.htm

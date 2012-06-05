@@ -2402,3 +2402,60 @@ class HeptiamondsHexagonHexagramDiamondRing(Heptiamonds):
     def customize_piece_data(self):
         self.piece_data['P7'][-1]['rotations'] = (0, 1, 2,)
         self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexagonHexagramGasket1(Heptiamonds):
+
+    """many solutions"""
+
+    width = 16
+    height = 16
+
+    hex_offsets = ((4,6,0), (6,8,0), (8,4,0))
+
+    holes = set()
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_hexagon(6, offset=(2,2,0)))
+            + list(self.coordinates_hexagram(4)))
+        for offset in self.hex_offsets:
+            coords -= set(self.coordinates_hexagon(2, offset=offset))
+        coords -= self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1,)
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsHexagonHexagramGasket_x1(HeptiamondsHexagonHexagramGasket1):
+
+    """0 solutions"""
+
+    hex_offsets = ((3,6,0), (6,9,0), (9,3,0))
+
+
+class HeptiamondsTrefoil9(HeptiamondsHexagonHexagramGasket1):
+
+    """many solutions"""
+
+    hex_offsets = ((2,6,0), (6,10,0), (10,2,0))
+
+    svg_rotation = 30
+
+
+class HeptiamondsHexagonHexagramGasket2(HeptiamondsHexagonHexagramGasket1):
+
+    """many solutions"""
+
+    hex_offsets = ((3,8,0), (8,7,0), (7,3,0))
+
+
+class HeptiamondsHexagonHexagramGasket3(HeptiamondsHexagonHexagramGasket1):
+
+    """many solutions"""
+
+    hex_offsets = ((4,7,0), (7,7,0), (7,4,0))
+
+    holes = set(Heptiamonds.coordinates_triangle(6, offset=(6,6,0)))

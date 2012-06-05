@@ -230,7 +230,7 @@ class Polysticks1234_8x8Unbordered(Polysticks1234):
 class Polysticks1234_5x5DiamondLatticeRing(Polysticks1234):
 
     """
-    0? solutions
+    0 solutions
     """
 
     width = 10
