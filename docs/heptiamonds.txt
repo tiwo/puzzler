@@ -207,6 +207,11 @@ Snowflakes
 
   .. image:: images/heptiamonds-snowflake-2.png
 
+* Snowflake 3 (design by `Johannes H. Hindriks`_): `solutions incomplete
+  <../solutions/heptiamonds-snowflake-3.txt>`__
+
+  .. image:: images/heptiamonds-snowflake-3.png
+
 
 Hexagons
 ========
@@ -308,6 +313,34 @@ Hexagons
             <../solutions/heptiamonds-hexagon-17.txt>`__
 
        -
+
+* Jagged hexagons, some with holes:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/heptiamonds-jagged-hexagon-1.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-jagged-hexagon-1.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+       - .. figure:: images/heptiamonds-jagged-hexagon-2.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-jagged-hexagon-2.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+     * - .. figure:: images/heptiamonds-jagged-hexagon-3.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-jagged-hexagon-3.txt>`__
+            (design by `Johannes H. Hindriks`_)
+
+       - .. figure:: images/heptiamonds-jagged-hexagon-4.png
+
+            `solutions incomplete
+            <../solutions/heptiamonds-jagged-hexagon-4.txt>`__
 
 
 Irregular Hexagons

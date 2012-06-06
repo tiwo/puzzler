@@ -145,6 +145,35 @@ class HeptiamondsSnowflake2(Heptiamonds):
         self.piece_data['P7'][-1]['flips'] = None
 
 
+class HeptiamondsSnowflake3(Heptiamonds):
+
+    """
+    many solutions
+
+    design by `Johannes H. Hindriks`_
+    """
+
+    height = 12
+    width = 12
+
+    hex_offsets = ((0,5,0), (0,10,0), (5,0,0), (5,10,0), (10,0,0), (10,5,0))
+
+    holes = set(((1,8,0), (3,3,1), (3,10,1), (8,1,0), (8,8,0), (10,3,1)))
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(5, offset=(1,1,0)))
+        for offset in self.hex_offsets:
+            coords.update(set(self.coordinates_hexagon(1, offset=offset)))
+        coords -= self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = None
+        self.piece_data['P7'][-1]['flips'] = None
+
+
 class HeptiamondsTriangle(Heptiamonds):
 
     """many solutions"""
@@ -850,6 +879,98 @@ class HeptiamondsHexagon17(Heptiamonds):
     def customize_piece_data(self):
         self.piece_data['P7'][-1]['rotations'] = (0, 1)
         self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsJaggedHexagon1(Heptiamonds):
+
+    """
+    many solutions
+
+    design from `Johannes H. Hindriks`_
+    """
+
+    height = 12
+    width = 12
+
+    extras = (
+        (0,8,0), (0,8,1), (0,9,0), (2,3,1), (3,2,1), (3,3,0),
+        (2,11,1), (3,11,0), (3,11,1), (8,0,0), (8,0,1), (9,0,0),
+        (8,9,0), (8,8,1), (9,8,0), (11,2,1), (11,3,0), (11,3,1),)
+
+    holes = set()
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(5, offset=(1,1,0)))
+        for (x, y, z) in self.extras:
+            coords.add(self.coordinate_offset(x, y, z, None))
+        coords -= self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = None
+        self.piece_data['P7'][-1]['flips'] = None
+
+
+class HeptiamondsJaggedHexagon2(HeptiamondsJaggedHexagon1):
+
+    """
+    many solutions
+
+    design from `Johannes H. Hindriks`_
+    """
+
+    extras = (
+        (0,7,1), (0,8,1), (0,9,1), (2,4,0), (3,3,0), (4,2,0),
+        (2,11,0), (3,11,0), (4,11,0), (7,0,1), (8,0,1), (9,0,1),
+        (7,9,1), (8,8,1), (9,7,1), (11,2,0), (11,3,0), (11,4,0),)
+
+
+class HeptiamondsJaggedHexagon3(HeptiamondsJaggedHexagon1):
+
+    """
+    many solutions
+
+    design from `Johannes H. Hindriks`_
+    """
+
+    extras = (
+        (0,6,1), (0,8,1), (0,10,1), (1,5,0), (3,3,0), (5,1,0),
+        (1,11,0), (3,11,0), (5,11,0), (6,0,1), (8,0,1), (10,0,1),
+        (6,10,1), (8,8,1), (10,6,1), (11,1,0), (11,3,0), (11,5,0),)
+
+
+class HeptiamondsJaggedHexagon4(HeptiamondsJaggedHexagon1):
+
+    """? solutions"""
+
+    extras = (
+        (0,6,1), (0,7,1), (0,8,1), (0,9,1), (0,10,1),
+        (1,5,0), (2,4,0), (3,3,0), (4,2,0), (5,1,0),
+        (1,11,0), (2,11,0), (3,11,0), (4,11,0), (5,11,0),
+        (6,0,1), (7,0,1), (8,0,1), (9,0,1), (10,0,1),
+        (6,10,1), (7,9,1), (8,8,1), (9,7,1), (10,6,1),
+        (11,1,0), (11,2,0), (11,3,0), (11,4,0), (11,5,0),)
+
+    holes = set(Heptiamonds.coordinates_hexagram(1, offset=(4,4,0)))
+
+
+class HeptiamondsJaggedHexagon5(HeptiamondsJaggedHexagon4):
+
+    """? solutions"""
+
+    holes = set(
+        list(Heptiamonds.coordinates_hexagon(1, offset=(5,5,0)))
+        + [(3,7,0), (4,4,1), (4,8,1), (7,3,0), (7,7,0), (8,4,1)])
+
+
+class HeptiamondsJaggedHexagon6(HeptiamondsJaggedHexagon4):
+
+    """? solutions"""
+
+    holes = set((
+        (2,6,1), (2,8,1), (3,5,0), (3,9,0),
+        (5,3,0), (5,9,0), (6,2,1), (6,8,1),
+        (8,2,1), (8,6,1), (9,3,0), (9,5,0)))
 
 
 class HeptiamondsDiamondRing(Heptiamonds):
