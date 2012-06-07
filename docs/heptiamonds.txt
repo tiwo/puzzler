@@ -314,7 +314,7 @@ Hexagons
 
        -
 
-* Jagged hexagons, some with holes:
+* Jagged hexagons (designs from `Johannes H. Hindriks`_):
 
   .. list-table::
      :class: borderless
@@ -323,19 +323,16 @@ Hexagons
 
             `solutions incomplete
             <../solutions/heptiamonds-jagged-hexagon-1.txt>`__
-            (design by `Johannes H. Hindriks`_)
 
        - .. figure:: images/heptiamonds-jagged-hexagon-2.png
 
             `solutions incomplete
             <../solutions/heptiamonds-jagged-hexagon-2.txt>`__
-            (design by `Johannes H. Hindriks`_)
 
      * - .. figure:: images/heptiamonds-jagged-hexagon-3.png
 
             `solutions incomplete
             <../solutions/heptiamonds-jagged-hexagon-3.txt>`__
-            (design by `Johannes H. Hindriks`_)
 
        -
 
