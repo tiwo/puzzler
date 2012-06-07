@@ -17,46 +17,46 @@ from puzzler.coordsys import (
 
 class Heptiamonds3x28(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     height = 3
     width = 28
 
-    check_for_duplicates = True
-    duplicate_conditions = ({'rotate_180': True},)
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2,)
 
 
 class Heptiamonds4x21(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     height = 4
     width = 21
 
-    check_for_duplicates = True
-    duplicate_conditions = ({'rotate_180': True},)
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2,)
 
 
 class Heptiamonds6x14(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     height = 6
     width = 14
 
-    check_for_duplicates = True
-    duplicate_conditions = ({'rotate_180': True},)
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2,)
 
 
 class Heptiamonds7x12(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     height = 7
     width = 12
 
-    check_for_duplicates = True
-    duplicate_conditions = ({'rotate_180': True},)
+    def customize_piece_data(self):
+        self.piece_data['P7'][-1]['rotations'] = (0, 1, 2,)
 
 
 class HeptiamondsSnowflake1(Heptiamonds):
@@ -261,7 +261,7 @@ class HeptiamondsSawtoothTriangle(Heptiamonds):
 
 class Heptiamonds12x13Trapezium(Heptiamonds):
 
-    """ solutions"""
+    """many solutions"""
 
     height = 12
     width = 13
@@ -279,11 +279,15 @@ class Heptiamonds12x13Trapezium(Heptiamonds):
 
 class Heptiamonds6x17Trapezium(Heptiamonds12x13Trapezium):
 
+    """many solutions"""
+
     height = 6
     width = 17
 
 
 class Heptiamonds4x23Trapezium(Heptiamonds12x13Trapezium):
+
+    """many solutions"""
 
     height = 4
     width = 23
@@ -377,7 +381,7 @@ class HeptiamondsHexagram4(HeptiamondsHexagram2):
 class HeptiamondsHexagon1(Heptiamonds):
 
     """
-     solutions
+    many solutions
 
     12-unit-high hexagon with central 8-unit-high hexagram hole
     """
@@ -415,7 +419,7 @@ class HeptiamondsHexagon1(Heptiamonds):
 class HeptiamondsHexagon2(Heptiamonds):
 
     """
-     solutions
+    many solutions
 
     12-unit-high hexagon with two central stacked 4-unit-high hexagon holes
     """
@@ -452,7 +456,7 @@ class HeptiamondsHexagon2(Heptiamonds):
 class HeptiamondsHexagon3(Heptiamonds):
 
     """
-     solutions
+    many solutions
 
     12-unit-high hexagon with two central adjacent 4-unit-high hexagon holes
     (horizontal)
@@ -489,7 +493,7 @@ class HeptiamondsHexagon3(Heptiamonds):
 class HeptiamondsHexagon4(Heptiamonds):
 
     """
-     solutions
+    many solutions
 
     12-unit-high hexagon with two central separated 4-unit-high hexagon holes
     (horizontal)
@@ -526,7 +530,7 @@ class HeptiamondsHexagon4(Heptiamonds):
 class HeptiamondsHexagon5(Heptiamonds):
 
     """
-     solutions
+    many solutions
 
     12-unit-high hexagon with two 4-unit-high hexagon holes in opposite
     corners (horizontal)
@@ -563,7 +567,7 @@ class HeptiamondsHexagon5(Heptiamonds):
 class HeptiamondsHexagon6(Heptiamonds):
 
     """
-     solutions
+    many solutions
 
     12-unit-high hexagon with a central snowflake hole
     """
@@ -597,7 +601,7 @@ class HeptiamondsHexagon6(Heptiamonds):
 class HeptiamondsHexagon7(Heptiamonds):
 
     """
-     solutions
+    many solutions
 
     12-unit-high hexagon with a central trefoil hole
     """
@@ -939,9 +943,9 @@ class HeptiamondsJaggedHexagon3(HeptiamondsJaggedHexagon1):
         (6,10,1), (8,8,1), (10,6,1), (11,1,0), (11,3,0), (11,5,0),)
 
 
-class HeptiamondsJaggedHexagon4(HeptiamondsJaggedHexagon1):
+class HeptiamondsJaggedHexagon_x1(HeptiamondsJaggedHexagon1):
 
-    """? solutions"""
+    """0 solutions -- too jagged?"""
 
     extras = (
         (0,6,1), (0,7,1), (0,8,1), (0,9,1), (0,10,1),
@@ -954,18 +958,18 @@ class HeptiamondsJaggedHexagon4(HeptiamondsJaggedHexagon1):
     holes = set(Heptiamonds.coordinates_hexagram(1, offset=(4,4,0)))
 
 
-class HeptiamondsJaggedHexagon5(HeptiamondsJaggedHexagon4):
+class HeptiamondsJaggedHexagon_x2(HeptiamondsJaggedHexagon_x1):
 
-    """? solutions"""
+    """0 solutions"""
 
     holes = set(
         list(Heptiamonds.coordinates_hexagon(1, offset=(5,5,0)))
         + [(3,7,0), (4,4,1), (4,8,1), (7,3,0), (7,7,0), (8,4,1)])
 
 
-class HeptiamondsJaggedHexagon6(HeptiamondsJaggedHexagon4):
+class HeptiamondsJaggedHexagon_x3(HeptiamondsJaggedHexagon_x1):
 
-    """? solutions"""
+    """0 solutions"""
 
     holes = set((
         (2,6,1), (2,8,1), (3,5,0), (3,9,0),
@@ -1031,7 +1035,7 @@ class HeptiamondsDiamondWindow(Heptiamonds):
 class Heptiamonds4x22LongHexagon(Heptiamonds):
 
     """
-     solutions
+    many solutions
 
     Elongated hexagon (clipped parallelogram) 4 units high by 22 units wide.
     """
@@ -1058,7 +1062,7 @@ class Heptiamonds4x22LongHexagon(Heptiamonds):
 class Heptiamonds10x12ShortHexagon(Heptiamonds4x22LongHexagon):
 
     """
-     solutions
+    many solutions
 
     Shortened hexagon (clipped parallelogram) 10 units wide by 12 units high.
     """
@@ -1070,6 +1074,8 @@ class Heptiamonds10x12ShortHexagon(Heptiamonds4x22LongHexagon):
 class HeptiamondsChevron(Heptiamonds):
 
     """
+    many solutions
+
     Left-facing chevron.
 
     Width of solution space is (apparent width) + (height / 2).
@@ -1138,6 +1144,8 @@ class Heptiamonds28x3Chevron(HeptiamondsChevron):
 class HeptiamondsStack(Heptiamonds):
 
     """
+    many solutions
+
     Stack of 2-high elongated hexagons; approximation of a rectangle.
 
     Width of solution space is (apparent width) + (height / 2) - 1.
