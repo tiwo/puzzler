@@ -337,10 +337,7 @@ Hexagons
             <../solutions/heptiamonds-jagged-hexagon-3.txt>`__
             (design by `Johannes H. Hindriks`_)
 
-       - .. figure:: images/heptiamonds-jagged-hexagon-4.png
-
-            `solutions incomplete
-            <../solutions/heptiamonds-jagged-hexagon-4.txt>`__
+       -
 
 
 Irregular Hexagons
