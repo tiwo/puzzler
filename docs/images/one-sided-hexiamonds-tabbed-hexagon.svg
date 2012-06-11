@@ -1,0 +1,104 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="170.000" height="103.923"
+     viewBox="0 0 170.000 103.923"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g>
+<polygon fill="blue" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="65.000,86.603 70.000,95.263 75.000,86.603 60.000,60.622 55.000,69.282">
+<desc>i6</desc>
+</polygon>
+<polygon fill="turquoise" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="70.000,95.263 80.000,95.263 85.000,86.603 95.000,86.603 90.000,77.942 70.000,77.942 75.000,86.603">
+<desc>h6</desc>
+</polygon>
+<polygon fill="blue" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="90.000,77.942 95.000,86.603 105.000,86.603 90.000,60.622 80.000,60.622">
+<desc>I6</desc>
+</polygon>
+<polygon fill="green" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="100.000,77.942 105.000,86.603 115.000,86.603 120.000,77.942 115.000,69.282 105.000,69.282">
+<desc>O6</desc>
+</polygon>
+<polygon fill="gold" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="65.000,69.282 70.000,77.942 90.000,77.942 80.000,60.622 70.000,60.622 75.000,69.282">
+<desc>V6</desc>
+</polygon>
+<polygon fill="navy" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="95.000,69.282 100.000,77.942 105.000,69.282 115.000,69.282 120.000,60.622 115.000,51.962 110.000,60.622 100.000,60.622">
+<desc>S6</desc>
+</polygon>
+<polygon fill="maroon" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="40.000,60.622 45.000,69.282 55.000,69.282 60.000,60.622 50.000,60.622 55.000,51.962 50.000,43.301">
+<desc>G6</desc>
+</polygon>
+<polygon fill="turquoise" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="60.000,60.622 65.000,69.282 75.000,69.282 70.000,60.622 75.000,51.962 55.000,51.962 50.000,60.622">
+<desc>H6</desc>
+</polygon>
+<polygon fill="magenta" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="90.000,60.622 95.000,69.282 100.000,60.622 110.000,60.622 115.000,51.962 85.000,51.962">
+<desc>P6</desc>
+</polygon>
+<polygon fill="red" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="70.000,60.622 90.000,60.622 85.000,51.962 90.000,43.301 70.000,43.301 75.000,51.962">
+<desc>X6</desc>
+</polygon>
+<polygon fill="lime" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="115.000,51.962 120.000,60.622 125.000,51.962 120.000,43.301 100.000,43.301 95.000,51.962">
+<desc>j6</desc>
+</polygon>
+<polygon fill="blueviolet" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="50.000,43.301 55.000,51.962 65.000,34.641 55.000,17.321 50.000,25.981 55.000,34.641">
+<desc>C6</desc>
+</polygon>
+<polygon fill="plum" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="55.000,51.962 75.000,51.962 70.000,43.301 80.000,43.301 75.000,34.641 65.000,34.641">
+<desc>f6</desc>
+</polygon>
+<polygon fill="magenta" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="85.000,51.962 95.000,51.962 100.000,43.301 110.000,43.301 100.000,25.981">
+<desc>p6</desc>
+</polygon>
+<polygon fill="navy" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="120.000,43.301 125.000,51.962 130.000,43.301 125.000,34.641 115.000,34.641 110.000,25.981 105.000,34.641 110.000,43.301">
+<desc>s6</desc>
+</polygon>
+<polygon fill="maroon" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="75.000,34.641 80.000,43.301 90.000,43.301 100.000,25.981 90.000,25.981 85.000,34.641 80.000,25.981">
+<desc>g6</desc>
+</polygon>
+<polygon fill="plum" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="60.000,25.981 65.000,34.641 75.000,34.641 80.000,25.981 70.000,25.981 75.000,17.321 55.000,17.321">
+<desc>F6</desc>
+</polygon>
+<polygon fill="darkorange" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="80.000,25.981 85.000,34.641 90.000,25.981 100.000,25.981 95.000,17.321 75.000,17.321 70.000,25.981">
+<desc>E6</desc>
+</polygon>
+<polygon fill="lime" stroke="white"
+         stroke-width="1" stroke-linejoin="round"
+         points="100.000,25.981 105.000,34.641 110.000,25.981 100.000,8.660 90.000,8.660 85.000,17.321 95.000,17.321">
+<desc>J6</desc>
+</polygon>
+</g>
+</svg>

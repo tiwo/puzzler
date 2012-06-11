@@ -32,6 +32,10 @@
 Hexiamonds
 ==========
 
+The free hexiamonds consist of 12 6-triangle polyforms, for a total of
+72 unit triangles.
+
+
 Parallelograms
 --------------
 
@@ -223,8 +227,8 @@ Hexagon-Grid Shapes
   .. image:: images/hexiamonds-hexgrid-semiregular-hexagon-3x2.png
 
 
-Misc
-----
+Miscellaneous
+-------------
 
 * 4x11 trapezium: `76 solutions
   <../solutions/hexiamonds-4x11-trapezium.txt>`__
@@ -280,15 +284,91 @@ Misc
 One-Sided Hexiamonds
 ====================
 
+The one-sided hexiamonds consist of 19 6-triangle polyforms, for a
+total of 114 unit triangles.
+
+
+Hexagons & Variants
+-------------------
+
 * Long hexagon 8x3 [11x6]: `solutions incomplete
   <../solutions/one-sided-hexiamonds-long-hexagon-8x3.txt>`__
 
   .. image:: images/one-sided-hexiamonds-long-hexagon-8x3.png
 
-* Butterfly 11x3 [11x6]: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-butterfly-11x3.txt>`__
+* Tabbed hexagon: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-tabbed-hexagon.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-butterfly-11x3.png
+  .. image:: images/one-sided-hexiamonds-tabbed-hexagon.png
+
+* Notched hexagon ring: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-notched-hexagon-ring.txt>`__
+
+  .. image:: images/one-sided-hexiamonds-notched-hexagon-ring.png
+
+
+Trefoils
+--------
+
+.. list-table::
+   :class: borderless
+
+   * - .. figure:: images/one-sided-hexiamonds-trefoil-1.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-1.txt>`__
+
+     - .. figure:: images/one-sided-hexiamonds-trefoil-2.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-2.txt>`__
+
+   * - .. figure:: images/one-sided-hexiamonds-trefoil-3.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-3.txt>`__
+
+     - .. figure:: images/one-sided-hexiamonds-trefoil-4.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-4.txt>`__
+
+   * - .. figure:: images/one-sided-hexiamonds-trefoil-5.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-5.txt>`__
+
+     - .. figure:: images/one-sided-hexiamonds-trefoil-6.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-6.txt>`__
+
+   * - .. figure:: images/one-sided-hexiamonds-trefoil-7.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-7.txt>`__
+
+     - .. figure:: images/one-sided-hexiamonds-trefoil-8.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-8.txt>`__
+
+   * - .. figure:: images/one-sided-hexiamonds-trefoil-9.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-9.txt>`__
+
+     - .. figure:: images/one-sided-hexiamonds-trefoil-10.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-10.txt>`__
+
+   * - .. figure:: images/one-sided-hexiamonds-trefoil-11.png
+
+          `solutions incomplete
+          <../solutions/one-sided-hexiamonds-trefoil-11.txt>`__
+
+     -
 
 
 Hexagon-Grid Shapes
@@ -340,6 +420,20 @@ These shapes are all based on the hexagonal grid, made up of 19
   <../solutions/one-sided-hexiamonds-hexgrid-two-triangles.txt>`__
 
   .. image:: images/one-sided-hexiamonds-hexgrid-two-triangles.png
+
+
+Miscellaneous
+-------------
+
+* Butterfly 11x3 [11x6]: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-butterfly-11x3.txt>`__
+
+  .. image:: images/one-sided-hexiamonds-butterfly-11x3.png
+
+* Bumpy triangle: `solutions incomplete
+  <../solutions/one-sided-hexiamonds-bumpy-triangle.txt>`__
+
+  .. image:: images/one-sided-hexiamonds-bumpy-triangle.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

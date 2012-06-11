@@ -584,8 +584,6 @@ class OneSidedPolyiamonds12345(OneSidedLowercaseMixin, Polyiamonds12345):
 
 class Hexiamonds(Polyiamonds):
 
-    check_for_duplicates = True
-
     piece_data = {
         'I6': ((( 0, 0, 1), ( 1, 0, 0), ( 1, 0, 1), ( 2, 0, 0), ( 2, 0, 1)),
                {}),                     # Rhomboid or Bar

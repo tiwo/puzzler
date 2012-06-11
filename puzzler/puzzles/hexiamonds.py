@@ -21,6 +21,7 @@ class Hexiamonds3x12(Hexiamonds):
     height = 3
     width = 12
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
 
@@ -31,6 +32,7 @@ class Hexiamonds4x9(Hexiamonds):
     height = 4
     width = 9
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
 
@@ -41,6 +43,7 @@ class Hexiamonds6x6(Hexiamonds):
     height = 6
     width = 6
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},
                             {'xy_swapped': True},
                             {'rotate_180': True, 'xy_swapped': True},)
@@ -52,8 +55,6 @@ class Hexiamonds4x11Trapezium(Hexiamonds):
 
     height = 4
     width = 11
-
-    check_for_duplicates = False
 
     def coordinates(self):
         for z in range(self.depth):
@@ -81,6 +82,7 @@ class Hexiamonds4x10LongHexagon(Hexiamonds):
     height = 4
     width = 10
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -101,6 +103,7 @@ class Hexiamonds5x8StackedLongHexagons(Hexiamonds):
     height = 8
     width = 8
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -121,6 +124,7 @@ class Hexiamonds4x12StackedHexagons(Hexiamonds):
     height = 12
     width = 8
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     svg_rotation = 90
@@ -163,6 +167,7 @@ class Hexiamonds5x8StackedLongButterflies(Hexiamonds):
     height = 8
     width = 9
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -183,6 +188,7 @@ class Hexiamonds4x12StackedButterflies(Hexiamonds):
     height = 12
     width = 10
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     svg_rotation = 90
@@ -212,8 +218,6 @@ class HexiamondsSnowflake(Hexiamonds):
 
     height = 8
     width = 8
-
-    check_for_duplicates = False
 
     def coordinates(self):
         exceptions = ((0,3,1), (0,4,0), (0,4,1), (0,5,0), (0,7,0), (0,7,1),
@@ -338,8 +342,6 @@ class HexiamondsRing(Hexiamonds):
     height = 8
     width = 8
 
-    check_for_duplicates = False
-
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -361,8 +363,6 @@ class HexiamondsRing2(Hexiamonds):
 
     height = 8
     width = 8
-
-    check_for_duplicates = False
 
     def coordinates(self):
         for z in range(self.depth):
@@ -485,8 +485,6 @@ class HexiamondsCrescent(Hexiamonds):
     height = 8
     width = 8
 
-    check_for_duplicates = False
-
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -510,8 +508,6 @@ class HexiamondsCrescent2(Hexiamonds):
     height = 8
     width = 8
 
-    check_for_duplicates = False
-
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -530,8 +526,6 @@ class HexiamondsTrefoil(Hexiamonds):
 
     height = 8
     width = 8
-
-    check_for_duplicates = False
 
     def coordinates(self):
         for z in range(self.depth):
@@ -560,8 +554,6 @@ class Hexiamonds3Hexagons(Hexiamonds):
     height = 4
     width = 12
 
-    check_for_duplicates = False
-
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -583,6 +575,7 @@ class HexiamondsCoin(Hexiamonds):
     height = 6
     width = 8
 
+    check_for_duplicates = True
     duplicate_conditions = ({'rotate_180': True},)
 
     def coordinates(self):
@@ -609,8 +602,6 @@ class HexiamondsIrregularHexagon7x8(Hexiamonds):
     height = 8
     width = 7
 
-    check_for_duplicates = False
-
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -633,8 +624,6 @@ class HexiamondsStackedChevrons_6x6(Hexiamonds):
     height = 6
     width = 9
 
-    check_for_duplicates = False
-
     def coordinates(self):
         for z in range(self.depth):
             for y in range(self.height):
@@ -652,8 +641,6 @@ class HexiamondsStackedChevrons_12x3_1(Hexiamonds):
 
     height = 12
     width = 9
-
-    check_for_duplicates = False
 
     svg_rotation = 90
 
@@ -674,8 +661,6 @@ class HexiamondsStackedChevrons_12x3_2(Hexiamonds):
 
     height = 12
     width = 9
-
-    check_for_duplicates = False
 
     svg_rotation = 90
 
@@ -702,8 +687,6 @@ class HexiamondsStackedChevrons_12x3_3(Hexiamonds):
 
     height = 12
     width = 9
-
-    check_for_duplicates = False
 
     svg_rotation = 90
 
@@ -753,8 +736,6 @@ class HexiamondsChevron_4x9(HexiamondsChevron):
     height = 4
     width = 11
 
-    check_for_duplicates = False
-
 
 class HexiamondsChevron_6x6(HexiamondsChevron):
 
@@ -763,8 +744,6 @@ class HexiamondsChevron_6x6(HexiamondsChevron):
     height = 6
     width = 9
 
-    check_for_duplicates = False
-
 
 class HexiamondsChevron_12x3(HexiamondsChevron):
 
@@ -772,8 +751,6 @@ class HexiamondsChevron_12x3(HexiamondsChevron):
 
     height = 12
     width = 9
-
-    check_for_duplicates = False
 
     svg_rotation = 90
 
@@ -823,8 +800,6 @@ class HexiamondsTenyo(Hexiamonds):
     height = 8
     width = 7
 
-    check_for_duplicates = False
-
     svg_rotation = 90
 
     def coordinates(self):
@@ -847,8 +822,6 @@ class HexiamondsTwoTriangles(Hexiamonds):
 
     height = 6
     width = 7
-
-    check_for_duplicates = False
 
     def coordinates(self):
         for coord in self.coordinates_parallelogram(7, 6):
@@ -926,8 +899,6 @@ class HexiamondsSpikedHexagon1(Hexiamonds):
     width = 10
     height = 10
 
-    check_for_duplicates = False
-
     def coordinates(self):
         x = Triangular3DCoordSet(self.coordinates_butterfly(2, 1))
         coords = set(
@@ -948,8 +919,6 @@ class HexiamondsSpikedHexagon2(Hexiamonds):
 
     width = 8
     height = 8
-
-    check_for_duplicates = False
 
     svg_rotation = -30
 
@@ -974,8 +943,6 @@ class HexiamondsSpikedHexagon_x1(Hexiamonds):
     width = 8
     height = 8
 
-    check_for_duplicates = False
-
     offsets = ((3,7,0), (1,6,0), (2,3,0), (5,1,0), (7,2,0), (6,5,0),)
 
     offsets = ((5,0,0), (8,1,0), (7,5,0), (3,8,0), (0,7,0), (1,3,0))
@@ -994,8 +961,6 @@ class HexiamondsSpikedHexagon_x2(Hexiamonds):
 
     width = 8
     height = 8
-
-    check_for_duplicates = False
 
     offsets = ((1,7,0), (1,4,0), (4,1,0), (7,1,0), (7,4,0), (4,7,0),)
 
@@ -1042,8 +1007,6 @@ class HexiamondsHeart(Hexiamonds):
     width = 7
     height = 8
 
-    check_for_duplicates = False
-
     svg_rotation = -90
 
     def coordinates(self):
@@ -1062,8 +1025,6 @@ class HexiamondsSpinner1(Hexiamonds):
 
     width = 8
     height = 8
-
-    check_for_duplicates = False
 
     def coordinates(self):
         x = Triangular3DCoordSet(self.coordinates_parallelogram(3, 1))
@@ -1306,6 +1267,7 @@ class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
     height = 10
     width = 10
 
+    check_for_duplicates = True
     duplicate_conditions = ({'standardize': 'P6'},
                             {'standardize': 'p6'},)
 
@@ -1571,3 +1533,410 @@ class OneSidedHexiamondsHexgridTwoTriangles(OneSidedHexiamonds):
             + list(Polyhexes.coordinates_triangle(4, offset=(3,0))))
         coords = self.coordinates_hexgrid(hcoords)#, offset=(0,-1,0))
         return sorted(coords)
+
+
+class OneSidedHexiamondsTriangle12_x1(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        coords = set(self.coordinates_triangle(12))
+        for offset in ((1,1,0), (1,2,0), (2,1,0)):
+            coords -= set(self.coordinates_inverted_triangle(4, offset=offset))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTriangle12_x2(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        coords = set(self.coordinates_triangle(12))
+        for offset in ((2,3,0), (3,2,0), (3,3,0)):
+            coords -= set(self.coordinates_triangle(4, offset=offset))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTriangle12_x3(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        coords = set(self.coordinates_triangle(12))
+        coords -= set(self.coordinates_triangle(6, offset=(2,2,0)))
+        coords.update(set(self.coordinates_hexagon(1, offset=(3,3,0))))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTriangle12_x4(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        coords = set(self.coordinates_triangle(12))
+        coords -= set(self.coordinates_inverted_triangle(6))
+        coords.update(set(self.coordinates_hexagon(1, offset=(3,3,0))))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTriangle_x1(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 11
+    width = 11
+
+    holes = set(((2,2,0), (2,6,0), (6,2,0)))
+    holes = set(((1,4,1), (4,1,1), (4,4,1)))
+    holes = set(((2,4,0), (4,2,0), (4,4,0)))
+    holes = set(((2,2,1), (2,5,1), (5,2,1)))
+    holes = set(((2,4,1), (3,2,1), (4,3,1)))
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_triangle(11))
+            - set(self.coordinates_triangle(2, offset=(3,3,0))))
+        coords -= self.holes
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTriangleRing1(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 10
+    width = 10
+
+    def coordinates(self):
+        coords = set(self.coordinates_semiregular_hexagon(9, 1))
+        coords -= set(self.coordinates_triangle(2, offset=(3,3,0)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsCompoundTriangle_x1(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 10
+    width = 10
+
+    def coordinates(self):
+        coords = set()
+        for offset in ((0,1,0), (1,0,0), (1,1,0)):
+            coords.update(set(self.coordinates_triangle(9, offset=offset)))
+        coords -= set(((3,3,1),))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil1(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    height = 11
+    width = 11
+
+    def coordinates(self):
+        coords = set(self.coordinates_semiregular_hexagon(
+            1, 4, offset=(1,1,0)))
+        part = Triangular3DCoordSet(self.coordinates_elongated_hexagon(1, 3))
+        for i, offset in enumerate(((0,5,0), (11,-3,0), (7,0,0))):
+            coords.update(part.rotate0(i).translate(offset))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil2(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 10
+    width = 10
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(3, offset=(2,2,0)))
+        for offset in ((0,6,0), (3,0,0), (6,3,0)):
+            coords.update(set(self.coordinates_hexagon(2, offset=offset)))
+        for offset in ((1,4,0), (4,7,0), (7,1,0)):
+            coords.update(set(self.coordinates_hexagon(1, offset=offset)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil3(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    height = 10
+    width = 10
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = set()
+        part = Triangular3DCoordSet(
+            list(self.coordinates_hexagon(2, offset=(0,1,0)))
+            + list(self.coordinates_elongated_hexagon(1, 3, offset=(1,0,0))))
+        for i, offset in enumerate(((5,2,0), None, (8,5,0), None, (2,8,0))):
+            if not offset:
+                continue
+            coords.update(part.rotate0(i).translate(offset))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil4(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    height = 12
+    width = 12
+
+    holes = set(((5,1,1), (5,2,0)))
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = set()
+        part = (
+            Triangular3DCoordSet(self.coordinates_elongated_hexagon(4, 2))
+            - self.holes)
+        for i, offset in enumerate(((6,4,0), None, (8,6,0), None, (4,8,0))):
+            if not offset:
+                continue
+            coords.update(part.rotate0(i).translate(offset))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil5(OneSidedHexiamondsTrefoil4):
+
+    """many solutions"""
+
+    holes = set(((4,3,0), (5,0,1)))
+
+
+class OneSidedHexiamondsTrefoil6(OneSidedHexiamondsTrefoil4):
+
+    """many solutions"""
+
+    holes = set(((3,3,1), (5,0,0)))
+
+
+class OneSidedHexiamondsTrefoil7(OneSidedHexiamondsTrefoil4):
+
+    """many solutions"""
+
+    holes = set(((2,3,1), (4,0,0)))
+
+
+class OneSidedHexiamondsTrefoil8(OneSidedHexiamondsTrefoil4):
+
+    """many solutions"""
+
+    holes = set(((1,3,1), (3,0,0)))
+
+
+class OneSidedHexiamondsTrefoil9(OneSidedHexiamondsTrefoil4):
+
+    """many solutions"""
+
+    holes = set(((0,3,1), (2,0,0)))
+
+
+class OneSidedHexiamondsTrefoil10(OneSidedHexiamondsTrefoil4):
+
+    """many solutions"""
+
+    holes = set(((0,2,1), (1,1,0)))
+
+
+class OneSidedHexiamondsTrefoil11(OneSidedHexiamondsTrefoil4):
+
+    """many solutions"""
+
+    holes = set(((0,2,0), (0,1,1)))
+
+
+class OneSidedHexiamondsTrefoil_x1(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 9
+    width = 9
+
+    def coordinates(self):
+        coords = set()
+        for offset in ((0,2,0), (2,0,0), (2,2,0)):
+            coords.update(set(self.coordinates_semiregular_hexagon(
+                6, 1, offset=offset)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil_x2(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        coords = set(self.coordinates_inverted_triangle(3, offset=(4,4,0)))
+        for offset in ((0,0,0), (0,6,0), (6,0,0)):
+            coords.update(set(self.coordinates_inverted_triangle(
+                6, offset=offset)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil_x3(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 11
+    width = 11
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(2, offset=(3,3,0)))
+        for offset in ((0,0,0), (0,6,0), (6,0,0)):
+            coords.update(set(self.coordinates_semiregular_hexagon(
+                1, 4, offset=offset)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil_x4(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 11
+    width = 11
+
+    def coordinates(self):
+        coords = set(self.coordinates_inverted_triangle(6))
+        part = Triangular3DCoordSet(
+            list(self.coordinates_parallelogram(3, 3, offset=(0,1,0)))
+            + list(self.coordinates_parallelogram(3, 3, offset=(1,0,0))))
+        for i, offset in enumerate(((0,0,0), (4,4,0), (12,0,0))):
+            coords.update(part.rotate0(i).translate(offset))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil_x5(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        coords = set(self.coordinates_inverted_triangle(6))
+        part = Triangular3DCoordSet(self.coordinates_parallelogram(4, 4))
+        for i, offset in enumerate(((0,0,0), (4,4,0), (12,0,0))):
+            coords.update(part.rotate0(i).translate(offset))
+        coords -= set(self.coordinates_hexagon(1, offset=(3,3,0)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil_x6(OneSidedHexiamonds):
+
+    """0 solutions"""
+
+    height = 12
+    width = 12
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(2, offset=(4,4,0)))
+        for offset in ((0,6,0), (6,0,0), (6,6,0)):
+            coords.update(set(self.coordinates_triangle(6, offset=offset)))
+        coords -= set(self.coordinates_hexagon(1, offset=(5,5,0)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTrefoil_x7(OneSidedHexiamondsTrefoil4):
+
+    """0 solutions"""
+
+    holes = set(((0,3,0), (1,0,1)))
+
+
+class OneSidedHexiamondsBumpyTriangle(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    height = 10
+    width = 10
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = set()
+        for offset in ((0,6,0), (3,0,0), (6,3,0)):
+            coords.update(set(self.coordinates_hexagon(2, offset=offset)))
+        for offset in ((1,3,0), (2,1,0), (3,2,0)):
+            coords.update(set(self.coordinates_hexagon(3, offset=offset)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsTabbedHexagon(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    height = 10
+    width = 10
+
+    offsets = ((0,7,0), (1,3,0), (3,8,0), (5,0,0), (7,5,0), (8,1,0))
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(4, offset=(1,1,0)))
+        for offset in self.offsets:
+            coords.update(set(self.coordinates_hexagon(1, offset=offset)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsNotchedHexagonRing(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    height = 10
+    width = 10
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_semiregular_hexagon(6, 3, offset=(1,1,0)))
+            + list(self.coordinates_semiregular_hexagon(3, 6)))
+        coords -= set(self.coordinates_hexagon(2, offset=(3,3,0)))
+        return sorted(coords)
+
+
+class OneSidedHexiamondsKnobbedHexagon1(OneSidedHexiamonds):
+
+    """many solutions"""
+
+    height = 10
+    width = 10
+
+    holes = set(OneSidedHexiamonds.coordinates_hexagon(1, offset=(4,4,0)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(4, offset=(1,1,0)))
+        for offset in ((0,4,0), (0,8,0), (4,0,0), (4,8,0), (8,0,0), (8,4,0)):
+            coords.update(set(self.coordinates_hexagon(1, offset=offset)))
+        coords -= self.holes
+        return sorted(coords)
+
+
+class OneSidedHexiamondsKnobbedHexagon_x1(OneSidedHexiamondsKnobbedHexagon1):
+
+    """0 solutions"""
+
+    holes = set(((3,5,1), (4,4,0), (4,6,0), (5,3,1), (5,5,1), (6,4,0)))
+    holes = set(((2,6,0), (3,3,1), (3,7,1), (6,2,0), (6,6,0), (7,3,1)))
+    holes = set(((1,6,1), (3,3,0), (3,8,0), (6,1,1), (6,6,1), (8,3,0)))
