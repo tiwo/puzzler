@@ -30,6 +30,11 @@
 .. contents::
 
 
+High-quality hardwood sets of these polycubes are available from Kadon
+Enterprises: `Super Deluxe Quintillions`_ (pentacubes) and `Poly-4
+Supplement`_ (polycubes 1-4).
+
+
 Tetracubes
 ==========
 
@@ -206,14 +211,123 @@ Polyhedral Dissections
      .. image:: images/sheldons-cube-3.png
 
 
+Polycubes of Order 2 Through 4
+==============================
+
+These puzzles use the 1 dicube, 2 tricubes, and 8 tetracubes, for a
+total of 40 unit cubes.
+
+* Solids:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-234-5x4x2.png
+
+            5x4x2: `solutions incomplete
+            <../solutions/polycubes-234-5x4x2.txt>`__
+            (`X3D model <images/polycubes-234-5x4x2.x3d>`__)
+
+       - .. figure:: images/polycubes-234-10x2x2.png
+
+            10x2x2: `solutions incomplete
+            <../solutions/polycubes-234-10x2x2.txt>`__
+            (`X3D model <images/polycubes-234-10x2x2.x3d>`__)
+
+* Open boxes (closed on the bottom):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-234-open-box-4x4x3.png
+
+            4x4x3: `solutions incomplete
+            <../solutions/polycubes-234-open-box-4x4x3.txt>`__
+            (`X3D model <images/polycubes-234-open-box-4x4x3.x3d>`__)
+
+       - .. figure:: images/polycubes-234-open-box-6x4x2.png
+
+            6x4x2: `solutions incomplete
+            <../solutions/polycubes-234-open-box-6x4x2.txt>`__
+            (`X3D model <images/polycubes-234-open-box-6x4x2.x3d>`__)
+
+* Aztec pyramid (stacked Aztec diamonds): `solutions incomplete
+  <../solutions/polycubes-234-aztec-pyramid.txt>`__ (`X3D model
+  <images/polycubes-234-aztec-pyramid.x3d>`__)
+
+  .. image:: images/polycubes-234-aztec-pyramid.png
+
+
+
+Polycubes of Order 1 Through 4
+==============================
+
+These puzzles use the 1 monocube, 1 dicube, 2 tricubes, and 8
+tetracubes, for a total of 41 unit cubes.
+
+* Stacked squares:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-1234-stacked-squares-1.png
+
+            `solutions incomplete
+            <../solutions/polycubes-1234-stacked-squares-1.txt>`__
+            (`X3D model <images/polycubes-1234-stacked-squares-1.x3d>`__)
+
+       - .. figure:: images/polycubes-1234-stacked-squares-2.png
+
+            `solutions incomplete
+            <../solutions/polycubes-1234-stacked-squares-2.txt>`__
+            (`X3D model <images/polycubes-1234-stacked-squares-2.x3d>`__)
+
+* 7x3x2 solid (with a hole): `solutions incomplete
+  <../solutions/polycubes-1234-7x3x2-1.txt>`__ (`X3D model
+  <images/polycubes-1234-7x3x2-1.x3d>`__)
+
+  .. image:: images/polycubes-1234-7x3x2-1.png
+
+* 3x3x5 towers (with gaps):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-1234-3x3x5-1.png
+
+            `solutions incomplete
+            <../solutions/polycubes-1234-3x3x5-1.txt>`__
+            (`X3D model <images/polycubes-1234-3x3x5-1.x3d>`__)
+
+       - .. figure:: images/polycubes-1234-3x3x5-2.png
+
+            `solutions incomplete
+            <../solutions/polycubes-1234-3x3x5-2.txt>`__
+            (`X3D model <images/polycubes-1234-3x3x5-2.x3d>`__)
+
+* Open boxes (closed on the bottom):
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-1234-open-box-3x3x5.png
+
+            3x3x5: `solutions incomplete
+            <../solutions/polycubes-1234-open-box-3x3x5.txt>`__
+            (`X3D model <images/polycubes-1234-open-box-3x3x5.x3d>`__)
+
+       - .. figure:: images/polycubes-1234-open-box-5x5x2.png
+
+            5x5x2: `solutions incomplete
+            <../solutions/polycubes-1234-open-box-5x5x2.txt>`__
+            (`X3D model <images/polycubes-1234-open-box-5x5x2.x3d>`__)
+
+
 Polycubes of Order 1 Through 5
 ==============================
 
 These puzzles use the 1 monocube, 1 dicube, 2 tricubes, 8 tetracubes,
-and 29 pentacubes, for a total of 186 unit cubes.  High-quality
-hardwood sets of these polycubes are available from Kadon Enterprises:
-`Super Deluxe Quintillions`_ (pentacubes) and `Poly-4 Supplement`_
-(polycubes 1-4).
+and 29 pentacubes, for a total of 186 unit cubes.
 
 * 2x3x31 solid: `solutions incomplete
   <../solutions/polycubes-12345-2x3x31.txt>`__ (`X3D model
