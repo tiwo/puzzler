@@ -979,7 +979,7 @@ class SolidPentominoesCrossBlock2C(SolidPentominoesCrossBlock2):
 
 class SolidPentominoesCrossBlock3(SolidPentominoes):
 
-    """0 solutions"""
+    """10 solutions"""
 
     width = 6
     height = 6
@@ -1012,3 +1012,26 @@ class SolidPentominoesCrossBlock_x1(SolidPentominoes):
             list(self.coordinates_cuboid(6, 2, 3, offset=(0,2,0)))
             + list(self.coordinates_cuboid(2, 6, 3, offset=(2,0,0))))
         return sorted(coords)
+
+
+class SolidPentominoesOpenBox8x3x3(SolidPentominoes):
+
+    """many solutions"""
+
+    width = 8
+    height = 3
+    depth = 3
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        return self.coordinates_open_box(self.width, self.height, self.depth)
+
+
+class SolidPentominoesOpenBox6x3x4(SolidPentominoesOpenBox8x3x3):
+
+    """many solutions"""
+
+    width = 6
+    height = 3
+    depth = 4

@@ -72,6 +72,20 @@ class Pentacubes18x3x3OpenBox(Pentacubes):
         return sorted(coords)
 
 
+class Pentacubes2x7x15OpenBox(Pentacubes):
+
+    """many solutions"""
+
+    width = 7
+    height = 15
+    depth = 2
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        return self.coordinates_open_box(self.width, self.height, self.depth)
+
+
 class Pentacubes2x11x11Frame(Pentacubes):
 
     """many solutions"""
@@ -1563,3 +1577,40 @@ class NonConvexPentacubes5x5x8CrystalTower(NonConvexPentacubes):
                 Puzzle2D.coordinates_diamond(4 - i, offset=(i-1,i-1))))
         coords.intersection_update(set(self.coordinates_cuboid(5, 5, 8)))
         return sorted(coords)
+
+
+class NonConvexPentacubesOpenBox12x3x5(NonConvexPentacubes):
+
+    """? solutions"""
+
+    width = 3
+    height = 12
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        return self.coordinates_open_box(self.width, self.height, self.depth)
+
+
+class NonConvexPentacubesOpenBox10x3x6(NonConvexPentacubesOpenBox12x3x5):
+
+    """? solutions"""
+
+    width = 3
+    height = 10
+    depth = 6
+
+
+class NonConvexPentacubesRingWall8x8x5(NonConvexPentacubes):
+
+    """? solutions"""
+
+    width = 8
+    height = 8
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        return self.coordinates_ring_wall(self.width, self.height, self.depth)

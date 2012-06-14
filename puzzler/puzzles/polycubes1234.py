@@ -102,11 +102,7 @@ class Polycubes1234OpenBox3x3x5(Polycubes1234):
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
     def coordinates(self):
-        coords = (
-            set(self.coordinates_cuboid(self.width, self.height, self.depth))
-            - set(self.coordinates_cuboid(self.width-2, self.height-2,
-                                          self.depth-1, offset=(1,1,1))))
-        return sorted(coords)
+        return self.coordinates_open_box(self.width, self.height, self.depth)
 
 
 class Polycubes1234OpenBox5x5x2(Polycubes1234OpenBox3x3x5):
@@ -118,7 +114,7 @@ class Polycubes1234OpenBox5x5x2(Polycubes1234OpenBox3x3x5):
     depth = 2
 
 
-class Polycubes1234DiamondMound_x1(Polycubes1234Solid):
+class Polycubes1234DiamondMound_x(Polycubes1234Solid):
 
     """0 solutions: excessive parity imbalance"""
 
@@ -138,7 +134,7 @@ class Polycubes1234DiamondMound_x1(Polycubes1234Solid):
         return sorted(coords)
 
 
-class Polycubes1234DiamondCheckerboard_x1(Polycubes1234Solid):
+class Polycubes1234DiamondCheckerboard_x(Polycubes1234Solid):
 
     """0 solutions: excessive parity imbalance"""
 
@@ -155,4 +151,23 @@ class Polycubes1234DiamondCheckerboard_x1(Polycubes1234Solid):
         coords.update(
             set(self.coordinate_offset(x, y, 1, None) for (x, y) in diamond
                 if ((x + y) % 2)))
+        return sorted(coords)
+
+
+class Polycubes1234CrossTower1(Polycubes1234):
+
+    """0 solutions"""
+
+    width = 5
+    height = 5
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(3, 5, 1, offset=(1,0,0)))
+            + list(self.coordinates_cuboid(5, 3, 1, offset=(0,1,0)))
+            + list(self.coordinates_cuboid(3, 1, 4, offset=(1,2,1)))
+            + list(self.coordinates_cuboid(1, 3, 4, offset=(2,1,1))))
         return sorted(coords)

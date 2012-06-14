@@ -257,6 +257,64 @@ total of 40 unit cubes.
 
   .. image:: images/polycubes-234-aztec-pyramid.png
 
+* Steps: `solutions incomplete
+  <../solutions/polycubes-234-steps-4x4x4.txt>`__ (`X3D model
+  <images/polycubes-234-steps-4x4x4.x3d>`__)
+
+  .. image:: images/polycubes-234-steps-4x4x4.png
+
+* Ring walls:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-234-ring-wall-6x6x2.png
+
+            6x6x2: `solutions incomplete
+            <../solutions/polycubes-234-ring-wall-6x6x2.txt>`__
+            (`X3D model <images/polycubes-234-ring-wall-6x6x2.x3d>`__)
+
+       - .. figure:: images/polycubes-234-ring-wall-7x5x2.png
+
+            7x5x2: `solutions incomplete
+            <../solutions/polycubes-234-ring-wall-7x5x2.txt>`__
+            (`X3D model <images/polycubes-234-ring-wall-7x5x2.x3d>`__)
+
+     * - .. figure:: images/polycubes-234-ring-wall-8x4x2.png
+
+            8x4x2: `solutions incomplete
+            <../solutions/polycubes-234-ring-wall-8x4x2.txt>`__
+            (`X3D model <images/polycubes-234-ring-wall-8x4x2.x3d>`__)
+
+       - .. figure:: images/polycubes-234-ring-wall-9x3x2.png
+
+            9x3x2: `solutions incomplete
+            <../solutions/polycubes-234-ring-wall-9x3x2.txt>`__
+            (`X3D model <images/polycubes-234-ring-wall-9x3x2.x3d>`__)
+
+     * - .. figure:: images/polycubes-234-ring-wall-4x3x4.png
+
+            4x3x4: `solutions incomplete
+            <../solutions/polycubes-234-ring-wall-4x3x4.txt>`__
+            (`X3D model <images/polycubes-234-ring-wall-4x3x4.x3d>`__)
+
+       - .. figure:: images/polycubes-234-ring-wall-3x3x5.png
+
+            3x3x5: `solutions incomplete
+            <../solutions/polycubes-234-ring-wall-3x3x5.txt>`__
+            (`X3D model <images/polycubes-234-ring-wall-3x3x5.x3d>`__)
+
+* Cross (or doubled X pentacube): `solutions incomplete
+  <../solutions/polycubes-234-cross-1.txt>`__ (`X3D model
+  <images/polycubes-234-cross-1.x3d>`__)
+
+  .. image:: images/polycubes-234-cross-1.png
+
+* Stacked squares: `solutions incomplete
+  <../solutions/polycubes-234-stacked-squares-1.txt>`__ (`X3D model
+  <images/polycubes-234-stacked-squares-1.x3d>`__)
+
+  .. image:: images/polycubes-234-stacked-squares-1.png
 
 
 Polycubes of Order 1 Through 4
@@ -321,6 +379,12 @@ tetracubes, for a total of 41 unit cubes.
             5x5x2: `solutions incomplete
             <../solutions/polycubes-1234-open-box-5x5x2.txt>`__
             (`X3D model <images/polycubes-1234-open-box-5x5x2.x3d>`__)
+
+* Cross tower: `solutions incomplete
+  <../solutions/polycubes-1234-cross-tower-1.txt>`__ (`X3D model
+  <images/polycubes-1234-cross-tower-1.x3d>`__)
+
+  .. image:: images/polycubes-1234-cross-tower-1.png
 
 
 Polycubes of Order 1 Through 5

@@ -97,11 +97,15 @@ Open Boxes
 
    * - .. figure:: images/pentacubes-18x3x3-open-box.png
 
-          18x3x3 Open Box (design from Kadon's `Super Quintillions`_ booklet:
+          18x3x3 Open Box (design from Kadon's `Super Quintillions`_ booklet):
           `solutions incomplete <../solutions/pentacubes-18x3x3-open-box.txt>`__
           (`X3D model <images/pentacubes-18x3x3-open-box.x3d>`__)
 
-     -
+     - .. figure:: images/pentacubes-2x7x15-open-box.png
+
+          2x7x15 Open Box:
+          `solutions incomplete <../solutions/pentacubes-2x7x15-open-box.txt>`__
+          (`X3D model <images/pentacubes-2x7x15-open-box.x3d>`__)
 
 
 Highrise Towers
@@ -494,6 +498,7 @@ less the "I" (straight) pentacube, the only convex piece.  The
 advantage of this set is that, like the `Pentacubes Plus`_ set, box
 shapes can be formed.  Also, lacking the 5-cube-long "I" pentacube,
 more convoluted shapes can be formed.
+
 
 Solids
 ------

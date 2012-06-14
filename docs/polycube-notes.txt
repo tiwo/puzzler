@@ -701,7 +701,12 @@ Potential Puzzles
 
 40: Polycubes of order 2 - 4
 
-* ring walls?
+* Potential puzzles:
+
+* No solutions:
+
+  * S(10,3,1) + S(10,1,1) steps (= Polycubes234Steps10x3x2_x)
+  * X pentomino x 8 high (= Polycubes234CrossTower_x)
 
 41: Polycubes of order 1 - 4
 
@@ -709,9 +714,9 @@ Potential Puzzles
 
 * No solutions:
 
-  * P_d(4) + P_d(3) + S(3,1,1) (= Polycubes1234DiamondMound_x1)
+  * P_d(4) + P_d(3) + S(3,1,1) (= Polycubes1234DiamondMound_x)
   * P_d(4) + alternating_checkerboard(P_d(4))
-    (= Polycubes1234DiamondCheckerboard_x1)
+    (= Polycubes1234DiamondCheckerboard_x)
 
 60: Solid pentominoes
 
@@ -719,6 +724,9 @@ Potential Puzzles
 
 * P_t(14, 4) (= NonConvexPentacubes4x4x14Steps; 0 solutions?)
 * P_t(5, 7) (= NonConvexPentacubes7x7x5Steps; 0 solutions?)
+* Rw(8,8,5), Rw(9,7,5), ..., Rw(13,3,5)
+* Rw(6,6,7), Rw(7,5,7), Rw(8,4,7), Rw(9,3,7)
+* Rw(5,4,10), Rw(6,3,10)
 
 145: Pentacubes
 
@@ -728,6 +736,13 @@ Potential Puzzles
 150: Pentacubes Plus (= Kadon's Super Deluxe Quintillions)
 
 * Potential puzzles:
+
+  * B_o(16,3,4)
+  * B_o(12,5,4)
+  * B_o(8,5,6)
+  * B_o(8,3,8)
+  * Rw(14,13,3), Rw(15,12,3), ..., Rw(24,3,3)
+  * Rw(9,8,5), Rw(10,7,5), ..., Rw(14,3,5)
 
 * No solutions:
 
@@ -742,6 +757,15 @@ Potential Puzzles
 * Sp(10) - Sp(5)  (how?)
 
 186: Polycubes of order 1 - 5
+
+* B_o(17,6,3)
+* B_o(11,10,3)
+* B_o(12,7,3)
+* B_o(11,6,5)
+* B_o(8,7,6)
+* B_o(8,3,10)
+* Rw(18,15,3)
+* Rw(17,16,3)
 
 190: Polycubes of order 2 - 5 (Pentacubes Plus)
 

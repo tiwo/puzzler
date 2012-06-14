@@ -4,7 +4,7 @@
 
 # Author: David Goodger <goodger@python.org>
 # Copyright: (C) 1998-2012 by David J. Goodger
-# License: 
+# License:
 #     This program is free software; you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License version 2
 #     as published by the Free Software Foundation.
@@ -764,9 +764,32 @@ class Puzzle3D(Puzzle):
             layer =  Puzzle2D.coordinates_aztec_diamond(
                 (side_length - z), offset=(z, z))
             for x, y in layer:
-                coords.add(cls.coordinate_offset(x, y, z, None))
+                coords.add(cls.coordinate_offset(x, y, z, offset))
         return sorted(coords)
-               
+
+    @classmethod
+    def coordinates_open_box(cls, width, height, depth, offset=None):
+        if offset:
+            offset1 = tuple(dim + 1 for dim in offset)
+        else:
+            offset1 = (1,1,1)
+        coords = (
+            set(cls.coordinates_cuboid(width, height, depth, offset=offset))
+            - set(cls.coordinates_cuboid(width-2, height-2, depth-1,
+                                         offset=offset1)))
+        return sorted(coords)
+
+    @classmethod
+    def coordinates_ring_wall(cls, width, height, depth, offset=None):
+        offset1 = (1,1,0)
+        if offset:
+            offset1 = tuple(dim + offset1[i] for (i, dim) in enumerate(offset))
+        coords = (
+            set(cls.coordinates_cuboid(width, height, depth, offset=offset))
+            - set(cls.coordinates_cuboid(width-2, height-2, depth,
+                                         offset=offset1)))
+        return sorted(coords)
+
     def make_aspects(self, units,
                      flips=(0, 1), axes=(0, 1, 2), rotations=(0, 1, 2, 3)):
         aspects = set()

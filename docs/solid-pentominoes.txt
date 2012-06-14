@@ -88,6 +88,22 @@ Three other rings with no solutions were also implemented: 3x4x8,
 3x6x6, and 5x4x4.
 
 
+Open Boxes
+==========
+
+* 8x3x3: `solutions incomplete
+  <../solutions/solid-pentominoes-open-box-8x3x3.txt>`__
+  (`X3D model <images/solid-pentominoes-open-box-8x3x3.x3d>`__)
+
+  .. image:: images/solid-pentominoes-open-box-8x3x3.png
+
+* 6x3x4: `solutions incomplete
+  <../solutions/solid-pentominoes-open-box-6x3x4.txt>`__
+  (`X3D model <images/solid-pentominoes-open-box-6x3x4.x3d>`__)
+
+  .. image:: images/solid-pentominoes-open-box-6x3x4.png
+
+
 Steps
 =====
 
