@@ -257,11 +257,22 @@ total of 40 unit cubes.
 
   .. image:: images/polycubes-234-aztec-pyramid.png
 
-* Steps: `solutions incomplete
-  <../solutions/polycubes-234-steps-4x4x4.txt>`__ (`X3D model
-  <images/polycubes-234-steps-4x4x4.x3d>`__)
+* Steps:
 
-  .. image:: images/polycubes-234-steps-4x4x4.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-234-steps-4x4x4.png
+
+            4x4x4: `solutions incomplete
+            <../solutions/polycubes-234-steps-4x4x4.txt>`__
+            (`X3D model <images/polycubes-234-steps-4x4x4.x3d>`__)
+
+       - .. figure:: images/polycubes-234-steps-6x5x2.png
+
+            6x5x2 (design by Kaito Goodger): `solutions incomplete
+            <../solutions/polycubes-234-steps-6x5x2.txt>`__
+            (`X3D model <images/polycubes-234-steps-6x5x2.x3d>`__)
 
 * Ring walls:
 
@@ -315,6 +326,29 @@ total of 40 unit cubes.
   <images/polycubes-234-stacked-squares-1.x3d>`__)
 
   .. image:: images/polycubes-234-stacked-squares-1.png
+
+* Towers:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-234-tower-1.png
+
+            design by Kaito Goodger: `solutions incomplete
+            <../solutions/polycubes-234-tower-1.txt>`__
+            (`X3D model <images/polycubes-234-tower-1.x3d>`__)
+
+       - .. figure:: images/polycubes-234-tower-2.png
+
+            `solutions incomplete
+            <../solutions/polycubes-234-tower-2.txt>`__
+            (`X3D model <images/polycubes-234-tower-2.x3d>`__)
+
+       - .. figure:: images/polycubes-234-tower-3.png
+
+            `solutions incomplete
+            <../solutions/polycubes-234-tower-3.txt>`__
+            (`X3D model <images/polycubes-234-tower-3.x3d>`__)
 
 
 Polycubes of Order 1 Through 4

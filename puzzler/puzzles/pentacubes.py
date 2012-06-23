@@ -759,7 +759,7 @@ class PentacubesSteppedPyramid5(Pentacubes):
 
 class PentacubesSteppedPyramid6(Pentacubes):
 
-    """0 solutions"""
+    """many solutions"""
 
     width = 9
     height = 9
@@ -1602,13 +1602,55 @@ class NonConvexPentacubesOpenBox10x3x6(NonConvexPentacubesOpenBox12x3x5):
     depth = 6
 
 
-class NonConvexPentacubesRingWall8x8x5(NonConvexPentacubes):
+class NonConvexPentacubesRingWall(NonConvexPentacubes):
 
-    """? solutions"""
+    """0 solutions"""
 
-    width = 8
+    width = 6
+    height = 6
+    depth = 7
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        return self.coordinates_ring_wall(self.width, self.height, self.depth)
+
+
+class NonConvexPentacubesRingWall1(NonConvexPentacubes):
+
+    """0 solutions"""
+
+    width = 7
+    height = 5
+    depth = 7
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        return self.coordinates_ring_wall(self.width, self.height, self.depth)
+
+
+class NonConvexPentacubesRingWall8x4x7(NonConvexPentacubes):
+
+    """1+ solutions"""
+
+    width = 4
     height = 8
-    depth = 5
+    depth = 7
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        return self.coordinates_ring_wall(self.width, self.height, self.depth)
+
+
+class NonConvexPentacubesRingWall3(NonConvexPentacubes):
+
+    """0 solutions"""
+
+    width = 9
+    height = 3
+    depth = 7
 
     transform_solution_matrix = Puzzle3D.swap_yz_transform
 
