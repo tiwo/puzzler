@@ -448,7 +448,7 @@ class SudokuTest(object):
 . . 1 . . 8 6 . .
 """,
 # http://en.wikipedia.org/wiki/Algorithmics_of_Sudoku
-# "Algorithmic Search for Symmetrical Sudokus with Few Givens":
+# "Algorithmic Search for Symmetrical Sudokus with Few Givens" (18 clues):
 """\
 . . . . 2 5 . . .
 . . . . . 7 3 . .
@@ -484,7 +484,7 @@ class SudokuTest(object):
 . . . . . . 8 . .
 """,
 # http://www.usatoday.com/news/offbeat/2006-11-06-sudoku_x.htm
-# "Mathematician claims to have penned hardest sudoku":
+# "Mathematician claims to have penned hardest sudoku" (22 clues):
 """\
 8 5 . . . 2 4 . .
 7 2 . . . . . . 9
@@ -495,6 +495,20 @@ class SudokuTest(object):
 . . . . 8 . . 7 .
 . 1 7 . . . . . .
 . . . . 3 6 . 4 .
+""",
+# World's hardest sudoku: can you crack it? (by Arto Inkala)
+# http://www.telegraph.co.uk/science/science-news/9359579/Worlds-hardest-sudoku-can-you-crack-it.html
+# 21 clues
+"""\
+8 . . . . . . . .
+. . 3 6 . . . . .
+. 7 . . 9 . 2 . .
+. 5 . . . 7 . . .
+. . . . 4 5 7 . .
+. . . 1 . . . 3 .
+. . 1 . . . . 6 8
+. . 8 5 . . . 1 .
+. 9 . . . . 4 . . 
 """,
 ]
 
