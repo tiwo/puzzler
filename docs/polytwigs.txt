@@ -792,7 +792,7 @@ on the hexagonal grid.
             <../solutions/hexatwigs-triangle-ring-1.txt>`__
             (design by `Peter F. Esser`_)
 
-     * - .. figure:: images/hexatwigs-triangle-ring-2.png
+       - .. figure:: images/hexatwigs-triangle-ring-2.png
 
             `solutions incomplete
             <../solutions/hexatwigs-triangle-ring-2.txt>`__
@@ -814,7 +814,7 @@ on the hexagonal grid.
             <../solutions/hexatwigs-hexagon-ring-1.txt>`__
             (design by `Peter F. Esser`_)
 
-     * - .. figure:: images/hexatwigs-hexagon-ring-2.png
+       - .. figure:: images/hexatwigs-hexagon-ring-2.png
 
             `solutions incomplete
             <../solutions/hexatwigs-hexagon-ring-2.txt>`__
@@ -824,7 +824,7 @@ on the hexagonal grid.
             `solutions incomplete
             <../solutions/hexatwigs-hexagon-ring-3.txt>`__
 
-     * - .. figure:: images/hexatwigs-hexagon-ring-4.png
+       - .. figure:: images/hexatwigs-hexagon-ring-4.png
 
             `solutions incomplete
             <../solutions/hexatwigs-hexagon-ring-4.txt>`__
@@ -892,11 +892,33 @@ on the hexagonal grid.
             <../solutions/hexatwigs-trefoil-1.txt>`__
             (design by `Peter F. Esser`_)
 
-     * - .. figure:: images/hexatwigs-trefoil-2.png
+       - .. figure:: images/hexatwigs-trefoil-2.png
 
             `solutions incomplete
             <../solutions/hexatwigs-trefoil-2.txt>`__
             (design by `Peter F. Esser`_)
+
+     * - .. figure:: images/hexatwigs-trefoil-3.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-3.txt>`__
+            (design by `Peter F. Esser`_)
+
+       - .. figure:: images/hexatwigs-trefoil-3-esser-small.jpg
+            :target: images/hexatwigs-trefoil-3-esser.jpg
+
+            Hexatwigs trefoil 3 built from 5mm acrylic pieces (`laser
+            cut from this file`__).  Model and photograph by `Peter
+            F. Esser`_.  Click for the full-size image.
+
+         __ images/hexatwigs-pieces-esser.svg
+
+     * - .. figure:: images/hexatwigs-trefoil-4.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-4.txt>`__
+
+       -
 
 
 One-Sided Hexatwigs

@@ -52,6 +52,12 @@ The 8 tetracubes are composed of 32 unit cubes.
 
   .. image:: images/tetracubes-2x2x8.png
 
+- Two 2x2x4 solids: `10? solutions
+  <../solutions/tetracubes-2x2x2x4.txt>`__
+  (`X3D model <images/tetracubes-2x2x2x4.x3d>`__)
+
+  .. image:: images/tetracubes-2x2x2x4.png
+
 
 Soma Cubes
 ==========
@@ -234,6 +240,12 @@ total of 40 unit cubes.
             <../solutions/polycubes-234-10x2x2.txt>`__
             (`X3D model <images/polycubes-234-10x2x2.x3d>`__)
 
+       - .. figure:: images/polycubes-234-2x5x2x2.png
+
+            2x5x2x2: `solutions incomplete
+            <../solutions/polycubes-234-2x5x2x2.txt>`__
+            (`X3D model <images/polycubes-234-2x5x2x2.x3d>`__)
+
 * Open boxes (closed on the bottom):
 
   .. list-table::
@@ -320,6 +332,23 @@ total of 40 unit cubes.
   <images/polycubes-234-cross-1.x3d>`__)
 
   .. image:: images/polycubes-234-cross-1.png
+
+* Cross towers:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/polycubes-234-cross-tower-1.png
+
+            design by Kaito Goodger: `solutions incomplete
+            <../solutions/polycubes-234-cross-tower-1.txt>`__
+            (`X3D model <images/polycubes-234-cross-tower-1.x3d>`__)
+
+       - .. figure:: images/polycubes-234-cross-tower-2.png
+
+            `solutions incomplete
+            <../solutions/polycubes-234-cross-tower-2.txt>`__
+            (`X3D model <images/polycubes-234-cross-tower-2.x3d>`__)
 
 * Stacked squares: `solutions incomplete
   <../solutions/polycubes-234-stacked-squares-1.txt>`__ (`X3D model

@@ -50,6 +50,23 @@ class Polycubes234_10x2x2(Polycubes234Solid):
     holes = set()
 
 
+class Polycubes234_2x5x2x2(Polycubes234):
+
+    """many solutions"""
+
+    width = 5
+    height = 5
+    depth = 2
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(5, 2, 2))
+            + list(self.coordinates_cuboid(5, 2, 2, offset=(0,3,0))))
+        return sorted(coords)
+
+
 class Polycubes234AztecPyramid(Polycubes234):
 
     """many solutions"""
@@ -133,6 +150,46 @@ class Polycubes234Steps6x5x2(Polycubes234):
             for x, y in Puzzle2D.coordinates_triangle(6)
             for z in range(2)
             if y < 5)
+        return sorted(coords)
+
+
+class Polycubes234CrossTower1(Polycubes234):
+
+    """
+    many solutions
+
+    Design by Kaito Goodger.
+    """
+
+    width = 4
+    height = 4
+    depth = 3
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(4, 2, 3, offset=(0,1,0)))
+            + list(self.coordinates_cuboid(2, 4, 3, offset=(1,0,0)))
+            + list(self.coordinates_cuboid(4, 4, 1)))
+        return sorted(coords)
+
+
+class Polycubes234CrossTower2(Polycubes234):
+
+    """many solutions"""
+
+    width = 4
+    height = 4
+    depth = 4
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(4, 2, 3, offset=(0,1,0)))
+            + list(self.coordinates_cuboid(2, 4, 3, offset=(1,0,0)))
+            + list(self.coordinates_cuboid(2, 2, 1, offset=(1,1,3))))
         return sorted(coords)
 
 

@@ -320,6 +320,60 @@ class HexatwigsTrefoil2(Hexatwigs):
         self.piece_data['R06'][-1]['rotations'] = (0, 1,)
 
 
+class HexatwigsTrefoil3(Hexatwigs):
+
+    """
+    many solutions
+
+    Design by Peter F. Esser.
+    """
+
+    width = 11
+    height = 11
+
+    def coordinates(self):
+        h = HexagonalGrid3DCoordSet(
+            list(self.coordinates_bordered(4, 3, offset=(0,1,0)))
+            + list(self.coordinates_hexagon(2)))
+        coords = set(
+            list(h.translate((0,2,0)))
+            + list(h.rotate0(2).translate((10,0,0)))
+            + list(h.rotate0(4).translate((2,10,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil4(Hexatwigs):
+
+    """
+    many solutions
+    """
+
+    width = 11
+    height = 11
+
+    svg_rotation = 0
+
+    def coordinates(self):
+        h = HexagonalGrid3DCoordSet(
+            list(self.coordinates_bordered(3, 3, offset=(1,1,0)))
+            + list(self.coordinates_bordered(1, 3, offset=(0,2,0)))
+            + list(self.coordinates_hexagon(1, offset=(2,4,0)))
+            + list(self.coordinates_hexagon(1, offset=(2,0,0))))
+        coords = set(
+            list(h.translate((0,2,0)))
+            + list(h.rotate0(2).translate((10,0,0)))
+            + list(h.rotate0(4).translate((2,10,0)))
+            )
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
 class HexatwigsKnobbedHexagon(Hexatwigs):
 
     """ solutions"""

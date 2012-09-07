@@ -308,7 +308,7 @@ There are 29 pentacubes (order-5 polycubes), 12 of which are planar
    * - Name
      - Image
      - Aspects
-     - One-Sided
+     - Notes
 
    * - A5
      - .. image:: images/pieces/polycubes/A5.png
