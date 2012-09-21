@@ -347,9 +347,7 @@ class HexatwigsTrefoil3(Hexatwigs):
 
 class HexatwigsTrefoil4(Hexatwigs):
 
-    """
-    many solutions
-    """
+    """many solutions"""
 
     width = 11
     height = 11
@@ -367,6 +365,25 @@ class HexatwigsTrefoil4(Hexatwigs):
             + list(h.rotate0(2).translate((10,0,0)))
             + list(h.rotate0(4).translate((2,10,0)))
             )
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil5(Hexatwigs):
+
+    """many solutions"""
+
+    width = 10
+    height = 10
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(2, offset=(2,2,0)))
+        for offset in ((0,0,0), (0,5,0), (5,0,0)):
+            coords.update(set(
+                self.coordinates_semiregular_hexagon(3, 2, offset=offset)))
         return sorted(coords)
 
     def customize_piece_data(self):

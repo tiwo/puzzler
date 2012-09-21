@@ -907,9 +907,10 @@ on the hexagonal grid.
        - .. figure:: images/hexatwigs-trefoil-3-esser-small.jpg
             :target: images/hexatwigs-trefoil-3-esser.jpg
 
-            Hexatwigs trefoil 3 built from 5mm acrylic pieces (`laser
-            cut from this file`__).  Model and photograph by `Peter
-            F. Esser`_.  Click for the full-size image.
+            "Hexatwigs trefoil 3" built from pieces laser-cut from 5mm
+            acrylic (`using this file`__).  Puzzle pieces, solution,
+            and photograph by `Peter F. Esser`_.  Click for the
+            full-size image.
 
          __ images/hexatwigs-pieces-esser.svg
 
@@ -918,7 +919,10 @@ on the hexagonal grid.
             `solutions incomplete
             <../solutions/hexatwigs-trefoil-4.txt>`__
 
-       -
+       - .. figure:: images/hexatwigs-trefoil-5.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-5.txt>`__
 
 
 One-Sided Hexatwigs
