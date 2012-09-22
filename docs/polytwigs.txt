@@ -924,6 +924,43 @@ on the hexagonal grid.
             `solutions incomplete
             <../solutions/hexatwigs-trefoil-5.txt>`__
 
+     * - .. figure:: images/hexatwigs-trefoil-6.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-6.txt>`__
+
+       - .. figure:: images/hexatwigs-trefoil-7.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-7.txt>`__
+
+     * - .. figure:: images/hexatwigs-trefoil-8.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-8.txt>`__
+
+       - .. figure:: images/hexatwigs-trefoil-9.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-9.txt>`__
+
+     * - .. figure:: images/hexatwigs-trefoil-10.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-10.txt>`__
+
+       - .. figure:: images/hexatwigs-trefoil-11.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-11.txt>`__
+
+     * - .. figure:: images/hexatwigs-trefoil-12.png
+
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-12.txt>`__
+
+       -
+
 
 One-Sided Hexatwigs
 ===================

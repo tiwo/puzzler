@@ -391,6 +391,133 @@ class HexatwigsTrefoil5(Hexatwigs):
         self.piece_data['R06'][-1]['rotations'] = (0, 1,)
 
 
+class HexatwigsTrefoil6(Hexatwigs):
+
+    """many solutions"""
+
+    width = 11
+    height = 11
+
+    def coordinates(self):
+        coords = set(self.coordinates_triangle(3, offset=(4,4,0)))
+        for offset in ((0,6,0), (4,0,0), (6,4,0)):
+            coords.update(set(
+                self.coordinates_semiregular_hexagon(3, 2, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil7(Hexatwigs):
+
+    """many solutions"""
+
+    width = 11
+    height = 11
+
+    def coordinates(self):
+        coords = set()
+        for offset in ((0,0,0), (0,6,0), (6,0,0), (2,2,0)):
+            coords.update(set(self.coordinates_triangle(4, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil8(Hexatwigs):
+
+    """many solutions"""
+
+    width = 11
+    height = 11
+
+    def coordinates(self):
+        coords = set()
+        for offset in ((0,6,0), (6,0,0), (6,6,0), (4,4,0)):
+            coords.update(set(self.coordinates_triangle(4, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil9(Hexatwigs):
+
+    """many solutions"""
+
+    width = 10
+    height = 10
+
+    def coordinates(self):
+        h = HexagonalGrid3DCoordSet(self.coordinates_trapezoid(5, 4))
+        coords = set(
+            list(h.translate((0,5,0)))
+            + list(h.rotate0(2).translate((7,0,0)))
+            + list(h.rotate0(4).translate((5,7,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil10(Hexatwigs):
+
+    """many solutions"""
+
+    width = 11
+    height = 11
+
+    def coordinates(self):
+        h = HexagonalGrid3DCoordSet(self.coordinates_trapezoid(5, 4))
+        coords = set(
+            list(h.translate((5,3,0)))
+            + list(h.rotate0(2).translate((4,5,0)))
+            + list(h.rotate0(4).translate((3,4,0)))
+            )
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil11(Hexatwigs):
+
+    """many solutions"""
+
+    width = 12
+    height = 12
+
+    def coordinates(self):
+        coords = set()
+        for offset in ((0,5,0), (7,0,0), (5,7,0), (4,4,0)):
+            coords.update(set(self.coordinates_triangle(4, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil12(Hexatwigs):
+
+    """many solutions"""
+
+    width = 12
+    height = 12
+
+    def coordinates(self):
+        coords = set()
+        for offset in ((2,0,0), (0,7,0), (7,2,0), (3,3,0)):
+            coords.update(set(self.coordinates_triangle(4, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
 class HexatwigsKnobbedHexagon(Hexatwigs):
 
     """ solutions"""
