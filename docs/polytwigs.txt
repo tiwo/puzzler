@@ -958,8 +958,11 @@ on the hexagonal grid.
 
             `solutions incomplete
             <../solutions/hexatwigs-trefoil-12.txt>`__
+ 
+       - .. figure:: images/hexatwigs-trefoil-13.png
 
-       -
+            `solutions incomplete
+            <../solutions/hexatwigs-trefoil-13.txt>`__
 
 
 One-Sided Hexatwigs

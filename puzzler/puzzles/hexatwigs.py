@@ -349,8 +349,8 @@ class HexatwigsTrefoil4(Hexatwigs):
 
     """many solutions"""
 
-    width = 11
-    height = 11
+    width = 10
+    height = 10
 
     svg_rotation = 0
 
@@ -515,6 +515,24 @@ class HexatwigsTrefoil12(Hexatwigs):
         return sorted(coords)
 
     def customize_piece_data(self):
+        self.piece_data['R06'][-1]['rotations'] = (0, 1,)
+
+
+class HexatwigsTrefoil13(Hexatwigs):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+
+    def coordinates(self):
+        coords = set(self.coordinates_semiregular_hexagon(5, 4))
+        for coord in ((0,5,1), (0,6,2), (5,0,0), (6,0,2), (5,6,0), (6,5,1)):
+            coords.remove(coord)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['R06'][-1]['flips'] = None
         self.piece_data['R06'][-1]['rotations'] = (0, 1,)
 
 
