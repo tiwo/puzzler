@@ -234,6 +234,11 @@ These puzzles use the 1 monomino, 1 domino, 2 trominoes, 5
 tetrominoes, 12 pentominoes, and 35 hexominoes, for a total of 299
 squares.
 
+* 23x13 rectangle: `solutions incomplete
+  <../solutions/polyominoes-123456-23x13.txt>`__
+
+  .. image:: images/polyominoes-123456-23x13.png
+
 * .. _poly-6 star:
 
   Star (design by `Jack Wetterer and Chris Patterson, with symmetry
