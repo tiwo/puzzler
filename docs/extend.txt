@@ -178,7 +178,7 @@ following command::
 For this example, we'll implement a 3x21 pentomino rectangle with
 three holes:
 
-.. image:: images/pentominoes-3x21-shape.png
+.. image:: images/ominoes/pentominoes-3x21-shape.png
 
 
 Bounding Box
@@ -490,7 +490,7 @@ if none of the other approaches prove suitable.
 Some puzzles can be thought of as multiple sub-puzzles.  Let's use the
 4 |x| 15 pentomino puzzle as an example:
 
-.. image:: images/pentominoes-4x15.png
+.. image:: images/ominoes/pentominoes-4x15.png
 
 Having only one aspect, the "X" pentomino is a key piece.  We can
 prevent duplicates by limiting the possible placement of "X".  We

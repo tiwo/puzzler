@@ -51,44 +51,44 @@ a simple rectangle without introducing holes or other irregularities.
    http://en.wikipedia.org/wiki/Hexomino#Packing_and_tiling
 
 - Square: `solutions incomplete
-  <../solutions/hexominoes-square.txt>`__
+  <../solutions/ominoes/hexominoes-square.txt>`__
 
-  .. image:: images/hexominoes-square.png
+  .. image:: images/ominoes/hexominoes-square.png
 
 - 19x11 rectangles plus nubs:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/hexominoes-rectangle-plus-nub-1.png
+     * - .. figure:: images/ominoes/hexominoes-rectangle-plus-nub-1.png
 
             design from `Tenyo "Pla-Puzzle" / "Beat the Computer" /
             "Mystery in a Case" <http://www.tenyo.co.jp/pp/>`__
             no. 600 (now discontinued); `solutions incomplete
-            <../solutions/hexominoes-rectangle-plus-nub-1.txt>`__
+            <../solutions/ominoes/hexominoes-rectangle-plus-nub-1.txt>`__
 
-     * - .. figure:: images/hexominoes-rectangle-plus-nub-2.png
+     * - .. figure:: images/ominoes/hexominoes-rectangle-plus-nub-2.png
 
             `solutions incomplete
-            <../solutions/hexominoes-rectangle-plus-nub-2.txt>`__
+            <../solutions/ominoes/hexominoes-rectangle-plus-nub-2.txt>`__
 
 - 45x5 rectangle with holes (design by W. Stead from `Andrew Clarke's
-  Poly Pages (Hexomino Constructions)`_): `solutions incomplete
-  <../solutions/hexominoes-holey-rectangle-1.txt>`__
+  Poly Pages [Hexomino Constructions]`_): `solutions incomplete
+  <../solutions/ominoes/hexominoes-holey-rectangle-1.txt>`__
 
-  .. image:: images/hexominoes-holey-rectangle-1.png
+  .. image:: images/ominoes/hexominoes-holey-rectangle-1.png
 
 - 33x7 rectangle with a central hole (design from `Andrew Clarke's
-  Poly Pages (Hexomino Constructions)`_): `solutions incomplete
-  <../solutions/hexominoes-holey-rectangle-2.txt>`__
+  Poly Pages [Hexomino Constructions]`_): `solutions incomplete
+  <../solutions/ominoes/hexominoes-holey-rectangle-2.txt>`__
 
-  .. image:: images/hexominoes-holey-rectangle-2.png
+  .. image:: images/ominoes/hexominoes-holey-rectangle-2.png
 
 - 17x15 rectangle with a central plus-shaped hole (design from
   `Polyominoes`, by Solomon W. Golomb): `solutions incomplete
-  <../solutions/hexominoes-holey-rectangle-3.txt>`__
+  <../solutions/ominoes/hexominoes-holey-rectangle-3.txt>`__
 
-  .. image:: images/hexominoes-holey-rectangle-3.png
+  .. image:: images/ominoes/hexominoes-holey-rectangle-3.png
 
 
 Parallelograms
@@ -101,22 +101,22 @@ bases (e.g. 30x7 & 42x5).
 
 - 15x14 parallelogram (design from `Polyominoes`, by Solomon
   W. Golomb): `solutions incomplete
-  <../solutions/hexominoes-parallelogram-15x14.txt>`__
+  <../solutions/ominoes/hexominoes-parallelogram-15x14.txt>`__
 
-  .. image:: images/hexominoes-parallelogram-15x14.png
+  .. image:: images/ominoes/hexominoes-parallelogram-15x14.png
 
 - 21x10 parallelogram (design from `Andrew Clarke's Poly Pages
-  (Hexomino Constructions)
+  [Hexomino Constructions]
   <http://recmath.com/PolyPages/PolyPages/index.htm?hexopatts.htm>`_):
   `solutions incomplete
-  <../solutions/hexominoes-parallelogram-21x10.txt>`__
+  <../solutions/ominoes/hexominoes-parallelogram-21x10.txt>`__
 
-  .. image:: images/hexominoes-parallelogram-21x10.png
+  .. image:: images/ominoes/hexominoes-parallelogram-21x10.png
 
 - 35x6 parallelogram: `solutions incomplete
-  <../solutions/hexominoes-parallelogram-35x6.txt>`__
+  <../solutions/ominoes/hexominoes-parallelogram-35x6.txt>`__
 
-  .. image:: images/hexominoes-parallelogram-35x6.png
+  .. image:: images/ominoes/hexominoes-parallelogram-35x6.png
 
 
 Misc
@@ -124,21 +124,21 @@ Misc
 
 - Triangle (design from `Andrew Clarke's Poly Pages
   <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyominoes.html>`_):
-  `solutions incomplete <../solutions/hexominoes-triangle.txt>`__
+  `solutions incomplete <../solutions/ominoes/hexominoes-triangle.txt>`__
 
-  .. image:: images/hexominoes-triangle.png
+  .. image:: images/ominoes/hexominoes-triangle.png
 
 - Rhombus (design by David Bird from `Andrew Clarke's Poly Pages
-  (Hexomino Constructions)`_): `solutions incomplete
-  <../solutions/hexominoes-rhombus.txt>`__
+  [Hexomino Constructions]`_): `solutions incomplete
+  <../solutions/ominoes/hexominoes-rhombus.txt>`__
 
-  .. image:: images/hexominoes-rhombus.png
+  .. image:: images/ominoes/hexominoes-rhombus.png
 
 - Cross (design from `Andrew Clarke's Poly Pages (Hexomino
   Constructions)`_): `solutions incomplete
-  <../solutions/hexominoes-cross-1.txt>`__
+  <../solutions/ominoes/hexominoes-cross-1.txt>`__
 
-  .. image:: images/hexominoes-cross-1.png
+  .. image:: images/ominoes/hexominoes-cross-1.png
 
 
 Hexominoes-Plus
@@ -154,24 +154,24 @@ Rectangles
 ----------
 
 - 18x12: `solutions incomplete
-  <../solutions/hexominoes-plus-18x12.txt>`__
+  <../solutions/ominoes/hexominoes-plus-18x12.txt>`__
 
-  .. image:: images/hexominoes-plus-18x12.png
+  .. image:: images/ominoes/hexominoes-plus-18x12.png
 
 - 24x9: `solutions incomplete
-  <../solutions/hexominoes-plus-24x9.txt>`__
+  <../solutions/ominoes/hexominoes-plus-24x9.txt>`__
 
-  .. image:: images/hexominoes-plus-24x9.png
+  .. image:: images/ominoes/hexominoes-plus-24x9.png
 
 - 27x8: `solutions incomplete
-  <../solutions/hexominoes-plus-27x8.txt>`__
+  <../solutions/ominoes/hexominoes-plus-27x8.txt>`__
 
-  .. image:: images/hexominoes-plus-27x8.png
+  .. image:: images/ominoes/hexominoes-plus-27x8.png
 
 - 36x6: `solutions incomplete
-  <../solutions/hexominoes-plus-36x6.txt>`__
+  <../solutions/ominoes/hexominoes-plus-36x6.txt>`__
 
-  .. image:: images/hexominoes-plus-36x6.png
+  .. image:: images/ominoes/hexominoes-plus-36x6.png
 
 
 Misc
@@ -179,9 +179,9 @@ Misc
 
 - 15x15 square with a central 3x3 hole (design from Kadon's
   `Sextillions`_): `solutions incomplete
-  <../solutions/hexominoes-plus-square.txt>`__
+  <../solutions/ominoes/hexominoes-plus-square.txt>`__
 
-  .. image:: images/hexominoes-plus-square.png
+  .. image:: images/ominoes/hexominoes-plus-square.png
 
 
 One-Sided Hexominoes
@@ -196,50 +196,50 @@ Rectangles
 ----------
 
 - 20x18: `solutions incomplete
-  <../solutions/one-sided-hexominoes-20x18.txt>`__
+  <../solutions/ominoes/one-sided-hexominoes-20x18.txt>`__
 
-  .. image:: images/one-sided-hexominoes-20x18.png
+  .. image:: images/ominoes/one-sided-hexominoes-20x18.png
 
 - 24x15: `solutions incomplete
-  <../solutions/one-sided-hexominoes-24x15.txt>`__
+  <../solutions/ominoes/one-sided-hexominoes-24x15.txt>`__
 
-  .. image:: images/one-sided-hexominoes-24x15.png
+  .. image:: images/ominoes/one-sided-hexominoes-24x15.png
 
 - 30x12: `solutions incomplete
-  <../solutions/one-sided-hexominoes-30x12.txt>`__
+  <../solutions/ominoes/one-sided-hexominoes-30x12.txt>`__
 
-  .. image:: images/one-sided-hexominoes-30x12.png
+  .. image:: images/ominoes/one-sided-hexominoes-30x12.png
 
 - 36x10: `solutions incomplete
-  <../solutions/one-sided-hexominoes-36x10.txt>`__
+  <../solutions/ominoes/one-sided-hexominoes-36x10.txt>`__
 
-  .. image:: images/one-sided-hexominoes-36x10.png
+  .. image:: images/ominoes/one-sided-hexominoes-36x10.png
 
 - 40x9: `solutions incomplete
-  <../solutions/one-sided-hexominoes-40x9.txt>`__
+  <../solutions/ominoes/one-sided-hexominoes-40x9.txt>`__
 
-  .. image:: images/one-sided-hexominoes-40x9.png
+  .. image:: images/ominoes/one-sided-hexominoes-40x9.png
 
 - 45x8: `solutions incomplete
-  <../solutions/one-sided-hexominoes-45x8.txt>`__
+  <../solutions/ominoes/one-sided-hexominoes-45x8.txt>`__
 
-  .. image:: images/one-sided-hexominoes-45x8.png
+  .. image:: images/ominoes/one-sided-hexominoes-45x8.png
 
 - 60x6: `solutions incomplete
-  <../solutions/one-sided-hexominoes-60x6.txt>`__
+  <../solutions/ominoes/one-sided-hexominoes-60x6.txt>`__
 
-  .. image:: images/one-sided-hexominoes-60x6.png
+  .. image:: images/ominoes/one-sided-hexominoes-60x6.png
 
 - 72x5: `solutions incomplete
-  <../solutions/one-sided-hexominoes-72x5.txt>`__
+  <../solutions/ominoes/one-sided-hexominoes-72x5.txt>`__
 
-  .. image:: images/one-sided-hexominoes-72x5.png
+  .. image:: images/ominoes/one-sided-hexominoes-72x5.png
 
 - 40x10 rectangle with a central hole (design from `Andrew Clarke's
-  Poly Pages (Hexomino Constructions)`_): `solutions incomplete
-  <../solutions/one-sided-hexominoes-holey-rectangle-1.txt>`__
+  Poly Pages [Hexomino Constructions]`_): `solutions incomplete
+  <../solutions/ominoes/one-sided-hexominoes-holey-rectangle-1.txt>`__
 
-  .. image:: images/one-sided-hexominoes-holey-rectangle-1.png
+  .. image:: images/ominoes/one-sided-hexominoes-holey-rectangle-1.png
 
 
 Misc
@@ -250,32 +250,32 @@ Misc
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/one-sided-hexominoes-diamond-1.png
+     * - .. figure:: images/ominoes/one-sided-hexominoes-diamond-1.png
 
             design from `Andrew Clarke's Poly Pages (Hexomino
             Constructions)`_; `solutions incomplete
-            <../solutions/one-sided-hexominoes-diamond-1.txt>`__
+            <../solutions/ominoes/one-sided-hexominoes-diamond-1.txt>`__
 
-     * - .. figure:: images/one-sided-hexominoes-diamond-2.png
+     * - .. figure:: images/ominoes/one-sided-hexominoes-diamond-2.png
 
             `solutions incomplete
-            <../solutions/one-sided-hexominoes-diamond-2.txt>`__
+            <../solutions/ominoes/one-sided-hexominoes-diamond-2.txt>`__
 
 - Square fort (design by David Bird from `Andrew Clarke's Poly Pages
-  (Hexomino Constructions)
+  [Hexomino Constructions]
   <http://recmath.com/PolyPages/PolyPages/index.htm?hexopatts.htm>`_):
   `solutions incomplete
-  <../solutions/one-sided-hexominoes-square-fort.txt>`__
+  <../solutions/ominoes/one-sided-hexominoes-square-fort.txt>`__
 
-  .. image:: images/one-sided-hexominoes-square-fort.png
+  .. image:: images/ominoes/one-sided-hexominoes-square-fort.png
 
 - Six crosses (design from `Andrew Clarke's Poly Pages (Hexomino
   Constructions)
   <http://recmath.com/PolyPages/PolyPages/index.htm?hexopatts.htm>`_):
   `solutions incomplete
-  <../solutions/one-sided-hexominoes-six-crosses.txt>`__
+  <../solutions/ominoes/one-sided-hexominoes-six-crosses.txt>`__
 
-  .. image:: images/one-sided-hexominoes-six-crosses.png
+  .. image:: images/ominoes/one-sided-hexominoes-six-crosses.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

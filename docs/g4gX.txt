@@ -52,9 +52,9 @@ Also see:
     * `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`__
 
 * Polyominoes of order 2 through 5: `178,355,676 solutions
-  <../solutions/polyominoes-2345-x-1.txt>`__
+  <../solutions/ominoes/polyominoes-2345-x-1.txt>`__
 
-  .. image:: images/polyominoes-2345-x-1.png
+  .. image:: images/ominoes/polyominoes-2345-x-1.png
 
 
 Polyiamonds
@@ -66,18 +66,18 @@ Also see:
     * `Heptiamond Puzzles & Solutions <hexiamonds.html>`__
 
 * Polyiamonds of order 1 through 5: `1,857 solutions
-  <../solutions/polyiamonds-12345-x-1.txt>`__
+  <../solutions/iamonds/polyiamonds-12345-x-1.txt>`__
 
-  .. image:: images/polyiamonds-12345-x-1.png
+  .. image:: images/iamonds/polyiamonds-12345-x-1.png
 
 * One-sided polyiamonds of order 1 through 5: `solutions incomplete
-  <../solutions/one-sided-polyiamonds-12345-x-1.txt>`__
+  <../solutions/iamonds/one-sided-polyiamonds-12345-x-1.txt>`__
 
-  .. image:: images/one-sided-polyiamonds-12345-x-1.png
+  .. image:: images/iamonds/one-sided-polyiamonds-12345-x-1.png
 
-* Hexiamonds: `11 solutions <../solutions/hexiamonds-x-1.txt>`__
+* Hexiamonds: `11 solutions <../solutions/iamonds/hexiamonds-x-1.txt>`__
 
-  .. image:: images/hexiamonds-x-1.png
+  .. image:: images/iamonds/hexiamonds-x-1.png
 
 
 Polyhexes
@@ -88,9 +88,9 @@ Also see:
     * `Pentahex Puzzles & Solutions <pentahexes.html>`__
 
 * One-sided polyhexes of order 1 through 4: `solutions incomplete
-  <../solutions/one-sided-polyhexes-1234-x-1.txt>`__
+  <../solutions/hexes/one-sided-polyhexes-1234-x-1.txt>`__
 
-  .. image:: images/one-sided-polyhexes-1234-x-1.png
+  .. image:: images/hexes/one-sided-polyhexes-1234-x-1.png
 
 
 Polycubes
@@ -99,46 +99,47 @@ Polycubes
 Also see:
     * `Polycube Puzzles & Solutions <polycubes.html>`__
     * `Pentacube Puzzles & Solutions <hexcubes.html>`_
+    * `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`__
     * `Polyomino Puzzles & Solutions <polyominoes.html>`_
     * `Pentomino Puzzles & Solutions <pentominoes.html>`_
 
 * Pentacubes: `solutions incomplete
-  <../solutions/pentacubes-x-1.txt>`__
+  <../solutions/cubes/pentacubes-x-1.txt>`__
 
-  .. image:: images/pentacubes-x-1.png
+  .. image:: images/cubes/pentacubes-x-1.png
 
 * Polycubes of order 1 through 5:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polycubes-12345-x-1.png
+     * - .. figure:: images/cubes/polycubes-12345-x-1.png
 
             `1: solutions incomplete
-            <../solutions/polycubes-12345-x-1.txt>`__
+            <../solutions/cubes/polycubes-12345-x-1.txt>`__
 
-       - .. figure:: images/polycubes-12345-x-2.png
+       - .. figure:: images/cubes/polycubes-12345-x-2.png
 
             `2: solutions incomplete
-            <../solutions/polycubes-12345-x-2.txt>`__
+            <../solutions/cubes/polycubes-12345-x-2.txt>`__
 
-       - .. figure:: images/polycubes-12345-x-3.png
+       - .. figure:: images/cubes/polycubes-12345-x-3.png
 
             `3: solutions incomplete
-            <../solutions/polycubes-12345-x-3.txt>`__
+            <../solutions/cubes/polycubes-12345-x-3.txt>`__
 
-     * - .. figure:: images/polycubes-12345-x-4.png
+     * - .. figure:: images/cubes/polycubes-12345-x-4.png
 
             `4: solutions incomplete
-            <../solutions/polycubes-12345-x-4.txt>`__
+            <../solutions/cubes/polycubes-12345-x-4.txt>`__
 
-       - .. figure:: images/polycubes-12345-x-5.png
+       - .. figure:: images/cubes/polycubes-12345-x-5.png
 
             `5: solutions incomplete
-            <../solutions/polycubes-12345-x-5.txt>`__
+            <../solutions/cubes/polycubes-12345-x-5.txt>`__
 
-       - .. figure:: images/polycubes-12345-x-5-small.jpg
-            :target: images/polycubes-12345-x-5.jpg
+       - .. figure:: images/cubes/polycubes-12345-x-5-small.jpg
+            :target: images/cubes/polycubes-12345-x-5.jpg
 
             Built with `Kadon's Super Deluxe Quintillions`_ and `Poly-4
             Supplement`_.  Click for the full-size image.
@@ -160,15 +161,15 @@ Also see:
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/one-sided-tetrasticks-x-1.png
+     * - .. figure:: images/sticks/one-sided-tetrasticks-x-1.png
 
             `1: solutions incomplete
-            <../solutions/one-sided-tetrasticks-x-1.txt>`__
+            <../solutions/sticks/one-sided-tetrasticks-x-1.txt>`__
 
-       - .. figure:: images/one-sided-tetrasticks-x-2.png
+       - .. figure:: images/sticks/one-sided-tetrasticks-x-2.png
 
             `2: solutions incomplete
-            <../solutions/one-sided-tetrasticks-x-2.txt>`__
+            <../solutions/sticks/one-sided-tetrasticks-x-2.txt>`__
 
 
 Polytrigs
@@ -178,9 +179,9 @@ Also see:
     * `Polytrig Puzzles & Solutions <polytrigs.html>`__
 
 * One-sided polytrigs of order 1 through 3: `solutions incomplete
-  <../solutions/one-sided-polytrigs-123-x-1.txt>`__
+  <../solutions/trigs/one-sided-polytrigs-123-x-1.txt>`__
 
-  .. image:: images/one-sided-polytrigs-123-x-1.png
+  .. image:: images/trigs/one-sided-polytrigs-123-x-1.png
 
 
 Polytwigs
@@ -190,41 +191,41 @@ Also see:
     * `Polytwig Puzzles & Solutions <polytwigs.html>`__
 
 * Pentatwigs: `32 solutions
-  <../solutions/pentatwigs-x-1.txt>`__
+  <../solutions/twigs/pentatwigs-x-1.txt>`__
 
-  .. image:: images/pentatwigs-x-1.png
+  .. image:: images/twigs/pentatwigs-x-1.png
 
 * Hexatwigs:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/hexatwigs-x-1.png
+     * - .. figure:: images/twigs/hexatwigs-x-1.png
 
             `1: solutions incomplete
-            <../solutions/hexatwigs-x-1.txt>`__
+            <../solutions/twigs/hexatwigs-x-1.txt>`__
 
-       - .. figure:: images/hexatwigs-x-2.png
+       - .. figure:: images/twigs/hexatwigs-x-2.png
 
             `2: solutions incomplete
-            <../solutions/hexatwigs-x-2.txt>`__
+            <../solutions/twigs/hexatwigs-x-2.txt>`__
 
-     * - .. figure:: images/hexatwigs-x-3.png
+     * - .. figure:: images/twigs/hexatwigs-x-3.png
 
             `3: solutions incomplete
-            <../solutions/hexatwigs-x-3.txt>`__
+            <../solutions/twigs/hexatwigs-x-3.txt>`__
 
-       - .. figure:: images/hexatwigs-x-4.png
+       - .. figure:: images/twigs/hexatwigs-x-4.png
 
             `4: solutions incomplete
-            <../solutions/hexatwigs-x-4.txt>`__
+            <../solutions/twigs/hexatwigs-x-4.txt>`__
 
-     * - .. figure:: images/hexatwigs-x-5.png
+     * - .. figure:: images/twigs/hexatwigs-x-5.png
 
             `5: solutions incomplete
-            <../solutions/hexatwigs-x-5.txt>`__
+            <../solutions/twigs/hexatwigs-x-5.txt>`__
 
-       - .. figure:: images/hexatwigs-x-6.png
+       - .. figure:: images/twigs/hexatwigs-x-6.png
 
             `6: solutions incomplete
-            <../solutions/hexatwigs-x-6.txt>`__
+            <../solutions/twigs/hexatwigs-x-6.txt>`__

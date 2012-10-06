@@ -39,28 +39,28 @@ Parallelograms
 ==============
 
 * 10x11 parallelogram: `solutions incomplete
-  <../solutions/pentahexes-10x11.txt>`__
+  <../solutions/hexes/pentahexes-10x11.txt>`__
 
-  .. image:: images/pentahexes-10x11.png
+  .. image:: images/hexes/pentahexes-10x11.png
 
 * 5x22 parallelogram: `solutions incomplete
-  <../solutions/pentahexes-5x22.txt>`__
+  <../solutions/hexes/pentahexes-5x22.txt>`__
 
-  .. image:: images/pentahexes-5x22.png
+  .. image:: images/hexes/pentahexes-5x22.png
 
 
 Trapezoids
 ==========
 
 * 15x11 trapezoid: `solutions incomplete
-  <../solutions/pentahexes-15x11-trapezoid.txt>`__
+  <../solutions/hexes/pentahexes-15x11-trapezoid.txt>`__
 
-  .. image:: images/pentahexes-15x11-trapezoid.png
+  .. image:: images/hexes/pentahexes-15x11-trapezoid.png
 
 * 5x24 trapezoid: `solutions incomplete
-  <../solutions/pentahexes-5x24-trapezoid.txt>`__
+  <../solutions/hexes/pentahexes-5x24-trapezoid.txt>`__
 
-  .. image:: images/pentahexes-5x24-trapezoid.png
+  .. image:: images/hexes/pentahexes-5x24-trapezoid.png
 
 
 Hexagons
@@ -72,25 +72,25 @@ large for the pentahexes, requiring holes:
 .. list-table::
    :class: borderless
 
-   * - .. figure:: images/pentahexes-hexagon-1.png
+   * - .. figure:: images/hexes/pentahexes-hexagon-1.png
 
           `solutions incomplete
-          <../solutions/pentahexes-hexagon-1.txt>`__
+          <../solutions/hexes/pentahexes-hexagon-1.txt>`__
 
-     - .. figure:: images/pentahexes-hexagon-2.png
-
-          `solutions incomplete
-          <../solutions/pentahexes-hexagon-2.txt>`__
-
-   * - .. figure:: images/pentahexes-hexagon-3.png
+     - .. figure:: images/hexes/pentahexes-hexagon-2.png
 
           `solutions incomplete
-          <../solutions/pentahexes-hexagon-3.txt>`__
+          <../solutions/hexes/pentahexes-hexagon-2.txt>`__
 
-     - .. figure:: images/pentahexes-hexagon-4.png
+   * - .. figure:: images/hexes/pentahexes-hexagon-3.png
 
           `solutions incomplete
-          <../solutions/pentahexes-hexagon-4.txt>`__
+          <../solutions/hexes/pentahexes-hexagon-3.txt>`__
+
+     - .. figure:: images/hexes/pentahexes-hexagon-4.png
+
+          `solutions incomplete
+          <../solutions/hexes/pentahexes-hexagon-4.txt>`__
 
 
 Triangles
@@ -103,40 +103,40 @@ Triangles
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/pentahexes-triangle-1.png
+     * - .. figure:: images/hexes/pentahexes-triangle-1.png
 
             `solutions incomplete
-            <../solutions/pentahexes-triangle-1.txt>`__
+            <../solutions/hexes/pentahexes-triangle-1.txt>`__
 
-       - .. figure:: images/pentahexes-triangle-2.png
-
-            `solutions incomplete
-            <../solutions/pentahexes-triangle-2.txt>`__
-
-     * - .. figure:: images/pentahexes-triangle-3.png
+       - .. figure:: images/hexes/pentahexes-triangle-2.png
 
             `solutions incomplete
-            <../solutions/pentahexes-triangle-3.txt>`__
+            <../solutions/hexes/pentahexes-triangle-2.txt>`__
 
-       - .. figure:: images/pentahexes-triangle-4.png
-
-            `solutions incomplete
-            <../solutions/pentahexes-triangle-4.txt>`__
-
-     * - .. figure:: images/pentahexes-triangle-5.png
+     * - .. figure:: images/hexes/pentahexes-triangle-3.png
 
             `solutions incomplete
-            <../solutions/pentahexes-triangle-5.txt>`__
+            <../solutions/hexes/pentahexes-triangle-3.txt>`__
 
-       - .. figure:: images/pentahexes-triangle-6.png
+       - .. figure:: images/hexes/pentahexes-triangle-4.png
 
             `solutions incomplete
-            <../solutions/pentahexes-triangle-6.txt>`__
+            <../solutions/hexes/pentahexes-triangle-4.txt>`__
+
+     * - .. figure:: images/hexes/pentahexes-triangle-5.png
+
+            `solutions incomplete
+            <../solutions/hexes/pentahexes-triangle-5.txt>`__
+
+       - .. figure:: images/hexes/pentahexes-triangle-6.png
+
+            `solutions incomplete
+            <../solutions/hexes/pentahexes-triangle-6.txt>`__
 
 * Two length-10 triangles add up to the right number of unit hexagons:
-  `solutions incomplete <../solutions/pentahexes-two-triangles.txt>`__
+  `solutions incomplete <../solutions/hexes/pentahexes-two-triangles.txt>`__
 
-  .. image:: images/pentahexes-two-triangles.png
+  .. image:: images/hexes/pentahexes-two-triangles.png
 
   If the two triangles are pushed together, solutions to this puzzle
   are also solutions to the 10x11 parallelogram.
@@ -154,40 +154,40 @@ variations with centered, symmetrical 11-unit holes:
 .. list-table::
    :class: borderless
 
-   * - .. figure:: images/pentahexes-hexagram-1.png
+   * - .. figure:: images/hexes/pentahexes-hexagram-1.png
 
           `solutions incomplete
-          <../solutions/pentahexes-hexagram-1.txt>`__
+          <../solutions/hexes/pentahexes-hexagram-1.txt>`__
 
-     - .. figure:: images/pentahexes-hexagram-2.png
-
-          `solutions incomplete
-          <../solutions/pentahexes-hexagram-2.txt>`__
-
-   * - .. figure:: images/pentahexes-hexagram-3.png
+     - .. figure:: images/hexes/pentahexes-hexagram-2.png
 
           `solutions incomplete
-          <../solutions/pentahexes-hexagram-3.txt>`__
+          <../solutions/hexes/pentahexes-hexagram-2.txt>`__
 
-     - .. figure:: images/pentahexes-hexagram-4.png
-
-          `solutions incomplete
-          <../solutions/pentahexes-hexagram-4.txt>`__
-
-   * - .. figure:: images/pentahexes-hexagram-5.png
+   * - .. figure:: images/hexes/pentahexes-hexagram-3.png
 
           `solutions incomplete
-          <../solutions/pentahexes-hexagram-5.txt>`__
+          <../solutions/hexes/pentahexes-hexagram-3.txt>`__
 
-     - .. figure:: images/pentahexes-hexagram-6.png
-
-          `solutions incomplete
-          <../solutions/pentahexes-hexagram-6.txt>`__
-
-   * - .. figure:: images/pentahexes-hexagram-7.png
+     - .. figure:: images/hexes/pentahexes-hexagram-4.png
 
           `solutions incomplete
-          <../solutions/pentahexes-hexagram-7.txt>`__
+          <../solutions/hexes/pentahexes-hexagram-4.txt>`__
+
+   * - .. figure:: images/hexes/pentahexes-hexagram-5.png
+
+          `solutions incomplete
+          <../solutions/hexes/pentahexes-hexagram-5.txt>`__
+
+     - .. figure:: images/hexes/pentahexes-hexagram-6.png
+
+          `solutions incomplete
+          <../solutions/hexes/pentahexes-hexagram-6.txt>`__
+
+   * - .. figure:: images/hexes/pentahexes-hexagram-7.png
+
+          `solutions incomplete
+          <../solutions/hexes/pentahexes-hexagram-7.txt>`__
 
      -
 
@@ -197,29 +197,29 @@ variations with centered, symmetrical 11-unit holes:
 ----------------------
 
 * Triangle: `solutions incomplete
-  <../solutions/one-sided-pentahexes-triangle-1.txt>`__
+  <../solutions/hexes/one-sided-pentahexes-triangle-1.txt>`__
 
-  .. image:: images/one-sided-pentahexes-triangle-1.png
+  .. image:: images/hexes/one-sided-pentahexes-triangle-1.png
 
 * 18x15 trapezoid: `solutions incomplete
-  <../solutions/one-sided-pentahexes-trapezoid-18x15.txt>`__
+  <../solutions/hexes/one-sided-pentahexes-trapezoid-18x15.txt>`__
 
-  .. image:: images/one-sided-pentahexes-trapezoid-18x15.png
+  .. image:: images/hexes/one-sided-pentahexes-trapezoid-18x15.png
 
 * 20x11 trapezoid: `solutions incomplete
-  <../solutions/one-sided-pentahexes-trapezoid-20x11.txt>`__
+  <../solutions/hexes/one-sided-pentahexes-trapezoid-20x11.txt>`__
 
-  .. image:: images/one-sided-pentahexes-trapezoid-20x11.png
+  .. image:: images/hexes/one-sided-pentahexes-trapezoid-20x11.png
 
 * 21x10 trapezoid: `solutions incomplete
-  <../solutions/one-sided-pentahexes-trapezoid-21x10.txt>`__
+  <../solutions/hexes/one-sided-pentahexes-trapezoid-21x10.txt>`__
 
-  .. image:: images/one-sided-pentahexes-trapezoid-21x10.png
+  .. image:: images/hexes/one-sided-pentahexes-trapezoid-21x10.png
 
 * 30x6 trapezoid: `solutions incomplete
-  <../solutions/one-sided-pentahexes-trapezoid-30x6.txt>`__
+  <../solutions/hexes/one-sided-pentahexes-trapezoid-30x6.txt>`__
 
-  .. image:: images/one-sided-pentahexes-trapezoid-30x6.png
+  .. image:: images/hexes/one-sided-pentahexes-trapezoid-30x6.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

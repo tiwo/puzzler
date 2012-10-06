@@ -37,7 +37,7 @@ R. Barwell [#barwell]_.
 
 Here is a puzzle containing all the polysticks of order 1 through 4:
 
-.. image:: images/polysticks-3x7-diamond-lattice.png
+.. image:: images/sticks/polysticks-3x7-diamond-lattice.png
 
 See `Polysticks: Puzzles & Solutions`_ for many more puzzles.
 

@@ -34,50 +34,50 @@ Tetrahexes
 The 7 tetrahexes total 28 hexagons.
 
 * 4x7 parallelogram: `9 solutions
-  <../solutions/tetrahexes-4x7.txt>`__
+  <../solutions/hexes/tetrahexes-4x7.txt>`__
 
-  .. image:: images/tetrahexes-4x7.png
+  .. image:: images/hexes/tetrahexes-4x7.png
 
 * 9x2 elongated hexagon (= 3x10 parallelogram with corners clipped,
   the old name): `2 solutions
-  <../solutions/tetrahexes-elongated-hexagon-9x2.txt>`__
+  <../solutions/hexes/tetrahexes-elongated-hexagon-9x2.txt>`__
 
-  .. image:: images/tetrahexes-elongated-hexagon-9x2.png
+  .. image:: images/hexes/tetrahexes-elongated-hexagon-9x2.png
 
 * 5x7 "coin" (5x3 elongated hexagon with central hole): `4 solutions
-  <../solutions/tetrahexes-coin.txt>`__
+  <../solutions/hexes/tetrahexes-coin.txt>`__
 
-  .. image:: images/tetrahexes-coin.png
+  .. image:: images/hexes/tetrahexes-coin.png
 
 * Two intersecting diamonds:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/tetrahexes-two-diamonds-1.png
+     * - .. figure:: images/hexes/tetrahexes-two-diamonds-1.png
 
             `2 solutions
-            <../solutions/tetrahexes-two-diamonds-1.txt>`__
+            <../solutions/hexes/tetrahexes-two-diamonds-1.txt>`__
 
-       - .. figure:: images/tetrahexes-two-diamonds-2.png
+       - .. figure:: images/hexes/tetrahexes-two-diamonds-2.png
 
             `11 solutions
-            <../solutions/tetrahexes-two-diamonds-2.txt>`__
+            <../solutions/hexes/tetrahexes-two-diamonds-2.txt>`__
 
 * Flower: `4 solutions
-  <../solutions/tetrahexes-flower-1.txt>`__
+  <../solutions/hexes/tetrahexes-flower-1.txt>`__
 
-  .. image:: images/tetrahexes-flower-1.png
+  .. image:: images/hexes/tetrahexes-flower-1.png
 
 * Bumpy triangle: `1 solution
-  <../solutions/tetrahexes-bumpy-triangle.txt>`__
+  <../solutions/hexes/tetrahexes-bumpy-triangle.txt>`__
 
-  .. image:: images/tetrahexes-bumpy-triangle.png
+  .. image:: images/hexes/tetrahexes-bumpy-triangle.png
 
 * 7x4 staggered rectangle: `23 solutions
-  <../solutions/tetrahexes-staggered-rectangle-7x4.txt>`__
+  <../solutions/hexes/tetrahexes-staggered-rectangle-7x4.txt>`__
 
-  .. image:: images/tetrahexes-staggered-rectangle-7x4.png
+  .. image:: images/hexes/tetrahexes-staggered-rectangle-7x4.png
 
 
 Trihexes & Tetrahexes: Polyhexes of Order 3 & 4
@@ -92,29 +92,29 @@ __ http://www.johnrausch.com/PuzzlingWorld/chap02g.htm
 .. _Snowflake puzzle: http://www.johnrausch.com/PuzzleWorld/puz/snowflake.htm
 
 * Hexagon: `12,290 solutions
-  <../solutions/polyhexes-34-hexagon.txt>`__
+  <../solutions/hexes/polyhexes-34-hexagon.txt>`__
 
-  .. image:: images/polyhexes-34-hexagon.png
+  .. image:: images/hexes/polyhexes-34-hexagon.png
 
 * Hexagram: `167 solutions
-  <../solutions/polyhexes-34-hexagram.txt>`__
+  <../solutions/hexes/polyhexes-34-hexagram.txt>`__
 
-  .. image:: images/polyhexes-34-hexagram.png
+  .. image:: images/hexes/polyhexes-34-hexagram.png
 
 * Tri-lobed Crowns:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polyhexes-34-trilobed-crown-1.png
+     * - .. figure:: images/hexes/polyhexes-34-trilobed-crown-1.png
 
             `127 solutions
-            <../solutions/polyhexes-34-trilobed-crown-1.txt>`__
+            <../solutions/hexes/polyhexes-34-trilobed-crown-1.txt>`__
 
-       - .. figure:: images/polyhexes-34-trilobed-crown-2.png
+       - .. figure:: images/hexes/polyhexes-34-trilobed-crown-2.png
 
             `159 solutions
-            <../solutions/polyhexes-34-trilobed-crown-2.txt>`__
+            <../solutions/hexes/polyhexes-34-trilobed-crown-2.txt>`__
 
 
 Polyhexes of Order 1 Through 4
@@ -124,112 +124,112 @@ These puzzles use the monohex, the dihex, the three trihexes, and the
 seven tetrahexes, for a total of 40 hexagons.
 
 * 4x10 parallelogram: `3,665,348 solutions
-  <../solutions/polyhexes-1234-4x10.txt>`__
+  <../solutions/hexes/polyhexes-1234-4x10.txt>`__
 
-  .. image:: images/polyhexes-1234-4x10.png
+  .. image:: images/hexes/polyhexes-1234-4x10.png
 
 * 5x8 parallelogram: `7,578,295 solutions
-  <../solutions/polyhexes-1234-5x8.txt>`__
+  <../solutions/hexes/polyhexes-1234-5x8.txt>`__
 
-  .. image:: images/polyhexes-1234-5x8.png
+  .. image:: images/hexes/polyhexes-1234-5x8.png
 
 * 6x7 parallelogram with hole (design by Dan Klarskov): `3,832,702
-  solutions <../solutions/polyhexes-1234-6x7.txt>`__
+  solutions <../solutions/hexes/polyhexes-1234-6x7.txt>`__
 
-  .. image:: images/polyhexes-1234-6x7.png
+  .. image:: images/hexes/polyhexes-1234-6x7.png
 
 * 13x2 elongated hexagon: `1,389,980 solutions
-  <../solutions/polyhexes-1234-elongated-hexagon-13x2.txt>`__
+  <../solutions/hexes/polyhexes-1234-elongated-hexagon-13x2.txt>`__
 
-  .. image:: images/polyhexes-1234-elongated-hexagon-13x2.png
+  .. image:: images/hexes/polyhexes-1234-elongated-hexagon-13x2.png
 
 * 3x5 elongated hexagon (design by Dan Klarskov): `6,175,571
-  solutions <../solutions/polyhexes-1234-elongated-hexagon-3x5.txt>`__
+  solutions <../solutions/hexes/polyhexes-1234-elongated-hexagon-3x5.txt>`__
 
-  .. image:: images/polyhexes-1234-elongated-hexagon-3x5.png
+  .. image:: images/hexes/polyhexes-1234-elongated-hexagon-3x5.png
 
 * Irregular hexagons:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polyhexes-1234-irregular-hexagon-1.png
+     * - .. figure:: images/hexes/polyhexes-1234-irregular-hexagon-1.png
 
             `37,293,445 solutions
-            <../solutions/polyhexes-1234-irregular-hexagon-1.txt>`__
+            <../solutions/hexes/polyhexes-1234-irregular-hexagon-1.txt>`__
             (design by Dan Klarskov)
 
-       - .. figure:: images/polyhexes-1234-irregular-hexagon-2.png
+       - .. figure:: images/hexes/polyhexes-1234-irregular-hexagon-2.png
 
             `14,211,672 solutions
-            <../solutions/polyhexes-1234-irregular-hexagon-2.txt>`__
+            <../solutions/hexes/polyhexes-1234-irregular-hexagon-2.txt>`__
 
-     * - .. figure:: images/polyhexes-1234-irregular-hexagon-3.png
+     * - .. figure:: images/hexes/polyhexes-1234-irregular-hexagon-3.png
 
             `655,208 solutions
-            <../solutions/polyhexes-1234-irregular-hexagon-3.txt>`__
+            <../solutions/hexes/polyhexes-1234-irregular-hexagon-3.txt>`__
             (design by Dan Klarskov)
 
-       - .. figure:: images/polyhexes-1234-irregular-hexagon-4.png
+       - .. figure:: images/hexes/polyhexes-1234-irregular-hexagon-4.png
 
             `1,361,945 solutions
-            <../solutions/polyhexes-1234-irregular-hexagon-4.txt>`__
+            <../solutions/hexes/polyhexes-1234-irregular-hexagon-4.txt>`__
             (design by Dan Klarskov)
 
-     * - .. figure:: images/polyhexes-1234-irregular-hexagon-5.png
+     * - .. figure:: images/hexes/polyhexes-1234-irregular-hexagon-5.png
 
             `50,041,967 solutions
-            <../solutions/polyhexes-1234-irregular-hexagon-5.txt>`__
+            <../solutions/hexes/polyhexes-1234-irregular-hexagon-5.txt>`__
             (design by Kate Jones)
 
        -
 
 * 9x8 trapezoid (design by Dan Klarskov): `1,310,969 solutions
-  <../solutions/polyhexes-1234-trapezoid-9x8.txt>`__
+  <../solutions/hexes/polyhexes-1234-trapezoid-9x8.txt>`__
 
-  .. image:: images/polyhexes-1234-trapezoid-9x8.png
+  .. image:: images/hexes/polyhexes-1234-trapezoid-9x8.png
 
 * Triangles:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polyhexes-1234-triangle.png
+     * - .. figure:: images/hexes/polyhexes-1234-triangle.png
 
             `427,731 solutions
-            <../solutions/polyhexes-1234-triangle.txt>`__
+            <../solutions/hexes/polyhexes-1234-triangle.txt>`__
 
-       - .. figure:: images/polyhexes-1234-triangle-2.png
+       - .. figure:: images/hexes/polyhexes-1234-triangle-2.png
 
             `851,458 solutions
-            <../solutions/polyhexes-1234-triangle-2.txt>`__
+            <../solutions/hexes/polyhexes-1234-triangle-2.txt>`__
 
 * Tri-lobed Crown (inspired by the `Snowflake puzzle`_): `1,349,201
-  solutions <../solutions/polyhexes-1234-trilobed-crown.txt>`__
+  solutions <../solutions/hexes/polyhexes-1234-trilobed-crown.txt>`__
 
-  .. image:: images/polyhexes-1234-trilobed-crown.png
+  .. image:: images/hexes/polyhexes-1234-trilobed-crown.png
 
 * Jagged hexagons:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polyhexes-1234-jagged-hexagon-1.png
+     * - .. figure:: images/hexes/polyhexes-1234-jagged-hexagon-1.png
 
             `213,477 solutions
-            <../solutions/polyhexes-1234-jagged-hexagon-1.txt>`__
+            <../solutions/hexes/polyhexes-1234-jagged-hexagon-1.txt>`__
             (design by Dan Klarskov)
 
-       - .. figure:: images/polyhexes-1234-jagged-hexagon-2.png
+       - .. figure:: images/hexes/polyhexes-1234-jagged-hexagon-2.png
 
             `70,634 solutions
-            <../solutions/polyhexes-1234-jagged-hexagon-2.txt>`__
+            <../solutions/hexes/polyhexes-1234-jagged-hexagon-2.txt>`__
             (design by Kate Jones)
 
-       - .. figure:: images/polyhexes-1234-jagged-hexagon-3.png
+       - .. figure:: images/hexes/polyhexes-1234-jagged-hexagon-3.png
 
             `247,392 solutions
-            <../solutions/polyhexes-1234-jagged-hexagon-3.txt>`__
+            <../solutions/hexes/polyhexes-1234-jagged-hexagon-3.txt>`__
             (design by Kate Jones)
 
 * Knobbed hexagons:
@@ -237,44 +237,44 @@ seven tetrahexes, for a total of 40 hexagons.
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polyhexes-1234-knobbed-hexagon-1.png
+     * - .. figure:: images/hexes/polyhexes-1234-knobbed-hexagon-1.png
 
             `17,683 solutions
-            <../solutions/polyhexes-1234-knobbed-hexagon-1.txt>`__
+            <../solutions/hexes/polyhexes-1234-knobbed-hexagon-1.txt>`__
             (design by Dan Klarskov)
 
-       - .. figure:: images/polyhexes-1234-knobbed-hexagon-2.png
+       - .. figure:: images/hexes/polyhexes-1234-knobbed-hexagon-2.png
 
             `9,398 solutions
-            <../solutions/polyhexes-1234-knobbed-hexagon-2.txt>`__
+            <../solutions/hexes/polyhexes-1234-knobbed-hexagon-2.txt>`__
 
-       - .. figure:: images/polyhexes-1234-knobbed-hexagon-3.png
+       - .. figure:: images/hexes/polyhexes-1234-knobbed-hexagon-3.png
 
             `12,714 solutions
-            <../solutions/polyhexes-1234-knobbed-hexagon-3.txt>`__
+            <../solutions/hexes/polyhexes-1234-knobbed-hexagon-3.txt>`__
 
-     * - .. figure:: images/polyhexes-1234-knobbed-hexagon-4.png
-
-            `solutions incomplete
-            <../solutions/polyhexes-1234-knobbed-hexagon-4.txt>`__
-
-       - .. figure:: images/polyhexes-1234-knobbed-hexagon-5.png
+     * - .. figure:: images/hexes/polyhexes-1234-knobbed-hexagon-4.png
 
             `solutions incomplete
-            <../solutions/polyhexes-1234-knobbed-hexagon-5.txt>`__
+            <../solutions/hexes/polyhexes-1234-knobbed-hexagon-4.txt>`__
+
+       - .. figure:: images/hexes/polyhexes-1234-knobbed-hexagon-5.png
+
+            `solutions incomplete
+            <../solutions/hexes/polyhexes-1234-knobbed-hexagon-5.txt>`__
 
        -
 
 * 2x6 elongated hexagon ring (design by Dan Klarskov): `659,517
   solutions
-  <../solutions/polyhexes-1234-elongated-hexagon-2x6-ring.txt>`__
+  <../solutions/hexes/polyhexes-1234-elongated-hexagon-2x6-ring.txt>`__
 
-  .. image:: images/polyhexes-1234-elongated-hexagon-2x6-ring.png
+  .. image:: images/hexes/polyhexes-1234-elongated-hexagon-2x6-ring.png
 
 * Diamond ring (design by Dan Klarskov): `83,837 solutions
-  <../solutions/polyhexes-1234-diamond-ring.txt>`__
+  <../solutions/hexes/polyhexes-1234-diamond-ring.txt>`__
 
-  .. image:: images/polyhexes-1234-diamond-ring.png
+  .. image:: images/hexes/polyhexes-1234-diamond-ring.png
 
 * Hexagon rings:
 
@@ -283,46 +283,46 @@ seven tetrahexes, for a total of 40 hexagons.
 
      * - .. _Hexnut inner ring:
 
-         .. figure:: images/polyhexes-1234-hexagon-ring-1.png
+         .. figure:: images/hexes/polyhexes-1234-hexagon-ring-1.png
 
             `11,417 solutions
-            <../solutions/polyhexes-1234-hexagon-ring-1.txt>`__
+            <../solutions/hexes/polyhexes-1234-hexagon-ring-1.txt>`__
 
             Equivalent to the inner ring of the featured solution of
             `Kadon's "Hexnut" puzzle
             <http://gamepuzzles.com/esspoly2.htm#HN>`_; see the `full
             Hexnut puzzle`_.
 
-       - .. figure:: images/polyhexes-1234-hexagon-ring-2.png
+       - .. figure:: images/hexes/polyhexes-1234-hexagon-ring-2.png
 
             `6,645 solutions
-            <../solutions/polyhexes-1234-hexagon-ring-2.txt>`__
+            <../solutions/hexes/polyhexes-1234-hexagon-ring-2.txt>`__
 
 * Staggered rectangles:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polyhexes-1234-staggered-rectangle-8x5.png
+     * - .. figure:: images/hexes/polyhexes-1234-staggered-rectangle-8x5.png
 
             `solutions incomplete
-            <../solutions/polyhexes-1234-staggered-rectangle-8x5.txt>`__
+            <../solutions/hexes/polyhexes-1234-staggered-rectangle-8x5.txt>`__
             (design by Dan Klarskov)
 
-       - .. figure:: images/polyhexes-1234-staggered-rectangle-10x4.png
+       - .. figure:: images/hexes/polyhexes-1234-staggered-rectangle-10x4.png
 
             `solutions incomplete
-            <../solutions/polyhexes-1234-staggered-rectangle-10x4.txt>`__
+            <../solutions/hexes/polyhexes-1234-staggered-rectangle-10x4.txt>`__
 
-     * - .. figure:: images/polyhexes-1234-staggered-rectangle-5x8.png
-
-            `solutions incomplete
-            <../solutions/polyhexes-1234-staggered-rectangle-5x8.txt>`__
-
-       - .. figure:: images/polyhexes-1234-staggered-rectangle-4x10.png
+     * - .. figure:: images/hexes/polyhexes-1234-staggered-rectangle-5x8.png
 
             `solutions incomplete
-            <../solutions/polyhexes-1234-staggered-rectangle-4x10.txt>`__
+            <../solutions/hexes/polyhexes-1234-staggered-rectangle-5x8.txt>`__
+
+       - .. figure:: images/hexes/polyhexes-1234-staggered-rectangle-4x10.png
+
+            `solutions incomplete
+            <../solutions/hexes/polyhexes-1234-staggered-rectangle-4x10.txt>`__
 
 
 One-Sided Polyhexes of Order 1 Through 4
@@ -332,9 +332,9 @@ These puzzles use the monohex, the dihex, the three trihexes, and the
 ten one-sided tetrahexes, for a total of 52 hexagons.
 
 * X (`designed for G4G10 <g4gX.html>`_): `solutions incomplete
-  <../solutions/one-sided-polyhexes-1234-x-1.txt>`__
+  <../solutions/hexes/one-sided-polyhexes-1234-x-1.txt>`__
 
-  .. image:: images/one-sided-polyhexes-1234-x-1.png
+  .. image:: images/hexes/one-sided-polyhexes-1234-x-1.png
 
 
 Polyhexes of Order 1 Through 5
@@ -344,19 +344,19 @@ These puzzles uses the monohex, the dihex, the three trihexes, the
 seven tetrahexes, and the 22 pentahexes, for a total of 150 hexagons.
 
 * 5x30 parallelogram: `solutions incomplete
-  <../solutions/polyhexes-12345-5x30.txt>`__
+  <../solutions/hexes/polyhexes-12345-5x30.txt>`__
 
-  .. image:: images/polyhexes-12345-5x30.png
+  .. image:: images/hexes/polyhexes-12345-5x30.png
 
 * 6x25 parallelogram: `solutions incomplete
-  <../solutions/polyhexes-12345-6x25.txt>`__
+  <../solutions/hexes/polyhexes-12345-6x25.txt>`__
 
-  .. image:: images/polyhexes-12345-6x25.png
+  .. image:: images/hexes/polyhexes-12345-6x25.png
 
 * 10x15 parallelogram: `solutions incomplete
-  <../solutions/polyhexes-12345-10x15.txt>`__
+  <../solutions/hexes/polyhexes-12345-10x15.txt>`__
 
-  .. image:: images/polyhexes-12345-10x15.png
+  .. image:: images/hexes/polyhexes-12345-10x15.png
 
 * .. _full Hexnut puzzle:
 
@@ -365,34 +365,34 @@ seven tetrahexes, and the 22 pentahexes, for a total of 150 hexagons.
   with the pentahexes in an outer ring and the order 1 through 4
   polyhexes in an inner ring; see the solution to the `Hexnut inner
   ring`_): `solutions incomplete
-  <../solutions/polyhexes-12345-hexagon-ring-1.txt>`__
+  <../solutions/hexes/polyhexes-12345-hexagon-ring-1.txt>`__
 
-  .. image:: images/polyhexes-12345-hexagon-ring-1.png
+  .. image:: images/hexes/polyhexes-12345-hexagon-ring-1.png
 
 * 15x2 semi-regular hexagon: `solutions incomplete
-  <../solutions/polyhexes-12345-semi-regular-hexagon-15x2.txt>`__
+  <../solutions/hexes/polyhexes-12345-semi-regular-hexagon-15x2.txt>`__
 
-  .. image:: images/polyhexes-12345-semi-regular-hexagon-15x2.png
+  .. image:: images/hexes/polyhexes-12345-semi-regular-hexagon-15x2.png
 
 * Triangle: `solutions incomplete
-  <../solutions/polyhexes-12345-triangle.txt>`__
+  <../solutions/hexes/polyhexes-12345-triangle.txt>`__
 
-  .. image:: images/polyhexes-12345-triangle.png
+  .. image:: images/hexes/polyhexes-12345-triangle.png
 
 * 17x15 trapezoid: `solutions incomplete
-  <../solutions/polyhexes-12345-trapezoid-17x15.txt>`__
+  <../solutions/hexes/polyhexes-12345-trapezoid-17x15.txt>`__
 
-  .. image:: images/polyhexes-12345-trapezoid-17x15.png
+  .. image:: images/hexes/polyhexes-12345-trapezoid-17x15.png
 
 * 18x12 trapezoid: `solutions incomplete
-  <../solutions/polyhexes-12345-trapezoid-18x12.txt>`__
+  <../solutions/hexes/polyhexes-12345-trapezoid-18x12.txt>`__
 
-  .. image:: images/polyhexes-12345-trapezoid-18x12.png
+  .. image:: images/hexes/polyhexes-12345-trapezoid-18x12.png
 
 * 32x5 trapezoid: `solutions incomplete
-  <../solutions/polyhexes-12345-trapezoid-32x5.txt>`__
+  <../solutions/hexes/polyhexes-12345-trapezoid-32x5.txt>`__
 
-  .. image:: images/polyhexes-12345-trapezoid-32x5.png
+  .. image:: images/hexes/polyhexes-12345-trapezoid-32x5.png
 
 
 One-Sided Polyhexes of Order 1 Through 5
@@ -403,19 +403,19 @@ one-sided tetrahexes, and the 33 one-sided pentahexes, for a total of
 217 hexagons.
 
 * Hexagon: `solutions incomplete
-  <../solutions/one-sided-polyhexes-12345-hexagon.txt>`__
+  <../solutions/hexes/one-sided-polyhexes-12345-hexagon.txt>`__
 
-  .. image:: images/one-sided-polyhexes-12345-hexagon.png
+  .. image:: images/hexes/one-sided-polyhexes-12345-hexagon.png
 
 * 31x7 parallelogram: `solutions incomplete
-  <../solutions/one-sided-polyhexes-12345-31x7.txt>`__
+  <../solutions/hexes/one-sided-polyhexes-12345-31x7.txt>`__
 
-  .. image:: images/one-sided-polyhexes-12345-31x7.png
+  .. image:: images/hexes/one-sided-polyhexes-12345-31x7.png
 
 * 22x14 trapezoid: `solutions incomplete
-  <../solutions/one-sided-polyhexes-12345-trapezoid-22x14.txt>`__
+  <../solutions/hexes/one-sided-polyhexes-12345-trapezoid-22x14.txt>`__
 
-  .. image:: images/one-sided-polyhexes-12345-trapezoid-22x14.png
+  .. image:: images/hexes/one-sided-polyhexes-12345-trapezoid-22x14.png
 
 
 Hexahexes
@@ -425,9 +425,9 @@ The 82 hexahexes total 492 hexagons.
 
 * Hexagon ring (design from `Kadon's Hexnut II
   <http://www.gamepuzzles.com/esspoly2.htm#HN2>`__): `solutions
-  incomplete <../solutions/hexahexes-hexagon-ring-1.txt>`__
+  incomplete <../solutions/hexes/hexahexes-hexagon-ring-1.txt>`__
 
-  .. image:: images/hexahexes-hexagon-ring-1.png
+  .. image:: images/hexes/hexahexes-hexagon-ring-1.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

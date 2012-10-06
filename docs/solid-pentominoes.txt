@@ -37,22 +37,22 @@ Solids
 ======
 
 * 2x3x10: `12 solutions
-  <../solutions/solid-pentominoes-2x3x10.txt>`__
-  (`X3D model <images/solid-pentominoes-2x3x10.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-2x3x10.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-2x3x10.x3d>`__)
 
-  .. image:: images/solid-pentominoes-2x3x10.png
+  .. image:: images/cubes/solid-pentominoes-2x3x10.png
 
 * 2x5x6: `264 solutions
-  <../solutions/solid-pentominoes-2x5x6.txt>`__
-  (`X3D model <images/solid-pentominoes-2x5x6.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-2x5x6.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-2x5x6.x3d>`__)
 
-  .. image:: images/solid-pentominoes-2x5x6.png
+  .. image:: images/cubes/solid-pentominoes-2x5x6.png
 
 * 3x4x5: `3940 solutions
-  <../solutions/solid-pentominoes-3x4x5.txt>`__
-  (`X3D model <images/solid-pentominoes-3x4x5.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-3x4x5.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-3x4x5.x3d>`__)
 
-  .. image:: images/solid-pentominoes-3x4x5.png
+  .. image:: images/cubes/solid-pentominoes-3x4x5.png
 
 
 Ring Walls
@@ -61,28 +61,28 @@ Ring Walls
 (rectangular walls, 1 cube thick, with hollow centers):
 
 * 3x3x9: `3 solutions
-  <../solutions/solid-pentominoes-3x3x9-ring.txt>`__
-  (`X3D model <images/solid-pentominoes-3x3x9-ring.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-3x3x9-ring.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-3x3x9-ring.x3d>`__)
 
-  .. image:: images/solid-pentominoes-3x3x9-ring.png
+  .. image:: images/cubes/solid-pentominoes-3x3x9-ring.png
 
 * 3x5x7: `1 solution
-  <../solutions/solid-pentominoes-3x5x7-ring.txt>`__
-  (`X3D model <images/solid-pentominoes-3x5x7-ring.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-3x5x7-ring.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-3x5x7-ring.x3d>`__)
 
-  .. image:: images/solid-pentominoes-3x5x7-ring.png
+  .. image:: images/cubes/solid-pentominoes-3x5x7-ring.png
 
 * 5x3x5: `186 solutions
-  <../solutions/solid-pentominoes-5x3x5-ring.txt>`__
-  (`X3D model <images/solid-pentominoes-5x3x5-ring.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-5x3x5-ring.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-5x3x5-ring.x3d>`__)
 
-  .. image:: images/solid-pentominoes-5x3x5-ring.png
+  .. image:: images/cubes/solid-pentominoes-5x3x5-ring.png
 
 * 6x3x4: `46 solutions
-  <../solutions/solid-pentominoes-6x3x4-ring.txt>`__
-  (`X3D model <images/solid-pentominoes-6x3x4-ring.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-6x3x4-ring.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-6x3x4-ring.x3d>`__)
 
-  .. image:: images/solid-pentominoes-6x3x4-ring.png
+  .. image:: images/cubes/solid-pentominoes-6x3x4-ring.png
 
 Three other rings with no solutions were also implemented: 3x4x8,
 3x6x6, and 5x4x4.
@@ -92,163 +92,163 @@ Open Boxes
 ==========
 
 * 8x3x3: `solutions incomplete
-  <../solutions/solid-pentominoes-open-box-8x3x3.txt>`__
-  (`X3D model <images/solid-pentominoes-open-box-8x3x3.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-open-box-8x3x3.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-open-box-8x3x3.x3d>`__)
 
-  .. image:: images/solid-pentominoes-open-box-8x3x3.png
+  .. image:: images/cubes/solid-pentominoes-open-box-8x3x3.png
 
 * 6x3x4: `solutions incomplete
-  <../solutions/solid-pentominoes-open-box-6x3x4.txt>`__
-  (`X3D model <images/solid-pentominoes-open-box-6x3x4.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-open-box-6x3x4.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-open-box-6x3x4.x3d>`__)
 
-  .. image:: images/solid-pentominoes-open-box-6x3x4.png
+  .. image:: images/cubes/solid-pentominoes-open-box-6x3x4.png
 
 
 Steps
 =====
 
 * 5x5x4: `137 solutions
-  <../solutions/solid-pentominoes-5x5x4-steps.txt>`__
-  (`X3D model <images/solid-pentominoes-5x5x4-steps.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-5x5x4-steps.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-5x5x4-steps.x3d>`__)
 
-  .. image:: images/solid-pentominoes-5x5x4-steps.png
+  .. image:: images/cubes/solid-pentominoes-5x5x4-steps.png
 
 * 4x4x6: `279 solutions
-  <../solutions/solid-pentominoes-4x4x6-steps.txt>`__
-  (`X3D model <images/solid-pentominoes-4x4x6-steps.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-4x4x6-steps.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-4x4x6-steps.x3d>`__)
 
-  .. image:: images/solid-pentominoes-4x4x6-steps.png
+  .. image:: images/cubes/solid-pentominoes-4x4x6-steps.png
 
 * 3x3x10: `9 solutions
-  <../solutions/solid-pentominoes-3x3x10-steps.txt>`__
-  (`X3D model <images/solid-pentominoes-3x3x10-steps.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-3x3x10-steps.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-3x3x10-steps.x3d>`__)
 
-  .. image:: images/solid-pentominoes-3x3x10-steps.png
+  .. image:: images/cubes/solid-pentominoes-3x3x10-steps.png
 
 
 Crystals
 ========
 
 * 4x4x8: `251 solutions
-  <../solutions/solid-pentominoes-4x4x8-crystal.txt>`__
-  (`X3D model <images/solid-pentominoes-4x4x8-crystal.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-4x4x8-crystal.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-4x4x8-crystal.x3d>`__)
 
-  .. image:: images/solid-pentominoes-4x4x8-crystal.png
+  .. image:: images/cubes/solid-pentominoes-4x4x8-crystal.png
 
 * 6x6x6 no. 1: `2 solutions
-  <../solutions/solid-pentominoes-6x6x6-crystal-1.txt>`__
-  (`X3D model <images/solid-pentominoes-6x6x6-crystal-1.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-6x6x6-crystal-1.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-6x6x6-crystal-1.x3d>`__)
 
-  .. image:: images/solid-pentominoes-6x6x6-crystal-1.png
+  .. image:: images/cubes/solid-pentominoes-6x6x6-crystal-1.png
 
 * 6x6x6 no. 2: `1 solution
-  <../solutions/solid-pentominoes-6x6x6-crystal-2.txt>`__
-  (`X3D model <images/solid-pentominoes-6x6x6-crystal-2.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-6x6x6-crystal-2.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-6x6x6-crystal-2.x3d>`__)
 
-  .. image:: images/solid-pentominoes-6x6x6-crystal-2.png
+  .. image:: images/cubes/solid-pentominoes-6x6x6-crystal-2.png
 
 * 6x6x6 no. 3: `9 solutions
-  <../solutions/solid-pentominoes-6x6x6-crystal-3.txt>`__
-  (`X3D model <images/solid-pentominoes-6x6x6-crystal-3.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-6x6x6-crystal-3.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-6x6x6-crystal-3.x3d>`__)
 
-  .. image:: images/solid-pentominoes-6x6x6-crystal-3.png
+  .. image:: images/cubes/solid-pentominoes-6x6x6-crystal-3.png
 
 
 Misc
 ====
 
 * 3x5x7 slope: `116 solutions
-  <../solutions/solid-pentominoes-3x5x7-slope.txt>`__
-  (`X3D model <images/solid-pentominoes-3x5x7-slope.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-3x5x7-slope.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-3x5x7-slope.x3d>`__)
 
-  .. image:: images/solid-pentominoes-3x5x7-slope.png
+  .. image:: images/cubes/solid-pentominoes-3x5x7-slope.png
 
 * Towers:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/solid-pentominoes-tower-1.png
+     * - .. figure:: images/cubes/solid-pentominoes-tower-1.png
 
             `27 solutions
-            <../solutions/solid-pentominoes-tower-1.txt>`__
+            <../solutions/cubes/solid-pentominoes-tower-1.txt>`__
             (core hollow; design by David Klarner)
 
-       - .. figure:: images/solid-pentominoes-tower-2.png
+       - .. figure:: images/cubes/solid-pentominoes-tower-2.png
 
             `10 solution
-            <../solutions/solid-pentominoes-tower-2.txt>`__
+            <../solutions/cubes/solid-pentominoes-tower-2.txt>`__
             (core hollow; design by David Klarner)
 
-       - .. figure:: images/solid-pentominoes-tower-3.png
+       - .. figure:: images/cubes/solid-pentominoes-tower-3.png
 
             `many solutions
-            <../solutions/solid-pentominoes-tower-3.txt>`__ (design by
+            <../solutions/cubes/solid-pentominoes-tower-3.txt>`__ (design by
             Leslie Young, via `Kadon's Quintillions`_ booklet)
 
 * Ohno's block (design by Yoshio Ohno, via `Kadon's Quintillions`_
   booklet, titled "A Gift From Japan"): `1 solution
-  <../solutions/solid-pentominoes-ohnos-block.txt>`__
-  (`X3D model <images/solid-pentominoes-ohnos-block.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-ohnos-block.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-ohnos-block.x3d>`__)
 
-  .. image:: images/solid-pentominoes-ohnos-block.png
+  .. image:: images/cubes/solid-pentominoes-ohnos-block.png
 
 * Spinner block: `42 solutions
-  <../solutions/solid-pentominoes-spinner-block.txt>`__
-  (`X3D model <images/solid-pentominoes-spinner-block.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-spinner-block.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-spinner-block.x3d>`__)
 
-  .. image:: images/solid-pentominoes-spinner-block.png
+  .. image:: images/cubes/solid-pentominoes-spinner-block.png
 
 * Corner walls (the far corner cube is empty): `253 solutions
-  <../solutions/solid-pentominoes-corner-walls.txt>`__
-  (`X3D model <images/solid-pentominoes-corner-walls.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-corner-walls.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-corner-walls.x3d>`__)
 
-  .. image:: images/solid-pentominoes-corner-walls.png
+  .. image:: images/cubes/solid-pentominoes-corner-walls.png
 
 * Corner piece (design from `Kadon's Quintillions`_ booklet): `70
-  solutions <../solutions/solid-pentominoes-corner-piece.txt>`__ (`X3D
-  model <images/solid-pentominoes-corner-piece.x3d>`__)
+  solutions <../solutions/cubes/solid-pentominoes-corner-piece.txt>`__ (`X3D
+  model <images/cubes/solid-pentominoes-corner-piece.x3d>`__)
 
-  .. image:: images/solid-pentominoes-corner-piece.png
+  .. image:: images/cubes/solid-pentominoes-corner-piece.png
 
 * Three walls (design from `Kadon's Quintillions`_ booklet): `90
-  solutions <../solutions/solid-pentominoes-three-walls.txt>`__ (`X3D
-  model <images/solid-pentominoes-three-walls.x3d>`__)
+  solutions <../solutions/cubes/solid-pentominoes-three-walls.txt>`__ (`X3D
+  model <images/cubes/solid-pentominoes-three-walls.x3d>`__)
 
-  .. image:: images/solid-pentominoes-three-walls.png
+  .. image:: images/cubes/solid-pentominoes-three-walls.png
 
 * Empty bottle (hollow central 1x1x5; design from `Kadon's
   Quintillions`_ booklet): `49 solutions
-  <../solutions/solid-pentominoes-empty-bottle.txt>`__ (`X3D model
-  <images/solid-pentominoes-empty-bottle.x3d>`__)
+  <../solutions/cubes/solid-pentominoes-empty-bottle.txt>`__ (`X3D model
+  <images/cubes/solid-pentominoes-empty-bottle.x3d>`__)
 
-  .. image:: images/solid-pentominoes-empty-bottle.png
+  .. image:: images/cubes/solid-pentominoes-empty-bottle.png
 
 * Condominium B (design from `Kadon's Quintillions`_ booklet): `1
-  solution <../solutions/solid-pentominoes-condominium-b.txt>`__ (`X3D
-  model <images/solid-pentominoes-condominium-b.x3d>`__)
+  solution <../solutions/cubes/solid-pentominoes-condominium-b.txt>`__ (`X3D
+  model <images/cubes/solid-pentominoes-condominium-b.x3d>`__)
 
-  .. image:: images/solid-pentominoes-condominium-b.png
+  .. image:: images/cubes/solid-pentominoes-condominium-b.png
 
 * Cross blocks:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/solid-pentominoes-cross-block-1.png
+     * - .. figure:: images/cubes/solid-pentominoes-cross-block-1.png
 
             `92 solutions
-            <../solutions/solid-pentominoes-cross-block-1.txt>`__
+            <../solutions/cubes/solid-pentominoes-cross-block-1.txt>`__
 
-       - .. figure:: images/solid-pentominoes-cross-block-2.png
+       - .. figure:: images/cubes/solid-pentominoes-cross-block-2.png
 
             `15 solutions
-            <../solutions/solid-pentominoes-cross-block-2.txt>`__
+            <../solutions/cubes/solid-pentominoes-cross-block-2.txt>`__
 
-     * - .. figure:: images/solid-pentominoes-cross-block-3.png
+     * - .. figure:: images/cubes/solid-pentominoes-cross-block-3.png
 
             `10 solutions
-            <../solutions/solid-pentominoes-cross-block-3.txt>`__
+            <../solutions/cubes/solid-pentominoes-cross-block-3.txt>`__
 
        -
 

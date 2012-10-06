@@ -39,54 +39,54 @@ Rectangles
 ----------
 
 - 3x20: `2 solutions
-  <../solutions/pentominoes-3x20.txt>`__
+  <../solutions/ominoes/pentominoes-3x20.txt>`__
 
-  .. image:: images/pentominoes-3x20.png
+  .. image:: images/ominoes/pentominoes-3x20.png
 
 - 4x15: `368 solutions
-  <../solutions/pentominoes-4x15.txt>`__
+  <../solutions/ominoes/pentominoes-4x15.txt>`__
 
-  .. image:: images/pentominoes-4x15.png
+  .. image:: images/ominoes/pentominoes-4x15.png
 
 - 5x12: `1010 solutions
-  <../solutions/pentominoes-5x12.txt>`__
+  <../solutions/ominoes/pentominoes-5x12.txt>`__
 
-  .. image:: images/pentominoes-5x12.png
+  .. image:: images/ominoes/pentominoes-5x12.png
 
 - 6x10: `2339 solutions
-  <../solutions/pentominoes-6x10.txt>`__
+  <../solutions/ominoes/pentominoes-6x10.txt>`__
 
-  .. image:: images/pentominoes-6x10.png
+  .. image:: images/ominoes/pentominoes-6x10.png
 
 
 Skewed Rectangles
 -----------------
 
 - 20x3: `2 solutions
-  <../solutions/pentominoes-skewed-20x3.txt>`__
+  <../solutions/ominoes/pentominoes-skewed-20x3.txt>`__
 
-  .. image:: images/pentominoes-skewed-20x3.png
+  .. image:: images/ominoes/pentominoes-skewed-20x3.png
 
   These are the same two solutions as the 3x20 rectangle above, just
   cut at the W pentomino and rearranged.
 
 - 15x4: `138 solutions
-  <../solutions/pentominoes-skewed-15x4.txt>`__
+  <../solutions/ominoes/pentominoes-skewed-15x4.txt>`__
 
-  .. image:: images/pentominoes-skewed-15x4.png
+  .. image:: images/ominoes/pentominoes-skewed-15x4.png
 
 - 12x5: `233 solutions
-  <../solutions/pentominoes-skewed-12x5.txt>`__
+  <../solutions/ominoes/pentominoes-skewed-12x5.txt>`__
 
-  .. image:: images/pentominoes-skewed-12x5.png
+  .. image:: images/ominoes/pentominoes-skewed-12x5.png
 
   This solution can be easily rearranged into a solution to the 5x12
   rectangle above, but not all solutions share this property.
 
 - 10x6: `156 solutions
-  <../solutions/pentominoes-skewed-10x6.txt>`__
+  <../solutions/ominoes/pentominoes-skewed-10x6.txt>`__
 
-  .. image:: images/pentominoes-skewed-10x6.png
+  .. image:: images/ominoes/pentominoes-skewed-10x6.png
 
 
 Misc
@@ -96,68 +96,68 @@ Misc
   (same as the 3x20 rectangle; the V piece forces a partition)
 
 * 3x20 tube (3x20 rectangle joined at the long edges): `solutions
-  incomplete <../solutions/pentominoes-3x20-tube.txt>`__
+  incomplete <../solutions/ominoes/pentominoes-3x20-tube.txt>`__
 
 * _`8x8 square with a central 2x2 hole`: `65 solutions
-  <../solutions/pentominoes-8x8.txt>`__
+  <../solutions/ominoes/pentominoes-8x8.txt>`__
 
-  .. image:: images/pentominoes-8x8.png
+  .. image:: images/ominoes/pentominoes-8x8.png
 
 * 8x8 square with missing corners: `2170 solutions
-  <../solutions/pentominoes-8x8-corners.txt>`__
+  <../solutions/ominoes/pentominoes-8x8-corners.txt>`__
 
-  .. image:: images/pentominoes-8x8-corners.png
+  .. image:: images/ominoes/pentominoes-8x8-corners.png
 
 * 3x21 rectangle with holes: `6 solutions
-  <../solutions/pentominoes-3x21.txt>`__ (an
+  <../solutions/ominoes/pentominoes-3x21.txt>`__ (an
   example puzzle from `How to Extend Polyform Puzzler <extend.html>`_)
 
-  .. image:: images/pentominoes-3x21.png
+  .. image:: images/ominoes/pentominoes-3x21.png
 
 * 10x10 triangle with one omitted piece: `580 solutions
-  <../solutions/pentominoes-triangle.txt>`__
+  <../solutions/ominoes/pentominoes-triangle.txt>`__
 
   Solutions are possible omitting all but the "P" & "W" pieces.  This
   solution omits the "V" piece (shown to the side):
 
-  .. image:: images/pentominoes-triangle.png
+  .. image:: images/ominoes/pentominoes-triangle.png
 
 * 15x8 triangle: `8 solutions
-  <../solutions/pentominoes-triangle-2.txt>`__
+  <../solutions/ominoes/pentominoes-triangle-2.txt>`__
 
-  .. image:: images/pentominoes-triangle-2.png
+  .. image:: images/ominoes/pentominoes-triangle-2.png
 
 * Truncated triangle: `3626 solutions
-  <../solutions/pentominoes-truncated-triangle.txt>`__
+  <../solutions/ominoes/pentominoes-truncated-triangle.txt>`__
 
-  .. image:: images/pentominoes-truncated-triangle.png
+  .. image:: images/ominoes/pentominoes-truncated-triangle.png
 
 * 11x10 diamond: `8 solutions
-  <../solutions/pentominoes-diamond.txt>`__
+  <../solutions/ominoes/pentominoes-diamond.txt>`__
 
-  .. image:: images/pentominoes-diamond.png
+  .. image:: images/ominoes/pentominoes-diamond.png
 
   (The configuration with a central hole has no solutions,
   unfortunately.  But see the diamond puzzle in `Pentominoes Plus the
   Monomino`_.)
 
 * Trapezoid: `140 solutions
-  <../solutions/pentominoes-trapezoid.txt>`__
+  <../solutions/ominoes/pentominoes-trapezoid.txt>`__
 
-  .. image:: images/pentominoes-trapezoid.png
+  .. image:: images/ominoes/pentominoes-trapezoid.png
 
 * Chevrons:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/pentominoes-chevron-1.png
+     * - .. figure:: images/ominoes/pentominoes-chevron-1.png
 
-         `101 solutions <../solutions/pentominoes-chevron-1.txt>`__
+         `101 solutions <../solutions/ominoes/pentominoes-chevron-1.txt>`__
 
-       - .. figure:: images/pentominoes-chevron-2.png
+       - .. figure:: images/ominoes/pentominoes-chevron-2.png
 
-         `82 solutions <../solutions/pentominoes-chevron-2.txt>`__
+         `82 solutions <../solutions/ominoes/pentominoes-chevron-2.txt>`__
 
 
 * Crosses:
@@ -165,61 +165,61 @@ Misc
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/pentominoes-cross-1.png
+     * - .. figure:: images/ominoes/pentominoes-cross-1.png
 
-         `14 solutions <../solutions/pentominoes-cross-1.txt>`__.
+         `14 solutions <../solutions/ominoes/pentominoes-cross-1.txt>`__.
          Also see `Pentominoes Plus the Monomino`_, cross 1.
 
-       - .. figure:: images/pentominoes-cross-2.png
+       - .. figure:: images/ominoes/pentominoes-cross-2.png
 
-         `84 solutions <../solutions/pentominoes-cross-2.txt>`__
+         `84 solutions <../solutions/ominoes/pentominoes-cross-2.txt>`__
          (design by Dan Klarskov)
 
-     * - .. figure:: images/pentominoes-cross-3.png
+     * - .. figure:: images/ominoes/pentominoes-cross-3.png
 
-         `28 solutions <../solutions/pentominoes-cross-3.txt>`__
+         `28 solutions <../solutions/ominoes/pentominoes-cross-3.txt>`__
          (design by Dan Klarskov)
 
-       - .. figure:: images/pentominoes-cross-4.png
+       - .. figure:: images/ominoes/pentominoes-cross-4.png
 
-         `21 solutions <../solutions/pentominoes-cross-4.txt>`__
+         `21 solutions <../solutions/ominoes/pentominoes-cross-4.txt>`__
 
-     * - .. figure:: images/pentominoes-cross-5.png
+     * - .. figure:: images/ominoes/pentominoes-cross-5.png
 
-         `4 solutions <../solutions/pentominoes-cross-3.txt>`__
+         `4 solutions <../solutions/ominoes/pentominoes-cross-3.txt>`__
 
-       - .. figure:: images/pentominoes-cross-6.png
+       - .. figure:: images/ominoes/pentominoes-cross-6.png
 
-         `164 solutions <../solutions/pentominoes-cross-6.txt>`__
+         `164 solutions <../solutions/ominoes/pentominoes-cross-6.txt>`__
 
 * Flowers:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/pentominoes-flower-1.png
+     * - .. figure:: images/ominoes/pentominoes-flower-1.png
 
-         `47 solutions <../solutions/pentominoes-flower-1.txt>`__
+         `47 solutions <../solutions/ominoes/pentominoes-flower-1.txt>`__
          (design by Dan Klarskov)
 
-       - .. figure:: images/pentominoes-flower-2.png
+       - .. figure:: images/ominoes/pentominoes-flower-2.png
 
-         `414 solutions <../solutions/pentominoes-flower-2.txt>`__
+         `414 solutions <../solutions/ominoes/pentominoes-flower-2.txt>`__
          (design by Dan Klarskov)
 
-     * - .. figure:: images/pentominoes-flower-3.png
+     * - .. figure:: images/ominoes/pentominoes-flower-3.png
 
-         `15 solutions <../solutions/pentominoes-flower-3.txt>`__
+         `15 solutions <../solutions/ominoes/pentominoes-flower-3.txt>`__
          (design by Dan Klarskov)
 
-       - .. figure:: images/pentominoes-flower-4.png
+       - .. figure:: images/ominoes/pentominoes-flower-4.png
 
-         `57 solutions <../solutions/pentominoes-flower-4.txt>`__
+         `57 solutions <../solutions/ominoes/pentominoes-flower-4.txt>`__
          (design by Dan Klarskov)
 
-     * - .. figure:: images/pentominoes-flower-5.png
+     * - .. figure:: images/ominoes/pentominoes-flower-5.png
 
-         `1595 solutions <../solutions/pentominoes-flower-5.txt>`__
+         `1595 solutions <../solutions/ominoes/pentominoes-flower-5.txt>`__
 
        -
 
@@ -228,17 +228,17 @@ Misc
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/pentominoes-arch-1.png
+     * - .. figure:: images/ominoes/pentominoes-arch-1.png
 
-         `602 solutions <../solutions/pentominoes-arch-1.txt>`__
+         `602 solutions <../solutions/ominoes/pentominoes-arch-1.txt>`__
 
-       - .. figure:: images/pentominoes-arch-2.png
+       - .. figure:: images/ominoes/pentominoes-arch-2.png
 
-         `125 solutions <../solutions/pentominoes-arch-2.txt>`__
+         `125 solutions <../solutions/ominoes/pentominoes-arch-2.txt>`__
 
-     * - .. figure:: images/pentominoes-arch-3.png
+     * - .. figure:: images/ominoes/pentominoes-arch-3.png
 
-         `85 solutions <../solutions/pentominoes-arch-3.txt>`__
+         `85 solutions <../solutions/ominoes/pentominoes-arch-3.txt>`__
 
        -
 
@@ -247,51 +247,51 @@ Pentominoes Plus the Square Tetromino
 =====================================
 
 * 8x8 square: `16146 solutions
-  <../solutions/pentominoes-plus-square-tetromino-8x8.txt>`__
+  <../solutions/ominoes/pentominoes-plus-square-tetromino-8x8.txt>`__
 
-  .. image:: images/pentominoes-plus-square-tetromino-8x8.png
+  .. image:: images/ominoes/pentominoes-plus-square-tetromino-8x8.png
 
   The `8x8 square with a central 2x2 hole`_ puzzle above can be
   considered a subset of this puzzle.
 
 * 15x8 triangle: `473 solutions
-  <../solutions/pentominoes-plus-square-tetromino-triangle.txt>`__
+  <../solutions/ominoes/pentominoes-plus-square-tetromino-triangle.txt>`__
 
-  .. image:: images/pentominoes-plus-square-tetromino-triangle.png
+  .. image:: images/ominoes/pentominoes-plus-square-tetromino-triangle.png
 
 * Crosses
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/pentominoes-plus-square-tetromino-cross-1.png
+     * - .. figure:: images/ominoes/pentominoes-plus-square-tetromino-cross-1.png
 
          `5380 solutions
-         <../solutions/pentominoes-plus-square-tetromino-cross-1.txt>`__
+         <../solutions/ominoes/pentominoes-plus-square-tetromino-cross-1.txt>`__
          (design by Dan Klarskov)
 
-       - .. figure:: images/pentominoes-plus-square-tetromino-cross-2.png
+       - .. figure:: images/ominoes/pentominoes-plus-square-tetromino-cross-2.png
 
          `2071 solutions
-         <../solutions/pentominoes-plus-square-tetromino-cross-2.txt>`__
+         <../solutions/ominoes/pentominoes-plus-square-tetromino-cross-2.txt>`__
          (design by Dan Klarskov)
 
-     * - .. figure:: images/pentominoes-plus-square-tetromino-cross-3.png
+     * - .. figure:: images/ominoes/pentominoes-plus-square-tetromino-cross-3.png
 
          `177 solutions
-         <../solutions/pentominoes-plus-square-tetromino-cross-3.txt>`__
+         <../solutions/ominoes/pentominoes-plus-square-tetromino-cross-3.txt>`__
          (design by Dan Klarskov)
 
-       - .. figure:: images/pentominoes-plus-square-tetromino-cross-4.png
+       - .. figure:: images/ominoes/pentominoes-plus-square-tetromino-cross-4.png
 
          `2 solutions
-         <../solutions/pentominoes-plus-square-tetromino-cross-4.txt>`__
+         <../solutions/ominoes/pentominoes-plus-square-tetromino-cross-4.txt>`__
          (design by Dan Klarskov)
 
 * Diamond: `22 solutions
-  <../solutions/pentominoes-plus-square-tetromino-diamond-1.txt>`__
+  <../solutions/ominoes/pentominoes-plus-square-tetromino-diamond-1.txt>`__
 
-  .. image:: images/pentominoes-plus-square-tetromino-diamond-1.png
+  .. image:: images/ominoes/pentominoes-plus-square-tetromino-diamond-1.png
 
   (The symmetrical configuration with a central hole has no solutions,
   unfortunately.)
@@ -301,14 +301,14 @@ Pentominoes Plus the Monomino
 =============================
 
 * Cross 1 (suggested by Dan Klarskov): `366 solutions
-  <../solutions/pentominoes-plus-monomino-cross-1.txt>`__
+  <../solutions/ominoes/pentominoes-plus-monomino-cross-1.txt>`__
 
-  .. image:: images/pentominoes-plus-monomino-cross-1.png
+  .. image:: images/ominoes/pentominoes-plus-monomino-cross-1.png
 
 * Diamond: `10 solutions
-  <../solutions/pentominoes-plus-monomino-diamond.txt>`__
+  <../solutions/ominoes/pentominoes-plus-monomino-diamond.txt>`__
 
-  .. image:: images/pentominoes-plus-monomino-diamond.png
+  .. image:: images/ominoes/pentominoes-plus-monomino-diamond.png
 
   In all solutions the monomino is at the edge of the diamond.
 
@@ -325,24 +325,24 @@ Rectangles
 ----------
 
 - 3x30: `46 solutions
-  <../solutions/one-sided-pentominoes-3x30.txt>`__
+  <../solutions/ominoes/one-sided-pentominoes-3x30.txt>`__
 
-  .. image:: images/one-sided-pentominoes-3x30.png
+  .. image:: images/ominoes/one-sided-pentominoes-3x30.png
 
 - 5x18: 686,628 solutions (`incomplete list
-  <../solutions/one-sided-pentominoes-5x18.txt>`__)
+  <../solutions/ominoes/one-sided-pentominoes-5x18.txt>`__)
 
-  .. image:: images/one-sided-pentominoes-5x18.png
+  .. image:: images/ominoes/one-sided-pentominoes-5x18.png
 
 - 6x15: 2,567,183 solutions (`incomplete list
-  <../solutions/one-sided-pentominoes-6x15.txt>`__)
+  <../solutions/ominoes/one-sided-pentominoes-6x15.txt>`__)
 
-  .. image:: images/one-sided-pentominoes-6x15.png
+  .. image:: images/ominoes/one-sided-pentominoes-6x15.png
 
 - 9x10: 10,440,433 solutions (`incomplete list
-  <../solutions/one-sided-pentominoes-9x10.txt>`__)
+  <../solutions/ominoes/one-sided-pentominoes-9x10.txt>`__)
 
-  .. image:: images/one-sided-pentominoes-9x10.png
+  .. image:: images/ominoes/one-sided-pentominoes-9x10.png
 
   10,440,433 solutions (non-isomorphic in reflection, reflections
   allowed when counting solutions) are reported in "One-sided

@@ -35,7 +35,7 @@ polycubes" or "solid polyominoes".
 
 Here is a puzzle containing all the polycubes of order 1 through 5:
 
-.. image:: images/polycubes-12345-overlapping-blocks-1.png
+.. image:: images/cubes/polycubes-12345-overlapping-blocks-1.png
 
 See `Polycubes: Puzzles & Solutions`_, `Pentacubes: Puzzles &
 Solutions`_, and `Solid Pentominoes: Puzzles & Solutions`_ for many

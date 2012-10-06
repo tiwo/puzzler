@@ -22,6 +22,12 @@ later is recommended.
 
 * Added docs:
 
+  - `Hexominoes: Puzzles & Solutions <hexominoes.html>`_
+
+  - `My talk from G4G10: The 10th Gathering for Gardner <g4g10-talk.html>`_
+
+  - `X’s from G4G10 <g4gX.html>`_
+
   - `Polytwigs: Puzzles & Solutions <polytwigs.html>`__
 
   - `An Introduction to Polytwigs <polytwigs-intro.html>`__
@@ -55,6 +61,8 @@ later is recommended.
   - `Notes on Polytwigs <polytwig-notes.html>`__
 
 * Added lots of puzzles, many listed below (but not all; I lost track):
+
+  - Hexominoes: several puzzles.
 
   - Polytwigs (hexagonal-grid polysticks): new puzzle type.  Added
     many puzzles.

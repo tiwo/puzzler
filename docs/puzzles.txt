@@ -46,19 +46,19 @@ viewing software.
 
      * - `Pentominoes <pentominoes.html>`_
 
-         .. image:: images/pentominoes-6x10-small.png
+         .. image:: images/ominoes/pentominoes-6x10-small.png
             :target: pentominoes.html
             :class: borderless
 
        - `One-Sided Pentominoes <pentominoes.html#one-sided-pentominoes>`_
 
-         .. image:: images/one-sided-pentominoes-6x15-small.png
+         .. image:: images/ominoes/one-sided-pentominoes-6x15-small.png
             :target: pentominoes.html#one-sided-pentominoes
             :class: borderless
 
        - `Polyominoes <polyominoes.html>`_
 
-         .. image:: images/one-sided-polyominoes-1234-octagon-small.png
+         .. image:: images/ominoes/one-sided-polyominoes-1234-octagon-small.png
             :target: pentominoes.html
             :class: borderless
 
@@ -67,7 +67,7 @@ viewing software.
 
      * - `Hexominoes <hexominoes.html>`_
 
-         .. image:: images/hexominoes-parallelogram-35x6-small.png
+         .. image:: images/ominoes/hexominoes-parallelogram-35x6-small.png
             :target: hexominoes.html
             :class: borderless
 
@@ -84,19 +84,19 @@ viewing software.
 
      * - `Hexiamonds <hexiamonds.html>`_
 
-         .. image:: images/hexiamonds-6x6-small.png
+         .. image:: images/iamonds/hexiamonds-6x6-small.png
             :target: hexiamonds.html
             :class: borderless
 
        - `Heptiamonds <heptiamonds.html>`_
 
-         .. image:: images/heptiamonds-snowflake-2-small.png
+         .. image:: images/iamonds/heptiamonds-snowflake-2-small.png
             :target: heptiamonds.html
             :class: borderless
 
        - `Polyiamonds <polyiamonds.html>`_
 
-         .. image:: images/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2-small.png
+         .. image:: images/iamonds/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2-small.png
             :target: hexiamonds.html
             :class: borderless
 
@@ -112,19 +112,19 @@ viewing software.
 
      * - `Tetrahexes <polyhexes.html#tetrahexes>`_
 
-         .. image:: images/tetrahex-coin-small.png
+         .. image:: images/hexes/tetrahex-coin-small.png
             :target: polyhexes.html#tetrahexes
             :class: borderless
 
        - `Pentahexes <pentahexes.html>`_
 
-         .. image:: images/pentahex-15x11-trapezium-small.png
+         .. image:: images/hexes/pentahex-15x11-trapezium-small.png
             :target: pentahexes.html
             :class: borderless
 
        - Polyhexes_
 
-         .. image:: images/polyhex-5x8-small.png
+         .. image:: images/hexes/polyhex-5x8-small.png
             :target: polyhexes.html
             :class: borderless
 
@@ -140,25 +140,25 @@ viewing software.
 
      * - `Tetracubes <polycubes.html#tetracubes>`_
 
-         .. image:: images/tetracubes-2x4x4-small.png
+         .. image:: images/cubes/tetracubes-2x4x4-small.png
             :target: polycubes.html#tetracubes
             :class: borderless
 
        - `Soma Cubes <polycubes.html#soma-cubes>`_
 
-         .. image:: images/soma-crystal-small.png
+         .. image:: images/cubes/soma-crystal-small.png
             :target: polycubes.html#soma-cubes
             :class: borderless
 
      * - `Solid Pentominoes <solid-pentominoes.html>`_
 
-         .. image:: images/solid-pentominoes-6x6x6-crystal-1-small.png
+         .. image:: images/cubes/solid-pentominoes-6x6x6-crystal-1-small.png
             :target: solid-pentominoes.html
             :class: borderless
 
        - `Pentacubes <pentacubes.html>`_
 
-         .. image:: images/pentacubes-great-wall-small.png
+         .. image:: images/cubes/pentacubes-great-wall-small.png
             :target: pentacubes.html
             :class: borderless
 
@@ -176,13 +176,13 @@ viewing software.
 
      * - `Tetrasticks <polysticks.html#tetrasticks>`_
 
-         .. image:: images/tetrasticks-6x6-small.png
+         .. image:: images/sticks/tetrasticks-6x6-small.png
             :target: polysticks.html#tetrasticks
             :class: borderless
 
        - Polysticks_
 
-         .. image:: images/polysticks-3x7-diamond-lattice-small.png
+         .. image:: images/sticks/polysticks-3x7-diamond-lattice-small.png
             :target: polysticks.html#polysticks-of-order-1-through-4
             :class: borderless
 
@@ -198,14 +198,14 @@ viewing software.
 
      * - `Tritrigs <polytrigs.html#tritrigs>`_
 
-         .. image:: images/tritrigs-hex-3x1-ring-small.png
+         .. image:: images/trigs/tritrigs-hex-3x1-ring-small.png
             :target: polytrigs.html#tritrigs
             :class: borderless
 
        - `Polytrigs
          <polytrigs.html#polytrigs-of-order-1-through-3>`_
 
-         .. image:: images/polytrigs-123-4x3-small.png
+         .. image:: images/trigs/polytrigs-123-4x3-small.png
             :target: polytrigs.html#polytrigs-of-order-1-through-3
             :class: borderless
 
@@ -221,14 +221,14 @@ viewing software.
 
      * - `Pentawigs <polytwigs.html#pentatwigs>`_
 
-         .. image:: images/pentatwigs-triangle-small.png
+         .. image:: images/twigs/pentatwigs-triangle-small.png
             :target: polytwigs.html#pentatwigs
             :class: borderless
 
        - `Polytwigs
          <polytwigs.html#polytwigs-of-order-1-through-4>`_
 
-         .. image:: images/polytwigs-1234-hex-1-small.png
+         .. image:: images/twigs/polytwigs-1234-hex-1-small.png
             :target: polytwigs.html#polytwigs-of-order-1-through-4
             :class: borderless
 
@@ -241,7 +241,7 @@ viewing software.
 
   * `X's from G4GX: Gathering for Gardner 10 <g4gX.html>`_
 
-    .. image:: images/one-sided-polytrigs-123-x-1-small.png
+    .. image:: images/trigs/one-sided-polytrigs-123-x-1-small.png
        :target: g4gX.html
        :class: borderless
 

@@ -36,7 +36,7 @@ comes from dominoes; one domino is composed of two ("d-", short for
 
 Here is a puzzle containing all the polyominoes of order 1 through 5:
 
-.. image:: images/polyominoes-12345-cross-1.png
+.. image:: images/ominoes/polyominoes-12345-cross-1.png
 
 See `Polyominoes: Puzzles & Solutions`_, `Pentominoes: Puzzles &
 Solutions`_, and `Hexominoes: Puzzles & Solutions`_ for many more

@@ -37,15 +37,15 @@ tetriamonds, and 4 pentiamonds, for a total of 38 equilateral
 triangles.
 
 * 9x1 elongated hexagon: `34,097 solutions
-  <../solutions/polyiamonds-12345-elongated-hexagon-9x1.txt>`__
+  <../solutions/iamonds/polyiamonds-12345-elongated-hexagon-9x1.txt>`__
 
-  .. image:: images/polyiamonds-12345-elongated-hexagon-9x1.png
+  .. image:: images/iamonds/polyiamonds-12345-elongated-hexagon-9x1.png
 
 * 5x2 elongated hexagon ring (design by Dan Klarskov): `10,254
   solutions
-  <../solutions/polyiamonds-12345-elongated-hexagon-5x2-ring.txt>`__
+  <../solutions/iamonds/polyiamonds-12345-elongated-hexagon-5x2-ring.txt>`__
 
-  .. image:: images/polyiamonds-12345-elongated-hexagon-5x2-ring.png
+  .. image:: images/iamonds/polyiamonds-12345-elongated-hexagon-5x2-ring.png
 
 * Stacked 5x1 elongated hexagons (suggested by Dan Klarskov):
 
@@ -53,111 +53,111 @@ triangles.
      :class: borderless
 
      * - .. figure::
-            images/polyiamonds-12345-stacked-elongated-hexagons-5x1-1.png
+            images/iamonds/polyiamonds-12345-stacked-elongated-hexagons-5x1-1.png
 
             `1,145 solutions
-            <../solutions/polyiamonds-12345-stacked-elongated-hexagons-5x1-1.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-stacked-elongated-hexagons-5x1-1.txt>`__
 
        - .. figure::
-            images/polyiamonds-12345-stacked-elongated-hexagons-5x1-2.png
+            images/iamonds/polyiamonds-12345-stacked-elongated-hexagons-5x1-2.png
 
             `1,217 solutions
-            <../solutions/polyiamonds-12345-stacked-elongated-hexagons-5x1-2.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-stacked-elongated-hexagons-5x1-2.txt>`__
 
 * 10x1 butterfly: `2,906 solutions
-  <../solutions/polyiamonds-12345-butterfly-10x1.txt>`__
+  <../solutions/iamonds/polyiamonds-12345-butterfly-10x1.txt>`__
 
-  .. image:: images/polyiamonds-12345-butterfly-10x1.png
+  .. image:: images/iamonds/polyiamonds-12345-butterfly-10x1.png
 
 * Trapezoid: `126,151 solutions
-  <../solutions/polyiamonds-12345-trapezoid-1.txt>`__
+  <../solutions/iamonds/polyiamonds-12345-trapezoid-1.txt>`__
 
-  .. image:: images/polyiamonds-12345-trapezoid-1.png
+  .. image:: images/iamonds/polyiamonds-12345-trapezoid-1.png
 
 * Irregular hexagon (design by Dan Klarskov): `878,738 solutions
-  <../solutions/polyiamonds-12345-irregular-hexagon-1.txt>`__
+  <../solutions/iamonds/polyiamonds-12345-irregular-hexagon-1.txt>`__
 
-  .. image:: images/polyiamonds-12345-irregular-hexagon-1.png
+  .. image:: images/iamonds/polyiamonds-12345-irregular-hexagon-1.png
 
 * Peanut (2x3 elongated hexagon with side corners omitted; design
   by Dan Klarskov): `362,047 solutions
-  <../solutions/polyiamonds-12345-peanut.txt>`__
+  <../solutions/iamonds/polyiamonds-12345-peanut.txt>`__
 
-  .. image:: images/polyiamonds-12345-peanut.png
+  .. image:: images/iamonds/polyiamonds-12345-peanut.png
 
 * Snowflakes:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polyiamonds-12345-snowflake-1.png
+     * - .. figure:: images/iamonds/polyiamonds-12345-snowflake-1.png
 
             `9,930 solutions
-            <../solutions/polyiamonds-12345-snowflake-1.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-snowflake-1.txt>`__
             (design by Dan Klarskov)
 
-       - .. figure:: images/polyiamonds-12345-snowflake-2.png
+       - .. figure:: images/iamonds/polyiamonds-12345-snowflake-2.png
 
             `1,788 solutions
-            <../solutions/polyiamonds-12345-snowflake-2.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-snowflake-2.txt>`__
 
-       - .. figure:: images/polyiamonds-12345-snowflake-3.png
+       - .. figure:: images/iamonds/polyiamonds-12345-snowflake-3.png
 
             `670 solutions
-            <../solutions/polyiamonds-12345-snowflake-3.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-snowflake-3.txt>`__
 
 * Dan's menagerie (animals design by Dan Klarskov)
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polyiamonds-12345-bat.png
+     * - .. figure:: images/iamonds/polyiamonds-12345-bat.png
 
             Bat: `92,778 solutions
-            <../solutions/polyiamonds-12345-bat.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-bat.txt>`__
 
-       - .. figure:: images/polyiamonds-12345-snake.png
+       - .. figure:: images/iamonds/polyiamonds-12345-snake.png
 
             Snake: `3,344 solutions
-            <../solutions/polyiamonds-12345-snake.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-snake.txt>`__
 
-     * - .. figure:: images/polyiamonds-12345-bird-1.png
+     * - .. figure:: images/iamonds/polyiamonds-12345-bird-1.png
 
             Bird: `62,775 solutions
-            <../solutions/polyiamonds-12345-bird-1.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-bird-1.txt>`__
 
-       - .. figure:: images/polyiamonds-12345-crab.png
+       - .. figure:: images/iamonds/polyiamonds-12345-crab.png
 
             Crab: `14,362 solutions
-            <../solutions/polyiamonds-12345-crab.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-crab.txt>`__
 
-     * - .. figure:: images/polyiamonds-12345-dog-1.png
+     * - .. figure:: images/iamonds/polyiamonds-12345-dog-1.png
 
             Dog: `43,875 solutions
-            <../solutions/polyiamonds-12345-dog-1.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-dog-1.txt>`__
 
        -
 
 * X (`designed for G4G10 <g4gX.html>`_): `1,857 solutions
-  <../solutions/polyiamonds-12345-x-1.txt>`__
+  <../solutions/iamonds/polyiamonds-12345-x-1.txt>`__
 
-  .. image:: images/polyiamonds-12345-x-1.png
+  .. image:: images/iamonds/polyiamonds-12345-x-1.png
 
 * Elongated hexagons on hexagons:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polyiamonds-12345-elonaged-hex-on-hex-1.png
+     * - .. figure:: images/iamonds/polyiamonds-12345-elonaged-hex-on-hex-1.png
 
             `4,299 solutions
-            <../solutions/polyiamonds-12345-elonaged-hex-on-hex-1.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-elonaged-hex-on-hex-1.txt>`__
             (design by Dan Klarskov)
 
-       - .. figure:: images/polyiamonds-12345-elonaged-hex-on-hex-2.png
+       - .. figure:: images/iamonds/polyiamonds-12345-elonaged-hex-on-hex-2.png
 
             `492 solutions
-            <../solutions/polyiamonds-12345-elonaged-hex-on-hex-2.txt>`__
+            <../solutions/iamonds/polyiamonds-12345-elonaged-hex-on-hex-2.txt>`__
 
 
 One-Sided Polyiamonds of Order 1 Through 5
@@ -168,29 +168,29 @@ tetriamonds, and 6 one-sided pentiamonds, for a total of 52
 equilateral triangles.
 
 * 4x2 semi-regular hexagon: `solutions incomplete
-  <../solutions/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2.txt>`__
+  <../solutions/iamonds/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2.txt>`__
 
-  .. image:: images/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2.png
+  .. image:: images/iamonds/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2.png
 
 * Hexagons (with two triangles omitted):
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/one-sided-polyiamonds-12345-hexagon-1.png
+     * - .. figure:: images/iamonds/one-sided-polyiamonds-12345-hexagon-1.png
 
             `4,069,225 solutions
-            <../solutions/one-sided-polyiamonds-12345-hexagon-1.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-12345-hexagon-1.txt>`__
 
-       - .. figure:: images/one-sided-polyiamonds-12345-hexagon-2.png
+       - .. figure:: images/iamonds/one-sided-polyiamonds-12345-hexagon-2.png
 
             `5,163,782 solutions
-            <../solutions/one-sided-polyiamonds-12345-hexagon-2.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-12345-hexagon-2.txt>`__
 
 * X (`designed for G4G10`_): `solutions incomplete
-  <../solutions/one-sided-polyiamonds-12345-x-1.txt>`__
+  <../solutions/iamonds/one-sided-polyiamonds-12345-x-1.txt>`__
 
-  .. image:: images/one-sided-polyiamonds-12345-x-1.png
+  .. image:: images/iamonds/one-sided-polyiamonds-12345-x-1.png
 
 
 Polyiamonds of Order 1 Through 6
@@ -201,9 +201,9 @@ tetriamonds, 4 pentiamonds, and 12 hexiamonds, for a total of 110
 equilateral triangles.
 
 * 3x5 elongated hexagon: `solutions incomplete
-  <../solutions/polyiamonds-123456-elongated-hexagon-3x5.txt>`__
+  <../solutions/iamonds/polyiamonds-123456-elongated-hexagon-3x5.txt>`__
 
-  .. image:: images/polyiamonds-123456-elongated-hexagon-3x5.png
+  .. image:: images/iamonds/polyiamonds-123456-elongated-hexagon-3x5.png
 
 
 One-Sided Polyiamonds of Order 1 Through 6
@@ -214,6 +214,6 @@ tetriamonds, 6 one-sided pentiamonds, and 19 one-sided hexiamonds, for
 a total of 166 equilateral triangles.
 
 * 11x1 semi-regular hexagon: `solutions incomplete
-  <../solutions/one-sided-polyiamonds-123456-semi-regular-hexagon-11x1.txt>`__
+  <../solutions/iamonds/one-sided-polyiamonds-123456-semi-regular-hexagon-11x1.txt>`__
 
-  .. image:: images/one-sided-polyiamonds-123456-semi-regular-hexagon-11x1.png
+  .. image:: images/iamonds/one-sided-polyiamonds-123456-semi-regular-hexagon-11x1.png

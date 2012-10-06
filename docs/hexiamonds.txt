@@ -40,14 +40,14 @@ Parallelograms
 --------------
 
 * 4x9: `74 solutions
-  <../solutions/hexiamonds-4x9.txt>`__
+  <../solutions/iamonds/hexiamonds-4x9.txt>`__
 
-  .. image:: images/hexiamonds-4x9.png
+  .. image:: images/iamonds/hexiamonds-4x9.png
 
 * 6x6: `156 solutions
-  <../solutions/hexiamonds-6x6.txt>`__
+  <../solutions/iamonds/hexiamonds-6x6.txt>`__
 
-  .. image:: images/hexiamonds-6x6.png
+  .. image:: images/iamonds/hexiamonds-6x6.png
 
 * The 3x12 parallelogram has no (0) solutions.
 
@@ -56,65 +56,65 @@ Chevrons
 --------
 
 * 12x3: `29 solutions
-  <../solutions/hexiamonds-chevron-12x3.txt>`__
+  <../solutions/iamonds/hexiamonds-chevron-12x3.txt>`__
 
-  .. image:: images/hexiamonds-chevron-12x3.png
+  .. image:: images/iamonds/hexiamonds-chevron-12x3.png
 
 * 6x6: `1004 solutions
-  <../solutions/hexiamonds-chevron-6x6.txt>`__
+  <../solutions/iamonds/hexiamonds-chevron-6x6.txt>`__
 
-  .. image:: images/hexiamonds-chevron-6x6.png
+  .. image:: images/iamonds/hexiamonds-chevron-6x6.png
 
 * 4x9: `1004 solutions
-  <../solutions/hexiamonds-chevron-4x9.txt>`__
+  <../solutions/iamonds/hexiamonds-chevron-4x9.txt>`__
 
-  .. image:: images/hexiamonds-chevron-4x9.png
+  .. image:: images/iamonds/hexiamonds-chevron-4x9.png
 
 * Stacked chevrons 6x6 (suggested by Dan Klarskov, under the name
   "polyam2"): `933 solutions
-  <../solutions/hexiamonds-stacked-chevrons-6x6.txt>`__
+  <../solutions/iamonds/hexiamonds-stacked-chevrons-6x6.txt>`__
 
-  .. image:: images/hexiamonds-stacked-chevrons-6x6.png
+  .. image:: images/iamonds/hexiamonds-stacked-chevrons-6x6.png
 
 * Stacked chevrons 12x3, 1: `269 solutions
-  <../solutions/hexiamonds-stacked-chevrons-12x3-1.txt>`__
+  <../solutions/iamonds/hexiamonds-stacked-chevrons-12x3-1.txt>`__
 
-  .. image:: images/hexiamonds-stacked-chevrons-12x3-1.png
+  .. image:: images/iamonds/hexiamonds-stacked-chevrons-12x3-1.png
 
 * Stacked chevrons 12x3, 2: `114 solutions
-  <../solutions/hexiamonds-stacked-chevrons-12x3-2.txt>`__
+  <../solutions/iamonds/hexiamonds-stacked-chevrons-12x3-2.txt>`__
 
-  .. image:: images/hexiamonds-stacked-chevrons-12x3-2.png
+  .. image:: images/iamonds/hexiamonds-stacked-chevrons-12x3-2.png
 
 * Stacked chevrons 12x3, 3: `46 solutions
-  <../solutions/hexiamonds-stacked-chevrons-12x3-3.txt>`__
+  <../solutions/iamonds/hexiamonds-stacked-chevrons-12x3-3.txt>`__
 
-  .. image:: images/hexiamonds-stacked-chevrons-12x3-3.png
+  .. image:: images/iamonds/hexiamonds-stacked-chevrons-12x3-3.png
 
 
 Hexagons & Variants
 -------------------
 
 * 4x10 elongated hexagon (clipped parallelogram): `856 solutions
-  <../solutions/hexiamonds-4x10-long-hex.txt>`__
+  <../solutions/iamonds/hexiamonds-4x10-long-hex.txt>`__
 
-  .. image:: images/hexiamonds-4x10-long-hex.png
+  .. image:: images/iamonds/hexiamonds-4x10-long-hex.png
 
 * 5x8 stacked long hexagons: `378 solutions
-  <../solutions/hexiamonds-5x8-stacked-long-hexagons.txt>`__
+  <../solutions/iamonds/hexiamonds-5x8-stacked-long-hexagons.txt>`__
 
-  .. image:: images/hexiamonds-5x8-stacked-long-hexagons.png
+  .. image:: images/iamonds/hexiamonds-5x8-stacked-long-hexagons.png
 
 * 4x12 stacked hexagons: `51 solutions
-  <../solutions/hexiamonds-4x12-stacked-hexagons.txt>`__
+  <../solutions/iamonds/hexiamonds-4x12-stacked-hexagons.txt>`__
 
-  .. image:: images/hexiamonds-4x12-stacked-hexagons.png
+  .. image:: images/iamonds/hexiamonds-4x12-stacked-hexagons.png
 
 * Snowflake (hexagon with tabs, radially symmetrical; a.k.a `Kadon's
   "Iamond Hex" <http://www.gamepuzzles.com/esspoly.htm#IH>`_): `55
-  solutions <../solutions/hexiamonds-snowflake.txt>`__
+  solutions <../solutions/iamonds/hexiamonds-snowflake.txt>`__
 
-  .. image:: images/hexiamonds-snowflake.png
+  .. image:: images/iamonds/hexiamonds-snowflake.png
 
 * `Kadon's "Iamond Hex"`_ challenges (pieces come in three different
   colors):
@@ -122,22 +122,22 @@ Hexagons & Variants
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/hexiamonds-iamond-hex-separated-colors.png
+     * - .. figure:: images/iamonds/hexiamonds-iamond-hex-separated-colors.png
 
             Separated colors (`1 solution
-            <../solutions/hexiamonds-iamond-hex-separated-colors.txt>`__)
+            <../solutions/iamonds/hexiamonds-iamond-hex-separated-colors.txt>`__)
 
-       - .. figure:: images/hexiamonds-iamond-hex-joined-colors.png
+       - .. figure:: images/iamonds/hexiamonds-iamond-hex-joined-colors.png
 
             Joined colors (`1 solution
-            <../solutions/hexiamonds-iamond-hex-joined-colors.txt>`__)
+            <../solutions/iamonds/hexiamonds-iamond-hex-joined-colors.txt>`__)
 
 * Ring 2 (4-unit side-length hexagon with 2-unit hexagonal hole offset
   one unit from the center): `11 solutions
-  <../solutions/hexiamonds-ring-2.txt>`__ (no
+  <../solutions/iamonds/hexiamonds-ring-2.txt>`__ (no
   solutions for the ring with a centered hole)
 
-  .. image:: images/hexiamonds-ring-2.png
+  .. image:: images/iamonds/hexiamonds-ring-2.png
 
 * Crescents (4-unit side length hexagons with 2-unit hexagonal bites
   removed):
@@ -145,42 +145,42 @@ Hexagons & Variants
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/hexiamonds-crescent.png
+     * - .. figure:: images/iamonds/hexiamonds-crescent.png
 
             `87 solutions
-            <../solutions/hexiamonds-crescent.txt>`__
+            <../solutions/iamonds/hexiamonds-crescent.txt>`__
 
-       - .. figure:: images/hexiamonds-crescent-2.png
+       - .. figure:: images/iamonds/hexiamonds-crescent-2.png
 
             `2 solutions
-            <../solutions/hexiamonds-crescent-2.txt>`__
+            <../solutions/iamonds/hexiamonds-crescent-2.txt>`__
 
 * 6x8 "coin" (5x3 elongated hexagon with central hexagonal hole): `304
-  solutions <../solutions/hexiamonds-coin.txt>`__
+  solutions <../solutions/iamonds/hexiamonds-coin.txt>`__
 
-  .. image:: images/hexiamonds-coin.png
+  .. image:: images/iamonds/hexiamonds-coin.png
 
 * Irregular hexagon 7x8 (suggested by Dan Klarskov, under the name
   "hexui"): `5885 solutions
-  <../solutions/hexiamonds-irregular-hexagon-7x8.txt>`__
+  <../solutions/iamonds/hexiamonds-irregular-hexagon-7x8.txt>`__
 
-  .. image:: images/hexiamonds-irregular-hexagon-7x8.png
+  .. image:: images/iamonds/hexiamonds-irregular-hexagon-7x8.png
 
 * Spiked hexagons:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/hexiamonds-spiked-hexagon-1.png
+     * - .. figure:: images/iamonds/hexiamonds-spiked-hexagon-1.png
 
             `4 solutions
-            <../solutions/hexiamonds-spiked-hexagon-1.txt>`__
+            <../solutions/iamonds/hexiamonds-spiked-hexagon-1.txt>`__
             (design from `Andrew Clarke's Poly Pages`__)
 
-       - .. figure:: images/hexiamonds-spiked-hexagon-2.png
+       - .. figure:: images/iamonds/hexiamonds-spiked-hexagon-2.png
 
             `3 solutions
-            <../solutions/hexiamonds-spiked-hexagon-2.txt>`__
+            <../solutions/iamonds/hexiamonds-spiked-hexagon-2.txt>`__
 
   .. 
 
@@ -188,9 +188,9 @@ Hexagons & Variants
 
 * 4x3 semiregular hexagon with a 1-unit hole (design from `Wolfram
   Mathworld`__): `710 solutions
-  <../solutions/hexiamonds-semiregular-hexagon-4x3.txt>`__
+  <../solutions/iamonds/hexiamonds-semiregular-hexagon-4x3.txt>`__
 
-  .. image:: images/hexiamonds-semiregular-hexagon-4x3.png
+  .. image:: images/iamonds/hexiamonds-semiregular-hexagon-4x3.png
 
   __ http://mathworld.wolfram.com/HexiamondTiling.html
 
@@ -200,8 +200,8 @@ Hexagons & Variants
   hexiamonds (the club/crook/J6, pistol/signpost/H6, and shoe/hook/G6
   pieces are omitted) to be formed into a regular hexagon (side length
   3).  `Try it`__ before you look at the `1 and only solution
-  <../solutions/hexiamonds-hexicator.txt>`__ (`picture here
-  <images/hexiamonds-hexicator.png>`__).
+  <../solutions/iamonds/hexiamonds-hexicator.txt>`__ (`picture here
+  <images/iamonds/hexiamonds-hexicator.png>`__).
 
   __
   __
@@ -212,50 +212,50 @@ Hexagon-Grid Shapes
 -------------------
 
 * 4x3 parallelogram: `142 solutions
-  <../solutions/hexiamonds-hexgrid-4x3.txt>`__
+  <../solutions/iamonds/hexiamonds-hexgrid-4x3.txt>`__
 
-  .. image:: images/hexiamonds-hexgrid-4x3.png
+  .. image:: images/iamonds/hexiamonds-hexgrid-4x3.png
 
 * 5x3 trapezoid: `144 solutions
-  <../solutions/hexiamonds-hexgrid-trapezoid-5x3.txt>`__
+  <../solutions/iamonds/hexiamonds-hexgrid-trapezoid-5x3.txt>`__
 
-  .. image:: images/hexiamonds-hexgrid-trapezoid-5x3.png
+  .. image:: images/iamonds/hexiamonds-hexgrid-trapezoid-5x3.png
 
 * 3x2 semiregular hexagon: `103 solutions
-  <../solutions/hexiamonds-hexgrid-semiregular-hexagon-3x2.txt>`__
+  <../solutions/iamonds/hexiamonds-hexgrid-semiregular-hexagon-3x2.txt>`__
 
-  .. image:: images/hexiamonds-hexgrid-semiregular-hexagon-3x2.png
+  .. image:: images/iamonds/hexiamonds-hexgrid-semiregular-hexagon-3x2.png
 
 
 Miscellaneous
 -------------
 
 * 4x11 trapezium: `76 solutions
-  <../solutions/hexiamonds-4x11-trapezium.txt>`__
+  <../solutions/iamonds/hexiamonds-4x11-trapezium.txt>`__
 
-  .. image:: images/hexiamonds-4x11-trapezium.png
+  .. image:: images/iamonds/hexiamonds-4x11-trapezium.png
 
 * 5x8 stacked long butterflies: `290 solutions
-  <../solutions/hexiamonds-5x8-stacked-long-butterflies.txt>`__
+  <../solutions/iamonds/hexiamonds-5x8-stacked-long-butterflies.txt>`__
 
-  .. image:: images/hexiamonds-5x8-stacked-long-butterflies.png
+  .. image:: images/iamonds/hexiamonds-5x8-stacked-long-butterflies.png
 
 * 4x12 stacked butterflies: `26 solutions
-  <../solutions/hexiamonds-4x12-stacked-butterflies.txt>`__
+  <../solutions/iamonds/hexiamonds-4x12-stacked-butterflies.txt>`__
 
   All the solutions are also solutions to the 4x12 stacked hexagons
   above, merely by rearranging the sections.  In fact, the sample
   solutions shown here are equivalent.
 
-  .. image:: images/hexiamonds-4x12-stacked-butterflies.png
+  .. image:: images/iamonds/hexiamonds-4x12-stacked-butterflies.png
 
 * Trefoil (3 joined hexagons): `640 solutions
-  <../solutions/hexiamonds-trefoil.txt>`__
+  <../solutions/iamonds/hexiamonds-trefoil.txt>`__
 
-  .. image:: images/hexiamonds-trefoil.png
+  .. image:: images/iamonds/hexiamonds-trefoil.png
 
 * Tenyo's puzzle: `4968 solutions
-  <../solutions/hexiamonds-tenyo.txt>`__
+  <../solutions/iamonds/hexiamonds-tenyo.txt>`__
 
   This is the configuration used by the `hexiamond PlaPuzzle`__
   produced by `Tenyo Inc. of Japan`__.
@@ -263,22 +263,22 @@ Miscellaneous
   __ http://www.tenyo.co.jp/pp/pz04/index.html
   __ http://www.tenyo.co.jp/pp/
 
-  .. image:: images/hexiamonds-tenyo.png
+  .. image:: images/iamonds/hexiamonds-tenyo.png
 
 * X (`designed for G4G10 <g4gX.html>`_): `11 solutions
-  <../solutions/hexiamonds-x-1.txt>`__
+  <../solutions/iamonds/hexiamonds-x-1.txt>`__
 
-  .. image:: images/hexiamonds-x-1.png
+  .. image:: images/iamonds/hexiamonds-x-1.png
 
 * Heart (design by Dan Klarskov): `4,154 solutions
-  <../solutions/hexiamonds-heart.txt>`__
+  <../solutions/iamonds/hexiamonds-heart.txt>`__
 
-  .. image:: images/hexiamonds-heart.png
+  .. image:: images/iamonds/hexiamonds-heart.png
 
 * Spinner: `751 solutions
-  <../solutions/hexiamonds-spinner-1.txt>`__
+  <../solutions/iamonds/hexiamonds-spinner-1.txt>`__
 
-  .. image:: images/hexiamonds-spinner-1.png
+  .. image:: images/iamonds/hexiamonds-spinner-1.png
 
 
 One-Sided Hexiamonds
@@ -292,19 +292,19 @@ Hexagons & Variants
 -------------------
 
 * Long hexagon 8x3 [11x6]: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-long-hexagon-8x3.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-long-hexagon-8x3.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-long-hexagon-8x3.png
+  .. image:: images/iamonds/one-sided-hexiamonds-long-hexagon-8x3.png
 
 * Tabbed hexagon: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-tabbed-hexagon.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-tabbed-hexagon.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-tabbed-hexagon.png
+  .. image:: images/iamonds/one-sided-hexiamonds-tabbed-hexagon.png
 
 * Notched hexagon ring: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-notched-hexagon-ring.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-notched-hexagon-ring.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-notched-hexagon-ring.png
+  .. image:: images/iamonds/one-sided-hexiamonds-notched-hexagon-ring.png
 
 
 Trefoils
@@ -313,60 +313,60 @@ Trefoils
 .. list-table::
    :class: borderless
 
-   * - .. figure:: images/one-sided-hexiamonds-trefoil-1.png
+   * - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-1.png
 
           `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-1.txt>`__
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-1.txt>`__
 
-     - .. figure:: images/one-sided-hexiamonds-trefoil-2.png
-
-          `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-2.txt>`__
-
-   * - .. figure:: images/one-sided-hexiamonds-trefoil-3.png
+     - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-2.png
 
           `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-3.txt>`__
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-2.txt>`__
 
-     - .. figure:: images/one-sided-hexiamonds-trefoil-4.png
-
-          `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-4.txt>`__
-
-   * - .. figure:: images/one-sided-hexiamonds-trefoil-5.png
+   * - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-3.png
 
           `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-5.txt>`__
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-3.txt>`__
 
-     - .. figure:: images/one-sided-hexiamonds-trefoil-6.png
-
-          `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-6.txt>`__
-
-   * - .. figure:: images/one-sided-hexiamonds-trefoil-7.png
+     - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-4.png
 
           `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-7.txt>`__
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-4.txt>`__
 
-     - .. figure:: images/one-sided-hexiamonds-trefoil-8.png
-
-          `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-8.txt>`__
-
-   * - .. figure:: images/one-sided-hexiamonds-trefoil-9.png
+   * - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-5.png
 
           `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-9.txt>`__
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-5.txt>`__
 
-     - .. figure:: images/one-sided-hexiamonds-trefoil-10.png
-
-          `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-10.txt>`__
-
-   * - .. figure:: images/one-sided-hexiamonds-trefoil-11.png
+     - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-6.png
 
           `solutions incomplete
-          <../solutions/one-sided-hexiamonds-trefoil-11.txt>`__
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-6.txt>`__
+
+   * - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-7.png
+
+          `solutions incomplete
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-7.txt>`__
+
+     - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-8.png
+
+          `solutions incomplete
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-8.txt>`__
+
+   * - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-9.png
+
+          `solutions incomplete
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-9.txt>`__
+
+     - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-10.png
+
+          `solutions incomplete
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-10.txt>`__
+
+   * - .. figure:: images/iamonds/one-sided-hexiamonds-trefoil-11.png
+
+          `solutions incomplete
+          <../solutions/iamonds/one-sided-hexiamonds-trefoil-11.txt>`__
 
      -
 
@@ -380,7 +380,7 @@ These shapes are all based on the hexagonal grid, made up of 19
 * O'Beirne's hexiamond hexagon (19 small 6-triangle hexagons, arranged
   in a hexagon on a honeycomb grid: 1 hexagon surrounded by 6 hexagons
   surrounded by 12 in concentric rings): `124,519 solutions
-  <../solutions/one-sided-hexiamonds-obeirnes-hexagon.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-obeirnes-hexagon.txt>`__
 
   The number of solutions and their distribution amongst sub-puzzles
   agrees with what is reported in `Dancing Links`_ by Donald E. Knuth.
@@ -393,47 +393,47 @@ These shapes are all based on the hexagonal grid, made up of 19
 
   __ http://www.g4g4.com/contentsmmpp.html
 
-  .. image:: images/one-sided-hexiamonds-obeirnes-hexagon.png
+  .. image:: images/iamonds/one-sided-hexiamonds-obeirnes-hexagon.png
 
 * 6x2 elongated hexagon: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-hexgrid-elongated-hexagon-6x2.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-hexgrid-elongated-hexagon-6x2.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-hexgrid-elongated-hexagon-6x2.png
+  .. image:: images/iamonds/one-sided-hexiamonds-hexgrid-elongated-hexagon-6x2.png
 
 * 10x2 trapezoid: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-hexgrid-trapezoid-10x2.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-hexgrid-trapezoid-10x2.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-hexgrid-trapezoid-10x2.png
+  .. image:: images/iamonds/one-sided-hexiamonds-hexgrid-trapezoid-10x2.png
 
 * 4x4 butterfly: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-hexgrid-butterfly-4x4.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-hexgrid-butterfly-4x4.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-hexgrid-butterfly-4x4.png
+  .. image:: images/iamonds/one-sided-hexiamonds-hexgrid-butterfly-4x4.png
 
 * Triangle (there are 2 too many hexagons in a length-6 triangle;
   I think this is the most elegant variation): `solutions incomplete
-  <../solutions/one-sided-hexiamonds-hexgrid-triangle-1.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-hexgrid-triangle-1.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-hexgrid-triangle-1.png
+  .. image:: images/iamonds/one-sided-hexiamonds-hexgrid-triangle-1.png
 
 * Two triangles: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-hexgrid-two-triangles.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-hexgrid-two-triangles.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-hexgrid-two-triangles.png
+  .. image:: images/iamonds/one-sided-hexiamonds-hexgrid-two-triangles.png
 
 
 Miscellaneous
 -------------
 
 * Butterfly 11x3 [11x6]: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-butterfly-11x3.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-butterfly-11x3.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-butterfly-11x3.png
+  .. image:: images/iamonds/one-sided-hexiamonds-butterfly-11x3.png
 
 * Bumpy triangle: `solutions incomplete
-  <../solutions/one-sided-hexiamonds-bumpy-triangle.txt>`__
+  <../solutions/iamonds/one-sided-hexiamonds-bumpy-triangle.txt>`__
 
-  .. image:: images/one-sided-hexiamonds-bumpy-triangle.png
+  .. image:: images/iamonds/one-sided-hexiamonds-bumpy-triangle.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

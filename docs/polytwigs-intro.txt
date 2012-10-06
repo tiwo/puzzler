@@ -40,11 +40,11 @@ would fit on a polytrig grid, but there are a lot fewer of them.
 
 Here is a puzzle containing all the polytwigs of order 1 through 5:
 
-.. image:: images/polytwigs-12345-inset-rectangle-5x5.png
+.. image:: images/twigs/polytwigs-12345-inset-rectangle-5x5.png
 
 And here is a puzzle containing all the hexatwigs (order 6):
 
-.. image:: images/hexatwigs-triangle.png
+.. image:: images/twigs/hexatwigs-triangle.png
 
 See `Polytwigs: Puzzles & Solutions`_ for many more puzzles.
 

@@ -36,7 +36,7 @@ joined end-to-end on a regular triangular grid, also known as
 
 Here is a puzzle containing all the polytrigs of order 1 through 3:
 
-.. image:: images/polytrigs-123-trapezoid-5x4.png
+.. image:: images/trigs/polytrigs-123-trapezoid-5x4.png
 
 See `Polytrigs: Puzzles & Solutions`_ for many more puzzles.
 

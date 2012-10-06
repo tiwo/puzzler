@@ -129,7 +129,7 @@ Much more suited to solution by computer. My old itch resurfaced.
 Success!
 ========
 
-.. image:: images/pentominoes-6x10.png
+.. image:: images/ominoes/pentominoes-6x10.png
 
 Using the Python programming language I implemented an Exact Cover
 problem solver in a general way, and Polyform Puzzler started
@@ -146,19 +146,19 @@ piqued my interest so I implemented those too.  And since Sudoku
 puzzles can also be framed as exact cover problems, I also implemented
 a Sudoku solver.
 
-.. figure:: images/heptiamonds-snowflake-2.png
+.. figure:: images/iamonds/heptiamonds-snowflake-2.png
 
    heptiamonds snowflake
 
-.. figure:: images/pentahexes-triangle-1.png
+.. figure:: images/hexes/pentahexes-triangle-1.png
 
    pentahexes triangle
 
-.. figure:: images/solid-pentominoes-3x4x5.png
+.. figure:: images/cubes/solid-pentominoes-3x4x5.png
 
    solid pentominoes 3×4×5
 
-.. figure:: images/one-sided-tetrasticks-5x5-diamond-lattice.png
+.. figure:: images/sticks/one-sided-tetrasticks-5x5-diamond-lattice.png
 
    one-sided tetrasticks 5×5 diamond lattice
 
@@ -177,13 +177,13 @@ with me.
 .. list-table::
    :class: borderless
 
-   * - .. image:: images/pentacubes-corner-crystal.png
+   * - .. image:: images/cubes/pentacubes-corner-crystal.png
 
-     - .. figure:: images/pentacubes-corner-crystal-small.jpg
-          :target: images/pentacubes-corner-crystal.jpg
+     - .. figure:: images/cubes/pentacubes-corner-crystal-small.jpg
+          :target: images/cubes/pentacubes-corner-crystal.jpg
 
           Built with `Kadon's Super Deluxe Quintillions`_.
-          Click for the full-size image. 
+          Click for the full-size image.
 
 .. _Kadon's Super Deluxe Quintillions:
    http://gamepuzzles.com/polycube.htm#SQd
@@ -214,7 +214,7 @@ polyforms to explore.
 Polytrigs
 =========
 
-.. image:: images/one-sided-tritrigs-hex-4x1.png
+.. image:: images/trigs/one-sided-tritrigs-hex-4x1.png
 
 First I implemented triangular-grid polysticks, or “polytrigs” as I
 called them.  I found only a few references; this form doesn’t seem to
@@ -226,7 +226,7 @@ unpublished work on triangular-grid polysticks from the early 1990s.
 Below is his “tritrigs heart” design.  I have Les to thank for my
 invitation to this Gathering.
 
-.. image:: images/tritrigs-heart-1.png
+.. image:: images/trigs/tritrigs-heart-1.png
 
 
 Polytrigs Challenge
@@ -254,7 +254,7 @@ contribution to the gift exchange book.
 Polytwigs
 =========
 
-.. image:: images/hexatwigs-triangle.png
+.. image:: images/twigs/hexatwigs-triangle.png
 
 After polytrigs, I considered the hexagonal-grid polysticks, which I
 named “polytwigs” (because individually the pieces look like little
@@ -276,7 +276,7 @@ Unfortunately he never published before now.
 *[Below is Mr. Brown’s pentatwigs trefoil design.  Note that it is
 composed of 3 congruent shapes.]*
 
-.. image:: images/pentatwigs-trefoil.png
+.. image:: images/twigs/pentatwigs-trefoil.png
 
 *[Omitted from the talk due to time constraints:]*
 
@@ -312,16 +312,16 @@ available on the Polyform Puzzler site. <g4gX.html>`_
 
 Here’s an X formed from the polyominoes of order 2 through 5:
 
-.. image:: images/polyominoes-2345-x-1.png
+.. image:: images/ominoes/polyominoes-2345-x-1.png
 
 The one-sided polyiamonds of order 1 through 5 (looks a bit like a
 “Primrose X”):
 
-.. image:: images/one-sided-polyiamonds-12345-x-1.png
+.. image:: images/iamonds/one-sided-polyiamonds-12345-x-1.png
 
 The one-sided polyhexes of order 1 through 4:
 
-.. image:: images/one-sided-polyhexes-1234-x-1.png
+.. image:: images/hexes/one-sided-polyhexes-1234-x-1.png
 
 The polycubes of order 1 through 5 (featuring a script “x” on the
 face):
@@ -329,10 +329,10 @@ face):
 .. list-table::
    :class: borderless
 
-   * - .. image:: images/polycubes-12345-x-5.png
+   * - .. image:: images/cubes/polycubes-12345-x-5.png
 
-     - .. figure:: images/polycubes-12345-x-5-small.jpg
-          :target: images/polycubes-12345-x-5.jpg
+     - .. figure:: images/cubes/polycubes-12345-x-5-small.jpg
+          :target: images/cubes/polycubes-12345-x-5.jpg
 
           Built with `Kadon's Super Deluxe Quintillions`_ and `Poly-4
           Supplement`_.  Click for the full-size image.
@@ -341,15 +341,15 @@ face):
 
 The one-sided tetrasticks:
 
-.. image:: images/one-sided-tetrasticks-x-1.png
+.. image:: images/sticks/one-sided-tetrasticks-x-1.png
 
 The hexatwigs:
 
-.. image:: images/hexatwigs-x-6.png
+.. image:: images/twigs/hexatwigs-x-6.png
 
 And finally, the one-sided polytrigs of order 1 through 3:
 
-.. image:: images/one-sided-polytrigs-123-x-1.png
+.. image:: images/trigs/one-sided-polytrigs-123-x-1.png
 
 
 Conclusion

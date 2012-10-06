@@ -42,15 +42,15 @@ a total of 20 line segments on the square grid.
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polysticks-123-4x4-clipped-corners-1.png
+     * - .. figure:: images/sticks/polysticks-123-4x4-clipped-corners-1.png
 
             `21 solutions
-            <../solutions/polysticks-123-4x4-clipped-corners-1.txt>`__
+            <../solutions/sticks/polysticks-123-4x4-clipped-corners-1.txt>`__
 
-       - .. figure:: images/polysticks-123-4x4-clipped-corners-2.png
+       - .. figure:: images/sticks/polysticks-123-4x4-clipped-corners-2.png
 
             `132 solutions
-            <../solutions/polysticks-123-4x4-clipped-corners-2.txt>`__
+            <../solutions/sticks/polysticks-123-4x4-clipped-corners-2.txt>`__
 
 
 Tetrasticks
@@ -65,19 +65,19 @@ words, they branch).  There are 6 welded tetrasticks, 4 of which are
 asymmetrical, therefore there are 10 one-sided welded tetrasticks.
 
 * 5x5 grid: `3 solutions
-  <../solutions/one-sided-welded-tetrasticks-5x5.txt>`__
+  <../solutions/sticks/one-sided-welded-tetrasticks-5x5.txt>`__
 
-  .. image:: images/one-sided-welded-tetrasticks-5x5.png
+  .. image:: images/sticks/one-sided-welded-tetrasticks-5x5.png
 
 * Triangle: `9 solutions
-  <../solutions/one-sided-welded-tetrasticks-triangle.txt>`__
+  <../solutions/sticks/one-sided-welded-tetrasticks-triangle.txt>`__
 
-  .. image:: images/one-sided-welded-tetrasticks-triangle.png
+  .. image:: images/sticks/one-sided-welded-tetrasticks-triangle.png
 
 * Trapezoid: `7 solutions
-  <../solutions/one-sided-welded-tetrasticks-trapezoid.txt>`__
+  <../solutions/sticks/one-sided-welded-tetrasticks-trapezoid.txt>`__
 
-  .. image:: images/one-sided-welded-tetrasticks-trapezoid.png
+  .. image:: images/sticks/one-sided-welded-tetrasticks-trapezoid.png
 
 
 15 of 16 Tetrasticks
@@ -89,18 +89,18 @@ five tetrasticks that have an excess of 2 vertical or horizontal line
 segments (H, J, L, N, or Y), symmetrical shapes can be formed.
 
 * 6x6 grid: `1795 solutions
-  <../solutions/tetrasticks-6x6.txt>`__
+  <../solutions/sticks/tetrasticks-6x6.txt>`__
 
   In this solution, the "Y" piece is omitted:
 
-  .. image:: images/tetrasticks-6x6.png
+  .. image:: images/sticks/tetrasticks-6x6.png
 
 * Aztec Diamond of order 3: `3 solutions
-  <../solutions/tetrasticks-aztec-diamond.txt>`__
+  <../solutions/sticks/tetrasticks-aztec-diamond.txt>`__
 
   In this solution, the "J" piece is omitted:
 
-  .. image:: images/tetrasticks-aztec-diamond.png
+  .. image:: images/sticks/tetrasticks-aztec-diamond.png
 
 
 One-Sided Tetrasticks
@@ -110,9 +110,9 @@ One-Sided Tetrasticks
 one-sided tetrasticks.
 
 * 5x5 diamond lattice: `107 solutions
-  <../solutions/one-sided-tetrasticks-5x5-diamond-lattice.txt>`__
+  <../solutions/sticks/one-sided-tetrasticks-5x5-diamond-lattice.txt>`__
 
-  .. image:: images/one-sided-tetrasticks-5x5-diamond-lattice.png
+  .. image:: images/sticks/one-sided-tetrasticks-5x5-diamond-lattice.png
 
   Calculating all 107 non-isomorphic solutions took approximately **11
   weeks** using one core of a 2.66GHz Intel Core 2 Duo E6750 CPU
@@ -147,7 +147,7 @@ one-sided tetrasticks.
   F                 3           7
   ================  ==========  =========
 
-  __ ../solutions/one-sided-tetrasticks-5x5-diamond-lattice.txt
+  __ ../solutions/sticks/one-sided-tetrasticks-5x5-diamond-lattice.txt
 
   Note: The Polyform Puzzler order for the X-positions is in
   increasing distance from the center of the puzzle.  Wassermann's
@@ -159,39 +159,39 @@ one-sided tetrasticks.
   rotated as noted above).
 
 * 8x8 grid with center hole: `solutions incomplete
-  <../solutions/one-sided-tetrasticks-8x8-center-hole.txt>`__
+  <../solutions/sticks/one-sided-tetrasticks-8x8-center-hole.txt>`__
 
-  .. image:: images/one-sided-tetrasticks-8x8-center-hole.png
+  .. image:: images/sticks/one-sided-tetrasticks-8x8-center-hole.png
 
 * 8x8 grid with one clipped corner: `solutions incomplete
-  <../solutions/one-sided-tetrasticks-8x8-clipped-corner.txt>`__
+  <../solutions/sticks/one-sided-tetrasticks-8x8-clipped-corner.txt>`__
 
-  .. image:: images/one-sided-tetrasticks-8x8-clipped-corner.png
+  .. image:: images/sticks/one-sided-tetrasticks-8x8-clipped-corner.png
 
 * 8x8 grid with two clipped corners 1: `solutions incomplete
-  <../solutions/one-sided-tetrasticks-8x8-clipped-corners-1.txt>`__
+  <../solutions/sticks/one-sided-tetrasticks-8x8-clipped-corners-1.txt>`__
 
-  .. image:: images/one-sided-tetrasticks-8x8-clipped-corners-1.png
+  .. image:: images/sticks/one-sided-tetrasticks-8x8-clipped-corners-1.png
 
 * X (`designed for G4G10 <g4gX.html>`_):
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/one-sided-tetrasticks-x-1.png
+     * - .. figure:: images/sticks/one-sided-tetrasticks-x-1.png
 
             `solutions incomplete
-            <../solutions/one-sided-tetrasticks-x-1.txt>`__
+            <../solutions/sticks/one-sided-tetrasticks-x-1.txt>`__
 
-       - .. figure:: images/one-sided-tetrasticks-x-2.png
+       - .. figure:: images/sticks/one-sided-tetrasticks-x-2.png
 
             `solutions incomplete
-            <../solutions/one-sided-tetrasticks-x-2.txt>`__
+            <../solutions/sticks/one-sided-tetrasticks-x-2.txt>`__
 
 * 10x5 trapezoid: `solutions incomplete
-  <../solutions/one-sided-tetrasticks-trapezoid-10x5.txt>`__
+  <../solutions/sticks/one-sided-tetrasticks-trapezoid-10x5.txt>`__
 
-  .. image:: images/one-sided-tetrasticks-trapezoid-10x5.png
+  .. image:: images/sticks/one-sided-tetrasticks-trapezoid-10x5.png
 
 
 
@@ -202,61 +202,61 @@ This puzzle uses the 1 monostick, 2 disticks, 5 tristicks, and 16
 tetrasticks, for a total of 84 line segments.
 
 * 7x7 grid: `solutions incomplete
-  <../solutions/polysticks-7x7.txt>`__
+  <../solutions/sticks/polysticks-7x7.txt>`__
 
-  .. image:: images/polysticks-7x7.png
+  .. image:: images/sticks/polysticks-7x7.png
 
 * 10x5 grid (with a hole): `solutions incomplete
-  <../solutions/polysticks-1234-10x5.txt>`__
+  <../solutions/sticks/polysticks-1234-10x5.txt>`__
 
-  .. image:: images/polysticks-1234-10x5.png
+  .. image:: images/sticks/polysticks-1234-10x5.png
 
 * 3x7 diamond lattice: `solutions incomplete
-  <../solutions/polysticks-3x7-diamond-lattice.txt>`__
+  <../solutions/sticks/polysticks-3x7-diamond-lattice.txt>`__
 
-  .. image:: images/polysticks-3x7-diamond-lattice.png
+  .. image:: images/sticks/polysticks-3x7-diamond-lattice.png
 
 * Truncated diamond lattices:
 
   - 6x4: `solutions incomplete
-    <../solutions/polysticks-1234-truncated-diamond-lattice-6x4.txt>`__
+    <../solutions/sticks/polysticks-1234-truncated-diamond-lattice-6x4.txt>`__
 
-    .. image:: images/polysticks-1234-truncated-diamond-lattice-6x4.png
+    .. image:: images/sticks/polysticks-1234-truncated-diamond-lattice-6x4.png
 
   - 8x3: `solutions incomplete
-    <../solutions/polysticks-1234-truncated-diamond-lattice-8x3.txt>`__
+    <../solutions/sticks/polysticks-1234-truncated-diamond-lattice-8x3.txt>`__
 
-    .. image:: images/polysticks-1234-truncated-diamond-lattice-8x3.png
+    .. image:: images/sticks/polysticks-1234-truncated-diamond-lattice-8x3.png
 
   - 12x2: `solutions incomplete
-    <../solutions/polysticks-1234-truncated-diamond-lattice-12x2.txt>`__
+    <../solutions/sticks/polysticks-1234-truncated-diamond-lattice-12x2.txt>`__
 
-    .. image:: images/polysticks-1234-truncated-diamond-lattice-12x2.png
+    .. image:: images/sticks/polysticks-1234-truncated-diamond-lattice-12x2.png
 
 * Octagons:
 
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/polysticks-1234-octagon-1.png
+     * - .. figure:: images/sticks/polysticks-1234-octagon-1.png
 
             `solutions incomplete
-            <../solutions/polysticks-1234-octagon-1.txt>`__
+            <../solutions/sticks/polysticks-1234-octagon-1.txt>`__
 
-       - .. figure:: images/polysticks-1234-octagon-2.png
+       - .. figure:: images/sticks/polysticks-1234-octagon-2.png
 
             `solutions incomplete
-            <../solutions/polysticks-1234-octagon-2.txt>`__
+            <../solutions/sticks/polysticks-1234-octagon-2.txt>`__
 
 * Four overlapping squares: `solutions incomplete
-  <../solutions/polysticks-1234-four-squares-1.txt>`__
+  <../solutions/sticks/polysticks-1234-four-squares-1.txt>`__
 
-  .. image:: images/polysticks-1234-four-squares-1.png
+  .. image:: images/sticks/polysticks-1234-four-squares-1.png
 
 * Three overlapping squares: `solutions incomplete
-  <../solutions/polysticks-1234-three-squares-1.txt>`__
+  <../solutions/sticks/polysticks-1234-three-squares-1.txt>`__
 
-  .. image:: images/polysticks-1234-three-squares-1.png
+  .. image:: images/sticks/polysticks-1234-three-squares-1.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

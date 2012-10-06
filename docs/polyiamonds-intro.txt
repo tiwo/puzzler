@@ -35,7 +35,7 @@ diamond is composed of two ("di-") unit triangles ("-iamond").
 
 Here is a puzzle containing all the polyiamonds of order 1 through 6:
 
-.. image:: images/polyiamonds-123456-elongated-hexagon-3x5.png
+.. image:: images/iamonds/polyiamonds-123456-elongated-hexagon-3x5.png
 
 See `Polyiamonds: Puzzles & Solutions`_, `Hexiamonds: Puzzles &
 Solutions`_, and `Heptiamonds: Puzzles & Solutions`_ for many more

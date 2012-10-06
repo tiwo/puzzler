@@ -32,7 +32,7 @@ edge-to-edge on a regular hexagonal grid (a honeycomb grid).
 
 Here is a puzzle containing all the polyhexes of order 1 through 5:
 
-.. image:: images/polyhexes-12345-triangle.png
+.. image:: images/hexes/polyhexes-12345-triangle.png
 
 See `Polyhexes: Puzzles & Solutions`_ and `Pentahexes: Puzzles &
 Solutions`_ for many more puzzles.
