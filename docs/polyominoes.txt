@@ -17,6 +17,7 @@
 .. sidebar:: Also see:
 
    * `Pentominoes: Puzzles & Solutions <pentominoes.html>`_
+   * `Hexominoes: Puzzles & Solutions <hexominoes.html>`_
    * `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
    * `An Introduction to Polyominoes <polyominoes-intro.html>`_
    * `Notes on Polyominoes <polyomino-notes.html>`_
@@ -27,6 +28,22 @@
      `interpreting solution files <FAQ.html#how-should-polyomino-solution-files-be-interpreted>`__)
 
 .. contents::
+
+
+Polyominoes of Order 1 Through 3
+================================
+
+This puzzle uses the 1 monomino, 1 domino, and 2 trominoes, for a
+total of 9 squares.
+
+* .. _polyominoes-123-square:
+
+  Square: `6 solutions <../solutions/polyominoes-123-square.txt>`__
+
+  .. image:: images/polyominoes-123-square.png
+
+  A trivial result, but the number of solutions comes in handy in more
+  complex puzzles like the `poly-5 diamond`_.
 
 
 Polyominoes of Order 1 Through 4
@@ -170,11 +187,28 @@ Polyominoes of Order 1 Through 5
 These puzzles use the 1 monomino, 1 domino, 2 trominoes, 5
 tetrominoes, and 12 pentominoes, for a total of 89 squares.
 
-* Diamond (a.k.a. `Kadon's "Poly-5"
+* .. _poly-5 diamond:
+
+  Diamond (a.k.a. `Kadon's "Poly-5"
   <http://www.gamepuzzles.com/polycub2.htm#P5>`_): `solutions
   incomplete <../solutions/polyominoes-12345-diamond.txt>`__
 
   .. image:: images/polyominoes-12345-diamond.png
+
+  The configuration below has the monomono, domino, & trominoes
+  restricted to a central 3×3 square, resulting in `4,579 unique
+  solutions for the outer ring of pentominoes & tetrominoes`__ alone.
+  Combined with `6 unique independent solutions for the inner
+  square`__, and 8 relative orientations (the inner square can rotate
+  to 4 different positions, and 4 more flipped), the grand total is
+  219,792 unique solutions (4,579 × 6 × 8).
+
+  __ ../solutions/polyominoes-12345-diamond-2.txt
+  __ polyominoes-123-square_
+
+  .. image:: images/polyominoes-12345-diamond-2.png
+
+  Also see the `poly-6 star`_ below.
 
 * Crosses:
 
@@ -191,3 +225,30 @@ tetrominoes, and 12 pentominoes, for a total of 89 squares.
 
          `solutions incomplete
          <../solutions/polyominoes-12345-cross-2.txt>`__
+
+
+Polyominoes of Order 1 Through 6
+================================
+
+These puzzles use the 1 monomino, 1 domino, 2 trominoes, 5
+tetrominoes, 12 pentominoes, and 35 hexominoes, for a total of 299
+squares.
+
+* .. _poly-6 star:
+
+  Star (design by `Jack Wetterer and Chris Patterson, with symmetry
+  refinements by Darian Jenkins
+  <http://gamepuzzles.com/polystar.htm>`__, extending `Kadon's
+  "Poly-5"`_ a.k.a. `poly-5 diamond`_ above): `solutions incomplete
+  <../solutions/polyominoes-123456-star.txt>`__
+
+  .. image:: images/polyominoes-123456-star.png
+
+  As with the `poly-5 diamond`_ above, the various orders of
+  polyominoes occupy different areas.  The coloured version below
+  shows the monomino (black), domino (gray), and trominoes (purple)
+  fixed in a central 3×3 square, with the tetrominoes (blue) and
+  pentominoes (green) occupying a middle ring around the square.  The
+  hexominoes (red) occupy the outer ring of the configuration.
+
+  .. image:: images/polyominoes-123456-star-coloured.png

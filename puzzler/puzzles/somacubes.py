@@ -410,3 +410,56 @@ class SomaPyramid(SomaCubes):
         self.piece_data['p'][-1]['flips'] = None
         self.piece_data['p'][-1]['axes'] = None
         self.piece_data['p'][-1]['rotations'] = None
+
+
+class SomaCastle1(SomaCubes):
+
+    """
+    6 solutions
+
+    Design from `Dennis Nehen's Soma Cube pages
+    <http://www.geocities.ws/dnehen/soma/soma.htm>`_.
+    """
+
+    height = 5
+    width = 5
+    depth = 2
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(5, 5, 1))
+            + [self.coordinate_offset(x, y, 1, None)
+               for x in (0, 4) for y in (0, 4)])
+        coords -= set(((4,4,0), (4,4,1)))
+        return sorted(coords)
+
+
+class SomaCastle2(SomaCubes):
+
+    """
+    10 solutions
+
+    Design from `Dennis Nehen's Soma Cube pages`_.
+    """
+
+    height = 5
+    width = 5
+    depth = 2
+
+    check_for_duplicates = True
+    duplicate_conditions = (
+        {'x_reversed': True},
+        {'y_reversed': True},
+        {'x_reversed': True, 'y_reversed': True},)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(5, 5, 1))
+            + [self.coordinate_offset(x, y, 1, None)
+               for x in (0, 4) for y in (0, 4)])
+        coords -= set(((2,0,0), (2,4,0)))
+        return sorted(coords)

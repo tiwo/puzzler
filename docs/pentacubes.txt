@@ -618,6 +618,13 @@ Misc
 
   .. image:: images/non-convex-pentacubes-5x5x8-crystal-tower.png
 
+* 8x4x7 ring wall:
+  `solutions incomplete
+  <../solutions/non-convex-pentacubes-ring-wall-8x4x7.txt>`__
+  (`X3D model <images/non-convex-pentacubes-ring-wall-8x4x7.x3d>`__)
+
+  .. image:: images/non-convex-pentacubes-ring-wall-8x4x7.png
+
 
 .. _Super Deluxe Quintillions:
    http://gamepuzzles.com/polycube.htm#SQd

@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="60.000" height="60.000"
+     viewBox="0 0 60.000 60.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g>
+<polygon fill="black" stroke="white" stroke-width="0"
+         points="10.000,50.000 20.000,50.000 20.000,40.000 30.000,40.000 30.000,50.000 40.000,50.000 40.000,30.000 20.000,30.000 20.000,20.000 10.000,20.000">
+<desc>H06</desc>
+</polygon>
+</g>
+</svg>

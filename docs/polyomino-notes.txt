@@ -18,6 +18,7 @@
 
    * `Polyomino Puzzles & Solutions <polyominoes.html>`_
    * `Pentomino Puzzles & Solutions <pentominoes.html>`_
+   * `Hexomino Puzzles & Solutions <hexominoes.html>`_
    * `Solid Pentomino Puzzles & Solutions <solid-pentominoes.html>`_
    * `An Introduction to Polyominoes <polyominoes-intro.html>`_
    * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
@@ -293,15 +294,7 @@ Potential Puzzles
 
 210: hexominoes -- no simple symmetrical puzzles due to parity
 
-* 2T(14) is possible (triangles joined by straight sides, one inverted
-  to form a skew parallelogram)
-
 216: hexominoes + 1 duplicate == 6³ == Kadon "Sextillions"
-
-* R(18,12)
-* R(24,9)
-* R(27,8)
-* R(36,6)
 
 298: polyominoes of order 2 - 6
 

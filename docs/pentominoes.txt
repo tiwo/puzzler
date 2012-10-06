@@ -17,6 +17,7 @@
 .. sidebar:: Also see:
 
    * `Polyominoes: Puzzles & Solutions <polyominoes.html>`_
+   * `Hexominoes: Puzzles & Solutions <hexominoes.html>`_
    * `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
    * `Pentacubes: Puzzles & Solutions <pentacubes.html>`_
    * `Polycubes: Puzzles & Solutions <polycubes.html>`_
@@ -291,6 +292,9 @@ Pentominoes Plus the Square Tetromino
   <../solutions/pentominoes-plus-square-tetromino-diamond-1.txt>`__
 
   .. image:: images/pentominoes-plus-square-tetromino-diamond-1.png
+
+  (The symmetrical configuration with a central hole has no solutions,
+  unfortunately.)
 
 
 Pentominoes Plus the Monomino

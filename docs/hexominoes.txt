@@ -1,0 +1,281 @@
+.. -*- coding: utf-8 -*-
+
+==================================
+ Hexominoes: Puzzles & Solutions
+==================================
+
+:Author: David Goodger <goodger@python.org>
+:Date: $Date$
+:Revision: $Revision$
+:Web site: http://puzzler.sourceforge.net/
+:Copyright: |c| 1998-2012 by David J. Goodger
+:License: `GPL 2 <../COPYING.html>`__
+
+.. image:: images/puzzler.png
+   :align: center
+
+.. sidebar:: Also see:
+
+   * `Polyominoes: Puzzles & Solutions <polyominoes.html>`_
+   * `Pentominoes: Puzzles & Solutions <pentominoes.html>`_
+   * `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
+   * `Pentacubes: Puzzles & Solutions <pentacubes.html>`_
+   * `Polycubes: Puzzles & Solutions <polycubes.html>`_
+   * `An Introduction to Polyominoes <polyominoes-intro.html>`_
+   * `Notes on Polyominoes <polyomino-notes.html>`_
+   * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
+   * `Polyform Puzzler FAQ <FAQ.html>`_
+     (`polyform details <FAQ.html#what-polyforms-are-there>`__,
+     `numbers of polyforms <FAQ.html#how-many-of-each-type-of-polyform-are-there>`__,
+     `interpreting solution files <FAQ.html#how-should-polyomino-solution-files-be-interpreted>`__)
+
+.. contents::
+
+
+High-quality acrylic sets of hexominoes are available from Kadon
+Enterprises as `Sextillions`_.
+
+.. _Sextillions: http://gamepuzzles.com/polycub2.htm#SX
+
+
+Hexominoes
+===========
+
+Squares & Rectangles
+--------------------
+
+Due to a `parity imbalance`_, the 35 free hexominoes cannot fit into
+a simple rectangle without introducing holes or other irregularities.
+
+.. _parity imbalance:
+   http://en.wikipedia.org/wiki/Hexomino#Packing_and_tiling
+
+- Square: `solutions incomplete
+  <../solutions/hexominoes-square.txt>`__
+
+  .. image:: images/hexominoes-square.png
+
+- 19x11 rectangles plus nubs:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexominoes-rectangle-plus-nub-1.png
+
+            design from `Tenyo "Pla-Puzzle" / "Beat the Computer" /
+            "Mystery in a Case" <http://www.tenyo.co.jp/pp/>`__
+            no. 600 (now discontinued); `solutions incomplete
+            <../solutions/hexominoes-rectangle-plus-nub-1.txt>`__
+
+     * - .. figure:: images/hexominoes-rectangle-plus-nub-2.png
+
+            `solutions incomplete
+            <../solutions/hexominoes-rectangle-plus-nub-2.txt>`__
+
+- 45x5 rectangle with holes (design by W. Stead from `Andrew Clarke's
+  Poly Pages (Hexomino Constructions)`_): `solutions incomplete
+  <../solutions/hexominoes-holey-rectangle-1.txt>`__
+
+  .. image:: images/hexominoes-holey-rectangle-1.png
+
+- 33x7 rectangle with a central hole (design from `Andrew Clarke's
+  Poly Pages (Hexomino Constructions)`_): `solutions incomplete
+  <../solutions/hexominoes-holey-rectangle-2.txt>`__
+
+  .. image:: images/hexominoes-holey-rectangle-2.png
+
+- 17x15 rectangle with a central plus-shaped hole (design from
+  `Polyominoes`, by Solomon W. Golomb): `solutions incomplete
+  <../solutions/hexominoes-holey-rectangle-3.txt>`__
+
+  .. image:: images/hexominoes-holey-rectangle-3.png
+
+
+Parallelograms
+--------------
+
+As demonstrated below, the 35 hexominoes can fit into parallelograms
+with odd-length bases.  The `parity imbalance`_ that prevents simple
+rectangles also prevents solutions to parallelograms with even-length
+bases (e.g. 30x7 & 42x5).
+
+- 15x14 parallelogram (design from `Polyominoes`, by Solomon
+  W. Golomb): `solutions incomplete
+  <../solutions/hexominoes-parallelogram-15x14.txt>`__
+
+  .. image:: images/hexominoes-parallelogram-15x14.png
+
+- 21x10 parallelogram (design from `Andrew Clarke's Poly Pages
+  (Hexomino Constructions)
+  <http://recmath.com/PolyPages/PolyPages/index.htm?hexopatts.htm>`_):
+  `solutions incomplete
+  <../solutions/hexominoes-parallelogram-15x14.txt>`__
+
+  .. image:: images/hexominoes-parallelogram-15x14.png
+
+- 35x6 parallelogram: `solutions incomplete
+  <../solutions/hexominoes-parallelogram-35x6.txt>`__
+
+  .. image:: images/hexominoes-parallelogram-35x6.png
+
+
+Misc
+----
+
+- Triangle (design from `Andrew Clarke's Poly Pages
+  <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyominoes.html>`_):
+  `solutions incomplete <../solutions/hexominoes-triangle.txt>`__
+
+  .. image:: images/hexominoes-triangle.png
+
+- Rhombus (design by David Bird from `Andrew Clarke's Poly Pages
+  <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyominoes.html>`_):
+  `solutions incomplete <../solutions/hexominoes-rhombus.txt>`__
+
+  .. image:: images/hexominoes-rhombus.png
+
+- Cross (design from `Andrew Clarke's Poly Pages
+  <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyominoes.html>`_):
+  `solutions incomplete <../solutions/hexominoes-cross-1.txt>`__
+
+  .. image:: images/hexominoes-cross-1.png
+
+
+Hexominoes-Plus
+===============
+
+Also known as Kadon's Sextillions_, these are the hexominoes with a
+second N06 ("short N") piece called S16 ("short S"), for a total of 36
+pieces, avoiding the `parity imbalance`_ and allowing the construction
+of simple rectangles.
+
+
+Rectangles
+----------
+
+- 18x12: `solutions incomplete
+  <../solutions/hexominoes-plus-18x12.txt>`__
+
+  .. image:: images/hexominoes-plus-18x12.png
+
+- 24x9: `solutions incomplete
+  <../solutions/hexominoes-plus-24x9.txt>`__
+
+  .. image:: images/hexominoes-plus-24x9.png
+
+- 27x8: `solutions incomplete
+  <../solutions/hexominoes-plus-27x8.txt>`__
+
+  .. image:: images/hexominoes-plus-27x8.png
+
+- 36x6: `solutions incomplete
+  <../solutions/hexominoes-plus-36x6.txt>`__
+
+  .. image:: images/hexominoes-plus-36x6.png
+
+
+Misc
+----
+
+- 15x15 square with a central 3x3 hole (design from Kadon's
+  `Sextillions`_): `solutions incomplete
+  <../solutions/hexominoes-plus-square.txt>`__
+
+  .. image:: images/hexominoes-plus-square.png
+
+
+One-Sided Hexominoes
+=====================
+
+These are just like regular hexominoes, except that non-isomorphic
+reflections (different shape when flipped over) are treated as
+separate pieces, and pieces are not allowed to be flipped.
+
+
+Rectangles
+----------
+
+- 20x18: `solutions incomplete
+  <../solutions/one-sided-hexominoes-20x18.txt>`__
+
+  .. image:: images/one-sided-hexominoes-20x18.png
+
+- 24x15: `solutions incomplete
+  <../solutions/one-sided-hexominoes-24x15.txt>`__
+
+  .. image:: images/one-sided-hexominoes-24x15.png
+
+- 30x12: `solutions incomplete
+  <../solutions/one-sided-hexominoes-30x12.txt>`__
+
+  .. image:: images/one-sided-hexominoes-30x12.png
+
+- 36x10: `solutions incomplete
+  <../solutions/one-sided-hexominoes-36x10.txt>`__
+
+  .. image:: images/one-sided-hexominoes-36x10.png
+
+- 40x9: `solutions incomplete
+  <../solutions/one-sided-hexominoes-40x9.txt>`__
+
+  .. image:: images/one-sided-hexominoes-40x9.png
+
+- 45x8: `solutions incomplete
+  <../solutions/one-sided-hexominoes-45x8.txt>`__
+
+  .. image:: images/one-sided-hexominoes-45x8.png
+
+- 60x6: `solutions incomplete
+  <../solutions/one-sided-hexominoes-60x6.txt>`__
+
+  .. image:: images/one-sided-hexominoes-60x6.png
+
+- 72x5: `solutions incomplete
+  <../solutions/one-sided-hexominoes-72x5.txt>`__
+
+  .. image:: images/one-sided-hexominoes-72x5.png
+
+- 40x10 rectangle with a central hole (design from `Andrew Clarke's
+  Poly Pages (Hexomino Constructions)`_): `solutions incomplete
+  <../solutions/one-sided-hexominoes-holey-rectangle-1.txt>`__
+
+  .. image:: images/one-sided-hexominoes-holey-rectangle-1.png
+
+
+Misc
+----
+
+- Diamonds:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/one-sided-hexominoes-diamond-1.png
+
+            design from `Andrew Clarke's Poly Pages (Hexomino
+            Constructions)`_; `solutions incomplete
+            <../solutions/one-sided-hexominoes-diamond-1.txt>`__
+
+     * - .. figure:: images/one-sided-hexominoes-diamond-2.png
+
+            `solutions incomplete
+            <../solutions/one-sided-hexominoes-diamond-2.txt>`__
+
+- Square fort (design by David Bird from `Andrew Clarke's Poly Pages
+  (Hexomino Constructions)
+  <http://recmath.com/PolyPages/PolyPages/index.htm?hexopatts.htm>`_):
+  `solutions incomplete
+  <../solutions/one-sided-hexominoes-square-fort.txt>`__
+
+  .. image:: images/one-sided-hexominoes-square-fort.png
+
+- Six crosses (design from `Andrew Clarke's Poly Pages (Hexomino
+  Constructions)
+  <http://recmath.com/PolyPages/PolyPages/index.htm?hexopatts.htm>`_):
+  `solutions incomplete
+  <../solutions/one-sided-hexominoes-six-crosses.txt>`__
+
+  .. image:: images/one-sided-hexominoes-six-crosses.png
+
+
+.. |c| unicode:: U+00A9 .. copyright sign

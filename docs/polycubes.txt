@@ -62,10 +62,18 @@ The 8 tetracubes are composed of 32 unit cubes.
 Soma Cubes
 ==========
 
+    It is a beautiful freak of nature that the seven simplest
+    irregular combinations of cubes can form a cube again. Variety
+    growing out of unity returns to unity. It is the world's smallest
+    philosophical system.
+
+    -- Piet Hein
+
 `Soma Cubes`__ include all non-convex polycubes of order 3 (1) and 4
 (6).  They were invented by Piet Hein in 1933.  The 7 Soma cubes are
 composed of 27 unit cubes.  Many of the designs below are from the
-`Thinkfun Block By Block`__ challenge cards.
+`Thinkfun Block By Block`__ challenge cards.  The two castles are from
+`Dennis Nehen's Soma Cube pages`__.
 
 If we consider the "a" and "b" pieces (a chiral pair) to be
 interchangeable in reflection, there are exactly half as many
@@ -76,6 +84,7 @@ to be exchanged (in the counts that follow, we don't allow this).
 
 __ http://en.wikipedia.org/wiki/Soma_cube
 __ http://www.thinkfun.com/blockbyblock
+__ http://www.geocities.ws/dnehen/soma/soma.htm
 
 .. list-table::
    :class: borderless
@@ -176,8 +185,17 @@ __ http://www.thinkfun.com/blockbyblock
           <../solutions/soma-pyramid.txt>`__
           (`X3D model <images/soma-pyramid.x3d>`__)
 
-     -
-     -
+     - .. figure:: images/soma-castle-1.png
+
+          Castle 1: `10 solutions
+          <../solutions/soma-castle-1.txt>`__
+          (`X3D model <images/soma-castle-1.x3d>`__)
+
+     - .. figure:: images/soma-castle-2.png
+
+          Castle 2: `10 solutions
+          <../solutions/soma-castle-2.txt>`__
+          (`X3D model <images/soma-castle-2.x3d>`__)
 
 
 Diabolical Cube

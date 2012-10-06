@@ -473,6 +473,29 @@ class PentominoesPlusSquareTetrominoDiamond_x1(PentominoesPlusSquareTetromino):
         return sorted(coords)
 
 
+class PentominoesPlusSquareTetrominoDiamond_x2(PentominoesPlusSquareTetromino):
+
+    """0 solutions"""
+
+    height = 13
+    width = 13
+
+    extras = set(((0,6), (6,0), (6,12), (12,6)))
+
+    hole = (6,6)
+
+    def coordinates(self):
+        coords = set(self.coordinates_diamond(6, offset=(1,1)))
+        for x, y in self.extras:
+            coords.add(self.coordinate_offset(x, y, offset=None))
+        coords.remove(self.hole)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = None
+
+
 class PentominoesTrapezoid(Pentominoes):
 
     """

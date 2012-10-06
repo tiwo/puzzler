@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="290.000"
+   height="310.000"
+   viewBox="0 0 290.000 310.000"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="polyominoes-123456-star-coloured.svg">
+  <metadata
+     id="metadata234">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs232" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     id="namedview230"
+     showgrid="false"
+     inkscape:zoom="3.1924399"
+     inkscape:cx="107.41119"
+     inkscape:cy="155"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3106" />
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon6"
+     points="150,240 140,240 140,300 150,300 ">
+    <desc
+       id="desc8">I06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon10"
+     points="140,240 150,240 150,230 130,230 130,240 120,240 120,250 130,250 130,270 140,270 ">
+    <desc
+       id="desc12">F06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon14"
+     points="160,250 180,250 180,240 170,240 170,230 160,230 160,240 150,240 150,270 160,270 ">
+    <desc
+       id="desc16">F36</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon18"
+     points="120,240 130,240 130,230 120,230 120,220 110,220 110,210 100,210 100,230 110,230 110,250 120,250 ">
+    <desc
+       id="desc20">W26</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon22"
+     points="160,230 170,230 170,220 180,220 180,210 150,210 150,240 160,240 ">
+    <desc
+       id="desc24">A06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon26"
+     points="180,230 200,230 200,210 180,210 180,220 170,220 170,240 180,240 ">
+    <desc
+       id="desc28">Q06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon30"
+     points="100,210 110,210 110,200 100,200 100,190 90,190 90,200 80,200 80,210 90,210 90,230 100,230 ">
+    <desc
+       id="desc32">X06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon34"
+     points="140,210 130,210 130,200 120,200 120,210 110,210 110,220 120,220 120,230 140,230 ">
+    <desc
+       id="desc36">K06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon42"
+     points="80,200 90,200 90,190 80,190 80,170 70,170 70,180 60,180 60,190 70,190 70,210 80,210 ">
+    <desc
+       id="desc44">X16</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon46"
+     points="120,190 110,190 110,180 100,180 100,170 90,170 90,190 100,190 100,200 110,200 110,210 120,210 ">
+    <desc
+       id="desc48">W16</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon54"
+     points="210,200 200,200 200,190 190,190 190,200 160,200 160,210 210,210 ">
+    <desc
+       id="desc56">Y06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon58"
+     points="220,190 240,190 240,170 230,170 230,180 210,180 210,210 220,210 ">
+    <desc
+       id="desc60">Z16</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon70"
+     points="190,190 200,190 200,200 210,200 210,180 180,180 180,190 170,190 170,200 190,200 ">
+    <desc
+       id="desc72">G06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon74"
+     points="60,160 70,160 70,150 40,150 40,160 50,160 50,190 60,190 ">
+    <desc
+       id="desc76">T06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon78"
+     points="90,160 60,160 60,180 70,180 70,170 80,170 80,190 90,190 ">
+    <desc
+       id="desc80">J06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon94"
+     points="230,170 220,170 220,160 200,160 200,170 190,170 190,180 230,180 ">
+    <desc
+       id="desc96">D06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon98"
+     points="50,160 40,160 40,140 30,140 30,150 10,150 10,160 30,160 30,170 50,170 ">
+    <desc
+       id="desc100">F26</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon114"
+     points="230,160 250,160 250,150 260,150 260,140 240,140 240,150 220,150 220,170 230,170 ">
+    <desc
+       id="desc116">M06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon118"
+     points="260,160 280,160 280,150 250,150 250,160 230,160 230,170 260,170 ">
+    <desc
+       id="desc120">S06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon138"
+     points="90,140 70,140 70,130 60,130 60,140 40,140 40,150 90,150 ">
+    <desc
+       id="desc140">Y16</desc>
+  </polygon>
+  <g
+     id="g3106">
+    <g
+       id="g3354">
+      <polygon
+         style="fill:#800080;stroke:#ffffff;stroke-width:1"
+         id="polygon102"
+         points="130,170 140,170 140,140 130,140 ">
+        <desc
+           id="desc104">I3</desc>
+      </polygon>
+      <polygon
+         style="fill:#800080;stroke:#ffffff;stroke-width:1"
+         id="polygon106"
+         points="150,160 140,160 140,170 160,170 160,150 150,150 ">
+        <desc
+           id="desc108">V3</desc>
+      </polygon>
+    </g>
+    <polygon
+       points="140,160 150,160 150,150 140,150 "
+       id="polygon130"
+       style="fill:#000000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc132">O1</desc>
+    </polygon>
+    <polygon
+       points="140,150 160,150 160,140 140,140 "
+       id="polygon146"
+       style="fill:#4d4d4d;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc148">I2</desc>
+    </polygon>
+  </g>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon154"
+     points="240,120 230,120 230,140 200,140 200,150 240,150 ">
+    <desc
+       id="desc156">V06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon158"
+     points="60,130 70,130 70,140 80,140 80,110 70,110 70,120 50,120 50,140 60,140 ">
+    <desc
+       id="desc160">H06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon162"
+     points="100,130 90,130 90,100 70,100 70,110 80,110 80,140 100,140 ">
+    <desc
+       id="desc164">Z06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon170"
+     points="230,120 220,120 220,130 200,130 200,120 190,120 190,140 230,140 ">
+    <desc
+       id="desc172">C06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon174"
+     points="110,120 100,120 100,80 90,80 90,130 110,130 ">
+    <desc
+       id="desc176">L06</desc>
+  </polygon>
+  <g
+     id="g3342"
+     style="fill:#0000d4">
+    <polygon
+       points="140,200 150,200 150,180 140,180 140,190 120,190 120,200 130,200 130,210 140,210 "
+       id="polygon50"
+       style="fill:#0000d4;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc52">F</desc>
+    </polygon>
+    <polygon
+       points="190,160 170,160 170,180 190,180 "
+       id="polygon90"
+       style="fill:#0000d4;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc92">O4</desc>
+    </polygon>
+    <polygon
+       points="110,150 70,150 70,160 110,160 "
+       id="polygon122"
+       style="fill:#0000d4;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc124">I4</desc>
+    </polygon>
+    <polygon
+       points="120,130 130,130 130,120 110,120 110,130 100,130 100,140 120,140 "
+       id="polygon166"
+       style="fill:#0000d4;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc168">Z4</desc>
+    </polygon>
+    <polygon
+       points="140,100 130,100 130,110 120,110 120,120 130,120 130,130 140,130 "
+       id="polygon178"
+       style="fill:#0000d4;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc180">T4</desc>
+    </polygon>
+  </g>
+  <g
+     id="g3371">
+    <polygon
+       points="150,210 160,210 160,200 140,200 140,230 150,230 "
+       id="polygon38"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc40">L4</desc>
+    </polygon>
+    <polygon
+       points="160,170 130,170 130,180 150,180 150,200 160,200 "
+       id="polygon62"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc64">V</desc>
+    </polygon>
+    <polygon
+       points="170,190 180,190 180,180 170,180 170,160 160,160 160,200 170,200 "
+       id="polygon66"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc68">Y</desc>
+    </polygon>
+    <polygon
+       points="120,170 110,170 110,160 90,160 90,170 100,170 100,180 110,180 110,190 120,190 "
+       id="polygon82"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc84">W</desc>
+    </polygon>
+    <polygon
+       points="140,180 130,180 130,160 110,160 110,170 120,170 120,190 140,190 "
+       id="polygon86"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc88">Z</desc>
+    </polygon>
+    <polygon
+       points="200,160 220,160 220,150 200,150 200,140 190,140 190,170 200,170 "
+       id="polygon110"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc112">T</desc>
+    </polygon>
+    <polygon
+       points="130,150 120,150 120,140 90,140 90,150 110,150 110,160 130,160 "
+       id="polygon126"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc128">N</desc>
+    </polygon>
+    <polygon
+       points="190,140 180,140 180,150 170,150 170,140 160,140 160,160 190,160 "
+       id="polygon134"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc136">U</desc>
+    </polygon>
+    <polygon
+       points="130,140 160,140 160,130 120,130 120,150 130,150 "
+       id="polygon142"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc144">L</desc>
+    </polygon>
+    <polygon
+       points="180,140 190,140 190,130 180,130 180,120 170,120 170,130 160,130 160,140 170,140 170,150 180,150 "
+       id="polygon150"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc152">X</desc>
+    </polygon>
+    <polygon
+       points="150,80 140,80 140,130 150,130 "
+       id="polygon182"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc184">I</desc>
+    </polygon>
+    <polygon
+       points="170,110 160,110 160,100 150,100 150,130 170,130 "
+       id="polygon186"
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+      <desc
+         id="desc188">P</desc>
+    </polygon>
+  </g>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon190"
+     points="190,120 200,120 200,90 190,90 190,100 180,100 180,130 190,130 ">
+    <desc
+       id="desc192">N06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon194"
+     points="220,100 200,100 200,130 220,130 ">
+    <desc
+       id="desc196">O06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon198"
+     points="120,110 110,110 110,100 120,100 120,90 110,90 110,80 100,80 100,120 120,120 ">
+    <desc
+       id="desc200">U06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon202"
+     points="180,100 190,100 190,90 160,90 160,110 170,110 170,120 180,120 ">
+    <desc
+       id="desc204">R06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon206"
+     points="130,100 140,100 140,90 130,90 130,80 110,80 110,90 120,90 120,100 110,100 110,110 130,110 ">
+    <desc
+       id="desc208">E06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon210"
+     points="160,80 170,80 170,60 150,60 150,100 160,100 ">
+    <desc
+       id="desc212">P06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon214"
+     points="140,80 150,80 150,70 120,70 120,60 110,60 110,80 130,80 130,90 140,90 ">
+    <desc
+       id="desc216">F16</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon218"
+     points="200,80 180,80 180,60 170,60 170,80 160,80 160,90 200,90 ">
+    <desc
+       id="desc220">T16</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon222"
+     points="150,60 160,60 160,40 150,40 150,50 140,50 140,60 120,60 120,70 150,70 ">
+    <desc
+       id="desc224">W06</desc>
+  </polygon>
+  <polygon
+     style="fill:#d40000;stroke:#ffffff;stroke-width:1"
+     id="polygon226"
+     points="140,50 150,50 150,10 140,10 140,40 130,40 130,60 140,60 ">
+    <desc
+       id="desc228">N16</desc>
+  </polygon>
+</svg>

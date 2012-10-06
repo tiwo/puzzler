@@ -264,7 +264,7 @@ class Puzzle(object):
                 coords, aspect = self.pieces[key][aspect_index]
                 translated = aspect.translate(offset)
                 self.build_matrix_row(key, translated)
-                keys.remove(key)
+            keys.remove(key)
         self.build_regular_matrix(keys)
 
     def record_solution(self, solution, solver, stream=sys.stdout, dated=False):

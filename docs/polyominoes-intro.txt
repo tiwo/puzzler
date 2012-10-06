@@ -18,6 +18,7 @@
 
    * `Polyominoes: Puzzles & Solutions <polyominoes.html>`_
    * `Pentominoes: Puzzles & Solutions <pentominoes.html>`_
+   * `Hexominoes: Puzzles & Solutions <hexominoes.html>`_
    * `Solid Pentominoes: Puzzles & Solutions <solid-pentominoes.html>`_
    * `Notes on Polyominoes <polyomino-notes.html>`_
    * `Polyform Puzzler: Puzzles & Solutions <puzzles.html>`_
@@ -37,11 +38,12 @@ Here is a puzzle containing all the polyominoes of order 1 through 5:
 
 .. image:: images/polyominoes-12345-cross-1.png
 
-See `Polyominoes: Puzzles & Solutions`_ and `Pentominoes: Puzzles &
-Solutions`_ for many more puzzles.
+See `Polyominoes: Puzzles & Solutions`_, `Pentominoes: Puzzles &
+Solutions`_, and `Hexominoes: Puzzles & Solutions`_ for many more
+puzzles.
 
 Polyominoes were named and studied by Solomon Golomb and popularized
-by Martin Gardner in `Scientific American` magazine in the 1950's.
+by Martin Gardner in `Scientific American` magazine in the 1950s.
 Pentominoes may have been first featured in a puzzle in 1907
 (Dudeney's `The Canterbury Puzzles`), although the history of
 polyforms may go back much further.  The tetrominoes are well known
@@ -85,16 +87,16 @@ from `The On-Line Encyclopedia of Integer Sequences
 .. _A000105: http://oeis.org/A000105
 .. _A000988: http://oeis.org/A000988
 
-Examples of the polyominoes from order 1 (monomino) to order 5
-(pentominoes) are given in the tables below.
+Examples of the polyominoes from order 1 (monomino) to order 6
+(hexominoes) are given in the tables below.
 
 The polyominoes are named with letters (like the pentomino "X") or a
-letter-number scheme (like the "I3" tromino).  The traditional names
-for the pentominoes are used by Polyform Puzzler, without a number
-suffix.  The rest of the polyomino names correspond loosely to Kadon's
-names for their `Poly-4 Supplement`_ set (exceptions noted in the
-tables below).  Kadon also has `a naming system for hexominoes`__ (not
-covered here).
+letter-number scheme (like the "I3" tromino or the "X06" hexomino).
+The traditional names for the pentominoes are used by Polyform
+Puzzler, without a number suffix.  The names of the hexominoes_ below
+roughly correspond to the Kadon `naming system for hexominoes`__.  The
+rest of the polyomino names correspond loosely to Kadon's names for
+their `Poly-4 Supplement`_ set (exceptions noted in the tables below).
 
 __ http://www.gamepuzzles.com/sxnames.htm
 
@@ -102,7 +104,10 @@ The initial letter of each name is the letter of the alphabet that the
 polyomino most closely resembles, or an initial.  In some cases, that
 resemblance is weak, and the letters are arbitrary.  The final digit
 of the number represents the polyform order (how many unit squares are
-in the polyomino).
+in the polyomino).  For the hexominoes, some letters are used for
+multiple pieces (there are more pieces than letters in the alphabet),
+so a middle index digit is used to differentiate (e.g. "X06" and
+"X16").
 
 .. _table legend:
 
@@ -232,7 +237,7 @@ tetrominoes:
 Pentominoes
 -----------
 
-There are 12 free pentominoes (order-5 polyomino) and 18 one-sided
+There are 12 free pentominoes (order-5 polyominoes) and 18 one-sided
 pentominoes:
 
 .. list-table::
@@ -303,6 +308,223 @@ pentominoes:
      - .. image:: images/pieces/polyominoes/Z.png
      - 4
      - yes
+
+
+Hexominoes
+----------
+
+There are 35 free hexominoes (order-6 polyominoes) and 60 one-sided
+hexominoes:
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+
+   * - | A06
+       | (Kadon's "A")
+     - .. image:: images/pieces/polyominoes/A06.png
+     - 4
+     - 
+
+   * - C06
+     - .. image:: images/pieces/polyominoes/C06.png
+     - 4
+     - 
+
+   * - D06
+     - .. image:: images/pieces/polyominoes/D06.png
+     - 4
+     - 
+
+   * - E06
+     - .. image:: images/pieces/polyominoes/E06.png
+     - 4
+     - 
+
+   * - | F06
+       | ("hi F")
+     - .. image:: images/pieces/polyominoes/F06.png
+     - 8
+     - yes
+
+   * - | F16
+       | ("low F")
+     - .. image:: images/pieces/polyominoes/F16.png
+     - 8
+     - yes
+
+   * - | F26
+       | ("hi 4")
+     - .. image:: images/pieces/polyominoes/F26.png
+     - 8
+     - yes
+
+   * - | F36
+       | ("low 4")
+     - .. image:: images/pieces/polyominoes/F36.png
+     - 8
+     - yes
+
+   * - G06
+     - .. image:: images/pieces/polyominoes/G06.png
+     - 8
+     - yes
+
+   * - H06
+     - .. image:: images/pieces/polyominoes/H06.png
+     - 8
+     - yes
+
+   * - I06
+     - .. image:: images/pieces/polyominoes/I06.png
+     - 2
+     - 
+
+   * - J06
+     - .. image:: images/pieces/polyominoes/J06.png
+     - 8
+     - yes
+
+   * - K06
+     - .. image:: images/pieces/polyominoes/K06.png
+     - 4
+     - 
+
+   * - L06
+     - .. image:: images/pieces/polyominoes/L06.png
+     - 8
+     - yes
+
+   * - M06
+     - .. image:: images/pieces/polyominoes/M06.png
+     - 8
+     - yes
+
+   * - | N06 [*]_
+       | ("short N")
+     - .. image:: images/pieces/polyominoes/N06.png
+     - 4
+     - yes
+
+   * - | N16
+       | ("long N")
+     - .. image:: images/pieces/polyominoes/N16.png
+     - 8
+     - yes
+
+   * - O06
+     - .. image:: images/pieces/polyominoes/O06.png
+     - 2
+     - 
+
+   * - P06
+     - .. image:: images/pieces/polyominoes/P06.png
+     - 8
+     - yes
+
+   * - Q06
+     - .. image:: images/pieces/polyominoes/Q06.png
+     - 8
+     - yes
+
+   * - R06
+     - .. image:: images/pieces/polyominoes/R06.png
+     - 8
+     - yes
+
+   * - | S06
+       | ("long S")
+     - .. image:: images/pieces/polyominoes/S06.png
+     - 4
+     - yes
+
+   * - | T06
+       | ("long T")
+     - .. image:: images/pieces/polyominoes/T06.png
+     - 4
+     - 
+
+   * - | T16
+       | ("short T")
+     - .. image:: images/pieces/polyominoes/T16.png
+     - 8
+     - yes
+
+   * - U06
+     - .. image:: images/pieces/polyominoes/U06.png
+     - 8
+     - yes
+
+   * - V06
+     - .. image:: images/pieces/polyominoes/V06.png
+     - 8
+     - yes
+
+   * - | W06
+       | ("Wa")
+     - .. image:: images/pieces/polyominoes/W06.png
+     - 8
+     - yes
+
+   * - | W16
+       | ("Wb")
+     - .. image:: images/pieces/polyominoes/W16.png
+     - 4
+     - yes
+
+   * - | W26
+       | ("Wc")
+     - .. image:: images/pieces/polyominoes/W26.png
+     - 8
+     - yes
+
+   * - X06
+     - .. image:: images/pieces/polyominoes/X06.png
+     - 4
+     - 
+
+   * - | X16
+       | ("italic X")
+     - .. image:: images/pieces/polyominoes/X16.png
+     - 4
+     - yes
+
+   * - | Y06
+       | ("hi Y")
+     - .. image:: images/pieces/polyominoes/Y06.png
+     - 8
+     - yes
+
+   * - | Y16
+       | ("low Y")
+     - .. image:: images/pieces/polyominoes/Y16.png
+     - 4
+     - 
+
+   * - | Z06
+       | ("long Z")
+     - .. image:: images/pieces/polyominoes/Z06.png
+     - 4
+     - yes
+
+   * - | Z16
+       | ("short Z")
+     - .. image:: images/pieces/polyominoes/Z16.png
+     - 8
+     - yes
+
+.. [*] Kadon's `Sextillions`_ set includes a second copy of N06 called
+       "short S", also adopted by Polyform Puzzler's `Hexominoes
+       Plus`_ as "S16".
+
+.. _Sextillions: http://gamepuzzles.com/polycub2.htm#SX
+
+.. _Hexominoes Plus: hexominoes.html#hexominoes-plus
 
 
 Coordinate System

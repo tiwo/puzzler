@@ -186,6 +186,131 @@ class PentominoesPlusTetrominoes(Pentominoes):
     piece_colors.update(Tetrominoes.piece_colors)
 
 
+class Hexominoes(Polyominoes):
+
+    piece_data = {
+        'A06': ((( 0,1), ( 0,2), (1, 1), (1,2), (2,2)), {}),
+        'C06': ((( 0,1), ( 0,2), (0, 3), (1,0), (1,3)), {}),
+        'D06': ((( 0,1), ( 0,2), (0, 3), (1,1), (1,2)), {}),
+        'E06': (((-1,1), ( 0,1), (0, 2), (1,0), (1,2)), {}),
+        'F06': (((-1,2), ( 0,1), (0, 2), (0,3), (1,3)), {}), # hi F
+        'F16': (((-1,1), ( 0,1), (0, 2), (0,3), (1,3)), {}), # low F
+        'F26': (((-2,1), (-1,1), (0, 1), (0,2), (1,2)), {}), # hi 4
+        'F36': (((-1,1), ( 0,1), (0, 2), (1,2), (2,2)), {}), # low 4
+        'G06': ((( 0,1), ( 0,2), (1,-1), (1,0), (1,2)), {}),
+        'H06': ((( 0,1), ( 0,2), (1, 1), (2,0), (2,1)), {}),
+        'I06': ((( 0,1), ( 0,2), (0, 3), (0,4), (0,5)), {}),
+        'J06': ((( 0,1), ( 1,0), (2, 0), (2,1), (2,2)), {}),
+        'K06': ((( 0,1), ( 1,0), (1, 1), (1,2), (2,1)), {}),
+        'L06': ((( 0,1), ( 0,2), (0, 3), (0,4), (1,0)), {}),
+        'M06': ((( 0,1), ( 1,1), (2, 1), (2,2), (3,2)), {}),
+        'N06': ((( 0,1), ( 0,2), (1, 1), (1,2), (1,3)), {}), # short N
+        'N16': ((( 0,1), ( 0,2), (0, 3), (1,3), (1,4)), {}), # long N
+        'O06': ((( 0,1), ( 0,2), (1, 0), (1,1), (1,2)), {}),
+        'P06': ((( 0,1), ( 0,2), (0, 3), (1,2), (1,3)), {}),
+        'Q06': (((-1,1), (-1,2), (0, 1), (0,2), (1,0)), {}),
+        'R06': ((( 0,1), ( 0,2), (1, 1), (1,2), (2,1)), {}),
+        'S06': (((-1,2), (-1,3), (-1,4), (0,1), (0,2)), {}), # long S
+        'T06': (((-1,3), ( 0,1), (0, 2), (0,3), (1,3)), {}), # long T
+        'T16': (((-1,2), ( 0,1), (0, 2), (1,2), (2,2)), {}), # short T
+        'U06': ((( 0,1), ( 1,0), (2, 0), (2,1), (3,0)), {}),
+        'V06': ((( 1,0), ( 2,0), (2, 1), (2,2), (2,3)), {}),
+        'W06': ((( 1,0), ( 1,1), (2, 1), (2,2), (2,3)), {}), # Wa
+        'W16': ((( 1,0), ( 1,1), (2, 1), (2,2), (3,2)), {}), # Wb
+        'W26': ((( 1,0), ( 1,1), (2, 1), (2,2), (3,1)), {}), # Wc
+        'X06': (((-1,1), ( 0,1), (0, 2), (0,3), (1,1)), {}),
+        'X16': (((-1,1), ( 0,1), (0, 2), (0,3), (1,2)), {}), # italic X
+        'Y06': (((-1,3), ( 0,1), (0, 2), (0,3), (0,4)), {}), # hi Y
+        'Y16': (((-1,2), ( 0,1), (0, 2), (0,3), (0,4)), {}), # low Y
+        'Z06': (((-1,3), ( 0,1), (0, 2), (0,3), (1,0)), {}), # long Z
+        'Z16': (((-1,2), ( 0,1), (0, 2), (1,0), (2,0)), {}), # short Z
+        }
+    """(0,0) is implied."""
+
+    symmetric_pieces = 'A06 C06 D06 E06 I06 K06 O06 T06 X06 Y16'.split()
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = (
+        'F06 F16 F26 F36 G06 H06 J06 L06 M06 N06 N16 P06 Q06 R06 S06 T16 '
+        'U06 V06 W06 W16 W26 X16 Y06 Z06 Z16').split()
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+    piece_colors = {
+        'A06': 'blue',
+        'C06': 'red',
+        'D06': 'green',
+        'E06': 'lime',
+        'F06': 'navy',
+        'F16': 'magenta',
+        'F26': 'darkorange',
+        'F36': 'turquoise',
+        'G06': 'blueviolet',
+        'H06': 'maroon',
+        'I06': 'gold',
+        'J06': 'plum',
+        'K06': 'blue',
+        'L06': 'red',
+        'M06': 'green',
+        'N06': 'lime',
+        'N16': 'navy',
+        'O06': 'magenta',
+        'P06': 'darkorange',
+        'Q06': 'turquoise',
+        'R06': 'blueviolet',
+        'S06': 'maroon',
+        'T06': 'gold',
+        'T16': 'plum',
+        'U06': 'blue',
+        'V06': 'red',
+        'W06': 'green',
+        'W16': 'lime',
+        'W26': 'navy',
+        'X06': 'magenta',
+        'X16': 'darkorange',
+        'Y06': 'turquoise',
+        'Y16': 'blueviolet',
+        'Z06': 'maroon',
+        'Z16': 'gold',
+        '0': 'gray',
+        '1': 'black'}
+
+    # for format_solution:
+    piece_width = 4
+
+
+class OneSidedHexominoes(OneSidedLowercaseMixin, Hexominoes):
+
+    pass
+
+
+class HexominoesPlus(Hexominoes):
+
+    """
+    Also known as Kadon's 'Sextillions', these are the hexominoes with a
+    second N06 piece (a.k.a. S16), total 36 pieces, allowing the construction
+    of rectangles.  See http://gamepuzzles.com/polycub2.htm#SX.
+    """
+
+    piece_data = copy.deepcopy(Hexominoes.piece_data)
+    piece_data['S16'] = copy.deepcopy(piece_data['N06'])
+    piece_colors = copy.deepcopy(Hexominoes.piece_colors)
+    piece_colors['S16'] = piece_colors['N06']
+    asymmetric_pieces = Hexominoes.asymmetric_pieces + ['S16']
+
+    def format_solution(self, solution, normalized=True,
+                        x_reversed=False, y_reversed=False):
+        """
+        Consider N06 and S16 as the same piece for solution counting purposes.
+        """
+        formatted = Hexominoes.format_solution(
+            self, solution, normalized, x_reversed=x_reversed,
+            y_reversed=y_reversed)
+        if normalized:
+            return formatted.replace('S16', 'N06')
+        else:
+            return formatted
+
+
 class Polyominoes12(Polyominoes):
 
     piece_data = copy.deepcopy(Monomino.piece_data)
@@ -283,5 +408,25 @@ class Polyominoes45(Polyominoes):
 
 
 class OneSidedPolyominoes45(OneSidedLowercaseMixin, Polyominoes45):
+
+    pass
+
+
+class Polyominoes123456(Polyominoes12345):
+
+    piece_data = copy.deepcopy(Polyominoes12345.piece_data)
+    piece_data.update(copy.deepcopy(Hexominoes.piece_data))
+    symmetric_pieces = (
+        Polyominoes12345.symmetric_pieces + Hexominoes.symmetric_pieces)
+    asymmetric_pieces = (
+        Polyominoes12345.asymmetric_pieces + Hexominoes.asymmetric_pieces)
+    piece_colors = copy.deepcopy(Polyominoes12345.piece_colors)
+    piece_colors.update(Hexominoes.piece_colors)
+
+    # for format_solution:
+    piece_width = 4
+
+
+class OneSidedPolyominoes123456(OneSidedLowercaseMixin, Polyominoes123456):
 
     pass

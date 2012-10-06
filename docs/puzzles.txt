@@ -39,7 +39,7 @@ viewing software.
 .. _Polyform Puzzler FAQ: FAQ.html
 
 
-* Polyominoes_ (pentominoes_ & variations)
+* Polyominoes_ (pentominoes_, hexominoes_, & variations)
 
   .. list-table::
      :class: borderless
@@ -61,6 +61,16 @@ viewing software.
          .. image:: images/one-sided-polyominoes-1234-octagon-small.png
             :target: pentominoes.html
             :class: borderless
+
+  .. list-table::
+     :class: borderless
+
+     * - `Hexominoes <hexominoes.html>`_
+
+         .. image:: images/hexominoes-parallelogram-35x6-small.png
+            :target: hexominoes.html
+            :class: borderless
+
 
   Also see:
 
@@ -112,11 +122,10 @@ viewing software.
             :target: pentahexes.html
             :class: borderless
 
-       - `Polyhexes of Order 1 Through 4
-         <polyhexes.html#polyhexes-of-order-1-through-4>`_
+       - Polyhexes_
 
          .. image:: images/polyhex-5x8-small.png
-            :target: polyhexes.html#polyhexes-of-order-1-through-4
+            :target: polyhexes.html
             :class: borderless
 
   Also see:
@@ -171,8 +180,7 @@ viewing software.
             :target: polysticks.html#tetrasticks
             :class: borderless
 
-       - `Polysticks of Order 1 Through 4
-         <polysticks.html#polysticks-of-order-1-through-4>`_
+       - Polysticks_
 
          .. image:: images/polysticks-3x7-diamond-lattice-small.png
             :target: polysticks.html#polysticks-of-order-1-through-4
@@ -194,7 +202,7 @@ viewing software.
             :target: polytrigs.html#tritrigs
             :class: borderless
 
-       - `Polytrigs of Order 1 Through 3
+       - `Polytrigs
          <polytrigs.html#polytrigs-of-order-1-through-3>`_
 
          .. image:: images/polytrigs-123-4x3-small.png
@@ -217,7 +225,7 @@ viewing software.
             :target: polytwigs.html#pentatwigs
             :class: borderless
 
-       - `Polytwigs of Order 1 Through 4
+       - `Polytwigs
          <polytwigs.html#polytwigs-of-order-1-through-4>`_
 
          .. image:: images/polytwigs-1234-hex-1-small.png
