@@ -108,3 +108,9 @@ class Polyominoes123456Star(Polyominoes123456):
             self.build_regular_matrix(
                 sorted(polyominoes.Hexominoes.piece_data.keys()),
                 sorted(self.outer_ring_coords))
+
+
+class Polyominoes123456_23x13(Polyominoes123456):
+
+    width = 23
+    height = 13
