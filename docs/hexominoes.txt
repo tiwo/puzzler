@@ -109,9 +109,9 @@ bases (e.g. 30x7 & 42x5).
   (Hexomino Constructions)
   <http://recmath.com/PolyPages/PolyPages/index.htm?hexopatts.htm>`_):
   `solutions incomplete
-  <../solutions/hexominoes-parallelogram-15x14.txt>`__
+  <../solutions/hexominoes-parallelogram-21x10.txt>`__
 
-  .. image:: images/hexominoes-parallelogram-15x14.png
+  .. image:: images/hexominoes-parallelogram-21x10.png
 
 - 35x6 parallelogram: `solutions incomplete
   <../solutions/hexominoes-parallelogram-35x6.txt>`__
@@ -129,14 +129,14 @@ Misc
   .. image:: images/hexominoes-triangle.png
 
 - Rhombus (design by David Bird from `Andrew Clarke's Poly Pages
-  <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyominoes.html>`_):
-  `solutions incomplete <../solutions/hexominoes-rhombus.txt>`__
+  (Hexomino Constructions)`_): `solutions incomplete
+  <../solutions/hexominoes-rhombus.txt>`__
 
   .. image:: images/hexominoes-rhombus.png
 
-- Cross (design from `Andrew Clarke's Poly Pages
-  <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyominoes.html>`_):
-  `solutions incomplete <../solutions/hexominoes-cross-1.txt>`__
+- Cross (design from `Andrew Clarke's Poly Pages (Hexomino
+  Constructions)`_): `solutions incomplete
+  <../solutions/hexominoes-cross-1.txt>`__
 
   .. image:: images/hexominoes-cross-1.png
 
