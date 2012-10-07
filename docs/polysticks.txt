@@ -202,9 +202,9 @@ This puzzle uses the 1 monostick, 2 disticks, 5 tristicks, and 16
 tetrasticks, for a total of 84 line segments.
 
 * 7x7 grid: `solutions incomplete
-  <../solutions/sticks/polysticks-7x7.txt>`__
+  <../solutions/sticks/polysticks-1234-7x7.txt>`__
 
-  .. image:: images/sticks/polysticks-7x7.png
+  .. image:: images/sticks/polysticks-1234-7x7.png
 
 * 10x5 grid (with a hole): `solutions incomplete
   <../solutions/sticks/polysticks-1234-10x5.txt>`__
@@ -212,9 +212,9 @@ tetrasticks, for a total of 84 line segments.
   .. image:: images/sticks/polysticks-1234-10x5.png
 
 * 3x7 diamond lattice: `solutions incomplete
-  <../solutions/sticks/polysticks-3x7-diamond-lattice.txt>`__
+  <../solutions/sticks/polysticks-1234-3x7-diamond-lattice.txt>`__
 
-  .. image:: images/sticks/polysticks-3x7-diamond-lattice.png
+  .. image:: images/sticks/polysticks-1234-3x7-diamond-lattice.png
 
 * Truncated diamond lattices:
 

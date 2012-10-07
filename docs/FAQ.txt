@@ -358,7 +358,7 @@ ones.  Polyform families are given descriptive names:
   polyominoes: polysticks can be thought of as paths joining the
   centers of the squares of polyominoes.
 
-  .. figure:: images/sticks/polysticks-3x7-diamond-lattice.png
+  .. figure:: images/sticks/polysticks-1234-3x7-diamond-lattice.png
 
      Polysticks of Order 1-4 in a 3 |x| 7 Diamond Lattice
 
