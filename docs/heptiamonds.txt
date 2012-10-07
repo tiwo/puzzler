@@ -118,23 +118,25 @@ Triangles
   .. image:: images/iamonds/heptiamonds-sawtooth-triangle.png
 
 
-Trapezia
-========
+Trapezoids
+==========
+
+*Brit.* trapezium.
 
 - 12x13: `solutions incomplete
-  <../solutions/iamonds/heptiamonds-12x13-trapezium.txt>`__
+  <../solutions/iamonds/heptiamonds-12x13-trapezoid.txt>`__
 
-  .. image:: images/iamonds/heptiamonds-12x13-trapezium.png
+  .. image:: images/iamonds/heptiamonds-12x13-trapezoid.png
 
 - 6x17: `solutions incomplete
-  <../solutions/iamonds/heptiamonds-6x17-trapezium.txt>`__
+  <../solutions/iamonds/heptiamonds-6x17-trapezoid.txt>`__
 
-  .. image:: images/iamonds/heptiamonds-6x17-trapezium.png
+  .. image:: images/iamonds/heptiamonds-6x17-trapezoid.png
 
 - 4x23: `solutions incomplete
-  <../solutions/iamonds/heptiamonds-4x23-trapezium.txt>`__
+  <../solutions/iamonds/heptiamonds-4x23-trapezoid.txt>`__
 
-  .. image:: images/iamonds/heptiamonds-4x23-trapezium.png
+  .. image:: images/iamonds/heptiamonds-4x23-trapezoid.png
 
 
 Chevrons

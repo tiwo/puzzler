@@ -259,7 +259,7 @@ class HeptiamondsSawtoothTriangle(Heptiamonds):
         self.piece_data['W7'][-1]['flips'] = None
 
 
-class Heptiamonds12x13Trapezium(Heptiamonds):
+class Heptiamonds12x13Trapezoid(Heptiamonds):
 
     """many solutions"""
 
@@ -277,7 +277,7 @@ class Heptiamonds12x13Trapezium(Heptiamonds):
         self.piece_data['W7'][-1]['flips'] = None
 
 
-class Heptiamonds6x17Trapezium(Heptiamonds12x13Trapezium):
+class Heptiamonds6x17Trapezoid(Heptiamonds12x13Trapezoid):
 
     """many solutions"""
 
@@ -285,7 +285,7 @@ class Heptiamonds6x17Trapezium(Heptiamonds12x13Trapezium):
     width = 17
 
 
-class Heptiamonds4x23Trapezium(Heptiamonds12x13Trapezium):
+class Heptiamonds4x23Trapezoid(Heptiamonds12x13Trapezoid):
 
     """many solutions"""
 

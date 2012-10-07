@@ -230,10 +230,10 @@ Hexagon-Grid Shapes
 Miscellaneous
 -------------
 
-* 4x11 trapezium: `76 solutions
-  <../solutions/iamonds/hexiamonds-4x11-trapezium.txt>`__
+* 4x11 trapezoid: `76 solutions
+  <../solutions/iamonds/hexiamonds-4x11-trapezoid.txt>`__
 
-  .. image:: images/iamonds/hexiamonds-4x11-trapezium.png
+  .. image:: images/iamonds/hexiamonds-4x11-trapezoid.png
 
 * 5x8 stacked long butterflies: `290 solutions
   <../solutions/iamonds/hexiamonds-5x8-stacked-long-butterflies.txt>`__
