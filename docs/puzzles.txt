@@ -59,7 +59,7 @@ viewing software.
        - `Polyominoes <polyominoes.html>`_
 
          .. image:: images/ominoes/one-sided-polyominoes-1234-octagon-small.png
-            :target: pentominoes.html
+            :target: polyominoes.html
             :class: borderless
 
   .. list-table::
@@ -97,7 +97,7 @@ viewing software.
        - `Polyiamonds <polyiamonds.html>`_
 
          .. image:: images/iamonds/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2-small.png
-            :target: hexiamonds.html
+            :target: polyiamonds.html
             :class: borderless
 
   Also see:
