@@ -172,19 +172,23 @@ Misc
 
             `27 solutions
             <../solutions/cubes/solid-pentominoes-tower-1.txt>`__
-            (core hollow; design by David Klarner)
+            (core hollow; design by David Klarner; `X3D model
+            <images/cubes/solid-pentominoes-tower-1.x3d>`__)
 
        - .. figure:: images/cubes/solid-pentominoes-tower-2.png
 
             `10 solution
             <../solutions/cubes/solid-pentominoes-tower-2.txt>`__
-            (core hollow; design by David Klarner)
+            (core hollow; design by David Klarner; `X3D model
+            <images/cubes/solid-pentominoes-tower-2.x3d>`__)
 
        - .. figure:: images/cubes/solid-pentominoes-tower-3.png
 
             `many solutions
-            <../solutions/cubes/solid-pentominoes-tower-3.txt>`__ (design by
-            Leslie Young, via `Kadon's Quintillions`_ booklet)
+            <../solutions/cubes/solid-pentominoes-tower-3.txt>`__
+            (design by Leslie Young, via `Kadon's Quintillions`_
+            booklet; ; `X3D model
+            <images/cubes/solid-pentominoes-tower-3.x3d>`__)
 
 * Ohno's block (design by Yoshio Ohno, via `Kadon's Quintillions`_
   booklet, titled "A Gift From Japan"): `1 solution
