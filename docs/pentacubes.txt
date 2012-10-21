@@ -223,6 +223,12 @@ Misc
 
   .. image:: images/cubes/pentacubes-2x13x13-diamond-frame.png
 
+* 2x13x13 diamond panel:
+  `solutions incomplete <../solutions/cubes/pentacubes-diamond-panel.txt>`__
+  (`X3D model <images/cubes/pentacubes-diamond-panel.x3d>`__)
+
+  .. image:: images/cubes/pentacubes-diamond-panel.png
+
 * 2x3x2 chair (suggestion from Nick Maeder):
   `17 solutions <../solutions/cubes/pentacubes-2x3x2-chair.txt>`__
   (`X3D model <images/cubes/pentacubes-2x3x2-chair.x3d>`__).
@@ -238,6 +244,14 @@ Misc
   (`X3D model <images/cubes/pentacubes-11x11x5-pyramid.x3d>`__)
 
   .. image:: images/cubes/pentacubes-11x11x5-pyramid.png
+
+* Pyramid with spire (design from `Torsten Sillke's pages [1992]
+  <http://www.mathematik.uni-bielefeld.de/~sillke/CONTEST/pentaPRB>`_):
+  `solutions incomplete
+  <../solutions/cubes/pentacubes-pyramid-spire.txt>`__
+  (`X3D model <images/cubes/pentacubes-pyramid-spire.x3d>`__)
+
+  .. image:: images/cubes/pentacubes-pyramid-spire.png
 
 * 7x7x5 block: `solutions incomplete
   <../solutions/cubes/pentacubes-7x7x5-block.txt>`__

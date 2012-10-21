@@ -300,7 +300,8 @@ Potential Puzzles
 Misc
 ====
 
-* Tetrasticks horizontal/vertical imbalance (abs(vertical - horizontal))::
+* Tetrasticks horizontal/vertical parity imbalance
+  (abs(vertical - horizontal))::
 
       I L Y V T X U N J H F Z R W P O
       4 2 2 0 0 0 0 2 2 2 0 0 0 0 0 0

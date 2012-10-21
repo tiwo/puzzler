@@ -966,7 +966,7 @@ class Puzzle3D(Puzzle):
         return s_matrix
 
     def swap_yz_transform(self, s_matrix):
-        """Common solution matrix transform: Z, Y = reversed(Y), Z."""
+        """Common solution matrix transform: X, Z, reversed(Y)."""
         return [[[s_matrix[z][y][x] for x in range(self.width)]
                  for z in range(self.depth)]
                 for y in reversed(range(self.height))]

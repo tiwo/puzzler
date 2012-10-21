@@ -415,6 +415,31 @@ class Pentacubes11x11x5Pyramid(Pentacubes):
                         yield (x, y, z)
 
 
+class PentacubesPyramidSpire(Pentacubes):
+
+    """
+    many solutions
+
+    design from `Torsten Sillke's pages [1992]`_
+    """
+
+    width = 9
+    height = 9
+    depth = 9
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(5):
+            layer = Puzzle2D.coordinates_diamond(6 - i, offset=(i-1,i-1))
+            for (x,y) in layer:
+                coords.add(self.coordinate_offset(x, y, i, None))
+        coords.update(set(self.coordinates_cuboid(1, 1, 9, offset=(4,4,0))))
+        coords.intersection_update(set(self.coordinates_cuboid(9, 9, 9)))
+        return sorted(coords)
+
+
 class Pentacubes9x9x9OctahedralPlanes(Pentacubes):
 
     """
@@ -456,6 +481,24 @@ class Pentacubes2x13x13DiamondFrame(Pentacubes):
                 for x in range(self.width):
                     if z * 4 <= abs(x - 6) + abs(y - 6) < 7:
                         yield (x, y, z)
+
+
+class PentacubesDiamondPanel(Pentacubes):
+
+    """many solutions"""
+
+    width = 13
+    height = 13
+    depth = 2
+
+    def coordinates(self):
+        coords = set()
+        for i in range(2):
+            layer = Puzzle2D.coordinates_diamond(7 - i, offset=(i,i))
+            for (x,y) in layer:
+                coords.add(self.coordinate_offset(x, y, i, None))
+        coords.remove((6,6,1))
+        return sorted(coords)
 
 
 class Pentacubes2x3x2Chair(Pentacubes):

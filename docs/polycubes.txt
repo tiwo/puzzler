@@ -637,6 +637,128 @@ and 29 pentacubes, for a total of 186 unit cubes.
   .. image:: images/cubes/polycubes-12345-diamond-wall.png
 
 
+Solid Hexominoes
+================
+
+These puzzles use the 35 solid hexominoes (planar hexacubes), for a
+total of 210 unit cubes.
+
+* 13x5x4 stepped block (design from `Andrew Clarke's Poly Pages
+  <http://www.recmath.com/PolyPages/PolyPages/Polycubes.html>`_):
+  `solutions incomplete
+  <../solutions/cubes/solid-hexominoes-stepped-block-13x5x4.txt>`__
+  (`X3D model
+  <images/cubes/solid-hexominoes-stepped-block-13x5x4.x3d>`__)
+
+  .. image:: images/cubes/solid-hexominoes-stepped-block-13x5x4.png
+
+* 9x5x8 stepped block: `solutions incomplete
+  <../solutions/cubes/solid-hexominoes-stepped-block-9x5x8.txt>`__ (`X3D
+  model <images/cubes/solid-hexominoes-stepped-block-9x5x8.x3d>`__)
+
+  .. image:: images/cubes/solid-hexominoes-stepped-block-9x5x8.png
+
+* 9x9x3 block 1 (design from `Andrew Clarke's Poly Pages`_; central cube in
+  middle layer is empty):
+  `solutions incomplete
+  <../solutions/cubes/solid-hexominoes-9x9x3-1.txt>`__
+  (`X3D model
+  <images/cubes/solid-hexominoes-9x9x3-1.x3d>`__)
+
+  .. image:: images/cubes/solid-hexominoes-9x9x3-1.png
+
+* 9x9x3 block 2 (design from `Andrew Clarke's Poly Pages`_):
+  `solutions incomplete
+  <../solutions/cubes/solid-hexominoes-9x9x3-2.txt>`__
+  (`X3D model
+  <images/cubes/solid-hexominoes-9x9x3-2.x3d>`__)
+
+  .. image:: images/cubes/solid-hexominoes-9x9x3-2.png
+
+
+Solid Hexominoes Plus
+=====================
+
+These puzzles use the 35 solid hexominoes (planar hexacubes), plus a
+second copy of the N06 piece (called S16), for a total of 216 unit
+cubes (which equals 6³).
+
+* 6x6x6 cube (6³): `solutions incomplete
+  <../solutions/cubes/solid-hexominoes-plus-6x6x6.txt>`__ (`X3D
+  model <images/cubes/solid-hexominoes-plus-6x6x6.x3d>`__)
+
+  .. image:: images/cubes/solid-hexominoes-plus-6x6x6.png
+
+* 11x6x6 steps: `solutions incomplete
+  <../solutions/cubes/solid-hexominoes-plus-steps-11x6x6.txt>`__ (`X3D
+  model <images/cubes/solid-hexominoes-plus-steps-11x6x6.x3d>`__)
+
+  .. image:: images/cubes/solid-hexominoes-plus-steps-11x6x6.png
+
+
+6³ Cubes: Polycubes of Order 1 Through 5 Plus Select Hexacubes
+==============================================================
+
+These puzzles use the 1 monocube, 1 dicube, 2 tricubes, 8 tetracubes,
+29 pentacubes, and a selection of 5 hexacubes, for a total of 216 unit
+cubes (which equals 6³).  The 5 hexacubes chosen (arbitrarily, as "the
+five most interesting") are as follows.  (Names in parentheses are
+from `Kadon's hexacube naming system
+<http://www.gamepuzzles.com/hxnames.htm>`_.):
+
+.. list-table::
+   :class: borderless compact
+
+   * - .. figure:: images/pieces/polycubes/Ba6.png
+
+          Ba6 (B)
+
+     - .. figure:: images/pieces/polycubes/Nt6.png
+
+          Nt6 (N2b3)
+
+     - .. figure:: images/pieces/polycubes/O06.png
+
+          O06 (O)
+
+     - .. figure:: images/pieces/polycubes/Qe6.png
+
+          Qe6 (Q4b1)
+
+     - .. figure:: images/pieces/polycubes/Tp6.png
+
+          Tp6 (T4b4)
+
+This set of polycubes was selected because it can be used to
+illustrate both sides of the first solution to the Diophantine 3.1.3
+equation (the only solution consisting of consecutive integers):
+
+      3³ + 4³ + 5³ = 6³
+
+* 3³ + 4³ + 5³ cubes: `solutions incomplete
+  <../solutions/cubes/polycubes-12345p6-cubes-345.txt>`__ (`X3D
+  model <images/cubes/polycubes-12345p6-cubes-345.x3d>`__)
+
+  .. image:: images/cubes/polycubes-12345p6-cubes-345.png
+
+* 6³: `solutions incomplete
+  <../solutions/cubes/polycubes-12345p6-6x6x6.txt>`__ (`X3D
+  model <images/cubes/polycubes-12345p6-6x6x6.x3d>`__)
+
+  .. image:: images/cubes/polycubes-12345p6-6x6x6.png
+
+For more on this curious equation and dissection puzzle, see:
+
+* `The Puzzle Museum
+  <http://puzzlemuseum.com/month/picm08/2008-03-3cubed.htm>`_
+
+* `Cubic dissection, by Eric Harshbarger
+  <http://www.ericharshbarger.org/lego/puzzles.html#cubic_dissection>`_
+
+* `Mathworld: Cubic Number
+  <http://mathworld.wolfram.com/CubicNumber.html>`_
+
+
 .. _Super Deluxe Quintillions:
    http://gamepuzzles.com/polycube.htm#SQd
 

@@ -274,8 +274,41 @@ n=2    38   40   42   44   46   48   50   52   54   56   58   60   62   64   66
  10   490  520  550  580  610  640  670  700  730  760  790  820  850  880  910
 ===  ====  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===  ===
 
-Triangular Pyramids?
-Diamond Pyramids?
+Triangular Pyramids (parity imbalance likely).  Pyt(6)::
+
+    ######  #####   ####    ###     ##      #
+    #####   ####    ###     ##      #
+    ####    ###     ##      #
+    ###     ##      #
+    ##      #
+    #
+
+Diamond Pyramids (parity imbalance likely).  Pyd(4)::
+
+       #
+      ###       #
+     #####     ###       #
+    #######   #####     ###       #
+     #####     ###       #
+      ###       #
+       #
+
+==  ===  ====
+n   Pyt  Pyd 
+==  ===  ====
+ 1    1     1
+ 2    4     6
+ 3   10    19
+ 4   20    44
+ 5   35    85
+ 6   56   146
+ 7   84   231
+ 8  120   344
+ 9  165   489
+10  220   670
+11  286   891
+12  364  1156
+==  ===  ====
 
 Open boxes:
 
@@ -806,7 +839,9 @@ Potential Puzzles
 
 * S(6,6,6)
 
-* Polycubes: 3³ + 4³ + 5³ = 6³ (27 + 64 + 125 = 216)
+* [DONE, except for refinements under "Ideas"]
+
+  Polycubes: 3³ + 4³ + 5³ = 6³ (27 + 64 + 125 = 216)
   (first solution to diophantine 3.1.3 equation)
 
       The only three consecutive integers whose cubes sum to a cube
@@ -816,8 +851,12 @@ Potential Puzzles
 
       -- http://mathworld.wolfram.com/CubicNumber.html
 
-  Cubed cubes:
-  http://www.mathartfun.com/shopsite_sc/store/html/TanPuzzles.html
+  Examples:
+
+  * Cubic dissection, by Eric Harshbarger:
+    http://www.ericharshbarger.org/lego/puzzles.html#cubic_dissection
+
+  * http://puzzlemuseum.com/month/picm08/2008-03-3cubed.htm
 
   Find a set of polycubes that can form each term of 3³ + 4³ + 5³ (3
   cubes simultaneously) and 6³ (separately, with all pieces combined).
@@ -826,18 +865,21 @@ Potential Puzzles
   there are multiple possibilities:
 
   1. All polycubes O(1)...O(5) = 186 unit cubes.  Add 5 hexacubes to
-     make 216 unit cubes. 
+     make 216 unit cubes.
 
      How to choose the 5 hexacubes?
 
-     A. Choose the most symmetrical/interesting/diverse?  E.g. 5 of
-        Kadon's {A, O, X3, N2b3, T4b4, Q14, Q4b1, B, fat A}.
+     A. [DONE] Choose the most symmetrical/interesting/diverse?
+        E.g. 5 of Kadon's {A, O, X3, N2b3, T4b4, Q14, Q4b1, B, fat A}.
 
-        Favourite 5: {B, O, X3, T4b4, N2b3}
+        Favourite 5: {Ba6/B, O06/O, Tp6/T4b4, Nt6/N2b3, Qe6/Q4b1}
 
      B. Choose the pieces with the fewest number of aspects?
 
      C. Choose the most compact pieces?  {O, fat A, B, Q14, A}
+
+     Can't choose the "I" piece, because it's 6 cubes long and won't
+     fit in 5³.
 
   2. All polycubes O(1)...O(3) = 9 unit cubes; use 3 sets to build the
      3³ = 27 unit cubes.
@@ -848,18 +890,21 @@ Potential Puzzles
      All pentacubes = 145 cubes; exclude 4 pentacubes (which 4
      though?) to build the 5³ = 125 unit cubes.
 
+  Ideas:
+
+  * Restrict to 8 pieces in Eric Harshbarger's cubic dissection
+    (http://www.ericharshbarger.org/lego/puzzles.html#cubic_dissection).
+
+  * Limit 3³ to Soma cubes; 4³ = I2 + ; 5³ = O06 + 2² (but not
+    possible if all soma cubes used for 3³; must be e.g. Q5 & V3)
+
 996: Hexacubes
-
-* 10x10x10 - 4 cubes
-
-* 18x18x9 2-stepped pyramid
-  (http://www.recmath.com/PolyPages/PolyPages/index.htm?Polycubes.html)
 
 
 Misc
 ====
 
-* Pentacubes checkerboard imbalance (abs(black - white))::
+* Pentacubes checkerboard parity imbalance (abs(black - white))::
 
       F I L N P T U V W X Y Z L1 L2 L3 L4 J1 J2 J4 N1 N2 S1 S2 T1 T2 V1 V2 Q A
       1 1 1 1 1 1 1 1 1 3 1 1 1  1  1  1  1  1  1  1  1  1  1  3  1  1  1  1 1
@@ -870,7 +915,11 @@ Misc
 
   For Pentacubes Plus or Non-Convex Pentacubes, minimum imbalance = 0.
 
-* Polycubes (order 1 - 4) checkerboard imbalance (abs(black - white))::
+  Pentacubes Plus maximum imbalance: 34
+
+  Non-Convex Pentacubes maximum imbalance: 32
+
+* Polycubes (order 1 - 4) checkerboard parity imbalance (abs(black - white))::
 
       M  D  I3  V3  I4  L4  T4  S4  O4  A4  B4  P4
       1  0  1   1   0   0   2   0   0   0   0   2

@@ -1,0 +1,2327 @@
+<?xml version="1.0" standalone="no"?>
+<!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
+<svg width="89.000" height="92.000"
+     viewBox="0 0 89.000 92.000"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="cube0">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cube1">
+<polygon fill="black" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeA06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeA4">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeA5">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeAa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeB4">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeBa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeC06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeD">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeD06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeE06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeF06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeF16">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeF26">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeF36">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeF5">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeFa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeFb6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeFc6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeFd6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeFe6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeFf6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeFg6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeFh6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeFi6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeFj6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeG06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeH06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeI06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeI3">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeI4">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeI5">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJ06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJ15">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJ25">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJ45">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJb6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJc6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJd6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJe6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJf6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJg6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJh6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeJi6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeK06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeL06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeL15">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeL25">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeL35">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeL4">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeL45">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeL5">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLb6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLc6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLd6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLe6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLf6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLg6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLh6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLi6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLj6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLk6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLl6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLm6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLn6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeLo6">
+<polygon fill="darkseagreen" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeM">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeM06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeN06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeN15">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeN16">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeN25">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeN5">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNb6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNc6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNd6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNe6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNf6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNg6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNh6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNi6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNj6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNk6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNl6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNm6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNn6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNo6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNp6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNq6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNr6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNs6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNt6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeNu6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeO06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeO4">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeP06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeP4">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeP5">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubePa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubePb6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubePc6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubePd6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubePe6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubePf6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubePg6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubePh6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubePi6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubePj6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeQ06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeQ5">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeQa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeQb6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeQc6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeQd6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeQe6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeR06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeS06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeS15">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeS25">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeS4">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeSa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeSb6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeSc6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeSd6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeSe6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeSf6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeSg6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeSh6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeT06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeT15">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeT16">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeT25">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeT4">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeT5">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTb6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTc6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTd6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTe6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTf6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTg6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTh6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTi6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTj6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTk6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTl6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTm6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTn6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTo6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeTp6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeU06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeU5">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeUa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeUb6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeUc6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeUd6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeUe6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeV06">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeV15">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeV25">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeV3">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeV5">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeVa6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeVb6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeVc6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeVd6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeVe6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeVf6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeVg6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeVh6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeVi6">
+<polygon fill="gray" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeW06">
+<polygon fill="green" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeW16">
+<polygon fill="lime" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeW26">
+<polygon fill="navy" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeW5">
+<polygon fill="maroon" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeWa6">
+<polygon fill="olive" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeWb6">
+<polygon fill="teal" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeWc6">
+<polygon fill="tan" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeWd6">
+<polygon fill="indigo" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeWe6">
+<polygon fill="darkkhaki" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeX06">
+<polygon fill="magenta" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeX16">
+<polygon fill="darkorange" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeX5">
+<polygon fill="red" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeXa6">
+<polygon fill="orangered" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeXb6">
+<polygon fill="darkorchid" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeY06">
+<polygon fill="turquoise" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeY16">
+<polygon fill="blueviolet" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeY5">
+<polygon fill="gold" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeYa6">
+<polygon fill="tomato" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeYb6">
+<polygon fill="thistle" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeYc6">
+<polygon fill="cadetblue" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeYd6">
+<polygon fill="darkseagreen" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeYe6">
+<polygon fill="peru" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeYf6">
+<polygon fill="rosybrown" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeYg6">
+<polygon fill="yellowgreen" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeYh6">
+<polygon fill="steelblue" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeYi6">
+<polygon fill="darkviolet" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeZ06">
+<polygon fill="maroon" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeZ16">
+<polygon fill="gold" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeZ5">
+<polygon fill="plum" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeZa6">
+<polygon fill="lightcoral" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeZb6">
+<polygon fill="olive" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeZc6">
+<polygon fill="teal" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeZd6">
+<polygon fill="tan" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeZe6">
+<polygon fill="indigo" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+<symbol id="cubeZf6">
+<polygon fill="darkkhaki" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,13 9,15 15,12 15,2 6,0 0,3" />
+<polygon fill="black" fill-opacity="0.25" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="9,15 15,12 15,2 9,5" />
+<polygon fill="white" fill-opacity="0.30" stroke="white"
+         stroke-width="0.5" stroke-linejoin="round"
+         points="0,3 9,5 15,2 6,0" />
+</symbol>
+</defs>
+<g>
+<use xlink:href="#cubeVi6" x="40.000" y="47.000" />
+<use xlink:href="#cubeVi6" x="40.000" y="37.000" />
+<use xlink:href="#cubeVi6" x="25.000" y="48.000" />
+<use xlink:href="#cubeVi6" x="25.000" y="38.000" />
+<use xlink:href="#cubeVi6" x="34.000" y="40.000" />
+<use xlink:href="#cubeVi6" x="19.000" y="51.000" />
+</g>
+</svg>
