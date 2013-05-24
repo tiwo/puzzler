@@ -962,9 +962,9 @@ class PentacubesCoolingFins(Pentacubes):
         return sorted(coords)
 
 
-class PentacubesDiamondTower(PentacubesPlus):
+class PentacubesDiamondTower(Pentacubes):
 
-    """0? solutions"""
+    """many solutions"""
 
     width = 7
     height = 7
@@ -982,6 +982,112 @@ class PentacubesDiamondTower(PentacubesPlus):
                 for (x, y) in
                 Puzzle2D.coordinates_diamond(3 - i, offset=(i+1,i+1))))
         coords.add(self.coordinate_offset(3, 3, 8, None))
+        return sorted(coords)
+
+
+class PentacubesCompoundCross1(Pentacubes):
+
+    """
+    0 solutions?
+
+    design by Nick Maeder
+    """
+
+    width = 11
+    height = 11
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(11, 1, 5, offset=(0,5,0)))
+            + list(self.coordinates_cuboid(1, 11, 5, offset=(5,0,0)))
+            + list(self.coordinates_cuboid(3, 1, 5, offset=(4,2,0)))
+            + list(self.coordinates_cuboid(3, 1, 5, offset=(4,8,0))) 
+            + list(self.coordinates_cuboid(1, 3, 5, offset=(2,4,0))) 
+            + list(self.coordinates_cuboid(1, 3, 5, offset=(8,4,0))))
+        return sorted(coords)
+
+
+class PentacubesCompoundCross2(Pentacubes):
+
+    """0 solutions?"""
+
+    width = 11
+    height = 11
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(11, 1, 5, offset=(0,5,0)))
+            + list(self.coordinates_cuboid(1, 11, 5, offset=(5,0,0)))
+            + list(self.coordinates_cuboid(3, 1, 5, offset=(4,1,0)))
+            + list(self.coordinates_cuboid(3, 1, 5, offset=(4,9,0))) 
+            + list(self.coordinates_cuboid(1, 3, 5, offset=(1,4,0))) 
+            + list(self.coordinates_cuboid(1, 3, 5, offset=(9,4,0))))
+        return sorted(coords)
+
+
+class PentacubesOctagonalFrame1(Pentacubes):
+
+    """
+    many solutions
+
+    design by Nick Maeder
+    """
+
+    width = 11
+    height = 11
+    depth = 2
+
+    hole = (5,5,0)
+
+    def coordinates(self):
+        coords = set(self.coordinates_cuboid(11, 11, 2))
+        cutout = Cartesian3DCoordSet(
+            self.coordinate_offset(x, y, 0, None)
+            for (x,y) in Puzzle2D.coordinates_diamond(3))
+        for (x, y) in ((-2,-2), (-2,8), (8,-2), (8,8)):
+            for z in (0,1):
+                coords -= cutout.translate((x,y,z))
+        for (x, y) in ((2,1), (2,5), (4,1), (4,5)):
+            coords -= cutout.translate((x,y,1))
+        coords -= set(self.coordinates_cuboid(9, 3, 1, offset=(1,4,1)))
+        coords -= set(self.coordinates_cuboid(3, 9, 1, offset=(4,1,1)))
+        coords.update(set(self.coordinates_cuboid(3, 3, 1, offset=(4,4,1))))
+        coords.remove(self.hole)
+        return sorted(coords)
+
+
+class PentacubesOctagonalFrame2(PentacubesOctagonalFrame1):
+
+    """many solutions"""
+
+    hole = (5,5,1)
+
+
+class PentacubesCornerSlant(Pentacubes):
+
+    """
+    0 solutions?
+
+    design by Nick Maeder
+    """
+
+    width = 9
+    height = 9
+    depth = 9
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set(self.coordinates_cuboid(9, 9, 1))
+        for (tx, ty) in Puzzle2D.coordinates_triangle(8):
+            coords.add(self.coordinate_offset(tx, 0, ty + 1, None))
+            coords.add(self.coordinate_offset(0, tx, ty + 1, None))
         return sorted(coords)
 
 

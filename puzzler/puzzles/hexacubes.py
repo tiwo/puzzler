@@ -49,7 +49,7 @@ class HexacubesSteppedPyramid(Hexacubes):
     many solutions
 
     Design from `Andrew Clarke's Poly Pages
-    <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polyominoes.html>`_
+    <http://www.recmath.com/PolyPages/PolyPages/index.htm?Polycubes.html#hexacubes>`_
     """
 
     width = 18

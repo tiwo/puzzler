@@ -31,7 +31,9 @@
 Tetrahexes
 ==========
 
-The 7 tetrahexes total 28 hexagons.
+The 7 tetrahexes total 28 hexagons.  Unfortunately, there is no
+solution to the order-7 triangle using all seven tetrahexes (a tiling
+using seven copies of the P4 tetrahex is possible).
 
 * 4x7 parallelogram: `9 solutions
   <../solutions/hexes/tetrahexes-4x7.txt>`__

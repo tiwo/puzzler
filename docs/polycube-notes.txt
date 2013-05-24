@@ -831,13 +831,9 @@ Potential Puzzles
 
 216: solid hexominoes + 1 duplicate == 6³ == Kadon "Sextillions"
 
-* S(6,6,6)
-
 * See http://www.recmath.com/PolyPages/PolyPages/index.htm?Polycubes.html
 
 216: Polycubes of order 1 - 5 plus 5 hexacubes
-
-* S(6,6,6)
 
 * [DONE, except for refinements under "Ideas"]
 

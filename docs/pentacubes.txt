@@ -358,6 +358,29 @@ Misc
 
   .. image:: images/cubes/pentacubes-cooling-fins.png
 
+* Diamond tower:
+  `solutions incomplete <../solutions/cubes/pentacubes-diamond-tower.txt>`__
+  (`X3D model <images/cubes/pentacubes-diamond-tower.x3d>`__)
+
+  .. image:: images/cubes/pentacubes-diamond-tower.png
+
+* Octagonal frames:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/cubes/pentacubes-octagonal-frame-1.png
+
+            central cube in bottom layer empty; design by Nick Maeder:
+            `solutions incomplete
+            <../solutions/cubes/pentacubes-octagonal-frame-1.txt>`__
+            (`X3D model <images/cubes/pentacubes-octagonal-frame-1.x3d>`__)
+
+       - .. figure:: images/cubes/pentacubes-octagonal-frame-2.png
+
+            `solutions incomplete <../solutions/cubes/pentacubes-octagonal-frame-2.txt>`__
+            (`X3D model <images/cubes/pentacubes-octagonal-frame-2.x3d>`__)
+
 
 Pentacubes Plus
 ===============
