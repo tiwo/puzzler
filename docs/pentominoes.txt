@@ -95,8 +95,10 @@ Misc
 * 3x20 ring (3x20 rectangle joined at the ends): 2 solutions
   (same as the 3x20 rectangle; the V piece forces a partition)
 
-* 3x20 tube (3x20 rectangle joined at the long edges): `solutions
-  incomplete <../solutions/ominoes/pentominoes-3x20-tube.txt>`__
+* 3x20 tube (3x20 rectangle joined at the long edges): `48,928
+  solutions <../solutions/ominoes/pentominoes-3x20-tube.txt>`__ (at
+  least, depending on how pieces that wrap around on themselves are
+  defined)
 
 * _`8x8 square with a central 2x2 hole`: `65 solutions
   <../solutions/ominoes/pentominoes-8x8.txt>`__
