@@ -59,20 +59,20 @@ simple rectangle without introducing holes or other irregularities.
 .. _parity imbalance:
    http://en.wikipedia.org/wiki/Tetromino#Tiling_the_rectangle_and_filling_the_box_with_2D_pieces
 
-However, if we consider a 4x5 rectangle and join the short sides
+However, if we consider a 5x4 rectangle and join the short sides
 together to form a cylindrical tube, we can find solutions:
 
-* 4x5 tube: `7 solutions
-  <../solutions/ominoes/tetrominoes-4x5-tube.txt>`__
+* 5x4 tube: `7 solutions
+  <../solutions/ominoes/tetrominoes-5x4-tube.txt>`__
 
-  .. image:: images/ominoes/tetrominoes-4x5-tube.png
+  .. image:: images/ominoes/tetrominoes-5x4-tube.png
 
   In this solution, the 4x1 "I4" piece spans the join between right
   and left edges. It appears to be chopped in two above, but if you
   join the left & right edges, it forms one continuous piece. Here it
   is, unwrapped:
 
-  .. image:: images/ominoes/tetrominoes-4x5-tube-unwrapped.png
+  .. image:: images/ominoes/tetrominoes-5x4-tube-unwrapped.png
 
   See `this article by Alexandre Owen Muñiz
   <http://puzzlezapper.com/blog/2013/05/a-polyformists-toolkit-practical-topology>`__
