@@ -2,7 +2,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2012 by David J. Goodger
+# Copyright: (C) 1998-2013 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """
@@ -260,6 +260,98 @@ class Pentominoes8x8WithoutCorners(Pentominoes):
                 if (x == 0 or x == 7) and (y == 0 or y == 7):
                     continue
                 yield (x, y)
+
+
+class Pentominoes8x8FourHoles1(Pentominoes8x8WithoutCorners):
+
+    """188 solutions"""
+
+    holes = set(((1,1), (1,6), (6,1), (6,6)))
+
+    def coordinates(self):
+        for x in range(self.width):
+            for y in range(self.height):
+                if (x,y) in self.holes:
+                    continue
+                yield (x, y)
+
+
+class Pentominoes8x8FourHoles2(Pentominoes8x8FourHoles1):
+
+    """21 solutions"""
+
+    holes = set(((2,2), (2,5), (5,2), (5,5)))
+
+
+class Pentominoes8x8FourHoles3(Pentominoes8x8FourHoles1):
+
+    """126 solutions"""
+
+    holes = set(((2,3), (3,5), (4,2), (5,4)))
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = None
+
+
+class Pentominoes8x8FourHoles4(Pentominoes8x8FourHoles1):
+
+    """74 solutions"""
+
+    holes = set(((2,2), (3,3), (4,4), (5,5)))
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = (0, 1)
+        self.piece_data['P'][-1]['flips'] = None
+
+
+class PentominoesYinYang(Pentominoes):
+
+    """3 solutions"""
+
+    height = 8
+    width = 10
+
+    holes = ((0,0), (0,7), (9,0), (9,7),
+             (5,0), (6,0), (6,1), (7,1), (6,2), (7,2), (5,3), (6,3),
+             (3,4), (4,4), (2,5), (3,5), (2,6), (3,6), (3,7), (4,7))
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = (0,1)
+
+    def coordinates(self):
+        for y in range(self.height):
+            for x in range(self.width):
+                if (x,y) in self.holes:
+                    continue
+                yield (x, y)
+
+
+class PentominoesHoleyOval(Pentominoes):
+
+    """2 solutions"""
+
+    height = 7
+    width = 11
+
+    hole_xs_ys = (
+        ((0,10), (0,6)),
+        ((1,9), (2,4)),
+        ((3,5,7), (1,3,5)))
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = (0,1)
+        self.piece_data['P'][-1]['flips'] = None
+
+    def coordinates(self):
+        holes = set()
+        for xs, ys in self.hole_xs_ys:
+            for x in xs:
+                for y in ys:
+                    holes.add((x,y))
+        for y in range(self.height):
+            for x in range(self.width):
+                if (x,y) not in holes:
+                    yield (x, y)
 
 
 class PentominoesPlusSquareTetromino8x8(PentominoesPlusSquareTetromino):

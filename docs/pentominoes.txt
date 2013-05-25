@@ -110,6 +110,27 @@ Misc
 
   .. image:: images/ominoes/pentominoes-8x8-corners.png
 
+* 8x8 squares with four holes:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/ominoes/pentominoes-8x8-four-holes-1.png
+
+         `188 solutions <../solutions/ominoes/pentominoes-8x8-four-holes-1.txt>`__
+
+       - .. figure:: images/ominoes/pentominoes-8x8-four-holes-2.png
+
+         `21 solutions <../solutions/ominoes/pentominoes-8x8-four-holes-2.txt>`__
+
+     * - .. figure:: images/ominoes/pentominoes-8x8-four-holes-3.png
+
+         `126 solutions <../solutions/ominoes/pentominoes-8x8-four-holes-3.txt>`__
+
+       - .. figure:: images/ominoes/pentominoes-8x8-four-holes-4.png
+
+         `74 solutions <../solutions/ominoes/pentominoes-8x8-four-holes-4.txt>`__
+
 * 3x21 rectangle with holes: `6 solutions
   <../solutions/ominoes/pentominoes-3x21.txt>`__ (an
   example puzzle from `How to Extend Polyform Puzzler <extend.html>`_)
@@ -243,6 +264,16 @@ Misc
          `85 solutions <../solutions/ominoes/pentominoes-arch-3.txt>`__
 
        -
+
+* Yin-Yang: `3 solutions
+  <../solutions/ominoes/pentominoes-yin-yang.txt>`__
+
+  .. image:: images/ominoes/pentominoes-yin-yang.png
+
+* Holey oval: `2 solutions
+  <../solutions/ominoes/pentominoes-holey-oval.txt>`__
+
+  .. image:: images/ominoes/pentominoes-holey-oval.png
 
 
 Pentominoes Plus the Square Tetromino

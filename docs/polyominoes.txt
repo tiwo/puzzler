@@ -46,6 +46,40 @@ total of 9 squares.
   complex puzzles like the `poly-5 diamond`_.
 
 
+Tetrominoes
+===========
+
+The 5 tetrominoes are well known from their use in the video game
+"Tetris". Tetris does not allow the pieces to be flipped
+(mirror-reflected); its pieces comprise the 7 "one-sided" tetrominoes.
+
+Due to a `parity imbalance`_, the 5 free tetrominoes cannot fit into a
+simple rectangle without introducing holes or other irregularities.
+
+.. _parity imbalance:
+   http://en.wikipedia.org/wiki/Tetromino#Tiling_the_rectangle_and_filling_the_box_with_2D_pieces
+
+However, if we consider a 4x5 rectangle and join the short sides
+together to form a cylindrical tube, we can find solutions:
+
+* 4x5 tube: `7 solutions
+  <../solutions/ominoes/tetrominoes-4x5-tube.txt>`__
+
+  .. image:: images/ominoes/tetrominoes-4x5-tube.png
+
+  In this solution, the 4x1 "I4" piece spans the join between right
+  and left edges. It appears to be chopped in two above, but if you
+  join the left & right edges, it forms one continuous piece. Here it
+  is, unwrapped:
+
+  .. image:: images/ominoes/tetrominoes-4x5-tube-unwrapped.png
+
+  See `this article by Alexandre Owen Muñiz
+  <http://puzzlezapper.com/blog/2013/05/a-polyformists-toolkit-practical-topology>`__
+  and `a video by Edo Timmermans
+  <http://www.youtube.com/watch?v=8ri88GpWYqE>`__.
+
+
 Polyominoes of Order 1 Through 4
 ================================
 
