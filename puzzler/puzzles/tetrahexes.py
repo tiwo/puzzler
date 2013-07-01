@@ -57,6 +57,64 @@ class TetrahexesElongatedHexagon9x2(Tetrahexes):
         self.piece_data['P4'][-1]['rotations'] = (0, 1, 2)
 
 
+class TetrahexesElongatedHexagon3x4_1(Tetrahexes):
+
+    """
+    2 solutions
+
+    Design by `Abaroth <http://www.gamedecor.com/abasworld/Puzzles.htm>`_
+    """
+
+    width = 6
+    height = 7
+
+    holes = set(((2,4), (3,2)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_elongated_hexagon(3, 4)) - self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+        self.piece_data['P4'][-1]['rotations'] = (0, 1, 2)
+
+
+class TetrahexesElongatedHexagon3x4_2(TetrahexesElongatedHexagon3x4_1):
+
+    """
+    3 solutions
+
+    Design by `Abaroth
+    <http://www.gamedecor.com/abasworld/Puzzles/Polyhex/Tetrahex%20Bisymmetry.htm>`_
+    """
+
+    holes = set(((2,3), (3,3)))
+
+
+class TetrahexesElongatedHexagon3x4_3(TetrahexesElongatedHexagon3x4_1):
+
+    """
+    4 solutions
+
+    Design by `Abaroth
+    <http://www.gamedecor.com/abasworld/Puzzles/Polyhex/Tetrahex%20Bisymmetry.htm>`_
+    """
+
+    holes = set(((1,3), (4,3)))
+
+
+class TetrahexesElongatedHexagon3x4_4(TetrahexesElongatedHexagon3x4_1):
+
+    """
+    5 solutions
+
+    Design by `Abaroth
+    <http://www.gamedecor.com/abasworld/Puzzles/Polyhex/Tetrahex%20Bisymmetry.htm>`_
+    """
+
+    holes = set(((0,3), (5,3)))
+
+
 class TetrahexesCoin(Tetrahexes):
 
     """4 solutions"""
@@ -231,7 +289,7 @@ class TetrahexesTrefoil_x4(Tetrahexes):
 
 class TetrahexesFlower1(Tetrahexes):
 
-    """4 solutions"""
+    """2 solutions"""
 
     width = 7
     height = 7
@@ -244,6 +302,35 @@ class TetrahexesFlower1(Tetrahexes):
 
     def customize_piece_data(self):
         self.piece_data['P4'][-1]['rotations'] = (0, 1)
+        self.piece_data['P4'][-1]['flips'] = None
+
+
+class TetrahexesFlower2(TetrahexesFlower1):
+
+    """
+    4 solutions
+
+    Design by George Sicherman
+    """
+
+    holes = set(((0,3), (0,6), (3,0), (3,6), (6,0), (6,3), (2,5), (3,3), (4,1)))
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P4'][-1]['flips'] = None
+
+
+class TetrahexesFlower3(TetrahexesFlower1):
+
+    """
+    1 solution
+
+    Design by Abaroth_
+    """
+
+    svg_rotation = -30
+
+    holes = set(((0,6), (3,0), (6,3), (1,4), (2,2), (2,5), (4,1), (4,4), (5,2)))
 
 
 class TetrahexesBumpyTriangle(Tetrahexes):
@@ -282,3 +369,31 @@ class TetrahexesStaggeredRectangle7x4(Tetrahexes):
 
     def customize_piece_data(self):
         self.piece_data['P4'][-1]['flips'] = None
+
+
+class TetrahexesHoleyStar1(Tetrahexes):
+
+    """
+    solutions
+
+    Design by George Sicherman
+    """
+
+    height = 9
+    width = 9
+
+    holes = set(((2,4), (3,6), (4,4), (5,2), (6,4)))
+
+    svg_rotation = 90
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_triangle(6, offset=(2,3)))
+            + list(self.coordinates_inverted_triangle(6, offset=(1,0)))
+            + list(self.coordinates_parallelogram(9, 1, offset=(0,4))))
+        coords -= self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P4'][-1]['flips'] = None
+        self.piece_data['P4'][-1]['rotations'] = (0,1,2)

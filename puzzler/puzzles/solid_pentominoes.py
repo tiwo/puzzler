@@ -410,6 +410,8 @@ class SolidPentominoes6x6x6Crystal1(SolidPentominoes):
     height = 6
     depth = 6
 
+    extras = ((1,1,4), (1,4,1), (4,1,1), (2,2,2))
+
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['axes'] = None
@@ -420,68 +422,87 @@ class SolidPentominoes6x6x6Crystal1(SolidPentominoes):
                 for x in range(self.width):
                     if x + y + z < 6:
                         yield (x, y, z)
-        for x, y, z in ((1,1,4), (1,4,1), (4,1,1), (2,2,2)):
-            yield (x, y, z)
+        for coord in self.extras:
+            yield coord
 
 
-class SolidPentominoes6x6x6Crystal2(SolidPentominoes):
+class SolidPentominoes6x6x6Crystal2(SolidPentominoes6x6x6Crystal1):
 
     """1 solution"""
 
-    width = 6
-    height = 6
-    depth = 6
+    extras = ((1,2,3), (2,2,2), (3,2,1), (1,4,1))
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'xz_swapped': True},)
 
     def customize_piece_data(self):
-        self.piece_data['P'][-1]['flips'] = None
-
-    def coordinates(self):
-        for z in range(self.depth):
-            for y in range(self.height):
-                for x in range(self.width):
-                    if x + y + z < 6:
-                        yield (x, y, z)
-        for x, y, z in ((1,2,3), (2,2,2), (3,2,1), (1,4,1)):
-            yield (x, y, z)
+        return
 
 
-class SolidPentominoes6x6x6Crystal3(SolidPentominoes):
+class SolidPentominoes6x6x6Crystal3(SolidPentominoes6x6x6Crystal1):
 
     """9 solutions"""
 
-    width = 6
-    height = 6
-    depth = 6
+    extras = ((1,2,3), (3,1,2), (2,3,1), (2,2,2))
 
     def customize_piece_data(self):
         self.piece_data['P'][-1]['axes'] = None
 
-    def coordinates(self):
-        for z in range(self.depth):
-            for y in range(self.height):
-                for x in range(self.width):
-                    if x + y + z < 6:
-                        yield (x, y, z)
-        for x, y, z in ((1,2,3), (3,1,2), (2,3,1), (2,2,2)):
-            yield (x, y, z)
+
+class SolidPentominoes6x6x6Crystal4(SolidPentominoes6x6x6Crystal1):
+
+    """2 solutions"""
+
+    extras = ((0,5,1), (1,4,1), (1,5,0), (1,5,1))
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'xz_swapped': True},)
+
+    def customize_piece_data(self):
+        return
 
 
-class SolidPentominoes6x6x6CrystalX1(SolidPentominoes):
+class SolidPentominoes6x6x6Crystal5(SolidPentominoes6x6x6Crystal4):
+
+    """4 solutions"""
+
+    extras = ((1,3,2), (2,2,2), (2,3,1), (2,3,2))
+
+
+class SolidPentominoes6x6x6CrystalX1(SolidPentominoes6x6x6Crystal1):
 
     """0 solutions"""
 
-    width = 6
-    height = 6
-    depth = 6
+    extras = ((1,1,4), (2,1,3), (3,1,2), (4,1,1))
 
-    def coordinates(self):
-        for z in range(self.depth):
-            for y in range(self.height):
-                for x in range(self.width):
-                    if x + y + z < 6:
-                        yield (x, y, z)
-        for x, y, z in ((1,1,4), (2,1,3), (3,1,2), (4,1,1)):
-            yield (x, y, z)
+    def customize_piece_data(self):
+        return
+
+
+class SolidPentominoes6x6x6CrystalX2(SolidPentominoes6x6x6Crystal1):
+
+    """0 solutions"""
+
+    extras = ((3,3,0), (3,0,3), (0,3,3), (2,2,2))
+
+    def customize_piece_data(self):
+        return
+
+
+class SolidPentominoes6x6x6CrystalX3(SolidPentominoes6x6x6Crystal4):
+
+    """0 solutions"""
+
+    extras = ((2,1,3), (3,0,3), (3,1,2), (3,1,3))
+
+
+class SolidPentominoes6x6x6CrystalX4(SolidPentominoes6x6x6Crystal4):
+
+    """0 solutions"""
+
+    extras = ((1,3,2), (2,2,2), (2,2,1), (1,4,1))
 
 
 class SolidPentominoes7x7x7Crystal(SolidPentominoes):

@@ -135,23 +135,47 @@ Crystals
 
   .. image:: images/cubes/solid-pentominoes-4x4x8-crystal.png
 
-* 6x6x6 no. 1: `2 solutions
-  <../solutions/cubes/solid-pentominoes-6x6x6-crystal-1.txt>`__
-  (`X3D model <images/cubes/solid-pentominoes-6x6x6-crystal-1.x3d>`__)
+* 6x6x6:
 
-  .. image:: images/cubes/solid-pentominoes-6x6x6-crystal-1.png
+  .. list-table::
+     :class: borderless
 
-* 6x6x6 no. 2: `1 solution
-  <../solutions/cubes/solid-pentominoes-6x6x6-crystal-2.txt>`__
-  (`X3D model <images/cubes/solid-pentominoes-6x6x6-crystal-2.x3d>`__)
+     * - .. figure:: images/cubes/solid-pentominoes-6x6x6-crystal-1.png
 
-  .. image:: images/cubes/solid-pentominoes-6x6x6-crystal-2.png
+            `2 solutions
+            <../solutions/cubes/solid-pentominoes-6x6x6-crystal-1.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-6x6x6-crystal-1.x3d>`__)
 
-* 6x6x6 no. 3: `9 solutions
-  <../solutions/cubes/solid-pentominoes-6x6x6-crystal-3.txt>`__
-  (`X3D model <images/cubes/solid-pentominoes-6x6x6-crystal-3.x3d>`__)
+       - .. figure:: images/cubes/solid-pentominoes-6x6x6-crystal-2.png
 
-  .. image:: images/cubes/solid-pentominoes-6x6x6-crystal-3.png
+            `1 solution
+            <../solutions/cubes/solid-pentominoes-6x6x6-crystal-2.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-6x6x6-crystal-2.x3d>`__)
+
+       - .. figure:: images/cubes/solid-pentominoes-6x6x6-crystal-3.png
+
+            `9 solutions
+            <../solutions/cubes/solid-pentominoes-6x6x6-crystal-3.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-6x6x6-crystal-3.x3d>`__)
+
+     * - .. figure:: images/cubes/solid-pentominoes-6x6x6-crystal-4.png
+
+            `2 solutions
+            <../solutions/cubes/solid-pentominoes-6x6x6-crystal-4.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-6x6x6-crystal-4.x3d>`__)
+
+       - .. figure:: images/cubes/solid-pentominoes-6x6x6-crystal-5.png
+
+            `4 solutions
+            <../solutions/cubes/solid-pentominoes-6x6x6-crystal-5.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-6x6x6-crystal-5.x3d>`__)
+
+       -
 
 
 Misc

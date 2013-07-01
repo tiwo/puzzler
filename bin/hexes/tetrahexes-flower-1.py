@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-"""4 solutions"""
+"""2 solutions"""
 
 import puzzler
 from puzzler.puzzles.tetrahexes import TetrahexesFlower1

@@ -354,6 +354,42 @@ class PentominoesHoleyOval(Pentominoes):
                     yield (x, y)
 
 
+class PentominoesPuzzleArt(Pentominoes):
+
+    """
+    Specify a puzzle graphically. Whitespace in `self.puzzle_art` below
+    defines the puzzle space.
+    """
+
+    puzzle_art = """\
+###############
+###############
+###############
+###############
+###############
+###############
+###############
+###############
+###############
+###############"""
+
+    height = 10
+    width = 15
+
+    def coordinates(self):
+        puzzle = self.puzzle_art.splitlines()
+        assert len(puzzle) == self.height
+        squares = 0
+        for y in range(self.height):
+            line = puzzle[self.height - 1 - y]
+            assert len(line) == self.width
+            for x in range(self.width):
+                if line[x] == ' ':
+                    yield (x, y)
+                    squares += 1
+        assert squares == 60, squares
+
+
 class PentominoesPlusSquareTetromino8x8(PentominoesPlusSquareTetromino):
 
     """16146 solutions"""

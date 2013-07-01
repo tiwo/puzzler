@@ -46,6 +46,37 @@ using seven copies of the P4 tetrahex is possible).
 
   .. image:: images/hexes/tetrahexes-elongated-hexagon-9x2.png
 
+* 3x4 elongated hexagons with holes:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexes/tetrahexes-elongated-hexagon-3x4-1.png
+
+            `2 solutions
+            <../solutions/hexes/tetrahexes-elongated-hexagon-3x4-1.txt>`__
+            (design by Abaroth_)
+
+       - .. figure:: images/hexes/tetrahexes-elongated-hexagon-3x4-2.png
+
+            `3 solutions
+            <../solutions/hexes/tetrahexes-elongated-hexagon-3x4-2.txt>`__
+            (design by Abaroth_)
+
+     * - .. figure:: images/hexes/tetrahexes-elongated-hexagon-3x4-3.png
+
+            `4 solutions
+            <../solutions/hexes/tetrahexes-elongated-hexagon-3x4-3.txt>`__
+            (design by Abaroth_)
+
+       - .. figure:: images/hexes/tetrahexes-elongated-hexagon-3x4-4.png
+
+            `5 solutions
+            <../solutions/hexes/tetrahexes-elongated-hexagon-3x4-4.txt>`__
+            (design by Abaroth_)
+
+  .. _Abaroth: http://www.gamedecor.com/abasworld/Puzzles.htm
+
 * 5x7 "coin" (5x3 elongated hexagon with central hole): `4 solutions
   <../solutions/hexes/tetrahexes-coin.txt>`__
 
@@ -66,10 +97,27 @@ using seven copies of the P4 tetrahex is possible).
             `11 solutions
             <../solutions/hexes/tetrahexes-two-diamonds-2.txt>`__
 
-* Flower: `4 solutions
-  <../solutions/hexes/tetrahexes-flower-1.txt>`__
+* Flowers:
 
-  .. image:: images/hexes/tetrahexes-flower-1.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/hexes/tetrahexes-flower-1.png
+
+            `2 solutions
+            <../solutions/hexes/tetrahexes-flower-1.txt>`__
+
+       - .. figure:: images/hexes/tetrahexes-flower-2.png
+
+            `4 solutions
+            <../solutions/hexes/tetrahexes-flower-2.txt>`__
+            (design by George Sicherman)
+
+       - .. figure:: images/hexes/tetrahexes-flower-3.png
+
+            `1 solution
+            <../solutions/hexes/tetrahexes-flower-3.txt>`__
+            (design by Abaroth_)
 
 * Bumpy triangle: `1 solution
   <../solutions/hexes/tetrahexes-bumpy-triangle.txt>`__
@@ -80,6 +128,12 @@ using seven copies of the P4 tetrahex is possible).
   <../solutions/hexes/tetrahexes-staggered-rectangle-7x4.txt>`__
 
   .. image:: images/hexes/tetrahexes-staggered-rectangle-7x4.png
+
+* Holey Star (design by George Sicherman): `2 solutions
+  <../solutions/hexes/tetrahexes-holey-star-1.txt>`__
+
+  .. image:: images/hexes/tetrahexes-holey-star-1.png
+
 
 
 Trihexes & Tetrahexes: Polyhexes of Order 3 & 4
