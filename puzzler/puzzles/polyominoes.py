@@ -311,6 +311,32 @@ class HexominoesPlus(Hexominoes):
             return formatted
 
 
+class Cornucopia(Hexominoes):
+
+    """
+    From the set of hexominoes,
+
+        eliminate all pieces having reflexive or rotational symmetry and all
+        those containing a 2 x 2 square because they are less desirable for
+        various reasons already explained. The remaining 17 pieces are the set
+        of Cornucopia pieces.
+
+        -- `The Puzzling World of Polyhedral Dissections, by Stewart T. Coffin
+           <http://www.johnrausch.com/PuzzlingWorld/chap02.htm#p6>`__
+    """
+
+    asymmetric_pieces = (
+        'G06 H06 L06 N16 T16 U06 V06 W06 W26 Y06 Z16 F06 F16 F26 F36 J06 M06'
+        .split())
+    symmetric_pieces = []
+    piece_colors = copy.deepcopy(Hexominoes.piece_colors)
+
+Cornucopia.piece_data = dict(
+    (_name, _value) for (_name, _value) in Hexominoes.piece_data.items()
+    if _name in Cornucopia.asymmetric_pieces)
+del _name, _value
+
+
 class Polyominoes12(Polyominoes):
 
     piece_data = copy.deepcopy(Monomino.piece_data)

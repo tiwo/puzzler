@@ -278,4 +278,43 @@ Misc
   .. image:: images/ominoes/one-sided-hexominoes-six-crosses.png
 
 
+Cornucopia Puzzle
+=================
+
+Invented by Stewart T. Coffin, this is a semi-arbitrary subset of the
+hexominoes.  Many Cornucopia puzzles described in Coffin's `Puzzling
+World of Polyhedral Dissections
+<http://www.johnrausch.com/PuzzlingWorld/chap02.htm#p6>`_ then only
+use a subset of this subset.
+
+From the set of hexominoes,
+
+    eliminate all pieces having reflexive or rotational symmetry and
+    all those containing a 2 x 2 square because they are less
+    desirable for various reasons already explained. The remaining 17
+    pieces are the set of Cornucopia pieces.
+
+    -- `The Puzzling World of Polyhedral Dissections, by Stewart
+       T. Coffin
+       <http://www.johnrausch.com/PuzzlingWorld/chap02.htm#p6>`__
+
+These are all the pieces listed in `An Introduction to Polyominoes:
+Hexominoes <polyominoes-intro.html#hexominoes>`__ with 8 aspects which
+do not contain 2x2 blocks. The Polyform Puzzler hexomino names of the
+pieces are listed under the first puzzle below.
+
+* 17x6 rectangle (suggested by Dan Klarskov): ` solutions
+  <../solutions/ominoes/cornucopia-17x6.txt>`__
+
+  .. image:: images/ominoes/cornucopia-17x6.png
+
+  The hexomino piece names of the Cornucopia puzzle are (in roughly
+  equivalent relative positions to the pieces in the puzzle image
+  above)::
+
+      F06 N16   F36 F16 G06 T16
+      H06  L06   F26    W26 J06
+      U06   Z16 M06  W06 Y06 V06
+
+
 .. |c| unicode:: U+00A9 .. copyright sign

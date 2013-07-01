@@ -10,7 +10,7 @@ Concrete hexomino puzzles.
 """
 
 from puzzler.puzzles.polyominoes import (
-    Hexominoes, HexominoesPlus, OneSidedHexominoes)
+    Hexominoes, HexominoesPlus, OneSidedHexominoes, Cornucopia)
 
 
 class HexominoesTriangle(Hexominoes):
@@ -514,3 +514,14 @@ class OneSidedHexominoesSixCrosses(OneSidedHexominoes):
             coords.update(set(
                 self.coordinates_rectangle(6, 8, offset=(i * 9 + 1, 0))))
         return sorted(coords)
+
+
+class Cornucopia17x6(Cornucopia):
+
+    
+    width = 17
+    height = 6
+
+    def customize_piece_data(self):
+        self.piece_data['L06'][-1]['flips'] = None
+        self.piece_data['L06'][-1]['rotations'] = (0, 1)
