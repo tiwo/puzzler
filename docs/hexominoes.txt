@@ -303,7 +303,7 @@ Hexominoes <polyominoes-intro.html#hexominoes>`__ with 8 aspects which
 do not contain 2x2 blocks. The Polyform Puzzler hexomino names of the
 pieces are listed under the first puzzle below.
 
-* 17x6 rectangle (suggested by Dan Klarskov): ` solutions
+* 17x6 rectangle (suggested by Dan Klarskov): `162,086 solutions
   <../solutions/ominoes/cornucopia-17x6.txt>`__
 
   .. image:: images/ominoes/cornucopia-17x6.png
