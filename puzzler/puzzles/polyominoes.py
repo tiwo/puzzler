@@ -334,7 +334,6 @@ class Cornucopia(Hexominoes):
 Cornucopia.piece_data = dict(
     (_name, _value) for (_name, _value) in Hexominoes.piece_data.items()
     if _name in Cornucopia.asymmetric_pieces)
-del _name, _value
 
 
 class Polyominoes12(Polyominoes):

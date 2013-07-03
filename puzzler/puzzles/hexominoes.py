@@ -518,6 +518,9 @@ class OneSidedHexominoesSixCrosses(OneSidedHexominoes):
 
 class Cornucopia17x6(Cornucopia):
 
+    """
+    162,086 solutions
+    """
     
     width = 17
     height = 6
