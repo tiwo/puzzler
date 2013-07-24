@@ -168,7 +168,7 @@ Misc
 
   .. image:: images/cubes/pentacubes-2x11x11-frame.png
 
-* Corner crystal (one empty cube is hidden in the corner; puzzle
+* _`Corner crystal` (one empty cube is hidden in the corner; puzzle
   design by Nick Maeder): `solutions incomplete
   <../solutions/cubes/pentacubes-corner-crystal.txt>`__
   (`X3D model <images/cubes/pentacubes-corner-crystal.x3d>`__)
