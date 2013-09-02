@@ -134,6 +134,8 @@ later is recommended.
 
   - Polycubes: Diabolical Cube & Nancy Sheldon's variations.
 
+  - Seven-segment digits polysticks.
+
 * Added ``-n``/``--stop-after`` option.
 
 * Added SVG image generation support for polyominoes, polyiamonds,

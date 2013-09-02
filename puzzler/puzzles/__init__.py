@@ -399,7 +399,7 @@ class Puzzle(object):
 
     def store_solutions(self, solution, formatted):
         """
-        Return True if the solution is a duplicate, false if unique.
+        Return True if the solution is a duplicate, False if unique.
 
         Store the formatted solution along with puzzle-specific variants
         (reflections, rotations) in `self.solutions`, to check for duplicates.

@@ -194,11 +194,10 @@ one-sided tetrasticks.
   .. image:: images/sticks/one-sided-tetrasticks-trapezoid-10x5.png
 
 
-
 Polysticks of Order 1 Through 4
 ===============================
 
-This puzzle uses the 1 monostick, 2 disticks, 5 tristicks, and 16
+These puzzles use the 1 monostick, 2 disticks, 5 tristicks, and 16
 tetrasticks, for a total of 84 line segments.
 
 * 7x7 grid: `solutions incomplete
@@ -258,5 +257,28 @@ tetrasticks, for a total of 84 line segments.
 
   .. image:: images/sticks/polysticks-1234-three-squares-1.png
 
+
+Seven-Segment Digits
+====================
+
+The pieces in this puzzle are modeled after the seven-segment display
+digits 0 through 9, as seen on digital watches, for a total of 49 line
+segments.  Based on the "Digigrams" puzzle (AKA "Count On Me" or
+"Count Me In") by Martin H. Watson.
+
+In the following puzzle, the digit pairs (2, 5) and (6, 9) are
+considered identical for the sake of counting solutions (preventing
+duplicate solutions). Also note that the 0 digit has a gap in one long
+side, allowing the 1 or 7 digit to intersect and occupy the 0 digit's
+otherwise enclosed central line segment.
+
+* 6x5 grid: `5 solutions
+  <../solutions/sticks/seven-segment-digits-6x5.txt>`__
+
+  .. image:: images/sticks/seven-segment-digits-6x5.png
+
+  Unfortunately, there are no solutions where all of the digits are
+  unflipped.  For example, in the solution above, the green 2 digit is
+  flipped and appears as a second 5.
 
 .. |c| unicode:: U+00A9 .. copyright sign

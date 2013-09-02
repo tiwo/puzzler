@@ -254,6 +254,12 @@ Potential Puzzles
   * R*(6,6)
   * D(5,2)
 
+49: seven-segment digits
+
+* No solutions:
+
+  * R*(7,6)
+
 60: 15/16 tetrasticks
 
 * No solutions:

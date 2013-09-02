@@ -324,6 +324,91 @@ tetrasticks:
      -
 
 
+Seven-Segment Digits
+--------------------
+
+These pieces correspond to the seven-segment display decimal digits 0
+through 9, as seen on digital watches, for a total of 49 line
+segments.  Based on the "Digigrams" puzzle (AKA "Count On Me" or
+"Count Me In") by Martin H. Watson. The 0/zero digit must have a gap
+in one side to allow the central segment to be occupied (by a 1 or a 7
+only). The 2 and 5 digits are identical (through reflection), and the
+6 and 9 are identical (through rotation). The pieces comprise one
+distick (digit 1), one tristick (digit 7), one tetrastick (digit 4),
+three pentasticks (digits 2, 3, & 5), three hexasticks (digits 0, 6, &
+9), and one heptastick (digit 8).
+
+.. list-table::
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+
+   * - Name
+     - Image
+     - Aspects
+     - One-Sided
+     - Welded
+
+   * - d0
+     - .. image:: images/pieces/polysticks/d0.png
+     - 2
+     -
+     -
+
+   * - d1
+     - .. image:: images/pieces/polysticks/d1.png
+     - 2
+     -
+     -
+
+   * - d2
+     - .. image:: images/pieces/polysticks/d2.png
+     - 4
+     - yes
+     -
+
+   * - d3
+     - .. image:: images/pieces/polysticks/d3.png
+     - 4
+     -
+     - yes
+
+   * - d4
+     - .. image:: images/pieces/polysticks/d4.png
+     - 8
+     - yes
+     - yes
+
+   * - d5
+     - .. image:: images/pieces/polysticks/d5.png
+     - 4
+     - yes
+     -
+
+   * - d6
+     - .. image:: images/pieces/polysticks/d6.png
+     - 8
+     - yes
+     - yes
+
+   * - d7
+     - .. image:: images/pieces/polysticks/d7.png
+     - 8
+     - yes
+     -
+
+   * - d8
+     - .. image:: images/pieces/polysticks/d8.png
+     - 2
+     -
+     - yes
+
+   * - d9
+     - .. image:: images/pieces/polysticks/d9.png
+     - 8
+     - yes
+     - yes
+
+
 Coordinate System
 =================
 

@@ -2,7 +2,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2012 by David J. Goodger
+# Copyright: (C) 1998-2013 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """
@@ -10,6 +10,7 @@ Polystick puzzle base classes.
 """
 
 import copy
+import operator
 
 from puzzler import coordsys
 from puzzler.puzzles import PuzzlePseudo3D, OneSidedLowercaseMixin
@@ -541,3 +542,115 @@ class Polysticks1234(Tetrasticks, Polysticks123Data):
 class OneSidedPolysticks1234(OneSidedLowercaseMixin, Polysticks1234):
 
     pass
+
+
+class SevenSegmentDigits(Polysticks):
+
+    """
+    Based on the Digigrams puzzle (AKA 'Count On Me' or 'Count Me In')
+    by Martin H. Watson.
+    """
+
+    piece_data = {
+        'd0': (((0,0,0), (0,0,1),          (0,1,1), (0,2,0), (1,0,1), (1,1,1)),
+               {}),
+        'd1': ((         (0,0,1),          (0,1,1)),
+               {}),
+        'd2': (((0,0,0), (0,0,1), (0,1,0),          (0,2,0),          (1,1,1)),
+               {}),
+        'd3': (((0,0,0),          (0,1,0),          (0,2,0), (1,0,1), (1,1,1)),
+               {}),
+        'd4': ((                  (0,1,0), (0,1,1),          (1,0,1), (1,1,1)),
+               {}),
+        'd5': (((0,0,0),          (0,1,0), (0,1,1), (0,2,0), (1,0,1),        ),
+               {}),
+        'd6': (((0,0,0), (0,0,1), (0,1,0), (0,1,1), (0,2,0), (1,0,1),        ),
+               {}),
+        'd7': ((                                    (0,2,0), (1,0,1), (1,1,1)),
+               {}),
+        'd8': (((0,0,0), (0,0,1), (0,1,0), (0,1,1), (0,2,0), (1,0,1), (1,1,1)),
+               {}),
+        'd9': (((0,0,0),          (0,1,0), (0,1,1), (0,2,0), (1,0,1), (1,1,1)),
+               {}),}
+    """Line segments."""
+
+    symmetric_pieces = 'd0 d1 d3 d8'.split()
+    """Pieces with reflexive symmetry, identical to their mirror images."""
+
+    asymmetric_pieces = 'd2 d4 d5 d6 d7 d9'.split()
+    """Pieces without reflexive symmetry, different from their mirror images."""
+
+    welded_pieces = 'd3 d4 d6 d8 d9'.split()
+    """Pieces with junction points (where 3 or more segments join)."""
+
+    unwelded_pieces = 'd0 d1 d2 d5 d7'.split()
+    """Pieces without junction points (max. 2 segments join)."""
+
+    intersection_exceptions = set(('d0',))
+
+    piece_colors = {
+        'd0': 'blue',
+        'd1': 'red',
+        'd2': 'green',
+        'd3': 'lime',
+        'd4': 'navy',
+        'd5': 'magenta',
+        'd6': 'darkorange',
+        'd7': 'turquoise',
+        'd8': 'blueviolet',
+        'd9': 'plum',
+        '0': 'gray',
+        '1': 'black'}
+
+    def build_matrix_row(self, name, coords):
+        if name not in self.intersection_exceptions:
+            Polysticks.build_matrix_row(self, name, coords)
+            return
+        row = [0] * len(self.matrix[0])
+        row[self.matrix_columns[name]] = name
+        for (x,y,z) in coords:
+            label = '%0*i,%0*i,%0*i' % (
+                self.x_width, x, self.y_width, y, self.z_width, z)
+            row[self.matrix_columns[label]] = label
+        for (x,y) in sorted(coords.intersections()):
+            label = '%0*i,%0*ii' % (self.x_width, x, self.y_width, y)
+            if label in self.matrix_columns:
+                # add one intersection at a time, one row per intersection:
+                row[self.matrix_columns[label]] = label
+                self.matrix.append(row)
+                row[self.matrix_columns[label]] = 0
+
+    def format_solution(self, solution, swapped_25=False, swapped_69=False,
+                        **kwargs):
+        if swapped_25 or swapped_69:
+            solution = copy.deepcopy(solution)
+        if swapped_25:
+            d2 = [row for row in solution if row[-1] == 'd2'][0]
+            d5 = [row for row in solution if row[-1] == 'd5'][0]
+            d2[-1] = 'd5'
+            d5[-1] = 'd2'
+        if swapped_69:
+            d6 = [row for row in solution if row[-1] == 'd6'][0]
+            d9 = [row for row in solution if row[-1] == 'd9'][0]
+            d6[-1] = 'd9'
+            d9[-1] = 'd6'
+        formatted = Polysticks.format_solution(self, solution, **kwargs)
+        return formatted
+
+#     def format_svg(self, solution=None, s_matrix=None):
+#         """
+#         Ensure that digit '0' is rendered first, so that '1' or '7' lays on top.
+#         """
+#         solution = sorted(solution, key=operator.itemgetter(-1))
+#         svg = Polysticks.format_svg(self, solution, s_matrix)
+#         import pdb ; pdb.set_trace()
+#         return svg
+
+    def format_svg_shapes(self, s_matrix):
+        shapes = Polysticks.format_svg_shapes(self, s_matrix)
+        for (i, shape) in enumerate(shapes):
+            if shape.find('<desc>d0</desc>') != -1:
+                del shapes[i]
+                shapes.insert(0, shape)
+                break
+        return shapes
