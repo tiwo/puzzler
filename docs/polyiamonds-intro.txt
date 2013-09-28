@@ -8,7 +8,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2012 by David J. Goodger
+:Copyright: |c| 1998-2013 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -452,7 +452,7 @@ Coordinate System
 =================
 
 Polyiamonds use a pseudo-3-dimensional skewed *(x,y,z)* Cartesian
-coordinate system.  The X and Y axes are 60° apart instead of 90°, and
+coordinate system. The X and Y axes are 60° apart instead of 90°, and
 the Z dimension is used to represent the orientation of triangles::
 
                   ____
@@ -473,6 +473,37 @@ Example (with coordinates)::
     y=0  /___/__________\_______\________/___/
 
          x=0  1   2   3   4   5   6   7   8
+
+Each coordinate triple locates a triangle. The *(x,y)* pair locates an
+equilateral parallelogram (*not* a point), and the *z* coordinate
+identifies the triangle (half of the parallelogram).
+
+Another example::
+
+             .    /\    ..    .
+              .G /F \H .  .I .
+          ______/____\_ _ _..
+         /\    /\    /\    .
+    y=0 /A \B /C \D /E \  .
+       /____\/____\/____\
+        x=0
+
+The coordinates in the figure above are as follows:
+
+| A: (0,0,0)
+| B: (0,0,1) -- same X=column as A, same Y=row as A,
+  different orientation so Z=1
+| C: (1,0,0) -- different X=column from A, same Y=row as A, 
+  same Z=orientation as A
+| D: (1,0,1)
+| E: (2,0,0)
+| F: (1,1,0) -- same X=column as C & D, different Y=row from all the
+  others, same Z=orientation as C but different from D.
+
+The coordinate (0,1,1) would be at G, (1,1,1) would be at H, and
+(2,1,1) would be at I.  The *(x,y)* coordinates (0,0) identify the
+parallelogram formed from triangles A & B, (1,0) is C & D together,
+etc.
 
 Each unit triangle has 3 immediate neighbors.  The neighbors of the
 triangle at coordinates *(x, y, 0)* are:
