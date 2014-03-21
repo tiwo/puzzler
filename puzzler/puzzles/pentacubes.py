@@ -2,7 +2,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2012 by David J. Goodger
+# Copyright: (C) 1998-2014 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """
@@ -11,7 +11,8 @@ Concrete pentacube puzzles.
 
 from puzzler.puzzles import Puzzle3D, Puzzle2D
 from puzzler.puzzles.polycubes import (
-     SolidPentominoes, Pentacubes, PentacubesPlus, NonConvexPentacubes)
+     SolidPentominoes, Pentacubes, PentacubesPlus, NonConvexPentacubes,
+     Pentacubes3x3x3)
 from puzzler.coordsys import Cartesian3DCoordSet
 
 
@@ -1805,3 +1806,17 @@ class NonConvexPentacubesRingWall3(NonConvexPentacubes):
 
     def coordinates(self):
         return self.coordinates_ring_wall(self.width, self.height, self.depth)
+
+
+class DorianCube(Pentacubes3x3x3):
+
+    width = 5
+    height = 5
+    depth = 5
+    
+    def customize_piece_data(self):
+        """Restrict the P piece to a single aspect."""
+        Pentacubes3x3x3.customize_piece_data(self)
+        self.piece_data['P5'][-1]['rotations'] = None
+        self.piece_data['P5'][-1]['flips'] = None
+        self.piece_data['P5'][-1]['axes'] = None

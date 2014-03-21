@@ -139,9 +139,9 @@ class Polyhexes(Puzzle2D):
                 yield cls.coordinate_offset(x, y, offset)
 
     def make_aspects(self, units, flips=(False, True),
-                     rotations=(0, 1, 2, 3, 4, 5), implied_0=True):
+                     rotations=(0, 1, 2, 3, 4, 5)):
         aspects = set()
-        if implied_0:
+        if self.implied_0:
             coord_list = ((0, 0),) + units
         else:
             coord_list = tuple(units)
@@ -636,9 +636,6 @@ class Hexahexes(Polyhexes):
         'Z06': (((0, 1), (0, 2), (1, 1), (2, 1), (3, 0), (3, 1)), {}),
         }
     """(0,0) is NOT implied."""
-    for _name in list(piece_data):
-        piece_data[_name][-1]['implied_0'] = False
-    del _name
 
     symmetric_pieces = (
         'A06 C06 C16 E06 I06 O06 T06 T16 T56 U06 U16 V06 X06 X16 Y06 Y16 Y26'

@@ -62,6 +62,8 @@ class Puzzle(object):
       customized in `customize_piece_data`
     """
 
+    implied_0 = True
+
     piece_colors = None
     """Mapping of piece names to colors.  The '0' name is reserved for
     formatting solution coordinates."""
@@ -491,7 +493,10 @@ class Puzzle2D(Puzzle):
 
     def make_aspects(self, units, flips=(False, True), rotations=(0, 1, 2, 3)):
         aspects = set()
-        coord_list = ((0, 0),) + units
+        if self.implied_0:
+            coord_list = ((0, 0),) + units
+        else:
+            coord_list = units
         for flip in flips or (0,):
             for rotation in rotations or (0,):
                 aspect = coordsys.Cartesian2DView(coord_list, rotation, flip)
@@ -503,7 +508,7 @@ class Puzzle2D(Puzzle):
         for i, key in enumerate(sorted(self.pieces.keys())):
             self.matrix_columns[key] = i
             headers.append(key)
-        for (x, y) in self.coordinates():
+        for (x, y) in sorted(self.solution_coords):
             header = '%0*i,%0*i' % (self.x_width, x, self.y_width, y)
             self.matrix_columns[header] = len(headers)
             headers.append(header)
@@ -793,7 +798,10 @@ class Puzzle3D(Puzzle):
     def make_aspects(self, units,
                      flips=(0, 1), axes=(0, 1, 2), rotations=(0, 1, 2, 3)):
         aspects = set()
-        coord_list = ((0, 0, 0),) + units
+        if self.implied_0:
+            coord_list = ((0, 0, 0),) + units
+        else:
+            coord_list = units
         for axis in axes or (2,):
             coord_set = coordsys.Cartesian3DView(coord_list)
             if axis != 2:
@@ -811,7 +819,7 @@ class Puzzle3D(Puzzle):
         for i, key in enumerate(sorted(self.pieces.keys())):
             self.matrix_columns[key] = i
             headers.append(key)
-        for (x, y, z) in self.coordinates():
+        for (x, y, z) in sorted(self.solution_coords):
             header = '%0*i,%0*i,%0*i' % (
                 self.x_width, x, self.y_width, y, self.z_width, z)
             self.matrix_columns[header] = len(headers)

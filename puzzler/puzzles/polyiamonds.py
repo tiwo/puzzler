@@ -169,7 +169,10 @@ class Polyiamonds(PuzzlePseudo3D):
     def make_aspects(self, units, flips=(False, True),
                      rotations=(0, 1, 2, 3, 4, 5)):
         aspects = set()
-        coord_list = ((0, 0, 0),) + units
+        if self.implied_0:
+            coord_list = ((0, 0, 0),) + units
+        else:
+            coord_list = units
         for flip in flips or (0,):
             for rotation in rotations or (0,):
                 aspect = coordsys.Triangular3DView(

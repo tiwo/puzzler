@@ -1224,7 +1224,43 @@ class HexiamondsHexgridTriangleRing_x2(Hexiamonds):
         return sorted(coords)
 
 
-class HexiamondsHexicator(Hexiamonds):
+class HexiamondsChoose9Hexagon(Hexiamonds):
+
+    """
+    Abstract base class for puzzles that use 9 of the 12 hexiamonds to form an
+    regular hexagon of side length 3.
+
+    Naively, there are (12 choose 9) = 220 different sets of 9 hexiamonds.
+    However, to form a regular hexagon, an equal number of 'up' and 'down'
+    triangles are necessary. The F6 & P6 hexiamonds are unbalanced (two 'up'
+    triangles and four 'down', or vice-versa), while all other hexiamonds are
+    balanced (three of each). So puzzles must either include or exclude both
+    F6 & P6.
+
+    Therefore there are actually (10 choose 3) + (10 choose 1) = 120 + 10 =
+    130 possible hexiamond subsets for these puzzles.
+    """
+
+    # list the pieces to omit:
+    omit = ()
+
+    # one piece must be fixed, to prevent duplicates:
+    fixed = 'P6'
+
+    width = 6
+    height = 6
+
+    def coordinates(self):
+        return self.coordinates_hexagon(3)
+
+    def customize_piece_data(self):
+        self.piece_data[self.fixed][-1]['flips'] = (1,) # per the original
+        self.piece_data[self.fixed][-1]['rotations'] = None
+        for name in self.omit:
+            del self.piece_data[name]
+
+
+class HexiamondsHexicator(HexiamondsChoose9Hexagon):
 
     """
     1 solution
@@ -1236,19 +1272,44 @@ class HexiamondsHexicator(Hexiamonds):
     pieces are omitted from the puzzle.
     """
 
-    width = 6
-    height = 6
-
     omit = ['J6', 'H6', 'G6']
 
-    def coordinates(self):
-        return self.coordinates_hexagon(3)
 
-    def customize_piece_data(self):
-        self.piece_data['P6'][-1]['flips'] = (1,) # per the original
-        self.piece_data['P6'][-1]['rotations'] = None
-        for name in self.omit:
-            del self.piece_data[name]
+class HexiamondsChoose9Hexagon2(HexiamondsChoose9Hexagon):
+
+    """
+    9 solutions
+
+    The pieces omitted from this puzzle are the three hexiamonds that cannot
+    be formed with two triamonds: E6/crown, H6/pistol/signpost, and
+    V6/lobster.
+
+    Suggested by Michael Spencer on 2013-11-24:
+
+        My local cafe has a wooden hexiamond puzzle that I thought might
+        interest you. It is very similar to one puzzle you mention
+        (http://userpages.monmouth.com/~colonel/hexicator/hexicator.html) but
+        instead of omitting the G, H and J pieces it omits E, H and V (in
+        other words, precisely those pieces that cannot be formed from two
+        triamonds). I am now very curious to know how many solutions this
+        version has!
+    """
+
+    omit = ['E6', 'H6', 'V6']
+
+
+class HexiamondsChoose9Hexagon3(HexiamondsChoose9Hexagon):
+
+    """
+    15 solutions
+
+    The pieces omitted from this puzzle are the three hexiamonds that cannot
+    be formed with three diamonds: F6/yacht, P6/sphinx, and X6/butterfly.
+    """
+
+    omit = ['F6', 'P6', 'X6']
+
+    fixed = 'J6'
 
 
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):

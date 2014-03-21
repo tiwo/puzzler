@@ -2,7 +2,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2012 by David J. Goodger
+# Copyright: (C) 1998-2014 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """
@@ -242,6 +242,22 @@ class NonConvexPentacubes(Pentacubes):
         """Remove I."""
         Pentacubes.customize_piece_data(self)
         del self.piece_data['I5']
+
+
+class Pentacubes3x3x3(Pentacubes):
+
+    """
+    The regular pentacubes that fit in a 3x3x3 box. The I, L, N, and Y pieces
+    are omitted.
+    """
+
+    omitted_pieces = ('I5', 'L5', 'N5', 'Y5')
+
+    def customize_piece_data(self):
+        """Remove pieces with any dimension measuring > 3."""
+        Pentacubes.customize_piece_data(self)
+        for name in self.omitted_pieces:
+            del self.piece_data[name]
 
 
 class SolidHexominoes(Polycubes):
