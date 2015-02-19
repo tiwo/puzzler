@@ -160,6 +160,11 @@ Hexagons & Variants
 
   .. image:: images/iamonds/hexiamonds-coin.png
 
+* "Gyroscope" (design by `Oktavian Scharek`_): `19
+  solutions <../solutions/iamonds/hexiamonds-gyroscope.txt>`__
+
+  .. image:: images/iamonds/hexiamonds-gyroscope.png
+
 * Irregular hexagon 7x8 (suggested by Dan Klarskov, under the name
   "hexui"): `5885 solutions
   <../solutions/iamonds/hexiamonds-irregular-hexagon-7x8.txt>`__
@@ -194,18 +199,64 @@ Hexagons & Variants
 
   __ http://mathworld.wolfram.com/HexiamondTiling.html
 
-* .. _hexicator:
 
-  Hexicator__: `Col. George L. Sicherman's puzzle`__ consisting of 9
-  hexiamonds (the club/crook/J6, pistol/signpost/H6, and shoe/hook/G6
-  pieces are omitted) to be formed into a regular hexagon (side length
-  3).  `Try it`__ before you look at the `1 and only solution
-  <../solutions/iamonds/hexiamonds-hexicator.txt>`__ (`picture here
-  <images/iamonds/hexiamonds-hexicator.png>`__).
+"Choose 9" Hexagons
+-------------------
+
+Puzzles that use 9 of the 12 hexiamonds to form an regular hexagon of
+side length 3.
+
+Naively, there are (12 choose 9) = 220 different sets of 9 hexiamonds.
+However, to form a regular hexagon, an equal number of 'up' and 'down'
+triangles are necessary. The F6 & P6 hexiamonds are unbalanced (two
+'up' triangles and four 'down', or vice-versa), while all other
+hexiamonds are balanced (three of each). So puzzles must either
+include or exclude both F6 & P6.  Therefore there are actually (10
+choose 3) + (10 choose 1) = 120 + 10 = 130 possible hexiamond subsets
+for these puzzles.
+
+Which 9 hexiamonds to choose? Here are some ideas.
+
+* _`Hexicator`: The "Hexicator__" is `Col. George L. Sicherman's puzzle`__
+  consisting of 9 hexiamonds (the club/crook/J6, pistol/signpost/H6,
+  and shoe/hook/G6 pieces are omitted) to be formed into a regular
+  hexagon (side length 3).  `Try it`__ before you look at the `1 and
+  only solution <../solutions/iamonds/hexiamonds-hexicator.txt>`__
+  (`picture here <images/iamonds/hexiamonds-hexicator.png>`__).
+
+  Perhaps this was the first set of 9 pieces that Col. Sicherman found
+  that can make a hexagon in only one way.  Is it the only set?
 
   __
   __
   __ http://userpages.monmouth.com/~colonel/hexicator/hexicator.html
+
+* Choose-9 Hexagon 2: The pieces omitted from this puzzle are the
+  three hexiamonds that cannot be formed with two triamonds: E6/crown,
+  H6/pistol/signpost, and V6/lobster.
+
+  Suggested by Michael Spencer on 2013-11-24:
+
+      My local cafe has a wooden hexiamond puzzle that I thought might
+      interest you. It is very similar to one puzzle you mention
+      [Hexicator_] but instead of omitting the G, H and J pieces it
+      omits E, H and V (in other words, precisely those pieces that
+      cannot be formed from two triamonds). I am now very curious to
+      know how many solutions this version has!
+
+  `9 solutions
+  <../solutions/iamonds/hexiamonds-choose-9-hexagon-2.txt>`__
+
+  .. image:: images/iamonds/hexiamonds-choose-9-hexagon-2.png
+
+* Choose-9 Hexagon 3: The pieces omitted from this puzzle are the
+  three hexiamonds that cannot be formed with three diamonds:
+  F6/yacht, P6/sphinx, and X6/butterfly.
+
+  `15 solutions
+  <../solutions/iamonds/hexiamonds-choose-9-hexagon-3.txt>`__
+
+  .. image:: images/iamonds/hexiamonds-choose-9-hexagon-3.png
 
 
 Hexagon-Grid Shapes
@@ -249,10 +300,27 @@ Miscellaneous
 
   .. image:: images/iamonds/hexiamonds-4x12-stacked-butterflies.png
 
-* Trefoil (3 joined hexagons): `640 solutions
-  <../solutions/iamonds/hexiamonds-trefoil.txt>`__
+* Trefoils:
 
-  .. image:: images/iamonds/hexiamonds-trefoil.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/iamonds/hexiamonds-trefoil.png
+
+            (3 joined hexagons): `640 solutions
+            <../solutions/iamonds/hexiamonds-trefoil.txt>`__
+
+       - .. figure:: images/iamonds/hexiamonds-trefoil-2.png
+
+            `2 solutions
+            <../solutions/iamonds/hexiamonds-trefoil-2.txt>`__  
+
+     * - .. figure:: images/iamonds/hexiamonds-bumpy-trefoil.png
+
+            Bumpy trefoil (design by `Oktavian Scharek`_): `15 solutions
+            <../solutions/iamonds/hexiamonds-bumpy-trefoil.txt>`__
+
+       -
 
 * Tenyo's puzzle: `4968 solutions
   <../solutions/iamonds/hexiamonds-tenyo.txt>`__
@@ -275,10 +343,50 @@ Miscellaneous
 
   .. image:: images/iamonds/hexiamonds-heart.png
 
-* Spinner: `751 solutions
-  <../solutions/iamonds/hexiamonds-spinner-1.txt>`__
+* Spinners:
 
-  .. image:: images/iamonds/hexiamonds-spinner-1.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/iamonds/hexiamonds-spinner-1.png
+
+            `751 solutions
+            <../solutions/iamonds/hexiamonds-spinner-1.txt>`__
+
+       - .. figure:: images/iamonds/hexiamonds-spinner-2.png
+
+            `79 solutions
+            <../solutions/iamonds/hexiamonds-spinner-2.txt>`__ (design
+            by `Oktavian Scharek
+            <http://www.8dfineart.com/Magic-Triangles>`_)
+
+* Deltas:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/iamonds/hexiamonds-delta-1.png
+
+            `11 solutions
+            <../solutions/iamonds/hexiamonds-delta-1.txt>`__
+
+       - .. figure:: images/iamonds/hexiamonds-delta-2.png
+
+            `232 solutions
+            <../solutions/iamonds/hexiamonds-delta-2.txt>`__
+            (inspired by a design by `Oktavian Scharek`_)
+
+     * - .. figure:: images/iamonds/hexiamonds-delta-3.png
+
+            `72 solutions
+            <../solutions/iamonds/hexiamonds-delta-3.txt>`__
+
+       -
+
+* Infinity (design by `Oktavian Scharek`_): `15 solutions
+  <../solutions/iamonds/hexiamonds-infinity.txt>`__
+
+  .. image:: images/iamonds/hexiamonds-infinity.png
 
 
 One-Sided Hexiamonds

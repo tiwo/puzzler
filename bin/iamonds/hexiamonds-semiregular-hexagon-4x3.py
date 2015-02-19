@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-""" solutions"""
+"""710 solutions"""
 
 import puzzler
 from puzzler.puzzles.hexiamonds import Hexiamonds4x3SemiregularHexagon

@@ -143,6 +143,15 @@ class Polyiamonds(PuzzlePseudo3D):
         return sorted(coords)
 
     @classmethod
+    def coordinates_diamond(cls, side_length, offset=None):
+        x, y, z = offset
+        top_offset = (x, y + side_length, z)
+        coords = (
+            set(cls.coordinates_triangle(side_length, offset=top_offset))
+            .union(cls.coordinates_inverted_triangle(side_length, offset)))
+        return sorted(coords)
+
+    @classmethod
     def coordinates_hexgrid(cls, coords, x_initial=None, offset=None):
         """
         Map H(1) hexagonal-grid `coords` to triangular-grid coordinates.

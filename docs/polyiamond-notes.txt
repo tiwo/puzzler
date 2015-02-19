@@ -48,6 +48,29 @@ Order  Name        Free    Units   Sum     One-sided  Units   Sum
 =====  ==========  ======  ======  ======  =========  ======  ======
 
 
+Parity Data
+===========
+
+In the table below, the "Min-D" and "Max-D" columns record,
+respectively, the minimum and maximum disparities that can be
+supported by these polyiamonds: the minimum and maximum discrepancies
+in parity of the puzzle's unit triangles, i.e. the minimum and maximum
+differences between the number of z=0 and z=1 triangles.
+
+=====  ==========  ======  ======  =====  =====  =========  ======  =====  =====
+Order  Name        Free    Units   Min-D  Max-D  One-sided  Units   Min-D  Max-D
+=====  ==========  ======  ======  =====  =====  =========  ======  =====  =====
+1      moniamond   1       1       1      1      1          1       1      1
+2      diamond     1       2       0      0      1          2       0      0
+3      triamond    1       3       1      1      1          3       1      1
+4      tetriamond  3       12      2      2      4          16      2      2
+5      pentiamond  4       20      0      4      6          30      0      6
+6      hexiamond   12      72      0      4      19         114     0      8
+7      heptiamond  24      168     0      26     43         301     1      45
+8      octiamond   66      528     ?      ?      120        960     ?      ?
+=====  ==========  ======  ======  =====  =====  =========  ======  =====  =====
+
+
 Shapes
 ======
 

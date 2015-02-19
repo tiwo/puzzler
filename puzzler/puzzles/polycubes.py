@@ -247,8 +247,8 @@ class NonConvexPentacubes(Pentacubes):
 class Pentacubes3x3x3(Pentacubes):
 
     """
-    The regular pentacubes that fit in a 3x3x3 box. The I, L, N, and Y pieces
-    are omitted.
+    The 25 regular pentacubes that fit in a 3x3x3 box. The I, L, N, and Y
+    pieces are omitted.
     """
 
     omitted_pieces = ('I5', 'L5', 'N5', 'Y5')
@@ -840,6 +840,27 @@ class DigitCubes(Polycubes):
                 (2, 0, 0), (2, 1, 0), (2, 2, 0), (2, 3, 0), (2, 4, 0),), {}),}
     """(0,0,0) is implied."""
 
+    internal_coords = {
+        'd0': ((0, 1, 0), (0, 2, 0), (0, 3, 0),
+               (1, 0, 0), (1, 1, 0), (1, 2, 0), (1, 3, 0), (1, 4, 0), 
+               (2, 1, 0), (2, 2, 0), (2, 3, 0),),
+        'd1': ((1, 1, 0), (1, 2, 0), (1, 3, 0),),
+        'd2': ((0, 1, 0), (1, 2, 0), (2, 3, 0),),
+        'd3': ((2, 1, 0), (2, 3, 0),),
+        'd4': ((-1, 2, 0),),
+        'd5': ((0, 3, 0), (1, 2, 0), (2, 1, 0),),
+        'd6': ((0, 1, 0), (0, 3, 0), (1, 0, 0), (1, 1, 0), (1, 2, 0),
+               (2, 1, 0),),
+        'd7': ((-1, 4, 0),),
+        'd8': ((0, 1, 0), (0, 3, 0),
+               (1, 0, 0), (1, 1, 0), (1, 2, 0), (1, 3, 0), (1, 4, 0),
+               (2, 1, 0), (2, 3, 0),),
+        'd9': ((0, 3, 0), (1, 2, 0), (1, 3, 0), (1, 4, 0),
+               (2, 1, 0), (2, 3, 0),),}
+    """These are secondary coordinates, internal holes and inaccessible
+    cubies, to prevent impossible solutions. Coordinates overlay `piece_data`
+    coords."""
+
     piece_colors = {
         'd0': 'plum',
         'd1': 'red',
@@ -858,3 +879,28 @@ class DigitCubes(Polycubes):
 
     # for format_solution:
     piece_width = 3
+
+    def build_matrix_header(self):
+        Polycubes.build_matrix_header(self)
+        headers = self.matrix[0]
+        primary = len(headers)
+        for (x, y, z) in sorted(self.solution_coords):
+            header = '%0*i,%0*i,%0*ii' % (
+                self.x_width, x, self.y_width, y, self.z_width, z)
+            self.matrix_columns[header] = len(headers)
+            headers.append(header)
+        self.secondary_columns = len(headers) - primary
+
+    #    ?
+    def build_matrix_row(self, name, coords):
+        row = [0] * len(self.matrix[0])
+        row[self.matrix_columns[name]] = name
+        for (x,y,z) in coords:
+            label = '%0*i,%0*i,%0*i' % (
+                self.x_width, x, self.y_width, y, self.z_width, z)
+            row[self.matrix_columns[label]] = label
+        for (x,y) in coords.intersections():
+            label = '%0*i,%0*ii' % (self.x_width, x, self.y_width, y)
+            if label in self.matrix_columns:
+                row[self.matrix_columns[label]] = label
+        self.matrix.append(row)

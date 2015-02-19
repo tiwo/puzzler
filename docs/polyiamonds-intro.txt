@@ -91,6 +91,11 @@ asymmetrical polyiamonds as distinct polyforms (and disallowing
 further reflection or "flipping"), results in "one-sided" polyiamonds
 and puzzles.
 
+The "Disparity" column shows the discrepancy in parity of the
+polyiamond's unit triangles, i.e. the difference between the number of
+z=0 and z=1 units in the polyiamond.  Left blank when there is no
+difference.
+
 Alternate names and name origins are noted in the "Name" column.
 
 
@@ -107,12 +112,14 @@ There is only one moniamond (order-1 polyiamond):
      - Image
      - Aspects
      - One-Sided
+     - Disparity
 
    * - | T1
        | (from "Triangle")
      - .. image:: images/pieces/polyiamonds/T1.png
      - 2
      -
+     - 1
 
 
 Diamond
@@ -128,11 +135,13 @@ There is only one diamond (order-2 polyiamond):
      - Image
      - Aspects
      - One-Sided
+     - Disparity
 
    * - | D2
        | (from "Diamond")
      - .. image:: images/pieces/polyiamonds/D2.png
      - 3
+     -
      -
 
 
@@ -149,11 +158,13 @@ There is only one triamond (order-3 polyiamond):
      - Image
      - Aspects
      - One-Sided
+     - Disparity
 
    * - I3
      - .. image:: images/pieces/polyiamonds/I3.png
      - 6
      -
+     - 1
 
 
 Tetriamonds
@@ -170,22 +181,26 @@ tetriamonds:
      - Image
      - Aspects
      - One-Sided
+     - Disparity
 
    * - C4
      - .. image:: images/pieces/polyiamonds/C4.png
      - 6
+     -
      -
 
    * - I4
      - .. image:: images/pieces/polyiamonds/I4.png
      - 6
      - yes
+     -
 
    * - | T4
        | (from "Triangle")
      - .. image:: images/pieces/polyiamonds/T4.png
      - 2
      -
+     - 2
 
 
 Pentiamonds
@@ -202,26 +217,31 @@ pentiamonds:
      - Image
      - Aspects
      - One-Sided
+     - Disparity
 
    * - C5
      - .. image:: images/pieces/polyiamonds/C5.png
      - 6
      -
+     - 1
 
    * - I5
      - .. image:: images/pieces/polyiamonds/I5.png
      - 6
      -
+     - 1
 
    * - L5
      - .. image:: images/pieces/polyiamonds/L5.png
      - 12
      - yes
+     - 1
 
    * - P5
      - .. image:: images/pieces/polyiamonds/P5.png
      - 12
      - yes
+     - 1
 
 
 Hexiamonds
@@ -238,11 +258,13 @@ hexiamonds:
      - Image
      - Aspects
      - One-Sided
+     - Disparity
 
    * - | C6
        | (a.k.a. "Chevron" or "Bat")
      - .. image:: images/pieces/polyiamonds/C6.png
      - 6
+     -
      -
 
    * - | E6
@@ -250,41 +272,48 @@ hexiamonds:
      - .. image:: images/pieces/polyiamonds/E6.png
      - 6
      -
+     -
 
    * - | F6
        | (a.k.a. "Yacht")
      - .. image:: images/pieces/polyiamonds/F6.png
      - 12
      - yes
+     - 2
 
    * - | G6
        | (a.k.a. "Shoe" or "Hook")
      - .. image:: images/pieces/polyiamonds/G6.png
      - 12
      - yes
+     -
 
    * - | H6
        | (a.k.a. "Pistol" or "Signpost")
      - .. image:: images/pieces/polyiamonds/H6.png
      - 12
      - yes
+     -
 
    * - | I6
        | (a.k.a. "Bar" or "Rhomboid")
      - .. image:: images/pieces/polyiamonds/I6.png
      - 6
      - yes
+     -
 
    * - | J6
        | (a.k.a. "Club" or "Crook")
      - .. image:: images/pieces/polyiamonds/J6.png
      - 12
      - yes
+     -
 
    * - | O6
        | (a.k.a. "Hexagon")
      - .. image:: images/pieces/polyiamonds/O6.png
      - 1
+     -
      -
 
    * - | P6
@@ -292,23 +321,27 @@ hexiamonds:
      - .. image:: images/pieces/polyiamonds/P6.png
      - 12
      - yes
+     - 2
 
    * - | S6
        | (a.k.a. "Snake")
      - .. image:: images/pieces/polyiamonds/S6.png
      - 6
      - yes
+     -
 
    * - | V6
        | (a.k.a. "Lobster")
      - .. image:: images/pieces/polyiamonds/V6.png
      - 6
      -
+     -
 
    * - | X6
        | (a.k.a. "Butterfly")
      - .. image:: images/pieces/polyiamonds/X6.png
      - 3
+     -
      -
 
 
@@ -326,126 +359,151 @@ heptiamonds:
      - Image
      - Aspects
      - One-Sided
+     - Disparity
 
    * - A7
      - .. image:: images/pieces/polyiamonds/A7.png
      - 12
      - yes
+     - 1
 
    * - B7
      - .. image:: images/pieces/polyiamonds/B7.png
      - 12
      - yes
+     - 1
 
    * - C7
      - .. image:: images/pieces/polyiamonds/C7.png
      - 6
      -
+     - 1
 
    * - D7
      - .. image:: images/pieces/polyiamonds/D7.png
      - 6
      -
+     - 1
 
    * - E7
      - .. image:: images/pieces/polyiamonds/E7.png
      - 12
      - yes
+     - 1
 
    * - F7
      - .. image:: images/pieces/polyiamonds/F7.png
      - 12
      - yes
+     - 1
 
    * - G7
      - .. image:: images/pieces/polyiamonds/G7.png
      - 12
      - yes
+     - 1
 
    * - H7
      - .. image:: images/pieces/polyiamonds/H7.png
      - 12
      - yes
+     - 1
 
    * - I7
      - .. image:: images/pieces/polyiamonds/I7.png
      - 6
      -
+     - 1
 
    * - J7
      - .. image:: images/pieces/polyiamonds/J7.png
      - 12
      - yes
+     - 1
 
    * - L7
      - .. image:: images/pieces/polyiamonds/L7.png
      - 12
      - yes
+     - 1
 
    * - M7
      - .. image:: images/pieces/polyiamonds/M7.png
      - 6
      -
+     - 3
 
    * - N7
      - .. image:: images/pieces/polyiamonds/N7.png
      - 12
      - yes
+     - 1
 
    * - P7
      - .. image:: images/pieces/polyiamonds/P7.png
      - 12
      - yes
+     - 1
 
    * - Q7
      - .. image:: images/pieces/polyiamonds/Q7.png
      - 12
      - yes
+     - 1
 
    * - R7
      - .. image:: images/pieces/polyiamonds/R7.png
      - 12
      - yes
+     - 1
 
    * - S7
      - .. image:: images/pieces/polyiamonds/S7.png
      - 12
      - yes
+     - 1
 
    * - T7
      - .. image:: images/pieces/polyiamonds/T7.png
      - 12
      - yes
+     - 1
 
    * - U7
      - .. image:: images/pieces/polyiamonds/U7.png
      - 12
      - yes
+     - 1
 
    * - V7
      - .. image:: images/pieces/polyiamonds/V7.png
      - 6
      -
+     - 1
 
    * - W7
      - .. image:: images/pieces/polyiamonds/W7.png
      - 4
      - yes
+     - 1
 
    * - X7
      - .. image:: images/pieces/polyiamonds/X7.png
      - 12
      - yes
+     - 1
 
    * - Y7
      - .. image:: images/pieces/polyiamonds/Y7.png
      - 12
      - yes
+     - 1
 
    * - Z7
      - .. image:: images/pieces/polyiamonds/Z7.png
      - 12
      - yes
+     - 1
 
 
 Coordinate System

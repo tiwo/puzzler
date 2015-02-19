@@ -1253,6 +1253,40 @@ class PentominoesAztecDiamond_x(Pentominoes):
         return self.coordinates_aztec_diamond(5)
 
 
+class PentominoesEye(Pentominoes):
+
+    """
+    1 solution.
+
+    Design by Joel Enwald.
+    """
+
+    height = 8
+    width = 11
+
+    rectangles = (
+        ((11, 2), (0, 3)),
+        ((9, 4), (1, 2)),
+        ((7, 6), (2, 1)),
+        ((5, 8), (3, 0)),)
+
+    holes = (
+        ((1, 4), (5, 2)),)
+
+    def coordinates(self):
+        coords = set()
+        for ((width, height), offset) in self.rectangles:
+            coords.update(self.coordinates_rectangle(width, height, offset))
+        for ((width, height), offset) in self.holes:
+            coords.difference_update(
+                self.coordinates_rectangle(width, height, offset))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = (0,1)
+        self.piece_data['P'][-1]['flips'] = None
+
+
 class OneSidedPentominoes3x30(OneSidedPentominoes):
 
     """46 solutions"""

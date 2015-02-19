@@ -547,6 +547,23 @@ class HexiamondsTrefoil(Hexiamonds):
         self.piece_data['I6'][-1]['flips'] = None
 
 
+class HexiamondsTrefoil2(Hexiamonds):
+
+    """2 solutions"""
+
+    height = 10
+    width = 10
+
+    holes = set(((0,3,0),(0,5,0),(3,0,0),(5,0,0),(3,5,0),(5,3,0)))
+
+    def coordinates(self):
+        return sorted(set(self.coordinates_semiregular_hexagon(7, 1)) - self.holes)
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['rotations'] = None
+        self.piece_data['I6'][-1]['flips'] = None
+
+
 class Hexiamonds3Hexagons(Hexiamonds):
 
     """0 solutions"""
@@ -589,6 +606,29 @@ class HexiamondsCoin(Hexiamonds):
 
     def customize_piece_data(self):
         self.piece_data['I6'][-1]['flips'] = None
+
+
+class HexiamondsGyroscope(Hexiamonds):
+
+    """
+    19 solutions
+
+    Design by `Oktavian Scharek`_.
+    """
+
+    height = 8
+    width = 8
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_elongated_hexagon(5, 3, offset=(0,1,0)))
+            .union(set(self.coordinates_diamond(4, offset=(2,0,0))))
+            - set(set(self.coordinates_diamond(2, offset=(3,2,0)))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['flips'] = None
+        self.piece_data['P6'][-1]['rotations'] = (0, 1, 2)
 
 
 class HexiamondsIrregularHexagon7x8(Hexiamonds):
@@ -783,6 +823,43 @@ class HexiamondsTriangleRing_x(Hexiamonds):
         return sorted(
             set(self.coordinates_triangle(9))
             - set(self.coordinates_triangle(3, offset=(2,2,0))))
+
+
+class HexiamondsTriangle_x1(Hexiamonds):
+
+    """
+    0 solutions
+
+    The parity of the hexiamonds (disparity range of 0-4 only) makes triangles
+    difficult.  An order-9 triangle has a disparity of 9 and an excess size of
+    9 (81 unit triangles, vs. the 12 hexiamonds with a total of 72 unit
+    triangles). This means that 9 holes must be introduced into the triangle,
+    all oriented the same way as the order-9 triangle itself. So far, the only
+    solution found required removing the corners of the order-9 triangle,
+    making it a semi-regular hexagon; see HexiamondsTrefoil2 (2 solutions).
+    """
+
+    height = 9
+    width = 9
+
+    #holes = set(((1,2,0),(2,1,0),(2,2,0),(1,5,0),(2,4,0),(2,5,0),(4,2,0),(5,1,0),(5,2,0)))
+    #holes = set(((1,2,0),(2,1,0),(2,3,0),(1,5,0),(2,5,0),(3,2,0),(3,3,0),(5,1,0),(5,2,0)))
+    #holes = set(((0,3,0),(0,4,0),(0,5,0),(3,0,0),(4,0,0),(5,0,0),(3,5,0),(4,4,0),(5,3,0)))
+    #holes = set(((1,1,0),(1,6,0),(6,1,0),(1,3,0),(1,4,0),(3,1,0),(4,1,0),(3,4,0),(4,3,0)))
+    #holes = set(((1,1,0),(1,6,0),(6,1,0),(1,3,0),(2,2,0),(2,4,0),(3,4,0),(4,1,0),(4,2,0)))
+    #holes = set(((1,1,0),(1,6,0),(6,1,0),(0,4,0),(4,0,0),(4,4,0),(2,3,0),(3,2,0),(3,3,0)))
+    #holes = set(((1,1,0),(1,6,0),(6,1,0),(0,4,0),(4,0,0),(4,4,0),(2,2,0),(2,4,0),(4,2,0)))
+    #holes = set(((1,1,0),(1,6,0),(6,1,0),(0,4,0),(4,0,0),(4,4,0),(1,3,0),(3,4,0),(4,1,0)))
+    #holes = set((_,0,0) for _ in range(9))
+    #holes = set(((0,1,0),(0,2,0),(0,3,0),(1,7,0),(2,6,0),(3,5,0),(5,0,0),(6,0,0),(7,0,0)))
+    #holes = set(((0,2,0),(0,3,0),(0,4,0),(2,6,0),(3,5,0),(4,4,0),(4,0,0),(5,0,0),(6,0,0)))
+    #holes = set(((0,1,0),(0,3,0),(0,5,0),(1,7,0),(3,5,0),(5,3,0),(3,0,0),(5,0,0),(7,0,0)))
+    #holes = set(((0,0,0),(0,2,0),(0,4,0),(0,8,0),(2,6,0),(4,4,0),(4,0,0),(6,0,0),(8,0,0)))
+
+    def coordinates(self):
+        return sorted(set(self.coordinates_triangle(9))
+                      - self.holes)
+                      #- set(self.coordinates_inverted_triangle(3, offset=(1,1,0))))
 
 
 class HexiamondsTenyo(Hexiamonds):
@@ -996,6 +1073,19 @@ class Hexiamonds4x3SemiregularHexagon(Hexiamonds):
         self.piece_data['P6'][-1]['flips'] = None
 
 
+class Hexiamonds7x1SemiregularHexagonRing_x(Hexiamonds):
+
+    """0 solutions: bad parity"""
+
+    height = 9
+    width = 9
+
+    def coordinates(self):
+        return sorted(
+            set(self.coordinates_semiregular_hexagon(7, 1))
+            - set(self.coordinates_hexagon(1, offset=(2,2,0))))
+
+
 class HexiamondsHeart(Hexiamonds):
 
     """
@@ -1033,6 +1123,30 @@ class HexiamondsSpinner1(Hexiamonds):
             + list(x.translate((4,0,0)))
             + list(x.rotate0(2).translate((8,4,0)))
             + list(x.rotate0(4).translate((0,8,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+
+
+class HexiamondsSpinner2(Hexiamonds):
+
+    """
+    79 solutions
+
+    Design by `Oktavian Scharek`_.
+    """
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_hexagon(2, offset=(0,3,0))).union(
+            set(self.coordinates_hexagon(2, offset=(4,0,0)))).union(
+            set(self.coordinates_hexagon(2, offset=(3,4,0)))).union(
+            set(self.coordinates_semiregular_hexagon(3, 2, offset=(2,2,0))))
+            - set(self.coordinates_inverted_triangle(2, offset=(3,3,0))))
         return sorted(coords)
 
     def customize_piece_data(self):
@@ -1310,6 +1424,112 @@ class HexiamondsChoose9Hexagon3(HexiamondsChoose9Hexagon):
     omit = ['F6', 'P6', 'X6']
 
     fixed = 'J6'
+
+
+class HexiamondsDelta1(Hexiamonds):
+
+    """11 solutions"""
+
+    width = 8
+    height = 8
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        for coord in self.coordinates_parallelogram(self.width, self.height):
+            (x, y, z) = coord
+            if y - x >= 0:
+                yield coord
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['flips'] = None
+
+
+class HexiamondsDelta2(HexiamondsDelta1):
+
+    """
+    232 solutions
+
+    Inspired by a design by `Oktavian Scharek
+    <http://www.8dfineart.com/Magic-Triangles>`_.
+    """
+
+    width = 7
+    height = 7
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_parallelogram(self.width, self.height))
+            - set(self.coordinates_parallelogram(5, 1, offset=(2, 0, 0)))
+            - set(self.coordinates_parallelogram(2, 2, offset=(4, 1, 0)))
+            - set(self.coordinates_parallelogram(1, 5, offset=(6, 0, 0))))
+        return sorted(coords)
+
+
+class HexiamondsDelta3(HexiamondsDelta1):
+
+    """72 solutions"""
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_parallelogram(self.width, self.height))
+            - set(self.coordinates_parallelogram(2, 3, offset=(2, 0, 0)))
+            - set(self.coordinates_parallelogram(4, 4, offset=(4, 0, 0)))
+            - set(self.coordinates_parallelogram(3, 2, offset=(5, 4, 0))))
+        return sorted(coords)
+
+
+class HexiamondsInfinity(Hexiamonds):
+
+    """
+    15 solutions
+
+    Design by `Oktavian Scharek`_.
+    """
+
+    width = 8
+    height = 8
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_semiregular_hexagon(2, 3)).union(
+            set(self.coordinates_semiregular_hexagon(3, 2, offset=(3,3,0)))))
+        coords.remove((2,2,1))
+        coords.remove((5,5,0))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P6'][-1]['flips'] = None
+
+
+class HexiamondsBumpyTrefoil(Hexiamonds):
+
+    """
+    19 solutions
+
+    Design by `Oktavian Scharek`_.
+    """
+
+    width = 8
+    height = 8
+
+    svg_rotation = 30
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_hexagon(2, offset=(0,4,0))).union(
+            set(self.coordinates_hexagon(2, offset=(2,0,0)))).union(
+            set(self.coordinates_hexagon(2, offset=(4,2,0)))).union(
+            set(self.coordinates_hexagon(3, offset=(1,1,0))))
+            - set(self.coordinates_hexagon(1, offset=(3,3,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+        self.piece_data['P6'][-1]['flips'] = None
 
 
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):

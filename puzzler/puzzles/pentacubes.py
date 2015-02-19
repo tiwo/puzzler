@@ -367,13 +367,14 @@ class Pentacubes11x11x6Pyramid(Pentacubes):
 
     Proof of impossibility: Color the cubes of the 29 pentacubes with a 3-D
     black & white checkerboard pattern, such that no like-colored faces touch.
-    Each pentacube piece has an imbalance of one, except for X and T1, which
-    both have imbalances of 3.  Therefore the maximum possible imbalance of
-    any puzzle is 33.  Now color the 11x11x6 pyramid with the same
-    checkerboard pattern.  The imbalance is 37 (91 cubes of one color vs. 54
-    of the other), more than the maximum possible imbalance.  Even if the
-    empty cube is moved, the imbalance could only be reduced to 35, which is
-    still too large.  No solution is possible.
+    Each pentacube piece has a parity imbalance (difference between the number
+    of black & white cubes) of one, except for X and T1, which both have
+    parity imbalances of 3.  Therefore the maximum possible parity imbalance
+    of any puzzle is 33.  Now color the 11x11x6 pyramid with the same
+    checkerboard pattern.  The parity imbalance is 37 (91 cubes of one color
+    vs. 54 of the other), more than the maximum possible imbalance.  Even if
+    the empty cube is moved, the imbalance could only be reduced to 35, which
+    is still too large.  No solution is possible.
 
     Instead of black & white, the coordinate total (X + Y + Z) of each cube
     could be used, divided into even & odd totals.
@@ -1005,8 +1006,8 @@ class PentacubesCompoundCross1(Pentacubes):
             list(self.coordinates_cuboid(11, 1, 5, offset=(0,5,0)))
             + list(self.coordinates_cuboid(1, 11, 5, offset=(5,0,0)))
             + list(self.coordinates_cuboid(3, 1, 5, offset=(4,2,0)))
-            + list(self.coordinates_cuboid(3, 1, 5, offset=(4,8,0))) 
-            + list(self.coordinates_cuboid(1, 3, 5, offset=(2,4,0))) 
+            + list(self.coordinates_cuboid(3, 1, 5, offset=(4,8,0)))
+            + list(self.coordinates_cuboid(1, 3, 5, offset=(2,4,0)))
             + list(self.coordinates_cuboid(1, 3, 5, offset=(8,4,0))))
         return sorted(coords)
 
@@ -1026,8 +1027,8 @@ class PentacubesCompoundCross2(Pentacubes):
             list(self.coordinates_cuboid(11, 1, 5, offset=(0,5,0)))
             + list(self.coordinates_cuboid(1, 11, 5, offset=(5,0,0)))
             + list(self.coordinates_cuboid(3, 1, 5, offset=(4,1,0)))
-            + list(self.coordinates_cuboid(3, 1, 5, offset=(4,9,0))) 
-            + list(self.coordinates_cuboid(1, 3, 5, offset=(1,4,0))) 
+            + list(self.coordinates_cuboid(3, 1, 5, offset=(4,9,0)))
+            + list(self.coordinates_cuboid(1, 3, 5, offset=(1,4,0)))
             + list(self.coordinates_cuboid(1, 3, 5, offset=(9,4,0))))
         return sorted(coords)
 
@@ -1090,6 +1091,71 @@ class PentacubesCornerSlant(Pentacubes):
             coords.add(self.coordinate_offset(tx, 0, ty + 1, None))
             coords.add(self.coordinate_offset(0, tx, ty + 1, None))
         return sorted(coords)
+
+
+class PentacubesTruncatedTetrahedron(Pentacubes):
+
+    """
+    many solutions
+
+    design by Michael Reid via Torsten Sillke
+    (http://www.mathematik.uni-bielefeld.de/~sillke/PENTA/s3sym-5c)
+
+    This puzzle has a parity imbalance of 31, approaching the maximum of 33.
+    """
+
+    width = 9
+    height = 9
+    depth = 9
+
+    def coordinates(self):
+        coords = set()
+        for coord in self.coordinates_cuboid(self.width, self.height,
+                                             self.depth):
+            (x, y, z) = coord
+            if 16 <= (x + y + z) < 21:
+                coords.add(coord)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        """
+        Restrict the P piece to one plane, no flips, to account for symmetry.
+        """
+        Pentacubes.customize_piece_data(self)
+        self.piece_data['P5'][-1]['axes'] = None
+        self.piece_data['P5'][-1]['flips'] = None
+
+
+class PentacubesHollowTetrahedron(Pentacubes):
+
+    """
+    many solutions
+
+    design by Michael Reid via Torsten Sillke
+    (http://www.mathematik.uni-bielefeld.de/~sillke/PENTA/s3sym-5c)
+    """
+
+    width = 9
+    height = 9
+    depth = 9
+
+    def coordinates(self):
+        coords = set()
+        for coord in self.coordinates_cuboid(self.width, self.height,
+                                             self.depth):
+            (x, y, z) = coord
+            total = x + y + z
+            if total >= 16 and (total < 18 or x == 8 or y == 8 or z == 8):
+                coords.add(coord)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        """
+        Restrict the P piece to one plane, no flips, to account for symmetry.
+        """
+        Pentacubes.customize_piece_data(self)
+        self.piece_data['P5'][-1]['axes'] = None
+        self.piece_data['P5'][-1]['flips'] = None
 
 
 class PentacubesPlus2x5x15(PentacubesPlus):
@@ -1810,13 +1876,59 @@ class NonConvexPentacubesRingWall3(NonConvexPentacubes):
 
 class DorianCube(Pentacubes3x3x3):
 
+    """
+    Many solutions.
+
+    This is a 5x5x5 cube constructed from the 25 pentacubes that each fit
+    within a 3x3x3 box (omits the I, L, N, and Y pentacubes).
+
+    Designed by Joseph Dorrie. Referenced on p. 41 of `Knotted Doughnuts and
+    Other Mathematical Entertainments`, by Martin Garder, 1986.
+    """
+
     width = 5
     height = 5
     depth = 5
-    
+
     def customize_piece_data(self):
-        """Restrict the P piece to a single aspect."""
+        """Restrict the J25 piece to a single aspect."""
         Pentacubes3x3x3.customize_piece_data(self)
-        self.piece_data['P5'][-1]['rotations'] = None
-        self.piece_data['P5'][-1]['flips'] = None
-        self.piece_data['P5'][-1]['axes'] = None
+        self.piece_data['J25'][-1]['rotations'] = None
+        self.piece_data['J25'][-1]['flips'] = None
+        self.piece_data['J25'][-1]['axes'] = None
+
+
+class DorianCube5Towers(Pentacubes3x3x3):
+
+    """
+    The Dorian Cube subdivided into 5 towers: 4 P-pentomino shaped towers
+    around a central X-pentomino tower.
+
+    Designed by Torsten Sillke.
+    """
+
+    width = 5
+    height = 5
+    depth = 5
+
+    tower_bases = (
+        ((0,0), (0,1), (0,2), (1,0), (1,1)), # lower-left P
+        ((0,3), (0,4), (1,3), (1,4), (2,4)), # upper-left P
+        ((2,0), (3,0), (3,1), (4,0), (4,1)), # lower-right P
+        ((3,3), (3,4), (4,2), (4,3), (4,4)), # upper-right P
+        ((1,2), (2,1), (2,2), (2,3), (3,2))) # central X
+
+    def build_regular_matrix(self, keys, solution_coords=None):
+        tower_coords = [
+            set((x,y,z) for z in range(5) for (x,y) in base_coords)
+            for base_coords in self.tower_bases]
+        for key in keys:
+            for coords, aspect in self.pieces[key]:
+                for z in range(self.depth - aspect.bounds[2]):
+                    for y in range(self.height - aspect.bounds[1]):
+                        for x in range(self.width - aspect.bounds[0]):
+                            translated = aspect.translate((x, y, z))
+                            for solution_coords in tower_coords:
+                                if translated.issubset(solution_coords):
+                                    self.build_matrix_row(key, translated)
+                                    break

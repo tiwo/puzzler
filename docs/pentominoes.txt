@@ -246,6 +246,11 @@ Misc
 
        -
 
+* “The Eye”: `1 solution
+  <../solutions/ominoes/pentominoes-eye.txt>`__ (design by Joel Enwald)
+
+  .. image:: images/ominoes/pentominoes-eye.png
+
 * Arches:
 
   .. list-table::

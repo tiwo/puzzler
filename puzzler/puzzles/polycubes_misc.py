@@ -137,12 +137,13 @@ class DigitCubes5x5x5(DigitCubes):
         self.piece_data['d1'][-1]['rotations'] = None
         self.piece_data['d7'][-1]['flips'] = None
 
-    def build_matrix(self):
-        keys = sorted(self.pieces.keys())
-        d1_coords, d1_aspect = self.pieces['d1'][0]
-        for z in range(2, 3):
-            for x in range(3):
-                translated = d1_aspect.translate((x, 0, z))
-                self.build_matrix_row('d1', translated)
-        keys.remove('d1')
-        self.build_regular_matrix(keys)
+    ## Why? customize_piece_data should take care of duplicates.
+    # def build_matrix(self):
+    #     keys = sorted(self.pieces.keys())
+    #     d1_coords, d1_aspect = self.pieces['d1'][0]
+    #     for z in range(3):
+    #         for x in range(3):
+    #             translated = d1_aspect.translate((x, 0, z))
+    #             self.build_matrix_row('d1', translated)
+    #     keys.remove('d1')
+    #     self.build_regular_matrix(keys)

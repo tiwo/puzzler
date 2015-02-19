@@ -381,6 +381,20 @@ Misc
             `solutions incomplete <../solutions/cubes/pentacubes-octagonal-frame-2.txt>`__
             (`X3D model <images/cubes/pentacubes-octagonal-frame-2.x3d>`__)
 
+* Truncated tetrahedron (design by `Michael Reid via Torsten Sillke
+  <http://www.mathematik.uni-bielefeld.de/~sillke/PENTA/s3sym-5c>`__):
+  `solutions incomplete <../solutions/cubes/pentacubes-truncated-tetrahedron.txt>`__
+  (`X3D model <images/cubes/pentacubes-truncated-tetrahedron.x3d>`__)
+
+  .. image:: images/cubes/pentacubes-truncated-tetrahedron.png
+
+* Hollow tetrahedron (design by `Michael Reid via Torsten Sillke
+  <http://www.mathematik.uni-bielefeld.de/~sillke/PENTA/s3sym-5c>`__):
+  `solutions incomplete <../solutions/cubes/pentacubes-hollow-tetrahedron.txt>`__
+  (`X3D model <images/cubes/pentacubes-hollow-tetrahedron.x3d>`__)
+
+  .. image:: images/cubes/pentacubes-hollow-tetrahedron.png
+
 
 Pentacubes Plus
 ===============
@@ -661,6 +675,30 @@ Misc
   (`X3D model <images/cubes/non-convex-pentacubes-ring-wall-8x4x7.x3d>`__)
 
   .. image:: images/cubes/non-convex-pentacubes-ring-wall-8x4x7.png
+
+
+Dorian Cubes
+============
+
+These puzzles are constructed from the 25 pentacubes that each fit
+within a 3×3×3 box (omitting the I, L, N, and Y pentacubes).
+
+Designed by Joseph Dorrie. Referenced on p. 41 of `Knotted Doughnuts
+and Other Mathematical Entertainments`, by Martin Garder, 1986.
+
+* 5×5×5 Dorian Cube
+  `solutions incomplete <../solutions/cubes/dorian-cube.txt>`__
+  (`X3D model <images/cubes/dorian-cube.x3d>`__)
+
+  .. image:: images/cubes/dorian-cube.png
+
+* Dorian Cube 5 Towers: the Dorian Cube subdivided into 5 towers, 4
+  P-pentomino shaped towers around a central X-pentomino tower
+  (designed by Torsten Sillke).
+  `Solutions incomplete <../solutions/cubes/dorian-cube-5-towers.txt>`__
+  (`X3D model <images/cubes/dorian-cube-5-towers.x3d>`__)
+
+  .. image:: images/cubes/dorian-cube-5-towers.png
 
 
 .. _Super Deluxe Quintillions:
