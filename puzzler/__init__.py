@@ -106,6 +106,10 @@ def process_command_line():
         help='Format the first solution found (or supplied via -r) as SVG '
         'and write it to FILE ("-" for STDOUT).')
     parser.add_option(
+        '-t', '--thin-svg',
+        help=('Combined with -s/--svg, format the SVG for laser cutting '
+              '(thin simple lines, not solid shapes).'))
+    parser.add_option(
         '-x', '--x3d', metavar='FILE',
         help='Format the first solution found (or supplied via -r) as X3D '
         'and write it to FILE ("-" for STDOUT).')
@@ -150,7 +154,9 @@ def read_solution(puzzle_class, settings):
     s_matrix = puzzle.read_solution(
         settings.read_solution, solution_number=settings.stop_after)
     if settings.svg:
-        puzzle.write_svg(settings.svg, s_matrix=copy.deepcopy(s_matrix))
+        puzzle.write_svg(
+            settings.svg, s_matrix=copy.deepcopy(s_matrix),
+            thin=settings.thin_svg)
     if settings.x3d:
         puzzle.write_x3d(settings.x3d, s_matrix=copy.deepcopy(s_matrix))
 
@@ -170,7 +176,7 @@ def report_search_state(puzzle_class, output_stream, settings):
     puzzle.record_solution(
         solution, solver, stream=output_stream)
     if settings.svg:
-        puzzle.write_svg(settings.svg, solution)
+        puzzle.write_svg(settings.svg, solution, thin=settings.thin_svg)
     if settings.x3d:
         puzzle.write_x3d(settings.x3d, solution)
 
@@ -218,7 +224,8 @@ def solve(puzzle_class, output_stream, settings):
                                                   stream=output_stream):
                         continue
                     if settings.svg:
-                        puzzle.write_svg(settings.svg, solution)
+                        puzzle.write_svg(
+                            settings.svg, solution, thin=settings.thin_svg)
                         settings.svg = False
                     if settings.x3d:
                         puzzle.write_x3d(settings.x3d, solution)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# $Id: hexiamonds-semiregular-hexagon-4x3.py 571 2012-10-06 21:14:57Z goodger $
+# $Id$
 
 """2 solutions"""
 

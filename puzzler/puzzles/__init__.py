@@ -305,7 +305,7 @@ class Puzzle(object):
         """
         raise NotImplementedError
 
-    def format_svg(self, solution=None, s_matrix=None):
+    def format_svg(self, solution=None, s_matrix=None, thin=False):
         """
         Return a puzzle-specific SVG formatting of a solution.
 
@@ -313,9 +313,12 @@ class Puzzle(object):
         """
         raise NotImplementedError
 
-    def write_svg(self, output_path, solution=None, s_matrix=None):
+    def write_svg(self, output_path, solution=None, s_matrix=None, thin=False):
         try:
-            svg = self.format_svg(solution, s_matrix)
+            if thin:
+                svg = self.format_thin_svg(solution, s_matrix)
+            else:
+                svg = self.format_svg(solution, s_matrix)
         except NotImplementedError:
             print >>sys.stderr, (
                 'Warning: SVG output not supported by this puzzle.\n')
