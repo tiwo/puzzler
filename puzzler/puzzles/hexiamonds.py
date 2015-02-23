@@ -2,7 +2,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2012 by David J. Goodger
+# Copyright: (C) 1998-2015 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """
@@ -2164,6 +2164,10 @@ class OneSidedHexiamondsBumpyTriangle(OneSidedHexiamonds):
         for offset in ((1,3,0), (2,1,0), (3,2,0)):
             coords.update(set(self.coordinates_hexagon(3, offset=offset)))
         return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHexiamonds.customize_piece_data(self)
+        self.piece_data['I6'][-1]['rotations'] = None
 
 
 class OneSidedHexiamondsTabbedHexagon(OneSidedHexiamonds):
