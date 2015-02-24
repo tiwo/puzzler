@@ -1006,6 +1006,17 @@ class PuzzlePseudo3D(Puzzle3D, Puzzle2D):
 
     """The Z dimension is used for direction/orientation."""
 
+    def build_regular_matrix(self, keys, solution_coords=None):
+        if solution_coords is None:
+            solution_coords = self.solution_coords
+        for key in keys:
+            for coords, aspect in self.pieces[key]:
+                for x in range(self.width - aspect.bounds[0]):
+                    for y in range(self.height - aspect.bounds[1]):
+                        translated = aspect.translate((x, y, 0))
+                        if translated.issubset(solution_coords):
+                            self.build_matrix_row(key, translated)
+
     def empty_solution_matrix(self, margin=0):
         s_matrix = [[[self.empty_cell] * (self.width + 2 * margin)
                      for y in range(self.height + 2 * margin)]
