@@ -698,8 +698,17 @@ and Other Mathematical Entertainments`, by Martin Garder, 1986.
   `Solutions incomplete <../solutions/cubes/dorian-cube-5-towers.txt>`__
   (`X3D model <images/cubes/dorian-cube-5-towers.x3d>`__)
 
-  .. image:: images/cubes/dorian-cube-5-towers.png
+  .. list-table::
+     :class: borderless
 
+     * - .. figure:: images/cubes/dorian-cube-5-towers.png
+
+            (`X3D model <images/cubes/dorian-cube-5-towers.x3d>`__)
+
+       - .. figure:: images/cubes/dorian-cube-5-towers-exploded.png
+
+            Exploded version (all 5 towers separated;
+            `X3D model <images/cubes/dorian-cube-5-towers-exploded.x3d>`__)
 
 .. _Super Deluxe Quintillions:
    http://gamepuzzles.com/polycube.htm#SQd

@@ -105,7 +105,7 @@ Moniamond
 There is only one moniamond (order-1 polyiamond):
 
 .. list-table::
-   :widths: 20 20 20 20
+   :widths: 20 20 20 20 20
    :header-rows: 1
 
    * - Name
@@ -128,7 +128,7 @@ Diamond
 There is only one diamond (order-2 polyiamond):
 
 .. list-table::
-   :widths: 20 20 20 20
+   :widths: 20 20 20 20 20
    :header-rows: 1
 
    * - Name
@@ -151,7 +151,7 @@ Triamond
 There is only one triamond (order-3 polyiamond):
 
 .. list-table::
-   :widths: 20 20 20 20
+   :widths: 20 20 20 20 20
    :header-rows: 1
 
    * - Name
@@ -174,7 +174,7 @@ There are 3 free tetriamonds (order-4 polyiamonds) and 4 one-sided
 tetriamonds:
 
 .. list-table::
-   :widths: 20 20 20 20
+   :widths: 20 20 20 20 20
    :header-rows: 1
 
    * - Name
@@ -210,7 +210,7 @@ There are 4 free pentiamonds (order-5 polyiamonds) and 6 one-sided
 pentiamonds:
 
 .. list-table::
-   :widths: 20 20 20 20
+   :widths: 20 20 20 20 20
    :header-rows: 1
 
    * - Name
@@ -251,7 +251,7 @@ There are 12 free hexiamonds (order-6 polyiamonds) and 19 one-sided
 hexiamonds:
 
 .. list-table::
-   :widths: 20 20 20 20
+   :widths: 20 20 20 20 20
    :header-rows: 1
 
    * - Name
@@ -352,7 +352,7 @@ There are 24 free heptiamonds (order-7 polyiamonds) and 43 one-sided
 heptiamonds:
 
 .. list-table::
-   :widths: 20 20 20 20
+   :widths: 20 20 20 20 20
    :header-rows: 1
 
    * - Name

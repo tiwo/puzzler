@@ -1920,7 +1920,7 @@ class DorianCube5Towers(Pentacubes3x3x3):
 
     def build_regular_matrix(self, keys, solution_coords=None):
         tower_coords = [
-            set((x,y,z) for z in range(5) for (x,y) in base_coords)
+            set((x,y,z) for z in range(self.width) for (x,y) in base_coords)
             for base_coords in self.tower_bases]
         for key in keys:
             for coords, aspect in self.pieces[key]:
@@ -1932,3 +1932,21 @@ class DorianCube5Towers(Pentacubes3x3x3):
                                 if translated.issubset(solution_coords):
                                     self.build_matrix_row(key, translated)
                                     break
+
+
+class DorianCube5TowersExploded(DorianCube5Towers):
+
+    width = 7
+    height = 7
+    depth = 5
+
+    tower_bases = tuple(
+        tuple((_x+_dx,_y+_dy) for (_x, _y) in DorianCube5Towers.tower_bases[_i])
+        for (_i, (_dx, _dy)) in enumerate(((0,0), (0,2), (2,0), (2,2), (1,1))))
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    def coordinates(self):
+        return sorted((x,y,z) for z in range(self.depth)
+                      for base_coords in self.tower_bases
+                      for (x,y) in base_coords)
