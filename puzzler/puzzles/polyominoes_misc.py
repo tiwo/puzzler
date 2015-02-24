@@ -3,7 +3,7 @@
 # $Id: polyominoes45.py 452 2012-03-31 12:25:25Z goodger $
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2014 by David J. Goodger
+# Copyright: (C) 1998-2015 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """

@@ -3,7 +3,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2012 by David J. Goodger
+# Copyright: (C) 1998-2015 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """

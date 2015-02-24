@@ -11,7 +11,7 @@
 **Polyform Puzzler** is a software toolkit for exploring & solving
 polyform puzzles.
 
-Copyright |c| 1998-2012  David J. Goodger <goodger@python.org>
+Copyright |c| 1998-2015  David J. Goodger <goodger@python.org>
 
 Portions copyright |c| 2010  Ali Assaf
 
