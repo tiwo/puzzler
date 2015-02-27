@@ -265,7 +265,7 @@
     <polygon
        points="140,200 150,200 150,180 140,180 140,190 120,190 120,200 130,200 130,210 140,210 "
        id="polygon50"
-       style="fill:#0000d4;stroke:#ffffff;stroke-width:1">
+       style="fill:#008000;stroke:#ffffff;stroke-width:1">
       <desc
          id="desc52">F</desc>
     </polygon>
@@ -303,7 +303,7 @@
     <polygon
        points="150,210 160,210 160,200 140,200 140,230 150,230 "
        id="polygon38"
-       style="fill:#008000;stroke:#ffffff;stroke-width:1">
+       style="fill:#0000d4;stroke:#ffffff;stroke-width:1">
       <desc
          id="desc40">L4</desc>
     </polygon>
