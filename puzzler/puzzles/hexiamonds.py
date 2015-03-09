@@ -2150,7 +2150,7 @@ class OneSidedHexiamondsTrefoil_x7(OneSidedHexiamondsTrefoil4):
 
 class OneSidedHexiamondsBumpyTriangle(OneSidedHexiamonds):
 
-    """many solutions"""
+    """968,744 solutions"""
 
     height = 10
     width = 10
