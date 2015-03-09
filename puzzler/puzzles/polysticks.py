@@ -172,7 +172,7 @@ class Polysticks(PuzzlePseudo3D):
             self.matrix_columns[header] = len(headers)
             headers.append(header)
         self.secondary_columns = len(headers) - primary
-        self.matrix.append(headers)
+        self.matrix.append(tuple(headers))
 
     def build_regular_matrix(self, keys, solution_coords=None):
         if solution_coords is None:
@@ -196,7 +196,7 @@ class Polysticks(PuzzlePseudo3D):
             label = '%0*i,%0*ii' % (self.x_width, x, self.y_width, y)
             if label in self.matrix_columns:
                 row[self.matrix_columns[label]] = label
-        self.matrix.append(row)
+        self.matrix.append(tuple(row))
 
     def format_solution(self, solution, normalized=True,
                         x_reversed=False, y_reversed=False, xy_swapped=False,
@@ -486,7 +486,7 @@ class Tetrasticks(Polysticks):
             row = [0] * len(self.matrix[0])
             row[self.matrix_columns['!']] = name
             row[self.matrix_columns[name]] = name
-            self.matrix.append(row)
+            self.matrix.append(tuple(row))
 
     def make_aspects(self, units, flips=(0, 1), rotations=(0, 1, 2, 3)):
         if units:
@@ -617,7 +617,7 @@ class SevenSegmentDigits(Polysticks):
             if label in self.matrix_columns:
                 # add one intersection at a time, one row per intersection:
                 row[self.matrix_columns[label]] = label
-                self.matrix.append(row)
+                self.matrix.append(tuple(row))
                 row[self.matrix_columns[label]] = 0
 
     def format_solution(self, solution, swapped_25=False, swapped_69=False,

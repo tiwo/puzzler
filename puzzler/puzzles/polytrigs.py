@@ -252,7 +252,7 @@ class Polytrigs(Polysticks):
             self.matrix_columns[header] = len(headers)
             headers.append(header)
         self.secondary_columns = len(headers) - primary
-        self.matrix.append(headers)
+        self.matrix.append(tuple(headers))
 
     def build_matrix_row(self, name, coords):
         row = [0] * len(self.matrix[0])
@@ -265,7 +265,7 @@ class Polytrigs(Polysticks):
             label = '%0*i,%0*i,%ii' % (self.x_width, x, self.y_width, y, z)
             if label in self.matrix_columns:
                 row[self.matrix_columns[label]] = label
-        self.matrix.append(row)
+        self.matrix.append(tuple(row))
 
     def format_solution(self, solution, normalized=True, rotate_180=False):
         s_matrix = self.build_solution_matrix(solution)

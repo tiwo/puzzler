@@ -74,7 +74,7 @@ class Tetrasticks6x6(Tetrasticks):
                 label = '%0*i,%0*i,%0*i' % (
                     self.x_width, x, self.y_width, y, self.z_width, z)
                 row[self.matrix_columns[label]] = label
-            self.matrix.append(row)
+            self.matrix.append(tuple(row))
 
     def build_regular_matrix(self, keys):
         for key in keys:

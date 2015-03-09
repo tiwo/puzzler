@@ -903,4 +903,4 @@ class DigitCubes(Polycubes):
             label = '%0*i,%0*ii' % (self.x_width, x, self.y_width, y)
             if label in self.matrix_columns:
                 row[self.matrix_columns[label]] = label
-        self.matrix.append(row)
+        self.matrix.append(tuple(row))
