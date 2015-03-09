@@ -67,14 +67,14 @@ class ExactCover(object):
         `exactcover` C extension and load it into an `exactcover.Coverings`
         object.
 
-        The input `matrix` is a two-dimensional list of lists:
+        The input `matrix` is a two-dimensional list of tuples:
 
-        * Each row is a list of equal length.
+        * Each row is a tuple of equal length.
 
         * The first row contains the column names: first the puzzle piece
           names, then the solution space coordinates.  For example::
 
-              ['A', 'B', 'C', '0,0', '1,0', '0,1', '1,1']
+              ('A', 'B', 'C', '0,0', '1,0', '0,1', '1,1')
 
         * The subsequent rows consist of 1 & 0 (True & False) values.  Each
           row contains a 1/True value in the column identifying the piece, and
