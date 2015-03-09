@@ -193,6 +193,8 @@ class Pentominoes3x20Tube(Pentominoes):
                     for x in range(self.width - aspect.bounds[0]):
                         translated = aspect.translate((x, y), (0, self.height))
                         self.build_matrix_row(key, translated)
+        # eliminate duplicate rows (due to wrapping):
+        self.matrix[1:] = sorted(set(self.matrix[1:]))
 
 
 class Pentominoes8x8CenterHole(Pentominoes):
