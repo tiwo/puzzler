@@ -153,7 +153,7 @@ class SolidPentominoesRing(SolidPentominoes):
                 self.x_width, x, self.y_width, y, self.z_width, z)
             self.matrix_columns[header] = len(headers)
             headers.append(header)
-        self.matrix.append(headers)
+        self.matrix.append(tuple(headers))
 
     def build_regular_matrix(self, keys):
         for key in keys:
@@ -203,8 +203,7 @@ class SolidPentominoes3x3x9Ring(SolidPentominoesRing):
         keys = sorted(self.pieces.keys())
         for coords, aspect in self.pieces['X']:
             if aspect.bounds[0] == 0:   # YZ plane
-                for z in range(2):
-                    self.build_matrix_row('X', aspect)
+                self.build_matrix_row('X', aspect)
             if aspect.bounds[2] == 0:   # XY plane
                 for x in range(4):
                     translated = aspect.translate((x, 0, 0))
