@@ -34,6 +34,12 @@ class Polyominoes(Puzzle2D):
         else:
             return formatted
 
+    def format_coords(self):
+        s_matrix = self.empty_solution_matrix()
+        for x, y in self.solution_coords:
+            s_matrix[y][x] = '*'
+        return self.format_solution_matrix(s_matrix)
+
 
 class Monomino(Polyominoes):
 
