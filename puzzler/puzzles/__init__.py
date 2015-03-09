@@ -515,7 +515,7 @@ class Puzzle2D(Puzzle):
             header = '%0*i,%0*i' % (self.x_width, x, self.y_width, y)
             self.matrix_columns[header] = len(headers)
             headers.append(header)
-        self.matrix.append(headers)
+        self.matrix.append(tuple(headers))
 
     def build_regular_matrix(self, keys, solution_coords=None):
         if solution_coords is None:
@@ -535,24 +535,30 @@ class Puzzle2D(Puzzle):
             label = '%0*i,%0*i' % (self.x_width, coord[0],
                                    self.y_width, coord[1])
             row[self.matrix_columns[label]] = label
-        self.matrix.append(row)
+        self.matrix.append(tuple(row))
 
     def format_solution(self, solution, normalized=True,
                         x_reversed=False, y_reversed=False):
-        order_functions = (lambda x: x, reversed)
-        x_reversed_fn = order_functions[x_reversed]
-        y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
         s_matrix = self.build_solution_matrix(solution)
-        formatted= '\n'.join(
-            ''.join('%-*s' % (self.piece_width, name)
-                    for name in x_reversed_fn(s_matrix[y])).rstrip()
-            for y in y_reversed_fn(range(self.height)))
+        formatted = self.format_solution_matrix(
+            s_matrix, x_reversed, y_reversed)
         omitted = '\n'.join(
             '(%s omitted)' % row[-1] for row in solution if row[0] == '!')
         if omitted:
             return '\n'.join([omitted, formatted])
         else:
             return formatted
+
+    def format_solution_matrix(self, s_matrix,
+                               x_reversed=False, y_reversed=False):
+        order_functions = (lambda x: x, reversed)
+        x_reversed_fn = order_functions[x_reversed]
+        y_reversed_fn = order_functions[1 - y_reversed] # reversed by default
+        formatted = '\n'.join(
+            ''.join('%-*s' % (self.piece_width, name)
+                    for name in x_reversed_fn(s_matrix[y])).rstrip()
+            for y in y_reversed_fn(range(self.height)))
+        return formatted
 
     def empty_solution_matrix(self, margin=0):
         s_matrix = [[self.empty_cell] * (self.width + 2 * margin)
@@ -827,7 +833,7 @@ class Puzzle3D(Puzzle):
                 self.x_width, x, self.y_width, y, self.z_width, z)
             self.matrix_columns[header] = len(headers)
             headers.append(header)
-        self.matrix.append(headers)
+        self.matrix.append(tuple(headers))
 
     def build_regular_matrix(self, keys, solution_coords=None):
         if solution_coords is None:
@@ -849,7 +855,7 @@ class Puzzle3D(Puzzle):
                                         self.y_width, coord[1],
                                         self.z_width, coord[2])
             row[self.matrix_columns[label]] = label
-        self.matrix.append(row)
+        self.matrix.append(tuple(row))
 
     def format_solution(self, solution, normalized=True,
                         x_reversed=False, y_reversed=False, z_reversed=False,
