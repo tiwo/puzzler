@@ -69,6 +69,13 @@ except ImportError:
     pass
 
 
+class ApplicationError(StandardError):
+
+    """Generic application-specific exception."""
+
+    pass
+
+
 def run(puzzle_class, output_stream=sys.stdout, settings=None):
     """
     Given a `puzzler.puzzles.Puzzle` subclass, process the command line and
@@ -95,6 +102,10 @@ def process_command_line():
               % ('"%s" (default), "%s"'
                  % (algorithm_choices[0], '", "'.join(algorithm_choices[1:])))))
     parser.add_option(
+        '-d', '--dry-run', action='store_true',
+        help=("Do a dry run: load the puzzle into memory, but don't solve it. "
+              "Useful for validating puzzles under development."))
+    parser.add_option(
         '-n', '--stop-after', type='int', metavar='N',
         help='Stop processing after generating N solution(s). '
         'Or, combined with -r/--read-solution, read solution number N.')
@@ -107,7 +118,7 @@ def process_command_line():
         help='Format the first solution found (or supplied via -r) as SVG '
         'and write it to FILE ("-" for STDOUT).')
     parser.add_option(
-        '-t', '--thin-svg',
+        '-t', '--thin-svg', action='store_true',
         help=('Combined with -s/--svg, format the SVG for laser cutting '
               '(thin simple lines, not solid shapes).'))
     parser.add_option(
@@ -210,7 +221,10 @@ def solve(puzzle_class, output_stream, settings):
                     # initially (and memory) with multi-part puzzles
                     puzzles.append(component())
             for puzzle in puzzles:
+                check_matrix_for_duplicate_rows(puzzle)
                 matrices.append((puzzle.matrix, puzzle.secondary_columns))
+            if settings.dry_run:
+                return
             state.init_periodic_save(solver)
             last_solutions = state.last_solutions
             last_searches = state.last_searches
@@ -268,8 +282,27 @@ def solve(puzzle_class, output_stream, settings):
                        plural_s(solutions),
                        thousands(searches)))
         output_stream.flush()
-    state.cleanup()
+        state.cleanup()
     return solver.num_solutions
+
+def check_matrix_for_duplicate_rows(puzzle):
+    matrix_set = set(puzzle.matrix)
+    if len(puzzle.matrix) == len(matrix_set):
+        return
+    num_duplicates = len(puzzle.matrix) - len(matrix_set)
+    matrix_set = set()
+    duplicates = set()
+    for row in puzzle.matrix:
+        if row in matrix_set:
+            duplicates.add(row)
+        else:
+            matrix_set.add(row)
+    duplicate_rows = '\n'.join(sorted(str(row) for row in duplicates))
+    raise ApplicationError(
+        '{} duplicate row{} ({} total) found in puzzle matrix of {}.{}:\n{}'
+        .format(num_duplicates, plural_s(num_duplicates), len(puzzle.matrix),
+                puzzle.__class__.__module__, puzzle.__class__.__name__,
+                duplicate_rows))
 
 
 class SessionState(object):
