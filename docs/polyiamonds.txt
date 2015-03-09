@@ -36,12 +36,12 @@ These puzzles use the 1 moniamond, 1 diamond, 1 triamond, 3
 tetriamonds, and 4 pentiamonds, for a total of 38 equilateral
 triangles.
 
-* 9x1 elongated hexagon: `34,097 solutions
+* 9x1 elongated hexagon: `23,168 solutions
   <../solutions/iamonds/polyiamonds-12345-elongated-hexagon-9x1.txt>`__
 
   .. image:: images/iamonds/polyiamonds-12345-elongated-hexagon-9x1.png
 
-* 5x2 elongated hexagon ring (design by Dan Klarskov): `10,254
+* 5x2 elongated hexagon ring (design by Dan Klarskov): `6,852
   solutions
   <../solutions/iamonds/polyiamonds-12345-elongated-hexagon-5x2-ring.txt>`__
 
@@ -55,32 +55,32 @@ triangles.
      * - .. figure::
             images/iamonds/polyiamonds-12345-stacked-elongated-hexagons-5x1-1.png
 
-            `1,145 solutions
+            `792 solutions
             <../solutions/iamonds/polyiamonds-12345-stacked-elongated-hexagons-5x1-1.txt>`__
 
        - .. figure::
             images/iamonds/polyiamonds-12345-stacked-elongated-hexagons-5x1-2.png
 
-            `1,217 solutions
+            `784 solutions
             <../solutions/iamonds/polyiamonds-12345-stacked-elongated-hexagons-5x1-2.txt>`__
 
-* 10x1 butterfly: `2,906 solutions
+* 10x1 butterfly: `2,000 solutions
   <../solutions/iamonds/polyiamonds-12345-butterfly-10x1.txt>`__
 
   .. image:: images/iamonds/polyiamonds-12345-butterfly-10x1.png
 
-* Trapezoid: `126,151 solutions
+* Trapezoid: `98,807 solutions
   <../solutions/iamonds/polyiamonds-12345-trapezoid-1.txt>`__
 
   .. image:: images/iamonds/polyiamonds-12345-trapezoid-1.png
 
-* Irregular hexagon (design by Dan Klarskov): `878,738 solutions
+* Irregular hexagon (design by Dan Klarskov): `611,834 solutions
   <../solutions/iamonds/polyiamonds-12345-irregular-hexagon-1.txt>`__
 
   .. image:: images/iamonds/polyiamonds-12345-irregular-hexagon-1.png
 
 * Peanut (2x3 elongated hexagon with side corners omitted; design
-  by Dan Klarskov): `362,047 solutions
+  by Dan Klarskov): `240,892 solutions
   <../solutions/iamonds/polyiamonds-12345-peanut.txt>`__
 
   .. image:: images/iamonds/polyiamonds-12345-peanut.png
@@ -92,18 +92,18 @@ triangles.
 
      * - .. figure:: images/iamonds/polyiamonds-12345-snowflake-1.png
 
-            `9,930 solutions
+            `6,757 solutions
             <../solutions/iamonds/polyiamonds-12345-snowflake-1.txt>`__
             (design by Dan Klarskov)
 
        - .. figure:: images/iamonds/polyiamonds-12345-snowflake-2.png
 
-            `1,788 solutions
+            `1,240 solutions
             <../solutions/iamonds/polyiamonds-12345-snowflake-2.txt>`__
 
        - .. figure:: images/iamonds/polyiamonds-12345-snowflake-3.png
 
-            `670 solutions
+            `466 solutions
             <../solutions/iamonds/polyiamonds-12345-snowflake-3.txt>`__
 
 * Dan's menagerie (animals design by Dan Klarskov)
@@ -113,32 +113,32 @@ triangles.
 
      * - .. figure:: images/iamonds/polyiamonds-12345-bat.png
 
-            Bat: `92,778 solutions
+            Bat: `61,251 solutions
             <../solutions/iamonds/polyiamonds-12345-bat.txt>`__
 
        - .. figure:: images/iamonds/polyiamonds-12345-snake.png
 
-            Snake: `3,344 solutions
+            Snake: `2,268 solutions
             <../solutions/iamonds/polyiamonds-12345-snake.txt>`__
 
      * - .. figure:: images/iamonds/polyiamonds-12345-bird-1.png
 
-            Bird: `62,775 solutions
+            Bird: `42,665 solutions
             <../solutions/iamonds/polyiamonds-12345-bird-1.txt>`__
 
        - .. figure:: images/iamonds/polyiamonds-12345-crab.png
 
-            Crab: `14,362 solutions
+            Crab: `8,698 solutions
             <../solutions/iamonds/polyiamonds-12345-crab.txt>`__
 
      * - .. figure:: images/iamonds/polyiamonds-12345-dog-1.png
 
-            Dog: `43,875 solutions
+            Dog: `28,614 solutions
             <../solutions/iamonds/polyiamonds-12345-dog-1.txt>`__
 
        -
 
-* X (`designed for G4G10 <g4gX.html>`_): `1,857 solutions
+* X (`designed for G4G10 <g4gX.html>`_): `1,182 solutions
   <../solutions/iamonds/polyiamonds-12345-x-1.txt>`__
 
   .. image:: images/iamonds/polyiamonds-12345-x-1.png
@@ -148,16 +148,16 @@ triangles.
   .. list-table::
      :class: borderless
 
-     * - .. figure:: images/iamonds/polyiamonds-12345-elonaged-hex-on-hex-1.png
+     * - .. figure:: images/iamonds/polyiamonds-12345-elongated-hex-on-hex-1.png
 
-            `4,299 solutions
-            <../solutions/iamonds/polyiamonds-12345-elonaged-hex-on-hex-1.txt>`__
+            `2,810 solutions
+            <../solutions/iamonds/polyiamonds-12345-elongated-hex-on-hex-1.txt>`__
             (design by Dan Klarskov)
 
-       - .. figure:: images/iamonds/polyiamonds-12345-elonaged-hex-on-hex-2.png
+       - .. figure:: images/iamonds/polyiamonds-12345-elongated-hex-on-hex-2.png
 
-            `492 solutions
-            <../solutions/iamonds/polyiamonds-12345-elonaged-hex-on-hex-2.txt>`__
+            `310 solutions
+            <../solutions/iamonds/polyiamonds-12345-elongated-hex-on-hex-2.txt>`__
 
 
 One-Sided Polyiamonds of Order 1 Through 5
@@ -167,7 +167,7 @@ These puzzles use the 1 moniamond, 1 diamond, 1 triamond, 4 one-sided
 tetriamonds, and 6 one-sided pentiamonds, for a total of 52
 equilateral triangles.
 
-* 4x2 semi-regular hexagon: `solutions incomplete
+* 4x2 semi-regular hexagon: `56,524,164 solutions
   <../solutions/iamonds/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2.txt>`__
 
   .. image:: images/iamonds/one-sided-polyiamonds-12345-semi-regular-hexagon-4x2.png
@@ -179,15 +179,15 @@ equilateral triangles.
 
      * - .. figure:: images/iamonds/one-sided-polyiamonds-12345-hexagon-1.png
 
-            `4,069,225 solutions
+            `5,085,616 solutions
             <../solutions/iamonds/one-sided-polyiamonds-12345-hexagon-1.txt>`__
 
        - .. figure:: images/iamonds/one-sided-polyiamonds-12345-hexagon-2.png
 
-            `5,163,782 solutions
+            `6,407,224 solutions
             <../solutions/iamonds/one-sided-polyiamonds-12345-hexagon-2.txt>`__
 
-* X (`designed for G4G10`_): `solutions incomplete
+* X (`designed for G4G10`_): `142,128 solutions
   <../solutions/iamonds/one-sided-polyiamonds-12345-x-1.txt>`__
 
   .. image:: images/iamonds/one-sided-polyiamonds-12345-x-1.png

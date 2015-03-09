@@ -540,7 +540,7 @@ Miscellaneous
 
   .. image:: images/iamonds/one-sided-hexiamonds-butterfly-11x3.png
 
-* Bumpy triangle: `solutions incomplete
+* Bumpy triangle: `968,744 solutions
   <../solutions/iamonds/one-sided-hexiamonds-bumpy-triangle.txt>`__
 
   .. image:: images/iamonds/one-sided-hexiamonds-bumpy-triangle.png

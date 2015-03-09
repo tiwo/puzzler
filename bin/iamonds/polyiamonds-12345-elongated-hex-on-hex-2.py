@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-"""492 solutions"""
+"""310 solutions"""
 
 import puzzler
 from puzzler.puzzles.polyiamonds12345 import Polyiamonds12345ElongatedHexOnHex2

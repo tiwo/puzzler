@@ -15,7 +15,7 @@ from puzzler.puzzles.polyiamonds import (
 
 class Polyiamonds12345ElongatedHexagon9x1(Polyiamonds12345):
 
-    """34,097 solutions"""
+    """23,168 solutions"""
 
     height = 2
     width = 10
@@ -31,7 +31,7 @@ class Polyiamonds12345ElongatedHexagon9x1(Polyiamonds12345):
 class Polyiamonds12345ElongatedHexagon5x2Ring(Polyiamonds12345):
 
     """
-    10,254 solutions
+    6,852 solutions
 
     Design by Dan Klarskov
     """
@@ -52,7 +52,7 @@ class Polyiamonds12345ElongatedHexagon5x2Ring(Polyiamonds12345):
 
 class Polyiamonds12345StackedElongatedHexagons5x1_1(Polyiamonds12345):
 
-    """1,145 solutions"""
+    """792 solutions"""
 
     height = 4
     width = 7
@@ -72,7 +72,7 @@ class Polyiamonds12345StackedElongatedHexagons5x1_1(Polyiamonds12345):
 
 class Polyiamonds12345StackedElongatedHexagons5x1_2(Polyiamonds12345):
 
-    """1,217 solutions"""
+    """784 solutions"""
 
     height = 4
     width = 7
@@ -94,7 +94,7 @@ class Polyiamonds12345StackedElongatedHexagons5x1_2(Polyiamonds12345):
 
 class Polyiamonds12345Butterfly10x1(Polyiamonds12345):
 
-    """2,906 solutions"""
+    """2,000 solutions"""
 
     height = 2
     width = 11
@@ -110,7 +110,7 @@ class Polyiamonds12345Butterfly10x1(Polyiamonds12345):
 class Polyiamonds12345Peanut(Polyiamonds12345):
 
     """
-    362,047 solutions
+    240,892 solutions
 
     Design by Dan Klarskov
     """
@@ -131,7 +131,7 @@ class Polyiamonds12345Peanut(Polyiamonds12345):
 
 class Polyiamonds12345Trapezoid1(Polyiamonds12345):
 
-    """126,151 solutions"""
+    """98,807 solutions"""
 
     height = 4
     width = 7
@@ -149,7 +149,7 @@ class Polyiamonds12345Trapezoid1(Polyiamonds12345):
 class Polyiamonds12345IrregularHexagon1(Polyiamonds12345Trapezoid1):
 
     """
-    878,738 solutions
+    611,834 solutions
 
     Design by Dan Klarskov
     """
@@ -162,7 +162,7 @@ class Polyiamonds12345IrregularHexagon1(Polyiamonds12345Trapezoid1):
 class Polyiamonds12345Snowflake1(Polyiamonds12345):
 
     """
-    9,930 solutions
+    6,757 solutions
 
     Design by Dan Klarskov
     """
@@ -185,7 +185,7 @@ class Polyiamonds12345Snowflake1(Polyiamonds12345):
 
 class Polyiamonds12345Snowflake2(Polyiamonds12345Snowflake1):
 
-    """1,788 solutions"""
+    """1,240 solutions"""
 
     holes = set((
         (-1,4,1), (1,1,0), (1,6,0), (4,-1,1), (4,4,1), (6,1,0),
@@ -198,7 +198,7 @@ class Polyiamonds12345Snowflake2(Polyiamonds12345Snowflake1):
 
 class Polyiamonds12345Snowflake3(Polyiamonds12345Snowflake2):
 
-    """670 solutions"""
+    """466 solutions"""
 
     holes = set((
         (-1,4,1), (1,1,0), (1,6,0), (4,-1,1), (4,4,1), (6,1,0),
@@ -217,7 +217,7 @@ class Polyiamonds12345Snowflake_x1(Polyiamonds12345Snowflake2):
 class Polyiamonds12345Bat(Polyiamonds12345):
 
     """
-    92,778 solutions
+    61,251 solutions
 
     Design by Dan Klarskov
     """
@@ -242,7 +242,7 @@ class Polyiamonds12345Bat(Polyiamonds12345):
 class Polyiamonds12345Snake(Polyiamonds12345):
 
     """
-    3,344 solutions
+    2,268 solutions
 
     Design by Dan Klarskov
     """
@@ -266,7 +266,7 @@ class Polyiamonds12345Snake(Polyiamonds12345):
 class Polyiamonds12345Bird1(Polyiamonds12345):
 
     """
-    62,775 solutions
+    42,665 solutions
 
     Design by Dan Klarskov
     """
@@ -291,7 +291,7 @@ class Polyiamonds12345Bird1(Polyiamonds12345):
 class Polyiamonds12345Crab(Polyiamonds12345):
 
     """
-    14,362 solutions
+    8,698 solutions
 
     Design by Dan Klarskov
     """
@@ -316,7 +316,7 @@ class Polyiamonds12345Crab(Polyiamonds12345):
 class Polyiamonds12345Dog1(Polyiamonds12345):
 
     """
-    43,875 solutions
+    28,614 solutions
 
     Inspired by a design by Dan Klarskov
     """
@@ -345,7 +345,7 @@ class Polyiamonds12345Dog1(Polyiamonds12345):
 
 class Polyiamonds12345X1(Polyiamonds12345):
 
-    """1,857 solutions"""
+    """1,182 solutions"""
 
     height = 6
     width = 8
@@ -365,7 +365,7 @@ class Polyiamonds12345X1(Polyiamonds12345):
 class Polyiamonds12345ElongatedHexOnHex1(Polyiamonds12345):
 
     """
-    4,299 solutions
+    2,810 solutions
 
     Design by Dan Klarskov
     """
@@ -389,52 +389,39 @@ class Polyiamonds12345ElongatedHexOnHex1(Polyiamonds12345):
 
 class Polyiamonds12345ElongatedHexOnHex2(Polyiamonds12345ElongatedHexOnHex1):
 
-    """492 solutions"""
+    """310 solutions"""
 
     holes = set(((4,0,1), (3,3,0)))
 
 
 class OneSidedPolyiamonds12345Hexagon1(OneSidedPolyiamonds12345):
 
-    """3,710,485 solutions"""
-    # w/o duplicate control: 15,256,848 (103,760,913 searches)
+    """5,085,616 solutions"""
 
     height = 6
     width = 6
 
     holes = set(((3,2,0), (2,3,1)))
 
-    t4_offsets = (
-        (0,3,0), (0,4,0), (1,2,0), (1,3,0), (1,4,0), (2,1,0), (3,0,0))
-
     def coordinates(self):
         coords = set(self.coordinates_hexagon(3)) - self.holes
         return sorted(coords)
 
-    def build_matrix(self):
-        keys = sorted(self.pieces.keys())
-        t_coords, t_aspect = self.pieces['T4'][0]
-        for offset in self.t4_offsets:
-            translated = t_aspect.translate(offset)
-            self.build_matrix_row('T4', translated)
-        keys.remove('T4')
-        self.build_regular_matrix(keys)
+    def customize_piece_data(self):
+        OneSidedPolyiamonds12345.customize_piece_data(self)
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
 
 
 class OneSidedPolyiamonds12345Hexagon2(OneSidedPolyiamonds12345Hexagon1):
 
-    """4,833,439 solutions"""
-    # w/o duplicate control: 19,221,672 (152,631,658 searches)
+    """6,407,224 solutions"""
 
     holes = set(((3,1,1), (2,4,0)))
-
-    t4_offsets = (
-        (0,3,0), (0,4,0), (1,2,0), (1,3,0), (2,1,0), (2,2,0), (3,0,0))
 
 
 class OneSidedPolyiamonds12345SemiRegularHexagon4x2(OneSidedPolyiamonds12345):
 
-    """many solutions"""
+    """56,524,164 solutions"""
 
     height = 6
     width = 6
@@ -442,10 +429,14 @@ class OneSidedPolyiamonds12345SemiRegularHexagon4x2(OneSidedPolyiamonds12345):
     def coordinates(self):
         return self.coordinates_semiregular_hexagon(4, 2)
 
+    def customize_piece_data(self):
+        OneSidedPolyiamonds12345.customize_piece_data(self)
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)
+
 
 class OneSidedPolyiamonds12345X1(OneSidedPolyiamonds12345):
 
-    """many solutions"""
+    """142,128 solutions"""
 
     height = 8
     width = 8
@@ -459,3 +450,7 @@ class OneSidedPolyiamonds12345X1(OneSidedPolyiamonds12345):
         for coord in self.coordinates_butterfly(6, 4, offset=(-1,0,0)):
             if coord not in self.holes:
                 yield coord
+
+    def customize_piece_data(self):
+        OneSidedPolyiamonds12345.customize_piece_data(self)
+        self.piece_data['P5'][-1]['rotations'] = (0, 1, 2)

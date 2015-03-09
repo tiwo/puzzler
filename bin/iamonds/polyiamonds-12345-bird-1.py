@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-"""62,775 solutions"""
+"""42,665 solutions"""
 
 import puzzler
 from puzzler.puzzles.polyiamonds12345 import Polyiamonds12345Bird1

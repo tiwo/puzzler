@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # $Id$
 
-"""many solutions"""
+"""968,744 solutions"""
 
 import puzzler
 from puzzler.puzzles.hexiamonds import OneSidedHexiamondsBumpyTriangle as puzzle
