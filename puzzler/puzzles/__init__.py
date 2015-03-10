@@ -323,6 +323,7 @@ class Puzzle(object):
             print >>sys.stderr, (
                 'Warning: SVG output not supported by this puzzle.\n')
         else:
+            svg_file = None
             try:
                 if output_path == '-':
                     svg_file = sys.stdout
@@ -332,7 +333,9 @@ class Puzzle(object):
                     svg_file = open(output_path, 'w')
                 svg_file.write(svg)
             finally:
-                if not ((output_path == '-') or hasattr(output_path, 'write')):
+                if (  svg_file is not None
+                      and not ((output_path == '-')
+                               or hasattr(output_path, 'write'))):
                     svg_file.close()
 
     def format_x3d(self, solution=None, s_matrix=None):
@@ -350,6 +353,7 @@ class Puzzle(object):
             print >>sys.stderr, (
                 'Warning: X3D output not supported by this puzzle.\n')
         else:
+            x3d_file = None
             try:
                 if output_path == '-':
                     x3d_file = sys.stdout
@@ -359,7 +363,9 @@ class Puzzle(object):
                     x3d_file = open(output_path, 'w')
                 x3d_file.write(x3d)
             finally:
-                if not ((output_path == '-') or hasattr(output_path, 'write')):
+                if (  x3d_file is not None
+                      and not ((output_path == '-')
+                               or hasattr(output_path, 'write'))):
                     x3d_file.close()
 
     solution_header = re.compile(r'^solution (\d+)( .+)?:$', re.IGNORECASE)
