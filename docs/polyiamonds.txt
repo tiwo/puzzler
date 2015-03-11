@@ -217,3 +217,58 @@ a total of 166 equilateral triangles.
   <../solutions/iamonds/one-sided-polyiamonds-123456-semi-regular-hexagon-11x1.txt>`__
 
   .. image:: images/iamonds/one-sided-polyiamonds-123456-semi-regular-hexagon-11x1.png
+
+* Triangles:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-1.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-1.txt>`__
+
+       - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-2.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-2.txt>`__
+
+     * - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-3.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-3.txt>`__
+
+       - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-4.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-4.txt>`__
+
+     * - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-5.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-5.txt>`__
+
+       - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-6.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-6.txt>`__
+
+     * - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-7.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-7.txt>`__
+
+       - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-8.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-8.txt>`__
+
+     * - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-9.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-9.txt>`__
+
+       - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-10.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-10.txt>`__
