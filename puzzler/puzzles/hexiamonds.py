@@ -49,7 +49,7 @@ class Hexiamonds6x6(Hexiamonds):
                             {'rotate_180': True, 'xy_swapped': True},)
 
 
-class Hexiamonds4x11Trapezium(Hexiamonds):
+class Hexiamonds4x11Trapezoid(Hexiamonds):
 
     """76 solutions"""
 
@@ -67,7 +67,7 @@ class Hexiamonds4x11Trapezium(Hexiamonds):
         self.piece_data['I6'][-1]['flips'] = None
 
 
-class Hexiamonds6x9Trapezium(Hexiamonds4x11Trapezium):
+class Hexiamonds6x9Trapezoid(Hexiamonds4x11Trapezoid):
 
     """0 solutions (impossible due to parity)"""
 
