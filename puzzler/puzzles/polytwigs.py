@@ -245,6 +245,8 @@ class Polytwigs(Polytrigs):
     def coordinates_hexagram(cls, side_length, offset=None):
         """Hexagram bordered polytwig grid."""
         s = side_length
+        if not offset:
+            offset = (0, 0, 0)
         x, y, z = offset
         offset1 = (x + s - 1, y + s - 1, z)
         coords = (
