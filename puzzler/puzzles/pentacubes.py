@@ -531,8 +531,7 @@ class %s(Pentacubes2x3x2Chair):
         Generate subpuzzle classes dynamically.
         One class for each pair of pieces.
         """
-        piece_names = sorted(SolidPentominoes.piece_data.keys()
-                             + cls.non_planar_piece_data.keys())
+        piece_names = sorted(cls.piece_data.keys())
         classes = []
         for i, p1 in enumerate(piece_names):
             for p2 in piece_names[i+1:]: # avoid duplicate combinations
