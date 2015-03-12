@@ -4,6 +4,6 @@
 """many solutions"""
 
 import puzzler
-from puzzler.puzzles.pentacubes import Polycubes12345X1
+from puzzler.puzzles.polycubes12345 import Polycubes12345X1
 
 puzzler.run(Polycubes12345X1)
