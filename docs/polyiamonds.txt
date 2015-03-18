@@ -106,7 +106,7 @@ triangles.
             `466 solutions
             <../solutions/iamonds/polyiamonds-12345-snowflake-3.txt>`__
 
-* Dan's menagerie (animals design by Dan Klarskov)
+* Dan's menagerie (animal designs by Dan Klarskov)
 
   .. list-table::
      :class: borderless
@@ -205,6 +205,16 @@ equilateral triangles.
 
   .. image:: images/iamonds/polyiamonds-123456-elongated-hexagon-3x5.png
 
+* 11x5 parallelogram: `solutions incomplete
+  <../solutions/iamonds/polyiamonds-123456-11x5.txt>`__
+
+  .. image:: images/iamonds/polyiamonds-123456-11x5.png
+
+* 8x5 butterfly: `solutions incomplete
+  <../solutions/iamonds/polyiamonds-123456-butterfly-8x5.txt>`__
+
+  .. image:: images/iamonds/polyiamonds-123456-butterfly-8x5.png
+
 
 One-Sided Polyiamonds of Order 1 Through 6
 ==========================================
@@ -226,49 +236,98 @@ a total of 166 equilateral triangles.
      * - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-1.png
 
             `solutions incomplete
-            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-1.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-123456-triangle-1.txt>`__
 
        - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-2.png
 
             `solutions incomplete
-            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-2.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-123456-triangle-2.txt>`__
 
      * - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-3.png
 
             `solutions incomplete
-            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-3.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-123456-triangle-3.txt>`__
 
        - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-4.png
 
             `solutions incomplete
-            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-4.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-123456-triangle-4.txt>`__
 
      * - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-5.png
 
             `solutions incomplete
-            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-5.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-123456-triangle-5.txt>`__
 
        - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-6.png
 
             `solutions incomplete
-            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-6.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-123456-triangle-6.txt>`__
 
      * - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-7.png
 
             `solutions incomplete
-            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-7.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-123456-triangle-7.txt>`__
 
        - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-8.png
 
             `solutions incomplete
-            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-8.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-123456-triangle-8.txt>`__
 
      * - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-9.png
 
             `solutions incomplete
-            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-9.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-123456-triangle-9.txt>`__
 
        - .. figure:: images/iamonds/one-sided-polyiamonds-123456-triangle-10.png
 
             `solutions incomplete
-            <../solutions/iamonds/one-sided-polyiamonds-12345-triangle-10.txt>`__
+            <../solutions/iamonds/one-sided-polyiamonds-123456-triangle-10.txt>`__
+
+
+Polyiamonds of Order 1 Through 7
+================================
+
+These puzzles use the 1 moniamond, 1 diamond, 1 triamond, 3
+tetriamonds, 4 pentiamonds, 12 hexiamonds, and 24 heptiamonds, for a
+total of 278 equilateral triangles.
+
+* Hexagons:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/iamonds/polyiamonds-1234567-hexagon-1.png
+
+            `solutions incomplete
+            <../solutions/iamonds/polyiamonds-1234567-hexagon-1.txt>`__
+
+       - .. figure:: images/iamonds/polyiamonds-1234567-hexagon-2.png
+
+            `solutions incomplete
+            <../solutions/iamonds/polyiamonds-1234567-hexagon-2.txt>`__
+
+     * - .. figure:: images/iamonds/polyiamonds-1234567-hexagon-3.png
+
+            `solutions incomplete
+            <../solutions/iamonds/polyiamonds-1234567-hexagon-3.txt>`__
+
+       - .. figure:: images/iamonds/polyiamonds-1234567-hexagon-4.png
+
+            `solutions incomplete
+            <../solutions/iamonds/polyiamonds-1234567-hexagon-4.txt>`__
+     * - .. figure:: images/iamonds/polyiamonds-1234567-hexagon-5.png
+
+            `solutions incomplete
+            <../solutions/iamonds/polyiamonds-1234567-hexagon-5.txt>`__
+
+       -
+
+* 2x10 elongated hexagon: `solutions incomplete
+  <../solutions/iamonds/polyiamonds-1234567-elongated-hexagon-2x10-1.txt>`__
+
+  .. image:: images/iamonds/polyiamonds-1234567-elongated-hexagon-2x10-1.png
+
+* 12x10 butterfly: `solutions incomplete
+  <../solutions/iamonds/polyiamonds-1234567-butterfly-12x10-1.txt>`__
+
+  .. image:: images/iamonds/polyiamonds-1234567-butterfly-12x10-1.png

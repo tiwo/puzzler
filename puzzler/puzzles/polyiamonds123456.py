@@ -28,6 +28,34 @@ class Polyiamonds123456ElongatedHexagon3x5(Polyiamonds123456):
         self.piece_data['P5'][-1]['rotations'] = (0,1,2)
 
 
+class Polyiamonds123456_11x5(Polyiamonds123456):
+
+    """many solutions"""
+
+    height = 5
+    width = 11
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['rotations'] = (0,1,2)
+
+
+class Polyiamonds123456Butterfly8x5(Polyiamonds123456):
+
+    """many solutions"""
+
+    height = 10
+    width = 13
+
+    svg_rotation = 90
+
+    def coordinates(self):
+        return self.coordinates_butterfly(8, 5)
+
+    def customize_piece_data(self):
+        self.piece_data['P5'][-1]['flips'] = None
+        self.piece_data['P5'][-1]['rotations'] = (0,1,2)
+
+
 class OneSidedPolyiamonds123456SemiRegularHexagon11x1(
     OneSidedPolyiamonds123456):
 
