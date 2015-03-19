@@ -29,6 +29,10 @@
 
 .. contents::
 
+-------------
+ Heptiamonds
+-------------
+
 The heptiamonds consist of 24 7-triangle polyforms, for a total of 168
 unit triangles.
 
@@ -817,6 +821,56 @@ Misc
 
 .. _Kadon's Iamond Ring: http://gamepuzzles.com/esspoly.htm#IR
 .. _Johannes H. Hindriks: http://jhhindriks.info/37/index.htm
+
+
+-----------------------
+ One-Sided Heptiamonds
+-----------------------
+
+The one-sided heptiamonds consist of 43 7-triangle polyforms, for a
+total of 301 unit triangles.
+
+* 13x5 elongated hexagon: `solutions incomplete
+  <../solutions/iamonds/one-sided-heptiamonds-elongated-hexagon-13x5-1.txt>`__
+
+  .. image:: images/iamonds/one-sided-heptiamonds-elongated-hexagon-13x5-1.png
+
+* Triangles:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/iamonds/one-sided-heptiamonds-triangle-1.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-heptiamonds-triangle-1.txt>`__
+
+       - .. figure:: images/iamonds/one-sided-heptiamonds-triangle-2.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-heptiamonds-triangle-2.txt>`__
+
+     * - .. figure:: images/iamonds/one-sided-heptiamonds-triangle-3.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-heptiamonds-triangle-3.txt>`__
+
+       - .. figure:: images/iamonds/one-sided-heptiamonds-triangle-4.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-heptiamonds-triangle-4.txt>`__
+
+     * - .. figure:: images/iamonds/one-sided-heptiamonds-triangle-5.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-heptiamonds-triangle-5.txt>`__
+
+       -
+
+* 11x4 semiregular hexagon: `solutions incomplete
+  <../solutions/iamonds/one-sided-heptiamonds-semiregular-hexagon-11x4-1.txt>`__
+
+  .. image:: images/iamonds/one-sided-heptiamonds-semiregular-hexagon-11x4-1.png
 
 
 .. |c| unicode:: U+00A9 .. copyright sign

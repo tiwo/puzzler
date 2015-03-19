@@ -9,7 +9,7 @@
 Concrete heptiamonds puzzles.
 """
 
-from puzzler.puzzles.polyiamonds import Heptiamonds
+from puzzler.puzzles.polyiamonds import Heptiamonds, OneSidedHeptiamonds
 from puzzler.puzzles.polyhexes import Polyhexes
 from puzzler.coordsys import (
     Triangular3DCoordSet, Triangular3D, Hexagonal2DCoordSet)
@@ -104,7 +104,7 @@ class HeptiamondsSnowflake1Exploded(Heptiamonds):
             + list(part.rotate0(4).translate((0,18,0)))
             )
         return sorted(coords)
-                                               
+
     def customize_piece_data(self):
         self.piece_data['W7'][-1]['flips'] = None
 
@@ -2208,7 +2208,7 @@ class HeptiamondsTrefoil4(Heptiamonds):
 
     """
     many solutions
-  
+
     design by `Johannes H. Hindriks`_
     """
 
@@ -2588,3 +2588,128 @@ class HeptiamondsHexagonHexagramGasket3(HeptiamondsHexagonHexagramGasket1):
     hex_offsets = ((4,7,0), (7,7,0), (7,4,0))
 
     holes = set(Heptiamonds.coordinates_triangle(6, offset=(6,6,0)))
+
+
+class OneSidedHeptiamondsElongatedHexagon13x5_1(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 10
+    width = 18
+
+    def coordinates(self):
+        coords = (set(self.coordinates_elongated_hexagon(13, 5))
+                  - set(self.coordinates_triangle(3, offset=(8,4,0))))
+        return sorted(coords)
+
+
+class OneSidedHeptiamondsTriangle1(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 19
+    width = 19
+
+    def coordinates(self):
+        coords = (set(self.coordinates_triangle(19))
+                  - set(self.coordinates_hexagon(3, offset=(4,2,0)))
+                  - set(self.coordinates_hexagon(1, offset=(2,12,0))))
+        return sorted(coords)
+
+
+class OneSidedHeptiamondsTriangle2(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 19
+    width = 19
+
+    def coordinates(self):
+        coords = (set(self.coordinates_triangle(19))
+                  - set(self.coordinates_hexagon(3, offset=(3,4,0)))
+                  - set(self.coordinates_hexagram(2, offset=(2,3,0))))
+        return sorted(coords)
+
+
+class OneSidedHeptiamondsTriangle3(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 19
+    width = 19
+
+    def coordinates(self):
+        part = Triangular3DCoordSet(
+            list(self.coordinates_diamond(2, offset=(0,4,0)))
+            + list(self.coordinates_diamond(2, offset=(1,2,0)))
+            + list(self.coordinates_diamond(2, offset=(2,0,0))))
+        coords = (set(self.coordinates_triangle(19))
+                  - set(part.translate((2,7,0)))
+                  - set(part.rotate0(2).translate((10,2,0)))
+                  - set(part.rotate0(4).translate((7,10,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHeptiamonds.customize_piece_data(self)
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+
+
+class OneSidedHeptiamondsTriangle4(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 19
+    width = 19
+
+    def coordinates(self):
+        part = Triangular3DCoordSet(
+            list(self.coordinates_trapezoid(4, 2, offset=(1,0,0)))
+            + list(self.coordinates_diamond(2, offset=(0,2,0))))
+        coords = (set(self.coordinates_triangle(19))
+                  - set(part.translate((2,9,0)))
+                  - set(part.rotate0(2).translate((8,2,0)))
+                  - set(part.rotate0(4).translate((9,8,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHeptiamonds.customize_piece_data(self)
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+
+
+class OneSidedHeptiamondsTriangle5(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 19
+    width = 19
+
+    def coordinates(self):
+        part = Triangular3DCoordSet(self.coordinates_trapezoid(6, 2))
+        coords = (set(self.coordinates_triangle(19))
+                  - set(part.translate((2,9,0)))
+                  - set(part.rotate0(2).translate((8,2,0)))
+                  - set(part.rotate0(4).translate((9,8,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHeptiamonds.customize_piece_data(self)
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+
+
+class OneSidedHeptiamondsSemiregularHexagon11x4_1(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 15
+    width = 15
+
+    def coordinates(self):
+        coords = (set(self.coordinates_semiregular_hexagon(11, 4))
+                  - set(self.coordinates_triangle(2, offset=(4,9,0)))
+                  - set(self.coordinates_triangle(2, offset=(4,4,0)))
+                  - set(self.coordinates_triangle(2, offset=(9,4,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHeptiamonds.customize_piece_data(self)
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)

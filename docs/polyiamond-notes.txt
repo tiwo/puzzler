@@ -392,13 +392,11 @@ puzzles.*
 * H(7) - T(4)
 * P(14,10) - 2 units
 * {C(14,5), C(10,7), C(7,10), C(5,14)} - 2 units
-* B(12,10) - 2 units
 
 301: One-sided heptiamonds
 
 * He(4,9) - 5 units
 * B(13,9) - 5 units
-* He(13,5) - T(3) (9 units)
 
 467: one-sided polyiamonds of order 1 to 7
 
