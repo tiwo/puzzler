@@ -865,6 +865,26 @@ total of 301 unit triangles.
             `solutions incomplete
             <../solutions/iamonds/one-sided-heptiamonds-triangle-5.txt>`__
 
+       - .. figure:: images/iamonds/one-sided-heptiamonds-triangle-6.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-heptiamonds-triangle-6.txt>`__
+
+     * - .. figure:: images/iamonds/one-sided-heptiamonds-triangle-7.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-heptiamonds-triangle-7.txt>`__
+
+       - .. figure:: images/iamonds/one-sided-heptiamonds-triangle-8.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-heptiamonds-triangle-8.txt>`__
+
+     * - .. figure:: images/iamonds/one-sided-heptiamonds-triangle-9.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-heptiamonds-triangle-9.txt>`__
+
        -
 
 * 11x4 semiregular hexagon: `solutions incomplete

@@ -2696,6 +2696,96 @@ class OneSidedHeptiamondsTriangle5(OneSidedHeptiamonds):
         self.piece_data['P7'][-1]['rotations'] = (0, 1)
 
 
+class OneSidedHeptiamondsTriangle6(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 19
+    width = 19
+
+    def coordinates(self):
+        part = Triangular3DCoordSet(
+            list(self.coordinates_diamond(2, offset=(0,1,0)))
+            + list(self.coordinates_hexagon(1))
+            + list(self.coordinates_hexagon(1, offset=(2,0,0))))
+        coords = (set(self.coordinates_triangle(19))
+                  - set(part.translate((2,10,0)))
+                  - set(part.rotate0(2).translate((7,2,0)))
+                  - set(part.rotate0(4).translate((10,7,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHeptiamonds.customize_piece_data(self)
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+
+
+class OneSidedHeptiamondsTriangle7(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 19
+    width = 19
+
+    def coordinates(self):
+        part = Triangular3DCoordSet(
+            list(self.coordinates_diamond(2, offset=(0,1,0)))
+            + list(self.coordinates_hexagon(1))
+            + list(self.coordinates_hexagon(1, offset=(2,0,0))))
+        coords = (set(self.coordinates_triangle(19))
+                  - set(part.translate((3,8,0)))
+                  - set(part.rotate0(2).translate((8,3,0)))
+                  - set(part.rotate0(4).translate((8,8,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHeptiamonds.customize_piece_data(self)
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+
+
+class OneSidedHeptiamondsTriangle8(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 19
+    width = 19
+
+    def coordinates(self):
+        part = Triangular3DCoordSet(
+            list(self.coordinates_elongated_hexagon(3, 1))
+            + list(self.coordinates_hexagon(1, offset=(0,2,0))))
+        coords = (set(self.coordinates_triangle(19))
+                  - set(part.translate((3,8,0)))
+                  - set(part.rotate0(2).translate((8,3,0)))
+                  - set(part.rotate0(4).translate((8,8,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHeptiamonds.customize_piece_data(self)
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+
+
+class OneSidedHeptiamondsTriangle9(OneSidedHeptiamonds):
+
+    """many solutions"""
+
+    height = 19
+    width = 19
+
+    def coordinates(self):
+        part = Triangular3DCoordSet(
+            list(self.coordinates_elongated_hexagon(3, 1))
+            + list(self.coordinates_hexagon(1, offset=(0,2,0))))
+        coords = (set(self.coordinates_triangle(19))
+                  - set(part.translate((2,10,0)))
+                  - set(part.rotate0(2).translate((7,2,0)))
+                  - set(part.rotate0(4).translate((10,7,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHeptiamonds.customize_piece_data(self)
+        self.piece_data['P7'][-1]['rotations'] = (0, 1)
+
+
 class OneSidedHeptiamondsSemiregularHexagon11x4_1(OneSidedHeptiamonds):
 
     """many solutions"""
