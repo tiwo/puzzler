@@ -616,7 +616,7 @@ There are 166 hexacubes (order-6 polycubes), 35 of which are planar
      - non-planar
 
    * - | Jb6
-       | ("L1r")
+       | ("J1r")
      - .. image:: images/pieces/polycubes/Jb6.png
      - 24
      - non-planar
