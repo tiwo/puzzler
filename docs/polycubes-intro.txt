@@ -70,8 +70,8 @@ solid polyominoes).
 .. _A000162: http://oeis.org/A000162
 .. _A000105: http://oeis.org/A000105
 
-Examples of the polycubes from order 1 (monocube) to order 5
-(pentacubes) are given in the tables below.
+Examples of the polycubes from order 1 (monocube) to order 6
+(hexacubes) are given in the tables below.
 
 The polycubes are named with letters (like the monocube "M") or a
 letter-number scheme (like the "I3" tricube, and the "F5" and "V15"
@@ -90,7 +90,8 @@ resemblance is weak, and the letters are arbitrary.  The final digit
 of the number represents the polyform order (how many unit cubes are
 in the polycube).  There are more pentacubes than letters in the
 alphabet, so the names of many of the non-planar pieces have an
-extra middle digit to differentiate the variations.
+extra middle digit to differentiate the variations.  
+All 166 of the hexacubes have 3-character names.
 
 .. _table legend:
 
