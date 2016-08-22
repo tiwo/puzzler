@@ -501,7 +501,7 @@ These shapes are all based on the hexagonal grid, made up of 19
 
   .. _Dancing Links: http://arxiv.org/abs/cs/0011047
 
-  __ http://www.g4g4.com/contentsmmpp.html
+  __ https://books.google.com/books/about/The_Mathemagician_and_Pied_Puzzler.html?id=9GvNAjykUqQC&source=kp_cover&hl=en
 
   .. image:: images/iamonds/one-sided-hexiamonds-obeirnes-hexagon.png
 
