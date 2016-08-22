@@ -34,10 +34,12 @@
 
 
 I presented this as a whirlwind 5 minute introduction to the Polyform
-Puzzler software project at the `10th Gathering for Gardner (G4G10)
-<http://g4g10.com>`_, Atlanta, Georgia, USA, 2012-03-31.  This version
-is updated and contains some extra content that had to be omitted from
-the talk for time.
+Puzzler software project at the `10th Gathering for Gardner (G4G10)`_,
+Atlanta, Georgia, USA, 2012-03-31.  This version is updated and
+contains some extra content that had to be omitted from the talk for
+time.
+
+.. _10th Gathering for Gardner (G4G10): http://gathering4gardner.org/
 
 (To get a feel for what the Gatherings are all about `watch this
 episode of “The Nature of Things” about Martin Gardner with footage

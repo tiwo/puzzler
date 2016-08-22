@@ -16,7 +16,7 @@
 
 
 I was honoured to be invited to the `10th Gathering for Gardner
-<http://g4g10.com>`_, a biennial conference for recreational
+<http://gathering4gardner.org/>`_, a biennial conference for recreational
 mathematics, magic, puzzles, and philosophy, which took place from
 March 28 to April 1, 2012.  I gave a talk entitled “`Polyform Puzzler,
 New Polyforms, and Recent Results`_”, a whirlwind introduction to this
