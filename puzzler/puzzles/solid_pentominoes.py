@@ -1055,3 +1055,99 @@ class SolidPentominoesOpenBox6x3x4(SolidPentominoesOpenBox8x3x3):
     width = 6
     height = 3
     depth = 4
+
+
+class SolidPentominoes5x5x5QuarterPyramid(SolidPentominoes):
+
+    """
+    55-cube shape, so 11 pieces are used and one piece must be omitted.
+
+    320 solutions:
+
+    * 11 omitting F
+    * 7 omitting I
+    * none omitting L
+    * 4 omitting N
+    * none omitting P
+    * 22 omitting T
+    * 4 omitting U
+    * 12 omitting V
+    * 10 omitting W
+    * 223 omitting X
+    * 2 omitting Y
+    * 25 omitting Z
+    """
+
+    width = 9
+    height = 5
+    depth = 5
+
+    # These 9 coordinates form a minimal cover for all 12 pentominoes
+    # (with Z=0 for solid pentominoes):
+    omitted_piece_coordinates = (
+        (0,0), (0,1), (0,2), (1,0), (1,1), (1,2), (1,3), (1,4), (2,2))
+
+    # Since there are only 9 coordinates for the omitted piece, only 1 piece
+    # can fit.  By setting these 9 coordinates as secondary columns, the extra
+    # 4 coordinates are ignored.
+    secondary_columns = 9
+
+    # These are the fixed positions for omitted pieces, to prevent duplicates.
+    omitted_piece_positions = {
+        'F': ((0,1), (1,0), (1,1), (1,2), (2,2)),
+        'I': ((1,0), (1,1), (1,2), (1,3), (1,4)),
+        'L': ((0,0), (1,0), (1,1), (1,2), (1,3)),
+        'N': ((0,0), (0,1), (0,2), (1,2), (1,3)),
+        'P': ((0,0), (0,1), (0,2), (1,0), (1,1)),
+        'T': ((0,2), (1,0), (1,1), (1,2), (2,2)),
+        'U': ((0,0), (0,1), (0,2), (1,0), (1,2)),
+        'V': ((0,0), (0,1), (0,2), (1,2), (2,2)),
+        'W': ((0,0), (0,1), (1,1), (1,2), (2,2)),
+        'X': ((0,2), (1,1), (1,2), (1,3), (2,2)),
+        'Y': ((0,2), (1,0), (1,1), (1,2), (1,3)),
+        'Z': ((0,0), (1,0), (1,1), (1,2), (2,2)),}
+
+    omitted_cover_offset = (6,0,0)
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set()
+        for i in range(5):
+            coords.update(
+                set(self.coordinates_cuboid(5 - i, 5 - i, 1, offset=(0,0,i))))
+        self.regular_solution_coords = coords.copy()
+        dx, dy, dz = self.omitted_cover_offset
+        for (x, y) in self.omitted_piece_coordinates:
+            coords.add((x + dx, y + dy, dz))
+        return sorted(coords)
+
+    def build_matrix(self):
+        self.build_rows_for_omitted_pieces()
+        self.build_regular_matrix(
+            sorted(self.piece_data.keys()),
+            solution_coords=self.regular_solution_coords)
+
+    def build_rows_for_omitted_pieces(self):
+        #import pdb ; pdb.set_trace()
+        dx, dy, dz = self.omitted_cover_offset
+        for key, coords in self.omitted_piece_positions.items():
+            coords3d = [(x + dx, y + dy, dz) for (x, y) in coords]
+            self.build_matrix_row(key, coords3d)
+
+    def build_aspects(self):
+        """
+        To eliminate duplicates from symmetry, limit the P pentomino to:
+
+        * the XY plane, where flips are disallowed; and
+        * the XZ plane (full freedom).
+        """
+        all_pieces_but_P = sorted(self.piece_data.keys())
+        all_pieces_but_P.remove('P')
+        self.build_regular_aspects(all_pieces_but_P)
+        data, kwargs = self.piece_data['P']
+        self.aspects['P'] = self.make_aspects(data, flips=None, axes=(2,))
+        self.aspects['P'].update(self.make_aspects(data, axes=(1,)))
+        self.pieces['P'] = tuple(
+            sorted((tuple(sorted(aspect)), aspect)
+                   for aspect in self.aspects['P']))

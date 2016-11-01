@@ -280,6 +280,17 @@ Misc
 
        -
 
+* Quarter Pyramid: a 55-cube shape, so 11 pieces are used and one
+  piece must be omitted.  `320 solutions
+  <../solutions/cubes/solid-pentominoes-5x5x5-quarter-pyramid.txt>`__
+  (`X3D model
+  <images/cubes/solid-pentominoes-5x5x5-quarter-pyramid.x3d>`__)
+
+  .. image:: images/cubes/solid-pentominoes-5x5x5-quarter-pyramid.png
+
+  Solutions omitting F: 11; I: 7; L: none; N: 4; P: none; T: 22; U: 4;
+  V: 12; W: 10; X: 223; Y: 2; Z: 25.
+
 .. _Kadon's Quintillions: http://gamepuzzles.com/polycube.htm#Q
 
 .. |c| unicode:: U+00A9 .. copyright sign
