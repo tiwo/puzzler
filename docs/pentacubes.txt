@@ -395,6 +395,40 @@ Misc
 
   .. image:: images/cubes/pentacubes-hollow-tetrahedron.png
 
+* 4 cubes, suggested by Donald Knuth:
+
+      I'm still working on two more exercises about pentacubes. [One
+      of them is an interesting shape that you don't seem to have yet:
+      It consists of a 4x4x4 cube with three 3x3x3 cubes attached ---
+      taking advantage of the remarkable fact that 29 times 5 equals
+      4^3 + 3^4! I found it in the pentacube book that Sivy Farhi
+      published in the 70s. I still haven't seen the book by Kuenzell;
+      it might well be in there too.]
+
+      -- private correspondence, 2016-10-29
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/cubes/pentacubes-4-cubes-1.png
+
+            `solutions incomplete
+            <../solutions/cubes/pentacubes-4-cubes-1.txt>`__
+            (`X3D model <images/cubes/pentacubes-4-cubes-1.x3d>`__)
+
+       - .. figure:: images/cubes/pentacubes-4-cubes-2.png
+
+            `solutions incomplete <../solutions/cubes/pentacubes-4-cubes-2.txt>`__
+            (`X3D model <images/cubes/pentacubes-4-cubes-2.x3d>`__)
+
+     * - .. figure:: images/cubes/pentacubes-4-cubes-3.png
+
+            `solutions incomplete
+            <../solutions/cubes/pentacubes-4-cubes-3.txt>`__
+            (`X3D model <images/cubes/pentacubes-4-cubes-3.x3d>`__)
+
+       -
+
 
 Pentacubes Plus
 ===============

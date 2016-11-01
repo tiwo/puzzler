@@ -1157,6 +1157,97 @@ class PentacubesHollowTetrahedron(Pentacubes):
         self.piece_data['P5'][-1]['flips'] = None
 
 
+class PentacubesStackedTriangles1(Pentacubes):
+
+    """many solutions"""
+
+    width = 9
+    height = 9
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set()
+        for d in range(self.depth):
+            coords.update(set(self.coordinates_triangular_prism(
+                self.width - d, 1, offset=(0,0,d))))
+        return sorted(coords)
+
+
+class PentacubesStackedTriangles2(PentacubesStackedTriangles1):
+
+    transform_solution_matrix = Pentacubes.transform_solution_matrix
+
+    def coordinates(self):
+        coords = set()
+        for d in range(self.depth):
+            coords.update(set(self.coordinates_triangular_prism(
+                self.width - d, 1, offset=(0,d,d))))
+        return sorted(coords)
+
+
+class PentacubesStackedTriangles3(PentacubesStackedTriangles1):
+
+    transform_solution_matrix = Pentacubes.transform_solution_matrix
+
+    def coordinates(self):
+        coords = set()
+        for d in range(self.depth):
+            coords.update(set(self.coordinates_triangular_prism(
+                self.width - d, 1, offset=((d + 1) / 2,(d / 2),d))))
+        return sorted(coords)
+
+
+class Pentacubes4Cubes1(Pentacubes):
+
+    """
+    many solutions
+
+    Suggested by Donald Knuth (2016-10-29, private correspondence):
+
+        I'm still working on two more exercises about pentacubes. [One of them
+        is an interesting shape that you don't seem to have yet: It consists
+        of a 4x4x4 cube with three 3x3x3 cubes attached --- taking advantage
+        of the remarkable fact that 29 times 5 equals 4^3 + 3^4! I found it in
+        the pentacube book that Sivy Farhi published in the 70s. I still
+        haven't seen the book by Kuenzell; it might well be in there too.]
+    """
+
+    width = 7
+    height = 7
+    depth = 7
+
+    _offsets = ((4, 0, 0), (0, 4, 0), (0, 0, 4))
+
+    def coordinates(self):
+        coords = set(self.coordinates_cuboid(4, 4, 4))
+        for offset in self._offsets:
+            coords.update(set(self.coordinates_cuboid(3, 3, 3, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        """
+        Restrict the X piece to one orientation to account for symmetry.
+        """
+        Pentacubes.customize_piece_data(self)
+        self.piece_data['X5'][-1]['axes'] = None
+
+
+class Pentacubes4Cubes2(Pentacubes4Cubes1):
+
+    """many solutions"""
+
+    _offsets = ((4, 1, 1), (1, 4, 1), (1, 1, 4))
+
+
+class Pentacubes4Cubes3(Pentacubes4Cubes1):
+
+    """many solutions"""
+
+    _offsets = ((4, 0, 1), (1, 4, 0), (0, 1, 4))
+
+
 class PentacubesPlus2x5x15(PentacubesPlus):
 
     """many solutions"""

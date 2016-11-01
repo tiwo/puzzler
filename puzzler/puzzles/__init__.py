@@ -810,6 +810,14 @@ class Puzzle3D(Puzzle):
                                          offset=offset1)))
         return sorted(coords)
 
+    @classmethod
+    def coordinates_triangular_prism(cls, side_length, depth, offset=None):
+        for coord in cls.coordinates_cuboid(side_length, side_length, depth):
+            x, y, z = coord
+            xy = x + y
+            if xy < side_length:
+                yield cls.coordinate_offset(x, y, z, offset)
+
     def make_aspects(self, units,
                      flips=(0, 1), axes=(0, 1, 2), rotations=(0, 1, 2, 3)):
         aspects = set()
