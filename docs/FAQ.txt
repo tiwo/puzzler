@@ -13,7 +13,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2015 by David J. Goodger
+:Copyright: |c| 1998-2016 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -759,6 +759,38 @@ symmetrical puzzles.  More polyform puzzles are to come:
 * other polytwigs (`notes <polytwig-notes.html#potential-puzzles>`__)
 
 * and puzzles of new polyforms!
+
+
+Why aren't all solutions provided for all puzzles?
+--------------------------------------------------
+
+Short answer: limited time, space, and interest.
+
+**Time:** It can take a long time to find all the solutions to a
+puzzle.  Many puzzles have a *lot* of solutions: thousands, millions,
+billions...  Sometimes I allow puzzles to run to completion even
+though it takes days or weeks, but usually I don't allow that much
+time.
+
+**Space:** The Polyform Puzzler project has limited space for its
+files.  Large numbers of solutions take up a lot of disk space.  I
+will often truncate solution files to save space on the host servers.
+
+**Interest:** For most puzzles I don't care what the actual number of
+solutions is.  I am content just to know that there are *many*
+solutions.  I only find and publish a small sample.
+
+If a puzzle has a finite and reasonable number of solutions, say 10000
+or fewer, I may find and publish all the solutions (often truncated).
+If a puzzle has a known number of solutions, I will often find all of
+them to verify the software and confirm the published number.
+
+If you would like to have all the solutions for a particular puzzle, I
+encourage you to use the Polyform Puzzler software on your own
+computer.  Some puzzles are already optimized to find unique solutions
+only, but many are not.  See `Preventing Duplicates
+<extend.html#preventing-duplicates>`_ in `How to Extend Polyform
+Puzzler`_.
 
 
 How should the solution files be interpreted?
