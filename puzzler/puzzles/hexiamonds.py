@@ -67,6 +67,45 @@ class Hexiamonds4x11Trapezoid(Hexiamonds):
         self.piece_data['I6'][-1]['flips'] = None
 
 
+class Hexiamonds5x10Trapezoid1(Hexiamonds):
+
+    """
+    68 solutions
+
+    Design from `Kadon's Iamond Hex`_ booklet.
+    """
+
+    height = 5
+    width = 10
+
+    holes = set(Hexiamonds.coordinates_trapezoid(2, 1, offset=(3,2,0)))
+
+    def coordinates(self):
+        coords = set(self.coordinates_trapezoid(10, 5)) - self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['flips'] = None
+
+
+class Hexiamonds5x10Trapezoid2(Hexiamonds5x10Trapezoid1):
+
+    """
+    256 solutions
+
+    Design from `Kadon's Iamond Hex`_ booklet.
+    """
+
+    holes = set(Hexiamonds.coordinates_trapezoid(2, 1, offset=(4,0,0)))
+
+
+class Hexiamonds5x10Trapezoid3(Hexiamonds5x10Trapezoid1):
+
+    """35 solutions"""
+
+    holes = set(Hexiamonds.coordinates_trapezoid(2, 1, offset=(2,4,0)))
+
+
 class Hexiamonds6x9Trapezoid(Hexiamonds4x11Trapezoid):
 
     """0 solutions (impossible due to parity)"""
@@ -213,7 +252,7 @@ class HexiamondsSnowflake(Hexiamonds):
     """
     55 solutions
 
-    Same as `Kadon's Iamond Hex <http://gamepuzzles.com/esspoly.htm#IH>`__.
+    Same as `Kadon's Iamond Hex <http://gamepuzzles.com/esspoly.htm#IH>`_.
     """
 
     height = 8
@@ -238,8 +277,7 @@ class HexiamondsSnowflake(Hexiamonds):
 class HexiamondsIamondHexSeparatedColors(HexiamondsSnowflake):
 
     """
-    Solves the separated colors challenge of
-    `Kadon's Iamond Hex <http://gamepuzzles.com/esspoly.htm#IH>`__.
+    Solves the separated colors challenge of `Kadon's Iamond Hex`_.
 
     I bought one at G4G10 in March 2012.  The pieces come in three different
     colors.  An added challenge is to find solutions where no two pieces of
@@ -292,8 +330,7 @@ class HexiamondsIamondHexSeparatedColors(HexiamondsSnowflake):
 class HexiamondsIamondHexJoinedColors(HexiamondsIamondHexSeparatedColors):
 
     """
-    Solves the joined colors challenge of
-    `Kadon's Iamond Hex <http://gamepuzzles.com/esspoly.htm#IH>`__.
+    Solves the joined colors challenge of `Kadon's Iamond Hex`_.
 
     I bought one at G4G10 in March 2012.  The pieces come in three different
     colors.  An added challenge is to find solutions where all four pieces of
@@ -1603,6 +1640,51 @@ class HexiamondsKnobbyBone(Hexiamonds):
     def customize_piece_data(self):
         self.piece_data['P6'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['P6'][-1]['flips'] = None
+
+
+class Hexiamonds5x2SemiregularHexagon1(Hexiamonds):
+
+    """
+    419 solutions
+
+    Design from `Kadon's Iamond Hex`_ booklet.
+    """
+
+    height = 8
+    width = 8
+
+    extras = set(Hexiamonds.coordinates_inverted_triangle(6))
+    holes = set()
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_semiregular_hexagon(5, 2, offset=(1,1,0)))
+            .union(self.extras)
+            - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['flips'] = None
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+
+
+class Hexiamonds5x2SemiregularHexagon2(Hexiamonds5x2SemiregularHexagon1):
+
+    """993 solutions"""
+
+    extras = set(Hexiamonds.coordinate_offset(x, y, z, None)
+                 for (x, y, z) in ((0,6,1), (4,0,1), (6,4,1)))
+    holes = set()
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_semiregular_hexagon(5, 2, offset=(1,1,0)))
+            .union(self.extras)
+            - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
 
 
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):

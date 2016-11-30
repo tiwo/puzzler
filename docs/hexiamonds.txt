@@ -206,6 +206,22 @@ Hexagons & Variants
 
   __ http://mathworld.wolfram.com/HexiamondTiling.html
 
+* 5x2 semiregular hexagons:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/iamonds/hexiamonds-5x2-semiregular-hexagon-1.png
+
+            `419 solutions
+            <../solutions/iamonds/hexiamonds-5x2-semiregular-hexagon-1.txt>`__
+            (design from `Kadon's "Iamond Hex"`_)
+
+       - .. figure:: images/iamonds/hexiamonds-5x2-semiregular-hexagon-2.png
+
+            `993 solutions
+            <../solutions/iamonds/hexiamonds-5x2-semiregular-hexagon-2.txt>`__
+
 
 "Choose 9" Hexagons
 -------------------
@@ -292,6 +308,29 @@ Miscellaneous
   <../solutions/iamonds/hexiamonds-4x11-trapezoid.txt>`__
 
   .. image:: images/iamonds/hexiamonds-4x11-trapezoid.png
+
+* 5x10 trapezoids with holes:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/iamonds/hexiamonds-5x10-trapezoid-1.png
+
+            `68 solutions
+            <../solutions/iamonds/hexiamonds-5x10-trapezoid-1.txt>`__
+            (design from `Kadon's "Iamond Hex"`_ booklet)
+
+       - .. figure:: images/iamonds/hexiamonds-5x10-trapezoid-2.png
+
+            `256 solutions
+            <../solutions/iamonds/hexiamonds-5x10-trapezoid-2.txt>`__
+
+     * - .. figure:: images/iamonds/hexiamonds-5x10-trapezoid-3.png
+
+            `35 solutions
+            <../solutions/iamonds/hexiamonds-5x10-trapezoid-3.txt>`__
+
+       -
 
 * 5x8 stacked long butterflies: `290 solutions
   <../solutions/iamonds/hexiamonds-5x8-stacked-long-butterflies.txt>`__
