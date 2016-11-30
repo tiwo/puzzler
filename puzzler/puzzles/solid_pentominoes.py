@@ -11,6 +11,7 @@ Concrete solid pentomino puzzles.
 
 from puzzler.puzzles import Puzzle3D, Puzzle2D
 from puzzler.puzzles.polycubes import SolidPentominoes
+from puzzler.coordsys import Cartesian3D
 
 
 class SolidPentominoes2x3x10(SolidPentominoes):
@@ -1151,3 +1152,128 @@ class SolidPentominoes5x5x5QuarterPyramid(SolidPentominoes):
         self.pieces['P'] = tuple(
             sorted((tuple(sorted(aspect)), aspect)
                    for aspect in self.aspects['P']))
+
+
+class SolidPentominoesCrossTower(SolidPentominoes):
+
+    """
+    7 solutions
+
+    Design from `Thimo Rosenkranz's pentoma.de <http://www.pentoma.de>`_.
+    """
+
+    width = 5
+    height = 5
+    depth = 8
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'x_reversed': True},)
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(5, 1, 6, offset=(0,2,0)))
+            + list(self.coordinates_cuboid(1, 5, 6, offset=(2,0,0)))
+            + [Cartesian3D(coord)
+               for coord in ((1,2,6), (2,1,6), (2,2,6), (2,3,6), (3,2,6),
+                             (2,2,7))])
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['axes'] = (0,)
+
+
+class SolidPentominoesInfinityTower(SolidPentominoes):
+
+    """
+    1 solution
+
+    Design from `Thimo Rosenkranz's pentoma.de <http://www.pentoma.de>`_.
+    """
+
+    width = 5
+    height = 5
+    depth = 4
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_ring_wall(3, 3, 4, offset=(0,2,0)))
+            + list(self.coordinates_ring_wall(3, 3, 4, offset=(2,0,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['axes'] = (0,)
+        self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class SolidPentominoesSquareTower1(SolidPentominoes):
+
+    """
+    1 solution
+
+    Design from `Thimo Rosenkranz's pentoma.de <http://www.pentoma.de>`_.
+    """
+
+    width = 5
+    height = 5
+    depth = 5
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'x_reversed': True},)
+
+    _offsets = ((0,2), (2,0), (2,4), (4,2))
+
+    def coordinates(self):
+        coords = set(self.coordinates_ring_wall(3, 3, 5, offset=(1,1,0)))
+        for (x, y) in self._offsets:
+            coords.update(set(self.coordinates_cuboid(1, 1, 5, offset=(x,y,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['axes'] = (0,)
+        self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class SolidPentominoesSquareTower2(SolidPentominoesSquareTower1):
+
+    """
+    54 solutions
+
+    Design from `Thimo Rosenkranz's pentoma.de <http://www.pentoma.de>`_.
+    """
+
+    _offsets = ((0,3), (1,4), (3,0), (4,1))
+
+    check_for_duplicates = False
+
+
+class SolidPentominoesSquareTower3(SolidPentominoesSquareTower1):
+
+    """27 solutions"""
+
+    _offsets = ((0,3), (1,0), (3,4), (4,1))
+
+    check_for_duplicates = False
+
+
+class SolidPentominoesSquareTower4(SolidPentominoesSquareTower1):
+
+    """8 solutions"""
+
+    _offsets = ((0,3), (0,4), (4,0), (4,1))
+
+    check_for_duplicates = False
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1)

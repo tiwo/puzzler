@@ -187,6 +187,13 @@ Hexagons & Variants
             `3 solutions
             <../solutions/iamonds/hexiamonds-spiked-hexagon-2.txt>`__
 
+     * - .. figure:: images/iamonds/hexiamonds-spiked-hexagon-3.png
+
+            `4 solutions
+            <../solutions/iamonds/hexiamonds-spiked-hexagon-3.txt>`__
+            (design from `Thimo Rosenkranz's pentoma.de`_)
+
+       -
   .. 
 
   __ http://recmath.org/PolyPages/PolyPages/index.htm?Polyiamonds.htm
@@ -327,7 +334,7 @@ Miscellaneous
 * Tenyo's puzzle: `4968 solutions
   <../solutions/iamonds/hexiamonds-tenyo.txt>`__
 
-  This is the configuration used by the `hexiamond PlaPuzzle`__
+  This is the tray configuration used by the `hexiamond PlaPuzzle`__
   produced by `Tenyo Inc. of Japan`__.
 
   __ http://www.tenyo.co.jp/pp/pz04/index.html
@@ -362,6 +369,14 @@ Miscellaneous
             by `Oktavian Scharek
             <http://www.8dfineart.com/Magic-Triangles>`_)
 
+     * - .. figure:: images/iamonds/hexiamonds-spinner-3.png
+
+            `4 solutions
+            <../solutions/iamonds/hexiamonds-spinner-3.txt>`__ (design
+            from `Thimo Rosenkranz's pentoma.de`_)
+
+       -
+
 * Deltas:
 
   .. list-table::
@@ -390,6 +405,12 @@ Miscellaneous
 
   .. image:: images/iamonds/hexiamonds-infinity.png
 
+* Knobby bone (design from `Thimo Rosenkranz's pentoma.de
+  <http://www.pentoma.de>`_): `1 solution
+  <../solutions/iamonds/hexiamonds-knobby-bone.txt>`__
+
+  .. image:: images/iamonds/hexiamonds-knobby-bone.png
+
 
 One-Sided Hexiamonds
 ====================
@@ -398,8 +419,8 @@ The one-sided hexiamonds consist of 19 6-triangle polyforms, for a
 total of 114 unit triangles.
 
 
-Hexagons & Variants
--------------------
+Hexagons & Snowflakes, etc.
+---------------------------
 
 * Long hexagon 8x3 [11x6]: `solutions incomplete
   <../solutions/iamonds/one-sided-hexiamonds-long-hexagon-8x3.txt>`__
@@ -415,6 +436,34 @@ Hexagons & Variants
   <../solutions/iamonds/one-sided-hexiamonds-notched-hexagon-ring.txt>`__
 
   .. image:: images/iamonds/one-sided-hexiamonds-notched-hexagon-ring.png
+
+* Knobbed hexagon: `137 solutions
+  <../solutions/iamonds/one-sided-hexiamonds-knobbed-hexagon-1.txt>`__
+
+  .. image:: images/iamonds/one-sided-hexiamonds-knobbed-hexagon-1.png
+
+* Truncated hexagram ring (design from `Thimo Rosenkranz's
+  pentoma.de`_): `16 solutions
+  <../solutions/iamonds/one-sided-hexiamonds-truncated-hexagram-ring.txt>`__
+
+  .. image:: images/iamonds/one-sided-hexiamonds-truncated-hexagram-ring.png
+
+* Hexagrams × hexagons:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/iamonds/one-sided-hexiamonds-hexagram-hexagon-1.png
+
+            `54 solutions
+            <../solutions/iamonds/one-sided-hexiamonds-hexagram-hexagon-1.txt>`__
+            (design from `Thimo Rosenkranz's pentoma.de`_)
+
+       - .. figure:: images/iamonds/one-sided-hexiamonds-hexagram-hexagon-2.png
+
+            `1 solution
+            <../solutions/iamonds/one-sided-hexiamonds-hexagram-hexagon-2.txt>`__
+            (design from `Thimo Rosenkranz's pentoma.de`_)
 
 
 Trefoils

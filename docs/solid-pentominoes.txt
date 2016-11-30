@@ -267,16 +267,22 @@ Misc
 
             `92 solutions
             <../solutions/cubes/solid-pentominoes-cross-block-1.txt>`__
-
+            (`X3D model
+            <images/cubes/solid-pentominoes-cross-block-1.x3d>`__)
+  
        - .. figure:: images/cubes/solid-pentominoes-cross-block-2.png
 
             `15 solutions
             <../solutions/cubes/solid-pentominoes-cross-block-2.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-cross-block-2.x3d>`__)
 
      * - .. figure:: images/cubes/solid-pentominoes-cross-block-3.png
 
             `10 solutions
             <../solutions/cubes/solid-pentominoes-cross-block-3.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-cross-block-3.x3d>`__)
 
        -
 
@@ -290,6 +296,52 @@ Misc
 
   Solutions omitting F: 11; I: 7; L: none; N: 4; P: none; T: 22; U: 4;
   V: 12; W: 10; X: 223; Y: 2; Z: 25.
+
+* Cross Tower (design from `Thimo Rosenkranz's pentoma.de
+  <http://www.pentoma.de>`_): `7 solutions
+  <../solutions/ominoes/cubes/solid-pentominoes-cross-tower.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-cross-tower.x3d>`__)
+
+  .. image:: images/cubes/solid-pentominoes-cross-tower.png
+
+* Infinity Tower (design from `Thimo Rosenkranz's pentoma.de`_): `1 solution
+  <../solutions/ominoes/cubes/solid-pentominoes-infinity-tower.txt>`__
+  (`X3D model <images/cubes/solid-pentominoes-infinity-tower.x3d>`__)
+
+  .. image:: images/cubes/solid-pentominoes-infinity-tower.png
+
+* Square Towers:
+
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/cubes/solid-pentominoes-square-tower-1.png
+
+            `1 solution
+            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-1.txt>`__
+            (design from `Thimo Rosenkranz's pentoma.de`_; `X3D model
+            <images/cubes/solid-pentominoes-square-tower-1.x3d>`__)
+
+       - .. figure:: images/cubes/solid-pentominoes-square-tower-2.png
+
+            `54 solutions
+            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-2.txt>`__
+            (design from `Thimo Rosenkranz's pentoma.de`_; `X3D model
+            <images/cubes/solid-pentominoes-square-tower-2.x3d>`__)
+
+     * - .. figure:: images/cubes/solid-pentominoes-square-tower-3.png
+
+            `27 solutions
+            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-3.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-square-tower-3.x3d>`__)
+
+       - .. figure:: images/cubes/solid-pentominoes-square-tower-4.png
+
+            `8 solutions
+            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-4.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-square-tower-4.x3d>`__)
 
 .. _Kadon's Quintillions: http://gamepuzzles.com/polycube.htm#Q
 

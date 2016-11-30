@@ -1289,6 +1289,29 @@ class PentominoesEye(Pentominoes):
         self.piece_data['P'][-1]['flips'] = None
 
 
+class PentominoesSpinner1(Pentominoes):
+
+    """
+    13 solutions
+
+    Design from `Thimo Rosenkranz's pentoma.de <http://www.pentoma.de>`_.
+    """
+
+    height = 11
+    width = 11
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_rectangle(5, 3, offset=(0,5)))
+            + list(self.coordinates_rectangle(3, 5, offset=(3,0)))
+            + list(self.coordinates_rectangle(3, 5, offset=(5,6)))
+            + list(self.coordinates_rectangle(5, 3, offset=(6,3))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = None
+
+
 class OneSidedPentominoes3x30(OneSidedPentominoes):
 
     """46 solutions"""

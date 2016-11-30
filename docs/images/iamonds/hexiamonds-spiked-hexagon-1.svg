@@ -1,10 +1,10 @@
 <?xml version="1.0" standalone="no"?>
 <!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
-<svg width="170.000" height="103.923"
-     viewBox="0 0 170.000 103.923"
+<svg width="340.000" height="340.000"
+     viewBox="0 0 340.000 340.000"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
-<g>
+<g transform="translate(170.000,85.000) rotate(-30)">
 <polygon fill="red" stroke="white"
          stroke-width="1" stroke-linejoin="round"
          points="95.000,86.603 100.000,95.263 105.000,86.603 115.000,86.603 105.000,69.282 100.000,77.942 90.000,77.942">

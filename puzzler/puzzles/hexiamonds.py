@@ -976,6 +976,8 @@ class HexiamondsSpikedHexagon1(Hexiamonds):
     width = 10
     height = 10
 
+    svg_rotation = -30
+
     def coordinates(self):
         x = Triangular3DCoordSet(self.coordinates_butterfly(2, 1))
         coords = set(
@@ -1006,6 +1008,32 @@ class HexiamondsSpikedHexagon2(Hexiamonds):
             + list(x.translate((6,0,0)))
             + list(x.rotate0(1).translate((2,2,0)))
             + list(x.rotate0(2).translate((6,6,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+        self.piece_data['P6'][-1]['flips'] = None
+
+
+class HexiamondsSpikedHexagon3(Hexiamonds):
+
+    """
+    4 solutions
+
+    Design from `Thimo Rosenkranz's pentoma.de <http://www.pentoma.de>`_.
+    """
+
+    width = 8
+    height = 8
+
+    svg_rotation = -30
+
+    def coordinates(self):
+        coords = set(self.coordinates_hexagon(3, offset=(1,1,0)))
+        for offset in ((0,3,0), (3,6,0), (6,0,0)):
+            coords.update(set(self.coordinates_hexagon(1, offset=offset)))
+        for offset in ((0,4,0), (2,0,0), (4,2,0)):
+            coords.update(set(self.coordinates_hexagram(1, offset=offset)))
         return sorted(coords)
 
     def customize_piece_data(self):
@@ -1147,6 +1175,28 @@ class HexiamondsSpinner2(Hexiamonds):
             set(self.coordinates_hexagon(2, offset=(3,4,0)))).union(
             set(self.coordinates_semiregular_hexagon(3, 2, offset=(2,2,0))))
             - set(self.coordinates_inverted_triangle(2, offset=(3,3,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+
+
+class HexiamondsSpinner3(Hexiamonds):
+
+    """
+    4 solutions
+
+    Design from `Thimo Rosenkranz's pentoma.de`_.
+    """
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        coords = (
+            set(self.coordinates_hexagon(2, offset=(1,0,0))).union(
+            set(self.coordinates_hexagon(2, offset=(0,4,0)))).union(
+            set(self.coordinates_hexagon(2, offset=(4,1,0)))))
         return sorted(coords)
 
     def customize_piece_data(self):
@@ -1529,6 +1579,29 @@ class HexiamondsBumpyTrefoil(Hexiamonds):
 
     def customize_piece_data(self):
         self.piece_data['P6'][-1]['rotations'] = (0, 1)
+        self.piece_data['P6'][-1]['flips'] = None
+
+
+class HexiamondsKnobbyBone(Hexiamonds):
+
+    """
+    1 solution
+
+    Design from `Thimo Rosenkranz's pentoma.de`_.
+    """
+
+    height = 10
+    width = 12
+
+    def coordinates(self):
+        coords = set(
+            self.coordinates_elongated_hexagon(6, 2, offset=(1,1,0)))
+        for offset in ((0,4,0), (2,0,0), (6,4,0), (8,0,0)):
+            coords.update(self.coordinates_hexagon(1, offset=offset))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1, 2)
         self.piece_data['P6'][-1]['flips'] = None
 
 
@@ -2203,10 +2276,14 @@ class OneSidedHexiamondsNotchedHexagonRing(OneSidedHexiamonds):
 
 class OneSidedHexiamondsKnobbedHexagon1(OneSidedHexiamonds):
 
-    """many solutions"""
+    """137 or 274 solutions?"""
 
     height = 10
     width = 10
+
+    check_for_duplicates = True
+    duplicate_conditions = ({'standardize': 'P6'},
+                            {'standardize': 'p6'},)
 
     holes = set(OneSidedHexiamonds.coordinates_hexagon(1, offset=(4,4,0)))
 
@@ -2217,6 +2294,10 @@ class OneSidedHexiamondsKnobbedHexagon1(OneSidedHexiamonds):
         coords -= self.holes
         return sorted(coords)
 
+    def customize_piece_data(self):
+        OneSidedHexiamonds.customize_piece_data(self)
+        self.piece_data['V6'][-1]['rotations'] = None
+
 
 class OneSidedHexiamondsKnobbedHexagon_x1(OneSidedHexiamondsKnobbedHexagon1):
 
@@ -2225,3 +2306,72 @@ class OneSidedHexiamondsKnobbedHexagon_x1(OneSidedHexiamondsKnobbedHexagon1):
     holes = set(((3,5,1), (4,4,0), (4,6,0), (5,3,1), (5,5,1), (6,4,0)))
     holes = set(((2,6,0), (3,3,1), (3,7,1), (6,2,0), (6,6,0), (7,3,1)))
     holes = set(((1,6,1), (3,3,0), (3,8,0), (6,1,1), (6,6,1), (8,3,0)))
+
+
+class OneSidedHexiamondsTruncatedHexagramRing(OneSidedHexiamonds):
+
+    """
+    16 solutions
+
+    Design from `Thimo Rosenkranz's pentoma.de`_.
+    """
+
+    height = 12
+    width = 12
+
+    check_for_duplicates = True
+    duplicate_conditions = ({'standardize': 'P6'},
+                            {'standardize': 'p6'},)
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_semiregular_hexagon(8, 2, offset=(2,2,0)))
+                + list(self.coordinates_semiregular_hexagon(2, 8)))
+            - set(self.coordinates_hexagon(3, offset=(3,3,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHexiamonds.customize_piece_data(self)
+        self.piece_data['V6'][-1]['rotations'] = None
+
+
+class OneSidedHexiamondsHexagramHexagon1(OneSidedHexiamonds):
+
+    """
+    54 solutions
+
+    Design from `Thimo Rosenkranz's pentoma.de`_.
+    """
+
+    height = 12
+    width = 12
+
+    check_for_duplicates = True
+    duplicate_conditions = ({'standardize': 'P6'},
+                            {'standardize': 'p6'},)
+
+    holes = set(OneSidedHexiamonds.coordinates_hexagon(1, offset=(5,5,0)))
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_hexagram(3))
+                + list(self.coordinates_hexagon(4, offset=(2,2,0))))
+            - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        OneSidedHexiamonds.customize_piece_data(self)
+        self.piece_data['V6'][-1]['rotations'] = None
+
+
+class OneSidedHexiamondsHexagramHexagon2(OneSidedHexiamondsHexagramHexagon1):
+
+    """
+    1 solution
+
+    Design from `Thimo Rosenkranz's pentoma.de`_.
+    """
+
+    holes = set(OneSidedHexiamonds.coordinate_offset(x, y, z, None)
+                for (x, y, z) in ((2,7,1), (4,4,0), (4,9,0), (7,2,1), (7,7,1),
+                                  (9,4,0)))

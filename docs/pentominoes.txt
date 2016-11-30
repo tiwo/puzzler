@@ -280,6 +280,12 @@ Misc
 
   .. image:: images/ominoes/pentominoes-holey-oval.png
 
+* Spinner (design from `Thimo Rosenkranz's pentoma.de
+  <http://www.pentoma.de>`_): `13 solutions
+  <../solutions/ominoes/ominoes/pentominoes-spinner-1.txt>`__
+
+  .. image:: images/ominoes/pentominoes-spinner-1.png
+
 
 Pentominoes Plus the Square Tetromino
 =====================================

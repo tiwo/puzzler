@@ -793,6 +793,18 @@ only, but many are not.  See `Preventing Duplicates
 Puzzler`_.
 
 
+How do you choose puzzle shapes? (What criteria do you use for selecting puzzles to implement?)
+-----------------------------------------------------------------------------------------------
+
+My puzzle selection criteria are entirely subjective: I choose to
+implement the puzzles that I find particularly beautiful or
+interesting.  Beauty, of course, is in the eye of the beholder.  I
+especially like highly symmetrical puzzles.
+
+I welcome suggestions for new puzzles, but I cannot guarantee that I
+will implement any or all of them.
+
+
 How should the solution files be interpreted?
 ---------------------------------------------
 
