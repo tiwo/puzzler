@@ -2375,3 +2375,35 @@ class OneSidedHexiamondsHexagramHexagon2(OneSidedHexiamondsHexagramHexagon1):
     holes = set(OneSidedHexiamonds.coordinate_offset(x, y, z, None)
                 for (x, y, z) in ((2,7,1), (4,4,0), (4,9,0), (7,2,1), (7,7,1),
                                   (9,4,0)))
+
+
+class OneSidedHexiamondsHexagramHexagon3(OneSidedHexiamondsHexagramHexagon1):
+
+    """many solutions"""
+
+    holes = set(OneSidedHexiamonds.coordinate_offset(x, y, z, None)
+                for (x, y, z) in ((2,5,1), (2,6,0), (5,9,1), (6,9,0),
+                                  (9,2,0), (9,2,1)))
+
+    def customize_piece_data(self):
+        OneSidedHexiamonds.customize_piece_data(self)
+        self.piece_data['V6'][-1]['rotations'] = (0, 1)
+
+
+class OneSidedHexiamondsHexagramHexagon_x4(OneSidedHexiamondsHexagramHexagon1):
+
+    """many solutions"""
+
+    ## no solutions:
+    # holes = set(OneSidedHexiamonds.coordinate_offset(x, y, z, None)
+    #             for (x, y, z) in ((2,6,0), (2,9,0), (6,9,0), (6,2,0),
+    #                               (9,2,0), (9,6,0)))
+
+    ## no solutions:
+    # holes = set(OneSidedHexiamonds.coordinate_offset(x, y, z, None)
+    #             for (x, y, z) in ((2,5,1), (2,9,0), (5,9,1), (6,2,0),
+    #                               (9,2,1), (9,6,0)))
+
+    def customize_piece_data(self):
+        OneSidedHexiamonds.customize_piece_data(self)
+        self.piece_data['V6'][-1]['rotations'] = (0, 1)

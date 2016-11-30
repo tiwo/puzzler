@@ -344,6 +344,12 @@ puzzles.*
   * P(8,6) - 4 units (e.g. 4 doubled hexiamonds less 1 unit each;
     4(P(4,3) - 1))
 
+108: 18 of 19 one-sided hexiamonds
+
+* Potential:
+
+  * Hg(3)
+
 110: polyiamonds of order 1 to 6
 
 114: One-sided hexiamonds

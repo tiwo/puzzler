@@ -465,6 +465,12 @@ Hexagons & Snowflakes, etc.
             <../solutions/iamonds/one-sided-hexiamonds-hexagram-hexagon-2.txt>`__
             (design from `Thimo Rosenkranz's pentoma.de`_)
 
+     * - .. figure:: images/iamonds/one-sided-hexiamonds-hexagram-hexagon-3.png
+
+            `solutions incomplete
+            <../solutions/iamonds/one-sided-hexiamonds-hexagram-hexagon-3.txt>`__
+       -
+
 
 Trefoils
 --------
