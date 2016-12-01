@@ -594,7 +594,9 @@ class HexiamondsTrefoil2(Hexiamonds):
     holes = set(((0,3,0),(0,5,0),(3,0,0),(5,0,0),(3,5,0),(5,3,0)))
 
     def coordinates(self):
-        return sorted(set(self.coordinates_semiregular_hexagon(7, 1)) - self.holes)
+        return sorted(
+            set(self.coordinates_semiregular_hexagon(7, 1))
+            - self.holes)
 
     def customize_piece_data(self):
         self.piece_data['I6'][-1]['rotations'] = None
@@ -1240,6 +1242,31 @@ class HexiamondsSpinner3(Hexiamonds):
         self.piece_data['P6'][-1]['rotations'] = (0, 1)
 
 
+class HexiamondsSpinner4(Hexiamonds):
+
+    """
+    4 solutions
+
+    Design from `Kadon's Iamond Hex`_ booklet.
+    """
+
+    width = 8
+    height = 8
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_hexagon(2, offset=(0,3,0)))
+                + list(self.coordinates_hexagon(2, offset=(4,0,0)))
+                + list(self.coordinates_hexagon(2, offset=(3,4,0)))
+                + list(self.coordinates_semiregular_hexagon(3, 2,
+                                                            offset=(2,2,0))))
+            - set(((4,4,0), (3,5,1), (3,3,1), (5,3,1))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+
+
 class HexiamondsSpinner_x1(Hexiamonds):
 
     """0 solutions"""
@@ -1592,6 +1619,29 @@ class HexiamondsInfinity(Hexiamonds):
         self.piece_data['P6'][-1]['flips'] = None
 
 
+class HexiamondsInfinity2(Hexiamonds):
+
+    """
+    33 solutions
+
+    Design from `Kadon's "Iamond Hex"`_ booklet.
+    """
+
+    width = 8
+    height = 6
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_elongated_hexagon(2, 3, offset=(3,0,0)))
+                + list(self.coordinates_elongated_hexagon(2, 3)))
+            - set(((2,2,1), (2,3,0), (5,2,1), (5,3,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1, 2)
+        self.piece_data['P6'][-1]['flips'] = None
+
+
 class HexiamondsBumpyTrefoil(Hexiamonds):
 
     """
@@ -1617,6 +1667,20 @@ class HexiamondsBumpyTrefoil(Hexiamonds):
     def customize_piece_data(self):
         self.piece_data['P6'][-1]['rotations'] = (0, 1)
         self.piece_data['P6'][-1]['flips'] = None
+
+
+class HexiamondsTrefoil3(HexiamondsTrefoil2):
+
+    """
+    2 solutions
+
+    Design from `Kadon's Iamond Hex`_ booklet.
+    """
+
+    height = 8
+    width = 8
+
+    holes = set(((0,4,0),(2,2,0),(2,4,0),(4,0,0),(4,2,0),(4,4,0)))
 
 
 class HexiamondsKnobbyBone(Hexiamonds):
@@ -1684,6 +1748,48 @@ class Hexiamonds5x2SemiregularHexagon2(Hexiamonds5x2SemiregularHexagon1):
         return sorted(coords)
 
     def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+
+
+class HexiamondsNearHexagram1(Hexiamonds):
+
+    """
+    2 solutions
+
+    Design from `Kadon's Iamond Hex`_ booklet.
+    """
+
+    height = 9
+    width = 9
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_semiregular_hexagon(6, 1, offset=(2,2,0)))
+                + list(self.coordinates_inverted_triangle(7)))
+            - set(((4,4,1),)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['flips'] = None
+        self.piece_data['P6'][-1]['rotations'] = (0, 1)
+
+
+class HexiamondsNearHexagram_x2(Hexiamonds):
+
+    """0 solutions"""
+
+    height = 10
+    width = 10
+
+    def coordinates(self):
+        coords = (
+            set(list(self.coordinates_triangle(8, offset=(2,2,0)))
+                + list(self.coordinates_inverted_triangle(7)))
+            - set(self.coordinates_triangle(2, offset=(4,4,0))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['flips'] = None
         self.piece_data['P6'][-1]['rotations'] = (0, 1)
 
 

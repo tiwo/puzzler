@@ -1277,3 +1277,61 @@ class SolidPentominoesSquareTower4(SolidPentominoesSquareTower1):
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class SolidPentominoesStairstepWalls1(SolidPentominoes):
+
+    """34 solutions"""
+
+    width = 8
+    height = 8
+    depth = 6
+
+    transform_solution_matrix = Puzzle3D.cycle_xyz_transform
+
+    holes = set()
+
+    def coordinates(self):
+        coords = set()
+        for i in range(self.depth):
+            coords.update(
+                set(self.coordinates_cuboid(1, 8-i, 1, offset=(0,0,i))))
+            coords.update(
+                set(self.coordinates_cuboid(8-i, 1, 1, offset=(0,0,i))))
+        coords -= self.holes
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['axes'] = (0,)
+
+
+class SolidPentominoesStairstepWalls2(SolidPentominoesStairstepWalls1):
+
+    """1 solution"""
+
+    depth = 8
+
+    holes = set(
+        list(SolidPentominoes.coordinates_cuboid(1, 2, 1, offset=(0,1,0)))
+        + list(SolidPentominoes.coordinates_cuboid(2, 1, 1, offset=(1,0,0))))
+
+
+class SolidPentominoesStairstepWalls_x3(SolidPentominoesStairstepWalls1):
+
+    """0 solutions"""
+
+    depth = 7
+
+    holes = set(
+        list(SolidPentominoes.coordinates_cuboid(1, 2, 1, offset=(0,2,0)))
+        + list(SolidPentominoes.coordinates_cuboid(2, 1, 1, offset=(2,0,0))))
+
+    holes = set(
+        list(SolidPentominoes.coordinates_cuboid(1, 2, 1, offset=(0,3,0)))
+        + list(SolidPentominoes.coordinates_cuboid(2, 1, 1, offset=(3,0,0))))
+
+    holes = set(
+        list(SolidPentominoes.coordinates_cuboid(1, 2, 1, offset=(0,4,0)))
+        + list(SolidPentominoes.coordinates_cuboid(2, 1, 1, offset=(4,0,0))))
+
+    holes = set(SolidPentominoes.coordinates_cuboid(2, 2, 1))

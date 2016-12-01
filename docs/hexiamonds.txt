@@ -368,7 +368,11 @@ Miscellaneous
             Bumpy trefoil (design by `Oktavian Scharek`_): `15 solutions
             <../solutions/iamonds/hexiamonds-bumpy-trefoil.txt>`__
 
-       -
+       - .. figure:: images/iamonds/hexiamonds-trefoil-3.png
+
+            `2 solutions
+            <../solutions/iamonds/hexiamonds-trefoil-3.txt>`__ (design
+            from `Kadon's "Iamond Hex"`_ booklet)
 
 * Tenyo's puzzle: `4968 solutions
   <../solutions/iamonds/hexiamonds-tenyo.txt>`__
@@ -414,7 +418,12 @@ Miscellaneous
             <../solutions/iamonds/hexiamonds-spinner-3.txt>`__ (design
             from `Thimo Rosenkranz's pentoma.de`_)
 
-       -
+       - .. figure:: images/iamonds/hexiamonds-spinner-4.png
+
+            `4 solutions
+            <../solutions/iamonds/hexiamonds-spinner-4.txt>`__ (design
+            from `Kadon's "Iamond Hex"`_ booklet)
+
 
 * Deltas:
 
@@ -439,16 +448,33 @@ Miscellaneous
 
        -
 
-* Infinity (design by `Oktavian Scharek`_): `15 solutions
-  <../solutions/iamonds/hexiamonds-infinity.txt>`__
+* Infinities:
 
-  .. image:: images/iamonds/hexiamonds-infinity.png
+  .. list-table::
+     :class: borderless
+
+     * - .. figure:: images/iamonds/hexiamonds-infinity.png
+
+            `15 solutions
+            <../solutions/iamonds/hexiamonds-infinity.txt>`__ (design
+            by `Oktavian Scharek`_)
+
+       - .. figure:: images/iamonds/hexiamonds-infinity-2.png
+
+            `33 solutions
+            <../solutions/iamonds/hexiamonds-infinity-2.txt>`__
+            (design from `Kadon's "Iamond Hex"`_ booklet)
 
 * Knobby bone (design from `Thimo Rosenkranz's pentoma.de
   <http://www.pentoma.de>`_): `1 solution
   <../solutions/iamonds/hexiamonds-knobby-bone.txt>`__
 
   .. image:: images/iamonds/hexiamonds-knobby-bone.png
+
+* Near-hexagram (design from `Kadon's "Iamond Hex"`_ booklet): `2
+  solutions <../solutions/iamonds/hexiamonds-near-hexagram-1.txt>`__
+
+  .. image:: images/iamonds/hexiamonds-near-hexagram-1.png
 
 
 One-Sided Hexiamonds
