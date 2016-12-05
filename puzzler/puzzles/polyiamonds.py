@@ -651,6 +651,73 @@ class OneSidedHexiamonds(OneSidedLowercaseMixin, Hexiamonds):
     pass
 
 
+class HexiamondsMinimalCoverMixin(object):
+
+    """
+    Used to omit a single hexiamond from a puzzle.
+
+    Must be the first base class listed in client subclass definitions for
+    MRO (method resolution order) to work.
+    """
+
+    # These 9 coordinates form a minimal cover for all 12 pentominoes
+    minimal_cover_coordinates_at_origin = (
+        (0,0,0), (0,0,1), (0,1,0), (0,1,1),
+        (1,0,0), (1,0,1), (1,1,0), (1,1,1),
+        (2,0,0), (2,0,1),)
+
+    # Origin of the minimal_cover_coordinates above; to override.
+    minimal_cover_offset = (0,0,0)
+
+    # Since there are only 10 coordinates for the omitted piece, only 1 piece
+    # can fit.  By setting these 10 coordinates as secondary columns, the
+    # extra 4 coordinates are ignored.
+    secondary_columns = 10
+
+    # These are the fixed positions for omitted pieces, to prevent duplicates.
+    omitted_piece_positions = {
+        'I6': ((0,0,0), (0,0,1), (1,0,0), (1,0,1), (2,0,0), (2,0,1)),
+        'P6': ((0,0,0), (0,0,1), (0,1,0), (1,0,0), (1,0,1), (2,0,0)),
+        'J6': ((0,0,1), (0,1,0), (1,0,0), (1,0,1), (2,0,0), (2,0,1)),
+        'E6': ((0,0,1), (1,0,0), (1,0,1), (1,1,0), (2,0,0), (2,0,1)),
+        'V6': ((0,0,0), (0,0,1), (0,1,0), (0,1,1), (1,0,0), (1,0,1)),
+        'H6': ((0,0,1), (1,0,0), (1,0,1), (1,1,0), (1,1,1), (2,0,0)),
+        'S6': ((0,1,0), (0,1,1), (1,0,1), (1,1,0), (2,0,0), (2,0,1)),
+        'X6': ((0,1,1), (1,0,0), (1,0,1), (1,1,0), (1,1,1), (2,0,0)),
+        'C6': ((0,0,0), (0,0,1), (1,0,0), (1,0,1), (1,1,0), (1,1,1)),
+        'G6': ((0,0,0), (0,0,1), (0,1,1), (1,0,0), (1,0,1), (1,1,0)),
+        'F6': ((0,0,0), (0,0,1), (0,1,0), (0,1,1), (1,0,0), (1,1,0)),
+        'O6': ((0,0,1), (0,1,0), (0,1,1), (1,0,0), (1,0,1), (1,1,0)),}
+
+    def coordinates_minimal_cover(self):
+        """Return a list of coordinates, the minimal cover with offset."""
+        coords = set()
+        dx, dy, dz = self.minimal_cover_offset
+        for (x, y, z) in self.minimal_cover_coordinates_at_origin:
+            coords.add((x + dx, y + dy, z + dz))
+        return sorted(coords)
+
+    def matrix_header_coords(self):
+        """Secondary columns must be positioned last."""
+        minimal_cover_coords = self.coordinates_minimal_cover()
+        regular_solution_coords = (
+            self.solution_coords - set(minimal_cover_coords))
+        return sorted(regular_solution_coords) + minimal_cover_coords
+
+    def build_matrix(self):
+        self.build_rows_for_omitted_pieces()
+        regular_solution_coords = (
+            self.solution_coords - set(self.coordinates_minimal_cover()))
+        self.build_regular_matrix(sorted(self.piece_data.keys()),
+                                  solution_coords=regular_solution_coords)
+
+    def build_rows_for_omitted_pieces(self):
+        dx, dy, dz = self.minimal_cover_offset
+        for key, coords in sorted(self.omitted_piece_positions.items()):
+            coords3d = sorted((x + dx, y + dy, z + dz) for (x, y, z) in coords)
+            self.build_matrix_row(key, coords3d)
+
+
 class Polyiamonds56(Polyiamonds):
 
     piece_data = copy.deepcopy(Pentiamonds.piece_data)
