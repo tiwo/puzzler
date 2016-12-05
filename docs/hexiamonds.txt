@@ -557,6 +557,15 @@ Hexagons & Snowflakes, etc.
             <../solutions/iamonds/one-sided-hexiamonds-hexagram-hexagon-3.txt>`__
        -
 
+* Hexagram with one omitted piece: `119 solutions (78 of which omit a
+  symmetrical piece, 41 asymmetrical)
+  <../solutions/iamonds/one-sided-hexiamonds-hexagram.txt>`__
+
+  Solutions are possible omitting all but the "C6", "F6", & "P6"
+  pieces.  This solution omits the "O6" piece (shown to the side):
+
+  .. image:: images/iamonds/one-sided-hexiamonds-hexagram.png
+
 
 Trefoils
 --------

@@ -9,7 +9,8 @@
 Concrete hexiamonds puzzles.
 """
 
-from puzzler.puzzles.polyiamonds import Hexiamonds, OneSidedHexiamonds
+from puzzler.puzzles.polyiamonds import Hexiamonds, OneSidedHexiamonds, \
+     HexiamondsMinimalCoverMixin
 from puzzler.puzzles.polyhexes import Polyhexes
 from puzzler.coordsys import Triangular3DCoordSet
 
@@ -1900,7 +1901,7 @@ class HexiamondsTriLevel(Hexiamonds):
 
     def customize_piece_data(self):
         self.piece_data['P6'][-1]['rotations'] = (0,1,2)
-
+    
 
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):
 
@@ -2704,3 +2705,30 @@ class OneSidedHexiamondsHexagramHexagon_x4(OneSidedHexiamondsHexagramHexagon1):
     def customize_piece_data(self):
         OneSidedHexiamonds.customize_piece_data(self)
         self.piece_data['V6'][-1]['rotations'] = (0, 1)
+
+
+class OneSidedHexiamondsHexagram(HexiamondsMinimalCoverMixin,
+                                 OneSidedHexiamonds):
+
+    """
+    A size-3 hexagram contains 108 unit triangles, 6 fewer than the 114 unit
+    triangles of a complete set of one-sided hexiamonds.  This puzzle omits
+    one hexiamond from each solution, shown to the side of the hexagram.  All
+    but the C6, F6, and H6 hexiamonds can be omitted (the latter two because
+    of up/down parity discrepancies).
+
+    119 solutions (78 of which omit a symmetrical piece, 41 asymmetrical)
+    """
+
+    height = 12
+    width = 13
+
+    minimal_cover_offset = (10,0,0)
+
+    def coordinates(self):
+        return (sorted(self.coordinates_hexagram(3))
+                + sorted(self.coordinates_minimal_cover()))
+
+    def customize_piece_data(self):
+        OneSidedHexiamonds.customize_piece_data(self)
+        self.piece_data['P6'][-1]['rotations'] = None
