@@ -2,7 +2,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2015 by David J. Goodger
+# Copyright: (C) 1998-2016 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """
@@ -1267,6 +1267,56 @@ class HexiamondsSpinner4(Hexiamonds):
         self.piece_data['P6'][-1]['rotations'] = (0, 1)
 
 
+class HexiamondsSpinner5(Hexiamonds):
+
+    """
+    1 solution
+
+    Design from `Kadon's Iamond Hex`_ booklet.
+    """
+
+    height = 8
+    width = 8
+
+    holes = set(((0,2,0),(2,3,0),(2,6,0),(3,2,0),(3,3,0),(6,0,0)))
+
+    def coordinates(self):
+        return sorted(
+            set(self.coordinates_semiregular_hexagon(7, 1))
+            - self.holes)
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['rotations'] = None
+
+
+class HexiamondsSpinner6(Hexiamonds):
+
+    """
+    1 solution
+
+    Design from `Kadon's Iamond Hex`_ booklet.
+    """
+
+    height = 8
+    width = 8
+
+    holes = set(((0,2,0),(2,3,0),(2,6,0),(3,2,0),(3,3,0),(6,0,0)))
+
+    def coordinates(self):
+        holes = set
+        coords = (set(self.coordinates_semiregular_hexagon(5, 3))
+                  - set(((2,3,1),))
+                  - set(self.coordinates_parallelogram(1, 2, offset=(3,3,0)))
+                  - set(self.coordinates_diamond(1, offset=(4,2,0))))
+        for offset in ((-3,5,0), (3,-3,0), (5,3,0)):
+            coords.difference_update(
+                set(self.coordinates_hexagon(2, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['I6'][-1]['rotations'] = None
+
+
 class HexiamondsSpinner_x1(Hexiamonds):
 
     """0 solutions"""
@@ -1791,6 +1841,65 @@ class HexiamondsNearHexagram_x2(Hexiamonds):
     def customize_piece_data(self):
         self.piece_data['P6'][-1]['flips'] = None
         self.piece_data['P6'][-1]['rotations'] = (0, 1)
+
+
+class HexiamondsNotchedHexagon1(Hexiamonds):
+
+    """
+    1 solution
+
+    Design from `Kadon's Iamond Hex`_ booklet.
+    """
+
+    height = 8
+    width = 8
+
+    holes = (set(Hexiamonds.coordinates_hexagon(1, offset=(3,3,0)))
+             .union(set(((1,5,1), (2,3,0), (3,6,0),
+                         (4,1,1), (5,4,1), (6,2,0)))))
+
+    def coordinates(self):
+        coords = (set(
+            list(self.coordinates_semiregular_hexagon(5, 2, offset=(1,1,0)))
+            + list(self.coordinates_semiregular_hexagon(2, 5)))
+                  - self.holes)
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = None
+
+
+class HexiamondsNotchedHexagon_x2(HexiamondsNotchedHexagon1):
+
+    """0 solutions"""
+
+    holes = set(Hexiamonds.coordinates_hexagram(1, offset=(2,2,0)))
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = None
+        self.piece_data['P6'][-1]['flips'] = None
+
+
+class HexiamondsTriLevel(Hexiamonds):
+
+    """
+    1 solution
+
+    Design via John Greening.
+    """
+
+    height = 6
+    width = 10
+
+    def coordinates(self):
+        coords = set()
+        for offset in ((0,0,0), (2,2,0), (4,4,0)):
+            coords.update(
+                set(self.coordinates_parallelogram(6, 2, offset=offset)))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P6'][-1]['rotations'] = (0,1,2)
 
 
 class OneSidedHexiamondsOBeirnesHexagon(OneSidedHexiamonds):

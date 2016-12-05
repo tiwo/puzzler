@@ -2,7 +2,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2015 by David J. Goodger
+# Copyright: (C) 1998-2016 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """
@@ -1230,10 +1230,12 @@ class SolidPentominoesSquareTower1(SolidPentominoes):
 
     duplicate_conditions = ({'x_reversed': True},)
 
+    _square_offset = (1,1,0)
     _offsets = ((0,2), (2,0), (2,4), (4,2))
 
     def coordinates(self):
-        coords = set(self.coordinates_ring_wall(3, 3, 5, offset=(1,1,0)))
+        coords = set(
+            self.coordinates_ring_wall(3, 3, 5, offset=self._square_offset))
         for (x, y) in self._offsets:
             coords.update(set(self.coordinates_cuboid(1, 1, 5, offset=(x,y,0))))
         return sorted(coords)
@@ -1257,26 +1259,49 @@ class SolidPentominoesSquareTower2(SolidPentominoesSquareTower1):
     check_for_duplicates = False
 
 
-class SolidPentominoesSquareTower3(SolidPentominoesSquareTower1):
+class SolidPentominoesSquareTower3(SolidPentominoesSquareTower2):
 
     """27 solutions"""
 
     _offsets = ((0,3), (1,0), (3,4), (4,1))
 
-    check_for_duplicates = False
 
-
-class SolidPentominoesSquareTower4(SolidPentominoesSquareTower1):
+class SolidPentominoesSquareTower4(SolidPentominoesSquareTower2):
 
     """8 solutions"""
 
     _offsets = ((0,3), (0,4), (4,0), (4,1))
 
-    check_for_duplicates = False
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['flips'] = None
+        self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class SolidPentominoesSquareTower5(SolidPentominoesSquareTower2):
+
+    """106 solutions"""
+
+    width = 3
+    height = 7
+
+    _square_offset = (0,2,0)
+    _offsets = ((0,5), (0,6), (2,0), (2,1))
 
     def customize_piece_data(self):
         self.piece_data['P'][-1]['flips'] = None
         self.piece_data['P'][-1]['rotations'] = (0, 1)
+
+
+class SolidPentominoesSquareTower6(SolidPentominoesSquareTower2):
+
+    """154 solutions"""
+
+    _square_offset = (0,0,0)
+    _offsets = ((0,3), (0,4), (3,0), (4,0))
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['axes'] = (0,)
+        self.piece_data['P'][-1]['flips'] = None
 
 
 class SolidPentominoesStairstepWalls1(SolidPentominoes):

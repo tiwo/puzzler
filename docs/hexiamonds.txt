@@ -8,7 +8,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2015 by David J. Goodger
+:Copyright: |c| 1998-2016 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -222,6 +222,11 @@ Hexagons & Variants
             `993 solutions
             <../solutions/iamonds/hexiamonds-5x2-semiregular-hexagon-2.txt>`__
 
+* Notched hexagon (design from `Kadon's "Iamond Hex"`_ booklet): `1
+  solution <../solutions/iamonds/hexiamonds-notched-hexagon-1.txt>`__
+
+  .. image:: images/iamonds/hexiamonds-notched-hexagon-1.png
+
 
 "Choose 9" Hexagons
 -------------------
@@ -424,6 +429,17 @@ Miscellaneous
             <../solutions/iamonds/hexiamonds-spinner-4.txt>`__ (design
             from `Kadon's "Iamond Hex"`_ booklet)
 
+     * - .. figure:: images/iamonds/hexiamonds-spinner-5.png
+
+            `1 solution
+            <../solutions/iamonds/hexiamonds-spinner-5.txt>`__ (design
+            from `Kadon's "Iamond Hex"`_ booklet)
+
+       - .. figure:: images/iamonds/hexiamonds-spinner-6.png
+
+            `1 solution
+            <../solutions/iamonds/hexiamonds-spinner-6.txt>`__ (design
+            from `Kadon's "Iamond Hex"`_ booklet)
 
 * Deltas:
 
@@ -475,6 +491,11 @@ Miscellaneous
   solutions <../solutions/iamonds/hexiamonds-near-hexagram-1.txt>`__
 
   .. image:: images/iamonds/hexiamonds-near-hexagram-1.png
+
+* Trilevel (design via John Greening): `1
+  solution <../solutions/iamonds/hexiamonds-trilevel.txt>`__
+
+  .. image:: images/iamonds/hexiamonds-trilevel.png
 
 
 One-Sided Hexiamonds

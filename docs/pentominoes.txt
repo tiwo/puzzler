@@ -8,7 +8,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: |c| 1998-2015 by David J. Goodger
+:Copyright: |c| 1998-2016 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -285,6 +285,11 @@ Misc
   <../solutions/ominoes/ominoes/pentominoes-spinner-1.txt>`__
 
   .. image:: images/ominoes/pentominoes-spinner-1.png
+
+* Holey spinner (design from John Greening): `3 solutions
+  <../solutions/ominoes/ominoes/pentominoes-holey-spinner.txt>`__
+
+  .. image:: images/ominoes/pentominoes-holey-spinner.png
 
 
 Pentominoes Plus the Square Tetromino

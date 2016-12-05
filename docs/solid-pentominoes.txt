@@ -343,6 +343,20 @@ Misc
             (`X3D model
             <images/cubes/solid-pentominoes-square-tower-4.x3d>`__)
 
+     * - .. figure:: images/cubes/solid-pentominoes-square-tower-5.png
+
+            `106 solutions
+            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-5.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-square-tower-5.x3d>`__)
+
+       - .. figure:: images/cubes/solid-pentominoes-square-tower-6.png
+
+            `154 solutions
+            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-6.txt>`__
+            (`X3D model
+            <images/cubes/solid-pentominoes-square-tower-6.x3d>`__)
+
 * Stairstep walls:
 
   .. list-table::

@@ -2,7 +2,7 @@
 # $Id$
 
 # Author: David Goodger <goodger@python.org>
-# Copyright: (C) 1998-2015 by David J. Goodger
+# Copyright: (C) 1998-2016 by David J. Goodger
 # License: GPL 2 (see __init__.py)
 
 """
@@ -1306,6 +1306,32 @@ class PentominoesSpinner1(Pentominoes):
             + list(self.coordinates_rectangle(3, 5, offset=(3,0)))
             + list(self.coordinates_rectangle(3, 5, offset=(5,6)))
             + list(self.coordinates_rectangle(5, 3, offset=(6,3))))
+        return sorted(coords)
+
+    def customize_piece_data(self):
+        self.piece_data['P'][-1]['rotations'] = None
+
+
+class PentominoesHoleySpinner(Pentominoes):
+
+    """
+    3 solutions
+
+    Design from John Greening.
+    """
+
+    height = 9
+    width = 9
+
+    holes = set(((1,2), (2,4), (2,7), (4,2), (4,4), (4,6), (6,1), (6,4), (7,6)))
+
+    def coordinates(self):
+        coords = (set(
+            list(self.coordinates_rectangle(8, 5, offset=(0,1)))
+            + list(self.coordinates_rectangle(5, 3, offset=(1,6)))
+            + list(self.coordinates_rectangle(5, 1, offset=(3,0)))
+            + list(self.coordinates_rectangle(3, 5, offset=(6,3))))
+                  - self.holes)
         return sorted(coords)
 
     def customize_piece_data(self):
