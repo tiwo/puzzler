@@ -512,12 +512,24 @@ class Puzzle2D(Puzzle):
                 aspects.add(aspect)
         return aspects
 
+    def matrix_header_pieces(self):
+        """Return an ordered list of piece names for build_matrix_header."""
+        return sorted(self.pieces.keys())
+
+    def matrix_header_coords(self):
+        """
+        Return an ordered list of coordinates for build_matrix_header.
+
+        Override e.g. to ensure that secondary columns are at the end.
+        """
+        return sorted(self.solution_coords)
+
     def build_matrix_header(self):
         headers = []
-        for i, key in enumerate(sorted(self.pieces.keys())):
+        for i, key in enumerate(self.matrix_header_pieces()):
             self.matrix_columns[key] = i
             headers.append(key)
-        for (x, y) in sorted(self.solution_coords):
+        for (x, y) in self.matrix_header_coords():
             header = '%0*i,%0*i' % (self.x_width, x, self.y_width, y)
             self.matrix_columns[header] = len(headers)
             headers.append(header)
@@ -839,10 +851,10 @@ class Puzzle3D(Puzzle):
 
     def build_matrix_header(self):
         headers = []
-        for i, key in enumerate(sorted(self.pieces.keys())):
+        for i, key in enumerate(self.matrix_header_pieces()):
             self.matrix_columns[key] = i
             headers.append(key)
-        for (x, y, z) in sorted(self.solution_coords):
+        for (x, y, z) in self.matrix_header_coords():
             header = '%0*i,%0*i,%0*i' % (
                 self.x_width, x, self.y_width, y, self.z_width, z)
             self.matrix_columns[header] = len(headers)
