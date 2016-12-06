@@ -8,7 +8,7 @@
 :Date: $Date$
 :Revision: $Revision$
 :Web site: http://puzzler.sourceforge.net/
-:Copyright: © 1998-2015 by David J. Goodger
+:Copyright: © 1998-2016 by David J. Goodger
 :License: `GPL 2 <../COPYING.html>`__
 
 .. image:: images/puzzler.png
@@ -347,8 +347,6 @@ puzzles.*
 108: 18 of 19 one-sided hexiamonds
 
 * Potential:
-
-  * Hg(3)
 
 110: polyiamonds of order 1 to 6
 
