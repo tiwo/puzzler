@@ -227,6 +227,18 @@ class Puzzle(object):
         """
         raise NotImplementedError
 
+    def matrix_header_pieces(self):
+        """Return an ordered list of piece names for build_matrix_header."""
+        return sorted(self.pieces.keys())
+
+    def matrix_header_coords(self):
+        """
+        Return an ordered list of coordinates for build_matrix_header.
+
+        Override e.g. to ensure that secondary columns are at the end.
+        """
+        return sorted(self.solution_coords)
+
     def build_matrix_header(self):
         """
         Create and populate the first row of `self.matrix`, a list of column
@@ -511,18 +523,6 @@ class Puzzle2D(Puzzle):
                 aspect = coordsys.Cartesian2DView(coord_list, rotation, flip)
                 aspects.add(aspect)
         return aspects
-
-    def matrix_header_pieces(self):
-        """Return an ordered list of piece names for build_matrix_header."""
-        return sorted(self.pieces.keys())
-
-    def matrix_header_coords(self):
-        """
-        Return an ordered list of coordinates for build_matrix_header.
-
-        Override e.g. to ensure that secondary columns are at the end.
-        """
-        return sorted(self.solution_coords)
 
     def build_matrix_header(self):
         headers = []
