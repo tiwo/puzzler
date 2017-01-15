@@ -299,13 +299,13 @@ Misc
 
 * Cross Tower (design from `Thimo Rosenkranz's pentoma.de
   <http://www.pentoma.de>`_): `7 solutions
-  <../solutions/ominoes/cubes/solid-pentominoes-cross-tower.txt>`__
+  <../solutions/cubes/solid-pentominoes-cross-tower.txt>`__
   (`X3D model <images/cubes/solid-pentominoes-cross-tower.x3d>`__)
 
   .. image:: images/cubes/solid-pentominoes-cross-tower.png
 
 * Infinity Tower (design from `Thimo Rosenkranz's pentoma.de`_): `1 solution
-  <../solutions/ominoes/cubes/solid-pentominoes-infinity-tower.txt>`__
+  <../solutions/cubes/solid-pentominoes-infinity-tower.txt>`__
   (`X3D model <images/cubes/solid-pentominoes-infinity-tower.x3d>`__)
 
   .. image:: images/cubes/solid-pentominoes-infinity-tower.png
@@ -318,42 +318,42 @@ Misc
      * - .. figure:: images/cubes/solid-pentominoes-square-tower-1.png
 
             `1 solution
-            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-1.txt>`__
+            <../solutions/cubes/solid-pentominoes-square-tower-1.txt>`__
             (design from `Thimo Rosenkranz's pentoma.de`_; `X3D model
             <images/cubes/solid-pentominoes-square-tower-1.x3d>`__)
 
        - .. figure:: images/cubes/solid-pentominoes-square-tower-2.png
 
             `54 solutions
-            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-2.txt>`__
+            <../solutions/cubes/solid-pentominoes-square-tower-2.txt>`__
             (design from `Thimo Rosenkranz's pentoma.de`_; `X3D model
             <images/cubes/solid-pentominoes-square-tower-2.x3d>`__)
 
      * - .. figure:: images/cubes/solid-pentominoes-square-tower-3.png
 
             `27 solutions
-            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-3.txt>`__
+            <../solutions/cubes/solid-pentominoes-square-tower-3.txt>`__
             (`X3D model
             <images/cubes/solid-pentominoes-square-tower-3.x3d>`__)
 
        - .. figure:: images/cubes/solid-pentominoes-square-tower-4.png
 
             `8 solutions
-            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-4.txt>`__
+            <../solutions/cubes/solid-pentominoes-square-tower-4.txt>`__
             (`X3D model
             <images/cubes/solid-pentominoes-square-tower-4.x3d>`__)
 
      * - .. figure:: images/cubes/solid-pentominoes-square-tower-5.png
 
             `106 solutions
-            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-5.txt>`__
+            <../solutions/cubes/solid-pentominoes-square-tower-5.txt>`__
             (`X3D model
             <images/cubes/solid-pentominoes-square-tower-5.x3d>`__)
 
        - .. figure:: images/cubes/solid-pentominoes-square-tower-6.png
 
             `154 solutions
-            <../solutions/ominoes/cubes/solid-pentominoes-square-tower-6.txt>`__
+            <../solutions/cubes/solid-pentominoes-square-tower-6.txt>`__
             (`X3D model
             <images/cubes/solid-pentominoes-square-tower-6.x3d>`__)
 
@@ -365,19 +365,19 @@ Misc
      * - .. figure:: images/cubes/solid-pentominoes-stairstep-walls-1.png
 
             `34 solutions
-            <../solutions/ominoes/cubes/solid-pentominoes-stairstep-walls-1.txt>`__
+            <../solutions/cubes/solid-pentominoes-stairstep-walls-1.txt>`__
             (`X3D model
             <images/cubes/solid-pentominoes-stairstep-walls-1.x3d>`__)
 
        - .. figure:: images/cubes/solid-pentominoes-stairstep-walls-2.png
 
             `1 solution
-            <../solutions/ominoes/cubes/solid-pentominoes-stairstep-walls-2.txt>`__
+            <../solutions/cubes/solid-pentominoes-stairstep-walls-2.txt>`__
             (`X3D model
             <images/cubes/solid-pentominoes-stairstep-walls-2.x3d>`__)
 
 * Stepped pyramid (design suggested by Colin Lacy): `55 solutions
-  <../solutions/ominoes/cubes/solid-pentominoes-5x5x4-stepped-pyramid.txt>`__
+  <../solutions/cubes/solid-pentominoes-5x5x4-stepped-pyramid.txt>`__
   (`X3D model <images/cubes/solid-pentominoes-5x5x4-stepped-pyramid.x3d>`__)
 
   .. image:: images/cubes/solid-pentominoes-5x5x4-stepped-pyramid.png
