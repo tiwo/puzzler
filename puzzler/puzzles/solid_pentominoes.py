@@ -1360,3 +1360,45 @@ class SolidPentominoesStairstepWalls_x3(SolidPentominoesStairstepWalls1):
         + list(SolidPentominoes.coordinates_cuboid(2, 1, 1, offset=(4,0,0))))
 
     holes = set(SolidPentominoes.coordinates_cuboid(2, 2, 1))
+
+
+class SolidPentominoes5x5x4SteppedPyramid(SolidPentominoes):
+
+    """
+    55 solutions
+
+    Suggested by Colin Lacy.
+    """
+
+    height = 5
+    width = 5
+    depth = 4
+
+    transform_solution_matrix = Puzzle3D.swap_yz_transform
+
+    check_for_duplicates = True
+
+    duplicate_conditions = ({'x_reversed': True},)
+
+    def coordinates(self):
+        coords = set(
+            list(self.coordinates_cuboid(5, 5, 2))
+            + list(self.coordinates_cuboid(3, 3, 1, offset=(1,1,2)))
+            + list(self.coordinates_cuboid(1, 1, 1, offset=(2,2,3))))
+        return sorted(coords)
+
+    def build_matrix(self):
+        """
+        In all solutions the 'I' piece is positioned at an edge of the square
+        base. Restrict the 'I' piece to only one edge to reduce the duplicate
+        solutions 4-fold. The x_reversed duplicate condition check eliminates
+        the remaining duplicates.
+        """
+        keys = sorted(self.pieces.keys())
+        # Choose the I aspect along the X axis:
+        coords, aspect = self.pieces['I'][-1]
+        for z in range(2):
+            translated = aspect.translate((0, 0, z))
+            self.build_matrix_row('I', translated)
+        keys.remove('I')
+        self.build_regular_matrix(keys)
