@@ -2,5 +2,5 @@ language: python
 cache: pip
 python:
   - "2.7"
-install: pip install pytest
+install: pip install -r test/requirements.txt
 script: env PYTHONPATH=. python -m pytest
