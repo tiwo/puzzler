@@ -11,8 +11,9 @@ import unittest
 from cStringIO import StringIO
 from pprint import pprint, pformat
 
-import puzzler
-from puzzler import puzzles
+import puzzler.puzzles
+import puzzler.puzzles.pentominoes
+import puzzler.puzzles.polytrigs
 from puzzler import coordsys
 
 
@@ -24,7 +25,7 @@ class Struct:
         self.__dict__.update(keyword_args)
 
 
-class MockPuzzle(puzzles.Puzzle2D):
+class MockPuzzle(puzzler.puzzles.Puzzle2D):
 
     height = 4
     width = 5
@@ -133,6 +134,7 @@ U U X I I I I I N N N F T W Y Y Y Y Z V"""
         points = p.get_polygon_points(s_matrix, 3, 1)
         self.assertEquals(points, self.polygon_points_1)
 
+    @unittest.skip("neither MockPuzzle, nor anything anywhere has build_polygon")
     def test_build_polygon(self):
         p = MockPuzzle()
         s_matrix = copy.deepcopy(self.s_matrix_1)
@@ -145,12 +147,12 @@ U U X I I I I I N N N F T W Y Y Y Y Z V"""
         s_matrix = ([[' '] * width]
                     + [[' '] + row + [' '] for row in rows]
                     + [[' '] * width])
-        p = puzzles.Pentominoes3x20()
+        p = puzzler.puzzles.pentominoes.Pentominoes3x20()
         svg = p.format_svg(s_matrix=s_matrix)
         self.assertEquals(svg, self.pentominoes_svg)
 
 
-class Polytrig_Test_Puzzle(puzzles.Polytrigs12):
+class Polytrig_Test_Puzzle(puzzler.puzzles.polytrigs.Polytrigs12):
 
     width = 3
     height = 2
