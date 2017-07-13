@@ -13,6 +13,9 @@
 .. image:: https://travis-ci.org/tiwo/puzzler.svg?branch=master
     :target: https://travis-ci.org/tiwo/puzzler
 
+.. image:: https://codecov.io/gh/tiwo/puzzler/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/tiwo/puzzler
+
 **Polyform Puzzler** is a set of solvers for many polyform puzzles
 (like Pentominoes and Soma Cubes), and a software toolkit for
 exploring & solving polyform puzzles.  It consists of a set of
@@ -104,7 +107,7 @@ locations on your system), unless you `install it`_, or you set your
    "bin" directories), you can run the various front-ends.
 
    See Usage_ below for details.
- 
+
    * **Unix/Mac users:**
 
      Enter the following command::
