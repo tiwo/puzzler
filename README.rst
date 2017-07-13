@@ -10,6 +10,9 @@
 :Copyright: |c| 1998-2015 by David J. Goodger
 :License: `GPL 2 <COPYING.html>`__
 
+.. image:: https://travis-ci.org/tiwo/puzzler.svg?branch=master
+    :target: https://travis-ci.org/tiwo/puzzler
+
 **Polyform Puzzler** is a set of solvers for many polyform puzzles
 (like Pentominoes and Soma Cubes), and a software toolkit for
 exploring & solving polyform puzzles.  It consists of a set of
