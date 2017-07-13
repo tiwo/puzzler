@@ -72,7 +72,8 @@ U U X I I I I I N N N F T W Y Y Y Y Z V"""
     pentominoes_svg = '''\
 <?xml version="1.0" standalone="no"?>
 <!-- Created by Polyform Puzzler (http://puzzler.sourceforge.net/) -->
-<svg width="220" height="50" viewBox="0 0 220 50"
+<svg width="220.000" height="50.000"
+     viewBox="0 0 220.000 50.000"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
 <g>
