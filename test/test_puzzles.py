@@ -253,7 +253,9 @@ V2  \ I1  \
         settings = Struct(
             read_solution = stream,
             svg = svg_stream,
-            x3d = None)
+            x3d = None,
+            stop_after = 1,
+            thin_svg = False)
         puzzler.read_solution(Polytrig_Test_Puzzle, settings)
         svg_output = svg_stream.getvalue()
         self.assertEquals(svg_output, self.svg_output)
