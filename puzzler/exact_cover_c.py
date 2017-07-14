@@ -17,7 +17,6 @@ technique [3]_ ('DLX').
 .. [3] http://en.wikipedia.org/wiki/Dancing_Links
 """
 
-import exactcover
 from puzzler.utils import thousands
 
 
